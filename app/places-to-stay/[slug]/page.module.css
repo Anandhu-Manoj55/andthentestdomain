@@ -1,0 +1,351 @@
+/* Hotel Details CSS Modules styles */
+
+.detailPage {
+  min-height: 100vh;
+  background: var(--cr, #FFFFFF);
+  color: var(--cd, #2C1A0A);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.9) 0%, rgba(44,26,10,0.3) 60%, rgba(44,26,10,0.1) 100%);
+}
+.heroContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 2.5rem 3.5rem;
+  max-width: 800px;
+}
+.heroKicker {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.heroTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--cr, #FFFFFF);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.heroMeta {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.7);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.heroMetaSep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--cb, #A07848);
+}
+
+/* Layout Grid */
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  padding: 4rem 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left Content */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.editorialSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.sectionKicker {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+}
+.editorialText {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  line-height: 2;
+}
+
+.tagsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.tagsTitle {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+}
+.tagsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tagItem {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  border: 0.5px solid rgba(200,180,154,0.3);
+  padding: 5px 12px;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  background: var(--cp, #F5EFE8);
+  padding: 2rem;
+}
+.detailBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.detailLabel {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+}
+.detailValue {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.125rem;
+  color: var(--cd, #2C1A0A);
+}
+
+/* Right Sidebar / Enquiry Card */
+.sidebar {
+  position: sticky;
+  top: 100px;
+}
+.enquiryCard {
+  background: var(--cp, #F5EFE8);
+  border: 0.5px solid rgba(200,180,154,0.35);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.enquiryTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+  line-height: 1.2;
+}
+.enquirySub {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.75rem;
+  color: var(--cm, #6B4C2A);
+  line-height: 1.7;
+}
+
+/* Form elements */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.formLabel {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+}
+.input, .textarea {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  background: var(--cr, #FFFFFF);
+  border: 0.5px solid rgba(200,180,154,0.4);
+  padding: 0.75rem 1rem;
+  color: var(--cd, #2C1A0A);
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+.input:focus, .textarea:focus {
+  border-color: var(--cb, #A07848);
+}
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submitBtn {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cd, #2C1A0A);
+  color: var(--cr, #FFFFFF);
+  border: none;
+  padding: 1.125rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.25s ease;
+}
+.submitBtn:hover {
+  background: var(--cb, #A07848);
+}
+
+.successCard {
+  background: var(--cd, #2C1A0A);
+  color: var(--cr, #FFFFFF);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.successTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.3;
+}
+.successText {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: rgba(200,180,154,0.6);
+}
+
+/* Related Stays */
+.relatedSection {
+  padding: 4rem 2.5rem;
+  border-top: 0.5px solid rgba(200,180,154,0.25);
+  background: var(--cp, #F5EFE8);
+}
+.relatedHead {
+  max-width: 1400px;
+  margin: 0 auto 2.5rem;
+}
+.relatedTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+}
+.relatedGrid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.relatedCard {
+  background: var(--cr, #FFFFFF);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+.relatedCard:hover {
+  transform: translateY(-2px);
+}
+.relatedImgWrap {
+  position: relative;
+  width: 100%;
+  padding-top: 60%;
+  overflow: hidden;
+}
+.relatedImgPh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.relatedBody {
+  padding: 1.25rem;
+}
+.relatedLoc {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+.relatedName {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Accent gradient placeholders */
+.hiIndiaPalace  { background: linear-gradient(135deg, #3A1808 0%, #1A0A02 100%); }
+.hiIndiaWild    { background: linear-gradient(135deg, #201808 0%, #0E0A02 100%); }
+.hiIndiaKerala  { background: linear-gradient(135deg, #082028 0%, #020C10 100%); }
+.hiIndiaCoast   { background: linear-gradient(135deg, #083040 0%, #02121A 100%); }
+.hiIndiaDesert  { background: linear-gradient(135deg, #281808 0%, #120A02 100%); }
+.hiIndiaHill    { background: linear-gradient(135deg, #0E2810 0%, #051006 100%); }
+.hiBhutan        { background: linear-gradient(135deg, #142810 0%, #071006 100%); }
+.hiNepalCity    { background: linear-gradient(135deg, #0E1A38 0%, #050A18 100%); }
+.hiNepalWild    { background: linear-gradient(135deg, #102010 0%, #050A05 100%); }
+.hiSrilankaHist { background: linear-gradient(135deg, #083040 0%, #02121A 100%); }
+.hiSrilankaWild { background: linear-gradient(135deg, #102010 0%, #050A05 100%); }
+.hiSrilankaTea  { background: linear-gradient(135deg, #0E2010 0%, #050A05 100%); }
+.hiSrilankaSea  { background: linear-gradient(135deg, #082838 0%, #020F18 100%); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+}

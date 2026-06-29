@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private India Tours for US Travelers | AndThen Travels</title>
+<meta name="description" content="AndThen crafts private, tailor-made tours across India, Bhutan, Nepal & Sri Lanka for discerning US travelers. Bespoke itineraries. Dedicated support. Departs daily.">
+
+<!-- Google Fonts: Cormorant Garamond (display/headings) + DM Sans (body/UI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ANDTHEN TRAVELS — HOMEPAGE
+   Designer handover file · May 2026
+   
+   DEVELOPER NOTES:
+   - Replace all [IMAGE PLACEHOLDER] divs with <img> or CSS background-image
+   - All font sizes use rem; root = 16px
+   - Colour tokens defined in :root — change once, updates everywhere
+   - Marquee animation: pure CSS, no JS
+   - Mobile breakpoint: 768px
+   - Nav mobile: hamburger toggles .nav-mobile-open class on <nav>
+   - FAQ accordion: JS toggles .faq-open class on .faq-item
+   - Smooth scroll: scroll-behavior: smooth on html
+   ============================================================ */
+
+/* ── TOKENS ─────────────────────────────────────────────────── */
+:root {
+  --cr:  #F4EDE3;   /* cream — primary bg */
+  --cp:  #EDE3D6;   /* parchment — section alt bg */
+  --cl:  #E2D5C4;   /* linen — deeper warm surface */
+  --cs:  #C8B49A;   /* stone — borders, dividers */
+  --cb:  #A07848;   /* bronze — primary accent */
+  --cd:  #1E1A16;   /* dark charcoal — hero, footer bg, dark sections */
+  --ci:  #2A2420;   /* ink — deeper dark */
+  --cm:  #7A6A58;   /* mid-brown — body text */
+  --cw:  #FAF7F3;   /* warm white — nav bg */
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  3.5rem;
+  --space-xl:  5rem;
+  --space-2xl: 7rem;
+
+  --transition: 0.3s ease;
+  --max-width: 1440px;
+}
+
+/* ── RESET ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+
+/* ── UTILITY ─────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+.text-link {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  border-bottom: 0.5px solid rgba(30,26,22,0.3);
+  padding-bottom: 0.125rem;
+  display: inline-block;
+  transition: color var(--transition), border-color var(--transition);
+}
+.text-link:hover { color: var(--cb); border-color: var(--cb); }
+.text-link--muted { color: var(--cb); border-color: rgba(160,120,72,0.35); }
+.text-link--light { color: var(--cr); border-color: rgba(244,237,227,0.3); }
+.text-link--light:hover { color: var(--cs); border-color: var(--cs); }
+.rule { width: 1.5rem; height: 0.5px; background: var(--cs); margin: 1.5rem 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+/* ── NAVIGATION ──────────────────────────────────────────────── */
+/* DEVELOPER: Add position: sticky; top: 0; z-index: 100; if sticky nav needed */
+.nav {
+  background: var(--cw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav__logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 2px;
+}
+.nav__logo-wordmark {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.55rem;
+  color: var(--cd);
+}
+.nav__logo-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  color: var(--cb);
+}
+.nav__links {
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+}
+.nav__links a {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  transition: color var(--transition);
+}
+.nav__links a:hover { color: var(--cd); }
+.nav__cta {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  background: transparent;
+  border: 0.5px solid var(--cd);
+  padding: 0.625rem 1.375rem;
+  transition: background var(--transition), color var(--transition);
+}
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 0.5px;
+  background: var(--cd);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+/* DEVELOPER: Replace .hero__image with actual <img> tag or CSS background-image */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  min-height: 580px;
+}
+.hero__left {
+  background: var(--cd);
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero__dest-tag {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.4);
+}
+.hero__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.1;
+  max-width: 400px;
+}
+.hero__heading em {
+  font-style: normal;
+  color: var(--cb);
+}
+.hero__stats {
+  display: flex;
+  gap: 2rem;
+}
+.hero__stat {
+  border-left: 0.5px solid rgba(200,180,154,0.15);
+  padding-left: 1rem;
+}
+.hero__stat-value {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--cr);
+  letter-spacing: 0.05rem;
+  display: block;
+}
+.hero__stat-label {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.35);
+  margin-top: 3px;
+  display: block;
+}
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: gap var(--transition), color var(--transition);
+}
+.hero__cta:hover { gap: 1.25rem; }
+.hero__cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; }
+.hero__right {
+  position: relative;
+  overflow: hidden;
+  background: var(--cs);
+  /* DEVELOPER: Set background-image: url('path/to/hero-image.jpg'); background-size: cover; background-position: center; */
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+.hero__image-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cl);
+}
+.hero__image-placeholder span {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  color: rgba(30,26,22,0.2);
+  text-transform: uppercase;
+}
+.hero__caption {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: rgba(30,26,22,0.4);
+  letter-spacing: 0.08rem;
+  font-style: italic;
+}
+
+/* ── MARQUEE ─────────────────────────────────────────────────── */
+/* DEVELOPER: Pure CSS animation, no JS required */
+.marquee {
+  background: var(--cb);
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 2.5rem;
+  animation: marquee-scroll 28s linear infinite;
+}
+.marquee__track:hover { animation-play-state: paused; }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee__item {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: rgba(244,237,227,0.8);
+  flex-shrink: 0;
+}
+.marquee__dot {
+  color: rgba(244,237,227,0.25);
+  font-size: 0.375rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* ── ABOUT ───────────────────────────────────────────────────── */
+.about {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  min-height: 420px;
+}
+.about__sidebar {
+  background: var(--cp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 0.5px solid rgba(200,180,154,0.2);
+}
+.about__sidebar span {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.about__image {
+  background: var(--cl);
+  /* DEVELOPER: Replace with <img src="founder-photo.jpg" alt="Syam, Founder of AndThen Travels"> */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about__image span {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.18rem;
+  color: rgba(30,26,22,0.18);
+  text-transform: uppercase;
+}
+.about__content {
+  background: var(--cp);
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--cd);
+  margin-bottom: 1.5rem;
+}
+.about__body {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+  margin-bottom: 1rem;
+}
+.about__quote {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--cd);
+  line-height: 1.7;
+  border-left: 0.5px solid var(--cs);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+/* ── DESTINATIONS ────────────────────────────────────────────── */
+.destinations {
+  background: var(--cp);
+  padding: var(--space-xl) 2.5rem;
+}
+.destinations__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(30,26,22,0.1);
+}
+.destinations__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cd);
+}
+.dest-list { list-style: none; }
+.dest-list__item {
+  display: grid;
+  grid-template-columns: 56px 1fr 1fr 72px;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.875rem 0;
+  border-bottom: 0.5px solid rgba(200,180,154,0.07);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.dest-list__item:hover .dest-list__name { color: var(--cb); }
+.dest-list__item:hover .dest-list__num  { color: var(--cb); }
+.dest-list__num {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.15rem;
+  color: var(--cs);
+  transition: color var(--transition);
+}
+.dest-list__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cd);
+  transition: color var(--transition);
+}
+.dest-list__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+.dest-list__tag {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  border: 0.5px solid rgba(30,26,22,0.15);
+  padding: 0.25rem 0.625rem;
+}
+.dest-list__arrow {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  text-align: right;
+  transition: color var(--transition);
+}
+.dest-list__item:hover .dest-list__arrow { color: var(--cb); }
+.dest-list__item { border-bottom: 0.5px solid rgba(30,26,22,0.08); }
+
+/* ── EXPERIENCES ─────────────────────────────────────────────── */
+.experiences {
+  background: var(--cr);
+  padding: var(--space-xl) 2.5rem;
+}
+.experiences__header {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 3.5rem;
+}
+.experiences__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--cd);
+}
+.experiences__intro {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2;
+}
+.exp-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.exp-card {
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: filter var(--transition);
+}
+.exp-card:hover { filter: brightness(0.96); }
+.exp-card--1 { background: var(--cp); }
+.exp-card--2 { background: var(--cl); }
+.exp-card--3 { background: var(--cd); }
+.exp-card--4 { background: var(--cp); }
+.exp-card--5 { background: var(--cs); }
+.exp-card__icon {
+  font-size: 1.75rem;
+  margin-bottom: auto;
+}
+.exp-card--1 .exp-card__icon,
+.exp-card--4 .exp-card__icon { color: var(--cb); }
+.exp-card--2 .exp-card__icon { color: var(--cm); }
+.exp-card--3 .exp-card__icon { color: var(--cs); }
+.exp-card--5 .exp-card__icon { color: var(--cd); }
+.exp-card__body { margin-top: 2.5rem; }
+.exp-card__title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  margin-bottom: 0.375rem;
+}
+.exp-card--1 .exp-card__title,
+.exp-card--2 .exp-card__title,
+.exp-card--4 .exp-card__title { color: var(--cd); }
+.exp-card--3 .exp-card__title { color: var(--cr); }
+.exp-card--5 .exp-card__title { color: var(--cd); }
+.exp-card__text {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.exp-card--1 .exp-card__text,
+.exp-card--2 .exp-card__text,
+.exp-card--4 .exp-card__text { color: var(--cm); }
+.exp-card--3 .exp-card__text { color: var(--cs); }
+.exp-card--5 .exp-card__text { color: rgba(30,26,22,0.55); }
+
+/* ── TOURS ───────────────────────────────────────────────────── */
+.tours {
+  background: var(--cp);
+  padding: var(--space-xl) 2.5rem;
+}
+.tours__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.4);
+  margin-bottom: 0;
+}
+.tours__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  color: var(--cd);
+}
+.tour-row {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 0.6fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  transition: background var(--transition);
+  cursor: pointer;
+}
+.tour-row:hover { background: rgba(200,180,154,0.1); padding-left: 0.75rem; }
+.tour-row__name {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.3;
+}
+.tour-row__dest {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  margin-top: 3px;
+}
+.tour-row__nights {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--cm);
+}
+.tour-row__price {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--cd);
+}
+.tour-row__link {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  text-align: right;
+}
+
+/* ── PLACES TO STAY ──────────────────────────────────────────── */
+.stays {
+  background: var(--cr);
+  padding: var(--space-xl) 2.5rem;
+}
+.stays__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: end;
+  margin-bottom: 3.5rem;
+}
+.stays__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--cd);
+}
+.stays__intro {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+  margin-bottom: 1.5rem;
+}
+.stays-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-bottom: 2rem;
+}
+.stay-feature {
+  background: var(--cd);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+}
+.stay-feature__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.stay-feature__heading {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+.stay-feature__body {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.45);
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+.stay-feature__btn {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  background: var(--cr);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  transition: background var(--transition);
+}
+.stay-feature__btn:hover { background: var(--cs); }
+.stay-card {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+}
+/* DEVELOPER: Replace .stay-card__image with <img> */
+.stay-card__image {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stay-card__image span {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+}
+.stay-card__image--1 { background: var(--cs); }
+.stay-card__image--2 { background: var(--cl); }
+.stay-card__image--3 { background: #9A8878; }
+.stay-card__meta { padding: 1.25rem 1.375rem 1.75rem; }
+.stay-card__category {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.stay-card__name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cd);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.stay-card__location {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+}
+
+/* ── WELLNESS ────────────────────────────────────────────────── */
+.wellness {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 460px;
+}
+.wellness__image {
+  background: var(--cs);
+  /* DEVELOPER: background-image: url('wellness-image.jpg'); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wellness__image span {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  color: rgba(30,26,22,0.2);
+  text-transform: uppercase;
+}
+.wellness__content {
+  background: var(--cp);
+  padding: 4.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wellness__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--cd);
+  margin-bottom: 1.5rem;
+}
+.wellness__body {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+  margin-bottom: 2rem;
+}
+.wellness__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+.wellness__tag {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  border: 0.5px solid var(--cs);
+  padding: 0.375rem 0.875rem;
+  transition: background var(--transition), color var(--transition);
+}
+.wellness__tag:hover { background: var(--cs); color: var(--cr); }
+
+/* ── JOURNAL ─────────────────────────────────────────────────── */
+.journal {
+  background: var(--cr);
+  padding: var(--space-xl) 2.5rem;
+}
+.journal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(30,26,22,0.08);
+}
+.journal__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cd);
+}
+.journal__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(30,26,22,0.08);
+}
+.journal__section-label {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  border-bottom: 0.5px solid rgba(30,26,22,0.1);
+  padding-bottom: 0.875rem;
+  margin-bottom: 1.75rem;
+}
+/* Articles */
+.journal__articles { background: var(--cr); padding-right: 3rem; }
+.article-item {
+  padding: 1.5rem 0;
+  border-bottom: 0.5px solid rgba(30,26,22,0.08);
+  transition: opacity var(--transition);
+}
+.article-item:hover { opacity: 0.7; }
+.article-item__cat {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.article-item__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.45;
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.article-item__meta {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: var(--cm);
+}
+/* Podcast */
+.journal__podcast { background: var(--cp); padding: 2.5rem; }
+.pod-featured {
+  background: var(--cl);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border: 0.5px solid rgba(30,26,22,0.08);
+}
+.pod-featured__label {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.pod-featured__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cb);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.pod-featured__title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cd);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.pod-featured__desc {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.pod-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pod-player__btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(200,180,154,0.18);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color var(--transition), background var(--transition);
+}
+.pod-player__btn:hover { border-color: var(--cb); background: rgba(160,120,72,0.1); }
+.pod-player__btn svg { width: 14px; height: 14px; fill: var(--cb); margin-left: 2px; }
+.pod-waveform {
+  flex: 1;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.pod-waveform__bar {
+  flex: 1;
+  border-radius: 1px;
+  background: rgba(30,26,22,0.12);
+}
+.pod-waveform__bar--played { background: var(--cb); }
+.pod-player__time {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: var(--cm);
+  letter-spacing: 0.08rem;
+  white-space: nowrap;
+}
+.pod-list { margin-bottom: 1.5rem; }
+.pod-list__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 0;
+  border-bottom: 0.5px solid rgba(30,26,22,0.08);
+  transition: opacity var(--transition);
+  cursor: pointer;
+}
+.pod-list__item:hover { opacity: 0.65; }
+.pod-list__num {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.1rem;
+  color: var(--cs);
+  min-width: 20px;
+}
+.pod-list__info { flex: 1; }
+.pod-list__title {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.4;
+  display: block;
+}
+.pod-list__meta {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  color: var(--cm);
+  margin-top: 2px;
+  display: block;
+}
+.pod-list__play { color: var(--cs); font-size: 0.75rem; }
+.pod-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.pod-links a {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  border-bottom: 0.5px solid rgba(30,26,22,0.2);
+  padding-bottom: 2px;
+  transition: color var(--transition);
+}
+.pod-links a:hover { color: var(--cb); }
+
+/* ── PRIZE ───────────────────────────────────────────────────── */
+.prize {
+  background: var(--cb);
+  padding: 4rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.prize__eyebrow { color: rgba(244,237,227,0.5); }
+.prize__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+.prize__body {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(244,237,227,0.55);
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+.prize__btn {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  background: var(--cr);
+  border: none;
+  padding: 0.875rem 1.875rem;
+  transition: background var(--transition);
+}
+.prize__btn:hover { background: var(--cs); }
+.prize__items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(244,237,227,0.1);
+}
+.prize-item {
+  background: rgba(244,237,227,0.05);
+  padding: 1.75rem;
+  transition: background var(--transition);
+}
+.prize-item:hover { background: rgba(244,237,227,0.1); }
+.prize-item__icon {
+  font-size: 1.125rem;
+  color: rgba(244,237,227,0.38);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.prize-item__label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: rgba(244,237,227,0.45);
+  line-height: 1.7;
+}
+
+/* ── SIGNATURE EXPERIENCES ───────────────────────────────────── */
+.signature { background: var(--cl); padding: var(--space-xl) 2.5rem; }
+.signature__header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 1.5rem; border-bottom: 0.5px solid rgba(30,26,22,0.1); }
+.signature__heading { font-family: var(--font-display); font-size: clamp(1.75rem,2.5vw,2.25rem); font-weight: 400; font-style: italic; color: var(--cd); }
+.signature__header-right { max-width: 340px; text-align: right; }
+.signature__intro { font-family: var(--font-body); font-size: 0.75rem; color: var(--cm); line-height: 1.9; margin-bottom: 1rem; }
+.sig-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(30,26,22,0.1); margin-top: 1px; }
+.sig-card { background: var(--cr); display: flex; flex-direction: column; transition: background var(--transition); }
+.sig-card:hover { background: var(--cp); }
+.sig-card__image { height: 210px; display: flex; align-items: flex-end; padding: 1.5rem; position: relative; }
+.sig-card__image span { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.18rem; color: rgba(255,255,255,0.18); text-transform: uppercase; position: relative; z-index: 1; }
+.sig-card__image--culinary { background: #5C3D2A; }
+.sig-card__image--wellness  { background: #2A3A3A; }
+.sig-card__image--golf      { background: #2A3520; }
+.sig-card__badge { position: absolute; top: 1.25rem; left: 1.5rem; font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase; padding: 4px 10px; z-index: 2; }
+.sig-card__badge--fixed   { background: var(--cb); color: var(--cr); }
+.sig-card__badge--private { background: rgba(200,180,154,0.12); color: var(--cs); border: 0.5px solid rgba(200,180,154,0.2); }
+.sig-card__body { padding: 2rem 2rem 2.5rem; flex: 1; display: flex; flex-direction: column; }
+.sig-card__category { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.75rem; border-top: 0.5px solid rgba(30,26,22,0.08); padding-top: 0; }
+.sig-card__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--cd); line-height: 1.35; margin-bottom: 0.625rem; }
+.sig-card__expert { font-family: var(--font-body); font-size: 0.6875rem; color: var(--cm); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.625rem; }
+.sig-card__expert::before { content: ''; display: inline-block; width: 16px; height: 0.5px; background: var(--cs); flex-shrink: 0; }
+.sig-card__desc { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: var(--cm); line-height: 1.9; flex: 1; margin-bottom: 1.75rem; }
+.sig-card__meta { display: flex; justify-content: space-between; align-items: flex-end; border-top: 0.5px solid rgba(30,26,22,0.08); padding-top: 1.25rem; margin-top: auto; }
+.sig-card__dates { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.1rem; text-transform: uppercase; color: var(--cm); display: block; margin-bottom: 4px; }
+.sig-card__price { font-family: var(--font-body); font-size: 0.9375rem; color: var(--cs); }
+.sig-card__price-label { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.1rem; text-transform: uppercase; color: var(--cm); display: block; margin-bottom: 2px; }
+.sig-card__link { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cs); transition: color var(--transition); }
+.sig-card:hover .sig-card__link { color: var(--cb); }
+.sig-card__badge--private { background: rgba(30,26,22,0.06); color: var(--cm); border: 0.5px solid rgba(30,26,22,0.15); }
+.sig-note { margin-top: 1px; background: rgba(30,26,22,0.04); border: 0.5px solid rgba(30,26,22,0.08); padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.sig-note__text { font-family: var(--font-body); font-size: 0.6875rem; font-weight: 300; color: var(--cm); line-height: 1.8; }
+.sig-note__text strong { color: var(--cd); font-weight: 500; }
+@media (max-width:1024px) { .sig-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width:768px)  { .sig-cards { grid-template-columns: 1fr; } .signature__header { flex-direction: column; gap: 1.5rem; align-items: flex-start; } .signature__header-right { text-align: left; max-width: 100%; } }
+
+/* ── TESTIMONIALS ────────────────────────────────────────────── */
+.testimonials {
+  background: var(--cp);
+  padding: var(--space-xl) 2.5rem;
+}
+.testimonials__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4rem;
+}
+.testimonials__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  color: var(--cd);
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+}
+.testi-card__rule { width: 1.25rem; height: 0.5px; background: var(--cs); margin-bottom: 2rem; }
+.testi-card__quote {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ci);
+  line-height: 1.95;
+  margin-bottom: 1.75rem;
+}
+.testi-card__name {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  display: block;
+}
+.testi-card__trip {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cb);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────── */
+.faq {
+  background: var(--cr);
+  padding: var(--space-xl) 2.5rem;
+}
+.faq__inner { max-width: 660px; }
+.faq__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 3rem;
+}
+.faq-item {
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  overflow: hidden;
+}
+.faq-item:first-of-type { border-top: 0.5px solid rgba(200,180,154,0.3); }
+.faq-item__trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.75rem 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+.faq-item__question {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.4;
+}
+.faq-item__icon {
+  color: var(--cs);
+  font-size: 0.75rem;
+  transition: transform var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.faq-item.faq-open .faq-item__icon { transform: rotate(180deg); }
+.faq-item__answer {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+  padding-bottom: 1.75rem;
+  display: none;
+}
+.faq-item.faq-open .faq-item__answer { display: block; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  background: var(--ci);
+  padding: 4.5rem 2.5rem 2.5rem;
+}
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.06);
+}
+.footer__logo-wordmark {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 200;
+  letter-spacing: 0.5rem;
+  color: var(--cr);
+  display: block;
+}
+.footer__logo-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.625rem;
+  letter-spacing: 0.18rem;
+  color: rgba(200,180,154,0.28);
+  margin-top: 3px;
+  display: block;
+}
+.footer__desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.22);
+  line-height: 2;
+  margin-top: 1.5rem;
+  max-width: 250px;
+}
+.footer__contact { margin-top: 1.25rem; }
+.footer__contact a {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--cb);
+  text-decoration: none;
+  margin-bottom: 3px;
+  transition: opacity var(--transition);
+}
+.footer__contact a:hover { opacity: 0.7; }
+.footer__col-heading {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.18);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.footer__col a {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.28);
+  text-decoration: none;
+  margin-bottom: 0.625rem;
+  transition: color var(--transition);
+}
+.footer__col a:hover { color: var(--cb); }
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer__copy {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  color: rgba(200,180,154,0.14);
+  letter-spacing: 0.08rem;
+}
+.footer__social { display: flex; gap: 1.25rem; }
+.footer__social-icon {
+  font-size: 0.9375rem;
+  color: rgba(200,180,154,0.14);
+  transition: color var(--transition);
+  cursor: pointer;
+}
+.footer__social-icon:hover { color: var(--cb); }
+
+/* ── RESPONSIVE: TABLET ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .exp-cards { grid-template-columns: repeat(3, 1fr); }
+  .exp-card--4, .exp-card--5 { display: none; }
+  .dest-list__item { grid-template-columns: 40px 1fr 60px; }
+  .dest-list__tags { display: none; }
+  .tour-row { grid-template-columns: 1.8fr 1fr 1fr; }
+  .tour-row__link { display: none; }
+  .stays-grid { grid-template-columns: 1fr 1fr; }
+  .stays__header { grid-template-columns: 1fr; gap: 2rem; }
+  .journal__grid { grid-template-columns: 1fr; }
+  .journal__articles { padding-right: 0; padding-bottom: 3rem; }
+  .footer__top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+/* ── RESPONSIVE: MOBILE ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+  /* DEVELOPER: Add mobile nav dropdown styles here */
+
+  .hero { grid-template-columns: 1fr; }
+  .hero__right { min-height: 260px; }
+  .hero__stats { gap: 1.25rem; }
+
+  .about { grid-template-columns: 1fr; }
+  .about__sidebar { display: none; }
+  .about__image { min-height: 260px; }
+  .about__content { padding: 2.5rem 1.5rem; }
+
+  .destinations { padding: 3rem 1.5rem; }
+  .dest-list__item { grid-template-columns: 36px 1fr 50px; }
+
+  .experiences { padding: 3rem 1.5rem; }
+  .experiences__header { grid-template-columns: 1fr; gap: 1rem; }
+  .exp-cards { grid-template-columns: 1fr 1fr; }
+  .exp-card--3, .exp-card--4, .exp-card--5 { display: none; }
+
+  .tours { padding: 3rem 1.5rem; }
+  .tour-row { grid-template-columns: 1fr 1fr; }
+  .tour-row__nights { display: none; }
+
+  .stays { padding: 3rem 1.5rem; }
+  .stays-grid { grid-template-columns: 1fr; }
+
+  .wellness { grid-template-columns: 1fr; }
+  .wellness__image { min-height: 260px; }
+  .wellness__content { padding: 3rem 1.5rem; }
+
+  .journal { padding: 3rem 1.5rem; }
+  .journal__grid { grid-template-columns: 1fr; }
+  .journal__articles { padding-right: 0; }
+  .journal__podcast { padding: 2rem 1.5rem; }
+
+  .prize { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+  .prize__items { grid-template-columns: 1fr 1fr; }
+
+  .testimonials { padding: 3rem 1.5rem; }
+  .testi-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .faq { padding: 3rem 1.5rem; }
+
+  .footer { padding: 3rem 1.5rem 2rem; }
+  .footer__top { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     DEVELOPER: Add scroll class .nav--scrolled for bg opacity change
+═══════════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav__logo" aria-label="AndThen Travels — Home">
+    <span class="nav__logo-wordmark">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+
+  <div class="nav__links" id="nav-links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/experiences/">Experiences</a>
+    <a href="/places-to-stay/">Places to stay</a>
+    <a href="/wellness/">Wellness</a>
+    <a href="/journal/">Journal</a>
+    <a href="/about/">About</a>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+18000000000" style="font-family:var(--font-body);font-size:0.6875rem;color:var(--cb);letter-spacing:0.08rem;">+1 800 000 0000</a>
+    <a href="/contact/"><button class="nav__cta">Plan a journey</button></a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     DEVELOPER: Replace .hero__image-placeholder with <img> tag
+     Recommended image: full portrait of a destination scene
+     Dimensions: ~800×600px minimum, aspect ~3:2
+═══════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero__left">
+    <span class="hero__dest-tag">India · Bhutan · Nepal · Sri Lanka</span>
+
+    <h1 class="hero__heading">
+      Travel that stays<br>with you <em>forever</em>
+    </h1>
+
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-value">4</span>
+        <span class="hero__stat-label">Destinations</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">100%</span>
+        <span class="hero__stat-label">Private</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">Daily</span>
+        <span class="hero__stat-label">Departures</span>
+      </div>
+    </div>
+
+    <a href="/contact/">
+      <button class="hero__cta">
+        Begin your journey
+        <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </a>
+  </div>
+
+  <div class="hero__right">
+    <div class="hero__image-placeholder">
+      <!-- DEVELOPER: Replace this div with:
+      <img src="images/hero-destination.jpg" alt="Private travel in India — golden hour at a Rajasthan palace" loading="eager"> -->
+      <span>Hero destination photography</span>
+    </div>
+    <p class="hero__caption">Private journeys · Tailor-made · Departs daily</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     MARQUEE BAR
+     DEVELOPER: Pure CSS animation — no JS required
+═══════════════════════════════════════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <!-- Repeat items twice for seamless loop -->
+    <span class="marquee__item">India</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Bhutan</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Nepal</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Sri Lanka</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Wellness &amp; Ayurveda</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Wildlife Safaris</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Trekking &amp; Adventure</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Spiritual Journeys</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Leisure &amp; Culture</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Private &amp; Tailor-made</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">India</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Bhutan</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Nepal</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Sri Lanka</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Wellness &amp; Ayurveda</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Wildlife Safaris</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Trekking &amp; Adventure</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Spiritual Journeys</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Leisure &amp; Culture</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Private &amp; Tailor-made</span><span class="marquee__dot">●</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT
+     DEVELOPER: Replace .about__image div with <img> of founder
+═══════════════════════════════════════════════════════════ -->
+<section class="about" aria-label="About AndThen Travels">
+  <div class="about__sidebar" aria-hidden="true">
+    <span>About AndThen</span>
+  </div>
+
+  <div class="about__image">
+    <!-- DEVELOPER: <img src="images/founder-syam.jpg" alt="Syam, Founder of AndThen Travels"> -->
+    <span>Founder photography</span>
+  </div>
+
+  <div class="about__content">
+    <span class="eyebrow">A different way to travel</span>
+    <h2 class="about__heading">Journeys built around you, not a schedule</h2>
+    <div class="rule"></div>
+    <p class="about__body">AndThen is a boutique Destination Management Company. We design private journeys across India, Bhutan, Nepal and Sri Lanka for discerning US travelers who want to experience a place — not just visit it.</p>
+    <p class="about__body">No groups. No fixed departures. No compromises. Just you, your destination, and a team that knows every corner of it.</p>
+    <blockquote class="about__quote">"The best journeys happen when someone who truly knows a place puts it in your hands."</blockquote>
+    <a href="/about/" class="text-link">Our story</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DESTINATIONS
+═══════════════════════════════════════════════════════════ -->
+<section class="destinations" aria-label="Destinations">
+  <div class="destinations__header">
+    <h2 class="destinations__heading">Where we take you</h2>
+    <a href="/destinations/" class="text-link text-link--muted">All destinations</a>
+  </div>
+
+  <ul class="dest-list" role="list">
+    <li class="dest-list__item" role="listitem">
+      <span class="dest-list__num">01</span>
+      <a href="/india/" class="dest-list__name">India</a>
+      <div class="dest-list__tags" aria-hidden="true">
+        <span class="dest-list__tag">Wildlife</span>
+        <span class="dest-list__tag">Culture</span>
+        <span class="dest-list__tag">Wellness</span>
+        <span class="dest-list__tag">Spiritual</span>
+      </div>
+      <span class="dest-list__arrow" aria-hidden="true">Explore →</span>
+    </li>
+    <li class="dest-list__item" role="listitem">
+      <span class="dest-list__num">02</span>
+      <a href="/bhutan/" class="dest-list__name">Bhutan</a>
+      <div class="dest-list__tags" aria-hidden="true">
+        <span class="dest-list__tag">Monasteries</span>
+        <span class="dest-list__tag">Trekking</span>
+        <span class="dest-list__tag">Wellness</span>
+      </div>
+      <span class="dest-list__arrow" aria-hidden="true">Explore →</span>
+    </li>
+    <li class="dest-list__item" role="listitem">
+      <span class="dest-list__num">03</span>
+      <a href="/nepal/" class="dest-list__name">Nepal</a>
+      <div class="dest-list__tags" aria-hidden="true">
+        <span class="dest-list__tag">Himalayan treks</span>
+        <span class="dest-list__tag">Temples</span>
+        <span class="dest-list__tag">Adventure</span>
+      </div>
+      <span class="dest-list__arrow" aria-hidden="true">Explore →</span>
+    </li>
+    <li class="dest-list__item" role="listitem">
+      <span class="dest-list__num">04</span>
+      <a href="/sri-lanka/" class="dest-list__name">Sri Lanka</a>
+      <div class="dest-list__tags" aria-hidden="true">
+        <span class="dest-list__tag">Ayurveda</span>
+        <span class="dest-list__tag">Wildlife</span>
+        <span class="dest-list__tag">Beaches</span>
+        <span class="dest-list__tag">Ruins</span>
+      </div>
+      <span class="dest-list__arrow" aria-hidden="true">Explore →</span>
+    </li>
+  </ul>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCES
+═══════════════════════════════════════════════════════════ -->
+<section class="experiences" aria-label="Experiences">
+  <div class="experiences__header">
+    <div>
+      <span class="eyebrow">What moves you</span>
+      <h2 class="experiences__heading">Shaped by your passions</h2>
+    </div>
+    <p class="experiences__intro">Five ways to experience South Asia — each crafted privately, each built entirely around what matters most to you.</p>
+  </div>
+
+  <div class="exp-cards">
+    <article class="exp-card exp-card--1">
+      <div class="exp-card__icon" aria-hidden="true">&#9753;</div>
+      <div class="exp-card__body">
+        <h3 class="exp-card__title">Wellness &amp; Ayurveda</h3>
+        <p class="exp-card__text">Kerala retreats, yoga, Ayurvedic healing and restorative escapes across India and Sri Lanka.</p>
+      </div>
+    </article>
+    <article class="exp-card exp-card--2">
+      <div class="exp-card__icon" aria-hidden="true">&#10022;</div>
+      <div class="exp-card__body">
+        <h3 class="exp-card__title">Wildlife &amp; Safaris</h3>
+        <p class="exp-card__text">Tigers in Ranthambore, elephants in Yala, leopards in Kabini — private game drives, no crowds.</p>
+      </div>
+    </article>
+    <article class="exp-card exp-card--3">
+      <div class="exp-card__icon" aria-hidden="true">&#8963;</div>
+      <div class="exp-card__body">
+        <h3 class="exp-card__title">Trekking &amp; Adventure</h3>
+        <p class="exp-card__text">Himalayan trails in Nepal and Bhutan — guided privately, at a pace that suits you.</p>
+      </div>
+    </article>
+    <article class="exp-card exp-card--4">
+      <div class="exp-card__icon" aria-hidden="true">&#9770;</div>
+      <div class="exp-card__body">
+        <h3 class="exp-card__title">Leisure &amp; Culture</h3>
+        <p class="exp-card__text">Royal palaces, living festivals, ancient temples and the craft and cuisine of South Asia.</p>
+      </div>
+    </article>
+    <article class="exp-card exp-card--5">
+      <div class="exp-card__icon" aria-hidden="true">&#9788;</div>
+      <div class="exp-card__body">
+        <h3 class="exp-card__title">Spiritual Journeys</h3>
+        <p class="exp-card__text">Varanasi at dawn, Rishikesh ashrams, Bhutanese monasteries and the silence of Bodh Gaya.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TOURS / ITINERARIES
+═══════════════════════════════════════════════════════════ -->
+<section class="tours" aria-label="Itineraries">
+  <div class="tours__header">
+    <div>
+      <span class="eyebrow">Our journeys</span>
+      <h2 class="tours__heading">Handcrafted itineraries</h2>
+    </div>
+    <a href="/experiences/" class="text-link">All itineraries</a>
+  </div>
+
+  <div role="list">
+    <a href="/tours/golden-triangle/" role="listitem">
+      <div class="tour-row">
+        <div><p class="tour-row__name">Golden Triangle with Udaipur</p><p class="tour-row__dest">India · North</p></div>
+        <span class="tour-row__nights">12 nights</span>
+        <span class="tour-row__price">From $4,500</span>
+        <span class="tour-row__link">View →</span>
+      </div>
+    </a>
+    <a href="/tours/royal-rajasthan/" role="listitem">
+      <div class="tour-row">
+        <div><p class="tour-row__name">Royal Rajasthan</p><p class="tour-row__dest">India · Rajasthan</p></div>
+        <span class="tour-row__nights">10 nights</span>
+        <span class="tour-row__price">From $3,800</span>
+        <span class="tour-row__link">View →</span>
+      </div>
+    </a>
+    <a href="/tours/simply-south/" role="listitem">
+      <div class="tour-row">
+        <div><p class="tour-row__name">Simply South</p><p class="tour-row__dest">India · Kerala</p></div>
+        <span class="tour-row__nights">10 nights</span>
+        <span class="tour-row__price">From $3,500</span>
+        <span class="tour-row__link">View →</span>
+      </div>
+    </a>
+    <a href="/tours/best-of-bhutan/" role="listitem">
+      <div class="tour-row">
+        <div><p class="tour-row__name">Best of Bhutan</p><p class="tour-row__dest">Bhutan</p></div>
+        <span class="tour-row__nights">10 nights</span>
+        <span class="tour-row__price">From $5,200</span>
+        <span class="tour-row__link">View →</span>
+      </div>
+    </a>
+    <a href="/tours/tryst-with-himalayas/" role="listitem">
+      <div class="tour-row">
+        <div><p class="tour-row__name">Tryst with the Himalayas</p><p class="tour-row__dest">India · Nepal</p></div>
+        <span class="tour-row__nights">11 nights</span>
+        <span class="tour-row__price">From $4,200</span>
+        <span class="tour-row__link">View →</span>
+      </div>
+    </a>
+    <a href="/tours/temple-trail/" role="listitem">
+      <div class="tour-row">
+        <div><p class="tour-row__name">Temple Trail</p><p class="tour-row__dest">India · Tamil Nadu</p></div>
+        <span class="tour-row__nights">12 nights</span>
+        <span class="tour-row__price">From $3,600</span>
+        <span class="tour-row__link">View →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PLACES TO STAY
+     DEVELOPER: Replace .stay-card__image divs with <img> tags
+     Link download button to hotel booklet PDF
+═══════════════════════════════════════════════════════════ -->
+<section class="stays" aria-label="Places to stay">
+  <div class="stays__header">
+    <div>
+      <span class="eyebrow">Places to stay</span>
+      <h2 class="stays__heading">Where you rest matters as much as where you go</h2>
+    </div>
+    <div>
+      <p class="stays__intro">Every property in our collection is personally inspected — from intimate heritage havelis and wilderness lodges to iconic landmark hotels. We recommend only what we would stay in ourselves.</p>
+      <a href="/places-to-stay/" class="text-link">Explore our hotel collection</a>
+    </div>
+  </div>
+
+  <div class="stays-grid">
+    <div class="stay-feature">
+      <div>
+        <span class="stay-feature__eyebrow">Our hotel booklet</span>
+        <h3 class="stay-feature__heading">A curated guide to the finest stays across South Asia</h3>
+        <p class="stay-feature__body">From intimate tented camps in Rajasthan to iconic lake palaces in Udaipur and mountain lodges in Bhutan — our handpicked collection, yours to keep.</p>
+      </div>
+      <!-- DEVELOPER: Link href to PDF file or download page -->
+      <a href="/hotel-booklet.pdf" download>
+        <button class="stay-feature__btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download booklet
+        </button>
+      </a>
+    </div>
+
+    <div class="stay-card">
+      <div class="stay-card__image stay-card__image--1">
+        <!-- DEVELOPER: <img src="images/hotels/jai-mahal-palace.jpg" alt="Jai Mahal Palace, Jaipur"> -->
+        <span>Heritage hotel</span>
+      </div>
+      <div class="stay-card__meta">
+        <span class="stay-card__category">India · Rajasthan</span>
+        <span class="stay-card__name">Jai Mahal Palace</span>
+        <span class="stay-card__location">Jaipur</span>
+      </div>
+    </div>
+
+    <div class="stay-card">
+      <div class="stay-card__image stay-card__image--2">
+        <!-- DEVELOPER: <img src="images/hotels/taj-lake-palace.jpg" alt="Taj Lake Palace, Udaipur"> -->
+        <span>Lake palace</span>
+      </div>
+      <div class="stay-card__meta">
+        <span class="stay-card__category">India · Rajasthan</span>
+        <span class="stay-card__name">Taj Lake Palace</span>
+        <span class="stay-card__location">Udaipur</span>
+      </div>
+    </div>
+
+    <div class="stay-card">
+      <div class="stay-card__image stay-card__image--3">
+        <!-- DEVELOPER: <img src="images/hotels/amankora-paro.jpg" alt="Amankora Paro, Bhutan"> -->
+        <span>Mountain lodge</span>
+      </div>
+      <div class="stay-card__meta">
+        <span class="stay-card__category">Bhutan</span>
+        <span class="stay-card__name">Amankora Paro</span>
+        <span class="stay-card__location">Paro Valley</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;">
+    <a href="/places-to-stay/" class="text-link">View all recommended properties</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WELLNESS
+     DEVELOPER: Replace .wellness__image div with <img>
+═══════════════════════════════════════════════════════════ -->
+<section class="wellness" aria-label="Wellness travel">
+  <div class="wellness__image">
+    <!-- DEVELOPER: <img src="images/wellness-kerala.jpg" alt="Ayurveda wellness retreat in Kerala, India"> -->
+    <span>Wellness photography</span>
+  </div>
+  <div class="wellness__content">
+    <span class="eyebrow">Restore &amp; renew</span>
+    <h2 class="wellness__heading">Wellness travel, deeply considered</h2>
+    <div class="rule"></div>
+    <p class="wellness__body">From authentic Ayurveda in Kerala to meditation retreats in Bhutan's monasteries — AndThen crafts wellness journeys that go far beyond a spa break. Handpicked properties, curated treatments, genuine restoration.</p>
+    <div class="wellness__tags">
+      <span class="wellness__tag">Ayurveda</span>
+      <span class="wellness__tag">Yoga</span>
+      <span class="wellness__tag">Meditation</span>
+      <span class="wellness__tag">Detox</span>
+      <span class="wellness__tag">Healing</span>
+    </div>
+    <a href="/wellness/" class="text-link">Explore wellness journeys</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     JOURNAL — ARTICLES + PODCAST
+     DEVELOPER: 
+     - Wire podcast play button to actual audio player
+     - Pull articles dynamically from WordPress blog posts
+     - Waveform bars are decorative — replace with real audio waveform if desired
+═══════════════════════════════════════════════════════════ -->
+<section class="journal" aria-label="Journal and Podcast">
+  <div class="journal__header">
+    <div>
+      <span class="eyebrow">The AndThen journal</span>
+      <h2 class="journal__heading">Stories, guides &amp; conversations</h2>
+    </div>
+    <a href="/journal/" class="text-link text-link--muted">Visit the journal</a>
+  </div>
+
+  <div class="journal__grid">
+    <!-- Articles Column -->
+    <div class="journal__articles">
+      <p class="journal__section-label">Travel guides</p>
+
+      <article class="article-item">
+        <a href="/journal/best-time-to-visit-india/">
+          <span class="article-item__cat">India · Planning</span>
+          <span class="article-item__title">Best time to visit India for US travelers — a month by month guide</span>
+          <span class="article-item__meta">8 min read · Destination guides</span>
+        </a>
+      </article>
+      <article class="article-item">
+        <a href="/journal/is-bhutan-worth-visiting/">
+          <span class="article-item__cat">Bhutan · Culture</span>
+          <span class="article-item__title">Is Bhutan worth visiting? An honest guide for American travelers</span>
+          <span class="article-item__meta">6 min read · Destination guides</span>
+        </a>
+      </article>
+      <article class="article-item">
+        <a href="/journal/kerala-ayurveda-retreats/">
+          <span class="article-item__cat">Kerala · Wellness</span>
+          <span class="article-item__title">Kerala Ayurveda retreats — what to know before you go</span>
+          <span class="article-item__meta">7 min read · Wellness travel</span>
+        </a>
+      </article>
+      <article class="article-item">
+        <a href="/journal/nepal-trekking-guide/">
+          <span class="article-item__cat">Nepal · Adventure</span>
+          <span class="article-item__title">Trekking in Nepal — a first-timer's guide from the US</span>
+          <span class="article-item__meta">9 min read · Trekking guides</span>
+        </a>
+      </article>
+    </div>
+
+    <!-- Podcast Column -->
+    <div class="journal__podcast">
+      <p class="journal__section-label">The AndThen podcast</p>
+
+      <div class="pod-featured">
+        <div class="pod-featured__label">
+          <span class="pod-featured__dot"></span>
+          Latest episode
+        </div>
+        <p class="pod-featured__title">Varanasi at dawn — why India's most sacred city changed everything</p>
+        <p class="pod-featured__desc">A conversation on travel, spirituality and what it means to truly arrive somewhere. With Syam and a long-time AndThen traveler.</p>
+
+        <div class="pod-player">
+          <!-- DEVELOPER: Wire onclick to your audio player (Spotify embed, custom HTML5 audio, etc.) -->
+          <button class="pod-player__btn" aria-label="Play episode: Varanasi at dawn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <div class="pod-waveform" aria-hidden="true">
+            <!-- Played portion -->
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:8px"></div>
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:14px"></div>
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:18px"></div>
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:12px"></div>
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:20px"></div>
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:10px"></div>
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:16px"></div>
+            <div class="pod-waveform__bar pod-waveform__bar--played" style="height:8px"></div>
+            <!-- Unplayed portion -->
+            <div class="pod-waveform__bar" style="height:14px"></div>
+            <div class="pod-waveform__bar" style="height:20px"></div>
+            <div class="pod-waveform__bar" style="height:10px"></div>
+            <div class="pod-waveform__bar" style="height:18px"></div>
+            <div class="pod-waveform__bar" style="height:8px"></div>
+            <div class="pod-waveform__bar" style="height:16px"></div>
+            <div class="pod-waveform__bar" style="height:12px"></div>
+            <div class="pod-waveform__bar" style="height:20px"></div>
+            <div class="pod-waveform__bar" style="height:8px"></div>
+            <div class="pod-waveform__bar" style="height:14px"></div>
+            <div class="pod-waveform__bar" style="height:18px"></div>
+            <div class="pod-waveform__bar" style="height:10px"></div>
+          </div>
+          <span class="pod-player__time">34 min</span>
+        </div>
+      </div>
+
+      <div class="pod-list">
+        <div class="pod-list__item">
+          <span class="pod-list__num">02</span>
+          <div class="pod-list__info">
+            <span class="pod-list__title">Tiger country — what a safari in Ranthambore is really like</span>
+            <span class="pod-list__meta">Wildlife · 28 min</span>
+          </div>
+          <span class="pod-list__play" aria-hidden="true">▶</span>
+        </div>
+        <div class="pod-list__item">
+          <span class="pod-list__num">03</span>
+          <div class="pod-list__info">
+            <span class="pod-list__title">The road to Bhutan — the world's most mindful destination</span>
+            <span class="pod-list__meta">Destinations · 41 min</span>
+          </div>
+          <span class="pod-list__play" aria-hidden="true">▶</span>
+        </div>
+        <div class="pod-list__item">
+          <span class="pod-list__num">04</span>
+          <div class="pod-list__info">
+            <span class="pod-list__title">Ayurveda for sceptics — what 14 days in Kerala actually does</span>
+            <span class="pod-list__meta">Wellness · 36 min</span>
+          </div>
+          <span class="pod-list__play" aria-hidden="true">▶</span>
+        </div>
+      </div>
+
+      <div class="pod-links">
+        <a href="/journal/podcast/">All episodes</a>
+        <a href="https://open.spotify.com" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://podcasts.apple.com" target="_blank" rel="noopener">Apple Podcasts</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRIZE / GUARANTEED GIFT
+     DEVELOPER: Wire "Reveal my gift" button to the scratch card widget
+     (see separate prize-widget.html file)
+═══════════════════════════════════════════════════════════ -->
+<section class="prize" aria-label="Guaranteed travel gift">
+  <div>
+    <span class="eyebrow prize__eyebrow">A gift for every journey</span>
+    <h2 class="prize__heading">Every enquiry wins a guaranteed travel gift</h2>
+    <p class="prize__body">Submit your travel interest and scratch to reveal your guaranteed gift — redeemed when you travel with us. No lottery. No catch. Our way of saying thank you.</p>
+    <!-- DEVELOPER: onclick opens prize-widget modal or navigates to /contact/#prize -->
+    <button class="prize__btn" onclick="window.location.href='/contact/'">Reveal my gift</button>
+  </div>
+
+  <div class="prize__items">
+    <div class="prize-item">
+      <span class="prize-item__icon">☽</span>
+      <span class="prize-item__label">1 night · Kerala heritage stay</span>
+    </div>
+    <div class="prize-item">
+      <span class="prize-item__icon">⌂</span>
+      <span class="prize-item__label">Taj hotel accommodation voucher</span>
+    </div>
+    <div class="prize-item">
+      <span class="prize-item__icon">⬡</span>
+      <span class="prize-item__label">Fujifilm camera, shipped to you</span>
+    </div>
+    <div class="prize-item">
+      <span class="prize-item__icon">◈</span>
+      <span class="prize-item__label">$200 AndThen travel credit</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SIGNATURE EXPERIENCES
+     DEVELOPER: Each .sig-card__image div should become <img>
+     Badge type (fixed/private) is set per trip — update as needed
+     Prices and departure dates to be updated per season
+═══════════════════════════════════════════════════════════ -->
+<section class="signature" aria-label="Signature experiences">
+  <div class="signature__header">
+    <div>
+      <span class="eyebrow">Signature experiences</span>
+      <h2 class="signature__heading">Journeys led by the extraordinary</h2>
+    </div>
+    <div class="signature__header-right">
+      <p class="signature__intro">A curated series of expert-led journeys — small groups, rare access, and the company of people who have devoted their lives to their craft.</p>
+      <a href="/signature-experiences/" class="text-link text-link--muted">All signature experiences</a>
+    </div>
+  </div>
+
+  <div class="sig-cards">
+
+    <!-- Culinary Trail -->
+    <article class="sig-card">
+      <div class="sig-card__image sig-card__image--culinary">
+        <span class="sig-card__badge sig-card__badge--fixed">Fixed departures</span>
+        <!-- DEVELOPER: <img src="images/signature/culinary-trail-india.jpg" alt="Culinary Trail with Chef Bobby Geetha"> -->
+        <span>Culinary photography</span>
+      </div>
+      <div class="sig-card__body">
+        <span class="sig-card__category">India · Culinary</span>
+        <h3 class="sig-card__title">Culinary Trail with Chef Bobby Geetha</h3>
+        <span class="sig-card__expert">Led by Chef Bobby Geetha</span>
+        <p class="sig-card__desc">An intimate culinary journey through India's most storied food cultures — spice markets, home kitchens, heritage recipes and private cooking sessions with one of the UK's most celebrated Indian chefs.</p>
+        <div class="sig-card__meta">
+          <div>
+            <span class="sig-card__dates">Next departure · Oct 2026</span>
+            <span class="sig-card__price-label">From</span>
+            <span class="sig-card__price">$6,800 per person</span>
+          </div>
+          <span class="sig-card__link">View experience →</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Art of Feeling Well -->
+    <article class="sig-card">
+      <div class="sig-card__image sig-card__image--wellness">
+        <span class="sig-card__badge sig-card__badge--fixed">Fixed departures</span>
+        <!-- DEVELOPER: <img src="images/signature/art-of-feeling-well.jpg" alt="The Art of Feeling Well with Methil Devika"> -->
+        <span>Wellness photography</span>
+      </div>
+      <div class="sig-card__body">
+        <span class="sig-card__category">India · Wellness &amp; Movement</span>
+        <h3 class="sig-card__title">The Art of Feeling Well with Methil Devika</h3>
+        <span class="sig-card__expert">Led by Methil Devika</span>
+        <p class="sig-card__desc">A transformative wellness journey through India with one of its most celebrated classical dancers and wellness practitioners — exploring movement, breath, Ayurveda and the deep traditions of Indian well-being.</p>
+        <div class="sig-card__meta">
+          <div>
+            <span class="sig-card__dates">Next departure · Nov 2026</span>
+            <span class="sig-card__price-label">From</span>
+            <span class="sig-card__price">$5,900 per person</span>
+          </div>
+          <span class="sig-card__link">View experience →</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Golf Trail -->
+    <article class="sig-card">
+      <div class="sig-card__image sig-card__image--golf">
+        <span class="sig-card__badge sig-card__badge--private">Private group</span>
+        <!-- DEVELOPER: <img src="images/signature/india-golf-trail.jpg" alt="The India Golf Trail"> -->
+        <span>Golf photography</span>
+      </div>
+      <div class="sig-card__body">
+        <span class="sig-card__category">India · Golf</span>
+        <h3 class="sig-card__title">The India Golf Trail</h3>
+        <span class="sig-card__expert">Curated by AndThen</span>
+        <p class="sig-card__desc">India's most scenic and storied golf courses, played privately. From the colonial heritage courses of Kolkata and Delhi to the hill station greens of Ooty and Coorg — a golfing journey unlike any other.</p>
+        <div class="sig-card__meta">
+          <div>
+            <span class="sig-card__dates">Private · Departs on request</span>
+            <span class="sig-card__price-label">From</span>
+            <span class="sig-card__price">$7,200 per person</span>
+          </div>
+          <span class="sig-card__link">View experience →</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="sig-note">
+    <p class="sig-note__text">Signature experiences run as <strong>fixed small-group departures</strong> (max 10 guests) or as <strong>fully private journeys</strong> for your group. Contact us to discuss either format.</p>
+    <a href="/contact/" class="text-link text-link--muted">Enquire about a signature experience</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+     DEVELOPER: Pull dynamically from WordPress reviews/testimonials CPT
+     Add Review schema markup via RankMath
+═══════════════════════════════════════════════════════════ -->
+<section class="testimonials" aria-label="Testimonials">
+  <div class="testimonials__header">
+    <div>
+      <span class="eyebrow">Traveller stories</span>
+      <h2 class="testimonials__heading">In their words</h2>
+    </div>
+    <a href="/testimonials/" class="text-link">All reviews</a>
+  </div>
+
+  <div class="testi-grid">
+    <article class="testi-card">
+      <div class="testi-card__rule"></div>
+      <blockquote class="testi-card__quote">"AndThen gave us an India we never could have found on our own. Every detail was flawless — the hotels, the guides, the pacing. Truly life-changing."</blockquote>
+      <span class="testi-card__name">Margaret &amp; Tom H.</span>
+      <span class="testi-card__trip">Golden Triangle · New York</span>
+    </article>
+    <article class="testi-card">
+      <div class="testi-card__rule"></div>
+      <blockquote class="testi-card__quote">"Bhutan was unlike anything we'd ever experienced. Our specialist thought of everything. We felt completely cared for at every step."</blockquote>
+      <span class="testi-card__name">David L.</span>
+      <span class="testi-card__trip">Best of Bhutan · California</span>
+    </article>
+    <article class="testi-card">
+      <div class="testi-card__rule"></div>
+      <blockquote class="testi-card__quote">"The Kerala Ayurveda experience was genuinely transformative. AndThen curated exactly the right properties. I will absolutely return."</blockquote>
+      <span class="testi-card__name">Sarah K.</span>
+      <span class="testi-card__trip">Simply South · Texas</span>
+    </article>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ
+     DEVELOPER: JS accordion below toggles .faq-open class
+     Replace with WordPress accordion plugin if preferred
+═══════════════════════════════════════════════════════════ -->
+<section class="faq" aria-label="Frequently asked questions">
+  <div class="faq__inner">
+    <span class="eyebrow">Questions answered</span>
+    <h2 class="faq__heading">Things people ask</h2>
+
+    <div class="faq-item" id="faq-1">
+      <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-1-answer">
+        <span class="faq-item__question">How far ahead should I plan my trip?</span>
+        <span class="faq-item__icon" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-item__answer" id="faq-1-answer">We recommend enquiring 3–6 months ahead for October–March travel. That said, we can often move quickly — just reach out and we'll tell you what's possible.</p>
+    </div>
+
+    <div class="faq-item" id="faq-2">
+      <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-2-answer">
+        <span class="faq-item__question">Are your journeys truly private?</span>
+        <span class="faq-item__icon" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-item__answer" id="faq-2-answer">Always. Every AndThen journey is 100% private. You will never share a vehicle, guide or experience with other travelers.</p>
+    </div>
+
+    <div class="faq-item" id="faq-3">
+      <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-3-answer">
+        <span class="faq-item__question">Can I customise an existing itinerary?</span>
+        <span class="faq-item__icon" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-item__answer" id="faq-3-answer">Every itinerary is a starting point. We build your final journey around your interests, pace and travel style — at no additional consultation charge.</p>
+    </div>
+
+    <div class="faq-item" id="faq-4">
+      <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-4-answer">
+        <span class="faq-item__question">Do you handle visas and permits?</span>
+        <span class="faq-item__icon" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-item__answer" id="faq-4-answer">We provide full guidance on US citizen visa applications for all four destinations. For Bhutan, we handle the special tourism permit entirely on your behalf.</p>
+    </div>
+
+    <div class="faq-item" id="faq-5">
+      <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-5-answer">
+        <span class="faq-item__question">What is included in the price?</span>
+        <span class="faq-item__icon" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-item__answer" id="faq-5-answer">All prices include private guiding, all internal transfers and ground transportation, handpicked hotel accommodation, and 24-hour dedicated support throughout your journey. International flights are not included.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__top">
+    <div>
+      <a href="/" aria-label="AndThen Travels — Home">
+        <span class="footer__logo-wordmark">ANDTHEN</span>
+        <span class="footer__logo-sub">travels</span>
+      </a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka for discerning US travelers.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+18000000000">+1 800 000 0000</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <span class="footer__col-heading">Destinations</span>
+      <a href="/india/">India</a>
+      <a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a>
+      <a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+
+    <div class="footer__col">
+      <span class="footer__col-heading">Experiences</span>
+      <a href="/experiences/wellness-ayurveda/">Wellness &amp; Ayurveda</a>
+      <a href="/experiences/wildlife-safaris/">Wildlife &amp; Safaris</a>
+      <a href="/experiences/trekking-adventure/">Trekking</a>
+      <a href="/experiences/spiritual-journeys/">Spiritual journeys</a>
+      <a href="/experiences/leisure-culture/">Leisure &amp; culture</a>
+    </div>
+
+    <div class="footer__col">
+      <span class="footer__col-heading">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/places-to-stay/">Places to stay</a>
+      <a href="/journal/">Journal</a>
+      <a href="/journal/podcast/">Podcast</a>
+      <a href="/contact/">Contact</a>
+      <a href="/login/">Agent login</a>
+      <a href="/privacy-policy/">Privacy policy</a>
+      <a href="/terms-and-conditions/">Terms &amp; conditions</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · GST 32AAHCK6672N1Z1 · India &amp; USA</p>
+    <div class="footer__social" aria-label="Social media links">
+      <a href="https://instagram.com/andthentravels" target="_blank" rel="noopener" aria-label="Instagram">
+        <span class="footer__social-icon" aria-hidden="true">&#9632;</span>
+      </a>
+      <a href="https://facebook.com/andthentravels" target="_blank" rel="noopener" aria-label="Facebook">
+        <span class="footer__social-icon" aria-hidden="true">&#9633;</span>
+      </a>
+      <a href="https://linkedin.com/company/andthentravels" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <span class="footer__social-icon" aria-hidden="true">&#9671;</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+     DEVELOPER NOTES:
+     - FAQ accordion: vanilla JS, no dependencies
+     - Mobile nav: add styles for .nav--open in CSS
+     - Replace with WordPress-compatible JS if needed
+═══════════════════════════════════════════════════════════ -->
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-item__trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var isOpen = item.classList.contains('faq-open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(i) {
+        i.classList.remove('faq-open');
+        i.querySelector('.faq-item__trigger').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked (if wasn't open)
+      if (!isOpen) {
+        item.classList.add('faq-open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Mobile Nav Toggle
+  var hamburger = document.getElementById('hamburger');
+  var navLinks  = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+      navLinks.style.display = expanded ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '68px';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.background = 'var(--cw)';
+      navLinks.style.padding = '1.5rem 2.5rem';
+      navLinks.style.borderBottom = '0.5px solid rgba(200,180,154,0.3)';
+      navLinks.style.gap = '1.25rem';
+      navLinks.style.zIndex = '99';
+    });
+  }
+
+  // Nav scroll effect
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) {
+      nav.style.boxShadow = '0 1px 0 rgba(200,180,154,0.15)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

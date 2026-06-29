@@ -1,0 +1,536 @@
+/* Places to Stay listing CSS Modules styles */
+
+.staysPage {
+  min-height: 100vh;
+  background: var(--cr, #FFFFFF);
+  color: var(--cd, #2C1A0A);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #3A2010 0%, #2C1A0A 55%, #1A1010 100%);
+  background-size: cover;
+  background-position: center;
+}
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(44,26,10,0.78) 0%, rgba(44,26,10,0.25) 65%, rgba(44,26,10,0.05) 100%);
+}
+.heroContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 2.5rem 3.5rem;
+  max-width: 680px;
+}
+.heroKicker {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 1rem;
+}
+.heroTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 400;
+  color: var(--cr, #FFFFFF);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.heroTitle em {
+  font-style: italic;
+  color: var(--cb, #A07848);
+}
+.heroDesc {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.6);
+  line-height: 1.9;
+  max-width: 460px;
+}
+
+/* Editorial Note */
+.editorialNote {
+  background: var(--cd, #2C1A0A);
+  padding: 1.625rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+}
+.enRule {
+  width: 1.5rem;
+  height: 0.5px;
+  background: var(--cb, #A07848);
+  flex-shrink: 0;
+}
+.enText {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.45);
+  line-height: 1.85;
+  max-width: 680px;
+}
+.enText strong {
+  color: rgba(200,180,154,0.75);
+  font-weight: 400;
+}
+
+/* Filter Bar */
+.filterBar {
+  background: var(--cp, #F5EFE8);
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  display: flex;
+  align-items: center;
+  padding: 0 2.5rem;
+  height: 50px;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+}
+.filterBar::-webkit-scrollbar {
+  display: none;
+}
+.fLabel {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+}
+.fBtn {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cm, #6B4C2A);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 1.125rem;
+  height: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.fBtn:hover {
+  color: var(--cd, #2C1A0A);
+}
+.fBtnActive {
+  color: var(--cd, #2C1A0A) !important;
+  border-bottom-color: var(--cb, #A07848) !important;
+}
+.fSep {
+  width: 0.5px;
+  height: 14px;
+  background: rgba(200,180,154,0.2);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Destination Section */
+.destSection {
+  padding: 3.5rem 2.5rem 0;
+}
+.destSection.hidden {
+  display: none;
+}
+
+.destHead {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.25);
+}
+.destHeadLeft {
+  flex: 1;
+}
+.destHeadDest {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.destHeadName {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+  line-height: 1.1;
+}
+.destHeadName em {
+  font-style: italic;
+}
+.destHeadRight {
+  text-align: right;
+  flex-shrink: 0;
+}
+.destHeadCount {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+  display: block;
+  line-height: 1;
+}
+.destHeadCountLabel {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  display: block;
+  margin-top: 3px;
+}
+
+/* Hotel Grid */
+.hotelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(44,26,10,0.07);
+  margin-bottom: 4rem;
+}
+
+/* Hotel Card */
+.hc {
+  background: var(--cr, #FFFFFF);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.25s ease;
+  height: 100%;
+}
+.hc:hover {
+  background: var(--cp, #F5EFE8);
+}
+.hc.hidden {
+  display: none;
+}
+
+.hcImgWrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Ratio */
+}
+.hcImgPh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hcImgWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.5) 0%, transparent 50%);
+}
+
+.hcType {
+  position: absolute;
+  top: 0.875rem;
+  left: 0.875rem;
+  z-index: 2;
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  background: var(--cb, #A07848);
+  color: var(--cr, #FFFFFF);
+  padding: 3px 9px;
+}
+.hcPick {
+  position: absolute;
+  top: 0.875rem;
+  right: 0.875rem;
+  z-index: 2;
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  background: var(--cr, #FFFFFF);
+  color: var(--cd, #2C1A0A);
+  padding: 3px 9px;
+  font-weight: 500;
+}
+
+.hcBody {
+  padding: 1.25rem 1.375rem 1.625rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.hcLocation {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.hcName {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+  line-height: 1.25;
+  margin-bottom: 0.625rem;
+}
+.hcWhy {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  line-height: 1.8;
+  margin-bottom: 1.125rem;
+  flex: 1;
+}
+.hcTags {
+  display: flex;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.125rem;
+}
+.hcTag {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--cm, #6B4C2A);
+  border: 0.5px solid rgba(200,180,154,0.35);
+  padding: 3px 8px;
+}
+.hcFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.hcLink {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease;
+}
+.hcLinkLine {
+  width: 10px;
+  height: 0.5px;
+  background: currentColor;
+}
+.hc:hover .hcLink {
+  color: var(--cb, #A07848);
+}
+
+/* Featured Card */
+.hcFeatured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hcFeatured .hcImgWrap {
+  padding-top: 0;
+  min-height: 380px;
+  position: relative;
+  height: 100%;
+}
+.hcFeatured .hcBody {
+  padding: 2.5rem 2.75rem;
+  justify-content: center;
+}
+.hcFeatured .hcName {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.hcFeatured .hcWhy {
+  font-size: 0.8125rem;
+  line-height: 2;
+}
+
+/* Section Divider */
+.sectionGap {
+  height: 0.5px;
+  background: rgba(200,180,154,0.2);
+  margin: 0 2.5rem;
+}
+
+/* Colored placeholder tones */
+.hiIndiaPalace  { background: linear-gradient(135deg, #3A1808 0%, #1A0A02 100%); }
+.hiIndiaWild    { background: linear-gradient(135deg, #201808 0%, #0E0A02 100%); }
+.hiIndiaKerala  { background: linear-gradient(135deg, #082028 0%, #020C10 100%); }
+.hiIndiaCoast   { background: linear-gradient(135deg, #083040 0%, #02121A 100%); }
+.hiIndiaDesert  { background: linear-gradient(135deg, #281808 0%, #120A02 100%); }
+.hiIndiaHill    { background: linear-gradient(135deg, #0E2810 0%, #051006 100%); }
+.hiBhutan        { background: linear-gradient(135deg, #142810 0%, #071006 100%); }
+.hiNepalCity    { background: linear-gradient(135deg, #0E1A38 0%, #050A18 100%); }
+.hiNepalWild    { background: linear-gradient(135deg, #102010 0%, #050A05 100%); }
+.hiSrilankaHist { background: linear-gradient(135deg, #083040 0%, #02121A 100%); }
+.hiSrilankaWild { background: linear-gradient(135deg, #102010 0%, #050A05 100%); }
+.hiSrilankaTea  { background: linear-gradient(135deg, #0E2010 0%, #050A05 100%); }
+.hiSrilankaSea  { background: linear-gradient(135deg, #082838 0%, #020F18 100%); }
+
+/* Enquiry Strip */
+.enquiryStrip {
+  background: var(--cd, #2C1A0A);
+  padding: 4rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+.esTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr, #FFFFFF);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.esSub {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.4);
+  line-height: 1.8;
+  max-width: 520px;
+}
+.esBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 200px;
+}
+.btnGold {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cb, #A07848);
+  color: var(--cr, #FFFFFF);
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.25s ease;
+}
+.btnGold:hover {
+  background: var(--ci, #3A2010);
+}
+.btnGhost {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(200,180,154,0.4);
+  border: 0.5px solid rgba(200,180,154,0.15);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.btnGhost:hover {
+  color: rgba(200,180,154,0.8);
+  border-color: rgba(200,180,154,0.35);
+}
+
+/* No Results */
+.noResults {
+  padding: 4rem 2.5rem;
+  text-align: center;
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  color: var(--cm, #6B4C2A);
+}
+.noResults a {
+  color: var(--cb, #A07848);
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .hotelGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hcFeatured {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+  }
+  .hcFeatured .hcImgWrap {
+    min-height: 280px;
+    padding-top: 0;
+  }
+  .hcFeatured .hcBody {
+    padding: 2rem;
+  }
+  .enquiryStrip {
+    grid-template-columns: 1fr;
+  }
+  .esBtns {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 420px;
+  }
+  .hotelGrid {
+    grid-template-columns: 1fr;
+  }
+  .hcFeatured {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+  }
+  .editorialNote {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .destHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .destHeadRight {
+    text-align: left;
+  }
+  .esBtns {
+    flex-direction: column;
+  }
+}

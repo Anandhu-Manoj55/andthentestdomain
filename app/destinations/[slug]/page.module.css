@@ -1,0 +1,1099 @@
+/* ── DESTINATION SUB-PAGE — page.module.css ─────────────────────── */
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  background: var(--ci);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(42, 36, 32, 0.92) 0%,
+      rgba(42, 36, 32, 0.45) 45%,
+      rgba(42, 36, 32, 0.08) 100%);
+}
+
+.heroImageBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 35%;
+  background-color: var(--ci);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 0 2.5rem 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.heroContentLeft {
+  max-width: 540px;
+}
+
+.heroDestLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 0.95;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.heroTagline {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200, 180, 154, 0.55);
+  letter-spacing: 0.08rem;
+  line-height: 1.9;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+.heroPills {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.heroPill {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  border: 0.5px solid rgba(200, 180, 154, 0.25);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0.3125rem 0.75rem;
+}
+
+.heroStats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.heroStat {
+  text-align: right;
+}
+
+.heroStatValue {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--cr);
+  display: block;
+}
+
+.heroStatLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(200, 180, 154, 0.3);
+  display: block;
+  margin-top: 2px;
+}
+
+.heroScroll {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.heroScrollLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: rgba(200, 180, 154, 0.25);
+  writing-mode: vertical-rl;
+}
+
+.heroScrollLine {
+  width: 0.5px;
+  height: 48px;
+  background: rgba(200, 180, 154, 0.15);
+}
+
+/* JUMP NAVIGATION */
+.jumpNav {
+  background: var(--cp);
+  border-bottom: 0.5px solid rgba(200, 180, 154, 0.3);
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  height: 48px;
+  position: sticky;
+  top: 68px;
+  z-index: 99;
+  overflow-x: auto;
+}
+
+.jumpNavLink {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  white-space: nowrap;
+  padding-bottom: 2px;
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.jumpNavLink:hover {
+  color: var(--cd);
+}
+
+.jumpNavLinkActive {
+  color: var(--cd);
+  border-bottom: 0.5px solid var(--cb);
+}
+
+/* ABOUT SECTION */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+
+.aboutText {
+  padding: 5rem 3.5rem 5rem 2.5rem;
+  border-right: 0.5px solid rgba(200, 180, 154, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutPull {
+  background: var(--cp);
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutQuote {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.3125rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.7;
+  margin-bottom: 1.375rem;
+}
+
+.aboutCite {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  font-style: normal;
+}
+
+.aboutFacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.2);
+  margin-top: 2.5rem;
+}
+
+.fact {
+  background: var(--cp);
+  padding: 1.375rem 1.125rem;
+}
+
+.factValue {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.625rem;
+  font-weight: 400;
+  color: var(--cd);
+  display: block;
+}
+
+.factLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  margin-top: 3px;
+  display: block;
+}
+
+/* REGIONS */
+.regions {
+  background: var(--cd);
+  padding: 5rem 2.5rem;
+}
+
+.regionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(200, 180, 154, 0.08);
+}
+
+.regionsIntro {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200, 180, 154, 0.38);
+  line-height: 1.9;
+  max-width: 320px;
+  text-align: right;
+}
+
+.regionsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.06);
+}
+
+.regionCard {
+  background: var(--ci);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.regionCard:hover {
+  background: #3A2010;
+}
+
+.rcImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.125rem;
+}
+
+.rcImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 8, 0.7) 0%, rgba(20, 14, 8, 0) 55%);
+}
+
+.rcImageBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* fallback tones */
+.rciNorth {
+  background-color: #4A2808;
+}
+
+.rciSouth {
+  background-color: #082838;
+}
+
+.rciCentral {
+  background-color: #0E2810;
+}
+
+.rciNortheast {
+  background-color: #1A1030;
+}
+
+.rcImageName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.625rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.05;
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+}
+
+.rcBody {
+  padding: 1.5rem 1.5rem 1.875rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-top: 0.5px solid rgba(200, 180, 154, 0.07);
+}
+
+.rcDesc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: rgba(200, 180, 154, 0.42);
+  line-height: 1.9;
+  margin-bottom: 1.125rem;
+  flex: 1;
+}
+
+.rcTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 1.25rem;
+}
+
+.rcTag {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(200, 180, 154, 0.3);
+  border: 0.5px solid rgba(200, 180, 154, 0.1);
+  padding: 4px 9px;
+  transition: all var(--transition);
+}
+
+.regionCard:hover .rcTag {
+  color: rgba(200, 180, 154, 0.6);
+  border-color: rgba(200, 180, 154, 0.25);
+}
+
+.rcLink {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: rgba(200, 180, 154, 0.22);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition);
+  margin-top: auto;
+}
+
+.rcLinkLine {
+  width: 14px;
+  height: 0.5px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.regionCard:hover .rcLink {
+  color: var(--cb);
+}
+
+/* POPULAR PLACES */
+.places {
+  background: var(--cr);
+  padding: 5rem 2.5rem;
+}
+
+.placesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.placesGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.2);
+}
+
+.placesRight {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.2);
+}
+
+.placeCardFeature {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+}
+
+.pcImageFeature {
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ci);
+}
+
+.pcImageFeature::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 8, 0.6) 0%, transparent 50%);
+}
+
+.pcImageBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.pcBody {
+  padding: 1.375rem 1.5rem 1.75rem;
+}
+
+.pcRegion {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+
+.pcName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 0.375rem;
+}
+
+.pcDesc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.85;
+}
+
+.placeCardSmall {
+  background: var(--cr);
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  transition: background var(--transition);
+}
+
+.placeCardSmall:hover {
+  background: var(--cp);
+}
+
+.pcImageSmall {
+  height: 100%;
+  min-height: 130px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ci);
+}
+
+.pcImageSmall::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 8, 0.5) 0%, transparent 60%);
+}
+
+.placesBottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.2);
+}
+
+.placeCardBottom {
+  background: var(--cr);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  transition: background var(--transition);
+}
+
+.placeCardBottom:hover {
+  background: var(--cp);
+}
+
+.pcImageBottom {
+  height: 100%;
+  min-height: 150px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ci);
+}
+
+.pcImageBottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 8, 0.5) 0%, transparent 60%);
+}
+
+/* HOTELS */
+.hotels {
+  background: var(--cp);
+  padding: 5rem 2.5rem;
+}
+
+.hotelsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.hotelsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.2);
+}
+
+.hotelCard {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background var(--transition);
+  text-decoration: none;
+  color: inherit;
+}
+
+.hotelCard:hover {
+  background: var(--cp);
+}
+
+.hcImage {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ci);
+}
+
+.hcImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 8, 0.5) 0%, transparent 55%);
+}
+
+.hcImageBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.hcBody {
+  padding: 1.25rem 1.25rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hcRegion {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.hcName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.hcLocation {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--cm);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.hcLink {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  transition: color var(--transition);
+  display: inline-block;
+}
+
+.hotelCard:hover .hcLink {
+  color: var(--cb);
+}
+
+/* BEST TIME */
+.bestTime {
+  background: var(--cr);
+  padding: 5rem 2.5rem;
+}
+
+.bestTimeInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.monthGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.2);
+  margin-top: 1.5rem;
+}
+
+.monthCell {
+  background: var(--cr);
+  padding: 0.5625rem 0.25rem;
+  text-align: center;
+}
+
+.monthCellPeak {
+  background: var(--cb);
+}
+
+.monthCellGood {
+  background: var(--cs);
+}
+
+.monthLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--cd);
+}
+
+.monthCellPeak .monthLabel,
+.monthCellGood .monthLabel {
+  color: var(--cr);
+}
+
+.legend {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.875rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  color: var(--cm);
+}
+
+.legendSwatch {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.seasons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(200, 180, 154, 0.2);
+  margin-top: 1.5rem;
+}
+
+.seasonCard {
+  background: var(--cr);
+  padding: 1.5rem;
+}
+
+.seasonCard:nth-child(even) {
+  background: var(--cp);
+}
+
+.seasonName {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+
+.seasonMonths {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--cd);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.seasonDesc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.85;
+}
+
+/* ITINERARIES */
+.itineraries {
+  background: var(--cp);
+  padding: 5rem 2.5rem;
+}
+
+.itinsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(200, 180, 154, 0.3);
+}
+
+.itinRow {
+  display: grid;
+  grid-template-columns: 160px 1fr 110px 120px 64px;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.375rem 0;
+  border-bottom: 0.5px solid rgba(200, 180, 154, 0.22);
+  cursor: pointer;
+  transition: background var(--transition), padding-left var(--transition);
+  text-decoration: none;
+  color: inherit;
+}
+
+.itinRow:hover {
+  background: rgba(200, 180, 154, 0.12);
+  padding-left: 0.75rem;
+}
+
+.irImage {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ci);
+}
+
+.irImageBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.irName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--cd);
+  display: block;
+}
+
+.irDest {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  margin-top: 3px;
+  display: block;
+}
+
+.irNights {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--cm);
+}
+
+.irPrice {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8125rem;
+  color: var(--cd);
+}
+
+.irLink {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  text-align: right;
+  transition: color var(--transition);
+}
+
+.itinRow:hover .irLink {
+  color: var(--cb);
+}
+
+/* CTA BAND */
+.ctaBand {
+  background: var(--cb);
+  padding: 4.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.ctaBandHeading {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.625rem, 2.5vw, 2.125rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.ctaBandSub {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.ctaBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 210px;
+}
+
+.btnPrimary {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cd);
+  color: var(--cr);
+  border: none;
+  padding: 1rem 1.5rem;
+  transition: background var(--transition);
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.btnPrimary:hover {
+  background: var(--ci);
+}
+
+.btnSecondary {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  padding: 1rem 1.5rem;
+  transition: border-color var(--transition), color var(--transition);
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.btnSecondary:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .regionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hotelsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutText {
+    padding: 3.5rem 2.5rem;
+    border-right: none;
+    border-bottom: 0.5px solid rgba(200, 180, 154, 0.2);
+  }
+
+  .aboutPull {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .placesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .placesBottom {
+    grid-template-columns: 1fr;
+  }
+
+  .bestTimeInner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .itinRow {
+    grid-template-columns: 120px 1fr 90px;
+  }
+
+  .itinRow .irPrice,
+  .itinRow .irLink {
+    display: none;
+  }
+
+  .ctaBand {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBtns {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 480px;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .heroStats {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .heroStat {
+    text-align: left;
+  }
+
+  .heroScroll {
+    display: none;
+  }
+
+  .regionsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hotelsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .itinRow {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .itinRow .irNights {
+    display: none;
+  }
+
+  .aboutFacts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .placeCardSmall,
+  .placeCardBottom {
+    grid-template-columns: 1fr;
+  }
+
+  .pcImageSmall,
+  .pcImageBottom {
+    min-height: 180px;
+  }
+
+  .ctaBtns {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .regionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroStats {
+    gap: 1rem;
+  }
+}

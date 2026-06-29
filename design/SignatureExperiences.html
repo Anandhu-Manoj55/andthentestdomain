@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signature Experiences | AndThen Travels</title>
+<meta name="description" content="Three bespoke private group programmes — Art of Feeling Well, Plated South with Chef Bobby Geetha, and Fairways & Wonders India Golf Trail. Crafted by AndThen Travels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'DM Sans', Arial, sans-serif;
+  --tr: 0.25s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--fb); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; object-fit: cover; }
+
+/* ── NAV ──────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cr); height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.35);
+}
+.nav__logo-word { font-family: var(--fb); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); display: block; }
+.nav__logo-sub  { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); display: block; }
+.nav__links { display: flex; gap: 2.25rem; }
+.nav__links a { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); transition: color var(--tr); }
+.nav__links a:hover, .nav__links a.active { color: var(--cd); }
+.nav__cta { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cd); background: transparent; border: 0.5px solid var(--cd); padding: 0.625rem 1.375rem; cursor: pointer; transition: background var(--tr), color var(--tr); }
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__ham { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__ham span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── HERO ─────────────────────────────────────────── */
+/* DEVELOPER: add background-image:url('images/signature-hero.jpg') to .hero__bg */
+.hero {
+  position: relative; height: 560px; overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(150deg, #1A0E06 0%, #2C1A0A 50%, #3A2010 100%);
+}
+.hero__bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.88) 0%, rgba(44,26,10,0.35) 55%, rgba(44,26,10,0.08) 100%);
+}
+.hero__pills {
+  position: absolute; bottom: 3.5rem; right: 2.5rem; z-index: 2;
+  display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;
+}
+.hero__pill {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem;
+  text-transform: uppercase; color: rgba(200,180,154,0.4);
+  border: 0.5px solid rgba(200,180,154,0.12); padding: 5px 14px; white-space: nowrap;
+}
+.hero__content {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 2.5rem 3.5rem; max-width: 700px;
+}
+.hero__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1rem; }
+.hero__title { font-family: var(--fd); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: var(--cr); line-height: 1; margin-bottom: 1.125rem; }
+.hero__title em { font-style: italic; color: var(--cb); }
+.hero__desc { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(200,180,154,0.55); line-height: 1.9; max-width: 500px; }
+
+/* ── THREE PILLARS ────────────────────────────────── */
+.pillars {
+  background: var(--cp);
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background-color: rgba(200,180,154,0.2);
+  border-bottom: 0.5px solid rgba(200,180,154,0.25);
+}
+.pillar {
+  background: var(--cp); padding: 1.625rem 2rem;
+  display: flex; gap: 1.125rem; align-items: flex-start;
+}
+.pillar__rule { width: 1.5rem; height: 0.5px; background: var(--cb); margin-top: 0.5rem; flex-shrink: 0; }
+.pillar__title { font-family: var(--fb); font-size: 0.5625rem; font-weight: 500; color: var(--cd); margin-bottom: 0.375rem; }
+.pillar__text { font-family: var(--fb); font-size: 0.6875rem; font-weight: 300; color: var(--cm); line-height: 1.75; }
+
+/* ── EXPERIENCE BLOCK — full width, alternating ───── */
+.exp {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+}
+.exp--reverse { direction: rtl; }
+.exp--reverse > * { direction: ltr; }
+
+/* DEVELOPER: replace .exp__img-ph with <img src="..." alt="..."> */
+.exp__img-wrap { position: relative; overflow: hidden; }
+.exp__img-ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.exp__img-wrap::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.5) 0%, transparent 55%);
+}
+.exp__flag {
+  position: absolute; top: 1.5rem; left: 1.5rem; z-index: 2;
+  display: flex; gap: 0;
+}
+.exp__flag-type { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.15rem; text-transform: uppercase; background: var(--cb); color: var(--cr); padding: 4px 10px; }
+.exp__flag-nights { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem; text-transform: uppercase; background: rgba(44,26,10,0.6); color: rgba(200,180,154,0.7); padding: 4px 10px; }
+.exp__num { position: absolute; bottom: 1.5rem; right: 1.5rem; z-index: 2; font-family: var(--fd); font-size: 5rem; font-weight: 300; color: rgba(255,255,255,0.07); line-height: 1; user-select: none; }
+
+.exp__body {
+  padding: 3.5rem 3.5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--cr);
+}
+.exp__index { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.75rem; }
+.exp__name { font-family: var(--fd); font-size: clamp(1.875rem, 3vw, 2.875rem); font-weight: 400; color: var(--cd); line-height: 1.1; margin-bottom: 0.375rem; }
+.exp__name em { font-style: italic; }
+.exp__subtitle { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: var(--cb); margin-bottom: 1.75rem; }
+.exp__rule { width: 1.5rem; height: 0.5px; background: var(--cs); margin-bottom: 1.75rem; }
+.exp__desc { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: var(--cm); line-height: 2.1; margin-bottom: 1.875rem; }
+
+/* Route strip */
+.exp__route {
+  display: flex; align-items: center; gap: 0;
+  background: var(--cp); margin-bottom: 1.875rem;
+  padding: 0.875rem 1rem; overflow-x: auto; scrollbar-width: none;
+}
+.exp__route::-webkit-scrollbar { display: none; }
+.exp__route-stop { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.1rem; text-transform: uppercase; color: var(--cm); white-space: nowrap; }
+.exp__route-stop strong { color: var(--cd); font-weight: 400; }
+.exp__route-nights { font-family: var(--fb); font-size: 0.4375rem; color: var(--cs); display: block; margin-top: 1px; }
+.exp__route-arrow { font-family: var(--fb); font-size: 0.5rem; color: rgba(200,180,154,0.3); padding: 0 0.625rem; flex-shrink: 0; }
+
+/* Details grid */
+.exp__details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(200,180,154,0.2); margin-bottom: 1.875rem; }
+.exp__detail { background: var(--cp); padding: 0.875rem 1rem; }
+.exp__detail-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cs); display: block; margin-bottom: 3px; }
+.exp__detail-value { font-family: var(--fb); font-size: 0.75rem; color: var(--cd); font-weight: 400; }
+
+/* Includes */
+.exp__includes { margin-bottom: 2.25rem; }
+.exp__includes-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cs); display: block; margin-bottom: 0.75rem; }
+.exp__includes ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1.5rem; }
+.exp__includes li { font-family: var(--fb); font-size: 0.625rem; font-weight: 300; color: var(--cm); display: flex; align-items: baseline; gap: 0.5rem; padding: 0.3rem 0; border-bottom: 0.5px solid rgba(200,180,154,0.12); }
+.exp__includes li::before { content: '—'; color: var(--cs); flex-shrink: 0; font-size: 0.5rem; }
+
+/* CTA row */
+.exp__cta { display: flex; align-items: center; gap: 1.25rem; }
+.exp__btn {
+  font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem;
+  text-transform: uppercase; background: var(--cd); color: var(--cr);
+  border: none; padding: 1rem 1.75rem; cursor: pointer; transition: background var(--tr);
+}
+.exp__btn:hover { background: var(--ci); }
+.exp__link {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.2rem;
+  text-transform: uppercase; color: var(--cs);
+  display: flex; align-items: center; gap: 7px; transition: color var(--tr);
+}
+.exp__link:hover { color: var(--cb); }
+.exp__link-line { width: 12px; height: 0.5px; background: currentColor; }
+
+/* ── SPECIALIST PROFILE ───────────────────────────── */
+/* Full-width dark strip with specialist bio, appears after their experience */
+.specialist {
+  background: var(--cd);
+  display: grid; grid-template-columns: 340px 1fr;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+}
+/* DEVELOPER: replace .sp__img-ph with <img src="..." alt="..."> — portrait photo */
+.sp__img-wrap { position: relative; overflow: hidden; min-height: 320px; }
+.sp__img-ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sp__img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, rgba(44,26,10,0.8)); }
+.sp__body { padding: 3rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+.sp__kicker { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.75rem; }
+.sp__name { font-family: var(--fd); font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 400; color: var(--cr); line-height: 1.1; margin-bottom: 0.375rem; }
+.sp__title { font-family: var(--fb); font-size: 0.6875rem; font-weight: 300; font-style: italic; color: var(--cb); margin-bottom: 1.5rem; }
+.sp__bio { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(200,180,154,0.5); line-height: 2; }
+.sp__awards { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.sp__award { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.1rem; text-transform: uppercase; color: rgba(200,180,154,0.3); border: 0.5px solid rgba(200,180,154,0.12); padding: 4px 10px; }
+
+/* ── COURSE CARD GRID — for golf courses ─────────── */
+.courses-section { background: var(--cp); padding: 3.5rem 2.5rem; border-bottom: 0.5px solid rgba(200,180,154,0.2); }
+.courses-head { margin-bottom: 2rem; }
+.courses-kicker { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.5rem; }
+.courses-title { font-family: var(--fd); font-size: clamp(1.375rem, 2vw, 1.875rem); font-weight: 400; color: var(--cd); }
+.courses-title em { font-style: italic; }
+.courses-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(200,180,154,0.2); }
+.course-card { background: var(--cr); padding: 1.5rem 1.375rem; display: flex; flex-direction: column; }
+.course-card__img-wrap { height: 140px; position: relative; overflow: hidden; margin: -1.5rem -1.375rem 1.25rem; }
+/* DEVELOPER: replace .cc__img-ph with <img> */
+.cc__img-ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cc__img-ph.golf-1 { background: #102010; }
+.cc__img-ph.golf-2 { background: #142810; }
+.cc__img-ph.golf-3 { background: #0E2010; }
+.cc__img-ph.golf-4 { background: #0A1808; }
+.course-card__img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(44,26,10,0.6) 0%, transparent 55%); }
+.course-card__designer { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.25rem; }
+.course-card__name { font-family: var(--fd); font-size: 1rem; font-weight: 400; color: var(--cd); line-height: 1.25; margin-bottom: 0.625rem; flex: 1; }
+.course-card__loc { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.12rem; text-transform: uppercase; color: var(--cs); }
+.course-card__desc { font-family: var(--fb); font-size: 0.625rem; font-weight: 300; color: var(--cm); line-height: 1.7; margin-top: 0.625rem; }
+
+/* ── STAYS STRIP ──────────────────────────────────── */
+/* Compact row showing hotels for each experience */
+.stays-strip {
+  background: var(--cd);
+  padding: 2rem 2.5rem;
+  display: flex; align-items: center; gap: 3rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+}
+.ss__label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.25rem; text-transform: uppercase; color: rgba(200,180,154,0.3); flex-shrink: 0; }
+.ss__hotels { display: flex; gap: 0; flex: 1; }
+.ss__hotel { flex: 1; border-right: 0.5px solid rgba(255,255,255,0.04); padding: 0 1.5rem; }
+.ss__hotel:first-child { padding-left: 0; }
+.ss__hotel:last-child { border-right: none; }
+.ss__city { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem; text-transform: uppercase; color: rgba(200,180,154,0.25); display: block; margin-bottom: 2px; }
+.ss__name { font-family: var(--fd); font-size: 0.9375rem; font-weight: 400; color: rgba(200,180,154,0.55); }
+
+/* ── HOW IT WORKS ─────────────────────────────────── */
+.how { background: var(--cp); padding: 5rem 2.5rem; border-top: 0.5px solid rgba(200,180,154,0.25); }
+.how__head { margin-bottom: 3.5rem; }
+.how__kicker { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.75rem; }
+.how__title { font-family: var(--fd); font-size: clamp(1.75rem, 2.5vw, 2.375rem); font-weight: 400; color: var(--cd); line-height: 1.15; }
+.how__title em { font-style: italic; }
+.how__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(200,180,154,0.2); }
+.how__step { background: var(--cr); padding: 2rem 1.75rem; }
+.how__step-num { font-family: var(--fd); font-size: 2.25rem; font-weight: 400; color: rgba(200,180,154,0.35); display: block; line-height: 1; margin-bottom: 1rem; }
+.how__step-title { font-family: var(--fb); font-size: 0.6875rem; font-weight: 500; color: var(--cd); margin-bottom: 0.5rem; }
+.how__step-text { font-family: var(--fb); font-size: 0.6875rem; font-weight: 300; color: var(--cm); line-height: 1.75; }
+
+/* ── FINAL CTA ────────────────────────────────────── */
+.final-cta { background: var(--cb); padding: 5rem 2.5rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+.fc__title { font-family: var(--fd); font-size: clamp(1.75rem, 3vw, 2.625rem); font-weight: 400; color: var(--cr); line-height: 1.1; margin-bottom: 0.625rem; }
+.fc__title em { font-style: italic; }
+.fc__sub { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.85; max-width: 500px; }
+.fc__btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 210px; }
+.btn-dark { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: var(--cd); color: var(--cr); border: none; padding: 1rem 1.5rem; cursor: pointer; transition: background var(--tr); }
+.btn-dark:hover { background: var(--ci); }
+.btn-ghost { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: transparent; color: rgba(255,255,255,0.45); border: 0.5px solid rgba(255,255,255,0.15); padding: 1rem 1.5rem; cursor: pointer; transition: all var(--tr); }
+.btn-ghost:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.35); }
+
+/* ── FOOTER ───────────────────────────────────────── */
+.footer { background: var(--ci); padding: 4.5rem 2.5rem 2.5rem; }
+.footer__grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+.footer__word { font-family: var(--fb); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__sub-word { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact a { display: block; font-family: var(--fb); font-size: 0.6875rem; color: var(--cb); margin-top: 0.75rem; }
+.footer__col-h { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 0.625rem; transition: color var(--tr); }
+.footer__col a:hover { color: var(--cb); }
+.footer__btm { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--fb); font-size: 0.5625rem; color: rgba(255,255,255,0.1); }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1100px) {
+  .exp__body { padding: 2.5rem 2rem; }
+  .exp__includes ul { grid-template-columns: 1fr; }
+  .courses-grid { grid-template-columns: repeat(2, 1fr); }
+  .how__steps { grid-template-columns: repeat(2, 1fr); }
+  .ss__hotels { flex-wrap: wrap; gap: 1rem; }
+}
+@media (max-width: 900px) {
+  .exp { grid-template-columns: 1fr; min-height: auto; }
+  .exp--reverse { direction: ltr; }
+  .exp__img-wrap { height: 340px; }
+  .exp__img-ph { position: absolute; }
+  .specialist { grid-template-columns: 280px 1fr; }
+  .pillars { grid-template-columns: 1fr; }
+  .final-cta { grid-template-columns: 1fr; }
+  .fc__btns { flex-direction: row; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .nav__links { display: none; }
+  .nav__ham { display: flex; }
+  .hero { height: 460px; }
+  .hero__pills { display: none; }
+  .specialist { grid-template-columns: 1fr; }
+  .sp__img-wrap { min-height: 260px; }
+  .courses-grid { grid-template-columns: 1fr; }
+  .how__steps { grid-template-columns: 1fr; }
+  .stays-strip { flex-direction: column; align-items: flex-start; }
+  .ss__hotels { flex-direction: column; }
+  .ss__hotel { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.04); padding: 0.75rem 0; }
+  .fc__btns { flex-direction: column; }
+  .footer__grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<nav class="nav" role="navigation">
+  <a href="/" aria-label="AndThen Travels">
+    <span class="nav__logo-word">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+  <div class="nav__links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/experiences/" class="active">Experiences</a>
+    <a href="/places-to-stay/">Places to stay</a>
+    <a href="/wellness/">Wellness</a>
+    <a href="/journal/">Journal</a>
+    <a href="/about/">About</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+918129271155" style="font-family:var(--fb);font-size:0.6875rem;color:var(--cb);">+91 8129 271 155</a>
+    <a href="/contact/"><button class="nav__cta">Plan my journey</button></a>
+    <button class="nav__ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<!-- DEVELOPER: background-image:url('images/signature-hero.jpg') on .hero__bg — suggest Mohiniyattam dancer or Kerala treatment hut at dusk -->
+<header class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__pills">
+    <span class="hero__pill">Art of Feeling Well · Kerala · Oct 2026</span>
+    <span class="hero__pill">Plated South · South India · On request</span>
+    <span class="hero__pill">Fairways &amp; Wonders · Golden Triangle · On request</span>
+  </div>
+  <div class="hero__content">
+    <span class="hero__kicker">Signature experiences — private group programmes</span>
+    <h1 class="hero__title">Journeys built<br>around a <em>single</em><br>shared passion.</h1>
+    <p class="hero__desc">Three specialist-led programmes — a wellness and classical arts retreat in Kerala, a South Indian culinary sojourn with a celebrated chef, and an elite golf journey through the Golden Triangle. Each runs privately for your group, on any dates, built entirely around who you are.</p>
+  </div>
+</header>
+
+<!-- ══ THREE PILLARS ══════════════════════════════════ -->
+<div class="pillars">
+  <div class="pillar">
+    <div class="pillar__rule"></div>
+    <div>
+      <p class="pillar__title">Fully private</p>
+      <p class="pillar__text">Every programme runs exclusively for your group — no shared itineraries, no other travellers.</p>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar__rule"></div>
+    <div>
+      <p class="pillar__title">Specialist-led</p>
+      <p class="pillar__text">Each experience is led by a named expert — a dancer-scholar, an acclaimed chef, an experienced golf concierge.</p>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar__rule"></div>
+    <div>
+      <p class="pillar__title">Dates around you</p>
+      <p class="pillar__text">No fixed departure calendar. The programme runs when your group is ready, for as long as you want it to.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     EXPERIENCE 01 — ART OF FEELING WELL
+══════════════════════════════════════════════════ -->
+<article class="exp" id="exp-wellness">
+  <!-- LEFT: Image -->
+  <!-- DEVELOPER: <img src="images/signature/art-of-feeling-well.jpg" alt="Mohiniyattam performance, Kerala"> -->
+  <div class="exp__img-wrap">
+    <div class="exp__img-ph" style="background:linear-gradient(160deg,#082028 0%,#2C1808 100%);"></div>
+    <div class="exp__flag">
+      <span class="exp__flag-type">Wellness · Kerala</span>
+      <span class="exp__flag-nights">13 nights / 14 days</span>
+    </div>
+    <span class="exp__num">01</span>
+  </div>
+
+  <!-- RIGHT: Body -->
+  <div class="exp__body">
+    <span class="exp__index">Signature Experience · 01</span>
+    <h2 class="exp__name">Art of<br><em>Feeling Well</em></h2>
+    <p class="exp__subtitle">Art. Ayurveda. Kerala. — 10 Oct to 23 Oct 2026</p>
+    <div class="exp__rule"></div>
+
+    <p class="exp__desc">Thirteen nights moving through three distinct faces of Kerala — the colonial harbour town of Cochin, the backwater stillness of Kumarakom and the cliff-top coast of Kovalam — held together by a single thread: the connection between physical healing and classical movement.<br><br>
+    The programme weaves daily Ayurvedic treatment (personalised by a resident physician at Surya Samudra) with Mohiniyattam sessions led by Dr. Methil Devika — not as performance, but as a movement practice for body and mind. The final night is spent in Trivandrum, with a Kalari performance at Agasthyam and a curated dinner at Villa Maya.</p>
+
+    <!-- Route strip -->
+    <div class="exp__route" role="complementary" aria-label="Programme route">
+      <div class="exp__route-stop"><strong>Cochin</strong><span class="exp__route-nights">3 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Kumarakom</strong><span class="exp__route-nights">2 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Kovalam</strong><span class="exp__route-nights">7 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Trivandrum</strong><span class="exp__route-nights">1 night</span></div>
+    </div>
+
+    <div class="exp__details">
+      <div class="exp__detail"><span class="exp__detail-label">Duration</span><span class="exp__detail-value">13 nights / 14 days</span></div>
+      <div class="exp__detail"><span class="exp__detail-label">From</span><span class="exp__detail-value">USD 9,852 per person</span></div>
+      <div class="exp__detail"><span class="exp__detail-label">Group size</span><span class="exp__detail-value">8–12 guests</span></div>
+    </div>
+
+    <div class="exp__includes">
+      <span class="exp__includes-label">What's included</span>
+      <ul>
+        <li>Personalised Ayurvedic consultation &amp; treatment plan</li>
+        <li>Daily 90-min Ayurvedic therapy at Surya Samudra</li>
+        <li>Daily 60-min guided yoga session</li>
+        <li>3 Mohiniyattam workshops with Dr. Methil Devika</li>
+        <li>1 private performance by Dr. Methil Devika</li>
+        <li>Documentary screening</li>
+        <li>Houseboat cruise with lunch, Kumarakom</li>
+        <li>Kalari performance at Agasthyam, Trivandrum</li>
+        <li>Curated dinner at Villa Maya, Trivandrum</li>
+        <li>Prescribed herbal medications throughout</li>
+        <li>Ayurvedic diet plan — all meals in Kovalam</li>
+        <li>All accommodation, transfers and sightseeing</li>
+      </ul>
+    </div>
+
+    <div class="exp__cta">
+      <a href="/contact/?experience=art-of-feeling-well"><button class="exp__btn">Enquire about this experience</button></a>
+      <a href="/signature-experiences/art-of-feeling-well/" class="exp__link"><span class="exp__link-line"></span>Full programme details</a>
+    </div>
+  </div>
+</article>
+
+<!-- Specialist: Dr. Methil Devika -->
+<div class="specialist" aria-label="Programme specialist — Dr. Methil Devika">
+  <!-- DEVELOPER: <img src="images/specialists/methil-devika.jpg" alt="Dr. Methil Devika, Mohiniyattam"> -->
+  <div class="sp__img-wrap">
+    <div class="sp__img-ph" style="background:linear-gradient(135deg,#1A0E06 0%,#2C1A0A 100%);"></div>
+  </div>
+  <div class="sp__body">
+    <span class="sp__kicker">Programme specialist</span>
+    <h3 class="sp__name">Dr. Methil Devika</h3>
+    <p class="sp__title">Mohiniyattam Exponent, Scholar and Performing Artist</p>
+    <p class="sp__bio">Dr. Methil Devika is one of India's most celebrated classical dancers, a Mohiniyattam exponent whose work has taken her from the temple stages of Kerala to performance halls across the United States, Southeast Asia and Australia. She has received some of India's most prestigious arts honours, including the Ustad Bismillah Yuva Puraskar and the Dakshinamurthy Puraskar, an award shared with maestros Pandit Hariprasad Chaurasia and Sivamani.<br><br>
+    Her short documentary Sarpatatwam made the Academy Awards Contention List in 2018, and her film The Crossover screened at the Mumbai International Film Festival in 2024. On this programme she is not here to perform from a distance — she is here to bring you inside the art, one gesture, one story and one unforgettable session at a time.</p>
+    <div class="sp__awards">
+      <span class="sp__award">Ustad Bismillah Yuva Puraskar</span>
+      <span class="sp__award">Dakshinamurthy Puraskar</span>
+      <span class="sp__award">Academy Awards Contention List 2018</span>
+      <span class="sp__award">Mumbai International Film Festival 2024</span>
+    </div>
+  </div>
+</div>
+
+<!-- Stays -->
+<div class="stays-strip" aria-label="Hotels for Art of Feeling Well">
+  <span class="ss__label">Where you stay</span>
+  <div class="ss__hotels">
+    <div class="ss__hotel"><span class="ss__city">Cochin · 3N</span><span class="ss__name">Eighth Bastion / similar</span></div>
+    <div class="ss__hotel"><span class="ss__city">Kumarakom · 2N</span><span class="ss__name">Zuri Kumarakom / similar</span></div>
+    <div class="ss__hotel"><span class="ss__city">Kovalam · 7N</span><span class="ss__name">Surya Samudra</span></div>
+    <div class="ss__hotel"><span class="ss__city">Trivandrum · 1N</span><span class="ss__name">Vivanta / similar</span></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     EXPERIENCE 02 — PLATED SOUTH
+══════════════════════════════════════════════════ -->
+<article class="exp exp--reverse" id="exp-culinary">
+  <!-- RIGHT (visually): Image -->
+  <!-- DEVELOPER: <img src="images/signature/plated-south.jpg" alt="Chef Bobby Geetha, South India culinary trail"> -->
+  <div class="exp__img-wrap">
+    <div class="exp__img-ph" style="background:linear-gradient(160deg,#3A1808 0%,#201808 100%);"></div>
+    <div class="exp__flag">
+      <span class="exp__flag-type">Food &amp; Culture</span>
+      <span class="exp__flag-nights">12 nights / 13 days</span>
+    </div>
+    <span class="exp__num">02</span>
+  </div>
+
+  <!-- LEFT (visually): Body -->
+  <div class="exp__body">
+    <span class="exp__index">Signature Experience · 02</span>
+    <h2 class="exp__name"><em>Plated</em><br>South</h2>
+    <p class="exp__subtitle">A South Indian culinary sojourn with Chef Bobby Geetha</p>
+    <div class="exp__rule"></div>
+
+    <p class="exp__desc">South Indian cuisine is one of the world's most complex and misunderstood culinary traditions. This programme moves through it properly — from Bengaluru's artisanal café scene and Mysore's royal kitchen heritage, through the bold Kodava flavours of Coorg's coffee hills, into the fragrant biryanis of Malabar Calicut, Fort Kochi's colonial-era spice trade and finally the backwaters of Kumarakom, where the journey ends on a houseboat with a traditional Kerala Sadya feast.<br><br>
+    Chef Bobby leads every culinary session: market visits, masterclasses, home kitchen experiences and curated restaurant meals. The programme can be adapted — deeper into a single region, or extended with additional stops.</p>
+
+    <div class="exp__route" role="complementary" aria-label="Programme route">
+      <div class="exp__route-stop"><strong>Bengaluru</strong><span class="exp__route-nights">2 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Mysore</strong><span class="exp__route-nights">2 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Coorg</strong><span class="exp__route-nights">2 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Calicut</strong><span class="exp__route-nights">2 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Cochin</strong><span class="exp__route-nights">2 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Kumarakom</strong><span class="exp__route-nights">2 nights</span></div>
+    </div>
+
+    <div class="exp__details">
+      <div class="exp__detail"><span class="exp__detail-label">Duration</span><span class="exp__detail-value">12 nights / 13 days</span></div>
+      <div class="exp__detail"><span class="exp__detail-label">Pricing</span><span class="exp__detail-value">On request</span></div>
+      <div class="exp__detail"><span class="exp__detail-label">For</span><span class="exp__detail-value">Private groups</span></div>
+    </div>
+
+    <div class="exp__includes">
+      <span class="exp__includes-label">What's included</span>
+      <ul>
+        <li>Iconic eatery visits &amp; bar-hopping, Bengaluru</li>
+        <li>Mysore Palace &amp; Masala Dosa masterclass</li>
+        <li>Kodava lunch &amp; gourmet coffee session, Coorg</li>
+        <li>Dubare Elephant Camp, Coorg</li>
+        <li>Paragon Biryani visit &amp; market tour, Calicut</li>
+        <li>Kochi-Muziris Biennale &amp; Kerala food introduction</li>
+        <li>Houseboat cruise &amp; traditional Sadya, Kumarakom</li>
+        <li>Chef Bobby Geetha masterclasses at each stop</li>
+        <li>All accommodation, meals, transfers and guides</li>
+        <li>Group leader complimentary accommodation</li>
+      </ul>
+    </div>
+
+    <div class="exp__cta">
+      <a href="/contact/?experience=plated-south"><button class="exp__btn">Enquire about this experience</button></a>
+      <a href="/signature-experiences/plated-south/" class="exp__link"><span class="exp__link-line"></span>Full programme details</a>
+    </div>
+  </div>
+</article>
+
+<!-- Specialist: Chef Bobby Geetha -->
+<div class="specialist" aria-label="Programme specialist — Chef Bobby Geetha">
+  <!-- DEVELOPER: <img src="images/specialists/chef-bobby-geetha.jpg" alt="Chef Bobby Geetha"> -->
+  <div class="sp__img-wrap">
+    <div class="sp__img-ph" style="background:linear-gradient(135deg,#3A1808 0%,#201408 100%);"></div>
+  </div>
+  <div class="sp__body">
+    <span class="sp__kicker">Programme specialist</span>
+    <h3 class="sp__name">Chef Bobby Geetha</h3>
+    <p class="sp__title">Culinary Expert, BBC MasterChef Finalist, Founder of Kerala Canteen</p>
+    <p class="sp__bio">Chef Bobby Geetha is a globally acclaimed culinary expert known for his innovative approach to Indian cuisine. A finalist on BBC's MasterChef: The Professionals, he has carved a unique space by blending traditional Indian flavours with contemporary global techniques, describing his food as "innovative Indian dishes with an international approach."<br><br>
+    Bobby is the founder of the award-winning Kerala Canteen in Leeds, UK — a celebrated destination for modern South Indian cuisine. He has worked in some of the world's most prestigious kitchens, including Noma (2*), Dinner by Heston Blumenthal (2*) and Le Manoir aux Quat'Saisons (2*). On Plated South, he leads every session personally — not a consultant from a distance, but the person at the market stall, the kitchen and the table beside you.</p>
+    <div class="sp__awards">
+      <span class="sp__award">BBC MasterChef: The Professionals finalist</span>
+      <span class="sp__award">Noma · Heston · Le Manoir</span>
+      <span class="sp__award">Founder, Kerala Canteen Leeds</span>
+    </div>
+  </div>
+</div>
+
+<!-- Stays -->
+<div class="stays-strip" aria-label="Hotels for Plated South">
+  <span class="ss__label">Where you stay</span>
+  <div class="ss__hotels">
+    <div class="ss__hotel"><span class="ss__city">Bengaluru · 2N</span><span class="ss__name">Oberoi / similar</span></div>
+    <div class="ss__hotel"><span class="ss__city">Mysore · 2N</span><span class="ss__name">Grand Mercure / similar</span></div>
+    <div class="ss__hotel"><span class="ss__city">Coorg · 2N</span><span class="ss__name">Evolve Back</span></div>
+    <div class="ss__hotel"><span class="ss__city">Calicut · 2N</span><span class="ss__name">Kadavu Resort</span></div>
+    <div class="ss__hotel"><span class="ss__city">Cochin · 2N</span><span class="ss__name">Brunton Boatyard / similar</span></div>
+    <div class="ss__hotel"><span class="ss__city">Kumarakom · 2N</span><span class="ss__name">Coconut Lagoon / similar</span></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     EXPERIENCE 03 — FAIRWAYS & WONDERS
+══════════════════════════════════════════════════ -->
+<article class="exp" id="exp-golf">
+  <!-- LEFT: Image -->
+  <!-- DEVELOPER: <img src="images/signature/fairways-wonders.jpg" alt="Championship golf course, India"> -->
+  <div class="exp__img-wrap">
+    <div class="exp__img-ph" style="background:linear-gradient(160deg,#102010 0%,#0E2010 100%);"></div>
+    <div class="exp__flag">
+      <span class="exp__flag-type">Golf · Golden Triangle</span>
+      <span class="exp__flag-nights">9 nights / 10 days</span>
+    </div>
+    <span class="exp__num">03</span>
+  </div>
+
+  <!-- RIGHT: Body -->
+  <div class="exp__body">
+    <span class="exp__index">Signature Experience · 03</span>
+    <h2 class="exp__name">Fairways &amp;<br><em>Wonders</em></h2>
+    <p class="exp__subtitle">The Elite Indian Golf Experience — Delhi, Agra &amp; Jaipur</p>
+    <div class="exp__rule"></div>
+
+    <p class="exp__desc">Golf in India is not just a sport — it is a walk through history. Since 1829, when the Royal Calcutta Golf Club became the first outside Great Britain, the country has been home to some of the world's most storied fairways. Tee off amid Mughal ruins at the Delhi Golf Club, play the Gary Player–designed championship course at DLF Gurgaon, take a round on Jaipur's royal Rambagh Golf Club, and finish on the Jack Nicklaus Signature layout at ITC Grand Bharat.<br><br>
+    Between rounds: Old Delhi's bazaars, the Taj Mahal at sunrise, Jaipur's pink-hued forts and palaces. Five sessions of golf across four of India's finest courses, with evenings in the country's most celebrated hotels.</p>
+
+    <div class="exp__route" role="complementary" aria-label="Programme route">
+      <div class="exp__route-stop"><strong>Delhi</strong><span class="exp__route-nights">4 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Agra</strong><span class="exp__route-nights">1 night</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Jaipur</strong><span class="exp__route-nights">3 nights</span></div>
+      <span class="exp__route-arrow">→</span>
+      <div class="exp__route-stop"><strong>Gurgaon</strong><span class="exp__route-nights">1 night</span></div>
+    </div>
+
+    <div class="exp__details">
+      <div class="exp__detail"><span class="exp__detail-label">Duration</span><span class="exp__detail-value">9 nights / 10 days</span></div>
+      <div class="exp__detail"><span class="exp__detail-label">From</span><span class="exp__detail-value">€7,500 per person</span></div>
+      <div class="exp__detail"><span class="exp__detail-label">Golf sessions</span><span class="exp__detail-value">5 rounds included</span></div>
+    </div>
+
+    <div class="exp__includes">
+      <span class="exp__includes-label">What's included</span>
+      <ul>
+        <li>5 golf sessions across 4 premier courses</li>
+        <li>Red Fort, Humayun's Tomb, Qutab Minar</li>
+        <li>Taj Mahal &amp; Agra Fort sightseeing</li>
+        <li>Amer Fort, Jantar Mantar, City Palace</li>
+        <li>In-vehicle Wi-Fi throughout</li>
+        <li>English-speaking guide for all sightseeing</li>
+        <li>All accommodation, meals as planned</li>
+        <li>All transfers in air-conditioned vehicle</li>
+        <li>Monument entrance fees</li>
+        <li>All applicable government taxes</li>
+      </ul>
+    </div>
+
+    <div class="exp__cta">
+      <a href="/contact/?experience=fairways-wonders"><button class="exp__btn">Enquire about this experience</button></a>
+      <a href="/signature-experiences/fairways-wonders/" class="exp__link"><span class="exp__link-line"></span>Full programme details</a>
+    </div>
+  </div>
+</article>
+
+<!-- Golf Courses Grid -->
+<section class="courses-section" aria-labelledby="courses-title">
+  <div class="courses-head">
+    <span class="courses-kicker">The courses</span>
+    <h2 class="courses-title" id="courses-title">Four <em>extraordinary</em> fairways</h2>
+  </div>
+  <div class="courses-grid">
+
+    <div class="course-card">
+      <div class="course-card__img-wrap">
+        <!-- DEVELOPER: <img src="images/courses/delhi-golf-club.jpg" alt="Delhi Golf Club"> -->
+        <div class="cc__img-ph golf-1"></div>
+      </div>
+      <span class="course-card__designer">Est. 1930s · Delhi</span>
+      <h3 class="course-card__name">Delhi Golf Club</h3>
+      <span class="course-card__loc">New Delhi</span>
+      <p class="course-card__desc">Nestled amid ancient Mughal ruins and century-old trees — a living museum of the sport where each hole is framed by architectural remnants. One of Asia's most respected and storied courses.</p>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card__img-wrap">
+        <!-- DEVELOPER: <img src="images/courses/dlf-golf-gurgaon.jpg" alt="DLF Golf & Country Club"> -->
+        <div class="cc__img-ph golf-2"></div>
+      </div>
+      <span class="course-card__designer">Gary Player Design · Arnold Palmer 9-hole</span>
+      <h3 class="course-card__name">DLF Golf &amp; Country Club</h3>
+      <span class="course-card__loc">Gurgaon, Delhi NCR</span>
+      <p class="course-card__desc">A 27-hole championship complex that has hosted the Johnnie Walker Classic and Avantha Masters. Impeccably maintained fairways, water features and sculpted bunkers at the standard of international tournament play.</p>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card__img-wrap">
+        <!-- DEVELOPER: <img src="images/courses/rambagh-golf-jaipur.jpg" alt="Rambagh Golf Club, Jaipur"> -->
+        <div class="cc__img-ph golf-3"></div>
+      </div>
+      <span class="course-card__designer">18-hole · Former Royal Course</span>
+      <h3 class="course-card__name">Rambagh Golf Club</h3>
+      <span class="course-card__loc">Jaipur, Rajasthan</span>
+      <p class="course-card__desc">Once the private playground of Jaipur's royal family, set amid majestic palaces and imposing forts. The greens wind through landscaped gardens and historic vistas — golf where each hole tells a story of Rajput grandeur.</p>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card__img-wrap">
+        <!-- DEVELOPER: <img src="images/courses/classic-golf-itc-grand-bharat.jpg" alt="Classic Golf & Country Club"> -->
+        <div class="cc__img-ph golf-4"></div>
+      </div>
+      <span class="course-card__designer">Jack Nicklaus Signature Design · 27 holes</span>
+      <h3 class="course-card__name">Classic Golf &amp; Country Club</h3>
+      <span class="course-card__loc">ITC Grand Bharat, Gurgaon</span>
+      <p class="course-card__desc">The Golden Bear's masterpiece near Delhi — three nine-hole courses (Ridge, Valley, Canyon) integrating with the natural contours of the Aravalli hills. The fitting finale to any Indian golfing odyssey.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Stays -->
+<div class="stays-strip" aria-label="Hotels for Fairways & Wonders">
+  <span class="ss__label">Where you stay</span>
+  <div class="ss__hotels">
+    <div class="ss__hotel"><span class="ss__city">Delhi · 4N</span><span class="ss__name">The Oberoi New Delhi</span></div>
+    <div class="ss__hotel"><span class="ss__city">Agra · 1N</span><span class="ss__name">Oberoi Amarvilas</span></div>
+    <div class="ss__hotel"><span class="ss__city">Jaipur · 3N</span><span class="ss__name">Rambagh Palace</span></div>
+    <div class="ss__hotel"><span class="ss__city">Gurgaon · 1N</span><span class="ss__name">ITC Grand Bharat</span></div>
+  </div>
+</div>
+
+
+<!-- ══ HOW IT WORKS ═══════════════════════════════════ -->
+<section class="how" aria-labelledby="how-title">
+  <div class="how__head">
+    <span class="how__kicker">The process</span>
+    <h2 class="how__title" id="how-title">From first enquiry<br>to <em>first day</em></h2>
+  </div>
+  <div class="how__steps">
+    <div class="how__step">
+      <span class="how__step-num">01</span>
+      <p class="how__step-title">Tell us about your group</p>
+      <p class="how__step-text">Who's travelling, how many, when you want to go and which experience interests you. The initial conversation is free and carries no obligation.</p>
+    </div>
+    <div class="how__step">
+      <span class="how__step-num">02</span>
+      <p class="how__step-title">We build the proposal</p>
+      <p class="how__step-text">Our team — and the relevant specialist — put together a programme outline tailored to your group's size, interests, duration and travel style.</p>
+    </div>
+    <div class="how__step">
+      <span class="how__step-num">03</span>
+      <p class="how__step-title">Refine together</p>
+      <p class="how__step-text">We iterate until every detail is right — the itinerary, accommodation, pace and inclusions. Nothing is fixed until you're happy.</p>
+    </div>
+    <div class="how__step">
+      <span class="how__step-num">04</span>
+      <p class="how__step-title">We handle everything</p>
+      <p class="how__step-text">Hotels, transfers, tee times, treatment bookings, specialist scheduling — full logistics from confirmation to return. Travel insurance is mandatory and we can advise.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FINAL CTA ══════════════════════════════════════ -->
+<div class="final-cta">
+  <div>
+    <h2 class="fc__title">Begin with<br>a <em>conversation.</em></h2>
+    <p class="fc__sub">Tell us which experience interests you, who's travelling and when. We'll come back within 24 hours with an initial outline and a fee estimate. No obligation, no sales pitch — just the right information to help you decide.</p>
+  </div>
+  <div class="fc__btns">
+    <a href="/contact/"><button class="btn-dark">Start the conversation</button></a>
+    <a href="/itineraries/"><button class="btn-ghost">Browse private itineraries</button></a>
+  </div>
+</div>
+
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <a href="/"><span class="footer__word">ANDTHEN</span><span class="footer__sub-word">travels</span></a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+918129271155">+91 8129 271 155</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Experiences</span>
+      <a href="/signature-experiences/art-of-feeling-well/">Art of Feeling Well</a>
+      <a href="/signature-experiences/plated-south/">Plated South</a>
+      <a href="/signature-experiences/fairways-wonders/">Fairways &amp; Wonders</a>
+      <a href="/itineraries/">Private itineraries</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Destinations</span>
+      <a href="/india/">India</a>
+      <a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a>
+      <a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/places-to-stay/">Places to stay</a>
+      <a href="/journal/">Journal</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+  <div class="footer__btm">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ham = document.querySelector('.nav__ham');
+  if (ham) ham.addEventListener('click', function(){
+    this.setAttribute('aria-expanded', String(this.getAttribute('aria-expanded') !== 'true'));
+  });
+})();
+</script>
+
+</body>
+</html>

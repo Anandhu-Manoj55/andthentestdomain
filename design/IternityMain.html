@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itineraries — India, Bhutan, Nepal & Sri Lanka | AndThen Travels</title>
+<meta name="description" content="Browse private tailor-made itineraries across India, Bhutan, Nepal and Sri Lanka — plus signature group experiences including wellness retreats, culinary journeys and golf tours. AndThen Travels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ANDTHEN TRAVELS — ITINERARIES LISTING PAGE
+   Redesigned · June 2026
+   All destinations: India + Bhutan + Nepal + Sri Lanka
+   ============================================================ */
+
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cl: #E8DDD2;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --transition:   0.3s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+img  { display: block; width: 100%; height: 100%; object-fit: cover; }
+a    { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+
+/* ── UTILITY ─────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.875rem;
+}
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.375rem);
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.rule { width: 1.5rem; height: 0.5px; background: var(--cs); margin: 1.25rem 0; }
+.body-text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+  margin-bottom: 1rem;
+}
+.text-link {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  border-bottom: 0.5px solid rgba(160,120,72,0.35);
+  padding-bottom: 0.125rem;
+  display: inline-block;
+  transition: opacity var(--transition);
+}
+.text-link:hover { opacity: 0.65; }
+
+/* ── NAVIGATION ──────────────────────────────────────── */
+.nav {
+  background: var(--cr);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav__logo { display: flex; flex-direction: column; gap: 2px; }
+.nav__logo-wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); }
+.nav__logo-sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); }
+.nav__links { display: flex; gap: 2.25rem; }
+.nav__links a { font-family: var(--font-body); font-size: 0.625rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); transition: color var(--transition); }
+.nav__links a:hover, .nav__links a.active { color: var(--cd); }
+.nav__cta { font-family: var(--font-body); font-size: 0.625rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cd); background: transparent; border: 0.5px solid var(--cd); padding: 0.625rem 1.375rem; transition: background var(--transition), color var(--transition); }
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__hamburger { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__hamburger span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── HERO ────────────────────────────────────────────── */
+/* DEVELOPER: background-image: url('images/itineraries-hero.jpg');
+   Recommended: wide aerial or temple silhouette at dusk
+   Min resolution: 1800×700px */
+.hero {
+  position: relative;
+  height: 440px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero__image {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #2C1A0A 0%, #3A2010 40%, #1A2010 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.95) 0%, rgba(44,26,10,0.5) 45%, rgba(44,26,10,0.1) 100%);
+}
+.hero__placeholder { font-family: var(--font-body); font-size: 0.625rem; letter-spacing: 0.2rem; color: rgba(255,255,255,0.06); text-transform: uppercase; position: relative; z-index: 1; }
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 2.5rem 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.hero__left { max-width: 580px; }
+.hero__tag { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.875rem; }
+.hero__title { font-family: var(--font-display); font-size: clamp(2.25rem, 4.5vw, 3.625rem); font-weight: 400; font-style: italic; color: var(--cr); line-height: 1; margin-bottom: 0.875rem; }
+.hero__sub { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(200,180,154,0.5); line-height: 1.9; max-width: 420px; }
+.hero__right { text-align: right; }
+
+/* Destination pills in hero */
+.hero__dest-pills { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+.hero__pill {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.45);
+  border: 0.5px solid rgba(200,180,154,0.15);
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+/* ── DESTINATION TABS — full-width ──────────────────── */
+.dest-tabs {
+  background: var(--cd);
+  display: flex;
+  overflow-x: auto;
+  border-bottom: none;
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+}
+.dest-tab {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.35);
+  background: transparent;
+  border: none;
+  padding: 0 1.75rem;
+  height: 48px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  flex-shrink: 0;
+}
+.dest-tab:hover { color: rgba(200,180,154,0.7); }
+.dest-tab.active { color: var(--cb); border-bottom-color: var(--cb); }
+.dest-tab-divider { width: 0.5px; height: 16px; background: rgba(200,180,154,0.1); align-self: center; flex-shrink: 0; }
+
+/* ── DESTINATION SECTION HEADER ─────────────────────── */
+.dest-section {
+  border-top: 0.5px solid rgba(44,26,10,0.07);
+}
+.dest-section.hidden { display: none; }
+
+.dest-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 3.5rem 2.5rem 2.5rem;
+  align-items: end;
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+  background: var(--cr);
+}
+.dest-header__label { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.625rem; }
+.dest-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.875rem);
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.1;
+}
+.dest-header__title em { font-style: italic; color: var(--cb); }
+.dest-header__intro {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+}
+.dest-header__meta {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+.dest-header__stat {}
+.dest-header__stat-num { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; color: var(--cd); display: block; line-height: 1; }
+.dest-header__stat-label { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cs); display: block; margin-top: 3px; }
+
+/* ── ITINERARY CARDS GRID ────────────────────────────── */
+.itins-grid-wrap {
+  background: var(--cr);
+  padding: 0 0 4rem;
+}
+.itins-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(44,26,10,0.07);
+}
+
+/* card */
+.itin-card {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+  transition: background var(--transition);
+}
+.itin-card:hover { background: var(--cp); }
+
+/* card image */
+.ic__img {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.ic__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.72) 0%, transparent 55%);
+}
+.ic__img-placeholder { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.15rem; color: rgba(255,255,255,0.18); text-transform: uppercase; position: relative; z-index: 1; }
+.ic__type-badge { position: absolute; top: 1rem; right: 1rem; font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.15rem; text-transform: uppercase; background: rgba(44,26,10,0.55); color: rgba(200,180,154,0.7); padding: 4px 10px; z-index: 2; }
+
+/* image bg tones */
+.ici--north   { background: #3A1808; }
+.ici--south   { background: #0E2810; }
+.ici--kerala  { background: #082028; }
+.ici--central { background: #201808; }
+.ici--east    { background: #082038; }
+.ici--coast   { background: #083040; }
+.ici--bhutan  { background: #142810; }
+.ici--nepal   { background: #0E1A38; }
+.ici--sl      { background: #083040; }
+.ici--multi   { background: #201028; }
+
+.ic__body { padding: 1.375rem 1.5rem 1.75rem; flex: 1; display: flex; flex-direction: column; }
+.ic__region { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.25rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.3rem; }
+.ic__name { font-family: var(--font-display); font-size: 1.1875rem; font-weight: 400; color: var(--cd); line-height: 1.25; margin-bottom: 0.5rem; }
+.ic__route { font-family: var(--font-body); font-size: 0.6875rem; font-weight: 300; color: var(--cm); line-height: 1.75; flex: 1; margin-bottom: 1.125rem; }
+.ic__meta { display: flex; gap: 0; background: rgba(200,180,154,0.12); margin-bottom: 1.125rem; }
+.ic__meta-item { flex: 1; padding: 0.5625rem 0.75rem; border-right: 0.5px solid rgba(200,180,154,0.2); }
+.ic__meta-item:last-child { border-right: none; }
+.ic__meta-label { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cs); display: block; margin-bottom: 2px; }
+.ic__meta-value { font-family: var(--font-body); font-size: 0.6875rem; color: var(--cd); font-weight: 400; }
+.ic__link { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.25rem; text-transform: uppercase; color: var(--cs); display: flex; align-items: center; gap: 8px; margin-top: auto; transition: color var(--transition); }
+.ic__link-line { width: 14px; height: 0.5px; background: currentColor; flex-shrink: 0; }
+.itin-card:hover .ic__link { color: var(--cb); }
+
+/* ── HIGHLIGHT CARD (wide, 2-col) ────────────────────── */
+.itin-card--wide {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.itin-card--wide .ic__img {
+  height: 100%;
+  min-height: 260px;
+}
+.itin-card--wide .ic__body {
+  padding: 2rem 2rem 2.25rem;
+}
+.itin-card--wide .ic__name {
+  font-size: 1.4375rem;
+}
+.itin-card--wide .ic__route {
+  font-size: 0.75rem;
+}
+
+/* ── MULTI-COUNTRY BAND ──────────────────────────────── */
+.multi-band {
+  background: var(--ci);
+  padding: 3rem 2.5rem 2rem;
+  border-top: 0.5px solid rgba(200,180,154,0.08);
+}
+.multi-band__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.05);
+}
+.multi-band__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.15;
+}
+.multi-band__sub {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.3);
+  display: block;
+  margin-top: 4px;
+}
+.multi-band__link {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  border-bottom: 0.5px solid rgba(160,120,72,0.4);
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+.multi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.04);
+}
+.multi-card {
+  background: var(--ci);
+  transition: background var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.multi-card:hover { background: #2C1808; }
+.mc__img {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+.mc__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.8) 0%, transparent 60%);
+}
+.mc__badge {
+  position: absolute;
+  top: 0.875rem;
+  left: 0.875rem;
+  font-family: var(--font-body);
+  font-size: 0.4375rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.5);
+  background: rgba(44,26,10,0.5);
+  padding: 3px 8px;
+  z-index: 2;
+}
+.mc__img-placeholder { position: absolute; bottom: 0.75rem; left: 0.875rem; font-family: var(--font-body); font-size: 0.4375rem; letter-spacing: 0.12rem; color: rgba(255,255,255,0.12); text-transform: uppercase; z-index: 1; }
+.mc__body { padding: 1.25rem 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.mc__region { font-family: var(--font-body); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.25rem; }
+.mc__name { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 400; color: var(--cr); line-height: 1.2; margin-bottom: 0.5rem; }
+.mc__route { font-family: var(--font-body); font-size: 0.625rem; font-weight: 300; color: rgba(200,180,154,0.4); line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+.mc__meta { display: flex; gap: 0; background: rgba(255,255,255,0.03); margin-bottom: 1rem; }
+.mc__meta-item { flex: 1; padding: 0.5rem 0.625rem; border-right: 0.5px solid rgba(255,255,255,0.04); }
+.mc__meta-item:last-child { border-right: none; }
+.mc__meta-label { font-family: var(--font-body); font-size: 0.4375rem; letter-spacing: 0.12rem; text-transform: uppercase; color: rgba(200,180,154,0.25); display: block; margin-bottom: 2px; }
+.mc__meta-value { font-family: var(--font-body); font-size: 0.625rem; color: rgba(255,255,255,0.55); }
+.mc__link { font-family: var(--font-body); font-size: 0.4375rem; letter-spacing: 0.2rem; text-transform: uppercase; color: rgba(200,180,154,0.3); display: flex; align-items: center; gap: 6px; transition: color var(--transition); margin-top: auto; }
+.mc__link-line { width: 10px; height: 0.5px; background: currentColor; flex-shrink: 0; }
+.multi-card:hover .mc__link { color: var(--cb); }
+
+/* ── SIGNATURE EXPERIENCES ───────────────────────────── */
+.signature {
+  background: var(--cp);
+  padding: 5.5rem 2.5rem;
+  border-top: 0.5px solid rgba(200,180,154,0.3);
+}
+.signature__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: end;
+  padding-bottom: 3rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.25);
+  margin-bottom: 3.5rem;
+}
+.signature__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 3vw, 2.625rem);
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.15;
+  margin-top: 0.75rem;
+}
+.signature__intro {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+}
+.signature__group-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  border: 0.5px solid rgba(160,120,72,0.3);
+  padding: 0.5rem 1rem;
+}
+.sig-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(200,180,154,0.25);
+}
+.sig-card {
+  background: var(--cr);
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  transition: background var(--transition);
+}
+.sig-card:hover { background: var(--cp); }
+.sc__img {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.75rem;
+  min-height: 320px;
+}
+.sc__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.65) 0%, rgba(44,26,10,0.1) 50%, transparent 100%);
+}
+.sc__img-placeholder { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.15rem; color: rgba(255,255,255,0.18); text-transform: uppercase; position: relative; z-index: 1; }
+.sci--wellness { background: #3A2A18; }
+.sci--culinary { background: #3A1808; }
+.sci--golf     { background: #0E2810; }
+.sc__body {
+  padding: 2.5rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 0.5px solid rgba(200,180,154,0.25);
+}
+.sc__eyebrow { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.875rem; }
+.sc__name { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; font-style: italic; color: var(--cd); line-height: 1.2; margin-bottom: 0.5rem; }
+.sc__subtitle { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: var(--cb); margin-bottom: 1.25rem; }
+.sc__desc { font-family: var(--font-body); font-size: 0.8125rem; font-weight: 300; color: var(--cm); line-height: 2; margin-bottom: 2rem; }
+.sc__details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(200,180,154,0.25); margin-bottom: 2rem; }
+.sc__detail { background: var(--cp); padding: 0.875rem 1rem; }
+.sc__detail-label { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cs); display: block; margin-bottom: 3px; }
+.sc__detail-value { font-family: var(--font-body); font-size: 0.75rem; color: var(--cd); font-weight: 400; }
+.sc__hosts { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: var(--cm); margin-bottom: 2rem; line-height: 1.75; }
+.sc__hosts strong { color: var(--cd); font-weight: 400; }
+.sc__cta { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: var(--cd); color: var(--cr); border: none; padding: 0.9375rem 1.75rem; cursor: pointer; transition: background var(--transition); align-self: flex-start; }
+.sc__cta:hover { background: var(--cb); }
+.sc__note { margin-top: 1rem; font-family: var(--font-body); font-size: 0.625rem; color: var(--cs); font-weight: 300; }
+
+/* ── CTA BAND ────────────────────────────────────────── */
+.cta-band { background: var(--cb); padding: 4.5rem 2.5rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+.cta-band__heading { font-family: var(--font-display); font-size: clamp(1.625rem, 2.5vw, 2.125rem); font-weight: 400; font-style: italic; color: var(--cr); line-height: 1.25; margin-bottom: 0.5rem; }
+.cta-band__sub { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(244,237,227,0.5); line-height: 1.8; max-width: 480px; }
+.cta-btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 210px; }
+.btn-primary { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: var(--cd); color: var(--cr); border: none; padding: 1rem 1.5rem; cursor: pointer; transition: background var(--transition); }
+.btn-primary:hover { background: var(--ci); }
+.btn-secondary { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: transparent; color: rgba(244,237,227,0.5); border: 0.5px solid rgba(244,237,227,0.18); padding: 1rem 1.5rem; cursor: pointer; transition: all var(--transition); }
+.btn-secondary:hover { color: rgba(244,237,227,0.8); border-color: rgba(244,237,227,0.35); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+.footer { background: var(--ci); padding: 4.5rem 2.5rem 2.5rem; }
+.footer__top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+.footer__wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact { margin-top: 1.25rem; }
+.footer__contact a { display: block; font-family: var(--font-body); font-size: 0.6875rem; color: var(--cb); text-decoration: none; margin-bottom: 3px; }
+.footer__col-heading { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); text-decoration: none; margin-bottom: 0.625rem; transition: color var(--transition); }
+.footer__col a:hover { color: var(--cb); }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--font-body); font-size: 0.5625rem; color: rgba(255,255,255,0.1); letter-spacing: 0.08rem; }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .multi-grid { grid-template-columns: repeat(2, 1fr); }
+  .sig-card { grid-template-columns: 340px 1fr; }
+}
+@media (max-width: 1024px) {
+  .itins-grid { grid-template-columns: 1fr 1fr; }
+  .itin-card--wide { grid-column: span 2; }
+  .dest-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .sig-card { grid-template-columns: 1fr; }
+  .sc__img { min-height: 240px; }
+  .sc__body { border-left: none; border-top: 0.5px solid rgba(200,180,154,0.25); }
+  .signature__header { grid-template-columns: 1fr; gap: 2rem; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: row; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+  .hero { height: 380px; }
+  .hero__content { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .hero__dest-pills { flex-direction: row; flex-wrap: wrap; }
+  .itins-grid { grid-template-columns: 1fr; }
+  .itin-card--wide { grid-column: span 1; grid-template-columns: 1fr; }
+  .itin-card--wide .ic__img { min-height: 200px; }
+  .multi-grid { grid-template-columns: 1fr; }
+  .footer__top { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: column; width: 100%; }
+  .dest-tabs { top: 60px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav__logo" aria-label="AndThen Travels — Home">
+    <span class="nav__logo-wordmark">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+  <div class="nav__links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/experiences/" class="active">Experiences</a>
+    <a href="/places-to-stay/">Places to stay</a>
+    <a href="/wellness/">Wellness</a>
+    <a href="/journal/">Journal</a>
+    <a href="/about/">About</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+18000000000" style="font-family:var(--font-body);font-size:0.6875rem;color:var(--cb);">+1 800 000 0000</a>
+    <a href="/contact/"><button class="nav__cta">Plan my journey</button></a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ════════════════════════════════════════════ -->
+<!-- DEVELOPER: add background-image: url('images/itineraries-hero.jpg') to .hero__image -->
+<section class="hero" aria-label="Itineraries and experiences">
+  <div class="hero__image" role="img" aria-label="Private journeys across India, Bhutan, Nepal and Sri Lanka">
+    <span class="hero__placeholder">Hero photography — journey moment</span>
+  </div>
+  <div class="hero__content">
+    <div class="hero__left">
+      <span class="hero__tag">Our journeys</span>
+      <h1 class="hero__title">Itineraries &amp;<br>experiences</h1>
+      <p class="hero__sub">Every journey is a starting point. Browse our private itineraries across four countries, then tell us what you'd like to change.</p>
+    </div>
+    <div class="hero__right">
+      <div class="hero__dest-pills">
+        <span class="hero__pill">India</span>
+        <span class="hero__pill">Bhutan</span>
+        <span class="hero__pill">Nepal</span>
+        <span class="hero__pill">Sri Lanka</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DESTINATION TABS ══════════════════════════════ -->
+<nav class="dest-tabs" role="tablist" aria-label="Browse by destination" id="dest-tabs">
+  <button class="dest-tab active" role="tab" data-dest="india" aria-selected="true">India</button>
+  <div class="dest-tab-divider" aria-hidden="true"></div>
+  <button class="dest-tab" role="tab" data-dest="bhutan" aria-selected="false">Bhutan</button>
+  <div class="dest-tab-divider" aria-hidden="true"></div>
+  <button class="dest-tab" role="tab" data-dest="nepal" aria-selected="false">Nepal</button>
+  <div class="dest-tab-divider" aria-hidden="true"></div>
+  <button class="dest-tab" role="tab" data-dest="sri-lanka" aria-selected="false">Sri Lanka</button>
+  <div class="dest-tab-divider" aria-hidden="true"></div>
+  <button class="dest-tab" role="tab" data-dest="multi" aria-selected="false">Multi-country</button>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     INDIA
+════════════════════════════════════════════════════════ -->
+<section class="dest-section" id="section-india" role="tabpanel" aria-labelledby="tab-india">
+
+  <div class="dest-header">
+    <div>
+      <span class="dest-header__label">Private itineraries</span>
+      <h2 class="dest-header__title">India — <em>nine journeys,<br>one subcontinent</em></h2>
+    </div>
+    <div>
+      <p class="dest-header__intro">From the Mughal monuments of the north to the temple towns of Tamil Nadu, the tiger reserves of central India and the backwaters of Kerala — each itinerary is fully private, departs on any date and can be extended, shortened or rerouted to suit your interests.</p>
+      <div class="dest-header__meta">
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">9</span>
+          <span class="dest-header__stat-label">Itineraries</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">11–15</span>
+          <span class="dest-header__stat-label">Nights typical</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">Any</span>
+          <span class="dest-header__stat-label">Departure date</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itins-grid-wrap">
+    <div class="itins-grid">
+
+      <!-- Land of Kings — WIDE featured card -->
+      <article class="itin-card itin-card--wide" data-dest="india">
+        <a href="/tours/land-of-kings/">
+          <div class="ic__img ici--north" role="img" aria-label="Land of Kings — Rajasthan">
+            <!-- DEVELOPER: <img src="images/itineraries/land-of-kings.jpg" alt="Hawa Mahal, Jaipur"> -->
+            <span class="ic__type-badge">Culture &amp; Heritage</span>
+            <span class="ic__img-placeholder">Land of Kings · Rajasthan</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">North India · Rajasthan</span>
+          <h3 class="ic__name"><a href="/tours/land-of-kings/">Land of Kings</a></h3>
+          <p class="ic__route">Delhi → Agra → Jaipur → Jodhpur → Udaipur → Mumbai. Royal palaces, Mughal monuments and lake cities across the full Rajasthan circuit. Stay in heritage forts converted to luxury hotels and travel by private vehicle between the maharajas' capitals.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">15 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€7,800 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/land-of-kings/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Timeless Treasures -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/timeless-treasures/">
+          <div class="ic__img ici--north" role="img" aria-label="Timeless Treasures — Delhi Agra Varanasi">
+            <!-- DEVELOPER: <img src="images/itineraries/timeless-treasures.jpg" alt="Varanasi ghats at dawn"> -->
+            <span class="ic__type-badge">Culture &amp; Spiritual</span>
+            <span class="ic__img-placeholder">Timeless Treasures · North India</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">North India</span>
+          <h3 class="ic__name"><a href="/tours/timeless-treasures/">Timeless Treasures</a></h3>
+          <p class="ic__route">Delhi → Agra → Varanasi → Delhi. The Taj Mahal, Fatehpur Sikri and Varanasi's ghats at dawn — India's three most iconic destinations in one private journey.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">11 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€5,200 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/timeless-treasures/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Wild Encounters -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/wild-encounters/">
+          <div class="ic__img ici--central" role="img" aria-label="Wild Encounters — Tiger safari Central India">
+            <!-- DEVELOPER: <img src="images/itineraries/wild-encounters.jpg" alt="Bengal tiger, Bandhavgarh"> -->
+            <span class="ic__type-badge">Wildlife &amp; Safaris</span>
+            <span class="ic__img-placeholder">Wild Encounters · Central India</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">Central India · Tiger Country</span>
+          <h3 class="ic__name"><a href="/tours/wild-encounters/">Wild Encounters</a></h3>
+          <p class="ic__route">Mumbai → Bandhavgarh → Kanha → Pench → Tadoba → Delhi → Agra. Five of central India's finest tiger reserves across 15 extraordinary nights.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">15 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€10,650 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Season</span><span class="ic__meta-value">Oct – Jun</span></div>
+          </div>
+          <a href="/tours/wild-encounters/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Gods Own Country -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/gods-own-country-unveiled/">
+          <div class="ic__img ici--kerala" role="img" aria-label="Gods Own Country — Kerala">
+            <!-- DEVELOPER: <img src="images/itineraries/gods-own-country.jpg" alt="Kerala backwaters at dawn"> -->
+            <span class="ic__type-badge">Wellness &amp; Culture</span>
+            <span class="ic__img-placeholder">Gods Own Country · Kerala</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">South India · Kerala</span>
+          <h3 class="ic__name"><a href="/tours/gods-own-country-unveiled/">Gods Own Country Unveiled</a></h3>
+          <p class="ic__route">Cochin → Munnar → Thekkady → Kumarakom → Kovalam. Kerala at its most complete — colonial heritage, tea hills, spice forests, backwater houseboats and an Ayurveda coast.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">12 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€3,900 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/gods-own-country-unveiled/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Tete-a-Tete with Gods -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/tete-a-tete-with-gods/">
+          <div class="ic__img ici--south" role="img" aria-label="Tete-a-Tete with Gods — Karnataka Kerala">
+            <!-- DEVELOPER: <img src="images/itineraries/tete-a-tete-with-gods.jpg" alt="Theyyam ritual, Kerala"> -->
+            <span class="ic__type-badge">Culture &amp; Spiritual</span>
+            <span class="ic__img-placeholder">Tête-à-Tête with Gods · South India</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">South India · Karnataka &amp; Kerala</span>
+          <h3 class="ic__name"><a href="/tours/tete-a-tete-with-gods/">Tête-à-Tête with Gods</a></h3>
+          <p class="ic__route">Bengaluru → Mysore → Coorg → Bekal. Garden city, palace town, coffee hills and Kerala's northernmost coast — four distinct landscapes in one private journey.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">11 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€4,500 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/tete-a-tete-with-gods/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Awakening of an Empire -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/awakening-of-an-empire/">
+          <div class="ic__img ici--south" role="img" aria-label="Awakening of an Empire — Karnataka">
+            <!-- DEVELOPER: <img src="images/itineraries/awakening-of-an-empire.jpg" alt="Vittala Temple, Hampi"> -->
+            <span class="ic__type-badge">Culture &amp; Heritage</span>
+            <span class="ic__img-placeholder">Awakening of an Empire · Karnataka</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">South India · Karnataka</span>
+          <h3 class="ic__name"><a href="/tours/awakening-of-an-empire/">Awakening of an Empire</a></h3>
+          <p class="ic__route">Bengaluru → Hampi → Mysore → Coorg → Bengaluru. From India's tech capital to Vijayanagara's boulder-strewn ruins, the Wodeyar palace and the coffee hills of Coorg.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">12 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€4,700 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/awakening-of-an-empire/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Temple Trail -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/temple-trail/">
+          <div class="ic__img ici--south" role="img" aria-label="Temple Trail — Tamil Nadu and Kerala">
+            <!-- DEVELOPER: <img src="images/itineraries/temple-trail.jpg" alt="Meenakshi Temple, Madurai"> -->
+            <span class="ic__type-badge">Culture &amp; Spiritual</span>
+            <span class="ic__img-placeholder">Temple Trail · Tamil Nadu</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">South India · Tamil Nadu &amp; Kerala</span>
+          <h3 class="ic__name"><a href="/tours/temple-trail/">Temple Trail</a></h3>
+          <p class="ic__route">Mahabalipuram → Pondicherry → Kumbakonam → Madurai → Thekkady → Marari. The great Dravidian temple towns of Tamil Nadu, ending on Kerala's quieter coast.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">14 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€4,100 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/temple-trail/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- By the Beach -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/by-the-beach/">
+          <div class="ic__img ici--coast" role="img" aria-label="By the Beach — West Coast India">
+            <!-- DEVELOPER: <img src="images/itineraries/by-the-beach.jpg" alt="Goa coastline at dusk"> -->
+            <span class="ic__type-badge">Coast &amp; Culture</span>
+            <span class="ic__img-placeholder">By the Beach · West Coast</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">South India · West Coast</span>
+          <h3 class="ic__name"><a href="/tours/by-the-beach/">By the Beach</a></h3>
+          <p class="ic__route">Goa → Gokarna → Mangalore → Bekal. India's most characterful western coastline — from Goa's colonial churches to Gokarna's quiet coves and Kerala's northern shore.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">12 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€4,800 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/by-the-beach/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Sun Heritage and Splendor -->
+      <article class="itin-card" data-dest="india">
+        <a href="/tours/sun-heritage-and-splendor/">
+          <div class="ic__img ici--east" role="img" aria-label="Sun Heritage and Splendor — Mumbai Odisha Chennai">
+            <!-- DEVELOPER: <img src="images/itineraries/sun-heritage-splendor.jpg" alt="Konark Sun Temple, Odisha"> -->
+            <span class="ic__type-badge">Culture &amp; Heritage</span>
+            <span class="ic__img-placeholder">Sun, Heritage &amp; Splendor</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">West &amp; East India</span>
+          <h3 class="ic__name"><a href="/tours/sun-heritage-and-splendor/">Sun, Heritage &amp; Splendor</a></h3>
+          <p class="ic__route">Mumbai → Bhubaneswar → Chennai. Three very different cities — India's financial capital, the temple-city of Odisha and the Dravidian cultural heartland of Chennai.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">12 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">€4,550 pp</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/sun-heritage-and-splendor/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+    </div><!-- /itins-grid -->
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     BHUTAN
+════════════════════════════════════════════════════════ -->
+<section class="dest-section hidden" id="section-bhutan" role="tabpanel" aria-labelledby="tab-bhutan">
+
+  <div class="dest-header">
+    <div>
+      <span class="dest-header__label">Private itineraries</span>
+      <h2 class="dest-header__title">Bhutan — <em>the last<br>Himalayan kingdom</em></h2>
+    </div>
+    <div>
+      <p class="dest-header__intro">Bhutan measures progress in Gross National Happiness, not GDP. Every visit is limited by design — meaning your experience of the dzongs, sacred valleys and the legendary Tiger's Nest hike remains unhurried and deeply personal. All itineraries include a licensed Bhutanese guide and private vehicle throughout.</p>
+      <div class="dest-header__meta">
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">1</span>
+          <span class="dest-header__stat-label">Itinerary</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">9</span>
+          <span class="dest-header__stat-label">Nights in Bhutan</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">Any</span>
+          <span class="dest-header__stat-label">Departure date</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itins-grid-wrap">
+    <div class="itins-grid">
+
+      <!-- Bhutan standalone — WIDE -->
+      <article class="itin-card itin-card--wide" data-dest="bhutan">
+        <a href="/tours/bhutan/">
+          <div class="ic__img ici--bhutan" role="img" aria-label="Bhutan — Tiger's Nest, Paro">
+            <!-- DEVELOPER: <img src="images/itineraries/bhutan.jpg" alt="Taktsang Monastery clinging to the cliff, Paro"> -->
+            <span class="ic__type-badge">Culture &amp; Spiritual</span>
+            <span class="ic__img-placeholder">Bhutan · Tiger's Nest &amp; Sacred Valleys</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">Bhutan</span>
+          <h3 class="ic__name"><a href="/tours/bhutan/">Bhutan — Land of the Thunder Dragon</a></h3>
+          <p class="ic__route">Paro → Thimphu → Punakha → Phobjikha → Bumthang → Tang Valley → Paro. Nine nights across Bhutan's most iconic regions — fortress monasteries, sacred crane valleys, the culturally rich Bumthang heartland and the unforgettable Tiger's Nest hike. See also Bhutan &amp; India (below) for an extension to Delhi and Agra.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">9 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">On request</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/bhutan/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Highlights tile -->
+      <article class="itin-card" data-dest="bhutan" style="background:var(--cp);">
+        <div class="ic__body" style="padding-top:2rem;">
+          <span class="ic__region" style="margin-bottom:1rem;">What you'll experience</span>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Paro Dzong &amp; National Museum</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Thimphu — Buddha Dordenma &amp; 13 Arts</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Punakha Dzong at river confluence</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Phobjikha — Black-necked crane valley</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Bumthang sacred temples &amp; Tang Valley</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;">Tiger's Nest hike — Taktsang Monastery</li>
+          </ul>
+          <a href="/tours/bhutan/" class="ic__link" style="margin-top:1.5rem;"><span class="ic__link-line" aria-hidden="true"></span>View full itinerary</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     NEPAL
+════════════════════════════════════════════════════════ -->
+<section class="dest-section hidden" id="section-nepal" role="tabpanel" aria-labelledby="tab-nepal">
+
+  <div class="dest-header">
+    <div>
+      <span class="dest-header__label">Private itineraries</span>
+      <h2 class="dest-header__title">Nepal — <em>the Himalayas,<br>up close</em></h2>
+    </div>
+    <div>
+      <p class="dest-header__intro">Nepal is the only place on earth where you can fly to within sight of Mount Everest, take a jungle safari for one-horned rhinos, walk through living medieval cities and visit the birthplace of the Buddha — all within a single two-week journey. Our itineraries combine Nepal's highlights with an optional India extension.</p>
+      <div class="dest-header__meta">
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">1</span>
+          <span class="dest-header__stat-label">Itinerary</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">11</span>
+          <span class="dest-header__stat-label">Nights in Nepal</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">Sep–May</span>
+          <span class="dest-header__stat-label">Best season</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itins-grid-wrap">
+    <div class="itins-grid">
+
+      <!-- Nepal — WIDE featured card -->
+      <article class="itin-card itin-card--wide" data-dest="nepal">
+        <a href="/tours/nepal/">
+          <div class="ic__img ici--nepal" role="img" aria-label="Nepal — Himalayan peaks and Kathmandu Valley">
+            <!-- DEVELOPER: <img src="images/itineraries/nepal.jpg" alt="Machapuchare and Annapurna range, Nepal"> -->
+            <span class="ic__type-badge">Culture &amp; Wildlife</span>
+            <span class="ic__img-placeholder">Nepal · Himalayas &amp; Kathmandu Valley</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">Nepal</span>
+          <h3 class="ic__name"><a href="/tours/nepal/">Nepal — From Everest to Lumbini</a></h3>
+          <p class="ic__route">Kathmandu → Bhaktapur → Patan → Chitwan → Bandipur → Pokhara → Lumbini → Nagarkot. Mountain flights over Everest, UNESCO World Heritage temples, Chitwan wildlife safaris, the Pumdi-Kalabang hike and the Buddha's birthplace. Can be combined with Delhi and Agra — see Nepal &amp; India below.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">11 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">On request</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Season</span><span class="ic__meta-value">Sep – May</span></div>
+          </div>
+          <a href="/tours/nepal/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Highlights tile -->
+      <article class="itin-card" data-dest="nepal" style="background:var(--cp);">
+        <div class="ic__body" style="padding-top:2rem;">
+          <span class="ic__region" style="margin-bottom:1rem;">What you'll experience</span>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Himalayan mountain flight — views of Everest</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Kathmandu — Pashupatinath, Boudhanath, Bhaktapur</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Patan — City of Fine Arts &amp; Newari crafts</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Chitwan — jeep safari, one-horned rhinos &amp; tigers</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Pokhara — Annapurna views, Phewa Lake</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;">Lumbini — birthplace of the Buddha</li>
+          </ul>
+          <a href="/tours/nepal/" class="ic__link" style="margin-top:1.5rem;"><span class="ic__link-line" aria-hidden="true"></span>View full itinerary</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SRI LANKA
+════════════════════════════════════════════════════════ -->
+<section class="dest-section hidden" id="section-sri-lanka" role="tabpanel" aria-labelledby="tab-sri-lanka">
+
+  <div class="dest-header">
+    <div>
+      <span class="dest-header__label">Private itineraries</span>
+      <h2 class="dest-header__title">Sri Lanka — <em>pearl of<br>the Indian Ocean</em></h2>
+    </div>
+    <div>
+      <p class="dest-header__intro">A country small enough to cross in a day yet rich enough to fill a month — ancient rock fortresses, Kandyan dancers, tea estates at 4,000 feet, leopards at Yala and whales off the southern coast. Our Sri Lanka journey is fully private, moving at your pace between world-class small hotels and unique local experiences unavailable on group tours.</p>
+      <div class="dest-header__meta">
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">1</span>
+          <span class="dest-header__stat-label">Itinerary</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">12</span>
+          <span class="dest-header__stat-label">Nights</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num">Any</span>
+          <span class="dest-header__stat-label">Departure date</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itins-grid-wrap">
+    <div class="itins-grid">
+
+      <!-- Sri Lanka — WIDE featured -->
+      <article class="itin-card itin-card--wide" data-dest="sri-lanka">
+        <a href="/tours/sri-lanka/">
+          <div class="ic__img ici--sl" role="img" aria-label="Sri Lanka — Sigiriya Rock and south coast">
+            <!-- DEVELOPER: <img src="images/itineraries/sri-lanka.jpg" alt="Sigiriya Lion Rock, Sri Lanka"> -->
+            <span class="ic__type-badge">Wildlife &amp; Culture</span>
+            <span class="ic__img-placeholder">Sri Lanka · Pearl of the Indian Ocean</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region">Sri Lanka</span>
+          <h3 class="ic__name"><a href="/tours/sri-lanka/">Pearl of the Indian Ocean</a></h3>
+          <p class="ic__route">Negombo → Sigiriya → Polonnaruwa → Kandy → Hatton → Yala → Weligama → Galle → Colombo. A VIP arrival at Colombo airport, Sigiriya Rock Fortress at dusk, the Minneriya elephant gathering, the scenic Peradeniya–Hatton tea-train, leopard safaris at Wild Coast, whale watching off Mirissa and a private Galle Fort tour with an Arrack tasting finale.</p>
+          <div class="ic__meta">
+            <div class="ic__meta-item"><span class="ic__meta-label">Duration</span><span class="ic__meta-value">12 nights</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">From</span><span class="ic__meta-value">On request</span></div>
+            <div class="ic__meta-item"><span class="ic__meta-label">Departs</span><span class="ic__meta-value">Any date</span></div>
+          </div>
+          <a href="/tours/sri-lanka/" class="ic__link"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Highlights tile -->
+      <article class="itin-card" data-dest="sri-lanka" style="background:var(--cp);">
+        <div class="ic__body" style="padding-top:2rem;">
+          <span class="ic__region" style="margin-bottom:1rem;">What you'll experience</span>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Sigiriya Rock Fortress — UNESCO World Heritage</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Polonnaruwa — medieval ruined capital</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Kandy — Tooth Relic Temple &amp; Kandyan dance</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Ceylon Tea Trails — scenic train &amp; planters' lunch</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;border-bottom:0.5px solid rgba(200,180,154,0.2);">Yala — private leopard safaris &amp; dune dinners</li>
+            <li style="font-family:var(--font-body);font-size:0.75rem;font-weight:300;color:var(--cm);line-height:2;padding:0.5rem 0;">Galle Fort heritage walk &amp; whale watching</li>
+          </ul>
+          <a href="/tours/sri-lanka/" class="ic__link" style="margin-top:1.5rem;"><span class="ic__link-line" aria-hidden="true"></span>View full itinerary</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MULTI-COUNTRY  (dark band, always visible)
+════════════════════════════════════════════════════════ -->
+<section class="dest-section hidden" id="section-multi" role="tabpanel" aria-labelledby="tab-multi">
+
+  <div class="dest-header" style="background:var(--cd);border-bottom-color:rgba(255,255,255,0.06);">
+    <div>
+      <span class="dest-header__label" style="color:var(--cb);">Private itineraries</span>
+      <h2 class="dest-header__title" style="color:var(--cr);">Multi-country — <em style="color:var(--cb);">two countries,<br>one seamless journey</em></h2>
+    </div>
+    <div>
+      <p class="dest-header__intro" style="color:rgba(200,180,154,0.5);">Our multi-country itineraries pair the best of two destinations — Bhutan with India's Mughal north, Nepal with Bhutan's sacred valleys, Nepal with India's heritage cities. Each combination is fully private, with a single team coordinating logistics across borders for a journey that feels continuous rather than stitched together.</p>
+      <div class="dest-header__meta">
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num" style="color:var(--cr);">3</span>
+          <span class="dest-header__stat-label">Combinations</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num" style="color:var(--cr);">10–16</span>
+          <span class="dest-header__stat-label">Nights typical</span>
+        </div>
+        <div class="dest-header__stat">
+          <span class="dest-header__stat-num" style="color:var(--cr);">Any</span>
+          <span class="dest-header__stat-label">Departure date</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--cd);padding:0 0 4rem;">
+    <div class="itins-grid" style="background:rgba(255,255,255,0.04);">
+
+      <!-- Bhutan & India -->
+      <article class="itin-card" style="background:var(--ci);" data-dest="multi"
+               onmouseenter="this.style.background='#2C1808'" onmouseleave="this.style.background='var(--ci)'">
+        <a href="/tours/bhutan-and-india/">
+          <div class="ic__img ici--bhutan" role="img" aria-label="Bhutan and India — Tiger's Nest and Taj Mahal">
+            <!-- DEVELOPER: <img src="images/itineraries/bhutan-india.jpg" alt="Taktsang Monastery, Paro"> -->
+            <span class="ic__type-badge">Bhutan + India</span>
+            <span class="ic__img-placeholder">Bhutan &amp; India</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region" style="color:var(--cb);">Bhutan &amp; North India</span>
+          <h3 class="ic__name" style="color:var(--cr);"><a href="/tours/bhutan-and-india/" style="color:inherit;">Bhutan &amp; India</a></h3>
+          <p class="ic__route" style="color:rgba(200,180,154,0.45);">Paro → Thimphu → Punakha → Phobjikha → Bumthang → Tang Valley → Paro → Delhi → Agra. Nine nights across Bhutan's sacred valleys and fortress monasteries, culminating in the Tiger's Nest hike, then onward to Delhi's Mughal heritage and the Taj Mahal at sunrise.</p>
+          <div class="ic__meta" style="background:rgba(255,255,255,0.04);">
+            <div class="ic__meta-item" style="border-right-color:rgba(255,255,255,0.06);">
+              <span class="ic__meta-label">Duration</span>
+              <span class="ic__meta-value" style="color:var(--cr);">14 nights</span>
+            </div>
+            <div class="ic__meta-item" style="border-right-color:rgba(255,255,255,0.06);">
+              <span class="ic__meta-label">Hotels</span>
+              <span class="ic__meta-value" style="color:var(--cr);">COMO · Uma · Six Senses</span>
+            </div>
+            <div class="ic__meta-item">
+              <span class="ic__meta-label">Departs</span>
+              <span class="ic__meta-value" style="color:var(--cr);">Any date</span>
+            </div>
+          </div>
+          <a href="/tours/bhutan-and-india/" class="ic__link" style="color:rgba(200,180,154,0.3);"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Nepal & India -->
+      <article class="itin-card" style="background:var(--ci);" data-dest="multi"
+               onmouseenter="this.style.background='#2C1808'" onmouseleave="this.style.background='var(--ci)'">
+        <a href="/tours/nepal-and-india/">
+          <div class="ic__img ici--nepal" role="img" aria-label="Nepal and India — Himalayas and Taj Mahal">
+            <!-- DEVELOPER: <img src="images/itineraries/nepal-india.jpg" alt="Kathmandu Valley temples at dusk"> -->
+            <span class="ic__type-badge">Nepal + India</span>
+            <span class="ic__img-placeholder">Nepal &amp; India</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region" style="color:var(--cb);">Nepal &amp; North India</span>
+          <h3 class="ic__name" style="color:var(--cr);"><a href="/tours/nepal-and-india/" style="color:inherit;">Nepal &amp; India</a></h3>
+          <p class="ic__route" style="color:rgba(200,180,154,0.45);">Kathmandu → Chitwan → Bandipur → Pokhara → Lumbini → Nagarkot → Delhi → Agra. A mountain flight over Everest, Chitwan wildlife safaris, Lumbini — birthplace of the Buddha — and the Taj Mahal at sunrise. The subcontinent's greatest spiritual and cultural sites in one seamless journey.</p>
+          <div class="ic__meta" style="background:rgba(255,255,255,0.04);">
+            <div class="ic__meta-item" style="border-right-color:rgba(255,255,255,0.06);">
+              <span class="ic__meta-label">Duration</span>
+              <span class="ic__meta-value" style="color:var(--cr);">16 nights</span>
+            </div>
+            <div class="ic__meta-item" style="border-right-color:rgba(255,255,255,0.06);">
+              <span class="ic__meta-label">Hotels</span>
+              <span class="ic__meta-value" style="color:var(--cr);">Dwarikas · Meghauli · Oberoi</span>
+            </div>
+            <div class="ic__meta-item">
+              <span class="ic__meta-label">Season</span>
+              <span class="ic__meta-value" style="color:var(--cr);">Sep – May</span>
+            </div>
+          </div>
+          <a href="/tours/nepal-and-india/" class="ic__link" style="color:rgba(200,180,154,0.3);"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+      <!-- Nepal & Bhutan -->
+      <article class="itin-card" style="background:var(--ci);" data-dest="multi"
+               onmouseenter="this.style.background='#2C1808'" onmouseleave="this.style.background='var(--ci)'">
+        <a href="/tours/nepal-and-bhutan/">
+          <div class="ic__img ici--multi" role="img" aria-label="Nepal and Bhutan — a family Himalayan journey">
+            <!-- DEVELOPER: <img src="images/itineraries/nepal-bhutan.jpg" alt="Patan Durbar Square with snow peaks behind"> -->
+            <span class="ic__type-badge">Nepal + Bhutan</span>
+            <span class="ic__img-placeholder">Nepal &amp; Bhutan</span>
+          </div>
+        </a>
+        <div class="ic__body">
+          <span class="ic__region" style="color:var(--cb);">Nepal &amp; Bhutan</span>
+          <h3 class="ic__name" style="color:var(--cr);"><a href="/tours/nepal-and-bhutan/" style="color:inherit;">Nepal &amp; Bhutan</a></h3>
+          <p class="ic__route" style="color:rgba(200,180,154,0.45);">Kathmandu → Chitwan → Paro → Thimphu → Punakha → Paro. Designed for families — a Himalayan mountain flight, Chitwan jungle safaris, Bhutan's sacred dzongs, archery, a traditional dress photoshoot and the Tiger's Nest hike. Thoughtfully paced for all ages.</p>
+          <div class="ic__meta" style="background:rgba(255,255,255,0.04);">
+            <div class="ic__meta-item" style="border-right-color:rgba(255,255,255,0.06);">
+              <span class="ic__meta-label">Duration</span>
+              <span class="ic__meta-value" style="color:var(--cr);">10 nights</span>
+            </div>
+            <div class="ic__meta-item" style="border-right-color:rgba(255,255,255,0.06);">
+              <span class="ic__meta-label">Hotels</span>
+              <span class="ic__meta-value" style="color:var(--cr);">Dwarikas · Le Méridien · COMO</span>
+            </div>
+            <div class="ic__meta-item">
+              <span class="ic__meta-label">Ideal for</span>
+              <span class="ic__meta-value" style="color:var(--cr);">Families</span>
+            </div>
+          </div>
+          <a href="/tours/nepal-and-bhutan/" class="ic__link" style="color:rgba(200,180,154,0.3);"><span class="ic__link-line" aria-hidden="true"></span>View itinerary</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SIGNATURE EXPERIENCES
+════════════════════════════════════════════════════════ -->
+<section class="signature" aria-label="Signature experiences for private groups">
+  <div class="signature__header">
+    <div>
+      <span class="eyebrow">Curated group programmes</span>
+      <h2 class="signature__heading">Signature experiences</h2>
+    </div>
+    <div>
+      <p class="signature__intro">These are not standard itineraries — they are curated programmes designed around a specific theme, led by specialists and guest experts, and structured entirely for your private group. Dates, duration and depth are all built around your requirements.</p>
+      <span class="signature__group-note">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Private groups only · Fully bespoke · Enquire to begin
+      </span>
+    </div>
+  </div>
+
+  <div class="sig-grid">
+
+    <article class="sig-card">
+      <a href="/signature-experiences/art-of-feeling-well/">
+        <div class="sc__img sci--wellness" role="img" aria-label="Art of Feeling Well — Ayurveda and Bharatanatyam Kerala">
+          <!-- DEVELOPER: <img src="images/signature/art-of-feeling-well.jpg" alt="Art of Feeling Well — Bharatanatyam, Kerala"> -->
+          <span class="sc__img-placeholder">Art of Feeling Well · Kerala</span>
+        </div>
+      </a>
+      <div class="sc__body">
+        <span class="sc__eyebrow">Wellness · Kerala, India</span>
+        <h3 class="sc__name">Art of Feeling Well</h3>
+        <p class="sc__subtitle">An Ayurveda and Bharatanatyam wellness retreat</p>
+        <p class="sc__desc">A private group retreat combining traditional Ayurvedic treatments with Bharatanatyam — classical Indian dance used as a pathway to physical and mental renewal. Co-designed by practitioners in both disciplines, this programme weaves movement, stillness, diet and therapeutic treatment into a single arc across ten days in Kerala.</p>
+        <div class="sc__details">
+          <div class="sc__detail"><span class="sc__detail-label">Duration</span><span class="sc__detail-value">10 nights</span></div>
+          <div class="sc__detail"><span class="sc__detail-label">From</span><span class="sc__detail-value">$9,852 per person</span></div>
+          <div class="sc__detail"><span class="sc__detail-label">For</span><span class="sc__detail-value">Private groups</span></div>
+        </div>
+        <p class="sc__hosts">Led by <strong>Methil Devika</strong> — Bharatanatyam practitioner and choreographer — in collaboration with AndThen's Ayurveda partners in Kerala.</p>
+        <a href="/signature-experiences/art-of-feeling-well/"><button class="sc__cta">Enquire about this experience</button></a>
+        <p class="sc__note">Dates and group size built entirely around your requirements</p>
+      </div>
+    </article>
+
+    <article class="sig-card">
+      <a href="/signature-experiences/culinary-trail/">
+        <div class="sc__img sci--culinary" role="img" aria-label="Culinary Trail — Chef Bobby Geetha across India">
+          <!-- DEVELOPER: <img src="images/signature/culinary-trail.jpg" alt="Culinary Trail — Indian spice market"> -->
+          <span class="sc__img-placeholder">Culinary Trail · India</span>
+        </div>
+      </a>
+      <div class="sc__body">
+        <span class="sc__eyebrow">Food &amp; Culture · India</span>
+        <h3 class="sc__name">Culinary Trail</h3>
+        <p class="sc__subtitle">With Chef Bobby Geetha — markets, kitchens and dining across India</p>
+        <p class="sc__desc">A private group journey through India with internationally acclaimed chef Bobby Geetha — visiting spice markets, cooking alongside local families, dining in heritage properties and exploring the extraordinary regional diversity of Indian cuisine from street food to palace kitchens.</p>
+        <div class="sc__details">
+          <div class="sc__detail"><span class="sc__detail-label">Duration</span><span class="sc__detail-value">From 10 nights</span></div>
+          <div class="sc__detail"><span class="sc__detail-label">Pricing</span><span class="sc__detail-value">On request</span></div>
+          <div class="sc__detail"><span class="sc__detail-label">For</span><span class="sc__detail-value">Private groups</span></div>
+        </div>
+        <p class="sc__hosts">Led by <strong>Chef Bobby Geetha</strong> — award-winning chef, author and culinary educator with over 25 years across India, Europe and the USA.</p>
+        <a href="/signature-experiences/culinary-trail/"><button class="sc__cta">Enquire about this experience</button></a>
+        <p class="sc__note">Suitable for corporate incentives, food &amp; travel groups, family reunions</p>
+      </div>
+    </article>
+
+    <article class="sig-card">
+      <a href="/signature-experiences/india-golf-trail/">
+        <div class="sc__img sci--golf" role="img" aria-label="India Golf Trail — heritage courses across India">
+          <!-- DEVELOPER: <img src="images/signature/india-golf-trail.jpg" alt="Golf course with palace backdrop, India"> -->
+          <span class="sc__img-placeholder">India Golf Trail · India</span>
+        </div>
+      </a>
+      <div class="sc__body">
+        <span class="sc__eyebrow">Sport &amp; Travel · India</span>
+        <h3 class="sc__name">India Golf Trail</h3>
+        <p class="sc__subtitle">A private group journey through India's finest golf courses</p>
+        <p class="sc__desc">India has a long and underappreciated golf history — colonial-era courses set against palace backdrops, hill station fairways at altitude, and modern championship layouts. The India Golf Trail pairs exceptional golf with private sightseeing, heritage hotel stays and memorable dining.</p>
+        <div class="sc__details">
+          <div class="sc__detail"><span class="sc__detail-label">Duration</span><span class="sc__detail-value">From 10 nights</span></div>
+          <div class="sc__detail"><span class="sc__detail-label">Pricing</span><span class="sc__detail-value">On request</span></div>
+          <div class="sc__detail"><span class="sc__detail-label">For</span><span class="sc__detail-value">Private groups</span></div>
+        </div>
+        <p class="sc__hosts">AndThen handles all tee time bookings, transfers, accommodation and private guides. The programme is designed entirely around your group's requirements.</p>
+        <a href="/signature-experiences/india-golf-trail/"><button class="sc__cta">Enquire about this experience</button></a>
+        <p class="sc__note">Suitable for corporate groups, golf societies and private travel clubs</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ═══ CTA BAND ═══════════════════════════════════════ -->
+<div class="cta-band" aria-label="Build your own journey">
+  <div>
+    <h2 class="cta-band__heading">Can't find exactly what you're looking for?</h2>
+    <p class="cta-band__sub">Every itinerary here is a starting point. Tell us what you want — a different route, a different pace, a different focus — and we will build it from scratch. No fee for the consultation.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="/contact/"><button class="btn-primary">Build my own journey</button></a>
+    <a href="/destinations/"><button class="btn-secondary">Browse destinations</button></a>
+  </div>
+</div>
+
+
+<!-- ═══ FOOTER ══════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__top">
+    <div>
+      <a href="/"><span class="footer__wordmark">ANDTHEN</span><span class="footer__sub">travels</span></a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka for discerning US travelers.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+18000000000">+1 800 000 0000</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Destinations</span>
+      <a href="/india/">India</a>
+      <a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a>
+      <a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Experiences</span>
+      <a href="/experiences/wildlife-safaris/">Wildlife &amp; Safaris</a>
+      <a href="/experiences/wellness-ayurveda/">Wellness &amp; Ayurveda</a>
+      <a href="/experiences/trekking-adventure/">Trekking</a>
+      <a href="/experiences/spiritual-journeys/">Spiritual journeys</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/places-to-stay/">Places to stay</a>
+      <a href="/journal/">Journal</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy-policy/">Privacy policy</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+
+<script>
+(function() {
+
+  // Mobile nav toggle
+  var hamburger = document.getElementById('hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      this.setAttribute('aria-expanded', String(this.getAttribute('aria-expanded') !== 'true'));
+    });
+  }
+
+  // Destination tabs — show/hide sections
+  var tabs     = document.querySelectorAll('.dest-tab');
+  var sections = {
+    'india':     document.getElementById('section-india'),
+    'bhutan':    document.getElementById('section-bhutan'),
+    'nepal':     document.getElementById('section-nepal'),
+    'sri-lanka': document.getElementById('section-sri-lanka'),
+    'multi':     document.getElementById('section-multi'),
+  };
+
+  function activateTab(dest) {
+    tabs.forEach(function(t) {
+      var active = t.getAttribute('data-dest') === dest;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', String(active));
+    });
+    Object.keys(sections).forEach(function(key) {
+      if (sections[key]) {
+        sections[key].classList.toggle('hidden', key !== dest);
+      }
+    });
+    // scroll to section smoothly
+    if (sections[dest]) {
+      var top = sections[dest].getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  }
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      activateTab(this.getAttribute('data-dest'));
+    });
+  });
+
+  // Default: show India
+  activateTab('india');
+
+})();
+</script>
+
+</body>
+</html>

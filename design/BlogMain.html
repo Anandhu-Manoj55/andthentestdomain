@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal | AndThen Travels</title>
+<meta name="description" content="Guides, destination deep-dives and travel insights across India, Bhutan, Nepal and Sri Lanka from AndThen Travels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'DM Sans', Arial, sans-serif;
+  --tr: 0.25s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--fb); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; object-fit: cover; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cr); height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.35);
+}
+.nav__logo-word { font-family: var(--fb); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); display: block; }
+.nav__logo-sub  { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); display: block; }
+.nav__links { display: flex; gap: 2.25rem; }
+.nav__links a { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); transition: color var(--tr); }
+.nav__links a:hover, .nav__links a.active { color: var(--cd); }
+.nav__cta { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cd); background: transparent; border: 0.5px solid var(--cd); padding: 0.625rem 1.375rem; cursor: pointer; transition: background var(--tr), color var(--tr); }
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__ham { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__ham span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+/* DEVELOPER: add background-image: url('images/journal-hero.jpg') to .hero__bg — min 1800×1040px, editorial travel moment */
+.hero__bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #3A2010 0%, #2C1A0A 50%, #1A0E06 100%);
+}
+.hero__bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(44,26,10,0.72) 0%, rgba(44,26,10,0.2) 60%, rgba(44,26,10,0.05) 100%);
+}
+.hero__content {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 2.5rem 3.5rem;
+  max-width: 680px;
+}
+.hero__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1rem; }
+.hero__title { font-family: var(--fd); font-size: clamp(2.25rem, 4.5vw, 3.75rem); font-weight: 400; color: var(--cr); line-height: 1.05; margin-bottom: 1rem; }
+.hero__title em { font-style: italic; color: var(--cb); }
+.hero__desc { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(200,180,154,0.6); line-height: 1.9; max-width: 480px; }
+
+/* FILTER BAR */
+.filter-bar {
+  background: var(--cp);
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  display: flex; align-items: center;
+  padding: 0 2.5rem; height: 50px; gap: 0;
+  overflow-x: auto; scrollbar-width: none;
+  position: sticky; top: 68px; z-index: 90;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.f-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.25rem; text-transform: uppercase; color: var(--cs); flex-shrink: 0; margin-right: 1.5rem; }
+.f-btn {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase;
+  color: var(--cm); background: transparent; border: none; cursor: pointer;
+  padding: 0 1.125rem; height: 100%; white-space: nowrap; flex-shrink: 0;
+  border-bottom: 2px solid transparent; transition: color var(--tr), border-color var(--tr);
+}
+.f-btn:hover { color: var(--cd); }
+.f-btn.active { color: var(--cd); border-bottom-color: var(--cb); }
+.f-sep { width: 0.5px; height: 14px; background: rgba(200,180,154,0.2); flex-shrink: 0; align-self: center; }
+
+/* LATEST ARTICLE HIGHLIGHT */
+.latest {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(44,26,10,0.08);
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+}
+.latest__img-wrap {
+  position: relative; overflow: hidden; height: 440px; background: #2C1808;
+}
+.latest__img-ph {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+.latest__img-wrap::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.55) 0%, transparent 55%);
+}
+.latest__badges {
+  position: absolute; top: 1.5rem; left: 1.5rem; z-index: 2;
+  display: flex; align-items: center; gap: 0;
+}
+.latest__new {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem;
+  text-transform: uppercase; background: var(--cr); color: var(--cd);
+  padding: 4px 10px; font-weight: 500;
+}
+.latest__dest {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem;
+  text-transform: uppercase; background: var(--cb); color: var(--cr);
+  padding: 4px 10px;
+}
+.latest__body {
+  background: var(--cd);
+  padding: 3rem 3rem 3.5rem;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.latest__kicker {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.28rem;
+  text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1.25rem;
+}
+.latest__title {
+  font-family: var(--fd); font-size: clamp(1.5rem, 2.25vw, 2.125rem);
+  font-weight: 400; color: var(--cr); line-height: 1.2; margin-bottom: 1.125rem;
+}
+.latest__excerpt {
+  font-family: var(--fb); font-size: 0.8125rem; font-weight: 300;
+  color: rgba(200,180,154,0.5); line-height: 2; margin-bottom: 2.25rem;
+}
+.latest__foot {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 1.5rem; border-top: 0.5px solid rgba(255,255,255,0.07);
+}
+.latest__meta { font-family: var(--fb); font-size: 0.5rem; color: rgba(200,180,154,0.35); font-weight: 300; }
+.latest__read {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.25rem;
+  text-transform: uppercase; color: var(--cr);
+  display: flex; align-items: center; gap: 10px; transition: color var(--tr);
+}
+.latest__read:hover { color: var(--cb); }
+.latest__read-line { width: 20px; height: 0.5px; background: currentColor; }
+@media (max-width: 768px) {
+  .latest { grid-template-columns: 1fr; }
+  .latest__img-wrap { height: 280px; }
+  .latest__body { padding: 2rem; }
+}
+
+/* GRID SECTION */
+.grid-section { padding: 3rem 2.5rem 4rem; }
+
+.section-head {
+  display: flex; align-items: center; gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.section-head__title { font-family: var(--fd); font-size: 1.25rem; font-weight: 400; font-style: italic; color: var(--cd); white-space: nowrap; }
+.section-head__line { flex: 1; height: 0.5px; background: rgba(200,180,154,0.25); }
+.section-head__count { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cs); white-space: nowrap; }
+
+/* CARD GRID — square images */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(44,26,10,0.08);
+}
+
+/* article card */
+.card {
+  background: var(--cr);
+  display: flex; flex-direction: column;
+  transition: background var(--tr);
+}
+.card:hover { background: var(--cp); }
+.card.hidden { display: none; }
+
+/* Square image container — 1:1 ratio */
+.card__img-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* square */
+  overflow: hidden;
+}
+.card__img-wrap img,
+.card__img-ph {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+}
+/* DEVELOPER: replace .card__img-ph with <img src="..." alt="..."> inside .card__img-wrap */
+.card__img-ph { object-fit: cover; }
+/* placeholder tones — remove once real images are in */
+.ct-india-n   { background: #3A1808; }
+.ct-india-s   { background: #0E2810; }
+.ct-kerala    { background: #082028; }
+.ct-wildlife  { background: #201808; }
+.ct-bhutan    { background: #142810; }
+.ct-nepal     { background: #0E1A38; }
+.ct-srilanka  { background: #083040; }
+.ct-wellness  { background: #2C1808; }
+.ct-honeymoon { background: #280818; }
+.ct-adventure { background: #102810; }
+.ct-planning  { background: #181828; }
+.ct-multi     { background: #201028; }
+.ct-family    { background: #201818; }
+.ct-food      { background: #281808; }
+.ct-festival  { background: #281818; }
+
+/* destination tag over image */
+.card__img-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.5) 0%, transparent 50%);
+  pointer-events: none;
+}
+.card__dest {
+  position: absolute; top: 0.75rem; left: 0.75rem; z-index: 2;
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem;
+  text-transform: uppercase; background: var(--cb); color: var(--cr);
+  padding: 3px 8px;
+}
+.card__cat-tag {
+  position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2;
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.1rem;
+  text-transform: uppercase; background: rgba(44,26,10,0.55); color: rgba(200,180,154,0.75);
+  padding: 3px 8px;
+}
+
+.card__body { padding: 1.125rem 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.card__title { font-family: var(--fd); font-size: 1rem; font-weight: 400; color: var(--cd); line-height: 1.3; margin-bottom: 0.5rem; flex: 1; }
+.card__foot { display: flex; align-items: center; justify-content: space-between; margin-top: 0.875rem; }
+.card__meta { font-family: var(--fb); font-size: 0.5rem; color: var(--cs); font-weight: 300; }
+.card__arrow { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cs); display: flex; align-items: center; gap: 5px; transition: color var(--tr); }
+.card__arrow-line { width: 10px; height: 0.5px; background: currentColor; }
+.card:hover .card__arrow { color: var(--cb); }
+
+/* FEATURED card — spans 2 cols */
+.card--featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card--featured .card__img-wrap {
+  padding-top: 0;
+  min-height: 320px;
+  position: relative;
+}
+.card--featured .card__img-ph {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+.card--featured .card__body {
+  padding: 2rem 2rem 2.25rem;
+  justify-content: flex-end;
+}
+.card--featured .card__title {
+  font-size: 1.3125rem;
+  line-height: 1.2;
+}
+
+/* NEWSLETTER STRIP */
+.nl-strip {
+  background: var(--cd);
+  padding: 3rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 3rem;
+  flex-wrap: wrap;
+}
+.nl-strip__left {}
+.nl-strip__label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.5rem; }
+.nl-strip__title { font-family: var(--fd); font-size: clamp(1.375rem, 2vw, 1.875rem); font-weight: 400; font-style: italic; color: var(--cr); line-height: 1.2; }
+.nl-strip__form { display: flex; min-width: 360px; }
+.nl-strip__input { flex: 1; font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.12); border-right: none; color: var(--cr); padding: 0.875rem 1.125rem; outline: none; transition: border-color var(--tr); }
+.nl-strip__input::placeholder { color: rgba(200,180,154,0.3); }
+.nl-strip__input:focus { border-color: var(--cb); }
+.nl-strip__btn { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; background: var(--cb); color: var(--cr); border: none; padding: 0 1.375rem; cursor: pointer; white-space: nowrap; transition: background var(--tr); }
+.nl-strip__btn:hover { background: var(--ci); }
+
+/* CTA */
+.cta { background: var(--cp); padding: 4rem 2.5rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; border-top: 0.5px solid rgba(200,180,154,0.25); }
+.cta__title { font-family: var(--fd); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; font-style: italic; color: var(--cd); line-height: 1.2; margin-bottom: 0.375rem; }
+.cta__sub { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: var(--cm); line-height: 1.8; max-width: 480px; }
+.cta__btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 200px; }
+.btn-dark { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: var(--cd); color: var(--cr); border: none; padding: 1rem 1.5rem; cursor: pointer; transition: background var(--tr); }
+.btn-dark:hover { background: var(--ci); }
+.btn-ghost { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: transparent; color: var(--cm); border: 0.5px solid rgba(44,26,10,0.25); padding: 1rem 1.5rem; cursor: pointer; transition: all var(--tr); }
+.btn-ghost:hover { background: var(--cd); color: var(--cr); border-color: var(--cd); }
+
+/* FOOTER */
+.footer { background: var(--ci); padding: 4.5rem 2.5rem 2.5rem; }
+.footer__grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+.footer__word { font-family: var(--fb); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__sub-word { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact a { display: block; font-family: var(--fb); font-size: 0.6875rem; color: var(--cb); margin-top: 0.75rem; }
+.footer__col-h { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 0.625rem; transition: color var(--tr); }
+.footer__col a:hover { color: var(--cb); }
+.footer__btm { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--fb); font-size: 0.5625rem; color: rgba(255,255,255,0.1); }
+
+/* NO RESULTS */
+.no-res { display: none; padding: 3rem 0; text-align: center; font-family: var(--fb); font-size: 0.8125rem; color: var(--cm); grid-column: 1/-1; background: var(--cr); }
+.no-res a { color: var(--cb); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .card--featured { grid-template-columns: 1fr; grid-column: span 3; }
+  .card--featured .card__img-wrap { min-height: 260px; padding-top: 0; }
+  .cta { grid-template-columns: 1fr; }
+  .cta__btns { flex-direction: row; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__ham { display: flex; }
+  .hero { height: 420px; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .card--featured { grid-column: span 2; grid-template-columns: 1fr; }
+  .card--featured .card__img-wrap { min-height: 220px; }
+  .nl-strip { flex-direction: column; align-items: flex-start; }
+  .nl-strip__form { min-width: 100%; width: 100%; }
+  .footer__grid { grid-template-columns: 1fr; }
+  .cta__btns { flex-direction: column; }
+}
+@media (max-width: 500px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .card--featured { grid-column: span 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <a href="/" aria-label="AndThen Travels">
+    <span class="nav__logo-word">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+  <div class="nav__links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/experiences/">Experiences</a>
+    <a href="/places-to-stay/">Places to stay</a>
+    <a href="/wellness/">Wellness</a>
+    <a href="/journal/" class="active">Journal</a>
+    <a href="/about/">About</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+18000000000" style="font-family:var(--fb);font-size:0.6875rem;color:var(--cb);">+1 800 000 0000</a>
+    <a href="/contact/"><button class="nav__cta">Plan my journey</button></a>
+    <button class="nav__ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<!-- DEVELOPER: add style="background-image:url('images/journal-hero.jpg');background-size:cover;background-position:center;" to .hero__bg -->
+<header class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <span class="hero__kicker">The AndThen Journal</span>
+    <h1 class="hero__title">Stories, guides &amp;<br><em>deep dives</em> across<br>the subcontinent.</h1>
+    <p class="hero__desc">Destination guides, Ayurveda explainers, safari planning, trekking, honeymoons, festivals and more — across India, Bhutan, Nepal and Sri Lanka.</p>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<nav class="filter-bar" role="toolbar" aria-label="Filter articles">
+  <span class="f-label">Filter</span>
+  <button class="f-btn active" data-f="all">All</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="india">India</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="bhutan">Bhutan</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="nepal">Nepal</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="srilanka">Sri Lanka</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="wellness">Ayurveda &amp; Wellness</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="honeymoon">Honeymoon</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="adventure">Adventure</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="family">Family</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="planning">Planning</button>
+</nav>
+
+<!-- ═══ LATEST ARTICLE HIGHLIGHT ═════════════════ -->
+<a href="/journal/beginners-guide-ayurveda-retreats-india/" style="display:block;">
+  <article class="latest">
+    <div class="latest__img-wrap">
+      <!-- DEVELOPER: replace .latest__img-ph with <img src="images/blog/ayurveda-retreat-kerala.jpg" alt="Ayurveda retreat Kerala"> -->
+      <div class="latest__img-ph ct-wellness"></div>
+      <div class="latest__badges">
+        <span class="latest__new">Latest</span>
+        <span class="latest__dest">India · Ayurveda</span>
+      </div>
+    </div>
+    <div class="latest__body">
+      <span class="latest__kicker">Published this week · Ayurveda &amp; Wellness</span>
+      <h2 class="latest__title">The Complete Beginner's Guide to Ayurveda Retreats in India</h2>
+      <p class="latest__excerpt">You've heard of Ayurveda. You've seen the word on face creams and yoga studio menus. But the real thing — a medically supervised retreat in Kerala where an Ayurvedic doctor designs your programme from scratch — is something else entirely. This guide covers what to expect, what the treatments involve, and how to tell a genuine retreat from a spa that's borrowed the vocabulary.</p>
+      <div class="latest__foot">
+        <span class="latest__meta">8 min read · Updated June 2026</span>
+        <span class="latest__read"><span class="latest__read-line"></span>Read the guide</span>
+      </div>
+    </div>
+  </article>
+</a>
+
+<!-- ═══ AYURVEDA & WELLNESS ═══════════════════════ -->
+<section class="grid-section" data-section="wellness india" id="sec-wellness">
+  <div class="section-head">
+    <h2 class="section-head__title">Ayurveda &amp; Wellness</h2>
+    <div class="section-head__line"></div>
+    <span class="section-head__count">50 articles · India</span>
+  </div>
+  <div class="card-grid">
+
+    <!-- FEATURED: Beginner's Guide — 2 cols wide -->
+    <article class="card card--featured" data-tags="wellness india">
+      <a href="/journal/beginners-guide-ayurveda-retreats-india/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-wellness"></div>
+          <!-- DEVELOPER: <img src="images/blog/ayurveda-retreat-kerala.jpg" alt="Ayurveda retreat, Kerala"> -->
+          <span class="card__dest">India · Kerala</span>
+          <span class="card__cat-tag">Beginner guide</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/beginners-guide-ayurveda-retreats-india/">The Complete Beginner's Guide to Ayurveda Retreats in India</a></h3>
+        <div class="card__foot">
+          <span class="card__meta">8 min read · SEO score 96</span>
+          <a href="/journal/beginners-guide-ayurveda-retreats-india/" class="card__arrow"><span class="card__arrow-line"></span>Read</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/top-10-luxury-ayurveda-resorts-kerala-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-kerala"></div>
+          <span class="card__dest">Kerala</span>
+          <span class="card__cat-tag">Rankings</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/top-10-luxury-ayurveda-resorts-kerala-2026/">Top 10 Luxury Ayurveda Resorts in Kerala Ranked for 2026</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/top-10-luxury-ayurveda-resorts-kerala-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/what-is-panchakarma/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-wellness"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Explainer</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/what-is-panchakarma/">What Is Panchakarma? The Ancient Detox Americans Are Seeking in India</a></h3>
+        <div class="card__foot"><span class="card__meta">5 min</span><a href="/journal/what-is-panchakarma/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/kerala-vs-rishikesh-ayurveda/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-kerala"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Comparison</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/kerala-vs-rishikesh-ayurveda/">Kerala vs Rishikesh: Which Ayurveda Destination Is Right for You?</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/kerala-vs-rishikesh-ayurveda/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/how-to-choose-authentic-ayurveda-retreat/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-wellness"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Guide</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/how-to-choose-authentic-ayurveda-retreat/">How to Choose an Authentic Ayurveda Retreat (Not a Spa Pretending to Be One)</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/how-to-choose-authentic-ayurveda-retreat/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/7-14-21-day-ayurveda-retreat/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-kerala"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Planning</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/7-14-21-day-ayurveda-retreat/">7-Day vs 14-Day vs 21-Day Ayurveda Retreat: What's Right for You?</a></h3>
+        <div class="card__foot"><span class="card__meta">5 min</span><a href="/journal/7-14-21-day-ayurveda-retreat/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/panchakarma-cost-kerala-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-wellness"></div>
+          <span class="card__dest">Kerala</span>
+          <span class="card__cat-tag">Cost guide</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/panchakarma-cost-kerala-2026/">Panchakarma Cost in Kerala: A Complete Price Guide for 2026</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/panchakarma-cost-kerala-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/three-doshas-explained/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-kerala"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Explainer</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/three-doshas-explained/">The Three Doshas Explained: How Ayurveda Personalises Your Treatment</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/three-doshas-explained/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="wellness india">
+      <a href="/journal/ayurveda-stress-burnout-kerala/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-wellness"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Wellness</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/ayurveda-stress-burnout-kerala/">Ayurveda for Stress and Burnout: Can Two Weeks in India Reset Your Life?</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/ayurveda-stress-burnout-kerala/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ INDIA — DESTINATIONS ═══════════════════════ -->
+<section class="grid-section" style="background:var(--cp);padding-top:3rem;" data-section="india" id="sec-india">
+  <div class="section-head">
+    <h2 class="section-head__title">India</h2>
+    <div class="section-head__line"></div>
+    <span class="section-head__count">60 articles planned</span>
+  </div>
+  <div class="card-grid">
+
+    <article class="card card--featured" data-tags="india" style="background:var(--cr);">
+      <a href="/journal/luxury-rajasthan-travel-guide-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-india-n"></div>
+          <span class="card__dest">India · Rajasthan</span>
+          <span class="card__cat-tag">Destination guide</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/luxury-rajasthan-travel-guide-2026/">The Ultimate Luxury Travel Guide to Rajasthan for 2026</a></h3>
+        <div class="card__foot"><span class="card__meta">10 min · Score 95</span><a href="/journal/luxury-rajasthan-travel-guide-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="india">
+      <a href="/journal/best-palace-hotels-india/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-india-n"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Hotels</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/best-palace-hotels-india/">The 10 Best Palace Hotels in India That Are Worth Every Penny</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/best-palace-hotels-india/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="india">
+      <a href="/journal/golden-triangle-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-india-n"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Itinerary</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/golden-triangle-luxury/">Golden Triangle India: The Luxury Version Nobody Tells You About</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/golden-triangle-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="india adventure">
+      <a href="/journal/india-tiger-safaris-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-wildlife"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Wildlife</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/india-tiger-safaris-luxury/">India's Best Tiger Safaris: Luxury Jungle Lodges Compared</a></h3>
+        <div class="card__foot"><span class="card__meta">9 min</span><a href="/journal/india-tiger-safaris-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="india honeymoon">
+      <a href="/journal/kerala-backwaters-luxury-houseboat/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-kerala"></div>
+          <span class="card__dest">Kerala</span>
+          <span class="card__cat-tag">Experience</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/kerala-backwaters-luxury-houseboat/">Kerala Backwaters: A Complete Guide to Luxury Houseboat Experiences</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/kerala-backwaters-luxury-houseboat/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="india">
+      <a href="/journal/varanasi-luxury-travel-guide/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-india-n"></div>
+          <span class="card__dest">India · Varanasi</span>
+          <span class="card__cat-tag">Destination</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/varanasi-luxury-travel-guide/">Varanasi for the Modern Luxury Traveller: A No-Nonsense Guide</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/varanasi-luxury-travel-guide/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ BHUTAN ═════════════════════════════════════ -->
+<section class="grid-section" data-section="bhutan" id="sec-bhutan">
+  <div class="section-head">
+    <h2 class="section-head__title">Bhutan</h2>
+    <div class="section-head__line"></div>
+    <span class="section-head__count">25 articles planned</span>
+  </div>
+  <div class="card-grid">
+
+    <article class="card card--featured" data-tags="bhutan">
+      <a href="/journal/why-bhutan-luxury-bucket-list/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-bhutan"></div>
+          <span class="card__dest">Bhutan</span>
+          <span class="card__cat-tag">Inspiration</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/why-bhutan-luxury-bucket-list/">Why Bhutan Should Be on Every Luxury Traveller's Bucket List</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min · Score 95</span><a href="/journal/why-bhutan-luxury-bucket-list/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="bhutan planning">
+      <a href="/journal/bhutan-travel-guide-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-bhutan"></div>
+          <span class="card__dest">Bhutan</span>
+          <span class="card__cat-tag">Complete guide</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/bhutan-travel-guide-2026/">Bhutan Travel Guide 2026: Everything You Need to Know</a></h3>
+        <div class="card__foot"><span class="card__meta">12 min</span><a href="/journal/bhutan-travel-guide-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="bhutan">
+      <a href="/journal/tigers-nest-bhutan-guide/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-bhutan"></div>
+          <span class="card__dest">Bhutan · Paro</span>
+          <span class="card__cat-tag">Iconic sight</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/tigers-nest-bhutan-guide/">Tiger's Nest Monastery: The Ultimate Guide to Bhutan's Most Iconic Site</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/tigers-nest-bhutan-guide/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="bhutan">
+      <a href="/journal/bhutan-gross-national-happiness/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-bhutan"></div>
+          <span class="card__dest">Bhutan</span>
+          <span class="card__cat-tag">Culture</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/bhutan-gross-national-happiness/">Bhutan's Gross National Happiness: What It Really Means for Tourists</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/bhutan-gross-national-happiness/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="bhutan planning">
+      <a href="/journal/best-time-to-visit-bhutan/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-bhutan"></div>
+          <span class="card__dest">Bhutan</span>
+          <span class="card__cat-tag">When to go</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/best-time-to-visit-bhutan/">Best Time to Visit Bhutan: A Complete Month-by-Month Guide</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/best-time-to-visit-bhutan/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="bhutan honeymoon">
+      <a href="/journal/bhutan-honeymoon-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-bhutan"></div>
+          <span class="card__dest">Bhutan</span>
+          <span class="card__cat-tag">Honeymoon</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/bhutan-honeymoon-luxury/">Bhutan Honeymoon: The World's Most Exclusive Romantic Escape</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/bhutan-honeymoon-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ NEPAL ══════════════════════════════════════ -->
+<section class="grid-section" style="background:var(--cp);" data-section="nepal" id="sec-nepal">
+  <div class="section-head">
+    <h2 class="section-head__title">Nepal</h2>
+    <div class="section-head__line"></div>
+    <span class="section-head__count">30 articles planned</span>
+  </div>
+  <div class="card-grid">
+
+    <article class="card card--featured" data-tags="nepal" style="background:var(--cr);">
+      <a href="/journal/nepal-luxury-travel-guide-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-nepal"></div>
+          <span class="card__dest">Nepal</span>
+          <span class="card__cat-tag">Complete guide</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/nepal-luxury-travel-guide-2026/">The Luxury Traveller's Complete Guide to Nepal 2026</a></h3>
+        <div class="card__foot"><span class="card__meta">12 min · Score 94</span><a href="/journal/nepal-luxury-travel-guide-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="nepal adventure">
+      <a href="/journal/everest-base-camp-luxury-trek/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-nepal"></div>
+          <span class="card__dest">Nepal</span>
+          <span class="card__cat-tag">Trekking</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/everest-base-camp-luxury-trek/">Everest Base Camp Without the Crowds: The Luxury Trek Option</a></h3>
+        <div class="card__foot"><span class="card__meta">9 min</span><a href="/journal/everest-base-camp-luxury-trek/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="nepal adventure">
+      <a href="/journal/nepal-helicopter-everest-tour/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-nepal"></div>
+          <span class="card__dest">Nepal</span>
+          <span class="card__cat-tag">Helicopter</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/nepal-helicopter-everest-tour/">Nepal Helicopter Tours: Fly to Everest Base Camp in a Day</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/nepal-helicopter-everest-tour/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="nepal">
+      <a href="/journal/best-time-visit-nepal-trekking/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-nepal"></div>
+          <span class="card__dest">Nepal</span>
+          <span class="card__cat-tag">When to go</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/best-time-visit-nepal-trekking/">Best Time to Visit Nepal: Trekking Seasons Explained for Luxury Travellers</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/best-time-visit-nepal-trekking/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="nepal family">
+      <a href="/journal/nepal-for-families-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-nepal"></div>
+          <span class="card__dest">Nepal</span>
+          <span class="card__cat-tag">Family</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/nepal-for-families-luxury/">Nepal for Families: Gentle Treks and Cultural Adventures for All Ages</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/nepal-for-families-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="nepal honeymoon">
+      <a href="/journal/nepal-honeymoon-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-nepal"></div>
+          <span class="card__dest">Nepal</span>
+          <span class="card__cat-tag">Honeymoon</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/nepal-honeymoon-luxury/">Nepal Honeymoon: Himalayan Romance on a Luxurious Scale</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/nepal-honeymoon-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ SRI LANKA ══════════════════════════════════ -->
+<section class="grid-section" data-section="srilanka" id="sec-srilanka">
+  <div class="section-head">
+    <h2 class="section-head__title">Sri Lanka</h2>
+    <div class="section-head__line"></div>
+    <span class="section-head__count">30 articles planned</span>
+  </div>
+  <div class="card-grid">
+
+    <article class="card card--featured" data-tags="srilanka">
+      <a href="/journal/sri-lanka-luxury-travel-guide-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-srilanka"></div>
+          <span class="card__dest">Sri Lanka</span>
+          <span class="card__cat-tag">Complete guide</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/sri-lanka-luxury-travel-guide-2026/">The Complete Luxury Travel Guide to Sri Lanka 2026</a></h3>
+        <div class="card__foot"><span class="card__meta">11 min · Score 94</span><a href="/journal/sri-lanka-luxury-travel-guide-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="srilanka">
+      <a href="/journal/sri-lanka-10-day-luxury-itinerary/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-srilanka"></div>
+          <span class="card__dest">Sri Lanka</span>
+          <span class="card__cat-tag">Itinerary</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/sri-lanka-10-day-luxury-itinerary/">Sri Lanka in 10 Days: The Perfect Luxury Itinerary</a></h3>
+        <div class="card__foot"><span class="card__meta">9 min</span><a href="/journal/sri-lanka-10-day-luxury-itinerary/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="srilanka adventure">
+      <a href="/journal/yala-safari-sri-lanka-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-srilanka"></div>
+          <span class="card__dest">Sri Lanka · Yala</span>
+          <span class="card__cat-tag">Wildlife</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/yala-safari-sri-lanka-luxury/">Yala National Park Safari: Sri Lanka's Best Wildlife Luxury Experience</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/yala-safari-sri-lanka-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="srilanka honeymoon">
+      <a href="/journal/sri-lanka-honeymoon-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-srilanka"></div>
+          <span class="card__dest">Sri Lanka</span>
+          <span class="card__cat-tag">Honeymoon</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/sri-lanka-honeymoon-luxury/">Sri Lanka Honeymoon: The Complete Luxury Itinerary Guide</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/sri-lanka-honeymoon-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="srilanka">
+      <a href="/journal/sigiriya-rock-fortress-sri-lanka/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-srilanka"></div>
+          <span class="card__dest">Sri Lanka · Sigiriya</span>
+          <span class="card__cat-tag">Iconic sight</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/sigiriya-rock-fortress-sri-lanka/">Sigiriya Rock Fortress: Sri Lanka's Most Iconic Luxury Day Trip</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/sigiriya-rock-fortress-sri-lanka/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="srilanka">
+      <a href="/journal/best-time-visit-sri-lanka/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-srilanka"></div>
+          <span class="card__dest">Sri Lanka</span>
+          <span class="card__cat-tag">When to go</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/best-time-visit-sri-lanka/">Best Time to Visit Sri Lanka: Month-by-Month for Luxury Travellers</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min</span><a href="/journal/best-time-visit-sri-lanka/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ PLANNING ════════════════════════════════════ -->
+<section class="grid-section" style="background:var(--cp);" data-section="planning" id="sec-planning">
+  <div class="section-head">
+    <h2 class="section-head__title">Planning &amp; Practical Guides</h2>
+    <div class="section-head__line"></div>
+    <span class="section-head__count">20 articles planned</span>
+  </div>
+  <div class="card-grid">
+
+    <article class="card" style="background:var(--cr);" data-tags="planning india">
+      <a href="/journal/india-visa-for-americans-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-planning"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Visa</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/india-visa-for-americans-2026/">India Visa for Americans in 2026: Everything You Need to Know</a></h3>
+        <div class="card__foot"><span class="card__meta">8 min · Score 93</span><a href="/journal/india-visa-for-americans-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="planning">
+      <a href="/journal/how-to-choose-luxury-india-tour-operator/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-planning"></div>
+          <span class="card__dest">All destinations</span>
+          <span class="card__cat-tag">Planning</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/how-to-choose-luxury-india-tour-operator/">How to Choose a Luxury Tour Operator for India: 10 Questions to Ask</a></h3>
+        <div class="card__foot"><span class="card__meta">7 min</span><a href="/journal/how-to-choose-luxury-india-tour-operator/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="planning bhutan">
+      <a href="/journal/bhutan-visa-sdf-fee-2026/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-bhutan"></div>
+          <span class="card__dest">Bhutan</span>
+          <span class="card__cat-tag">Visa &amp; fees</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/bhutan-visa-sdf-fee-2026/">Bhutan Visa Guide 2026: The SDF Fee, Travel Licences and What You Need</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/bhutan-visa-sdf-fee-2026/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+    <article class="card" style="background:var(--cr);" data-tags="planning india">
+      <a href="/journal/india-packing-list-luxury/">
+        <div class="card__img-wrap">
+          <div class="card__img-ph ct-planning"></div>
+          <span class="card__dest">India</span>
+          <span class="card__cat-tag">Packing</span>
+        </div>
+      </a>
+      <div class="card__body">
+        <h3 class="card__title"><a href="/journal/india-packing-list-luxury/">India Packing List for Luxury Travellers: What to Bring (and What Not To)</a></h3>
+        <div class="card__foot"><span class="card__meta">6 min</span><a href="/journal/india-packing-list-luxury/" class="card__arrow"><span class="card__arrow-line"></span>Read</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- NO RESULTS (shown by JS when filter returns nothing) -->
+<div id="no-results" style="display:none;padding:4rem 2.5rem;text-align:center;">
+  <p style="font-family:var(--fb);font-size:0.8125rem;color:var(--cm);">No articles in that category yet — we publish weekly. <a href="#" id="reset-link" style="color:var(--cb);">Show all articles</a></p>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="nl-strip">
+  <div class="nl-strip__left">
+    <span class="nl-strip__label">The AndThen Journal</span>
+    <p class="nl-strip__title">One guide a week,<br>worth reading slowly.</p>
+  </div>
+  <form class="nl-strip__form" onsubmit="return false;">
+    <input class="nl-strip__input" type="email" placeholder="Your email address" aria-label="Email">
+    <button class="nl-strip__btn" type="submit">Subscribe</button>
+  </form>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div>
+    <h2 class="cta__title">Ready to go beyond the reading?</h2>
+    <p class="cta__sub">Every guide in this journal leads somewhere real. Our specialists turn the research into a private itinerary built exactly around your interests, travel style and dates.</p>
+  </div>
+  <div class="cta__btns">
+    <a href="/contact/"><button class="btn-dark">Plan my journey</button></a>
+    <a href="/itineraries/"><button class="btn-ghost">Browse itineraries</button></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <a href="/"><span class="footer__word">ANDTHEN</span><span class="footer__sub-word">travels</span></a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+18000000000">+1 800 000 0000</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Destinations</span>
+      <a href="/india/">India</a><a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a><a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Journal</span>
+      <a href="/journal/category/ayurveda-wellness/">Ayurveda &amp; Wellness</a>
+      <a href="/journal/category/india/">India</a>
+      <a href="/journal/category/bhutan/">Bhutan</a>
+      <a href="/journal/category/nepal/">Nepal</a>
+      <a href="/journal/category/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/itineraries/">Itineraries</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy-policy/">Privacy policy</a>
+    </div>
+  </div>
+  <div class="footer__btm">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var filterBtns = document.querySelectorAll('.f-btn');
+  var cards      = document.querySelectorAll('.card');
+  var sections   = document.querySelectorAll('.grid-section');
+  var noRes      = document.getElementById('no-results');
+  var resetLink  = document.getElementById('reset-link');
+
+  function applyFilter(f) {
+    var count = 0;
+
+    cards.forEach(function (c) {
+      var tags = (c.getAttribute('data-tags') || '').split(' ');
+      var show = f === 'all' || tags.indexOf(f) !== -1;
+      c.classList.toggle('hidden', !show);
+      if (show) count++;
+    });
+
+    sections.forEach(function (s) {
+      var sec = (s.getAttribute('data-section') || '').split(' ');
+      var show = f === 'all' || sec.indexOf(f) !== -1;
+      s.style.display = show ? '' : 'none';
+    });
+
+    noRes.style.display = count === 0 ? 'block' : 'none';
+
+    filterBtns.forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-f') === f);
+    });
+
+    if (f !== 'all') {
+      var bar = document.querySelector('.filter-bar');
+      if (bar) { setTimeout(function(){ bar.scrollIntoView({ behavior:'smooth', block:'start' }); }, 50); }
+    }
+  }
+
+  filterBtns.forEach(function (b) {
+    b.addEventListener('click', function () { applyFilter(this.getAttribute('data-f')); });
+  });
+
+  if (resetLink) resetLink.addEventListener('click', function (e) { e.preventDefault(); applyFilter('all'); });
+
+  applyFilter('all');
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private India Tours for US Travelers | AndThen Travels</title>
+<meta name="description" content="Discover India on a private, tailor-made tour — from the Golden Triangle and Rajasthan palaces to Kerala backwaters, tiger reserves and Himalayan foothills. Curated for US travelers by AndThen.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ANDTHEN TRAVELS — INDIA DESTINATION PAGE
+   Developer handover · June 2026
+
+   DEVELOPER NOTES:
+   - Same design tokens as andthen-homepage.html and andthen-itinerary.html
+   - Replace all image placeholder divs with <img> tags
+   - Regions: square images use aspect-ratio:1/1 — replace bg-color with bg-image
+   - Jump nav: scroll-spy JS at bottom updates .active class
+   - Hotels: each card links to individual hotel page /places-to-stay/{slug}/
+   - Itineraries: each row links to /tours/{slug}/
+   - Mobile breakpoint: 768px; tablet: 1024px
+   ============================================================ */
+
+/* ── TOKENS ──────────────────────────────────────────── */
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cl: #E8DDD2;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --cw: #FFFFFF;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --transition:   0.3s ease;
+}
+
+/* ── RESET ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+img  { display: block; width: 100%; height: 100%; object-fit: cover; }
+a    { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+
+/* ── UTILITY ─────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1.125rem;
+}
+.eyebrow--light { color: var(--cb); }
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, 2.5vw, 2.125rem);
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+.section-heading--light { color: var(--cr); font-style: italic; }
+.rule { width: 1.5rem; height: 0.5px; background: var(--cs); margin: 1.25rem 0; }
+.body-text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+  margin-bottom: 1rem;
+}
+.sep { border: none; border-top: 0.5px solid rgba(200,180,154,0.3); margin: 3rem 0; }
+.text-link {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  border-bottom: 0.5px solid rgba(44,26,10,0.25);
+  padding-bottom: 0.125rem;
+  display: inline-block;
+  transition: color var(--transition), border-color var(--transition);
+}
+.text-link:hover { color: var(--cb); border-color: var(--cb); }
+.text-link--bronze { color: var(--cb); border-color: rgba(160,120,72,0.35); }
+.text-link--light  { color: rgba(200,180,154,0.5); border-color: rgba(200,180,154,0.18); }
+.text-link--light:hover { color: var(--cs); border-color: var(--cs); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+/* ── NAVIGATION ──────────────────────────────────────── */
+.nav {
+  background: var(--cw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav__logo { display: flex; flex-direction: column; gap: 2px; }
+.nav__logo-wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); }
+.nav__logo-sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); }
+.nav__breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: 0.625rem; color: var(--cm); }
+.nav__breadcrumb a { color: var(--cm); transition: color var(--transition); }
+.nav__breadcrumb a:hover { color: var(--cd); }
+.nav__breadcrumb-sep { color: var(--cs); }
+.nav__cta {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  background: transparent;
+  border: 0.5px solid var(--cd);
+  padding: 0.625rem 1.375rem;
+  transition: background var(--transition), color var(--transition);
+}
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__hamburger { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__hamburger span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── HERO ─────────────────────────────────────────────── */
+/* DEVELOPER: Add to .hero__image:
+   background-image: url('images/india-hero.jpg');
+   background-size: cover; background-position: center 35%;
+   Recommended: Taj Mahal at sunrise / Rajasthan palace / golden hour landscape
+   Min resolution: 1800×900px */
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero__image {
+  position: absolute;
+  inset: 0;
+  background: var(--ci);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.9) 0%, rgba(44,26,10,0.45) 45%, rgba(44,26,10,0.1) 100%);
+}
+.hero__image-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  color: rgba(255,255,255,0.1);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 2.5rem 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.hero__content-left { max-width: 540px; }
+.hero__dest-label {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1rem;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 0.95;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.hero__tagline {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.55);
+  letter-spacing: 0.08rem;
+  line-height: 1.9;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+.hero__pills { display: flex; gap: 0.625rem; flex-wrap: wrap; }
+.hero__pill {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  border: 0.5px solid rgba(200,180,154,0.25);
+  color: rgba(255,255,255,0.55);
+  padding: 0.3125rem 0.75rem;
+}
+.hero__stats { display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-end; }
+.hero__stat { text-align: right; }
+.hero__stat-value { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; color: var(--cr); display: block; }
+.hero__stat-label { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.2rem; text-transform: uppercase; color: rgba(200,180,154,0.3); display: block; margin-top: 2px; }
+.hero__scroll {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.hero__scroll span { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(200,180,154,0.25); writing-mode: vertical-rl; }
+.hero__scroll-line { width: 0.5px; height: 48px; background: rgba(200,180,154,0.15); }
+
+/* ── JUMP NAVIGATION ─────────────────────────────────── */
+.jump-nav {
+  background: var(--cp);
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  height: 48px;
+  position: sticky;
+  top: 68px;
+  z-index: 99;
+  overflow-x: auto;
+}
+.jump-nav a {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  white-space: nowrap;
+  padding-bottom: 2px;
+  transition: color var(--transition);
+}
+.jump-nav a:hover { color: var(--cd); }
+.jump-nav a.active { color: var(--cd); border-bottom: 0.5px solid var(--cb); }
+
+/* ── ABOUT SECTION ───────────────────────────────────── */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+.about__text {
+  padding: 5rem 3.5rem 5rem 2.5rem;
+  border-right: 0.5px solid rgba(200,180,154,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about__pull {
+  background: var(--cp);
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about__quote {
+  font-family: var(--font-display);
+  font-size: 1.3125rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.7;
+  margin-bottom: 1.375rem;
+}
+.about__cite {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  font-style: normal;
+}
+.about__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-top: 2.5rem;
+}
+.fact {
+  background: var(--cp);
+  padding: 1.375rem 1.125rem;
+}
+.fact__value { font-family: var(--font-display); font-size: 1.625rem; font-weight: 400; color: var(--cd); display: block; }
+.fact__label { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); margin-top: 3px; display: block; }
+
+/* ── REGIONS ─────────────────────────────────────────── */
+.regions {
+  background: var(--cd);
+  padding: 5rem 2.5rem;
+}
+.regions__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.08);
+}
+.regions__intro {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.38);
+  line-height: 1.9;
+  max-width: 320px;
+  text-align: right;
+}
+.regions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.06);
+}
+.region-card {
+  background: var(--ci);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.region-card:hover { background: #3A2010; }
+
+/* Square image — 1:1 aspect ratio */
+/* DEVELOPER: Replace bg-color with:
+   background-image: url('images/regions/north-india.jpg');
+   background-size: cover; background-position: center; */
+.rc__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.125rem;
+}
+.rc__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,8,0.7) 0%, rgba(20,14,8,0.0) 55%);
+}
+.rc__image-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+}
+.rc__image-name {
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.05;
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+}
+/* Region image tones */
+.rci--north     { background: #4A2808; }
+.rci--south     { background: #082838; }
+.rci--central   { background: #0E2810; }
+.rci--northeast { background: #1A1030; }
+
+.rc__body {
+  padding: 1.5rem 1.5rem 1.875rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-top: 0.5px solid rgba(200,180,154,0.07);
+}
+.rc__desc {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.42);
+  line-height: 1.9;
+  margin-bottom: 1.125rem;
+  flex: 1;
+}
+.rc__tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1.25rem; }
+.rc__tag {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.3);
+  border: 0.5px solid rgba(200,180,154,0.1);
+  padding: 4px 9px;
+  transition: all var(--transition);
+}
+.region-card:hover .rc__tag { color: rgba(200,180,154,0.6); border-color: rgba(200,180,154,0.25); }
+.rc__link {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.22);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition);
+  margin-top: auto;
+}
+.rc__link-line { width: 14px; height: 0.5px; background: currentColor; flex-shrink: 0; }
+.region-card:hover .rc__link { color: var(--cb); }
+
+/* ── POPULAR PLACES ──────────────────────────────────── */
+.places {
+  background: var(--cr);
+  padding: 5rem 2.5rem;
+}
+.places__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+/* Asymmetric grid: large left + stacked right */
+.places-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.places-right { display: grid; grid-template-columns: 1fr; gap: 1px; background: rgba(200,180,154,0.2); }
+/* Feature card */
+.place-card--feature {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+}
+/* DEVELOPER: Replace bg-color with background-image */
+.place-card--feature .pc__image {
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  position: relative;
+}
+.place-card--feature .pc__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,8,0.6) 0%, transparent 50%);
+}
+.pc__image-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+/* Image bg tones */
+.pci--taj        { background: #3A1808; }
+.pci--varanasi   { background: #082838; }
+.pci--kerala     { background: #081830; }
+.pci--ranthambore{ background: #380828; }
+.pci--udaipur    { background: #183808; }
+.pci--hampi      { background: #201008; }
+
+.pc__body { padding: 1.375rem 1.5rem 1.75rem; }
+.pc__region {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.pc__name {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 0.375rem;
+}
+.pc__desc {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.85;
+}
+/* Small stacked cards */
+.place-card--small {
+  background: var(--cr);
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  transition: background var(--transition);
+}
+.place-card--small:hover { background: var(--cp); }
+.pc__image--small {
+  height: 100%;
+  min-height: 130px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+}
+/* Bottom row: two equal columns */
+.places-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.place-card--bottom {
+  background: var(--cr);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  transition: background var(--transition);
+}
+.place-card--bottom:hover { background: var(--cp); }
+.pc__image--bottom { height: 100%; min-height: 150px; display: flex; align-items: flex-end; padding: 0.75rem; }
+
+/* ── RECOMMENDED HOTELS ──────────────────────────────── */
+.hotels {
+  background: var(--cp);
+  padding: 5rem 2.5rem;
+}
+.hotels__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+/* 3 cols top row, 3 cols bottom row = 6 hotels */
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.hotel-card {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.hotel-card:hover { background: var(--cp); }
+/* DEVELOPER: Replace bg-color with background-image */
+.hc__image {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  position: relative;
+}
+.hc__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,14,8,0.5) 0%, transparent 55%);
+}
+.hc__image-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+/* Hotel image tones */
+.hci--taj-mumbai  { background: #3A2010; }
+.hci--taj-lake    { background: #3A1010; }
+.hci--oberoi      { background: #102838; }
+.hci--mahua       { background: #0E2810; }
+.hci--brunton     { background: #082030; }
+.hci--jai-mahal   { background: #302008; }
+.hc__body { padding: 1.25rem 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.hc__region {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.hc__name {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+.hc__location {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--cm);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.hc__link {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  transition: color var(--transition);
+  display: inline-block;
+}
+.hotel-card:hover .hc__link { color: var(--cb); }
+
+/* ── BEST TIME ───────────────────────────────────────── */
+.best-time {
+  background: var(--cr);
+  padding: 5rem 2.5rem;
+}
+.best-time__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-top: 1.5rem;
+}
+.month-cell { background: var(--cr); padding: 0.5625rem 0.25rem; text-align: center; }
+.month-cell--peak { background: var(--cb); }
+.month-cell--good { background: var(--cs); }
+.month-label { font-family: var(--font-body); font-size: 0.5625rem; letter-spacing: 0.1rem; text-transform: uppercase; color: var(--cd); }
+.month-cell--peak .month-label,
+.month-cell--good .month-label { color: var(--cr); }
+.legend { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 0.875rem; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: 0.5625rem; color: var(--cm); }
+.legend-swatch { width: 10px; height: 10px; display: inline-block; flex-shrink: 0; }
+/* Season cards */
+.seasons { display: grid; grid-template-columns: 1fr; gap: 1px; background: rgba(200,180,154,0.2); margin-top: 1.5rem; }
+.season-card { background: var(--cr); padding: 1.5rem; }
+.season-card:nth-child(2) { background: var(--cp); }
+.season__name { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.25rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.375rem; }
+.season__months { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 400; color: var(--cd); display: block; margin-bottom: 0.5rem; }
+.season__desc { font-family: var(--font-body); font-size: 0.6875rem; font-weight: 300; color: var(--cm); line-height: 1.85; }
+
+/* ── ITINERARIES ─────────────────────────────────────── */
+.itineraries {
+  background: var(--cp);
+  padding: 5rem 2.5rem;
+}
+.itins__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+}
+.itin-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 110px 120px 64px;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.375rem 0;
+  border-bottom: 0.5px solid rgba(200,180,154,0.22);
+  cursor: pointer;
+  transition: background var(--transition), padding-left var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+}
+.itin-row:hover { background: rgba(200,180,154,0.12); padding-left: 0.75rem; }
+/* DEVELOPER: Replace bg-color with background-image */
+.ir__image {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ir__image-placeholder { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.1rem; color: rgba(255,255,255,0.2); text-transform: uppercase; }
+.iri--gt     { background: #5C3010; }
+.iri--raj    { background: #3A1808; }
+.iri--south  { background: #103018; }
+.iri--wild   { background: #082838; }
+.iri--temple { background: #382010; }
+.ir__name { font-family: var(--font-display); font-size: 1.125rem; font-weight: 400; color: var(--cd); display: block; }
+.ir__dest { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cb); margin-top: 3px; display: block; }
+.ir__nights { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: var(--cm); }
+.ir__price { font-family: var(--font-body); font-size: 0.8125rem; color: var(--cd); }
+.ir__link { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cs); text-align: right; transition: color var(--transition); }
+.itin-row:hover .ir__link { color: var(--cb); }
+
+/* ── CTA BAND ────────────────────────────────────────── */
+.cta-band {
+  background: var(--cb);
+  padding: 4.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+.cta-band__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, 2.5vw, 2.125rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.cta-band__sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  max-width: 480px;
+}
+.cta-btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 210px; }
+.btn-primary {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cd);
+  color: var(--cr);
+  border: none;
+  padding: 1rem 1.5rem;
+  transition: background var(--transition);
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--ci); }
+.btn-secondary {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(255,255,255,0.55);
+  border: 0.5px solid rgba(255,255,255,0.18);
+  padding: 1rem 1.5rem;
+  transition: border-color var(--transition), color var(--transition);
+  cursor: pointer;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.8); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+.footer { background: var(--ci); padding: 4.5rem 2.5rem 2.5rem; }
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.06);
+}
+.footer__wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(200,180,154,0.22); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact { margin-top: 1.25rem; }
+.footer__contact a { display: block; font-family: var(--font-body); font-size: 0.6875rem; color: var(--cb); text-decoration: none; margin-bottom: 3px; transition: opacity var(--transition); }
+.footer__contact a:hover { opacity: 0.7; }
+.footer__col-heading { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(200,180,154,0.18); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(200,180,154,0.28); text-decoration: none; margin-bottom: 0.625rem; transition: color var(--transition); }
+.footer__col a:hover { color: var(--cb); }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--font-body); font-size: 0.5625rem; color: rgba(200,180,154,0.14); letter-spacing: 0.08rem; }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .regions-grid { grid-template-columns: repeat(2, 1fr); }
+  .hotels-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 1024px) {
+  .about { grid-template-columns: 1fr; }
+  .about__text { padding: 3.5rem 2.5rem; border-right: none; border-bottom: 0.5px solid rgba(200,180,154,0.2); }
+  .about__pull { padding: 3.5rem 2.5rem; }
+  .places-grid { grid-template-columns: 1fr; }
+  .places-bottom { grid-template-columns: 1fr; }
+  .best-time__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .itin-row { grid-template-columns: 120px 1fr 90px; }
+  .itin-row .ir__price,
+  .itin-row .ir__link { display: none; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: row; }
+}
+@media (max-width: 768px) {
+  .nav__breadcrumb { display: none; }
+  .nav__hamburger  { display: flex; }
+  .hero { min-height: 480px; }
+  .hero__content { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .hero__stats { flex-direction: row; align-items: flex-start; }
+  .hero__stat { text-align: left; }
+  .hero__scroll { display: none; }
+  .regions-grid  { grid-template-columns: 1fr 1fr; }
+  .hotels-grid   { grid-template-columns: 1fr; }
+  .itin-row { grid-template-columns: 90px 1fr; }
+  .itin-row .ir__nights { display: none; }
+  .about__facts { grid-template-columns: 1fr 1fr; }
+  .place-card--small,
+  .place-card--bottom { grid-template-columns: 1fr; }
+  .pc__image--small,
+  .pc__image--bottom { min-height: 180px; }
+  .footer__top { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: column; width: 100%; }
+}
+@media (max-width: 480px) {
+  .regions-grid { grid-template-columns: 1fr; }
+  .hero__stats { gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav__logo" aria-label="AndThen Travels — Home">
+    <span class="nav__logo-wordmark">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+
+  <nav class="nav__breadcrumb" aria-label="Breadcrumb">
+    <a href="/destinations/">Destinations</a>
+    <span class="nav__breadcrumb-sep" aria-hidden="true">›</span>
+    <span aria-current="page">India</span>
+  </nav>
+
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+18000000000" style="font-family:var(--font-body);font-size:0.6875rem;color:var(--cb);">+1 800 000 0000</a>
+    <a href="/contact/?destination=india"><button class="nav__cta">Plan my India trip</button></a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+     DEVELOPER: Add to .hero__image —
+     background-image: url('images/india-hero.jpg');
+     background-size: cover; background-position: center 35%;
+     Recommended: Taj Mahal sunrise / Rajasthan palace courtyard / Kerala backwater
+     Min resolution: 1800×900px
+═══════════════════════════════════════ -->
+<section class="hero" aria-label="India destination hero">
+  <div class="hero__image" role="img" aria-label="India — ancient temples, royal palaces and golden landscapes">
+    <span class="hero__image-placeholder">Full-bleed India hero photography</span>
+  </div>
+  <div class="hero__content">
+    <div class="hero__content-left">
+      <span class="hero__dest-label">Destination guide</span>
+      <h1 class="hero__title">India</h1>
+      <p class="hero__tagline">Ancient temples, royal palaces, tiger reserves, Himalayan foothills and tropical coastlines. India contains multitudes — we design a private journey around yours.</p>
+      <div class="hero__pills" aria-label="Key facts">
+        <span class="hero__pill">5 curated itineraries</span>
+        <span class="hero__pill">4 distinct regions</span>
+        <span class="hero__pill">Private &amp; tailor-made</span>
+        <span class="hero__pill">Oct–Mar peak season</span>
+      </div>
+    </div>
+    <div class="hero__stats" aria-label="India at a glance">
+      <div class="hero__stat">
+        <span class="hero__stat-value">36</span>
+        <span class="hero__stat-label">UNESCO sites</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">50+</span>
+        <span class="hero__stat-label">Tiger reserves</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">7,500km</span>
+        <span class="hero__stat-label">Coastline</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Explore</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     JUMP NAVIGATION
+     DEVELOPER: scroll-spy JS at bottom
+     updates .active class on scroll
+═══════════════════════════════════════ -->
+<nav class="jump-nav" aria-label="Page sections">
+  <a href="#about"       class="active">About</a>
+  <a href="#regions">Regions</a>
+  <a href="#places">Popular places</a>
+  <a href="#hotels">Hotels</a>
+  <a href="#best-time">Best time</a>
+  <a href="#itineraries">Itineraries</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     ABOUT INDIA
+═══════════════════════════════════════ -->
+<section class="about" id="about" aria-label="About India">
+  <div class="about__text">
+    <span class="eyebrow">About India</span>
+    <h2 class="section-heading">The subcontinent that changes everything</h2>
+    <div class="rule"></div>
+    <p class="body-text">India is not simply a destination — it is an experience that rewires the senses. A country of breathtaking contrasts: chaotic and serene, ancient and relentlessly modern, austere and spectacularly opulent. From the snow-capped peaks of the Himalayas in the north to the palm-fringed backwaters of Kerala in the south, and from the Thar Desert in the west to the tea estates of Assam in the east, India's geography alone is staggering.</p>
+    <p class="body-text">For the discerning traveler, India offers something that few destinations can match — an inexhaustible depth of culture, history, wildlife and landscape. Every region is essentially a separate country with its own language, cuisine, architecture and rhythm of life. AndThen designs private journeys that move through this complexity with grace and intention.</p>
+    <div class="rule"></div>
+    <a href="/contact/?destination=india" class="text-link">Start planning your India journey</a>
+  </div>
+
+  <div class="about__pull">
+    <blockquote class="about__quote">"India is not a country — it is a civilisation. Give it the time it deserves, and it will give you something you carry for the rest of your life."</blockquote>
+    <cite class="about__cite">Syam · Founder, AndThen Travels</cite>
+
+    <div class="about__facts" aria-label="India facts">
+      <div class="fact">
+        <span class="fact__value">36</span>
+        <span class="fact__label">UNESCO heritage sites</span>
+      </div>
+      <div class="fact">
+        <span class="fact__value">50+</span>
+        <span class="fact__label">Tiger reserves</span>
+      </div>
+      <div class="fact">
+        <span class="fact__value">22</span>
+        <span class="fact__label">Official languages</span>
+      </div>
+      <div class="fact">
+        <span class="fact__value">7,500km</span>
+        <span class="fact__label">Coastline</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     REGIONS
+     DEVELOPER: Replace each .rc__image div with:
+     <img src="images/regions/north-india.jpg" alt="...">
+     Images should be square — crop to 1:1 before upload
+     Recommended resolution: 800×800px per image
+═══════════════════════════════════════ -->
+<section class="regions" id="regions" aria-label="India regions">
+  <div class="regions__header">
+    <div>
+      <span class="eyebrow eyebrow--light">Explore by region</span>
+      <h2 class="section-heading section-heading--light">Four distinct Indias</h2>
+    </div>
+    <p class="regions__intro">India's regions are each a world unto themselves — distinct languages, cuisines, landscapes and cultural rhythms. We design journeys that go deep into one, or weave several together.</p>
+  </div>
+
+  <div class="regions-grid">
+
+    <article class="region-card" aria-label="North India region">
+      <div class="rc__image rci--north" role="img" aria-label="North India — Mughal forts and Rajasthan palaces">
+        <!-- DEVELOPER: <img src="images/regions/north-india.jpg" alt="North India — Mughal forts and Rajasthan palaces"> -->
+        <span class="rc__image-placeholder">North India photography</span>
+        <span class="rc__image-name">North India</span>
+      </div>
+      <div class="rc__body">
+        <p class="rc__desc">The Mughal heartland — the Golden Triangle, Rajasthan's royal cities and forts, the sacred Ganges plains and the spiritual intensity of Varanasi and Rishikesh.</p>
+        <div class="rc__tags" aria-label="Key cities">
+          <span class="rc__tag">Delhi</span>
+          <span class="rc__tag">Agra</span>
+          <span class="rc__tag">Jaipur</span>
+          <span class="rc__tag">Varanasi</span>
+          <span class="rc__tag">Udaipur</span>
+          <span class="rc__tag">Jodhpur</span>
+          <span class="rc__tag">Rishikesh</span>
+        </div>
+        <a href="/india/north/" class="rc__link">
+          <span class="rc__link-line" aria-hidden="true"></span>
+          Explore North India
+        </a>
+      </div>
+    </article>
+
+    <article class="region-card" aria-label="South India region">
+      <div class="rc__image rci--south" role="img" aria-label="South India — Kerala backwaters and Tamil Nadu temples">
+        <!-- DEVELOPER: <img src="images/regions/south-india.jpg" alt="South India — Kerala backwaters and temple gopurams"> -->
+        <span class="rc__image-placeholder">South India photography</span>
+        <span class="rc__image-name">South India</span>
+      </div>
+      <div class="rc__body">
+        <p class="rc__desc">Kerala's Ayurveda retreats and backwaters, Tamil Nadu's ancient Dravidian temples, Goa's coastline and Karnataka's wildlife reserves and heritage ruins.</p>
+        <div class="rc__tags" aria-label="Key cities">
+          <span class="rc__tag">Kerala</span>
+          <span class="rc__tag">Chennai</span>
+          <span class="rc__tag">Madurai</span>
+          <span class="rc__tag">Goa</span>
+          <span class="rc__tag">Mysore</span>
+          <span class="rc__tag">Hampi</span>
+          <span class="rc__tag">Pondicherry</span>
+        </div>
+        <a href="/india/south/" class="rc__link">
+          <span class="rc__link-line" aria-hidden="true"></span>
+          Explore South India
+        </a>
+      </div>
+    </article>
+
+    <article class="region-card" aria-label="Central India region">
+      <div class="rc__image rci--central" role="img" aria-label="Central India — tigers in national parks">
+        <!-- DEVELOPER: <img src="images/regions/central-india.jpg" alt="Central India — tigers in the forests of Madhya Pradesh"> -->
+        <span class="rc__image-placeholder">Central India photography</span>
+        <span class="rc__image-name">Central India</span>
+      </div>
+      <div class="rc__body">
+        <p class="rc__desc">Tiger country — Madhya Pradesh and Maharashtra's extraordinary national parks. Bandhavgarh, Kanha, Pench and Tadoba rank among the world's finest wildlife reserves.</p>
+        <div class="rc__tags" aria-label="Key destinations">
+          <span class="rc__tag">Bandhavgarh</span>
+          <span class="rc__tag">Kanha</span>
+          <span class="rc__tag">Pench</span>
+          <span class="rc__tag">Tadoba</span>
+          <span class="rc__tag">Khajuraho</span>
+          <span class="rc__tag">Bhopal</span>
+        </div>
+        <a href="/india/central/" class="rc__link">
+          <span class="rc__link-line" aria-hidden="true"></span>
+          Explore Central India
+        </a>
+      </div>
+    </article>
+
+    <article class="region-card" aria-label="North East India region">
+      <div class="rc__image rci--northeast" role="img" aria-label="North East India — Himalayan monasteries and tea estates">
+        <!-- DEVELOPER: <img src="images/regions/northeast-india.jpg" alt="North East India — rhino reserves, tea estates and Himalayan landscapes"> -->
+        <span class="rc__image-placeholder">North East photography</span>
+        <span class="rc__image-name">North East</span>
+      </div>
+      <div class="rc__body">
+        <p class="rc__desc">India's hidden frontier — Assam's tea estates and rhino reserves, Meghalaya's living root bridges, Sikkim's monasteries and the Himalayan landscapes of Arunachal Pradesh.</p>
+        <div class="rc__tags" aria-label="Key destinations">
+          <span class="rc__tag">Kaziranga</span>
+          <span class="rc__tag">Assam</span>
+          <span class="rc__tag">Meghalaya</span>
+          <span class="rc__tag">Sikkim</span>
+          <span class="rc__tag">Darjeeling</span>
+          <span class="rc__tag">Shillong</span>
+        </div>
+        <a href="/india/northeast/" class="rc__link">
+          <span class="rc__link-line" aria-hidden="true"></span>
+          Explore North East
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     POPULAR PLACES
+     DEVELOPER: Replace each image div with <img>
+     Feature image (Taj): 600×400px min
+     Small images: 130×160px min
+     Bottom row images: 160×180px min
+═══════════════════════════════════════ -->
+<section class="places" id="places" aria-label="Popular places in India">
+  <div class="places__header">
+    <div>
+      <span class="eyebrow">Highlights</span>
+      <h2 class="section-heading">Places that stay with you</h2>
+    </div>
+    <a href="/india/destinations/" class="text-link text-link--bronze">View all destinations</a>
+  </div>
+
+  <div class="places-grid">
+
+    <!-- Feature: Taj Mahal -->
+    <article class="place-card--feature">
+      <div class="pc__image pci--taj" role="img" aria-label="The Taj Mahal at sunrise, Agra">
+        <!-- DEVELOPER: <img src="images/places/taj-mahal.jpg" alt="The Taj Mahal at sunrise, Agra"> -->
+        <span class="pc__image-placeholder">Taj Mahal · Agra</span>
+      </div>
+      <div class="pc__body">
+        <span class="pc__region">North India · Agra</span>
+        <h3 class="pc__name">The Taj Mahal</h3>
+        <p class="pc__desc">The world's most celebrated monument to love — a UNESCO World Heritage Site and one of the Seven Wonders. At sunrise, before the crowds, it is genuinely breathtaking.</p>
+      </div>
+    </article>
+
+    <!-- Stacked right column -->
+    <div class="places-right">
+
+      <article class="place-card--small">
+        <div class="pc__image--small pci--varanasi" role="img" aria-label="Varanasi ghats at dawn">
+          <!-- DEVELOPER: <img src="images/places/varanasi.jpg" alt="Varanasi ghats at dawn"> -->
+          <span class="pc__image-placeholder">Varanasi</span>
+        </div>
+        <div class="pc__body" style="padding:1.25rem;">
+          <span class="pc__region">North India</span>
+          <h3 class="pc__name">Varanasi</h3>
+          <p class="pc__desc">India's most sacred city — ghats, dawn rituals and an ancient spiritual intensity that nowhere else matches.</p>
+        </div>
+      </article>
+
+      <article class="place-card--small">
+        <div class="pc__image--small pci--kerala" role="img" aria-label="Kerala backwaters at dusk">
+          <!-- DEVELOPER: <img src="images/places/kerala-backwaters.jpg" alt="Kerala backwaters — houseboat on still water"> -->
+          <span class="pc__image-placeholder">Kerala</span>
+        </div>
+        <div class="pc__body" style="padding:1.25rem;">
+          <span class="pc__region">South India</span>
+          <h3 class="pc__name">Kerala Backwaters</h3>
+          <p class="pc__desc">A private houseboat on the backwaters — coconut palms, rice paddies, silence and total restoration.</p>
+        </div>
+      </article>
+
+      <article class="place-card--small">
+        <div class="pc__image--small pci--ranthambore" role="img" aria-label="Tiger in Ranthambore National Park">
+          <!-- DEVELOPER: <img src="images/places/ranthambore.jpg" alt="Tiger sighting in Ranthambore National Park, Rajasthan"> -->
+          <span class="pc__image-placeholder">Ranthambore</span>
+        </div>
+        <div class="pc__body" style="padding:1.25rem;">
+          <span class="pc__region">Rajasthan</span>
+          <h3 class="pc__name">Ranthambore</h3>
+          <p class="pc__desc">Rajasthan's celebrated tiger reserve — ancient fort ruins rising above the forest and some of India's most photogenic wildlife sightings.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom row -->
+    <div class="places-bottom">
+
+      <article class="place-card--bottom">
+        <div class="pc__image--bottom pci--udaipur" role="img" aria-label="Lake Pichola and the City Palace, Udaipur">
+          <!-- DEVELOPER: <img src="images/places/udaipur.jpg" alt="Lake Pichola and the Taj Lake Palace, Udaipur"> -->
+          <span class="pc__image-placeholder">Udaipur</span>
+        </div>
+        <div class="pc__body">
+          <span class="pc__region">Rajasthan</span>
+          <h3 class="pc__name">Udaipur</h3>
+          <p class="pc__desc">The City of Lakes — marble palaces, shimmering water and Rajasthan's most romantic atmosphere. The Taj Lake Palace floats at its centre.</p>
+        </div>
+      </article>
+
+      <article class="place-card--bottom">
+        <div class="pc__image--bottom pci--hampi" role="img" aria-label="Ruins of Hampi, Karnataka">
+          <!-- DEVELOPER: <img src="images/places/hampi.jpg" alt="The extraordinary ruins of the Vijayanagara Empire, Hampi"> -->
+          <span class="pc__image-placeholder">Hampi</span>
+        </div>
+        <div class="pc__body">
+          <span class="pc__region">Karnataka</span>
+          <h3 class="pc__name">Hampi</h3>
+          <p class="pc__desc">The extraordinary ruins of the Vijayanagara Empire — a boulder-strewn landscape and ancient temples at a scale that genuinely humbles.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     RECOMMENDED HOTELS
+     DEVELOPER: Each .hc__image div → <img>
+     Each hotel-card links to /places-to-stay/{slug}/
+     Add more hotels by duplicating hotel-card markup
+═══════════════════════════════════════ -->
+<section class="hotels" id="hotels" aria-label="Recommended hotels in India">
+  <div class="hotels__header">
+    <div>
+      <span class="eyebrow">Places to stay</span>
+      <h2 class="section-heading">Recommended hotels in India</h2>
+    </div>
+    <a href="/places-to-stay/india/" class="text-link text-link--bronze">View all India hotels</a>
+  </div>
+
+  <div class="hotels-grid">
+
+    <article class="hotel-card">
+      <a href="/places-to-stay/taj-mahal-palace-mumbai/">
+        <div class="hc__image hci--taj-mumbai" role="img" aria-label="Taj Mahal Palace, Mumbai">
+          <!-- DEVELOPER: <img src="images/hotels/taj-mahal-palace-mumbai.jpg" alt="Taj Mahal Palace hotel, Mumbai"> -->
+          <span class="hc__image-placeholder">Taj Mahal Palace · Mumbai</span>
+        </div>
+        <div class="hc__body">
+          <span class="hc__region">Mumbai</span>
+          <h3 class="hc__name">Taj Mahal Palace</h3>
+          <p class="hc__location">Mumbai · Iconic waterfront landmark overlooking the Gateway of India</p>
+          <span class="hc__link">View hotel →</span>
+        </div>
+      </a>
+    </article>
+
+    <article class="hotel-card">
+      <a href="/places-to-stay/taj-lake-palace-udaipur/">
+        <div class="hc__image hci--taj-lake" role="img" aria-label="Taj Lake Palace, Udaipur">
+          <!-- DEVELOPER: <img src="images/hotels/taj-lake-palace-udaipur.jpg" alt="Taj Lake Palace floating on Lake Pichola, Udaipur"> -->
+          <span class="hc__image-placeholder">Taj Lake Palace · Udaipur</span>
+        </div>
+        <div class="hc__body">
+          <span class="hc__region">Rajasthan</span>
+          <h3 class="hc__name">Taj Lake Palace</h3>
+          <p class="hc__location">Udaipur · Floating white marble palace on Lake Pichola</p>
+          <span class="hc__link">View hotel →</span>
+        </div>
+      </a>
+    </article>
+
+    <article class="hotel-card">
+      <a href="/places-to-stay/oberoi-amarvilas-agra/">
+        <div class="hc__image hci--oberoi" role="img" aria-label="Oberoi Amarvilas, Agra">
+          <!-- DEVELOPER: <img src="images/hotels/oberoi-amarvilas-agra.jpg" alt="Oberoi Amarvilas with Taj Mahal views, Agra"> -->
+          <span class="hc__image-placeholder">Oberoi Amarvilas · Agra</span>
+        </div>
+        <div class="hc__body">
+          <span class="hc__region">Agra</span>
+          <h3 class="hc__name">Oberoi Amarvilas</h3>
+          <p class="hc__location">Agra · Taj Mahal views from every room and terrace</p>
+          <span class="hc__link">View hotel →</span>
+        </div>
+      </a>
+    </article>
+
+    <article class="hotel-card">
+      <a href="/places-to-stay/mahua-kothi-bandhavgarh/">
+        <div class="hc__image hci--mahua" role="img" aria-label="Mahua Kothi lodge, Bandhavgarh">
+          <!-- DEVELOPER: <img src="images/hotels/mahua-kothi-bandhavgarh.jpg" alt="Mahua Kothi Taj Safaris lodge, Bandhavgarh"> -->
+          <span class="hc__image-placeholder">Mahua Kothi · Bandhavgarh</span>
+        </div>
+        <div class="hc__body">
+          <span class="hc__region">Central India</span>
+          <h3 class="hc__name">Mahua Kothi</h3>
+          <p class="hc__location">Bandhavgarh · Taj Safaris wilderness lodge in tiger country</p>
+          <span class="hc__link">View hotel →</span>
+        </div>
+      </a>
+    </article>
+
+    <article class="hotel-card">
+      <a href="/places-to-stay/brunton-boatyard-cochin/">
+        <div class="hc__image hci--brunton" role="img" aria-label="Brunton Boatyard, Cochin">
+          <!-- DEVELOPER: <img src="images/hotels/brunton-boatyard-cochin.jpg" alt="CGH Earth Brunton Boatyard heritage hotel, Cochin"> -->
+          <span class="hc__image-placeholder">Brunton Boatyard · Cochin</span>
+        </div>
+        <div class="hc__body">
+          <span class="hc__region">Kerala</span>
+          <h3 class="hc__name">Brunton Boatyard</h3>
+          <p class="hc__location">Cochin · CGH Earth heritage waterfront hotel in Fort Cochin</p>
+          <span class="hc__link">View hotel →</span>
+        </div>
+      </a>
+    </article>
+
+    <article class="hotel-card">
+      <a href="/places-to-stay/jai-mahal-palace-jaipur/">
+        <div class="hc__image hci--jai-mahal" role="img" aria-label="Jai Mahal Palace, Jaipur">
+          <!-- DEVELOPER: <img src="images/hotels/jai-mahal-palace-jaipur.jpg" alt="Jai Mahal Palace heritage hotel, Jaipur"> -->
+          <span class="hc__image-placeholder">Jai Mahal Palace · Jaipur</span>
+        </div>
+        <div class="hc__body">
+          <span class="hc__region">Rajasthan</span>
+          <h3 class="hc__name">Jai Mahal Palace</h3>
+          <p class="hc__location">Jaipur · Royal Mughal-era palace in the heart of the Pink City</p>
+          <span class="hc__link">View hotel →</span>
+        </div>
+      </a>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BEST TIME TO VISIT
+═══════════════════════════════════════ -->
+<section class="best-time" id="best-time" aria-label="Best time to visit India">
+  <div class="best-time__inner">
+
+    <div>
+      <span class="eyebrow">When to visit</span>
+      <h2 class="section-heading">Best time to travel to India</h2>
+      <div class="rule"></div>
+      <p class="body-text">India is a vast country and the best time to visit depends on which region you're exploring. As a general rule, October through March offers the most comfortable conditions across most of the country — clear skies, mild temperatures and minimal rainfall.</p>
+      <p class="body-text">For wildlife safaris in Central India, February through May is peak season when tigers are most active and visible. For Kerala and the south, October through February is ideal.</p>
+
+      <div class="month-grid" role="list" aria-label="Best months to visit India">
+        <div class="month-cell" role="listitem"><span class="month-label">Jan</span></div>
+        <div class="month-cell month-cell--peak" role="listitem"><span class="month-label">Feb</span></div>
+        <div class="month-cell month-cell--peak" role="listitem"><span class="month-label">Mar</span></div>
+        <div class="month-cell month-cell--good" role="listitem"><span class="month-label">Apr</span></div>
+        <div class="month-cell" role="listitem"><span class="month-label">May</span></div>
+        <div class="month-cell" role="listitem"><span class="month-label">Jun</span></div>
+        <div class="month-cell" role="listitem"><span class="month-label">Jul</span></div>
+        <div class="month-cell" role="listitem"><span class="month-label">Aug</span></div>
+        <div class="month-cell" role="listitem"><span class="month-label">Sep</span></div>
+        <div class="month-cell month-cell--good" role="listitem"><span class="month-label">Oct</span></div>
+        <div class="month-cell month-cell--peak" role="listitem"><span class="month-label">Nov</span></div>
+        <div class="month-cell" role="listitem"><span class="month-label">Dec</span></div>
+      </div>
+
+      <div class="legend" aria-label="Calendar legend">
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--cb);"></span>Peak season</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--cs);"></span>Good season</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--cr);border:0.5px solid var(--cs);"></span>Not recommended</div>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow">Season guide</span>
+      <div class="seasons">
+        <div class="season-card">
+          <span class="season__name">Winter · Peak season</span>
+          <span class="season__months">October – March</span>
+          <p class="season__desc">Clear skies, mild temperatures and minimal rainfall across most of India. Ideal for the Golden Triangle, Rajasthan and cultural sightseeing. The Taj Mahal and heritage cities are at their finest.</p>
+        </div>
+        <div class="season-card">
+          <span class="season__name">Spring · Good season</span>
+          <span class="season__months">April – May</span>
+          <p class="season__desc">Warming temperatures in the north, but excellent for wildlife. Tiger sightings peak as animals congregate at waterholes. Kerala and the coastal south remain pleasant with sea breezes.</p>
+        </div>
+        <div class="season-card">
+          <span class="season__name">Monsoon · Not recommended</span>
+          <span class="season__months">June – September</span>
+          <p class="season__desc">Heavy rainfall across most of India. Most tiger reserves close. However, Kerala's landscapes are spectacularly lush, and Ayurveda retreats thrive in the monsoon humidity — ideal for deep wellness travel.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     INDIA ITINERARIES
+     DEVELOPER: Each .itin-row links to
+     /tours/{slug}/ — update hrefs as needed
+     Replace .ir__image divs with <img> tags
+═══════════════════════════════════════ -->
+<section class="itineraries" id="itineraries" aria-label="India itineraries">
+  <div class="itins__header">
+    <div>
+      <span class="eyebrow">India journeys</span>
+      <h2 class="section-heading" style="margin-bottom:0;">Our India itineraries</h2>
+    </div>
+    <a href="/experiences/" class="text-link text-link--bronze">All itineraries</a>
+  </div>
+
+  <a href="/tours/golden-triangle/" class="itin-row" aria-label="Golden Triangle with Udaipur — 12 nights from $4,500">
+    <div class="ir__image iri--gt" role="img" aria-label="Golden Triangle — Taj Mahal and Rajasthan palaces">
+      <!-- DEVELOPER: <img src="images/itineraries/golden-triangle.jpg" alt="Golden Triangle India tour"> -->
+      <span class="ir__image-placeholder">Golden Triangle</span>
+    </div>
+    <div>
+      <span class="ir__name">Golden Triangle with Udaipur</span>
+      <span class="ir__dest">North India · Delhi, Agra, Jaipur, Udaipur</span>
+    </div>
+    <span class="ir__nights">12 nights</span>
+    <span class="ir__price">From $4,500</span>
+    <span class="ir__link">View →</span>
+  </a>
+
+  <a href="/tours/royal-rajasthan/" class="itin-row" aria-label="Royal Rajasthan — 10 nights from $3,800">
+    <div class="ir__image iri--raj" role="img" aria-label="Royal Rajasthan — Jodhpur blue city and Udaipur palaces">
+      <!-- DEVELOPER: <img src="images/itineraries/royal-rajasthan.jpg" alt="Royal Rajasthan tour"> -->
+      <span class="ir__image-placeholder">Royal Rajasthan</span>
+    </div>
+    <div>
+      <span class="ir__name">Royal Rajasthan</span>
+      <span class="ir__dest">Rajasthan · Jaipur, Jodhpur, Udaipur</span>
+    </div>
+    <span class="ir__nights">10 nights</span>
+    <span class="ir__price">From $3,800</span>
+    <span class="ir__link">View →</span>
+  </a>
+
+  <a href="/tours/simply-south/" class="itin-row" aria-label="Simply South — 10 nights from $3,500">
+    <div class="ir__image iri--south" role="img" aria-label="Simply South — Kerala backwaters and spice estates">
+      <!-- DEVELOPER: <img src="images/itineraries/simply-south.jpg" alt="South India tour — Kerala"> -->
+      <span class="ir__image-placeholder">Simply South</span>
+    </div>
+    <div>
+      <span class="ir__name">Simply South</span>
+      <span class="ir__dest">South India · Kerala backwaters &amp; hills</span>
+    </div>
+    <span class="ir__nights">10 nights</span>
+    <span class="ir__price">From $3,500</span>
+    <span class="ir__link">View →</span>
+  </a>
+
+  <a href="/tours/wild-encounters/" class="itin-row" aria-label="Wild Encounters — 15 nights from €10,650">
+    <div class="ir__image iri--wild" role="img" aria-label="Wild Encounters — tiger in central India forest">
+      <!-- DEVELOPER: <img src="images/itineraries/wild-encounters.jpg" alt="Wild Encounters tiger safari India"> -->
+      <span class="ir__image-placeholder">Wild Encounters</span>
+    </div>
+    <div>
+      <span class="ir__name">Wild Encounters</span>
+      <span class="ir__dest">Central India · Tiger reserves &amp; wildlife</span>
+    </div>
+    <span class="ir__nights">15 nights</span>
+    <span class="ir__price">From €10,650</span>
+    <span class="ir__link">View →</span>
+  </a>
+
+  <a href="/tours/temple-trail/" class="itin-row" aria-label="Temple Trail — 12 nights from $3,600">
+    <div class="ir__image iri--temple" role="img" aria-label="Temple Trail — Meenakshi temple Tamil Nadu">
+      <!-- DEVELOPER: <img src="images/itineraries/temple-trail.jpg" alt="South India temple trail tour"> -->
+      <span class="ir__image-placeholder">Temple Trail</span>
+    </div>
+    <div>
+      <span class="ir__name">Temple Trail</span>
+      <span class="ir__dest">South India · Tamil Nadu sacred circuit</span>
+    </div>
+    <span class="ir__nights">12 nights</span>
+    <span class="ir__price">From $3,600</span>
+    <span class="ir__link">View →</span>
+  </a>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA BAND
+═══════════════════════════════════════ -->
+<div class="cta-band" aria-label="Plan your India trip">
+  <div>
+    <h2 class="cta-band__heading">Ready to explore India?</h2>
+    <p class="cta-band__sub">Tell us what moves you — wildlife, culture, wellness, history or all of the above — and we'll design your private India journey around it.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="/contact/?destination=india"><button class="btn-primary">Start planning my trip</button></a>
+    <a href="/experiences/"><button class="btn-secondary">Browse all itineraries</button></a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__top">
+    <div>
+      <a href="/" aria-label="AndThen Travels — Home">
+        <span class="footer__wordmark">ANDTHEN</span>
+        <span class="footer__sub">travels</span>
+      </a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka for discerning US travelers.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+18000000000">+1 800 000 0000</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Destinations</span>
+      <a href="/india/">India</a>
+      <a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a>
+      <a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Experiences</span>
+      <a href="/experiences/wellness-ayurveda/">Wellness &amp; Ayurveda</a>
+      <a href="/experiences/wildlife-safaris/">Wildlife &amp; Safaris</a>
+      <a href="/experiences/trekking-adventure/">Trekking</a>
+      <a href="/experiences/spiritual-journeys/">Spiritual journeys</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/places-to-stay/">Places to stay</a>
+      <a href="/journal/">Journal</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy-policy/">Privacy policy</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+  // Mobile nav
+  var hamburger = document.getElementById('hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+    });
+  }
+
+  // Jump nav scroll spy
+  var sectionIds = ['about','regions','places','hotels','best-time','itineraries'];
+  var navLinks   = document.querySelectorAll('.jump-nav a');
+  function updateJumpNav() {
+    var scrollPos = window.scrollY + 130;
+    var current = sectionIds[0];
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollPos) current = id;
+    });
+    navLinks.forEach(function(link) {
+      var href = link.getAttribute('href').replace('#','');
+      link.classList.toggle('active', href === current);
+    });
+  }
+  window.addEventListener('scroll', updateJumpNav, { passive: true });
+  updateJumpNav();
+</script>
+
+</body>
+</html>

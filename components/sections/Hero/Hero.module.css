@@ -1,0 +1,129 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+}
+
+.left {
+  background: var(--cd);
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.destTag {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: rgba(200, 180, 154, 0.4);
+}
+
+.heading {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.1;
+  max-width: 400px;
+  margin: 3.5rem 0;
+}
+
+.heading em {
+  font-style: normal;
+  color: var(--cb);
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.stat {
+  border-left: 0.5px solid rgba(200, 180, 154, 0.15);
+  padding-left: 1rem;
+}
+
+.statValue {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--cr);
+  letter-spacing: 0.05rem;
+  display: block;
+}
+
+.statLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: rgba(200, 180, 154, 0.35);
+  margin-top: 3px;
+  display: block;
+}
+
+.right {
+  position: relative;
+  overflow: hidden;
+  background: var(--cs);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.videoContainer {
+  position: absolute;
+  inset: 0;
+  background: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundVideo{
+ position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.caption {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  color: rgba(30, 26, 22, 0.4);
+  letter-spacing: 0.08rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    padding: 3rem 1.5rem;
+  }
+
+  .right {
+    min-height: 260px;
+    padding: 1.5rem;
+  }
+
+  .stats {
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .heading {
+    margin: 2.5rem 0;
+  }
+}

@@ -1,0 +1,648 @@
+/* ============================================================
+   ITINERARIES MAIN PAGE
+   Matches IternityMain.html design
+   ============================================================ */
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 440px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #2C1A0A 0%, #3A2010 40%, #1A2010 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.95) 0%, rgba(44,26,10,0.5) 45%, rgba(44,26,10,0.1) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 0 2.5rem 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.heroLeft {
+  max-width: 580px;
+}
+
+.heroTag {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.875rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.625rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1;
+  margin-bottom: 0.875rem;
+}
+
+.heroSub {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.5);
+  line-height: 1.9;
+  max-width: 420px;
+}
+
+.heroRight {
+  text-align: right;
+}
+
+.heroDestPills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.heroPill {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.45);
+  border: 0.5px solid rgba(200,180,154,0.15);
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+/* ── DESTINATION TABS ──────────────────────────────────────── */
+.destTabs {
+  background: var(--cd);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+}
+
+.destTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.destTab {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.35);
+  background: transparent;
+  border: none;
+  padding: 0 1.75rem;
+  height: 48px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.destTab:hover {
+  color: rgba(200,180,154,0.7);
+}
+
+.destTabActive {
+  color: var(--cb);
+  border-bottom-color: var(--cb);
+}
+
+/* ── DESTINATION SECTION ────────────────────────────────────── */
+.destSection {
+  border-top: 0.5px solid rgba(44,26,10,0.07);
+  background: var(--cr);
+}
+
+.destSectionDark {
+  background: var(--cd);
+}
+
+/* ── DESTINATION HEADER ─────────────────────────────────────── */
+.destHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 3.5rem 2.5rem 2.5rem;
+  align-items: end;
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+  background: var(--cr);
+}
+
+.destHeaderDark {
+  background: var(--cd);
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+
+.destHeaderLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.625rem;
+}
+
+.destHeaderTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 2.875rem);
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.1;
+}
+
+.destHeaderDark .destHeaderTitle {
+  color: var(--cr);
+}
+
+.destHeaderTitle em {
+  font-style: italic;
+  color: var(--cb);
+}
+
+.destHeaderIntro {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+}
+
+.destHeaderDark .destHeaderIntro {
+  color: rgba(200,180,154,0.5);
+}
+
+.destHeaderMeta {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.destHeaderStatNum {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--cd);
+  display: block;
+  line-height: 1;
+}
+
+.destHeaderStatNumLight {
+  color: var(--cr);
+}
+
+.destHeaderStatLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  display: block;
+  margin-top: 3px;
+}
+
+/* ── ITINERARY CARD GRID ─────────────────────────────────────── */
+.itinsGridWrap {
+  background: var(--cr);
+  padding: 0 0 4rem;
+}
+
+.itinsGridWrapDark {
+  background: var(--cd);
+}
+
+.itinsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(44,26,10,0.07);
+}
+
+.itinsGridDark {
+  background: rgba(255,255,255,0.04);
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.itinCard {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease;
+}
+
+.itinCard:hover {
+  background: var(--cp);
+}
+
+.itinCardWide {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.itinCardDark {
+  background: var(--ci);
+}
+
+.itinCardDark:hover {
+  background: #2C1808;
+}
+
+/* ── CARD IMAGE ───────────────────────────────────────────── */
+.icImgLink {
+  display: block;
+}
+
+.icImg {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  background: #2C1A0A;
+}
+
+.icImg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.72) 0%, transparent 55%);
+}
+
+.itinCardWide .icImg {
+  height: 100%;
+  min-height: 260px;
+}
+
+/* image accent tones */
+.ici--north   { background: #3A1808; }
+.ici--south   { background: #0E2810; }
+.ici--kerala  { background: #082028; }
+.ici--central { background: #201808; }
+.ici--east    { background: #082038; }
+.ici--coast   { background: #083040; }
+.ici--bhutan  { background: #142810; }
+.ici--nepal   { background: #0E1A38; }
+.ici--sl      { background: #083040; }
+.ici--multi   { background: #201028; }
+
+.icTypeBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  background: rgba(44,26,10,0.55);
+  color: rgba(200,180,154,0.7);
+  padding: 4px 10px;
+  z-index: 2;
+}
+
+.icImgPlaceholder {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── CARD BODY ────────────────────────────────────────────── */
+.icBody {
+  padding: 1.375rem 1.5rem 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itinCardWide .icBody {
+  padding: 2rem 2rem 2.25rem;
+}
+
+.icRegion {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.icName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.icName a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.icNameLight {
+  color: var(--cr);
+}
+
+.itinCardWide .icName {
+  font-size: 1.4375rem;
+}
+
+.icRoute {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 1.125rem;
+}
+
+.icRouteDark {
+  color: rgba(200,180,154,0.45);
+}
+
+.itinCardWide .icRoute {
+  font-size: 0.75rem;
+}
+
+.icMeta {
+  display: flex;
+  gap: 0;
+  background: rgba(200,180,154,0.12);
+  margin-bottom: 1.125rem;
+}
+
+.icMetaDark {
+  background: rgba(255,255,255,0.04);
+}
+
+.icMetaItem {
+  flex: 1;
+  padding: 0.5625rem 0.75rem;
+  border-right: 0.5px solid rgba(200,180,154,0.2);
+}
+
+.icMetaItemDark {
+  border-right-color: rgba(255,255,255,0.06);
+}
+
+.icMetaItem:last-child {
+  border-right: none;
+}
+
+.icMetaLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.icMetaValue {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  color: var(--cd);
+  font-weight: 400;
+}
+
+.icMetaValueLight {
+  color: var(--cr);
+}
+
+.icLink {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.icLinkDark {
+  color: rgba(200,180,154,0.3);
+}
+
+.itinCard:hover .icLink {
+  color: var(--cb);
+}
+
+.icLinkLine {
+  width: 14px;
+  height: 0.5px;
+  background: currentColor;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ── EMPTY STATE ─────────────────────────────────────────── */
+.emptyState {
+  padding: 4rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* ── CTA BAND ────────────────────────────────────────────── */
+.ctaBand {
+  background: var(--cb);
+  padding: 4.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.ctaBandHeading {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.625rem, 2.5vw, 2.125rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.ctaBandSub {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(244,237,227,0.5);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.ctaBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 210px;
+}
+
+.btnPrimary {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cd);
+  color: var(--cr);
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.btnPrimary:hover {
+  background: var(--ci);
+}
+
+.btnSecondary {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(244,237,227,0.5);
+  border: 0.5px solid rgba(244,237,227,0.18);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.btnSecondary:hover {
+  color: rgba(244,237,227,0.8);
+  border-color: rgba(244,237,227,0.35);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .itinsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .itinCardWide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 1024px) {
+  .itinCardWide {
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+  }
+
+  .itinCardWide .icImg {
+    min-height: 200px;
+  }
+
+  .destHeader {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ctaBand {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBtns {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 380px;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0 1.5rem 2.5rem;
+  }
+
+  .heroDestPills {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .destTabs {
+    top: 60px;
+  }
+
+  .itinsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .itinCardWide {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  .destHeader {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+
+  .itinsGridWrap,
+  .itinsGridWrapDark {
+    padding: 0 0 2.5rem;
+  }
+
+  .ctaBand {
+    padding: 3rem 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBtns {
+    flex-direction: column;
+    width: 100%;
+  }
+}

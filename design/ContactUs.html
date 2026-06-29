@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | AndThen Travels</title>
+<meta name="description" content="Speak to an AndThen Travels specialist about a private journey to India, Bhutan, Nepal or Sri Lanka. We respond within 24 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'DM Sans', Arial, sans-serif;
+  --tr: 0.25s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--fb); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ──────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cr); height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.35);
+}
+.nav__logo-word { font-family: var(--fb); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); display: block; }
+.nav__logo-sub  { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); display: block; }
+.nav__links { display: flex; gap: 2.25rem; }
+.nav__links a { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); transition: color var(--tr); }
+.nav__links a:hover { color: var(--cd); }
+.nav__cta { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cd); background: transparent; border: 0.5px solid var(--cd); padding: 0.625rem 1.375rem; cursor: pointer; transition: background var(--tr), color var(--tr); }
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__ham { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__ham span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── PAGE LAYOUT — two column ──────────────────────── */
+/* Left: form. Right: info sidebar. */
+.page {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  min-height: calc(100vh - 68px);
+  align-items: start;
+}
+
+/* ── LEFT — FORM COLUMN ───────────────────────────── */
+.form-col {
+  padding: 4rem 4rem 5rem 2.5rem;
+  border-right: 0.5px solid rgba(200,180,154,0.2);
+}
+.form-col__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1rem; }
+.form-col__title { font-family: var(--fd); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cd); line-height: 1.05; margin-bottom: 0.625rem; }
+.form-col__title em { font-style: italic; }
+.form-col__sub { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: var(--cm); line-height: 1.85; margin-bottom: 3rem; max-width: 480px; }
+
+/* Form */
+.form { display: flex; flex-direction: column; gap: 0; }
+
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(200,180,154,0.15); margin-bottom: 1px; }
+.form__row--full { grid-template-columns: 1fr; }
+
+.form__field { background: var(--cr); display: flex; flex-direction: column; }
+.form__label {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem;
+  text-transform: uppercase; color: var(--cs);
+  padding: 1rem 1.125rem 0;
+  display: block;
+}
+.form__input,
+.form__select,
+.form__textarea {
+  font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: var(--cd);
+  background: transparent; border: none; outline: none;
+  padding: 0.375rem 1.125rem 1rem;
+  width: 100%;
+  transition: background var(--tr);
+  -webkit-appearance: none; appearance: none;
+}
+.form__input::placeholder,
+.form__textarea::placeholder { color: rgba(160,120,72,0.3); }
+.form__input:focus ~ .form__focus-line,
+.form__select:focus ~ .form__focus-line,
+.form__textarea:focus ~ .form__focus-line { transform: scaleX(1); }
+.form__field:focus-within { background: var(--cp); }
+.form__textarea { resize: none; min-height: 120px; line-height: 1.8; }
+.form__select { cursor: pointer; background-image: none; }
+.form__select option { font-family: var(--fb); }
+
+/* destination checkboxes */
+.form__checks-wrap { background: var(--cr); padding: 1.125rem 1.125rem 1rem; margin-bottom: 1px; }
+.form__checks-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cs); display: block; margin-bottom: 0.875rem; }
+.form__checks { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.form__check { display: none; }
+.form__check-label {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.15rem; text-transform: uppercase;
+  color: var(--cm); border: 0.5px solid rgba(200,180,154,0.3);
+  padding: 6px 14px; cursor: pointer;
+  transition: all var(--tr); user-select: none;
+}
+.form__check:checked + .form__check-label { background: var(--cd); color: var(--cr); border-color: var(--cd); }
+.form__check-label:hover { border-color: var(--cb); color: var(--cb); }
+
+/* experience select pills */
+.form__exp-wrap { background: var(--cr); padding: 1.125rem 1.125rem 1rem; margin-bottom: 1px; }
+.form__exp-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cs); display: block; margin-bottom: 0.875rem; }
+.form__exp-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.form__exp-check { display: none; }
+.form__exp-pill {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.12rem; text-transform: uppercase;
+  color: var(--cm); border: 0.5px solid rgba(200,180,154,0.3);
+  padding: 6px 14px; cursor: pointer;
+  transition: all var(--tr); user-select: none;
+}
+.form__exp-check:checked + .form__exp-pill { background: var(--cb); color: var(--cr); border-color: var(--cb); }
+
+/* submit row */
+.form__submit-row {
+  background: rgba(200,180,154,0.08);
+  padding: 1.5rem 1.125rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  margin-top: 1px;
+  flex-wrap: wrap;
+}
+.form__note { font-family: var(--fb); font-size: 0.5625rem; font-weight: 300; color: var(--cs); line-height: 1.6; max-width: 280px; }
+.form__submit {
+  font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.3rem; text-transform: uppercase;
+  background: var(--cd); color: var(--cr); border: none;
+  padding: 1.125rem 2.5rem; cursor: pointer;
+  transition: background var(--tr); flex-shrink: 0;
+}
+.form__submit:hover { background: var(--ci); }
+
+/* success state */
+.form__success {
+  display: none; padding: 2.5rem; background: var(--cp); border: 0.5px solid rgba(200,180,154,0.3);
+  margin-top: 1px;
+}
+.form__success-title { font-family: var(--fd); font-size: 1.5rem; font-weight: 400; font-style: italic; color: var(--cd); margin-bottom: 0.5rem; }
+.form__success-text { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: var(--cm); line-height: 1.8; }
+
+/* ── RIGHT — SIDEBAR ──────────────────────────────── */
+.sidebar {
+  background: var(--cd);
+  position: sticky; top: 68px;
+  min-height: calc(100vh - 68px);
+  display: flex; flex-direction: column;
+}
+
+/* Office / contact info */
+.sb__contact { padding: 3rem 2.5rem 2.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+.sb__kicker { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(200,180,154,0.3); display: block; margin-bottom: 1.75rem; }
+
+.sb__offices { display: flex; flex-direction: column; gap: 1.75rem; }
+.sb__office {}
+.sb__office-name { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.5rem; }
+.sb__office-line { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(200,180,154,0.45); display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.25rem; line-height: 1.6; }
+.sb__office-line a { color: rgba(200,180,154,0.45); transition: color var(--tr); }
+.sb__office-line a:hover { color: var(--cb); }
+.sb__office-icon { width: 10px; height: 10px; flex-shrink: 0; opacity: 0.3; }
+
+/* Response promise */
+.sb__promise { padding: 2rem 2.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+.sb__promise-title { font-family: var(--fd); font-size: 1.125rem; font-weight: 400; font-style: italic; color: rgba(200,180,154,0.6); line-height: 1.3; margin-bottom: 0.5rem; }
+.sb__promise-text { font-family: var(--fb); font-size: 0.6875rem; font-weight: 300; color: rgba(200,180,154,0.3); line-height: 1.8; }
+
+/* What happens next — steps */
+.sb__next { padding: 2rem 2.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+.sb__next-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(200,180,154,0.3); display: block; margin-bottom: 1.25rem; }
+.sb__steps { display: flex; flex-direction: column; gap: 1.25rem; }
+.sb__step { display: flex; gap: 1rem; align-items: flex-start; }
+.sb__step-num { font-family: var(--fd); font-size: 1.125rem; color: rgba(200,180,154,0.2); line-height: 1.1; flex-shrink: 0; width: 1.5rem; }
+.sb__step-body {}
+.sb__step-title { font-family: var(--fb); font-size: 0.625rem; font-weight: 400; color: rgba(200,180,154,0.5); margin-bottom: 2px; }
+.sb__step-text { font-family: var(--fb); font-size: 0.625rem; font-weight: 300; color: rgba(200,180,154,0.25); line-height: 1.7; }
+
+/* Destinations we cover */
+.sb__dests { padding: 2rem 2.5rem; margin-top: auto; }
+.sb__dests-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(200,180,154,0.3); display: block; margin-bottom: 1rem; }
+.sb__dest-list { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sb__dest-tag { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem; text-transform: uppercase; color: rgba(200,180,154,0.3); border: 0.5px solid rgba(200,180,154,0.1); padding: 4px 10px; }
+
+/* ── FOOTER ───────────────────────────────────────── */
+.footer { background: var(--ci); padding: 3.5rem 2.5rem 2.5rem; }
+.footer__grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3rem; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+.footer__word { font-family: var(--fb); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__sub-word { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact a { display: block; font-family: var(--fb); font-size: 0.6875rem; color: var(--cb); margin-top: 0.75rem; }
+.footer__col-h { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 0.625rem; transition: color var(--tr); }
+.footer__col a:hover { color: var(--cb); }
+.footer__btm { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--fb); font-size: 0.5625rem; color: rgba(255,255,255,0.1); }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1100px) {
+  .page { grid-template-columns: 1fr 360px; }
+  .form-col { padding: 3rem 2.5rem 4rem; }
+}
+@media (max-width: 900px) {
+  .page { grid-template-columns: 1fr; }
+  .sidebar { position: static; min-height: auto; background: var(--ci); }
+  .sb__contact,
+  .sb__promise,
+  .sb__next,
+  .sb__dests { padding: 2rem 2.5rem; }
+  .sb__offices { flex-direction: row; flex-wrap: wrap; gap: 2rem; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .nav__links { display: none; }
+  .nav__ham { display: flex; }
+  .form__row { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr; }
+  .sb__offices { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<nav class="nav" role="navigation">
+  <a href="/" aria-label="AndThen Travels">
+    <span class="nav__logo-word">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+  <div class="nav__links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/experiences/">Experiences</a>
+    <a href="/places-to-stay/">Places to stay</a>
+    <a href="/wellness/">Wellness</a>
+    <a href="/journal/">Journal</a>
+    <a href="/about/">About</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+918129271155" style="font-family:var(--fb);font-size:0.6875rem;color:var(--cb);">+91 8129 271 155</a>
+    <button class="nav__ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ══ TWO-COLUMN PAGE ════════════════════════════════ -->
+<div class="page">
+
+  <!-- ── FORM COLUMN ─────────────────────────────── -->
+  <div class="form-col">
+    <span class="form-col__kicker">Begin the conversation</span>
+    <h1 class="form-col__title">Tell us about<br>your <em>journey.</em></h1>
+    <p class="form-col__sub">Share a few details and one of our specialists will come back to you within 24 hours — with an initial outline, a suggested itinerary or just answers to your questions. No obligation, no sales pressure.</p>
+
+    <form class="form" id="contact-form" novalidate>
+
+      <!-- Name + Email -->
+      <div class="form__row">
+        <div class="form__field">
+          <label class="form__label" for="fname">First name *</label>
+          <input class="form__input" type="text" id="fname" name="fname" placeholder="Your first name" required>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="lname">Last name *</label>
+          <input class="form__input" type="text" id="lname" name="lname" placeholder="Your last name" required>
+        </div>
+      </div>
+
+      <!-- Email + Phone -->
+      <div class="form__row">
+        <div class="form__field">
+          <label class="form__label" for="email">Email address *</label>
+          <input class="form__input" type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="phone">Phone / WhatsApp</label>
+          <input class="form__input" type="tel" id="phone" name="phone" placeholder="+1 000 000 0000">
+        </div>
+      </div>
+
+      <!-- Destinations -->
+      <div class="form__checks-wrap">
+        <span class="form__checks-label">Where are you thinking of going?</span>
+        <div class="form__checks" role="group" aria-label="Destinations">
+          <input class="form__check" type="checkbox" id="dest-india" name="destinations" value="India">
+          <label class="form__check-label" for="dest-india">India</label>
+
+          <input class="form__check" type="checkbox" id="dest-bhutan" name="destinations" value="Bhutan">
+          <label class="form__check-label" for="dest-bhutan">Bhutan</label>
+
+          <input class="form__check" type="checkbox" id="dest-nepal" name="destinations" value="Nepal">
+          <label class="form__check-label" for="dest-nepal">Nepal</label>
+
+          <input class="form__check" type="checkbox" id="dest-srilanka" name="destinations" value="Sri Lanka">
+          <label class="form__check-label" for="dest-srilanka">Sri Lanka</label>
+
+          <input class="form__check" type="checkbox" id="dest-multi" name="destinations" value="Multi-country">
+          <label class="form__check-label" for="dest-multi">Multi-country</label>
+
+          <input class="form__check" type="checkbox" id="dest-unsure" name="destinations" value="Not sure yet">
+          <label class="form__check-label" for="dest-unsure">Not sure yet</label>
+        </div>
+      </div>
+
+      <!-- Travel dates + Group size -->
+      <div class="form__row">
+        <div class="form__field">
+          <label class="form__label" for="travel-dates">When are you planning to travel?</label>
+          <input class="form__input" type="text" id="travel-dates" name="travel_dates" placeholder="e.g. October 2026, flexible">
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="group-size">How many people?</label>
+          <select class="form__select" id="group-size" name="group_size">
+            <option value="" disabled selected>Select group size</option>
+            <option>Just me</option>
+            <option>2 people</option>
+            <option>3–5 people</option>
+            <option>6–10 people</option>
+            <option>11–20 people</option>
+            <option>20+ people</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Duration + Budget -->
+      <div class="form__row">
+        <div class="form__field">
+          <label class="form__label" for="duration">How long?</label>
+          <select class="form__select" id="duration" name="duration">
+            <option value="" disabled selected>Select duration</option>
+            <option>Under 1 week</option>
+            <option>1–2 weeks</option>
+            <option>2–3 weeks</option>
+            <option>3–4 weeks</option>
+            <option>Over 4 weeks</option>
+            <option>Flexible / not sure</option>
+          </select>
+        </div>
+        <div class="form__field">
+          <label class="form__label" for="budget">Approximate budget per person</label>
+          <select class="form__select" id="budget" name="budget">
+            <option value="" disabled selected>Select budget</option>
+            <option>USD 5,000 – 8,000</option>
+            <option>USD 8,000 – 12,000</option>
+            <option>USD 12,000 – 18,000</option>
+            <option>USD 18,000 – 25,000</option>
+            <option>USD 25,000+</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Signature experience interest -->
+      <div class="form__exp-wrap">
+        <span class="form__exp-label">Interested in a signature experience? (optional)</span>
+        <div class="form__exp-pills" role="group" aria-label="Signature experiences">
+          <input class="form__exp-check" type="radio" id="exp-none" name="experience" value="">
+          <label class="form__exp-pill" for="exp-none">None — private itinerary</label>
+
+          <input class="form__exp-check" type="radio" id="exp-afw" name="experience" value="art-of-feeling-well">
+          <label class="form__exp-pill" for="exp-afw">Art of Feeling Well</label>
+
+          <input class="form__exp-check" type="radio" id="exp-ps" name="experience" value="plated-south">
+          <label class="form__exp-pill" for="exp-ps">Plated South</label>
+
+          <input class="form__exp-check" type="radio" id="exp-fw" name="experience" value="fairways-wonders">
+          <label class="form__exp-pill" for="exp-fw">Fairways &amp; Wonders</label>
+        </div>
+      </div>
+
+      <!-- Travel style -->
+      <div class="form__row form__row--full">
+        <div class="form__field">
+          <label class="form__label" for="travel-style">What kind of journey are you imagining?</label>
+          <select class="form__select" id="travel-style" name="travel_style">
+            <option value="" disabled selected>Select travel style</option>
+            <option>Wellness &amp; Ayurveda retreat</option>
+            <option>Cultural &amp; heritage exploration</option>
+            <option>Wildlife &amp; safari</option>
+            <option>Adventure &amp; trekking</option>
+            <option>Honeymoon / romantic</option>
+            <option>Family travel</option>
+            <option>Golf</option>
+            <option>Food &amp; culinary</option>
+            <option>Corporate / incentive group</option>
+            <option>Mix of several things</option>
+            <option>Not sure — open to ideas</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="form__row form__row--full">
+        <div class="form__field">
+          <label class="form__label" for="message">Anything else you'd like us to know?</label>
+          <textarea class="form__textarea" id="message" name="message" placeholder="Tell us about the experience you're looking for — special occasions, specific interests, places you've already been, anything at all that would help us build the right journey for you."></textarea>
+        </div>
+      </div>
+
+      <!-- How did you hear -->
+      <div class="form__row form__row--full">
+        <div class="form__field">
+          <label class="form__label" for="source">How did you hear about AndThen?</label>
+          <select class="form__select" id="source" name="source">
+            <option value="" disabled selected>Select one</option>
+            <option>Google search</option>
+            <option>Instagram</option>
+            <option>Travel magazine or article</option>
+            <option>Friend or family recommendation</option>
+            <option>Previous client</option>
+            <option>Travel agent</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Submit row -->
+      <div class="form__submit-row">
+        <p class="form__note">We respond to every enquiry within 24 hours. Your details are never shared with third parties.</p>
+        <button class="form__submit" type="submit">Send my enquiry →</button>
+      </div>
+
+      <!-- Success message (shown after submit) -->
+      <div class="form__success" id="form-success" role="alert">
+        <p class="form__success-title">Thank you — we'll be in touch.</p>
+        <p class="form__success-text">One of our specialists will reply within 24 hours with an initial outline or further questions. In the meantime, feel free to explore our <a href="/journal/" style="color:var(--cb);">journal</a> or <a href="/itineraries/" style="color:var(--cb);">itineraries</a>.</p>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ── SIDEBAR ──────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- Contact details -->
+    <div class="sb__contact">
+      <span class="sb__kicker">Get in touch directly</span>
+      <div class="sb__offices">
+
+        <div class="sb__office">
+          <span class="sb__office-name">India</span>
+          <p class="sb__office-line">
+            <svg class="sb__office-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.2 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            <a href="tel:+918129271155">+91 8129 271 155</a>
+          </p>
+          <p class="sb__office-line">
+            <svg class="sb__office-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+          </p>
+          <p class="sb__office-line">
+            <svg class="sb__office-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mon–Sat, 9am–7pm IST
+          </p>
+        </div>
+
+        <div class="sb__office">
+          <span class="sb__office-name">USA · UK · Australia</span>
+          <p class="sb__office-line">
+            <svg class="sb__office-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+          </p>
+          <p class="sb__office-line">
+            <svg class="sb__office-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            We respond across all time zones
+          </p>
+          <p class="sb__office-line">
+            <svg class="sb__office-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2H3v16h5l3 3 3-3h7V2z"/></svg>
+            WhatsApp welcome
+          </p>
+        </div>
+
+        <div class="sb__office">
+          <span class="sb__office-name">Website</span>
+          <p class="sb__office-line">
+            <svg class="sb__office-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <a href="https://andthentravels.com" target="_blank">andthentravels.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Response promise -->
+    <div class="sb__promise">
+      <p class="sb__promise-title">We respond to every enquiry within 24 hours.</p>
+      <p class="sb__promise-text">Not an automated reply — a real response from a specialist who has read your message and thought about what you're looking for. If you have a tight deadline or an urgent question, WhatsApp us directly.</p>
+    </div>
+
+    <!-- What happens next -->
+    <div class="sb__next">
+      <span class="sb__next-label">What happens next</span>
+      <div class="sb__steps">
+        <div class="sb__step">
+          <span class="sb__step-num">01</span>
+          <div class="sb__step-body">
+            <p class="sb__step-title">We read your enquiry</p>
+            <p class="sb__step-text">A specialist reviews your message and the details you've shared about your group, dates and interests.</p>
+          </div>
+        </div>
+        <div class="sb__step">
+          <span class="sb__step-num">02</span>
+          <div class="sb__step-body">
+            <p class="sb__step-title">We reply within 24 hours</p>
+            <p class="sb__step-text">With an initial outline, a suggested starting point, or a few questions to help us build the right proposal.</p>
+          </div>
+        </div>
+        <div class="sb__step">
+          <span class="sb__step-num">03</span>
+          <div class="sb__step-body">
+            <p class="sb__step-title">We refine together</p>
+            <p class="sb__step-text">Your itinerary is built through conversation — nothing is finalised until every detail is right for you.</p>
+          </div>
+        </div>
+        <div class="sb__step">
+          <span class="sb__step-num">04</span>
+          <div class="sb__step-body">
+            <p class="sb__step-title">We handle everything</p>
+            <p class="sb__step-text">Hotels, transfers, permits, specialists — full logistics from confirmation to the day you return.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Destinations -->
+    <div class="sb__dests">
+      <span class="sb__dests-label">Where we work</span>
+      <div class="sb__dest-list">
+        <span class="sb__dest-tag">India</span>
+        <span class="sb__dest-tag">Bhutan</span>
+        <span class="sb__dest-tag">Nepal</span>
+        <span class="sb__dest-tag">Sri Lanka</span>
+        <span class="sb__dest-tag">Multi-country</span>
+      </div>
+    </div>
+
+  </aside>
+</div><!-- /page -->
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <a href="/"><span class="footer__word">ANDTHEN</span><span class="footer__sub-word">travels</span></a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+918129271155">+91 8129 271 155</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Experiences</span>
+      <a href="/signature-experiences/art-of-feeling-well/">Art of Feeling Well</a>
+      <a href="/signature-experiences/plated-south/">Plated South</a>
+      <a href="/signature-experiences/fairways-wonders/">Fairways &amp; Wonders</a>
+      <a href="/itineraries/">Private itineraries</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Destinations</span>
+      <a href="/india/">India</a>
+      <a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a>
+      <a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/places-to-stay/">Places to stay</a>
+      <a href="/journal/">Journal</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+  <div class="footer__btm">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Mobile nav */
+  var ham = document.querySelector('.nav__ham');
+  if (ham) ham.addEventListener('click', function () {
+    this.setAttribute('aria-expanded', String(this.getAttribute('aria-expanded') !== 'true'));
+  });
+
+  /* Pre-select experience from URL param ?experience=... */
+  var params = new URLSearchParams(window.location.search);
+  var exp = params.get('experience');
+  if (exp) {
+    var el = document.querySelector('input[value="' + exp + '"]');
+    if (el) el.checked = true;
+  }
+
+  /* Pre-select destination from URL param ?destination=... */
+  var dest = params.get('destination');
+  if (dest) {
+    var destEl = document.querySelector('input[value="' + dest + '"]');
+    if (destEl) destEl.checked = true;
+  }
+
+  /* Form submit */
+  var form = document.getElementById('contact-form');
+  var success = document.getElementById('form-success');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    /* Basic validation */
+    var fname = form.querySelector('#fname').value.trim();
+    var email = form.querySelector('#email').value.trim();
+    if (!fname || !email) {
+      alert('Please fill in your name and email address.');
+      return;
+    }
+
+    /* DEVELOPER: replace this block with your form submission logic
+       e.g. fetch('/wp-json/contact-form-7/...', { method:'POST', body: new FormData(form) })
+       or integrate with HubSpot / Mailchimp / Gravity Forms */
+
+    /* Simulate success */
+    var submitBtn = form.querySelector('.form__submit');
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    setTimeout(function () {
+      form.querySelector('.form__submit-row').style.display = 'none';
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 800);
+  });
+
+})();
+</script>
+
+</body>
+</html>

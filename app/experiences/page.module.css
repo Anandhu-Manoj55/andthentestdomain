@@ -1,0 +1,842 @@
+/* Signature Experiences Page CSS Module */
+
+.experiencesPage {
+  min-height: 100vh;
+  background: var(--cr, #FFFFFF);
+  color: var(--cd, #2C1A0A);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+}
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, #1A0E06 0%, #2C1A0A 50%, #3A2010 100%);
+  background-size: cover;
+  background-position: center;
+}
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.88) 0%, rgba(44,26,10,0.35) 55%, rgba(44,26,10,0.08) 100%);
+}
+.heroPills {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 2.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+.heroPill {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.4);
+  border: 0.5px solid rgba(200,180,154,0.12);
+  padding: 5px 14px;
+  white-space: nowrap;
+}
+.heroContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 2.5rem 3.5rem;
+  max-width: 700px;
+}
+.heroKicker {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 1rem;
+}
+.heroTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--cr, #FFFFFF);
+  line-height: 1;
+  margin-bottom: 1.125rem;
+}
+.heroTitle em {
+  font-style: italic;
+  color: var(--cb, #A07848);
+}
+.heroDesc {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.55);
+  line-height: 1.9;
+  max-width: 500px;
+}
+
+/* Pillars Section */
+.pillars {
+  background: var(--cp, #F5EFE8);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: rgba(200,180,154,0.2);
+  border-bottom: 0.5px solid rgba(200,180,154,0.25);
+}
+.pillar {
+  background: var(--cp, #F5EFE8);
+  padding: 1.625rem 2rem;
+  display: flex;
+  gap: 1.125rem;
+  align-items: flex-start;
+}
+.pillarRule {
+  width: 1.5rem;
+  height: 0.5px;
+  background: var(--cb, #A07848);
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+.pillarTitle {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  color: var(--cd, #2C1A0A);
+  margin-bottom: 0.375rem;
+}
+.pillarText {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  line-height: 1.75;
+}
+
+/* Experience Rows */
+.exp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+}
+.expReverse {
+  direction: rtl;
+}
+.expReverse > * {
+  direction: ltr;
+}
+
+.expImgWrap {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.expImgPh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.expImgWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.5) 0%, transparent 55%);
+}
+.expFlag {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  display: flex;
+  gap: 0;
+}
+.expFlagType {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  background: var(--cb, #A07848);
+  color: var(--cr, #FFFFFF);
+  padding: 4px 10px;
+}
+.expFlagNights {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  background: rgba(44,26,10,0.6);
+  color: rgba(200,180,154,0.7);
+  padding: 4px 10px;
+}
+.expNum {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 5rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.07);
+  line-height: 1;
+  user-select: none;
+}
+
+.expBody {
+  padding: 3.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cr, #FFFFFF);
+}
+.expIndex {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.expName {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.875rem, 3vw, 2.875rem);
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+  line-height: 1.1;
+  margin-bottom: 0.375rem;
+}
+.expName em {
+  font-style: italic;
+}
+.expSubtitle {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--cb, #A07848);
+  margin-bottom: 1.75rem;
+}
+.expRule {
+  width: 1.5rem;
+  height: 0.5px;
+  background: var(--cs, #C8B49A);
+  margin-bottom: 1.75rem;
+}
+.expDesc {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  line-height: 2.1;
+  margin-bottom: 1.875rem;
+}
+
+/* Route Strip */
+.expRoute {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--cp, #F5EFE8);
+  margin-bottom: 1.875rem;
+  padding: 0.875rem 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.expRoute::-webkit-scrollbar {
+  display: none;
+}
+.expRouteStop {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--cm, #6B4C2A);
+  white-space: nowrap;
+}
+.expRouteStop strong {
+  color: var(--cd, #2C1A0A);
+  font-weight: 400;
+}
+.expRouteNights {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  color: var(--cs, #C8B49A);
+  display: block;
+  margin-top: 1px;
+}
+.expRouteArrow {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  color: rgba(200,180,154,0.3);
+  padding: 0 0.625rem;
+  flex-shrink: 0;
+}
+
+/* Details Grid */
+.expDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-bottom: 1.875rem;
+}
+.expDetail {
+  background: var(--cp, #F5EFE8);
+  padding: 0.875rem 1rem;
+}
+.expDetailLabel {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  display: block;
+  margin-bottom: 3px;
+}
+.expDetailValue {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.75rem;
+  color: var(--cd, #2C1A0A);
+  font-weight: 400;
+}
+
+/* Includes */
+.expIncludes {
+  margin-bottom: 2.25rem;
+}
+.expIncludesLabel {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.expIncludes ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 1.5rem;
+}
+.expIncludes li {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 0.5px solid rgba(200,180,154,0.12);
+}
+.expIncludes li::before {
+  content: '—';
+  color: var(--cs, #C8B49A);
+  flex-shrink: 0;
+  font-size: 0.5rem;
+}
+
+/* CTA row */
+.expCta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.expBtn {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cd, #2C1A0A);
+  color: var(--cr, #FFFFFF);
+  border: none;
+  padding: 1rem 1.75rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.expBtn:hover {
+  background: var(--ci, #3A2010);
+}
+.expLink {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.25s ease;
+}
+.expLink:hover {
+  color: var(--cb, #A07848);
+}
+.expLinkLine {
+  width: 12px;
+  height: 0.5px;
+  background: currentColor;
+}
+
+/* Specialist profile section */
+.specialist {
+  background: var(--cd, #2C1A0A);
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+}
+.spImgWrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  height: 100%;
+}
+.spImgPh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.spImgWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(44,26,10,0.8));
+}
+.spBody {
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.spKicker {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.spName {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  color: var(--cr, #FFFFFF);
+  line-height: 1.1;
+  margin-bottom: 0.375rem;
+}
+.spTitle {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cb, #A07848);
+  margin-bottom: 1.5rem;
+}
+.spBio {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.5);
+  line-height: 2;
+}
+.spAwards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.spAward {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.3);
+  border: 0.5px solid rgba(200,180,154,0.12);
+  padding: 4px 10px;
+}
+
+/* Golf Courses Grid */
+.coursesSection {
+  background: var(--cp, #F5EFE8);
+  padding: 3.5rem 2.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+}
+.coursesHead {
+  margin-bottom: 2rem;
+}
+.coursesKicker {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.coursesTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.375rem, 2vw, 1.875rem);
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+}
+.coursesTitle em {
+  font-style: italic;
+}
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.courseCard {
+  background: var(--cr, #FFFFFF);
+  padding: 1.5rem 1.375rem;
+  display: flex;
+  flex-direction: column;
+}
+.courseCardImgWrap {
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+  margin: -1.5rem -1.375rem 1.25rem;
+}
+.ccImgPh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ccImgPh.golf1 { background: linear-gradient(135deg, #102010 0%, #050A05 100%); }
+.ccImgPh.golf2 { background: linear-gradient(135deg, #142810 0%, #071006 100%); }
+.ccImgPh.golf3 { background: linear-gradient(135deg, #0E2010 0%, #050A05 100%); }
+.ccImgPh.golf4 { background: linear-gradient(135deg, #0A1808 0%, #020C04 100%); }
+
+/* Experience image placeholders */
+.expImgWellness { background: linear-gradient(160deg, #082028 0%, #2C1808 100%); }
+.expImgCulinary { background: linear-gradient(160deg, #3A1808 0%, #201808 100%); }
+.expImgGolf { background: linear-gradient(160deg, #102010 0%, #0E2010 100%); }
+
+/* Specialist image placeholders */
+.spImgDevika { background: linear-gradient(135deg, #1A0E06 0%, #2C1A0A 100%); }
+.spImgBobby { background: linear-gradient(135deg, #3A1808 0%, #201408 100%); }
+.courseCardImgWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.6) 0%, transparent 55%);
+}
+.courseCardDesigner {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.courseCardName {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+  line-height: 1.25;
+  margin-bottom: 0.625rem;
+  flex: 1;
+}
+.courseCardLoc {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--cs, #C8B49A);
+}
+.courseCardDesc {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  line-height: 1.7;
+  margin-top: 0.625rem;
+}
+
+/* Stays strip */
+.staysStrip {
+  background: var(--cd, #2C1A0A);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+}
+.ssLabel {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.3);
+  flex-shrink: 0;
+}
+.ssHotels {
+  display: flex;
+  gap: 0;
+  flex: 1;
+}
+.ssHotel {
+  flex: 1;
+  border-right: 0.5px solid rgba(255,255,255,0.04);
+  padding: 0 1.5rem;
+}
+.ssHotel:first-child {
+  padding-left: 0;
+}
+.ssHotel:last-child {
+  border-right: none;
+}
+.ssCity {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: rgba(200,180,154,0.25);
+  display: block;
+  margin-bottom: 2px;
+}
+.ssName {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: rgba(200,180,154,0.55);
+}
+.ssName a {
+  transition: color 0.25s ease;
+}
+.ssName a:hover {
+  color: var(--cb, #A07848);
+}
+
+/* How it works */
+.how {
+  background: var(--cp, #F5EFE8);
+  padding: 5rem 2.5rem;
+  border-top: 0.5px solid rgba(200,180,154,0.25);
+}
+.howHead {
+  margin-bottom: 3.5rem;
+}
+.howKicker {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.4375rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb, #A07848);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.howTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.75rem, 2.5vw, 2.375rem);
+  font-weight: 400;
+  color: var(--cd, #2C1A0A);
+  line-height: 1.15;
+}
+.howTitle em {
+  font-style: italic;
+}
+.howSteps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.howStep {
+  background: var(--cr, #FFFFFF);
+  padding: 2rem 1.75rem;
+}
+.howStepNum {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: rgba(200,180,154,0.35);
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.howStepTitle {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--cd, #2C1A0A);
+  margin-bottom: 0.5rem;
+}
+.howStepText {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm, #6B4C2A);
+  line-height: 1.75;
+}
+
+/* Final CTA */
+.finalCta {
+  background: var(--cb, #A07848);
+  padding: 5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+.fcTitle {
+  font-family: var(--fd, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.75rem, 3vw, 2.625rem);
+  font-weight: 400;
+  color: var(--cr, #FFFFFF);
+  line-height: 1.1;
+  margin-bottom: 0.625rem;
+}
+.fcTitle em {
+  font-style: italic;
+}
+.fcSub {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.85;
+  max-width: 500px;
+}
+.fcBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 210px;
+}
+.btnDark {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cd, #2C1A0A);
+  color: var(--cr, #FFFFFF);
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.25s ease;
+}
+.btnDark:hover {
+  background: var(--ci, #3A2010);
+}
+.btnGhost {
+  font-family: var(--fb, 'DM Sans', sans-serif);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(255,255,255,0.45);
+  border: 0.5px solid rgba(255,255,255,0.15);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.btnGhost:hover {
+  color: rgba(255,255,255,0.8);
+  border-color: rgba(255,255,255,0.35);
+}
+
+/* Responsive queries */
+@media (max-width: 1100px) {
+  .expBody {
+    padding: 2.5rem 2rem;
+  }
+  .expIncludes ul {
+    grid-template-columns: 1fr;
+  }
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .howSteps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ssHotels {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .exp {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .expReverse {
+    direction: ltr;
+  }
+  .expImgWrap {
+    height: 340px;
+  }
+  .specialist {
+    grid-template-columns: 280px 1fr;
+  }
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+  .finalCta {
+    grid-template-columns: 1fr;
+  }
+  .fcBtns {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    height: 460px;
+  }
+  .heroPills {
+    display: none;
+  }
+  .specialist {
+    grid-template-columns: 1fr;
+  }
+  .spImgWrap {
+    min-height: 260px;
+  }
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+  .howSteps {
+    grid-template-columns: 1fr;
+  }
+  .staysStrip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ssHotels {
+    flex-direction: column;
+  }
+  .ssHotel {
+    border-right: none;
+    border-bottom: 0.5px solid rgba(255,255,255,0.04);
+    padding: 0.75rem 0;
+  }
+  .fcBtns {
+    flex-direction: column;
+  }
+}

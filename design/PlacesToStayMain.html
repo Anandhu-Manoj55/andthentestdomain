@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Places to Stay | AndThen Travels</title>
+<meta name="description" content="AndThen-recommended hotels, lodges and retreats across India, Bhutan, Nepal and Sri Lanka — handpicked for private luxury travellers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'DM Sans', Arial, sans-serif;
+  --tr: 0.25s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--fb); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; object-fit: cover; }
+
+/* ── NAV ──────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cr); height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.35);
+}
+.nav__logo-word { font-family: var(--fb); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); display: block; }
+.nav__logo-sub  { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); display: block; }
+.nav__links { display: flex; gap: 2.25rem; }
+.nav__links a { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); transition: color var(--tr); }
+.nav__links a:hover, .nav__links a.active { color: var(--cd); }
+.nav__cta { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cd); background: transparent; border: 0.5px solid var(--cd); padding: 0.625rem 1.375rem; cursor: pointer; transition: background var(--tr), color var(--tr); }
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__ham { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__ham span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── HERO ─────────────────────────────────────────── */
+/* DEVELOPER: add background-image:url('images/places-hero.jpg') to .hero__bg — min 1800×900px, show a beautiful hotel room/view/exterior */
+.hero {
+  position: relative; height: 520px; overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #3A2010 0%, #2C1A0A 55%, #1A1010 100%);
+}
+.hero__bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(44,26,10,0.78) 0%, rgba(44,26,10,0.25) 65%, rgba(44,26,10,0.05) 100%);
+}
+.hero__content {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 2.5rem 3.5rem; max-width: 680px;
+}
+.hero__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1rem; }
+.hero__title { font-family: var(--fd); font-size: clamp(2.25rem, 4.5vw, 3.75rem); font-weight: 400; color: var(--cr); line-height: 1.05; margin-bottom: 1rem; }
+.hero__title em { font-style: italic; color: var(--cb); }
+.hero__desc { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(200,180,154,0.6); line-height: 1.9; max-width: 460px; }
+
+/* ── EDITORIAL NOTE ───────────────────────────────── */
+/* Slim bar explaining the AndThen curation approach */
+.editorial-note {
+  background: var(--cd);
+  padding: 1.625rem 2.5rem;
+  display: flex; align-items: center; gap: 3rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+}
+.en__rule { width: 1.5rem; height: 0.5px; background: var(--cb); flex-shrink: 0; }
+.en__text { font-family: var(--fb); font-size: 0.6875rem; font-weight: 300; color: rgba(200,180,154,0.45); line-height: 1.85; max-width: 680px; }
+.en__text strong { color: rgba(200,180,154,0.75); font-weight: 400; }
+
+/* ── FILTER BAR ───────────────────────────────────── */
+.filter-bar {
+  background: var(--cp);
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  display: flex; align-items: center;
+  padding: 0 2.5rem; height: 50px; gap: 0;
+  overflow-x: auto; scrollbar-width: none;
+  position: sticky; top: 68px; z-index: 90;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.f-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.25rem; text-transform: uppercase; color: var(--cs); flex-shrink: 0; margin-right: 1.5rem; }
+.f-btn {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase;
+  color: var(--cm); background: transparent; border: none; cursor: pointer;
+  padding: 0 1.125rem; height: 100%; white-space: nowrap; flex-shrink: 0;
+  border-bottom: 2px solid transparent; transition: color var(--tr), border-color var(--tr);
+}
+.f-btn:hover { color: var(--cd); }
+.f-btn.active { color: var(--cd); border-bottom-color: var(--cb); }
+.f-sep { width: 0.5px; height: 14px; background: rgba(200,180,154,0.2); flex-shrink: 0; align-self: center; }
+
+/* ── SECTION HEADER ───────────────────────────────── */
+.dest-section { padding: 3.5rem 2.5rem 0; }
+.dest-section.hidden { display: none; }
+
+.dest-head {
+  display: flex; align-items: center; gap: 1.25rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.25);
+}
+.dest-head__left { flex: 1; }
+.dest-head__dest { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.375rem; }
+.dest-head__name { font-family: var(--fd); font-size: clamp(1.5rem, 2.5vw, 2.125rem); font-weight: 400; color: var(--cd); line-height: 1.1; }
+.dest-head__name em { font-style: italic; }
+.dest-head__right { text-align: right; flex-shrink: 0; }
+.dest-head__count { font-family: var(--fd); font-size: 2.25rem; font-weight: 400; color: var(--cd); display: block; line-height: 1; }
+.dest-head__count-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cs); display: block; margin-top: 3px; }
+
+/* ── HOTEL GRID ───────────────────────────────────── */
+/* 3-col grid; featured hotel spans full row as a landscape card */
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(44,26,10,0.07);
+  margin-bottom: 4rem;
+}
+
+/* ── STANDARD HOTEL CARD ──────────────────────────── */
+/* DEVELOPER: replace .hc__img-ph divs with <img src="..." alt="..."> inside .hc__img-wrap */
+.hc {
+  background: var(--cr);
+  display: flex; flex-direction: column;
+  transition: background var(--tr);
+}
+.hc:hover { background: var(--cp); }
+.hc.hidden { display: none; }
+
+.hc__img-wrap {
+  position: relative; overflow: hidden;
+  /* 4:3 ratio */
+  width: 100%; padding-top: 75%;
+}
+.hc__img-ph {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.hc__img-wrap::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.5) 0%, transparent 50%);
+}
+/* Category badge — top-left */
+.hc__type {
+  position: absolute; top: 0.875rem; left: 0.875rem; z-index: 2;
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem;
+  text-transform: uppercase; background: var(--cb); color: var(--cr);
+  padding: 3px 9px;
+}
+/* AndThen pick star — top-right, only on recommended */
+.hc__pick {
+  position: absolute; top: 0.875rem; right: 0.875rem; z-index: 2;
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem;
+  text-transform: uppercase; background: var(--cr); color: var(--cd);
+  padding: 3px 9px; font-weight: 500;
+}
+
+.hc__body { padding: 1.25rem 1.375rem 1.625rem; flex: 1; display: flex; flex-direction: column; }
+.hc__location { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cs); display: block; margin-bottom: 0.25rem; }
+.hc__name { font-family: var(--fd); font-size: 1.125rem; font-weight: 400; color: var(--cd); line-height: 1.25; margin-bottom: 0.625rem; }
+.hc__why {
+  font-family: var(--fb); font-size: 0.6875rem; font-weight: 300; color: var(--cm);
+  line-height: 1.8; margin-bottom: 1.125rem; flex: 1;
+}
+/* Tags row */
+.hc__tags { display: flex; gap: 0.375rem; flex-wrap: wrap; margin-bottom: 1.125rem; }
+.hc__tag {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.1rem;
+  text-transform: uppercase; color: var(--cm);
+  border: 0.5px solid rgba(200,180,154,0.35); padding: 3px 8px;
+}
+.hc__foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.hc__link {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.2rem;
+  text-transform: uppercase; color: var(--cs);
+  display: flex; align-items: center; gap: 6px; transition: color var(--tr);
+}
+.hc__link-line { width: 10px; height: 0.5px; background: currentColor; }
+.hc:hover .hc__link { color: var(--cb); }
+
+/* ── FEATURED HOTEL CARD (full-width landscape) ───── */
+.hc--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hc--featured .hc__img-wrap {
+  padding-top: 0;
+  min-height: 380px;
+  position: relative;
+}
+.hc--featured .hc__img-ph {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+.hc--featured .hc__body {
+  padding: 2.5rem 2.75rem;
+  justify-content: center;
+}
+.hc--featured .hc__name { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.hc--featured .hc__why { font-size: 0.8125rem; line-height: 2; }
+
+/* ── SECTION DIVIDER BETWEEN DEST SECTIONS ────────── */
+.section-gap { height: 0.5px; background: rgba(200,180,154,0.2); margin: 0 2.5rem; }
+
+/* image bg placeholder tones */
+.hi--india-palace  { background: #3A1808; }
+.hi--india-wild    { background: #201808; }
+.hi--india-kerala  { background: #082028; }
+.hi--india-coast   { background: #083040; }
+.hi--india-desert  { background: #281808; }
+.hi--india-hill    { background: #0E2810; }
+.hi--bhutan        { background: #142810; }
+.hi--nepal-city    { background: #0E1A38; }
+.hi--nepal-wild    { background: #102010; }
+.hi--srilanka-hist { background: #083040; }
+.hi--srilanka-wild { background: #102010; }
+.hi--srilanka-tea  { background: #0E2010; }
+.hi--srilanka-sea  { background: #082838; }
+
+/* ── CTA ENQUIRY STRIP ────────────────────────────── */
+.enquiry-strip {
+  background: var(--cd);
+  padding: 4rem 2.5rem;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 3rem;
+}
+.es__title { font-family: var(--fd); font-size: clamp(1.5rem, 2.5vw, 2.125rem); font-weight: 400; font-style: italic; color: var(--cr); line-height: 1.2; margin-bottom: 0.5rem; }
+.es__sub { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(200,180,154,0.4); line-height: 1.8; max-width: 520px; }
+.es__btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 200px; }
+.btn-gold { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: var(--cb); color: var(--cr); border: none; padding: 1rem 1.5rem; cursor: pointer; transition: background var(--tr); }
+.btn-gold:hover { background: var(--ci); }
+.btn-ghost { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: transparent; color: rgba(200,180,154,0.4); border: 0.5px solid rgba(200,180,154,0.15); padding: 1rem 1.5rem; cursor: pointer; transition: all var(--tr); }
+.btn-ghost:hover { color: rgba(200,180,154,0.8); border-color: rgba(200,180,154,0.35); }
+
+/* ── FOOTER ───────────────────────────────────────── */
+.footer { background: var(--ci); padding: 4.5rem 2.5rem 2.5rem; }
+.footer__grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+.footer__word { font-family: var(--fb); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__sub-word { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact a { display: block; font-family: var(--fb); font-size: 0.6875rem; color: var(--cb); margin-top: 0.75rem; }
+.footer__col-h { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 0.625rem; transition: color var(--tr); }
+.footer__col a:hover { color: var(--cb); }
+.footer__btm { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--fb); font-size: 0.5625rem; color: rgba(255,255,255,0.1); }
+
+/* ── NO RESULTS ───────────────────────────────────── */
+#no-results { display: none; padding: 4rem 2.5rem; text-align: center; font-family: var(--fb); font-size: 0.8125rem; color: var(--cm); }
+#no-results a { color: var(--cb); }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hotel-grid { grid-template-columns: repeat(2, 1fr); }
+  .hc--featured { grid-column: 1 / -1; grid-template-columns: 1fr; }
+  .hc--featured .hc__img-wrap { min-height: 280px; padding-top: 0; }
+  .hc--featured .hc__body { padding: 2rem; }
+  .enquiry-strip { grid-template-columns: 1fr; }
+  .es__btns { flex-direction: row; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__ham { display: flex; }
+  .hero { height: 420px; }
+  .hotel-grid { grid-template-columns: 1fr; }
+  .hc--featured { grid-column: 1; grid-template-columns: 1fr; }
+  .editorial-note { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .dest-head { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .dest-head__right { text-align: left; }
+  .es__btns { flex-direction: column; }
+  .footer__grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<nav class="nav" role="navigation">
+  <a href="/" aria-label="AndThen Travels">
+    <span class="nav__logo-word">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+  <div class="nav__links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/experiences/">Experiences</a>
+    <a href="/places-to-stay/" class="active">Places to stay</a>
+    <a href="/wellness/">Wellness</a>
+    <a href="/journal/">Journal</a>
+    <a href="/about/">About</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+18000000000" style="font-family:var(--fb);font-size:0.6875rem;color:var(--cb);">+1 800 000 0000</a>
+    <a href="/contact/"><button class="nav__cta">Plan my journey</button></a>
+    <button class="nav__ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<!-- DEVELOPER: add style="background-image:url('images/places-hero.jpg');background-size:cover;background-position:center;" to .hero__bg -->
+<header class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <span class="hero__kicker">AndThen — Recommended stays</span>
+    <h1 class="hero__title">Places we<br>trust you to<br><em>sleep well.</em></h1>
+    <p class="hero__desc">Every property here has been visited, vetted or used by our team. No affiliate deals, no paid listings — just the hotels, lodges and retreats we'd book for ourselves across India, Bhutan, Nepal and Sri Lanka.</p>
+  </div>
+</header>
+
+<!-- ══ EDITORIAL NOTE ════════════════════════════════ -->
+<div class="editorial-note">
+  <div class="en__rule"></div>
+  <p class="en__text"><strong>How we choose.</strong> These are properties we have personally experienced or rigorously vetted through our network. We categorise them by what they do best — <strong>Palace &amp; Heritage, Luxury Lodge, Wellness, Wildlife, Boutique</strong> and <strong>Beach &amp; Coast</strong> — so you can find the right match for your journey, not just the most famous name.</p>
+</div>
+
+<!-- ══ FILTER BAR ═════════════════════════════════════ -->
+<nav class="filter-bar" role="toolbar" aria-label="Filter by destination">
+  <span class="f-label">Filter</span>
+  <button class="f-btn active" data-f="all">All</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="india">India</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="bhutan">Bhutan</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="nepal">Nepal</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="srilanka">Sri Lanka</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="palace">Palace &amp; Heritage</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="wildlife">Wildlife</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="wellness">Wellness</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="boutique">Boutique</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="beach">Beach &amp; Coast</button>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════
+     INDIA
+══════════════════════════════════════════════════ -->
+<section class="dest-section" id="sec-india" data-dest="india">
+  <div class="dest-head">
+    <div class="dest-head__left">
+      <span class="dest-head__dest">India</span>
+      <h2 class="dest-head__name">From desert forts<br>to <em>backwater houseboats</em></h2>
+    </div>
+    <div class="dest-head__right">
+      <span class="dest-head__count">14</span>
+      <span class="dest-head__count-label">Properties</span>
+    </div>
+  </div>
+
+  <div class="hotel-grid">
+
+    <!-- FEATURED: Oberoi Amarvilas -->
+    <article class="hc hc--featured" data-tags="india palace">
+      <a href="/places-to-stay/oberoi-amarvilas-agra/">
+        <div class="hc__img-wrap">
+          <!-- DEVELOPER: <img src="images/hotels/oberoi-amarvilas.jpg" alt="Oberoi Amarvilas, Agra"> -->
+          <div class="hc__img-ph hi--india-palace"></div>
+          <span class="hc__type">Palace &amp; Heritage</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Agra, Uttar Pradesh</span>
+        <h3 class="hc__name"><a href="/places-to-stay/oberoi-amarvilas-agra/">Oberoi Amarvilas</a></h3>
+        <p class="hc__why">Every room faces the Taj Mahal. That single fact makes Amarvilas unlike any other hotel in the world — but the Oberoi standard of service, the terraced gardens and the spa are all worthy of the view. For any visit to Agra, there is no other choice.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Taj Mahal views</span>
+          <span class="hc__tag">Oberoi</span>
+          <span class="hc__tag">Spa</span>
+          <span class="hc__tag">Fine dining</span>
+        </div>
+        <div class="hc__foot">
+          <a href="/places-to-stay/oberoi-amarvilas-agra/" class="hc__link"><span class="hc__link-line"></span>View property</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Taj Lake Palace -->
+    <article class="hc" data-tags="india palace honeymoon">
+      <a href="/places-to-stay/taj-lake-palace-udaipur/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-palace"></div>
+          <span class="hc__type">Palace &amp; Heritage</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Udaipur, Rajasthan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/taj-lake-palace-udaipur/">Taj Lake Palace</a></h3>
+        <p class="hc__why">A 17th-century marble palace floating on Lake Pichola. Reached only by boat, surrounded by water, and lit beautifully at night — the most romantic hotel in India by almost any measure.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Lake views</span>
+          <span class="hc__tag">Heritage</span>
+          <span class="hc__tag">Boat access</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/taj-lake-palace-udaipur/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Rambagh Palace -->
+    <article class="hc" data-tags="india palace">
+      <a href="/places-to-stay/rambagh-palace-jaipur/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-palace"></div>
+          <span class="hc__type">Palace &amp; Heritage</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Jaipur, Rajasthan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/rambagh-palace-jaipur/">Rambagh Palace</a></h3>
+        <p class="hc__why">The former royal residence of the Maharaja of Jaipur, set in 47 acres of manicured gardens. The polo ground, the peacocks roaming the lawns and the candlelit courtyard dinners make this the definitive Rajasthan palace stay.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Taj Hotels</span>
+          <span class="hc__tag">47-acre estate</span>
+          <span class="hc__tag">Royal heritage</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/rambagh-palace-jaipur/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Umaid Bhawan Palace -->
+    <article class="hc" data-tags="india palace">
+      <a href="/places-to-stay/umaid-bhawan-palace-jodhpur/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-desert"></div>
+          <span class="hc__type">Palace &amp; Heritage</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Jodhpur, Rajasthan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/umaid-bhawan-palace-jodhpur/">Umaid Bhawan Palace</a></h3>
+        <p class="hc__why">Part museum, part royal residence, part hotel — the Maharaja still lives here. Its art deco interiors and terracotta sandstone exterior make it one of the most architecturally striking hotels anywhere in the world.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Taj Hotels</span>
+          <span class="hc__tag">Art Deco</span>
+          <span class="hc__tag">Museum</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/umaid-bhawan-palace-jodhpur/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Meghauli Serai (India — Chitwan region, but placed in India for now) -->
+    <!-- Sher Bagh -->
+    <article class="hc" data-tags="india wildlife">
+      <a href="/places-to-stay/sher-bagh-ranthambore/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-wild"></div>
+          <span class="hc__type">Wildlife</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Ranthambore, Rajasthan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/sher-bagh-ranthambore/">Sher Bagh</a></h3>
+        <p class="hc__why">Twelve tents in a forest clearing, each furnished like a Victorian explorer's camp and staffed at a ratio that most five-star hotels can't match. The finest tiger reserve lodge in India, in our view, for what it lacks in scale it more than makes up for in intimacy.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Tiger reserve</span>
+          <span class="hc__tag">Tented camp</span>
+          <span class="hc__tag">12 tents</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/sher-bagh-ranthambore/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Kumarakom Lake Resort -->
+    <article class="hc" data-tags="india wellness kerala">
+      <a href="/places-to-stay/kumarakom-lake-resort/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-kerala"></div>
+          <span class="hc__type">Wellness</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Kumarakom, Kerala</span>
+        <h3 class="hc__name"><a href="/places-to-stay/kumarakom-lake-resort/">Kumarakom Lake Resort</a></h3>
+        <p class="hc__why">On the banks of Vembanad Lake, with its own Ayurveda spa and a collection of heritage villas transplanted from old Kerala family homes. The combination of backwater views, exceptional Ayurveda and refined Kerala cuisine is hard to surpass.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Ayurveda</span>
+          <span class="hc__tag">Backwaters</span>
+          <span class="hc__tag">Heritage villas</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/kumarakom-lake-resort/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Kairali Ayurvedic Health Village -->
+    <article class="hc" data-tags="india wellness kerala">
+      <a href="/places-to-stay/kairali-ayurvedic-village/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-kerala"></div>
+          <span class="hc__type">Wellness</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Palakkad, Kerala</span>
+        <h3 class="hc__name"><a href="/places-to-stay/kairali-ayurvedic-village/">Kairali — The Ayurvedic Healing Village</a></h3>
+        <p class="hc__why">Not a spa that offers Ayurveda — a genuine Ayurvedic healing centre with 50 acres of organic farm, a team of resident physicians and programmes that run for a minimum of seven nights. The benchmark for medically-supervised Ayurveda in Kerala.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Medical Ayurveda</span>
+          <span class="hc__tag">Panchakarma</span>
+          <span class="hc__tag">Organic farm</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/kairali-ayurvedic-village/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Neemrana Fort Palace -->
+    <article class="hc" data-tags="india palace boutique">
+      <a href="/places-to-stay/neemrana-fort-palace/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-palace"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Neemrana, Rajasthan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/neemrana-fort-palace/">Neemrana Fort Palace</a></h3>
+        <p class="hc__why">A 15th-century fort carved into a hillside, restored into a rambling boutique hotel with 73 rooms across different towers and levels. An ideal first or last night between Delhi and Jaipur — and an architectural experience in itself.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">15th century</span>
+          <span class="hc__tag">Hillside fort</span>
+          <span class="hc__tag">Pool</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/neemrana-fort-palace/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- CGH Earth Brunton Boatyard -->
+    <article class="hc" data-tags="india boutique kerala beach">
+      <a href="/places-to-stay/brunton-boatyard-kochi/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--india-coast"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Kochi, Kerala</span>
+        <h3 class="hc__name"><a href="/places-to-stay/brunton-boatyard-kochi/">Brunton Boatyard</a></h3>
+        <p class="hc__why">A CGH Earth property built on the site of a historic Kochi boatyard, with views of the Chinese fishing nets and the harbour. The best base for Fort Kochi, with rooms that feel like a scholarly reimagining of the colonial spice trade era.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">CGH Earth</span>
+          <span class="hc__tag">Harbour views</span>
+          <span class="hc__tag">Heritage</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/brunton-boatyard-kochi/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="section-gap"></div>
+
+<!-- ══════════════════════════════════════════════════
+     BHUTAN
+══════════════════════════════════════════════════ -->
+<section class="dest-section" id="sec-bhutan" data-dest="bhutan">
+  <div class="dest-head">
+    <div class="dest-head__left">
+      <span class="dest-head__dest">Bhutan</span>
+      <h2 class="dest-head__name">Lodges that match<br><em>the landscape's silence</em></h2>
+    </div>
+    <div class="dest-head__right">
+      <span class="dest-head__count">5</span>
+      <span class="dest-head__count-label">Properties</span>
+    </div>
+  </div>
+
+  <div class="hotel-grid">
+
+    <!-- FEATURED: COMO Uma Paro -->
+    <article class="hc hc--featured" data-tags="bhutan boutique wellness">
+      <a href="/places-to-stay/como-uma-paro/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--bhutan"></div>
+          <span class="hc__type">Boutique</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Paro Valley, Bhutan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/como-uma-paro/">COMO Uma Paro</a></h3>
+        <p class="hc__why">Perched above the Paro Valley in a pine forest, with views across the valley to the mountains beyond. The COMO standard of understated luxury — exceptional spa, excellent food, meticulous service — sits perfectly in Bhutan's ethos of thoughtful, unhurried travel. Our preferred base for the Tiger's Nest hike.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Paro Valley views</span>
+          <span class="hc__tag">COMO Shambhala spa</span>
+          <span class="hc__tag">Hiking base</span>
+          <span class="hc__tag">29 rooms</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/como-uma-paro/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Uma by COMO, Punakha -->
+    <article class="hc" data-tags="bhutan boutique">
+      <a href="/places-to-stay/uma-punakha/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--bhutan"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Punakha Valley, Bhutan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/uma-punakha/">Uma by COMO, Punakha</a></h3>
+        <p class="hc__why">Nine villas in a valley of rice paddies and river bends, with the Punakha Dzong visible from the terrace. Intimate in scale, extraordinary in setting — the right choice for the Punakha night of any Bhutan itinerary.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">9 villas</span>
+          <span class="hc__tag">Valley views</span>
+          <span class="hc__tag">COMO</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/uma-punakha/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Le Méridien Thimphu -->
+    <article class="hc" data-tags="bhutan">
+      <a href="/places-to-stay/le-meridien-thimphu/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--bhutan"></div>
+          <span class="hc__type">Luxury Hotel</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Thimphu, Bhutan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/le-meridien-thimphu/">Le Méridien Thimphu</a></h3>
+        <p class="hc__why">The most reliably comfortable hotel in Bhutan's capital — contemporary rooms with mountain views, a rooftop restaurant, and a central location that makes walking to Thimphu's dzongs and markets easy. A dependable two-night base.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">City base</span>
+          <span class="hc__tag">Mountain views</span>
+          <span class="hc__tag">Rooftop dining</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/le-meridien-thimphu/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Six Senses Bumthang -->
+    <article class="hc" data-tags="bhutan wellness boutique">
+      <a href="/places-to-stay/six-senses-bumthang/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--bhutan"></div>
+          <span class="hc__type">Wellness</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Bumthang, Bhutan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/six-senses-bumthang/">Six Senses Bumthang</a></h3>
+        <p class="hc__why">Bhutan's cultural heartland, with Six Senses' signature wellness rigour applied to the most meditative environment imaginable. The spa uses Bhutanese mountain herbs; the food is grown on the property; the silence is profound. Earns its place in any extended Bhutan itinerary.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Six Senses spa</span>
+          <span class="hc__tag">Farm-to-table</span>
+          <span class="hc__tag">Wellness programmes</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/six-senses-bumthang/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Gangtey Goenpa Lodge -->
+    <article class="hc" data-tags="bhutan boutique wildlife">
+      <a href="/places-to-stay/gangtey-goenpa-lodge/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--bhutan"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Phobjikha Valley, Bhutan</span>
+        <h3 class="hc__name"><a href="/places-to-stay/gangtey-goenpa-lodge/">Gangtey Goenpa Lodge</a></h3>
+        <p class="hc__why">Twelve rooms overlooking the Phobjikha Valley, winter home to the endangered black-necked crane. The lodge is built in traditional Bhutanese style and the walking from the door is exceptional. The most remote and rewarding night on any Bhutan circuit.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Crane valley</span>
+          <span class="hc__tag">12 rooms</span>
+          <span class="hc__tag">Walking trails</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/gangtey-goenpa-lodge/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="section-gap"></div>
+
+<!-- ══════════════════════════════════════════════════
+     NEPAL
+══════════════════════════════════════════════════ -->
+<section class="dest-section" style="background:var(--cp);" id="sec-nepal" data-dest="nepal">
+  <div class="dest-head">
+    <div class="dest-head__left">
+      <span class="dest-head__dest">Nepal</span>
+      <h2 class="dest-head__name">Where comfort meets<br><em>the Himalayas</em></h2>
+    </div>
+    <div class="dest-head__right">
+      <span class="dest-head__count">5</span>
+      <span class="dest-head__count-label">Properties</span>
+    </div>
+  </div>
+
+  <div class="hotel-grid">
+
+    <!-- FEATURED: Dwarika's -->
+    <article class="hc hc--featured" data-tags="nepal palace boutique">
+      <a href="/places-to-stay/dwarikas-kathmandu/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--nepal-city"></div>
+          <span class="hc__type">Heritage</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Kathmandu, Nepal</span>
+        <h3 class="hc__name"><a href="/places-to-stay/dwarikas-kathmandu/">Dwarika's Hotel</a></h3>
+        <p class="hc__why">Built entirely from reclaimed Newari woodwork — carved windows, latticed screens and ancient timber frames rescued from Kathmandu's demolition sites. As much a museum of traditional Nepali craftsmanship as a hotel, with a spa rooted in Himalayan healing. The correct choice for any first night in Kathmandu, and difficult to leave.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Newari heritage</span>
+          <span class="hc__tag">Reclaimed woodwork</span>
+          <span class="hc__tag">Dwarika's Spa</span>
+          <span class="hc__tag">UNESCO recognition</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/dwarikas-kathmandu/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Meghauli Serai -->
+    <article class="hc" data-tags="nepal wildlife">
+      <a href="/places-to-stay/meghauli-serai-chitwan/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--nepal-wild"></div>
+          <span class="hc__type">Wildlife</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Chitwan, Nepal</span>
+        <h3 class="hc__name"><a href="/places-to-stay/meghauli-serai-chitwan/">Meghauli Serai</a></h3>
+        <p class="hc__why">A Taj Safaris property on the edge of Chitwan National Park, with private access to the park and one of the best wildlife viewing records in Nepal — rhinos, tigers and elephants are regularly sighted from the lodge grounds. Exceptional river frontage and safari standards that match the best in India.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Taj Safaris</span>
+          <span class="hc__tag">Chitwan Park access</span>
+          <span class="hc__tag">Riverfront</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/meghauli-serai-chitwan/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Tiger Palace Resort Lumbini -->
+    <article class="hc" data-tags="nepal boutique">
+      <a href="/places-to-stay/tiger-palace-lumbini/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--nepal-city"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Lumbini, Nepal</span>
+        <h3 class="hc__name"><a href="/places-to-stay/tiger-palace-lumbini/">Tiger Palace by Soaltee</a></h3>
+        <p class="hc__why">The finest hotel in Lumbini — close to the Maya Devi Temple and the Monastic Zone, with spacious rooms, a pool and a calm that befits the spiritual gravity of the birthplace of the Buddha. Makes the Lumbini extension of any Nepal itinerary genuinely comfortable.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Lumbini access</span>
+          <span class="hc__tag">Soaltee</span>
+          <span class="hc__tag">Pool</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/tiger-palace-lumbini/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Barahi Jungle Lodge -->
+    <article class="hc" data-tags="nepal boutique wildlife">
+      <a href="/places-to-stay/barahi-jungle-lodge-bandipur/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--nepal-wild"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Bandipur, Nepal</span>
+        <h3 class="hc__name"><a href="/places-to-stay/barahi-jungle-lodge-bandipur/">Barahi Jungle Lodge</a></h3>
+        <p class="hc__why">In the hilltop Newari town of Bandipur, with sweeping views of the Annapurna and Manaslu ranges. A quiet, well-run boutique lodge that makes the journey between Chitwan and Pokhara worth slowing down for. The views at sunrise are extraordinary.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Annapurna views</span>
+          <span class="hc__tag">Newari town</span>
+          <span class="hc__tag">Hilltop</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/barahi-jungle-lodge-bandipur/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Pokhara — Sarangkot -->
+    <article class="hc" data-tags="nepal boutique">
+      <a href="/places-to-stay/sarangkot-pokhara/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--nepal-city"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Pokhara, Nepal</span>
+        <h3 class="hc__name"><a href="/places-to-stay/sarangkot-pokhara/">Pokhara — Sarangkot</a></h3>
+        <p class="hc__why">On the hillside above Pokhara with uninterrupted views of the Annapurna range and Phewa Lake. The position is unrivalled for sunrise over the Himalayas — a morning that regularly stops guests mid-breath. A serene, intimate property a short drive from Lakeside.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Himalaya views</span>
+          <span class="hc__tag">Phewa Lake</span>
+          <span class="hc__tag">Sunrise</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/sarangkot-pokhara/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="section-gap"></div>
+
+<!-- ══════════════════════════════════════════════════
+     SRI LANKA
+══════════════════════════════════════════════════ -->
+<section class="dest-section" id="sec-srilanka" data-dest="srilanka">
+  <div class="dest-head">
+    <div class="dest-head__left">
+      <span class="dest-head__dest">Sri Lanka</span>
+      <h2 class="dest-head__name">Ancient kingdoms,<br><em>dunes and tea country</em></h2>
+    </div>
+    <div class="dest-head__right">
+      <span class="dest-head__count">7</span>
+      <span class="dest-head__count-label">Properties</span>
+    </div>
+  </div>
+
+  <div class="hotel-grid">
+
+    <!-- FEATURED: Wild Coast Tented Lodge -->
+    <article class="hc hc--featured" data-tags="srilanka wildlife boutique">
+      <a href="/places-to-stay/wild-coast-tented-lodge-yala/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--srilanka-wild"></div>
+          <span class="hc__type">Wildlife</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Yala, Sri Lanka</span>
+        <h3 class="hc__name"><a href="/places-to-stay/wild-coast-tented-lodge-yala/">Wild Coast Tented Lodge</a></h3>
+        <p class="hc__why">Twenty-eight tents shaped to mimic the boulders and rocks of the surrounding landscape — designed so precisely that from a distance the lodge disappears into the terrain. The best leopard-sighting rates in Yala, private game drives, sundowners on the dunes and private dinners on the beach make this one of the most distinctive wildlife stays in Asia.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Leopard territory</span>
+          <span class="hc__tag">28 tents</span>
+          <span class="hc__tag">Dune dinners</span>
+          <span class="hc__tag">Private drives</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/wild-coast-tented-lodge-yala/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Water Garden Sigiriya -->
+    <article class="hc" data-tags="srilanka boutique">
+      <a href="/places-to-stay/water-garden-sigiriya/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--srilanka-hist"></div>
+          <span class="hc__type">Boutique</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Sigiriya, Sri Lanka</span>
+        <h3 class="hc__name"><a href="/places-to-stay/water-garden-sigiriya/">Water Garden Sigiriya</a></h3>
+        <p class="hc__why">Twelve villas set among water gardens, rice paddies and ancient trees in the shadow of Sigiriya Rock. Designed with minimalist beauty and genuine sensitivity to the landscape, this is a rare example of a hotel that enhances rather than detracts from a UNESCO World Heritage site.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">12 villas</span>
+          <span class="hc__tag">Rock views</span>
+          <span class="hc__tag">Water gardens</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/water-garden-sigiriya/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Ceylon Tea Trails -->
+    <article class="hc" data-tags="srilanka boutique wellness">
+      <a href="/places-to-stay/ceylon-tea-trails-hatton/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--srilanka-tea"></div>
+          <span class="hc__type">Boutique</span>
+          <span class="hc__pick">AndThen Pick</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Hatton, Sri Lanka</span>
+        <h3 class="hc__name"><a href="/places-to-stay/ceylon-tea-trails-hatton/">Ceylon Tea Trails</a></h3>
+        <p class="hc__why">Four colonial bungalows — originally built for British tea estate managers — set in the Castlereagh Reservoir valley at 4,000 feet. Exclusive hire by the bungalow or the estate. Tea tastings with the resident planter, walking trails through the bushes and a menu that genuinely reflects what grows around you.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">4,000 ft elevation</span>
+          <span class="hc__tag">Tea estate</span>
+          <span class="hc__tag">Colonial bungalows</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/ceylon-tea-trails-hatton/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Cape Weligama -->
+    <article class="hc" data-tags="srilanka beach boutique">
+      <a href="/places-to-stay/cape-weligama-sri-lanka/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--srilanka-sea"></div>
+          <span class="hc__type">Beach &amp; Coast</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Weligama, Sri Lanka</span>
+        <h3 class="hc__name"><a href="/places-to-stay/cape-weligama-sri-lanka/">Cape Weligama</a></h3>
+        <p class="hc__why">Forty villas cascading down a headland above the Indian Ocean on Sri Lanka's south coast. The position — elevated above the water with views in three directions — is exceptional. Easily the finest beach property on the south coast, and close enough to Galle for an afternoon visit.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">40 villas</span>
+          <span class="hc__tag">Headland setting</span>
+          <span class="hc__tag">South coast</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/cape-weligama-sri-lanka/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Kings Pavilion Kandy -->
+    <article class="hc" data-tags="srilanka boutique palace">
+      <a href="/places-to-stay/kings-pavilion-kandy/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--srilanka-hist"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Kandy, Sri Lanka</span>
+        <h3 class="hc__name"><a href="/places-to-stay/kings-pavilion-kandy/">Kings Pavilion</a></h3>
+        <p class="hc__why">A colonial-era property set within a working tea plantation above Kandy, with 15 suites and a genuinely private atmosphere. The walk through the tea bushes to the main house sets the mood immediately; the views of the Kandy hills complete it.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Tea plantation</span>
+          <span class="hc__tag">15 suites</span>
+          <span class="hc__tag">Hill views</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/kings-pavilion-kandy/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- The Wallawwa -->
+    <article class="hc" data-tags="srilanka boutique">
+      <a href="/places-to-stay/the-wallawwa-negombo/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--srilanka-hist"></div>
+          <span class="hc__type">Boutique</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Negombo, Sri Lanka</span>
+        <h3 class="hc__name"><a href="/places-to-stay/the-wallawwa-negombo/">The Wallawwa</a></h3>
+        <p class="hc__why">A 200-year-old colonial manor house turned into a 16-room boutique hotel, five minutes from Colombo airport. The ideal first or last night on any Sri Lanka itinerary — sophisticated, quiet and beautifully restored without losing the warmth of an old family home.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Airport proximity</span>
+          <span class="hc__tag">Colonial manor</span>
+          <span class="hc__tag">16 rooms</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/the-wallawwa-negombo/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+    <!-- Shangri-La Colombo -->
+    <article class="hc" data-tags="srilanka beach">
+      <a href="/places-to-stay/shangri-la-colombo/">
+        <div class="hc__img-wrap">
+          <div class="hc__img-ph hi--srilanka-sea"></div>
+          <span class="hc__type">Luxury Hotel</span>
+        </div>
+      </a>
+      <div class="hc__body">
+        <span class="hc__location">Colombo, Sri Lanka</span>
+        <h3 class="hc__name"><a href="/places-to-stay/shangri-la-colombo/">Shangri-La Colombo</a></h3>
+        <p class="hc__why">The city's most reliable international-standard hotel, with ocean-facing rooms, multiple restaurants and a rooftop pool. Its central Galle Face location makes a final-night stay in Colombo comfortable and seamless before a late departure. We also use day-use rooms here for departing guests.</p>
+        <div class="hc__tags">
+          <span class="hc__tag">Ocean views</span>
+          <span class="hc__tag">Galle Face</span>
+          <span class="hc__tag">Day use available</span>
+        </div>
+        <div class="hc__foot"><a href="/places-to-stay/shangri-la-colombo/" class="hc__link"><span class="hc__link-line"></span>View property</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- No results -->
+<div id="no-results">
+  <p>No properties match that filter. <a href="#" id="reset-link">Show all properties</a> or <a href="/contact/">speak to a specialist</a>.</p>
+</div>
+
+<!-- ══ ENQUIRY STRIP ══════════════════════════════════ -->
+<div class="enquiry-strip">
+  <div>
+    <h2 class="es__title">Not sure which property is right for your journey?</h2>
+    <p class="es__sub">Tell us where you're going, when and for how long — we'll match you to the right combination of hotels for your itinerary, often at rates you won't find online, and always with the personal service that comes from knowing these properties directly.</p>
+  </div>
+  <div class="es__btns">
+    <a href="/contact/"><button class="btn-gold">Speak to a specialist</button></a>
+    <a href="/itineraries/"><button class="btn-ghost">Browse itineraries</button></a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <a href="/"><span class="footer__word">ANDTHEN</span><span class="footer__sub-word">travels</span></a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+18000000000">+1 800 000 0000</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Destinations</span>
+      <a href="/india/">India</a><a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a><a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Places to Stay</span>
+      <a href="/places-to-stay/india/">India</a>
+      <a href="/places-to-stay/bhutan/">Bhutan</a>
+      <a href="/places-to-stay/nepal/">Nepal</a>
+      <a href="/places-to-stay/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/itineraries/">Itineraries</a>
+      <a href="/journal/">Journal</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+  <div class="footer__btm">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var filterBtns = document.querySelectorAll('.f-btn');
+  var cards      = document.querySelectorAll('.hc');
+  var sections   = document.querySelectorAll('.dest-section');
+  var noRes      = document.getElementById('no-results');
+  var resetLink  = document.getElementById('reset-link');
+
+  function applyFilter(f) {
+    var visible = 0;
+
+    cards.forEach(function (c) {
+      var tags = (c.getAttribute('data-tags') || '').split(' ');
+      var show = f === 'all' || tags.indexOf(f) !== -1;
+      c.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    /* Hide entire destination section if no cards visible in it */
+    sections.forEach(function (s) {
+      var dest = s.getAttribute('data-dest');
+      var destFilter = ['india','bhutan','nepal','srilanka'];
+      if (destFilter.indexOf(f) !== -1) {
+        /* destination filter — hide sections that don't match */
+        s.classList.toggle('hidden', dest !== f);
+      } else {
+        /* category filter — show all sections, hide individual cards */
+        s.classList.remove('hidden');
+      }
+    });
+
+    /* section gaps */
+    document.querySelectorAll('.section-gap').forEach(function(g){ g.style.display = ''; });
+
+    noRes.style.display = visible === 0 ? 'block' : 'none';
+
+    filterBtns.forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-f') === f);
+    });
+  }
+
+  filterBtns.forEach(function (b) {
+    b.addEventListener('click', function () { applyFilter(this.getAttribute('data-f')); });
+  });
+
+  if (resetLink) resetLink.addEventListener('click', function (e) { e.preventDefault(); applyFilter('all'); });
+
+  applyFilter('all');
+})();
+</script>
+
+</body>
+</html>

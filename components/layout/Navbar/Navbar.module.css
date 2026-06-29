@@ -1,0 +1,170 @@
+.nav {
+  background: var(--cw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  border-bottom: 0.5px solid rgba(200, 180, 154, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow var(--transition);
+  overflow: visible;
+}
+
+.scrolled {
+  box-shadow: 0 1px 0 rgba(200, 180, 154, 0.15);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 2px;
+}
+
+.logoWordmark {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.55rem;
+  color: var(--cd);
+}
+
+.logoSub {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  color: var(--cb);
+}
+
+.links {
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.desktopCta {
+  display: inline-flex;
+}
+
+.links a {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  transition: color var(--transition);
+}
+
+.links a:hover {
+  color: var(--cd);
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.phoneLink {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  color: var(--cb);
+  letter-spacing: 0.08rem;
+  transition: opacity var(--transition);
+}
+
+.phoneLink:hover {
+  opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 0.5px;
+  background: var(--cd);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1.5rem;
+  }
+
+  .phoneLink,
+  .desktopCta {
+    display: none;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .linksActive {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--cw);
+    padding: 1.5rem 1.5rem 2rem;
+    border-bottom: 0.5px solid rgba(200, 180, 154, 0.3);
+    gap: 1rem;
+    z-index: 99;
+    align-items: flex-start;
+    box-shadow: 0 16px 30px rgba(28, 25, 24, 0.06);
+  }
+
+  .hamburgerActive span:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+
+  .hamburgerActive span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburgerActive span:nth-child(3) {
+    transform: translateY(-5.5px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .logoWordmark {
+    font-size: 0.75rem;
+    letter-spacing: 0.35rem;
+  }
+
+  .logoSub {
+    letter-spacing: 0.12rem;
+  }
+
+  .linksActive {
+    top: 60px;
+    padding: 1.25rem 1rem 1.5rem;
+  }
+}

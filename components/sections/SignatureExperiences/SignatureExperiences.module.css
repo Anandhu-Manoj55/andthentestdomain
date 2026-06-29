@@ -1,0 +1,271 @@
+.signature {
+  background: var(--cl);
+  padding: var(--space-xl) 2.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(30, 26, 22, 0.1);
+}
+
+.heading {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cd);
+}
+
+.headerRight {
+  max-width: 340px;
+  text-align: right;
+}
+
+.intro {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  color: var(--cm);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.sigCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(30, 26, 22, 0.1);
+  margin-top: 1px;
+}
+
+.sigCard {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+  transition: background var(--transition);
+}
+
+.sigCard:hover {
+  background: var(--cp);
+}
+
+.imageArea {
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageArea::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.52) 100%);
+  z-index: 1;
+}
+
+.imageArea span {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.imageArea :global(img) {
+  object-position: center center;
+}
+
+.imageCulinary {
+  background: #5C3D2A;
+}
+
+.imageWellness {
+  background: #2A3A3A;
+}
+
+.imageGolf {
+  background: #2A3520;
+}
+
+.badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.5rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  z-index: 3;
+  border-radius: 999px;
+}
+
+.badgeFixed {
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+}
+
+.badgePrivate {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+}
+
+.body {
+  padding: 2rem 2rem 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.35;
+  margin-bottom: 0.625rem;
+}
+
+.expert {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  color: var(--cm);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.expert::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 0.5px;
+  background: var(--cs);
+  flex-shrink: 0;
+}
+
+.desc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--cd);
+  line-height: 1.9;
+  flex: 1;
+  margin-bottom: 1.75rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 0.5px solid rgba(30, 26, 22, 0.12);
+  padding-top: 1.25rem;
+  margin-top: auto;
+}
+
+.dates {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.9375rem;
+  color: var(--cs);
+}
+
+.priceLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.link {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  transition: color var(--transition);
+}
+
+.sigCard:hover .link {
+  color: var(--cb);
+}
+
+.sigNote {
+  margin-top: 1px;
+  background: rgba(30, 26, 22, 0.04);
+  border: 0.5px solid rgba(30, 26, 22, 0.08);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.noteText {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.8;
+}
+
+.noteText strong {
+  color: var(--cd);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .sigCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sigCards {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .headerRight {
+    text-align: left;
+    max-width: 100%;
+  }
+}
