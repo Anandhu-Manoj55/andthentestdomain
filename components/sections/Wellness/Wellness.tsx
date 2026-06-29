@@ -9,7 +9,7 @@ export const Wellness = () => {
   return (
     <section className={styles.wellness} aria-label="Wellness travel" id="wellness">
       <div className={styles.imageContainer}>
-         <Image src="/Assets/home/wellness section.jpg" alt="Ayurveda wellness retreat in Kerala, India" fill style={{ objectFit: 'cover' }} />
+         <Image src="/Assets/home/Wellness section.jpg" alt="Ayurveda wellness retreat in Kerala, India" fill style={{ objectFit: 'cover' }} />
         <span>Wellness photography</span>
       </div>
       <div className={styles.content}>
