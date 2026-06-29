@@ -17,7 +17,7 @@ const DEST_TABS = [
 type DestId = (typeof DEST_TABS)[number]["id"];
 
 /** Per-destination section metadata */
-const DEST_META: Record<DestId, { title: JSX.Element; intro: string; stats: { value: string; label: string }[] }> = {
+const DEST_META: Record<DestId, { title: React.ReactNode; intro: string; stats: { value: string; label: string }[] }> = {
   India: {
     title: <>India — <em>nine journeys,<br />one subcontinent</em></>,
     intro: "From the Mughal monuments of the north to the temple towns of Tamil Nadu, the tiger reserves of central India and the backwaters of Kerala — each itinerary is fully private, departs on any date and can be extended, shortened or rerouted to suit your interests.",
