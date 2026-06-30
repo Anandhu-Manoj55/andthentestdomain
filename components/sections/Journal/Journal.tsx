@@ -93,7 +93,7 @@ export const Journal = () => {
           <span className="eyebrow">The AndThen journal</span>
           <h2 className={styles.heading}>Stories, guides &amp; conversations</h2>
         </div>
-        <Link href="/journal/" className="text-link text-link--muted">
+        <Link href="/blogs" className="text-link text-link--muted">
           Visit the journal
         </Link>
       </div>
