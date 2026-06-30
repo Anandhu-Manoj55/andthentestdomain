@@ -1,0 +1,308 @@
+[
+  {
+    "id": "testi-0",
+    "classes": "--featured",
+    "tags": [
+      "bhutan",
+      "leisure"
+    ],
+    "dest": "Bhutan",
+    "type": "Leisure \u00b7 Private journey",
+    "text": "We had been to Southeast Asia four or five times and kept saying we wanted to do something different. My husband suggested Bhutan and I honestly didn't know much about it. What I didn't expect was how quiet it would be. Not quiet like boring, quiet like... nothing competing for your attention. No billboards. No honking. Just the mountains and the monasteries and this strange feeling that time had been slowed down on purpose. The Tiger's Nest hike nearly killed me but I'd do it again without hesitating. AndThen arranged everything so smoothly I kept waiting for something to go wrong. Nothing did.",
+    "trip": "Paro \u00b7 Thimphu \u00b7 Punakha \u00b7 Phobjikha Valley \u00b7 12 days \u00b7 October 2024",
+    "initials": "RL",
+    "name": "Rebecca L.",
+    "origin": "Portland, Oregon, USA",
+    "stars": 5
+  },
+  {
+    "id": "testi-1",
+    "classes": "",
+    "tags": [
+      "india",
+      "wellness"
+    ],
+    "dest": "India \u00b7 Kerala",
+    "type": "Wellness",
+    "text": "I came for the Ayurveda because my doctor kept telling me to slow down and I kept not doing it. By day three at Surya Samudra I was genuinely angry at myself for waiting so long. The physician sat with me for almost an hour on the first day just asking questions. Not the kind of spa intake form you fill out in five minutes. Real questions. The treatments were intense and also deeply peaceful in a way I can't quite explain. I went home and slept better than I had in three years. I'm already planning to go back.",
+    "trip": "Cochin \u00b7 Kumarakom \u00b7 Kovalam \u00b7 13 nights \u00b7 March 2025",
+    "initials": "DM",
+    "name": "Diane M.",
+    "origin": "Melbourne, Australia",
+    "stars": 5
+  },
+  {
+    "id": "testi-2",
+    "classes": "",
+    "tags": [
+      "nepal",
+      "leisure"
+    ],
+    "dest": "Nepal",
+    "type": "Leisure \u00b7 Heritage",
+    "text": "My wife and I had ticked off most of the obvious places over the years and Nepal came up as a bit of a wild card. What surprised us was Kathmandu. We expected the temples but not the food, not the art scene, not Dwarika's Hotel which is genuinely one of the most extraordinary places I have ever stayed. The carved wood everywhere isn't decoration, it's actually salvaged from buildings that were being torn down across the city. And Chitwan was brilliant. We saw a one-horned rhino from about 30 feet. That doesn't really happen in a Cotswolds B&B.",
+    "trip": "Kathmandu \u00b7 Chitwan \u00b7 Pokhara \u00b7 11 days \u00b7 November 2024",
+    "initials": "GF",
+    "name": "Graham F.",
+    "origin": "Bristol, United Kingdom",
+    "stars": 5
+  },
+  {
+    "id": "testi-3",
+    "classes": "",
+    "tags": [
+      "india",
+      "leisure"
+    ],
+    "dest": "India \u00b7 Rajasthan",
+    "type": "Leisure \u00b7 Heritage",
+    "text": "I was nervous about India. I know that sounds ridiculous but I had this picture in my head of chaos and heat and getting sick. None of that happened. Our guide in Jaipur had clearly spent his whole life in this city and it showed. He took us to a cloth dyer's workshop that no tourist would ever find on their own and we ended up staying for two hours. The Rambagh Palace is every bit as good as it sounds. Dinner in the courtyard on our last night there was one of those meals you think about for a long time after.",
+    "trip": "Delhi \u00b7 Agra \u00b7 Jaipur \u00b7 Jodhpur \u00b7 10 days \u00b7 January 2025",
+    "initials": "SH",
+    "name": "Sarah H.",
+    "origin": "Toronto, Canada",
+    "stars": 5
+  },
+  {
+    "id": "testi-4",
+    "classes": "",
+    "tags": [
+      "srilanka",
+      "leisure"
+    ],
+    "dest": "Sri Lanka",
+    "type": "Leisure \u00b7 Wildlife",
+    "text": "We did ten days and I genuinely could not believe how much fits into this island. Sigiriya in the morning fog when the tourists haven't arrived yet. Tea on a veranda at Ceylon Tea Trails watching the hills go on forever. And then Yala, which exceeded everything. We had a private game drive on the second morning and came across a leopard with two cubs maybe fifteen metres from the vehicle. Our guide said he'd seen that leopard for seven years. She walked straight past us like we weren't there. I've done safaris in Kenya and Tanzania and that moment is right up there with anything from those trips.",
+    "trip": "Colombo \u00b7 Sigiriya \u00b7 Hatton \u00b7 Yala \u00b7 Weligama \u00b7 10 days \u00b7 February 2025",
+    "initials": "TC",
+    "name": "Thomas C.",
+    "origin": "Chicago, Illinois, USA",
+    "stars": 5
+  },
+  {
+    "id": "testi-5",
+    "classes": "",
+    "tags": [
+      "india",
+      "wellness"
+    ],
+    "dest": "India \u00b7 Kerala",
+    "type": "Wellness \u00b7 Ayurveda",
+    "text": "I booked this trip entirely on my own terms and told almost nobody I was going. Three weeks off. No email. The Ayurveda programme was recommended by a friend who'd done it the year before. I was sceptical. I'm a physician, I don't usually have much patience for things I can't put numbers around. But the resident doctor at the retreat knew what she was doing and by the end of the second week I understood why people come back every year. The diet alone was revelatory. I've been eating differently since I got home and I haven't felt the urge to stop.",
+    "trip": "Kerala Ayurveda programme \u00b7 Kovalam \u00b7 14 nights \u00b7 September 2024",
+    "initials": "NW",
+    "name": "Nicole W.",
+    "origin": "Zurich, Switzerland",
+    "stars": 5
+  },
+  {
+    "id": "testi-6",
+    "classes": "",
+    "tags": [
+      "bhutan",
+      "leisure"
+    ],
+    "dest": "Bhutan",
+    "type": "Leisure \u00b7 Culture",
+    "text": "My father turned seventy and we wanted to do something he'd actually remember. He's hard to impress, spent forty years travelling for work, seen most of the world's capitals twice over. Bhutan stopped him in his tracks. At the Punakha Dzong he sat on the steps for almost an hour without saying anything. That's not him at all. On the last morning in Paro he said it was the best trip of his life. Coming from him that's not a small thing. The team at AndThen were incredibly patient with the group size, five of us with very different ideas of what a holiday should look like, and somehow they built something that worked for all of us.",
+    "trip": "Paro \u00b7 Thimphu \u00b7 Punakha \u00b7 9 days \u00b7 April 2025",
+    "initials": "JB",
+    "name": "James B.",
+    "origin": "San Francisco, California, USA",
+    "stars": 5
+  },
+  {
+    "id": "testi-7",
+    "classes": "",
+    "tags": [
+      "nepal",
+      "india",
+      "leisure"
+    ],
+    "dest": "Nepal \u00b7 India",
+    "type": "Leisure \u00b7 Multi-country",
+    "text": "We combined Nepal and the Golden Triangle in one trip and I wasn't sure it would flow but it did. Kathmandu to Agra in a single day sounds wrong but the contrast was actually part of the experience. The Taj Mahal at sunrise is the most over-photographed thing in the world and somehow it still manages to be completely breathtaking in person. Our guide in Agra had a calm sort of confidence about him. He'd clearly spent years watching tourists try to describe what they were feeling and had long stopped trying to do it for them. That's a particular skill.",
+    "trip": "Kathmandu \u00b7 Chitwan \u00b7 Delhi \u00b7 Agra \u00b7 Jaipur \u00b7 14 days \u00b7 December 2024",
+    "initials": "AK",
+    "name": "Anna K.",
+    "origin": "Amsterdam, Netherlands",
+    "stars": 5
+  },
+  {
+    "id": "testi-8",
+    "classes": "",
+    "tags": [
+      "srilanka",
+      "wellness"
+    ],
+    "dest": "Sri Lanka",
+    "type": "Wellness \u00b7 Retreat",
+    "text": "I work in finance and the schedule I keep is not good for a human being. My wife booked this trip as an intervention, basically. I went reluctantly. By day four at the tea trails I had turned my phone off and I didn't really notice. We spent two days just walking through the tea bushes and reading and eating things that had been grown on the property. At one point I sat on the veranda watching the clouds come in over the reservoir and thought: I've been paying a therapist for three years to feel this calm. The rest of the trip was brilliant too but those two days in Hatton are what I tell people about.",
+    "trip": "Negombo \u00b7 Kandy \u00b7 Hatton \u00b7 Yala \u00b7 Galle \u00b7 11 days \u00b7 January 2025",
+    "initials": "MP",
+    "name": "Michael P.",
+    "origin": "New York City, USA",
+    "stars": 5
+  },
+  {
+    "id": "testi-9",
+    "classes": "",
+    "tags": [
+      "india",
+      "leisure"
+    ],
+    "dest": "India \u00b7 Rajasthan",
+    "type": "Leisure \u00b7 Family",
+    "text": "We travelled as three generations, my parents in their seventies, my husband and I, and our two teenage boys. I genuinely wasn't sure it would work. My mother uses a walking stick. My youngest has the attention span of a goldfish unless something surprises him. Somehow it worked. The boys were obsessed with the forts. My mother sat in a courtyard at the Oberoi Amarvilas and watched the Taj change colour for two hours and said she could die happy. The guide in Jaipur found a way to keep everyone moving at different paces without anyone feeling rushed or left behind. That's not easy to pull off.",
+    "trip": "Delhi \u00b7 Agra \u00b7 Jaipur \u00b7 10 days \u00b7 February 2025",
+    "initials": "LO",
+    "name": "Lauren O.",
+    "origin": "Boston, Massachusetts, USA",
+    "stars": 5
+  },
+  {
+    "id": "testi-10",
+    "classes": "",
+    "tags": [
+      "bhutan",
+      "wellness"
+    ],
+    "dest": "Bhutan",
+    "type": "Wellness \u00b7 Slow travel",
+    "text": "Bhutan was the first time in fifteen years of travelling that I arrived somewhere and felt no pressure to see everything. Maybe that's the country, or maybe it's just that there isn't that much on the tourist checklist and you end up spending real time in each place. We stayed two nights at Six Senses Bumthang and the valley is so still in the morning it's almost unsettling if you're used to cities. The spa there uses ingredients I'd never heard of and the therapist explained each one before she started. I ended up writing ten pages of notes on the flight home which is not something I normally do.",
+    "trip": "Thimphu \u00b7 Punakha \u00b7 Bumthang \u00b7 10 days \u00b7 March 2025",
+    "initials": "FR",
+    "name": "Francesca R.",
+    "origin": "London, United Kingdom",
+    "stars": 5
+  },
+  {
+    "id": "testi-11",
+    "classes": "",
+    "tags": [
+      "nepal",
+      "leisure"
+    ],
+    "dest": "Nepal",
+    "type": "Leisure \u00b7 Mountain flight",
+    "text": "I knew the Everest mountain flight existed but I assumed it would be one of those tourist things that sounds better than it is. It was not. You board a small plane before sunrise, the crew gives everyone a window seat in turns, and for about an hour you fly along the entire Himalayan range at close range. Everest appears and it's just obviously bigger than everything around it. There's no preparation for the scale of it. The man sitting next to me, who had introduced himself as someone who \"doesn't really do emotions,\" went completely silent for about twenty minutes and then said, very quietly, \"well.\" That seemed about right.",
+    "trip": "Kathmandu \u00b7 Chitwan \u00b7 Pokhara \u00b7 Lumbini \u00b7 11 days \u00b7 October 2024",
+    "initials": "MB",
+    "name": "Mark B.",
+    "origin": "Minneapolis, Minnesota, USA",
+    "stars": 5
+  },
+  {
+    "id": "testi-12",
+    "classes": "",
+    "tags": [
+      "srilanka",
+      "leisure"
+    ],
+    "dest": "Sri Lanka",
+    "type": "Leisure \u00b7 Honeymoon",
+    "text": "We almost went to the Maldives. Everyone goes to the Maldives for a honeymoon and it looked beautiful but also like you were paying a lot of money to sit on a sandbank. Sri Lanka was my idea and my husband was unconvinced until about day two. Sigiriya at six in the morning before anyone else arrives is one of those places that just doesn't feel real. Cape Weligama on the south coast was where we spent the last four nights and it's the kind of hotel where you book excursions and then cancel them because you can't bring yourself to leave. We've been married eight months and we've already talked about going back for our first anniversary.",
+    "trip": "Colombo \u00b7 Sigiriya \u00b7 Kandy \u00b7 Weligama \u00b7 10 days \u00b7 April 2025",
+    "initials": "EV",
+    "name": "Emma V.",
+    "origin": "Stockholm, Sweden",
+    "stars": 5
+  },
+  {
+    "id": "testi-13",
+    "classes": "",
+    "tags": [
+      "india",
+      "wellness"
+    ],
+    "dest": "India \u00b7 Kerala",
+    "type": "Wellness \u00b7 Ayurveda",
+    "text": "I had a disc issue in my lower back that had been giving me trouble for two years. I'd done physio, I'd seen three different specialists, I'd spent a small fortune on a mattress. A colleague who'd done a Kerala programme mentioned that the Ayurvedic treatment for back conditions was something else entirely. She was right. By the end of the first week the inflammation had visibly reduced. I'm not making claims about what Ayurveda can or can't do, I'm just telling you what happened to me. What I didn't expect was how much I'd enjoy the food. I came home and bought a cookbook. My husband thinks I've joined a cult.",
+    "trip": "Kerala Ayurveda programme \u00b7 Kovalam \u00b7 14 nights \u00b7 November 2024",
+    "initials": "PB",
+    "name": "Patricia B.",
+    "origin": "Edinburgh, Scotland",
+    "stars": 5
+  },
+  {
+    "id": "testi-14",
+    "classes": "",
+    "tags": [
+      "india",
+      "leisure"
+    ],
+    "dest": "India \u00b7 Karnataka",
+    "type": "Leisure \u00b7 Heritage",
+    "text": "Hampi was not on my original itinerary. I'd asked AndThen for something in South India that wasn't on the standard tourist route and they suggested it almost as an aside. I had never heard of it. What I found was one of the most extraordinary places I have ever been anywhere in the world. Fourteen square kilometres of boulder-strewn landscape with the ruins of a 14th-century empire scattered through it, and almost nobody there. We rented bicycles and spent a whole day just riding between temples. The Vittala Temple at golden hour with the stone chariot in front of it is the kind of thing that makes you want to stop travelling for a while because nothing is going to top it.",
+    "trip": "Bengaluru \u00b7 Hampi \u00b7 Goa \u00b7 10 days \u00b7 January 2025",
+    "initials": "OW",
+    "name": "Oliver W.",
+    "origin": "Cape Town, South Africa",
+    "stars": 5
+  },
+  {
+    "id": "testi-15",
+    "classes": "",
+    "tags": [
+      "bhutan",
+      "nepal",
+      "leisure"
+    ],
+    "dest": "Bhutan \u00b7 Nepal",
+    "type": "Leisure \u00b7 Multi-country",
+    "text": "I had been to both countries before on separate trips and the logistics each time were frustrating in different ways. Doing Bhutan and Nepal together with AndThen on one circuit was a completely different experience. Everything connected properly. The permit for the restricted valley in Bhutan I'd been trying to arrange for two years just appeared in my documents without any chasing. We got into Phobjikha at the right time of year for the black-necked cranes, which had never worked out for me before. In Nepal we had a sunrise flight over Everest that I genuinely wasn't prepared for. This is the work they do quietly that you don't notice until everything just works.",
+    "trip": "Paro \u00b7 Punakha \u00b7 Phobjikha \u00b7 Kathmandu \u00b7 Pokhara \u00b7 14 days \u00b7 November 2024",
+    "initials": "KS",
+    "name": "Kai S.",
+    "origin": "Berlin, Germany",
+    "stars": 5
+  },
+  {
+    "id": "testi-16",
+    "classes": "",
+    "tags": [
+      "india",
+      "leisure"
+    ],
+    "dest": "India \u00b7 Madhya Pradesh",
+    "type": "Leisure \u00b7 Wildlife",
+    "text": "We had done game drives in Africa twice and went into Bandhavgarh expecting something similar but smaller. It's not smaller. The forest is genuinely dense and the tigers are not performing for anyone. On our second morning we found a male in a dried-up riverbed about twenty metres away. He was there for almost forty minutes. Our naturalist knew exactly which direction he had come from and where he was likely to go and just positioned us and waited. That knowledge is everything on a drive like that. We also saw a sloth bear, which I hadn't even thought to hope for, and a huge herd of gaur moving through the trees just before dusk. India's wildlife doesn't get talked about the way it should.",
+    "trip": "Delhi \u00b7 Bandhavgarh \u00b7 Kanha \u00b7 10 days \u00b7 February 2025",
+    "initials": "NR",
+    "name": "Nina R.",
+    "origin": "Toronto, Canada",
+    "stars": 5
+  },
+  {
+    "id": "testi-17",
+    "classes": "",
+    "tags": [
+      "srilanka",
+      "wellness"
+    ],
+    "dest": "Sri Lanka",
+    "type": "Wellness \u00b7 Solo travel",
+    "text": "I went alone, which not everyone understood. I had just come out of a fairly difficult few years and I wanted to go somewhere that required no explaining and no performing. Sri Lanka was a good choice for that. Nobody in the Cultural Triangle is particularly interested in why a woman is travelling by herself, which was a relief. The wellness element came naturally, partly from slowing down and partly from the food, which in the right places is one of the most interesting in Asia. I ended up staying an extra four days. My return flight home was the first time I'd cried in about eighteen months and I mean that in a good way.",
+    "trip": "Colombo \u00b7 Sigiriya \u00b7 Kandy \u00b7 Galle \u00b7 13 days \u00b7 March 2025",
+    "initials": "YL",
+    "name": "Yuki L.",
+    "origin": "San Jose, California, USA",
+    "stars": 5
+  },
+  {
+    "id": "testi-18",
+    "classes": "",
+    "tags": [
+      "india",
+      "wellness"
+    ],
+    "dest": "India \u00b7 Kerala",
+    "type": "Wellness \u00b7 Couples",
+    "text": "My partner and I both work in tech and we had been talking about a proper break for about three years without ever actually doing it. We finally blocked the time and came to Kerala. The Ayurveda was my idea and my partner was willing but not convinced. By day five he had cancelled three meetings he'd been planning to dial into and I could not have been more pleased about that. The backwaters at Kumarakom are nothing like what I'd imagined. You expect it to feel like a tourist experience and it doesn't. It just feels like being somewhere very quiet and very green with good things to eat. We did not want to come home.",
+    "trip": "Cochin \u00b7 Kumarakom \u00b7 Kovalam \u00b7 12 days \u00b7 December 2024",
+    "initials": "AW",
+    "name": "Aisha W.",
+    "origin": "Seattle, Washington, USA",
+    "stars": 5
+  }
+]

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guest Stories | AndThen Travels</title>
+<meta name="description" content="What our guests say about travelling with AndThen across India, Bhutan, Nepal and Sri Lanka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'DM Sans', Arial, sans-serif;
+  --tr: 0.25s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--fb); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ──────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cr); height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.35);
+}
+.nav__logo-word { font-family: var(--fb); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); display: block; }
+.nav__logo-sub  { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); display: block; }
+.nav__links { display: flex; gap: 2.25rem; }
+.nav__links a { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); transition: color var(--tr); }
+.nav__links a:hover { color: var(--cd); }
+.nav__cta { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cd); background: transparent; border: 0.5px solid var(--cd); padding: 0.625rem 1.375rem; cursor: pointer; transition: background var(--tr), color var(--tr); }
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__ham { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__ham span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── PAGE HEADER ──────────────────────────────────── */
+.page-header {
+  padding: 4rem 2.5rem 3.5rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: end; gap: 3rem;
+}
+.page-header__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1rem; }
+.page-header__title { font-family: var(--fd); font-size: clamp(2.25rem, 4vw, 3.5rem); font-weight: 400; color: var(--cd); line-height: 1.05; }
+.page-header__title em { font-style: italic; }
+.page-header__count { text-align: right; }
+.page-header__count-num { font-family: var(--fd); font-size: 4rem; font-weight: 300; color: rgba(200,180,154,0.25); line-height: 1; display: block; }
+.page-header__count-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; color: var(--cs); display: block; margin-top: 4px; }
+
+/* ── FILTER BAR ───────────────────────────────────── */
+.filter-bar {
+  background: var(--cp);
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  display: flex; align-items: center;
+  padding: 0 2.5rem; height: 50px; gap: 0;
+  overflow-x: auto; scrollbar-width: none;
+  position: sticky; top: 68px; z-index: 90;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.f-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.25rem; text-transform: uppercase; color: var(--cs); flex-shrink: 0; margin-right: 1.5rem; }
+.f-btn {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase;
+  color: var(--cm); background: transparent; border: none; cursor: pointer;
+  padding: 0 1.125rem; height: 100%; white-space: nowrap; flex-shrink: 0;
+  border-bottom: 2px solid transparent; transition: color var(--tr), border-color var(--tr);
+}
+.f-btn:hover { color: var(--cd); }
+.f-btn.active { color: var(--cd); border-bottom-color: var(--cb); }
+.f-sep { width: 0.5px; height: 14px; background: rgba(200,180,154,0.2); flex-shrink: 0; align-self: center; }
+
+/* ── TESTIMONIAL GRID ─────────────────────────────── */
+.tgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.12);
+  padding: 1px;
+}
+
+/* ── TESTIMONIAL CARD ─────────────────────────────── */
+.tc {
+  background: var(--cr);
+  padding: 2.25rem 2rem 2rem;
+  display: flex; flex-direction: column;
+  transition: background var(--tr);
+}
+.tc:hover { background: var(--cp); }
+.tc.hidden { display: none; }
+
+/* Destination + type flags */
+.tc__flags { display: flex; gap: 0.375rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.tc__dest {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem;
+  text-transform: uppercase; background: var(--cb); color: var(--cr);
+  padding: 3px 9px;
+}
+.tc__type {
+  font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.12rem;
+  text-transform: uppercase; background: transparent; color: var(--cs);
+  border: 0.5px solid rgba(200,180,154,0.3); padding: 3px 9px;
+}
+
+/* Opening quote mark */
+.tc__quote-mark {
+  font-family: var(--fd); font-size: 4rem; font-weight: 300; color: rgba(200,180,154,0.18);
+  line-height: 1; margin-bottom: 0.5rem; display: block;
+}
+
+/* The testimonial text */
+.tc__text {
+  font-family: var(--fd); font-size: 1.0625rem; font-weight: 400; color: var(--cd);
+  line-height: 1.65; flex: 1; margin-bottom: 1.75rem;
+}
+
+/* Trip detail — one line highlight */
+.tc__trip {
+  font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.1rem;
+  color: var(--cs); font-weight: 300; font-style: italic;
+  border-top: 0.5px solid rgba(200,180,154,0.2);
+  padding-top: 1.125rem; margin-bottom: 1.25rem;
+}
+
+/* Guest identity */
+.tc__guest { display: flex; align-items: center; gap: 0.875rem; }
+.tc__avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(200,180,154,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.tc__avatar-initials {
+  font-family: var(--fd); font-size: 0.875rem; font-weight: 400;
+  color: var(--cb); line-height: 1;
+}
+.tc__name { font-family: var(--fb); font-size: 0.6875rem; font-weight: 400; color: var(--cd); display: block; }
+.tc__origin { font-family: var(--fb); font-size: 0.5625rem; font-weight: 300; color: var(--cs); display: block; }
+
+/* Stars */
+.tc__stars { display: flex; gap: 2px; margin-bottom: 1.25rem; }
+.tc__star { color: var(--cb); font-size: 0.625rem; }
+
+/* Featured card — spans 2 columns, slightly different treatment */
+.tc--featured {
+  grid-column: span 2;
+  background: var(--cd);
+  flex-direction: row; gap: 3rem;
+  padding: 3rem;
+}
+.tc--featured:hover { background: var(--ci); }
+.tc--featured .tc__quote-mark { color: rgba(200,180,154,0.08); font-size: 5rem; }
+.tc--featured .tc__text { font-size: 1.25rem; color: var(--cr); line-height: 1.6; }
+.tc--featured .tc__name { color: rgba(200,180,154,0.7); }
+.tc--featured .tc__origin { color: rgba(200,180,154,0.35); }
+.tc--featured .tc__trip { color: rgba(200,180,154,0.3); border-top-color: rgba(255,255,255,0.06); }
+.tc--featured .tc__avatar { background: rgba(200,180,154,0.1); }
+.tc--featured .tc__avatar-initials { color: rgba(200,180,154,0.5); }
+.tc--featured .tc__star { color: var(--cb); }
+.tc--featured .tc__type { color: rgba(200,180,154,0.4); border-color: rgba(200,180,154,0.1); }
+.tc--featured .tc__dest { background: var(--cb); }
+.tc--featured-left { flex: 1; display: flex; flex-direction: column; }
+.tc--featured-right { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+/* ── CTA BAND ─────────────────────────────────────── */
+.cta-band {
+  background: var(--cp);
+  padding: 4rem 2.5rem;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 3rem;
+  border-top: 0.5px solid rgba(200,180,154,0.25);
+}
+.cta-band__title { font-family: var(--fd); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; font-style: italic; color: var(--cd); line-height: 1.2; margin-bottom: 0.375rem; }
+.cta-band__sub { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: var(--cm); line-height: 1.8; }
+.cta-btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 200px; }
+.btn-dark { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: var(--cd); color: var(--cr); border: none; padding: 1rem 1.5rem; cursor: pointer; transition: background var(--tr); }
+.btn-dark:hover { background: var(--ci); }
+.btn-ghost { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: transparent; color: var(--cm); border: 0.5px solid rgba(44,26,10,0.2); padding: 1rem 1.5rem; cursor: pointer; transition: all var(--tr); }
+.btn-ghost:hover { background: var(--cd); color: var(--cr); border-color: var(--cd); }
+
+/* ── FOOTER ───────────────────────────────────────── */
+.footer { background: var(--ci); padding: 4.5rem 2.5rem 2.5rem; }
+.footer__grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+.footer__word { font-family: var(--fb); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__sub-word { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact a { display: block; font-family: var(--fb); font-size: 0.6875rem; color: var(--cb); margin-top: 0.75rem; }
+.footer__col-h { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 0.625rem; transition: color var(--tr); }
+.footer__col a:hover { color: var(--cb); }
+.footer__btm { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--fb); font-size: 0.5625rem; color: rgba(255,255,255,0.1); }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1100px) {
+  .tgrid { grid-template-columns: repeat(2, 1fr); }
+  .tc--featured { grid-column: span 2; flex-direction: column; gap: 0; }
+}
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__ham { display: flex; }
+  .tgrid { grid-template-columns: 1fr; }
+  .tc--featured { grid-column: span 1; }
+  .page-header { grid-template-columns: 1fr; gap: 1rem; }
+  .page-header__count { text-align: left; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: row; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <a href="/" aria-label="AndThen Travels">
+    <span class="nav__logo-word">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+  <div class="nav__links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/experiences/">Experiences</a>
+    <a href="/places-to-stay/">Places to stay</a>
+    <a href="/wellness/">Wellness</a>
+    <a href="/journal/">Journal</a>
+    <a href="/about/">About</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+918129271155" style="font-family:var(--fb);font-size:0.6875rem;color:var(--cb);">+91 8129 271 155</a>
+    <a href="/contact/"><button class="nav__cta">Plan my journey</button></a>
+    <button class="nav__ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div>
+    <span class="page-header__kicker">What our guests say</span>
+    <h1 class="page-header__title">Stories from<br>the <em>road</em></h1>
+  </div>
+  <div class="page-header__count">
+    <span class="page-header__count-num">19</span>
+    <span class="page-header__count-label">Guest stories</span>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<nav class="filter-bar" role="toolbar" aria-label="Filter testimonials">
+  <span class="f-label">Filter</span>
+  <button class="f-btn active" data-f="all">All</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="india">India</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="bhutan">Bhutan</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="nepal">Nepal</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="srilanka">Sri Lanka</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="wellness">Wellness</button>
+  <div class="f-sep"></div>
+  <button class="f-btn" data-f="leisure">Leisure</button>
+</nav>
+
+
+<!-- TESTIMONIALS GRID -->
+<div class="tgrid" id="tgrid">
+
+
+  <!-- ═══ 01 — FEATURED — Bhutan, Leisure ════════ -->
+  <article class="tc tc--featured" data-tags="bhutan leisure">
+    <div class="tc--featured-left">
+      <div class="tc__flags">
+        <span class="tc__dest">Bhutan</span>
+        <span class="tc__type">Leisure · Private journey</span>
+      </div>
+      <span class="tc__quote-mark">"</span>
+    </div>
+    <div class="tc--featured-right">
+      <p class="tc__text">We had been to Southeast Asia four or five times and kept saying we wanted to do something different. My husband suggested Bhutan and I honestly didn't know much about it. What I didn't expect was how quiet it would be. Not quiet like boring, quiet like... nothing competing for your attention. No billboards. No honking. Just the mountains and the monasteries and this strange feeling that time had been slowed down on purpose. The Tiger's Nest hike nearly killed me but I'd do it again without hesitating. AndThen arranged everything so smoothly I kept waiting for something to go wrong. Nothing did.</p>
+      <p class="tc__trip">Paro · Thimphu · Punakha · Phobjikha Valley · 12 days · October 2024</p>
+      <div class="tc__stars">
+        <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+      </div>
+      <div class="tc__guest">
+        <div class="tc__avatar"><span class="tc__avatar-initials">RL</span></div>
+        <div>
+          <span class="tc__name">Rebecca L.</span>
+          <span class="tc__origin">Portland, Oregon, USA</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 02 — Kerala Wellness ═══════════════════ -->
+  <article class="tc" data-tags="india wellness">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Kerala</span>
+      <span class="tc__type">Wellness</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I came for the Ayurveda because my doctor kept telling me to slow down and I kept not doing it. By day three at Surya Samudra I was genuinely angry at myself for waiting so long. The physician sat with me for almost an hour on the first day just asking questions. Not the kind of spa intake form you fill out in five minutes. Real questions. The treatments were intense and also deeply peaceful in a way I can't quite explain. I went home and slept better than I had in three years. I'm already planning to go back.</p>
+    <p class="tc__trip">Cochin · Kumarakom · Kovalam · 13 nights · March 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">DM</span></div>
+      <div>
+        <span class="tc__name">Diane M.</span>
+        <span class="tc__origin">Melbourne, Australia</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 03 — Nepal, Adventure/Leisure ══════════ -->
+  <article class="tc" data-tags="nepal leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">Nepal</span>
+      <span class="tc__type">Leisure · Heritage</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">My wife and I had ticked off most of the obvious places over the years and Nepal came up as a bit of a wild card. What surprised us was Kathmandu. We expected the temples but not the food, not the art scene, not Dwarika's Hotel which is genuinely one of the most extraordinary places I have ever stayed. The carved wood everywhere isn't decoration, it's actually salvaged from buildings that were being torn down across the city. And Chitwan was brilliant. We saw a one-horned rhino from about 30 feet. That doesn't really happen in a Cotswolds B&B.</p>
+    <p class="tc__trip">Kathmandu · Chitwan · Pokhara · 11 days · November 2024</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">GF</span></div>
+      <div>
+        <span class="tc__name">Graham F.</span>
+        <span class="tc__origin">Bristol, United Kingdom</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 04 — Rajasthan, Leisure ════════════════ -->
+  <article class="tc" data-tags="india leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Rajasthan</span>
+      <span class="tc__type">Leisure · Heritage</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I was nervous about India. I know that sounds ridiculous but I had this picture in my head of chaos and heat and getting sick. None of that happened. Our guide in Jaipur had clearly spent his whole life in this city and it showed. He took us to a cloth dyer's workshop that no tourist would ever find on their own and we ended up staying for two hours. The Rambagh Palace is every bit as good as it sounds. Dinner in the courtyard on our last night there was one of those meals you think about for a long time after.</p>
+    <p class="tc__trip">Delhi · Agra · Jaipur · Jodhpur · 10 days · January 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">SH</span></div>
+      <div>
+        <span class="tc__name">Sarah H.</span>
+        <span class="tc__origin">Toronto, Canada</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 05 — Sri Lanka, Leisure ════════════════ -->
+  <article class="tc" data-tags="srilanka leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">Sri Lanka</span>
+      <span class="tc__type">Leisure · Wildlife</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">We did ten days and I genuinely could not believe how much fits into this island. Sigiriya in the morning fog when the tourists haven't arrived yet. Tea on a veranda at Ceylon Tea Trails watching the hills go on forever. And then Yala, which exceeded everything. We had a private game drive on the second morning and came across a leopard with two cubs maybe fifteen metres from the vehicle. Our guide said he'd seen that leopard for seven years. She walked straight past us like we weren't there. I've done safaris in Kenya and Tanzania and that moment is right up there with anything from those trips.</p>
+    <p class="tc__trip">Colombo · Sigiriya · Hatton · Yala · Weligama · 10 days · February 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">TC</span></div>
+      <div>
+        <span class="tc__name">Thomas C.</span>
+        <span class="tc__origin">Chicago, Illinois, USA</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 06 — Kerala Wellness ═══════════════════ -->
+  <article class="tc" data-tags="india wellness">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Kerala</span>
+      <span class="tc__type">Wellness · Ayurveda</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I booked this trip entirely on my own terms and told almost nobody I was going. Three weeks off. No email. The Ayurveda programme was recommended by a friend who'd done it the year before. I was sceptical. I'm a physician, I don't usually have much patience for things I can't put numbers around. But the resident doctor at the retreat knew what she was doing and by the end of the second week I understood why people come back every year. The diet alone was revelatory. I've been eating differently since I got home and I haven't felt the urge to stop.</p>
+    <p class="tc__trip">Kerala Ayurveda programme · Kovalam · 14 nights · September 2024</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">NW</span></div>
+      <div>
+        <span class="tc__name">Nicole W.</span>
+        <span class="tc__origin">Zurich, Switzerland</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 07 — Bhutan, Leisure ════════════════════ -->
+  <article class="tc" data-tags="bhutan leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">Bhutan</span>
+      <span class="tc__type">Leisure · Culture</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">My father turned seventy and we wanted to do something he'd actually remember. He's hard to impress, spent forty years travelling for work, seen most of the world's capitals twice over. Bhutan stopped him in his tracks. At the Punakha Dzong he sat on the steps for almost an hour without saying anything. That's not him at all. On the last morning in Paro he said it was the best trip of his life. Coming from him that's not a small thing. The team at AndThen were incredibly patient with the group size, five of us with very different ideas of what a holiday should look like, and somehow they built something that worked for all of us.</p>
+    <p class="tc__trip">Paro · Thimphu · Punakha · 9 days · April 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">JB</span></div>
+      <div>
+        <span class="tc__name">James B.</span>
+        <span class="tc__origin">San Francisco, California, USA</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 08 — Nepal + India, Multi-dest ══════════ -->
+  <article class="tc" data-tags="nepal india leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">Nepal · India</span>
+      <span class="tc__type">Leisure · Multi-country</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">We combined Nepal and the Golden Triangle in one trip and I wasn't sure it would flow but it did. Kathmandu to Agra in a single day sounds wrong but the contrast was actually part of the experience. The Taj Mahal at sunrise is the most over-photographed thing in the world and somehow it still manages to be completely breathtaking in person. Our guide in Agra had a calm sort of confidence about him. He'd clearly spent years watching tourists try to describe what they were feeling and had long stopped trying to do it for them. That's a particular skill.</p>
+    <p class="tc__trip">Kathmandu · Chitwan · Delhi · Agra · Jaipur · 14 days · December 2024</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">AK</span></div>
+      <div>
+        <span class="tc__name">Anna K.</span>
+        <span class="tc__origin">Amsterdam, Netherlands</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 09 — Sri Lanka, Wellness ═══════════════ -->
+  <article class="tc" data-tags="srilanka wellness">
+    <div class="tc__flags">
+      <span class="tc__dest">Sri Lanka</span>
+      <span class="tc__type">Wellness · Retreat</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I work in finance and the schedule I keep is not good for a human being. My wife booked this trip as an intervention, basically. I went reluctantly. By day four at the tea trails I had turned my phone off and I didn't really notice. We spent two days just walking through the tea bushes and reading and eating things that had been grown on the property. At one point I sat on the veranda watching the clouds come in over the reservoir and thought: I've been paying a therapist for three years to feel this calm. The rest of the trip was brilliant too but those two days in Hatton are what I tell people about.</p>
+    <p class="tc__trip">Negombo · Kandy · Hatton · Yala · Galle · 11 days · January 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">MP</span></div>
+      <div>
+        <span class="tc__name">Michael P.</span>
+        <span class="tc__origin">New York City, USA</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 10 — India, Rajasthan, Leisure ══════════ -->
+  <article class="tc" data-tags="india leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Rajasthan</span>
+      <span class="tc__type">Leisure · Family</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">We travelled as three generations, my parents in their seventies, my husband and I, and our two teenage boys. I genuinely wasn't sure it would work. My mother uses a walking stick. My youngest has the attention span of a goldfish unless something surprises him. Somehow it worked. The boys were obsessed with the forts. My mother sat in a courtyard at the Oberoi Amarvilas and watched the Taj change colour for two hours and said she could die happy. The guide in Jaipur found a way to keep everyone moving at different paces without anyone feeling rushed or left behind. That's not easy to pull off.</p>
+    <p class="tc__trip">Delhi · Agra · Jaipur · 10 days · February 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">LO</span></div>
+      <div>
+        <span class="tc__name">Lauren O.</span>
+        <span class="tc__origin">Boston, Massachusetts, USA</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 11 — Bhutan, Wellness ════════════════════ -->
+  <article class="tc" data-tags="bhutan wellness">
+    <div class="tc__flags">
+      <span class="tc__dest">Bhutan</span>
+      <span class="tc__type">Wellness · Slow travel</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">Bhutan was the first time in fifteen years of travelling that I arrived somewhere and felt no pressure to see everything. Maybe that's the country, or maybe it's just that there isn't that much on the tourist checklist and you end up spending real time in each place. We stayed two nights at Six Senses Bumthang and the valley is so still in the morning it's almost unsettling if you're used to cities. The spa there uses ingredients I'd never heard of and the therapist explained each one before she started. I ended up writing ten pages of notes on the flight home which is not something I normally do.</p>
+    <p class="tc__trip">Thimphu · Punakha · Bumthang · 10 days · March 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">FR</span></div>
+      <div>
+        <span class="tc__name">Francesca R.</span>
+        <span class="tc__origin">London, United Kingdom</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 12 — Nepal, Everest flight ═══════════════ -->
+  <article class="tc" data-tags="nepal leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">Nepal</span>
+      <span class="tc__type">Leisure · Mountain flight</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I knew the Everest mountain flight existed but I assumed it would be one of those tourist things that sounds better than it is. It was not. You board a small plane before sunrise, the crew gives everyone a window seat in turns, and for about an hour you fly along the entire Himalayan range at close range. Everest appears and it's just obviously bigger than everything around it. There's no preparation for the scale of it. The man sitting next to me, who had introduced himself as someone who "doesn't really do emotions," went completely silent for about twenty minutes and then said, very quietly, "well." That seemed about right.</p>
+    <p class="tc__trip">Kathmandu · Chitwan · Pokhara · Lumbini · 11 days · October 2024</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">MB</span></div>
+      <div>
+        <span class="tc__name">Mark B.</span>
+        <span class="tc__origin">Minneapolis, Minnesota, USA</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 13 — Sri Lanka, Leisure ═════════════════ -->
+  <article class="tc" data-tags="srilanka leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">Sri Lanka</span>
+      <span class="tc__type">Leisure · Honeymoon</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">We almost went to the Maldives. Everyone goes to the Maldives for a honeymoon and it looked beautiful but also like you were paying a lot of money to sit on a sandbank. Sri Lanka was my idea and my husband was unconvinced until about day two. Sigiriya at six in the morning before anyone else arrives is one of those places that just doesn't feel real. Cape Weligama on the south coast was where we spent the last four nights and it's the kind of hotel where you book excursions and then cancel them because you can't bring yourself to leave. We've been married eight months and we've already talked about going back for our first anniversary.</p>
+    <p class="tc__trip">Colombo · Sigiriya · Kandy · Weligama · 10 days · April 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">EV</span></div>
+      <div>
+        <span class="tc__name">Emma V.</span>
+        <span class="tc__origin">Stockholm, Sweden</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 14 — India, Kerala, Wellness ════════════ -->
+  <article class="tc" data-tags="india wellness">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Kerala</span>
+      <span class="tc__type">Wellness · Ayurveda</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I had a disc issue in my lower back that had been giving me trouble for two years. I'd done physio, I'd seen three different specialists, I'd spent a small fortune on a mattress. A colleague who'd done a Kerala programme mentioned that the Ayurvedic treatment for back conditions was something else entirely. She was right. By the end of the first week the inflammation had visibly reduced. I'm not making claims about what Ayurveda can or can't do, I'm just telling you what happened to me. What I didn't expect was how much I'd enjoy the food. I came home and bought a cookbook. My husband thinks I've joined a cult.</p>
+    <p class="tc__trip">Kerala Ayurveda programme · Kovalam · 14 nights · November 2024</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">PB</span></div>
+      <div>
+        <span class="tc__name">Patricia B.</span>
+        <span class="tc__origin">Edinburgh, Scotland</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 15 — India, Hampi, Leisure ═══════════════ -->
+  <article class="tc" data-tags="india leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Karnataka</span>
+      <span class="tc__type">Leisure · Heritage</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">Hampi was not on my original itinerary. I'd asked AndThen for something in South India that wasn't on the standard tourist route and they suggested it almost as an aside. I had never heard of it. What I found was one of the most extraordinary places I have ever been anywhere in the world. Fourteen square kilometres of boulder-strewn landscape with the ruins of a 14th-century empire scattered through it, and almost nobody there. We rented bicycles and spent a whole day just riding between temples. The Vittala Temple at golden hour with the stone chariot in front of it is the kind of thing that makes you want to stop travelling for a while because nothing is going to top it.</p>
+    <p class="tc__trip">Bengaluru · Hampi · Goa · 10 days · January 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">OW</span></div>
+      <div>
+        <span class="tc__name">Oliver W.</span>
+        <span class="tc__origin">Cape Town, South Africa</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 16 — Bhutan + Nepal, Leisure ════════════ -->
+  <article class="tc" data-tags="bhutan nepal leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">Bhutan · Nepal</span>
+      <span class="tc__type">Leisure · Multi-country</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I had been to both countries before on separate trips and the logistics each time were frustrating in different ways. Doing Bhutan and Nepal together with AndThen on one circuit was a completely different experience. Everything connected properly. The permit for the restricted valley in Bhutan I'd been trying to arrange for two years just appeared in my documents without any chasing. We got into Phobjikha at the right time of year for the black-necked cranes, which had never worked out for me before. In Nepal we had a sunrise flight over Everest that I genuinely wasn't prepared for. This is the work they do quietly that you don't notice until everything just works.</p>
+    <p class="tc__trip">Paro · Punakha · Phobjikha · Kathmandu · Pokhara · 14 days · November 2024</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">KS</span></div>
+      <div>
+        <span class="tc__name">Kai S.</span>
+        <span class="tc__origin">Berlin, Germany</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 17 — India, Wildlife ═════════════════════ -->
+  <article class="tc" data-tags="india leisure">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Madhya Pradesh</span>
+      <span class="tc__type">Leisure · Wildlife</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">We had done game drives in Africa twice and went into Bandhavgarh expecting something similar but smaller. It's not smaller. The forest is genuinely dense and the tigers are not performing for anyone. On our second morning we found a male in a dried-up riverbed about twenty metres away. He was there for almost forty minutes. Our naturalist knew exactly which direction he had come from and where he was likely to go and just positioned us and waited. That knowledge is everything on a drive like that. We also saw a sloth bear, which I hadn't even thought to hope for, and a huge herd of gaur moving through the trees just before dusk. India's wildlife doesn't get talked about the way it should.</p>
+    <p class="tc__trip">Delhi · Bandhavgarh · Kanha · 10 days · February 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">NR</span></div>
+      <div>
+        <span class="tc__name">Nina R.</span>
+        <span class="tc__origin">Toronto, Canada</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 18 — Sri Lanka, Wellness ════════════════ -->
+  <article class="tc" data-tags="srilanka wellness">
+    <div class="tc__flags">
+      <span class="tc__dest">Sri Lanka</span>
+      <span class="tc__type">Wellness · Solo travel</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">I went alone, which not everyone understood. I had just come out of a fairly difficult few years and I wanted to go somewhere that required no explaining and no performing. Sri Lanka was a good choice for that. Nobody in the Cultural Triangle is particularly interested in why a woman is travelling by herself, which was a relief. The wellness element came naturally, partly from slowing down and partly from the food, which in the right places is one of the most interesting in Asia. I ended up staying an extra four days. My return flight home was the first time I'd cried in about eighteen months and I mean that in a good way.</p>
+    <p class="tc__trip">Colombo · Sigiriya · Kandy · Galle · 13 days · March 2025</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">YL</span></div>
+      <div>
+        <span class="tc__name">Yuki L.</span>
+        <span class="tc__origin">San Jose, California, USA</span>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ═══ 19 — India, Kerala, Wellness ════════════ -->
+  <article class="tc" data-tags="india wellness">
+    <div class="tc__flags">
+      <span class="tc__dest">India · Kerala</span>
+      <span class="tc__type">Wellness · Couples</span>
+    </div>
+    <span class="tc__quote-mark">"</span>
+    <p class="tc__text">My partner and I both work in tech and we had been talking about a proper break for about three years without ever actually doing it. We finally blocked the time and came to Kerala. The Ayurveda was my idea and my partner was willing but not convinced. By day five he had cancelled three meetings he'd been planning to dial into and I could not have been more pleased about that. The backwaters at Kumarakom are nothing like what I'd imagined. You expect it to feel like a tourist experience and it doesn't. It just feels like being somewhere very quiet and very green with good things to eat. We did not want to come home.</p>
+    <p class="tc__trip">Cochin · Kumarakom · Kovalam · 12 days · December 2024</p>
+    <div class="tc__stars">
+      <span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span><span class="tc__star">★</span>
+    </div>
+    <div class="tc__guest">
+      <div class="tc__avatar"><span class="tc__avatar-initials">AW</span></div>
+      <div>
+        <span class="tc__name">Aisha W.</span>
+        <span class="tc__origin">Seattle, Washington, USA</span>
+      </div>
+    </div>
+  </article>
+
+
+</div><!-- /tgrid -->
+
+<!-- PERMISSION NOTE -->
+<p style="font-family:var(--fb);font-size:0.5625rem;font-weight:300;color:var(--cs);text-align:center;padding:1.5rem 2.5rem;border-top:0.5px solid rgba(200,180,154,0.15);">All stories shared with guest permission.</p>
+
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div>
+    <p class="cta-band__title">Ready to write your own story?</p>
+    <p class="cta-band__sub">Tell us where you want to go and we'll take it from there. We respond within 24 hours.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="/contact/"><button class="btn-dark">Plan my journey</button></a>
+    <a href="/itineraries/"><button class="btn-ghost">Browse itineraries</button></a>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <a href="/"><span class="footer__word">ANDTHEN</span><span class="footer__sub-word">travels</span></a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+918129271155">+91 8129 271 155</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Experiences</span>
+      <a href="/signature-experiences/art-of-feeling-well/">Art of Feeling Well</a>
+      <a href="/signature-experiences/plated-south/">Plated South</a>
+      <a href="/signature-experiences/fairways-wonders/">Fairways &amp; Wonders</a>
+      <a href="/itineraries/">Private itineraries</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Destinations</span>
+      <a href="/india/">India</a>
+      <a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a>
+      <a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-h">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/places-to-stay/">Places to stay</a>
+      <a href="/journal/">Journal</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+  <div class="footer__btm">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btns  = document.querySelectorAll('.f-btn');
+  var cards = document.querySelectorAll('.tc');
+
+  function filter(f) {
+    cards.forEach(function (c) {
+      var tags = (c.getAttribute('data-tags') || '').split(' ');
+      var show = f === 'all' || tags.indexOf(f) !== -1;
+      c.classList.toggle('hidden', !show);
+    });
+    btns.forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-f') === f);
+    });
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { filter(this.getAttribute('data-f')); });
+  });
+
+  filter('all');
+})();
+</script>
+
+</body>
+</html>

@@ -9,10 +9,11 @@ export const Testimonials = () => {
         <div>
           <span className="eyebrow">Traveller stories</span>
           <h2 className={styles.heading}>In their words</h2>
-        </div>
-        <Link href="/testimonials/" className="text-link">
-          All reviews
+           <Link href="/testimonials/" className={styles.readmore}>
+          Read more
         </Link>
+        </div>
+        
       </div>
 
       <div className={styles.testiGrid}>

@@ -50,7 +50,7 @@ export const Footer = () => {
           <Link href="/contact/">Contact</Link>
           <Link href="/login/">Agent login</Link>
           <Link href="/privacy-policy/">Privacy policy</Link>
-          <Link href="/terms-and-conditions/">Terms &amp; conditions</Link>
+          <Link href="/privacy-policy/">Terms &amp; conditions</Link>
         </div>
       </div>
 
