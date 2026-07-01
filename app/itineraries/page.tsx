@@ -149,7 +149,7 @@ export default function ItinerariesPage() {
           ) : (
             <div className={`${styles.itinsGrid} ${isMulti ? styles.itinsGridDark : ""}`}>
               {filteredTours.map((tour) => {
-                const isWide = tour.isFeatured;
+                const isWide = false;
                 const cardClass = [
                   styles.itinCard,
                   isWide ? styles.itinCardWide : "",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tours } from "@/data/tours";
@@ -7,143 +8,331 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const includedItems = [
+  "Handpicked accommodation",
+  "Private vehicle and transfers",
+  "English-speaking local experts",
+  "Daily breakfast and select meals",
+  "Entrance fees and experiences",
+  "24-hour dedicated support",
+];
+
+const excludedItems = [
+  "International flights",
+  "Travel insurance",
+  "Visa fees",
+];
+
+const stayPrinciples = [
+  {
+    label: "The collection",
+    title: "Handpicked stays",
+    text: "Characterful hotels, heritage properties and intimate retreats selected to suit the rhythm of your route.",
+  },
+  {
+    label: "Our standard",
+    title: "Personally vetted",
+    text: "Every recommendation is assessed for service, setting and the quality of the experience—not simply its star rating.",
+  },
+  {
+    label: "Your journey",
+    title: "Entirely flexible",
+    text: "Prefer a different room style, hotel category or slower pace? Every stay can be adjusted before the journey is confirmed.",
+  },
+];
+
+function getHeroImage(destination: string, region?: string, type?: string) {
+  const context = `${destination} ${region ?? ""} ${type ?? ""}`.toLowerCase();
+
+  if (context.includes("wildlife") || context.includes("tiger")) return "/Assets/home/Wildlife.webp";
+  if (context.includes("bhutan")) return "/Assets/home/Bhutan.jpg";
+  if (context.includes("nepal")) return "/Assets/home/Nepal.jpg";
+  if (context.includes("sri lanka")) return "/Assets/home/Sri Lanka.jpg";
+  if (context.includes("wellness")) return "/Assets/home/Wellness.jpg";
+  if (context.includes("spiritual")) return "/Assets/home/Spiritual.jpg";
+  return "/Assets/home/India.jpg";
+}
+
 export async function generateStaticParams() {
-  return tours.map((tour) => ({
-    slug: tour.id,
-  }));
+  return tours.map((tour) => ({ slug: tour.id }));
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const tour = tours.find((t) => t.id === slug);
+  const tour = tours.find((item) => item.id === slug);
+
   if (!tour) return {};
+
   return {
     title: `${tour.name} — Itinerary | AndThen Travels`,
-    description: tour.description ?? `A private, tailor-made ${tour.nights} journey to ${tour.destination} with AndThen Travels.`,
+    description:
+      tour.description
+      ?? `A private, tailor-made ${tour.nights} journey to ${tour.destination} with AndThen Travels.`,
   };
 }
 
 export default async function ItinerarySlugPage({ params }: Props) {
   const { slug } = await params;
-  const tour = tours.find((t) => t.id === slug);
+  const tour = tours.find((item) => item.id === slug);
 
   if (!tour) notFound();
 
+  const route = tour.route ?? tour.destination;
+  const routeStops = route.split("→").map((stop) => stop.trim()).filter(Boolean);
+  const nightCount = Number.parseInt(tour.nights, 10);
+  const duration = Number.isNaN(nightCount)
+    ? tour.nights
+    : `${nightCount} nights / ${nightCount + 1} days`;
+  const start = routeStops[0] ?? tour.destination;
+  const end = routeStops.at(-1) ?? tour.destination;
+  const heroImage = tour.image ?? getHeroImage(tour.destination, tour.region, tour.typeBadge);
+  const contactHref = `/contact/?trip=${encodeURIComponent(tour.id)}`;
+  const relatedTours = tours
+    .filter((item) => item.id !== tour.id)
+    .sort((a, b) => {
+      const score = (item: typeof a) =>
+        Number(item.destination === tour.destination) * 2
+        + Number(item.typeBadge === tour.typeBadge);
+
+      return score(b) - score(a);
+    })
+    .slice(0, 3);
+
   return (
-    <main>
-      {/* ── HERO ──────────────────────────────────────────── */}
+    <div className={styles.page}>
       <section className={styles.hero} aria-label={`${tour.name} itinerary`}>
-        <div
-          className={`${styles.heroImage} ${tour.accentClass ? styles[tour.accentClass as keyof typeof styles] : ""}`}
-          role="img"
-          aria-label={`${tour.name} — ${tour.region ?? tour.destination}`}
+        <Image
+          className={styles.heroImage}
+          src={heroImage}
+          alt={`${tour.name} — ${tour.region ?? tour.destination}`}
+          fill
+          priority
+          sizes="100vw"
         />
+        <div className={styles.heroShade} />
         <div className={styles.heroContent}>
-          <div>
-            <span className={styles.heroTag}>{tour.region ?? tour.destination}</span>
-            <h1 className={styles.heroTitle}>{tour.name}</h1>
-            <p className={styles.heroRoute}>{tour.route}</p>
+          <span className={styles.heroTag}>
+            {tour.destination} · {tour.typeBadge ?? "Private journey"}
+          </span>
+          <h1 className={styles.heroTitle}>{tour.name}</h1>
+          <div className={styles.heroPills} aria-label="Trip highlights">
+            <span className={styles.heroPill}>{duration}</span>
+            <span className={styles.heroPill}>{routeStops.length} destinations</span>
+            <span className={styles.heroPill}>Private journey</span>
+            <span className={styles.heroPill}>{start} to {end}</span>
           </div>
-          <div className={styles.heroMeta}>
-            <div className={styles.heroMetaItem}>
-              <span className={styles.heroMetaLabel}>Duration</span>
-              <span className={styles.heroMetaValue}>{tour.nights}</span>
-            </div>
-            <div className={styles.heroMetaItem}>
-              <span className={styles.heroMetaLabel}>Starting from</span>
-              <span className={styles.heroMetaValue}>{tour.price}</span>
-            </div>
-            <div className={styles.heroMetaItem}>
-              <span className={styles.heroMetaLabel}>Departs</span>
-              <span className={styles.heroMetaValue}>{tour.season ?? "Any date"}</span>
-            </div>
+          <div className={styles.heroPrice}>
+            <span className={styles.heroPriceLabel}>Starting from</span>
+            <span className={styles.heroPriceValue}>{tour.price}</span>
           </div>
         </div>
       </section>
 
-      {/* ── OVERVIEW ──────────────────────────────────────── */}
-      <section className={styles.overview}>
-        <div className={styles.overviewGrid}>
-          {/* Left: description */}
-          <div className={styles.overviewLeft}>
-            <span className="eyebrow">Overview</span>
-            <h2 className={styles.overviewTitle}>About this journey</h2>
-            <div className={styles.overviewRule} aria-hidden="true" />
-            <p className={styles.overviewText}>{tour.description}</p>
+      <nav className={styles.jumpNav} aria-label="Page sections">
+        <a className={styles.active} href="#overview">Overview</a>
+        <a href="#journey">The journey</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#accommodation">Accommodation</a>
+      </nav>
 
-            <div className={styles.overviewFacts}>
-              <div className={styles.overviewFact}>
-                <span className={styles.overviewFactLabel}>Route</span>
-                <span className={styles.overviewFactValue}>{tour.route}</span>
-              </div>
-              <div className={styles.overviewFact}>
-                <span className={styles.overviewFactLabel}>Category</span>
-                <span className={styles.overviewFactValue}>{tour.typeBadge ?? "Private journey"}</span>
-              </div>
-              <div className={styles.overviewFact}>
-                <span className={styles.overviewFactLabel}>Departure</span>
-                <span className={styles.overviewFactValue}>{tour.season ?? "Any date"}</span>
-              </div>
+      <div className={styles.pageLayout}>
+        <div className={styles.mainContent} id="overview">
+          <div className={styles.overviewGrid} aria-label="Trip overview">
+            <div className={styles.overviewItem}>
+              <span className={styles.overviewLabel}>Duration</span>
+              <span className={styles.overviewValue}>{duration}</span>
+            </div>
+            <div className={styles.overviewItem}>
+              <span className={styles.overviewLabel}>Destinations</span>
+              <span className={styles.overviewValue}>{routeStops.length} route stops</span>
+            </div>
+            <div className={styles.overviewItem}>
+              <span className={styles.overviewLabel}>Journey style</span>
+              <span className={styles.overviewValue}>{tour.typeBadge ?? "Private"}</span>
+            </div>
+            <div className={styles.overviewItem}>
+              <span className={styles.overviewLabel}>Departs</span>
+              <span className={styles.overviewValue}>{tour.season ?? "Any date"}</span>
             </div>
           </div>
 
-          {/* Right: highlights */}
+          <span className={styles.eyebrow}>About this journey</span>
+          <h2 className={styles.sectionHeading}>
+            A private journey through {tour.region ?? tour.destination}
+          </h2>
+          <div className={styles.rule} />
+          <p className={styles.leadText}>{tour.description}</p>
+          <p className={styles.bodyText}>
+            This itinerary is a considered starting point, not a fixed group tour. We tailor the pace,
+            stays and experiences around your interests while our team handles every detail on the ground.
+          </p>
+
           {tour.highlights && tour.highlights.length > 0 && (
-            <div className={styles.highlights}>
-              <span className={styles.highlightsLabel}>Highlights</span>
-              <ul className={styles.highlightsList}>
-                {tour.highlights.map((h, i) => (
-                  <li key={i} className={styles.highlightsItem}>
-                    <span className={styles.highlightsDot} aria-hidden="true" />
-                    {h}
-                  </li>
+            <div className={styles.highlightBox}>
+              <span className={styles.highlightLabel}>Journey highlights</span>
+              <ul className={styles.highlightList}>
+                {tour.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
                 ))}
               </ul>
             </div>
           )}
-        </div>
-      </section>
 
-      {/* ── WHAT'S INCLUDED BAND ─────────────────────────── */}
-      <section className={styles.included} aria-label="What's included">
-        <div className={styles.includedGrid}>
-          {[
-            { icon: "◈", label: "Private vehicle", desc: "100% private — no sharing with other travelers" },
-            { icon: "◉", label: "Expert guides", desc: "English-speaking, licensed local expert throughout" },
-            { icon: "◇", label: "Handpicked hotels", desc: "Vetted heritage properties and boutique stays" },
-            { icon: "◎", label: "24/7 support", desc: "Dedicated on-ground team throughout your journey" },
-          ].map((item) => (
-            <div key={item.label} className={styles.includedItem}>
-              <span className={styles.includedIcon} aria-hidden="true">{item.icon}</span>
-              <span className={styles.includedLabel}>{item.label}</span>
-              <span className={styles.includedDesc}>{item.desc}</span>
+          <hr className={styles.separator} />
+
+          <section id="journey">
+            <span className={styles.eyebrow}>The journey at a glance</span>
+            <h2 className={styles.sectionHeading}>One seamless route</h2>
+            <div className={styles.rule} />
+            <div className={styles.journeyTrack} role="list" aria-label="Journey stops in order">
+              {routeStops.map((stop, index) => (
+                <div className={styles.journeyStop} role="listitem" key={`${stop}-${index}`}>
+                  <div className={`${styles.stopImage} ${styles[`tone${index % 6}`]}`}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div className={styles.stopInfo}>
+                    <span className={styles.stopName}>{stop}</span>
+                    <span className={styles.stopOrder}>Stop {index + 1}</span>
+                  </div>
+                </div>
+              ))}
             </div>
+          </section>
+
+          <hr className={styles.separator} />
+
+          <section id="destinations">
+            <span className={styles.eyebrow}>Destinations</span>
+            <h2 className={styles.sectionHeading}>Where you’ll go</h2>
+            <div className={styles.rule} />
+            <div className={styles.destinationCards}>
+              {routeStops.map((stop, index) => (
+                <article className={styles.destinationCard} key={`${stop}-${index}-card`}>
+                  <div className={`${styles.destinationVisual} ${styles[`tone${index % 6}`]}`}>
+                    <span className={styles.destinationBadge}>Stop {String(index + 1).padStart(2, "0")}</span>
+                    <span className={styles.destinationIndex}>{String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div className={styles.destinationBody}>
+                    <span className={styles.destinationMeta}>{tour.region ?? tour.destination}</span>
+                    <h3 className={styles.destinationName}>{stop}</h3>
+                    <p className={styles.destinationText}>
+                      A considered stop on your {tour.name} route, arranged privately and paced around
+                      the experiences that matter most to you.
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <hr className={styles.separator} />
+
+          <section id="accommodation">
+            <span className={styles.eyebrow}>Suggested accommodation</span>
+            <h2 className={styles.sectionHeading}>Where you’ll stay</h2>
+            <div className={styles.rule} />
+            <p className={styles.bodyText}>
+              Final properties are selected around availability, preferred style and budget. Your
+              specialist will share a complete hotel proposal before anything is confirmed.
+            </p>
+            <div className={styles.stayGrid}>
+              {stayPrinciples.map((item, index) => (
+                <article className={styles.stayCard} key={item.title}>
+                  <div className={`${styles.stayVisual} ${styles[`tone${index + 2}`]}`}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div className={styles.stayBody}>
+                    <span className={styles.stayLabel}>{item.label}</span>
+                    <h3 className={styles.stayTitle}>{item.title}</h3>
+                    <p className={styles.stayText}>{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className={styles.accommodationFooter}>
+              <p>All properties are subject to availability and confirmed as part of your final proposal.</p>
+              <Link href="/places-to-stay/" className={styles.textLink}>Explore places to stay</Link>
+            </div>
+          </section>
+        </div>
+
+        <aside className={styles.sidebar} aria-label="Booking information">
+          <div className={styles.sidebarCard}>
+            <div className={styles.priceBlock}>
+              <span className={styles.priceLabel}>Starting from</span>
+              <span className={styles.priceValue}>{tour.price}</span>
+              <span className={styles.priceNote}>per person · guide price</span>
+            </div>
+            <Link href={contactHref} className={styles.primaryButton}>Enquire about this trip</Link>
+            <p className={styles.priceDisclaimer}>
+              International flights are excluded. Contact us for solo, family or group pricing.
+            </p>
+          </div>
+
+          <div className={styles.sidebarCard}>
+            <span className={styles.sidebarTitle}>Trip at a glance</span>
+            <ul className={styles.infoList}>
+              <li><span>Duration</span><strong>{duration}</strong></li>
+              <li><span>Starts in</span><strong>{start}</strong></li>
+              <li><span>Ends in</span><strong>{end}</strong></li>
+              <li><span>Journey type</span><strong>Private</strong></li>
+              <li><span>Departures</span><strong>{tour.season ?? "Any date"}</strong></li>
+            </ul>
+          </div>
+
+          <div className={styles.sidebarCard}>
+            <span className={styles.sidebarTitle}>What’s included</span>
+            <ul className={styles.checklist}>
+              {includedItems.map((item) => <li className={styles.includedItem} key={item}>{item}</li>)}
+            </ul>
+            <hr className={styles.sidebarDivider} />
+            <ul className={styles.checklist}>
+              {excludedItems.map((item) => <li className={styles.excludedItem} key={item}>{item}</li>)}
+            </ul>
+          </div>
+
+          <div className={`${styles.sidebarCard} ${styles.sidebarCardLinen}`}>
+            <span className={styles.sidebarTitle}>Customise this trip</span>
+            <p className={styles.customiseNote}>
+              Add destinations, change hotels or slow the pace—we build the final journey around you.
+            </p>
+            <Link href="/contact/" className={styles.textLink}>Talk to a specialist</Link>
+          </div>
+        </aside>
+      </div>
+
+      <section className={styles.related} aria-label="Related itineraries">
+        <div className={styles.relatedHeader}>
+          <div>
+            <span className={styles.eyebrow}>You may also like</span>
+            <h2 className={styles.relatedHeading}>More journeys to consider</h2>
+          </div>
+          <Link href="/itineraries/" className={styles.textLink}>All itineraries</Link>
+        </div>
+        <div className={styles.relatedGrid}>
+          {relatedTours.map((item) => (
+            <Link className={styles.relatedCard} href={item.slug} key={item.id}>
+              <span className={styles.relatedDestination}>{item.region ?? item.destination}</span>
+              <h3 className={styles.relatedTitle}>{item.name}</h3>
+              <p className={styles.relatedMeta}>{item.nights} · {item.route}</p>
+              <span className={styles.relatedLink}>View itinerary →</span>
+            </Link>
           ))}
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────── */}
-      <section className={styles.cta} aria-label="Plan your journey">
-        <div className={styles.ctaInner}>
-          <div>
-            <span className="eyebrow" style={{ color: "var(--cb)" }}>Ready to go?</span>
-            <h2 className={styles.ctaHeading}>
-              Start building your {tour.name} journey
-            </h2>
-            <p className={styles.ctaSub}>
-              This itinerary is a starting point — not a fixed tour. Tell us what you'd like to change, and we'll design it from scratch around you.
-            </p>
-          </div>
-          <div className={styles.ctaButtons}>
-            <Link href="/contact/" className={styles.btnPrimary}>
-              Enquire about this itinerary
-            </Link>
-            <Link href="/itineraries/" className={styles.btnSecondary}>
-              ← All itineraries
-            </Link>
-          </div>
+      <section className={styles.ctaBanner} aria-label="Plan this journey">
+        <div>
+          <h2 className={styles.ctaHeading}>Ready to explore {tour.destination}?</h2>
+          <p className={styles.ctaText}>
+            Speak to a specialist and we’ll shape this journey around your dates, interests and pace.
+          </p>
+        </div>
+        <div className={styles.ctaButtons}>
+          <Link href={contactHref} className={styles.ctaPrimary}>Enquire about this trip</Link>
+          <Link href="/contact/#prize" className={styles.ctaSecondary}>Reveal my travel gift</Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

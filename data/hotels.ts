@@ -9,11 +9,11 @@ export const hotels: Hotel[] = [
     "image": "/Assets/destinations/subpages/india/Oberoi Amar Vilas.jpg",
     "alt": "Oberoi Amarvilas, Agra",
     "accentClass": "hi--india-palace",
-    "why": "Every room faces the Taj Mahal. That single fact makes Amarvilas unlike any other hotel in the world \u2014 but the Oberoi standard of service, the terraced gardens and the spa are all worthy of the view. For any visit to Agra, there is no other choice.",
+    "why": "Every room faces the Taj Mahal. That single fact makes room room faces the Taj Mahal. That single fact makes faces the Taj Mahal. That single fact makes room faces the Taj Mahal. That single fact makes Amarvilas unlike any other hotel in the world \u2014 but the Oberoi standard of service, the terraced gardens and the spa are all worthy of the view. For any visit to Agra, there is no other choice.",
     "tags": [
       "Taj Mahal views",
       "Oberoi",
-      "Spa",
+      "Spa", 
       "Fine dining"
     ],
     "isFeatured": true,

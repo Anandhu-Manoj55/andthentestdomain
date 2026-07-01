@@ -1,8 +1,10 @@
 import React from 'react';
 import './BlogSubpage.css';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getBlogData, getSortedBlogsData } from '@/lib/blogs';
 import { notFound } from 'next/navigation';
+import ShareControls from './ShareControls';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -28,26 +30,44 @@ export async function generateStaticParams() {
 
 export default async function BlogSubpage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const blogData = await getBlogData(slug);
+  const [blogData, allBlogs] = await Promise.all([
+    getBlogData(slug),
+    getSortedBlogsData(),
+  ]);
 
   if (!blogData) {
     notFound();
   }
 
   const { frontmatter, htmlContent } = blogData;
+  const currentIndex = allBlogs.findIndex((blog) => blog.slug === slug);
+  const previousArticle = currentIndex >= 0 ? allBlogs[currentIndex + 1] : undefined;
+  const nextArticle = currentIndex > 0 ? allBlogs[currentIndex - 1] : undefined;
+  const relatedArticles = allBlogs
+    .filter((blog) => blog.slug !== slug)
+    .sort((a, b) => {
+      const score = (blog: typeof a) =>
+        Number(blog.category === frontmatter.category) * 2
+        + Number(blog.destination === frontmatter.destination);
+
+      return score(b) - score(a);
+    })
+    .slice(0, 3);
+  const destinationSlug = frontmatter.destination
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  const contactHref = `/contact/?destination=${destinationSlug}`;
+  const publishedDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(`${frontmatter.date}T00:00:00Z`));
 
   return (
     <div className="blog-subpage">
-      {/* ══ BACK BUTTON ════════════════════════════════════ */}
-      <div className="back-bar">
-        <Link href="/blogs/" className="back-btn" id="back-to-all-blogs">
-          <svg className="back-btn__arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 4L6 10l6 6" />
-          </svg>
-          Back to all blogs
-        </Link>
-      </div>
-
       {/* ══ BREADCRUMB ═════════════════════════════════════ */}
       <div className="breadcrumb">
         <Link href="/blogs/">Journal</Link>
@@ -61,7 +81,14 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
            1. BANNER IMAGE
       ══════════════════════════════════════════════════ */}
       <header className="banner">
-        <img className="banner__img-ph" src={frontmatter.coverImage} alt={frontmatter.coverImageAlt} />
+        <Image
+          className="banner__img-ph"
+          src={frontmatter.coverImage}
+          alt={frontmatter.coverImageAlt}
+          fill
+          priority
+          sizes="100vw"
+        />
         <div className="banner__content">
           <div className="banner__cat-row">
             <span className="banner__dest-tag">{frontmatter.destination}</span>
@@ -76,21 +103,11 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
         <div className="meta-bar__left">
           <span className="meta-item">By <strong>{frontmatter.author}</strong></span>
           <span className="meta-dot"></span>
-          <span className="meta-item">{frontmatter.date}</span>
+          {/* <span className="meta-item">{publishedDate}</span>
           <span className="meta-dot"></span>
-          <span className="meta-item">{frontmatter.readTime} min read</span>
+          <span className="meta-item">{frontmatter.readTime} min read</span> */}
         </div>
-        <div className="share-row" aria-label="Share this article">
-          <button className="share-btn" aria-label="Share via email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </button>
-          <button className="share-btn" aria-label="Copy link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M10 13a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 00-7.07 0L4.1 13.83a5 5 0 007.07 7.07l1.49-1.49"/></svg>
-          </button>
-          <a className="share-btn" aria-label="Share on WhatsApp" href={`https://wa.me/?text=${encodeURIComponent(frontmatter.title)}`} target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-          </a>
-        </div>
+        <ShareControls title={frontmatter.title} />
       </div>
 
       {/* ══════════════════════════════════════════════════
@@ -99,6 +116,7 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
       <div className="article-layout">
 
         {/* ── CONTENT COLUMN ───────────────────────────── */}
+        <div className="vaccant_space"></div>
         <div className="content-col">
 
           {/* Intro paragraph */}
@@ -127,7 +145,13 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
           {frontmatter.inlineImage && (
             <figure className="inline-image">
               <div className="inline-image__frame">
-                <img className="inline-img-ph" src={frontmatter.inlineImage} alt={frontmatter.inlineImageAlt} />
+                <Image
+                  className="inline-img-ph"
+                  src={frontmatter.inlineImage}
+                  alt={frontmatter.inlineImageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 720px"
+                />
               </div>
               <figcaption className="inline-image__caption">{frontmatter.inlineImageAlt}</figcaption>
             </figure>
@@ -157,9 +181,9 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="ep__body">
               <p className="ep__title">Thinking about {frontmatter.destination}?</p>
-              <p className="ep__text">Tell us what you're imagining and one of our specialists will come back to you within 24 hours with an initial outline, built around your dates, interests and pace.</p>
+              <p className="ep__text">Tell us what you’re imagining and one of our specialists will come back to you within 24 hours with an initial outline, built around your dates, interests and pace.</p>
             </div>
-            <Link href="/contact/"><button className="ep__btn">Start the conversation</button></Link>
+            <Link href={contactHref} className="ep__btn">Start the conversation</Link>
           </div>
 
         </div>
@@ -171,13 +195,47 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
             <div className="sb__enquiry">
               <p className="sb__enquiry-title">Plan a journey to {frontmatter.destination}</p>
               <p className="sb__enquiry-text">Free consultation, no obligation. We respond within 24 hours.</p>
-              <Link href="/contact/"><button className="sb__enquiry-btn">Enquire now</button></Link>
+              <Link href={contactHref} className="sb__enquiry-btn">Enquire now</Link>
             </div>
           </div>
+
+          {relatedArticles.length > 0 && (
+            <div className="sb__block">
+              <span className="sb__label">Related reading</span>
+              <ul className="sb__related">
+                {relatedArticles.map((article) => (
+                  <li key={article.slug}>
+                    <Link href={`/blogs/${article.slug}/`}>
+                      <span className="sb__related-cat">{article.category}</span>
+                      <span className="sb__related-title">{article.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
         </aside>
 
       </div>{/* /article-layout */}
+
+      {(previousArticle || nextArticle) && (
+        <nav className="article-nav" aria-label="More articles">
+          {previousArticle ? (
+            <Link className="article-nav__item" href={`/blogs/${previousArticle.slug}/`}>
+              <span className="article-nav__label">← Previous</span>
+              <span className="article-nav__title">{previousArticle.title}</span>
+            </Link>
+          ) : <span className="article-nav__item" aria-hidden="true" />}
+
+          {nextArticle ? (
+            <Link className="article-nav__item article-nav__item--next" href={`/blogs/${nextArticle.slug}/`}>
+              <span className="article-nav__label">Next →</span>
+              <span className="article-nav__title">{nextArticle.title}</span>
+            </Link>
+          ) : <span className="article-nav__item" aria-hidden="true" />}
+        </nav>
+      )}
 
     </div>
   );

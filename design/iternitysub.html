@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wild Encounters India — Tiger Safari Tour 15 Nights | AndThen Travels</title>
+<meta name="description" content="India's greatest tiger reserves on one private 15-night safari — Bandhavgarh, Kanha, Pench & Tadoba. Exclusive game drives, handpicked lodges. From €10,650 per person.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ANDTHEN TRAVELS — ITINERARY PAGE: WILD ENCOUNTERS
+   Developer handover file · June 2026
+
+   DEVELOPER NOTES:
+   - Inherits the same design tokens as andthen-homepage.html
+   - Replace all image placeholder divs with <img> tags
+   - Jump nav: add position:sticky;top:68px;z-index:99 if sticky desired
+   - Month calendar is purely decorative CSS — no JS needed
+   - Sidebar: consider position:sticky;top:136px on .sidebar for scroll lock
+   - Mobile breakpoint: 768px; tablet: 1024px
+   ============================================================ */
+
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cl: #E8DDD2;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --cw: #FFFFFF;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --transition:   0.3s ease;
+}
+
+/* ── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+img  { display: block; width: 100%; height: 100%; object-fit: cover; }
+a    { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+
+/* ── UTILITY ─────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1rem;
+}
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+.rule { width: 1.5rem; height: 0.5px; background: var(--cs); margin: 1.25rem 0; }
+.body-text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.1;
+  margin-bottom: 1rem;
+}
+.sep { border: none; border-top: 0.5px solid rgba(200,180,154,0.3); margin: 3rem 0; }
+.text-link {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  border-bottom: 0.5px solid rgba(44,26,10,0.25);
+  padding-bottom: 0.125rem;
+  display: inline-block;
+  transition: color var(--transition), border-color var(--transition);
+}
+.text-link:hover { color: var(--cb); border-color: var(--cb); }
+.text-link--muted { color: var(--cb); border-color: rgba(160,120,72,0.35); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+/* ── NAVIGATION ──────────────────────────────────────────── */
+.nav {
+  background: var(--cw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav__logo { display: flex; flex-direction: column; gap: 2px; }
+.nav__logo-wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); }
+.nav__logo-sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); }
+.nav__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: var(--cm);
+}
+.nav__breadcrumb a { color: var(--cm); transition: color var(--transition); }
+.nav__breadcrumb a:hover { color: var(--cd); }
+.nav__breadcrumb span { color: var(--cs); }
+.nav__cta {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  background: transparent;
+  border: 0.5px solid var(--cd);
+  padding: 0.625rem 1.375rem;
+  transition: background var(--transition), color var(--transition);
+}
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+.nav__hamburger span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── HERO ────────────────────────────────────────────────── */
+/* DEVELOPER: Add background-image url + background-size:cover to .hero__image */
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero__image {
+  position: absolute;
+  inset: 0;
+  background: var(--ci);
+  /* DEVELOPER: background-image: url('images/wild-encounters-hero.jpg');
+     background-size: cover; background-position: center 40%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(44,26,10,0.82) 38%, rgba(44,26,10,0.15) 100%);
+}
+.hero__image-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  color: rgba(255,255,255,0.12);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 3.5rem 2.5rem;
+  max-width: 600px;
+}
+.hero__tag {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1rem;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+.hero__pills {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.hero__pill {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  border: 0.5px solid rgba(200,180,154,0.3);
+  color: rgba(255,255,255,0.65);
+  padding: 0.3125rem 0.75rem;
+}
+.hero__price {
+  display: inline-flex;
+  flex-direction: column;
+  background: var(--cb);
+  padding: 0.875rem 1.5rem;
+}
+.hero__price-label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  display: block;
+}
+.hero__price-value {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--cr);
+  margin-top: 0.125rem;
+  display: block;
+}
+
+/* ── JUMP NAVIGATION ─────────────────────────────────────── */
+.jump-nav {
+  background: var(--cp);
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  height: 48px;
+  position: sticky;
+  top: 68px;
+  z-index: 99;
+  overflow-x: auto;
+}
+.jump-nav a {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  white-space: nowrap;
+  padding-bottom: 2px;
+  transition: color var(--transition);
+}
+.jump-nav a:hover { color: var(--cd); }
+.jump-nav a.active { color: var(--cd); border-bottom: 0.5px solid var(--cb); }
+
+/* ── PAGE LAYOUT ─────────────────────────────────────────── */
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  align-items: start;
+}
+.main-content {
+  padding: 4rem 3rem 5rem 2.5rem;
+  border-right: 0.5px solid rgba(200,180,154,0.25);
+  min-width: 0;
+}
+.sidebar {
+  padding: 2.5rem 1.75rem;
+}
+/* DEVELOPER: Uncomment for sticky sidebar */
+/* .sidebar { position: sticky; top: 116px; } */
+
+/* ── OVERVIEW GRID ───────────────────────────────────────── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-bottom: 3rem;
+}
+.overview-item { background: var(--cr); padding: 1.25rem 1rem; }
+.overview-label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.overview-value {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--cd);
+}
+
+/* ── JOURNEY FLOW ────────────────────────────────────────── */
+/* DEVELOPER: Replace .stop__image divs with <img> tags */
+.journey-track {
+  display: flex;
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+.journey-stop {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 100px;
+}
+.stop__image {
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+}
+.stop__image span {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: rgba(255,255,255,0.22);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.stop__info {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  background: var(--cr);
+  border-top: 0.5px solid rgba(200,180,154,0.2);
+}
+.stop__name {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--cd);
+  display: block;
+}
+.stop__nights {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1rem;
+  color: var(--cb);
+  display: block;
+  margin-top: 2px;
+}
+/* Stop image colour tones — replace with bg-image per destination */
+.stop--mumbai      { background: #4A2E1A; }
+.stop--bandhavgarh { background: #1E3018; }
+.stop--kanha       { background: #2E2010; }
+.stop--pench       { background: #182A20; }
+.stop--tadoba      { background: #102028; }
+.stop--delhi       { background: #281A10; }
+.stop--agra        { background: #201410; }
+
+/* ── DESTINATION CARDS ───────────────────────────────────── */
+/* DEVELOPER: Replace .dc__image divs with <img> tags */
+.dest-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-top: 1.5rem;
+}
+.dest-card {
+  background: var(--cr);
+  display: grid;
+  grid-template-columns: 190px 1fr;
+}
+.dc__image {
+  min-height: 180px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.875rem;
+  position: relative;
+}
+.dc__image-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.dc__badge {
+  position: absolute;
+  top: 0.875rem;
+  left: 0.875rem;
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  background: rgba(44,26,10,0.55);
+  color: rgba(255,255,255,0.7);
+  padding: 3px 8px;
+  z-index: 2;
+}
+/* Destination image colours */
+.dci--mumbai      { background: #4A2E1A; }
+.dci--bandhavgarh { background: #1E3018; }
+.dci--kanha       { background: #2E2010; }
+.dci--pench       { background: #182A20; }
+.dci--tadoba      { background: #102028; }
+.dci--delhi-agra  { background: #281A10; }
+
+.dc__body { padding: 1.625rem 1.875rem; }
+.dc__nights {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.dc__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 0.625rem;
+}
+.dc__desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.9;
+  margin-bottom: 0.875rem;
+}
+.dc__highlights { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.dc__highlight {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.05rem;
+  color: var(--cm);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.dc__highlight::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--cb);
+  flex-shrink: 0;
+}
+
+/* ── ACCOMMODATION SECTION ───────────────────────────────── */
+/* DEVELOPER: Replace .ac__image divs with <img> tags
+   Grid 1: 3 columns (wildlife lodges)
+   Grid 2: 4 columns (city hotels) */
+.accom-grid--3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.accom-grid--4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-top: 1px;
+}
+.accom-card {
+  background: var(--cr);
+  display: flex;
+  flex-direction: column;
+}
+.ac__image {
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.875rem;
+  position: relative;
+}
+.ac__image-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+/* Accommodation image tones */
+.aci--mahua      { background: #1E3018; }
+.aci--banjaar    { background: #2E2010; }
+.aci--baghvan    { background: #182A20; }
+.aci--waghoba    { background: #102028; }
+.aci--taj-mumbai { background: #3A2010; }
+.aci--trident-d  { background: #201828; }
+.aci--trident-a  { background: #281A10; }
+
+.ac__body {
+  padding: 1.25rem 1.25rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.ac__destination {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.ac__name {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+.ac__nights {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  color: var(--cm);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.ac__desc {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.85;
+  flex: 1;
+}
+.ac__collection {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  display: block;
+  margin-top: 0.875rem;
+  padding-top: 0.625rem;
+  border-top: 0.5px solid rgba(200,180,154,0.25);
+}
+.accom-footer {
+  background: var(--cp);
+  padding: 1.125rem 1.5rem;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.accom-footer__text {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.7;
+}
+
+/* ── BEST TIME CALENDAR ──────────────────────────────────── */
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+  margin-top: 1.25rem;
+}
+.month-cell {
+  background: var(--cr);
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+}
+.month-cell--peak { background: var(--cb); }
+.month-cell--good { background: var(--cs); }
+.month-label {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--cd);
+}
+.month-cell--peak .month-label,
+.month-cell--good .month-label { color: var(--cr); }
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.875rem;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  color: var(--cm);
+}
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── SIDEBAR COMPONENTS ──────────────────────────────────── */
+.sidebar-card {
+  background: var(--cp);
+  padding: 1.75rem;
+  margin-bottom: 1px;
+}
+.sidebar-card--linen { background: var(--cl); }
+.sidebar__section-title {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+.price-block { text-align: center; padding: 1.25rem 0 1.5rem; }
+.price-block__label {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cm);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+.price-block__value {
+  font-family: var(--font-display);
+  font-size: 2.125rem;
+  font-weight: 400;
+  color: var(--cd);
+  display: block;
+}
+.price-block__note {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: var(--cm);
+  display: block;
+  margin-top: 0.25rem;
+}
+.btn-primary {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  background: var(--cd);
+  color: var(--cr);
+  border: none;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  transition: background var(--transition);
+}
+.btn-primary:hover { background: var(--cb); }
+.price-disclaimer {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.7;
+  text-align: center;
+}
+.info-list { list-style: none; }
+.info-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 0;
+  border-bottom: 0.5px solid rgba(200,180,154,0.2);
+}
+.info-list__item:last-child { border-bottom: none; }
+.info-list__label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--cm);
+}
+.info-list__value {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--cd);
+  text-align: right;
+}
+.checklist { list-style: none; }
+.checklist__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.5rem 0;
+  border-bottom: 0.5px solid rgba(200,180,154,0.15);
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--cm);
+  line-height: 1.5;
+}
+.checklist__item:last-child { border-bottom: none; }
+.checklist__item--incl::before {
+  content: '✓';
+  color: var(--cb);
+  font-size: 0.625rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.checklist__item--excl {
+  opacity: 0.55;
+}
+.checklist__item--excl::before {
+  content: '×';
+  color: var(--cs);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+.sidebar__divider {
+  border: none;
+  border-top: 0.5px solid rgba(200,180,154,0.25);
+  margin: 1rem 0;
+}
+.customise-note {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+/* ── RELATED TOURS ───────────────────────────────────────── */
+.related {
+  background: var(--cp);
+  padding: 4rem 2.5rem;
+}
+.related__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2.5rem;
+}
+.related__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--cd);
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(200,180,154,0.2);
+}
+.related-card {
+  background: var(--cr);
+  padding: 2rem 1.5rem;
+  transition: background var(--transition);
+}
+.related-card:hover { background: var(--cp); }
+.related-card__dest {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.related-card__title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+.related-card__meta {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  color: var(--cm);
+  margin-bottom: 1rem;
+}
+.related-card__link {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  transition: color var(--transition);
+}
+.related-card:hover .related-card__link { color: var(--cb); }
+
+/* ── CTA BANNER ──────────────────────────────────────────── */
+.cta-banner {
+  background: var(--cd);
+  padding: 4rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+.cta-banner__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.cta-banner__sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(200,180,154,0.45);
+  line-height: 1.8;
+}
+.cta-banner__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 210px;
+}
+.cta-banner__btn-primary {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cb);
+  color: var(--cr);
+  border: none;
+  padding: 1rem 1.5rem;
+  transition: background var(--transition);
+}
+.cta-banner__btn-primary:hover { background: #8A6038; }
+.cta-banner__btn-secondary {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(255,255,255,0.45);
+  border: 0.5px solid rgba(255,255,255,0.15);
+  padding: 1rem 1.5rem;
+  transition: border-color var(--transition), color var(--transition);
+}
+.cta-banner__btn-secondary:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.footer { background: var(--ci); padding: 4rem 2.5rem 2.5rem; }
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.5px solid rgba(200,180,154,0.06);
+}
+.footer__logo-wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.footer__logo-sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.footer__desc { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(200,180,154,0.22); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.footer__contact { margin-top: 1.25rem; }
+.footer__contact a { display: block; font-family: var(--font-body); font-size: 0.6875rem; color: var(--cb); text-decoration: none; margin-bottom: 3px; }
+.footer__col-heading { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(200,180,154,0.18); display: block; margin-bottom: 1.5rem; }
+.footer__col a { display: block; font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(200,180,154,0.28); text-decoration: none; margin-bottom: 0.625rem; transition: color var(--transition); }
+.footer__col a:hover { color: var(--cb); }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.footer__copy { font-family: var(--font-body); font-size: 0.5625rem; color: rgba(200,180,154,0.14); letter-spacing: 0.08rem; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .page-layout { grid-template-columns: 1fr; }
+  .sidebar { padding: 0 2.5rem 3rem; border-top: 0.5px solid rgba(200,180,154,0.25); }
+  .sidebar-card { margin-bottom: 1px; }
+  .accom-grid--3 { grid-template-columns: 1fr 1fr; }
+  .accom-grid--4 { grid-template-columns: 1fr 1fr; }
+  .overview-grid { grid-template-columns: repeat(2,1fr); }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav__breadcrumb { display: none; }
+  .nav__hamburger { display: flex; }
+  .hero { min-height: 440px; }
+  .hero__content { padding: 2.5rem 1.5rem; }
+  .main-content { padding: 2.5rem 1.5rem; }
+  .dest-card { grid-template-columns: 1fr; }
+  .dc__image { min-height: 200px; }
+  .accom-grid--3,
+  .accom-grid--4 { grid-template-columns: 1fr; }
+  .overview-grid { grid-template-columns: 1fr 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+  .cta-banner { grid-template-columns: 1fr; }
+  .cta-banner__btns { width: 100%; }
+  .footer__top { grid-template-columns: 1fr; }
+  .jump-nav { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav__logo" aria-label="AndThen Travels — Home">
+    <span class="nav__logo-wordmark">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+
+  <nav class="nav__breadcrumb" aria-label="Breadcrumb">
+    <a href="/experiences/">Experiences</a>
+    <span aria-hidden="true">›</span>
+    <a href="/experiences/wildlife-safaris/">Wildlife & Safaris</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Wild Encounters</span>
+  </nav>
+
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+18000000000" style="font-family:var(--font-body);font-size:0.6875rem;color:var(--cb);">+1 800 000 0000</a>
+    <a href="/contact/"><button class="nav__cta">Enquire now</button></a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+     DEVELOPER: Add bg-image to .hero__image
+     Recommended: tiger in forest, warm golden-hour light
+     Min resolution: 1600×900px
+═══════════════════════════════════════ -->
+<section class="hero" aria-label="Wild Encounters hero">
+  <div class="hero__image" role="img" aria-label="Tigers in the forests of central India">
+    <!-- DEVELOPER: Remove this placeholder once image is added -->
+    <span class="hero__image-placeholder">Hero photography — tigers in forest, golden light</span>
+  </div>
+  <div class="hero__content">
+    <span class="hero__tag">India · Wildlife &amp; Safaris</span>
+    <h1 class="hero__title">Wild<br>Encounters</h1>
+    <div class="hero__pills" aria-label="Trip highlights">
+      <span class="hero__pill">15 Nights / 16 Days</span>
+      <span class="hero__pill">5 Wildlife Reserves</span>
+      <span class="hero__pill">Private Safari</span>
+      <span class="hero__pill">Mumbai to Agra</span>
+    </div>
+    <div class="hero__price">
+      <span class="hero__price-label">Starting from</span>
+      <span class="hero__price-value">€10,650 per person</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     JUMP NAVIGATION
+     DEVELOPER: Add scroll-spy JS to update
+     .active class as user scrolls
+═══════════════════════════════════════ -->
+<nav class="jump-nav" aria-label="Page sections">
+  <a href="#overview"       class="active">Overview</a>
+  <a href="#journey">The Journey</a>
+  <a href="#destinations">Destinations</a>
+  <a href="#accommodation">Accommodation</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE LAYOUT — MAIN + SIDEBAR
+═══════════════════════════════════════ -->
+<div class="page-layout">
+
+  <!-- ────────────────────────────────
+       MAIN CONTENT
+  ──────────────────────────────── -->
+  <main class="main-content" id="overview">
+
+    <!-- OVERVIEW STATS -->
+    <div class="overview-grid" aria-label="Trip overview">
+      <div class="overview-item">
+        <span class="overview-label">Duration</span>
+        <span class="overview-value">15 nights / 16 days</span>
+      </div>
+      <div class="overview-item">
+        <span class="overview-label">Wildlife reserves</span>
+        <span class="overview-value">5 national parks</span>
+      </div>
+      <div class="overview-item">
+        <span class="overview-label">Group size</span>
+        <span class="overview-value">Private · Any size</span>
+      </div>
+      <div class="overview-item">
+        <span class="overview-label">Departs</span>
+        <span class="overview-value">Daily · Oct–Jun</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <span class="eyebrow">About this journey</span>
+    <h2 class="section-heading">India's greatest wildlife reserves, one extraordinary journey</h2>
+    <div class="rule"></div>
+    <p class="body-text">India's tiger country is among the most thrilling wildlife destinations on Earth — and Wild Encounters takes you deep into the heart of it. This 15-night private journey moves through five of central India's most celebrated national parks, from the teeming forests of Madhya Pradesh to the dramatic landscapes of Maharashtra, before ending in the cultural grandeur of Delhi and Agra.</p>
+    <p class="body-text">You begin in Mumbai — India's extraordinary port city — before venturing into tiger territory at Bandhavgarh, Kanha, Pench and Tadoba. Each reserve has its own character: Bandhavgarh for sheer tiger density, Kanha for the open meadows that inspired The Jungle Book, Pench for its pristine river corridor, and Tadoba for leopard sightings alongside its famous tigers.</p>
+    <p class="body-text">Every safari is private. Every lodge has been personally inspected. This is wildlife travel done properly — unhurried, exclusive, and deeply immersive.</p>
+
+    <hr class="sep">
+
+    <!-- JOURNEY FLOW -->
+    <section id="journey">
+      <span class="eyebrow">The journey at a glance</span>
+      <h2 class="section-heading">Seven destinations. One seamless route.</h2>
+      <div class="rule"></div>
+      <!-- DEVELOPER: Replace each .stop__image div with <img src="..." alt="..."> -->
+      <div class="journey-track" role="list" aria-label="Journey stops in order">
+        <div class="journey-stop" role="listitem">
+          <div class="stop__image stop--mumbai"><span class="stop__image-placeholder">Mumbai</span></div>
+          <div class="stop__info"><span class="stop__name">Mumbai</span><span class="stop__nights">2 nights</span></div>
+        </div>
+        <div class="journey-stop" role="listitem">
+          <div class="stop__image stop--bandhavgarh"><span class="stop__image-placeholder">Bandhavgarh</span></div>
+          <div class="stop__info"><span class="stop__name">Bandhavgarh</span><span class="stop__nights">2 nights</span></div>
+        </div>
+        <div class="journey-stop" role="listitem">
+          <div class="stop__image stop--kanha"><span class="stop__image-placeholder">Kanha</span></div>
+          <div class="stop__info"><span class="stop__name">Kanha</span><span class="stop__nights">2 nights</span></div>
+        </div>
+        <div class="journey-stop" role="listitem">
+          <div class="stop__image stop--pench"><span class="stop__image-placeholder">Pench</span></div>
+          <div class="stop__info"><span class="stop__name">Pench</span><span class="stop__nights">3 nights</span></div>
+        </div>
+        <div class="journey-stop" role="listitem">
+          <div class="stop__image stop--tadoba"><span class="stop__image-placeholder">Tadoba</span></div>
+          <div class="stop__info"><span class="stop__name">Tadoba</span><span class="stop__nights">3 nights</span></div>
+        </div>
+        <div class="journey-stop" role="listitem">
+          <div class="stop__image stop--delhi"><span class="stop__image-placeholder">Delhi</span></div>
+          <div class="stop__info"><span class="stop__name">Delhi</span><span class="stop__nights">2 nights</span></div>
+        </div>
+        <div class="journey-stop" role="listitem">
+          <div class="stop__image stop--agra"><span class="stop__image-placeholder">Agra</span></div>
+          <div class="stop__info"><span class="stop__name">Agra</span><span class="stop__nights">1 night</span></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- WHERE YOU'LL GO -->
+    <section id="destinations">
+      <span class="eyebrow">Destinations</span>
+      <h2 class="section-heading">Where you'll go</h2>
+      <div class="rule"></div>
+      <!-- DEVELOPER: Replace each .dc__image div with <img> tag -->
+      <div class="dest-cards">
+
+        <article class="dest-card">
+          <div class="dc__image dci--mumbai">
+            <span class="dc__badge">Gateway city</span>
+            <span class="dc__image-placeholder">Mumbai · Gateway of India</span>
+          </div>
+          <div class="dc__body">
+            <span class="dc__nights">2 nights</span>
+            <h3 class="dc__name">Mumbai</h3>
+            <p class="dc__desc">India's extraordinary port city — a cultural melting pot where colonial grandeur meets chaotic modernity. Begin your journey here with time to settle in before the wilderness calls.</p>
+            <div class="dc__highlights">
+              <span class="dc__highlight">Off-beat Mumbai tour</span>
+              <span class="dc__highlight">Elephanta Caves</span>
+              <span class="dc__highlight">Culinary experiences</span>
+              <span class="dc__highlight">Synagogue tour</span>
+              <span class="dc__highlight">Karla &amp; Bhaja caves</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card">
+          <div class="dc__image dci--bandhavgarh">
+            <span class="dc__badge">Tiger country</span>
+            <span class="dc__image-placeholder">Bandhavgarh · Tiger in sal forest</span>
+          </div>
+          <div class="dc__body">
+            <span class="dc__nights">2 nights</span>
+            <h3 class="dc__name">Bandhavgarh</h3>
+            <p class="dc__desc">One of India's highest tiger densities — Bandhavgarh's sal forests and rocky outcrops offer some of the best tiger sighting rates of any reserve on Earth. The forests of Madhya Pradesh at their most dramatic.</p>
+            <div class="dc__highlights">
+              <span class="dc__highlight">Exclusive private safaris</span>
+              <span class="dc__highlight">Highest tiger density in India</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card">
+          <div class="dc__image dci--kanha">
+            <span class="dc__badge">Jungle Book country</span>
+            <span class="dc__image-placeholder">Kanha · Barasingha in meadow</span>
+          </div>
+          <div class="dc__body">
+            <span class="dc__nights">2 nights</span>
+            <h3 class="dc__name">Kanha</h3>
+            <p class="dc__desc">The land that inspired Rudyard Kipling's Jungle Book. Kanha's sweeping meadows and dense sal forests are home to tigers, leopards and the rare barasingha deer — one of the finest wildlife experiences in India.</p>
+            <div class="dc__highlights">
+              <span class="dc__highlight">Exclusive private safaris</span>
+              <span class="dc__highlight">Barasingha deer sanctuary</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card">
+          <div class="dc__image dci--pench">
+            <span class="dc__badge">River forest</span>
+            <span class="dc__image-placeholder">Pench · Tiger on forest road</span>
+          </div>
+          <div class="dc__body">
+            <span class="dc__nights">3 nights</span>
+            <h3 class="dc__name">Pench</h3>
+            <p class="dc__desc">Named after the pristine Pench River that flows through it, this 758 sq km reserve offers some of the most atmospheric forest driving in central India alongside rich wildlife sightings.</p>
+            <div class="dc__highlights">
+              <span class="dc__highlight">Exclusive private safaris</span>
+              <span class="dc__highlight">Rich birdlife alongside big cats</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card">
+          <div class="dc__image dci--tadoba">
+            <span class="dc__badge">Maharashtra's finest</span>
+            <span class="dc__image-placeholder">Tadoba · Leopard on rocks</span>
+          </div>
+          <div class="dc__body">
+            <span class="dc__nights">3 nights</span>
+            <h3 class="dc__name">Tadoba</h3>
+            <p class="dc__desc">Maharashtra's oldest and largest national park — Tadoba is celebrated for exceptional leopard sightings alongside tigers, set against dramatic teak forests and seasonal lakes.</p>
+            <div class="dc__highlights">
+              <span class="dc__highlight">Exclusive private safaris</span>
+              <span class="dc__highlight">Leopard &amp; tiger sightings</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card">
+          <div class="dc__image dci--delhi-agra">
+            <span class="dc__badge">Mughal grandeur</span>
+            <span class="dc__image-placeholder">Delhi &amp; Agra · Qutab Minar / Taj Mahal</span>
+          </div>
+          <div class="dc__body">
+            <span class="dc__nights">2 nights Delhi · 1 night Agra</span>
+            <h3 class="dc__name">Delhi &amp; Agra</h3>
+            <p class="dc__desc">End your journey in India's monumental north — the Red Fort, Humayun's Tomb and Qutab Minar in Delhi, followed by a sunrise visit to the Taj Mahal in Agra before your onward flight.</p>
+            <div class="dc__highlights">
+              <span class="dc__highlight">Red Fort &amp; Jama Masjid</span>
+              <span class="dc__highlight">Humayun's Tomb</span>
+              <span class="dc__highlight">Taj Mahal sunrise visit</span>
+              <span class="dc__highlight">Agra Fort</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- SUGGESTED ACCOMMODATION -->
+    <section id="accommodation">
+      <span class="eyebrow">Suggested accommodation</span>
+      <h2 class="section-heading">Where you'll stay</h2>
+      <div class="rule"></div>
+      <p class="body-text">Every property on this journey has been personally inspected by our team. The lodges listed below are our first recommendation — all are subject to availability and can be substituted with comparable alternatives on request.</p>
+
+      <!-- Row 1: Wildlife lodges -->
+      <!-- DEVELOPER: Replace .ac__image divs with <img> tags -->
+      <div class="accom-grid--3" style="margin-top:1.75rem;">
+
+        <article class="accom-card">
+          <div class="ac__image aci--mahua">
+            <span class="ac__image-placeholder">Mahua Kothi, Bandhavgarh</span>
+          </div>
+          <div class="ac__body">
+            <span class="ac__destination">Bandhavgarh</span>
+            <span class="ac__name">Mahua Kothi</span>
+            <span class="ac__nights">2 nights</span>
+            <p class="ac__desc">12 luxury tented cottages set in the buffer zone of Bandhavgarh, built in the style of a Baiga tribal village. A Taj Safaris property — the finest lodge in the reserve.</p>
+            <span class="ac__collection">Taj Safaris collection</span>
+          </div>
+        </article>
+
+        <article class="accom-card">
+          <div class="ac__image aci--banjaar">
+            <span class="ac__image-placeholder">Banjaar Tola, Kanha</span>
+          </div>
+          <div class="ac__body">
+            <span class="ac__destination">Kanha</span>
+            <span class="ac__name">Banjaar Tola</span>
+            <span class="ac__nights">2 nights</span>
+            <p class="ac__desc">18 elegant tents perched on the banks of the Banjaar River, facing the Kanha meadows. One of the most atmospheric camps in central India.</p>
+            <span class="ac__collection">Taj Safaris collection</span>
+          </div>
+        </article>
+
+        <article class="accom-card">
+          <div class="ac__image aci--baghvan">
+            <span class="ac__image-placeholder">Baghvan, Pench</span>
+          </div>
+          <div class="ac__body">
+            <span class="ac__destination">Pench</span>
+            <span class="ac__name">Baghvan</span>
+            <span class="ac__nights">3 nights</span>
+            <p class="ac__desc">A secluded Taj Safaris lodge deep in Pench's buffer zone — 12 tented rooms with private verandahs facing the forest. Exceptional naturalist-guided experiences.</p>
+            <span class="ac__collection">Taj Safaris collection</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Row 2: City hotels -->
+      <div class="accom-grid--4">
+
+        <article class="accom-card">
+          <div class="ac__image aci--waghoba">
+            <span class="ac__image-placeholder">Waghoba Eco Lodge, Tadoba</span>
+          </div>
+          <div class="ac__body">
+            <span class="ac__destination">Tadoba</span>
+            <span class="ac__name">Waghoba Eco Lodge</span>
+            <span class="ac__nights">3 nights</span>
+            <p class="ac__desc">A thoughtfully designed eco lodge on the edge of Tadoba with expert guides and excellent wildlife access.</p>
+            <span class="ac__collection">Boutique eco lodge</span>
+          </div>
+        </article>
+
+        <article class="accom-card">
+          <div class="ac__image aci--taj-mumbai">
+            <span class="ac__image-placeholder">Taj Mahal Palace, Mumbai</span>
+          </div>
+          <div class="ac__body">
+            <span class="ac__destination">Mumbai</span>
+            <span class="ac__name">Taj Mahal Palace</span>
+            <span class="ac__nights">2 nights</span>
+            <p class="ac__desc">Overlooking the Gateway of India — one of the world's great hotel addresses. A landmark beginning to your journey.</p>
+            <span class="ac__collection">Taj Hotels / Similar</span>
+          </div>
+        </article>
+
+        <article class="accom-card">
+          <div class="ac__image aci--trident-d">
+            <span class="ac__image-placeholder">Trident, Delhi</span>
+          </div>
+          <div class="ac__body">
+            <span class="ac__destination">Delhi</span>
+            <span class="ac__name">Trident</span>
+            <span class="ac__nights">2 nights</span>
+            <p class="ac__desc">A refined five-star property — calm, well-located and a seamless base for exploring Delhi's monuments.</p>
+            <span class="ac__collection">Trident Hotels / Similar</span>
+          </div>
+        </article>
+
+        <article class="accom-card">
+          <div class="ac__image aci--trident-a">
+            <span class="ac__image-placeholder">Trident, Agra</span>
+          </div>
+          <div class="ac__body">
+            <span class="ac__destination">Agra</span>
+            <span class="ac__name">Trident</span>
+            <span class="ac__nights">1 night</span>
+            <p class="ac__desc">Set in serene gardens with Taj Mahal views from its pool — a perfect final night before departure.</p>
+            <span class="ac__collection">Trident Hotels / Similar</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="accom-footer">
+        <p class="accom-footer__text">All hotels are subject to availability and may be substituted with comparable properties.<br>Final properties confirmed at booking.</p>
+        <a href="/places-to-stay/" class="text-link text-link--muted">Explore our full hotel collection</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ────────────────────────────────
+       SIDEBAR
+       DEVELOPER: Add position:sticky; top:116px;
+       to .sidebar for scroll-lock behaviour
+  ──────────────────────────────── -->
+  <aside class="sidebar" aria-label="Booking information">
+
+    <!-- PRICE + CTA -->
+    <div class="sidebar-card">
+      <div class="price-block">
+        <span class="price-block__label">Starting from</span>
+        <span class="price-block__value">€10,650</span>
+        <span class="price-block__note">per person · double occupancy</span>
+      </div>
+      <a href="/contact/?trip=wild-encounters">
+        <button class="btn-primary">Enquire about this trip</button>
+      </a>
+      <p class="price-disclaimer">Price excludes international flights. Contact us for solo, family or group pricing.</p>
+    </div>
+
+    <!-- TRIP FACTS -->
+    <div class="sidebar-card" style="margin-top:1px;">
+      <span class="sidebar__section-title">Trip at a glance</span>
+      <ul class="info-list">
+        <li class="info-list__item"><span class="info-list__label">Duration</span><span class="info-list__value">15 nights / 16 days</span></li>
+        <li class="info-list__item"><span class="info-list__label">Starts in</span><span class="info-list__value">Mumbai</span></li>
+        <li class="info-list__item"><span class="info-list__label">Ends in</span><span class="info-list__value">Agra / Delhi</span></li>
+        <li class="info-list__item"><span class="info-list__label">Safari type</span><span class="info-list__value">Private, exclusive</span></li>
+        <li class="info-list__item"><span class="info-list__label">Reserves visited</span><span class="info-list__value">5 national parks</span></li>
+        <li class="info-list__item"><span class="info-list__label">Departures</span><span class="info-list__value">Daily · Oct–Jun</span></li>
+        <li class="info-list__item"><span class="info-list__label">Activity level</span><span class="info-list__value">Moderate</span></li>
+      </ul>
+    </div>
+
+    <!-- INCLUDED / EXCLUDED -->
+    <div class="sidebar-card" style="margin-top:1px;">
+      <span class="sidebar__section-title">What's included</span>
+      <ul class="checklist">
+        <li class="checklist__item checklist__item--incl">All accommodation as listed</li>
+        <li class="checklist__item checklist__item--incl">Private safari vehicles &amp; guides</li>
+        <li class="checklist__item checklist__item--incl">All ground transfers</li>
+        <li class="checklist__item checklist__item--incl">Daily breakfast &amp; select meals</li>
+        <li class="checklist__item checklist__item--incl">Park entry &amp; safari fees</li>
+        <li class="checklist__item checklist__item--incl">24-hour dedicated support</li>
+      </ul>
+      <hr class="sidebar__divider">
+      <ul class="checklist">
+        <li class="checklist__item checklist__item--excl">International flights</li>
+        <li class="checklist__item checklist__item--excl">Travel insurance</li>
+        <li class="checklist__item checklist__item--excl">India visa fees</li>
+      </ul>
+    </div>
+
+    <!-- CUSTOMISE -->
+    <div class="sidebar-card sidebar-card--linen" style="margin-top:1px;">
+      <span class="sidebar__section-title">Customise this trip</span>
+      <p class="customise-note">Every AndThen itinerary is a starting point. Add destinations, change hotels, extend your safari stay — we build your final journey around you.</p>
+      <a href="/contact/" class="text-link">Talk to a specialist</a>
+    </div>
+
+  </aside>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     RELATED TOURS
+═══════════════════════════════════════ -->
+<section class="related" aria-label="Related itineraries">
+  <div class="related__header">
+    <div>
+      <span class="eyebrow">You may also like</span>
+      <h2 class="related__heading">More India journeys</h2>
+    </div>
+    <a href="/experiences/" class="text-link text-link--muted">All itineraries</a>
+  </div>
+
+  <div class="related-grid">
+    <article class="related-card">
+      <span class="related-card__dest">India · Rajasthan</span>
+      <h3 class="related-card__title">Royal Rajasthan</h3>
+      <p class="related-card__meta">10 nights · Jaipur, Jodhpur &amp; Udaipur</p>
+      <a href="/tours/royal-rajasthan/" class="related-card__link">View itinerary →</a>
+    </article>
+    <article class="related-card">
+      <span class="related-card__dest">India · Kerala</span>
+      <h3 class="related-card__title">Simply South</h3>
+      <p class="related-card__meta">10 nights · Cochin, Munnar &amp; Kumarakom</p>
+      <a href="/tours/simply-south/" class="related-card__link">View itinerary →</a>
+    </article>
+    <article class="related-card">
+      <span class="related-card__dest">India · North</span>
+      <h3 class="related-card__title">Golden Triangle with Udaipur</h3>
+      <p class="related-card__meta">12 nights · Delhi, Agra, Jaipur &amp; Udaipur</p>
+      <a href="/tours/golden-triangle/" class="related-card__link">View itinerary →</a>
+    </article>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════════ -->
+<div class="cta-banner">
+  <div>
+    <h2 class="cta-banner__heading">Ready to track tigers in India?</h2>
+    <p class="cta-banner__sub">Speak to a specialist and we'll build this journey around you — same itinerary, your dates, your pace.</p>
+  </div>
+  <div class="cta-banner__btns">
+    <a href="/contact/?trip=wild-encounters"><button class="cta-banner__btn-primary">Enquire about this trip</button></a>
+    <a href="/contact/#prize"><button class="cta-banner__btn-secondary">Reveal my travel gift</button></a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__top">
+    <div>
+      <a href="/" aria-label="AndThen Travels — Home">
+        <span class="footer__logo-wordmark">ANDTHEN</span>
+        <span class="footer__logo-sub">travels</span>
+      </a>
+      <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka for discerning US travelers.</p>
+      <div class="footer__contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+18000000000">+1 800 000 0000</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Destinations</span>
+      <a href="/india/">India</a>
+      <a href="/bhutan/">Bhutan</a>
+      <a href="/nepal/">Nepal</a>
+      <a href="/sri-lanka/">Sri Lanka</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Experiences</span>
+      <a href="/experiences/wellness-ayurveda/">Wellness &amp; Ayurveda</a>
+      <a href="/experiences/wildlife-safaris/">Wildlife &amp; Safaris</a>
+      <a href="/experiences/trekking-adventure/">Trekking</a>
+      <a href="/experiences/spiritual-journeys/">Spiritual journeys</a>
+      <a href="/experiences/leisure-culture/">Leisure &amp; culture</a>
+    </div>
+    <div class="footer__col">
+      <span class="footer__col-heading">Company</span>
+      <a href="/about/">About us</a>
+      <a href="/places-to-stay/">Places to stay</a>
+      <a href="/journal/">Journal</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy-policy/">Privacy policy</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT — FAQ + Mobile Nav
+═══════════════════════════════════════ -->
+<script>
+  // Mobile nav
+  var hamburger = document.getElementById('hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+    });
+  }
+
+  // Jump nav scroll spy
+  var sections = ['overview','journey','destinations','accommodation'];
+  var links = document.querySelectorAll('.jump-nav a');
+  function updateActive() {
+    var scrollY = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    links.forEach(function(link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+</script>
+
+</body>
+</html>

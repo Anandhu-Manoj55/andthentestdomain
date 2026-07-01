@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taj Lake Palace, Udaipur — Recommended Hotel | AndThen Travels</title>
+<meta name="description" content="The Taj Lake Palace floats on Lake Pichola in Udaipur — a white marble island palace personally recommended by AndThen Travels for your India journey.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ANDTHEN TRAVELS — HOTEL PAGE (SIMPLIFIED)
+   Developer handover · June 2026
+
+   SECTIONS:
+   1. Navigation
+   2. Hero banner image
+   3. Hotel name + category strip
+   4. Description
+   6. Location (one line + nearest airport)
+   7. Itineraries featuring this hotel
+   8. CTA band
+   9. Footer
+
+   DEVELOPER NOTES:
+   - Replace all image placeholder divs with <img> tags
+   - Gallery: 4 images, 2×2 grid, landscape 3:2 ratio, min 800×533px
+   - Hero: min 1800×700px, full bleed
+   - Hotel official website opens in new tab
+   ============================================================ */
+
+:root {
+  --cr: #FFFFFF;
+  --cp: #F5EFE8;
+  --cl: #E8DDD2;
+  --cs: #C8B49A;
+  --cb: #A07848;
+  --cd: #2C1A0A;
+  --ci: #3A2010;
+  --cm: #6B4C2A;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --transition:   0.3s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+img  { display: block; width: 100%; height: 100%; object-fit: cover; }
+a    { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+/* ── NAV ─────────────────────────────────────────────── */
+.nav {
+  background: var(--cr);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 68px;
+  border-bottom: 0.5px solid rgba(200,180,154,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav__logo { display: flex; flex-direction: column; gap: 2px; }
+.nav__logo-wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); }
+.nav__logo-sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); }
+.nav__breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: 0.625rem; color: var(--cm); }
+.nav__breadcrumb a { color: var(--cm); transition: color var(--transition); }
+.nav__breadcrumb a:hover { color: var(--cd); }
+.nav__breadcrumb-sep { color: var(--cs); }
+.nav__cta {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cd);
+  background: transparent;
+  border: 0.5px solid var(--cd);
+  padding: 0.625rem 1.375rem;
+  transition: background var(--transition), color var(--transition);
+}
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+.nav__hamburger { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav__hamburger span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+/* ── HERO ─────────────────────────────────────────────── */
+/* DEVELOPER: Add to .hero__image:
+   background-image: url('images/hotels/hotel-name-hero.jpg');
+   background-size: cover; background-position: center;
+   Source images from hotel's official press kit
+   Min resolution: 1800×700px */
+.hero {
+  height: 520px;
+  position: relative;
+  overflow: hidden;
+}
+.hero__image {
+  position: absolute;
+  inset: 0;
+  background: var(--ci);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,26,10,0.75) 0%, rgba(44,26,10,0.15) 50%, transparent 100%);
+}
+.hero__placeholder {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  color: rgba(255,255,255,0.1);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HOTEL IDENTITY STRIP ────────────────────────────── */
+/* Sits directly below hero — name, category, website link */
+.identity {
+  background: var(--cd);
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.identity__left {}
+.identity__category {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.identity__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1;
+}
+.identity__right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+.identity__badge {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  background: var(--cb);
+  color: var(--cr);
+  padding: 6px 14px;
+  flex-shrink: 0;
+}
+.identity__website {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  border: 0.5px solid rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.identity__website:hover { color: var(--cr); border-color: rgba(255,255,255,0.4); }
+.identity__website svg { width: 10px; height: 10px; stroke: currentColor; fill: none; }
+
+/* ── DESCRIPTION ─────────────────────────────────────── */
+.description {
+  padding: 4.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+  background: var(--cr);
+}
+.desc__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1.125rem;
+}
+.desc__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw, 1.875rem);
+  font-weight: 400;
+  color: var(--cd);
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+.desc__rule { width: 1.5rem; height: 0.5px; background: var(--cs); margin: 1.25rem 0; }
+.desc__body {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 2.2;
+  margin-bottom: 1rem;
+}
+
+/* Destination experiences */
+.experiences {
+  background: var(--cp);
+  padding: 1.75rem 2rem 1.75rem 2.25rem;
+  border-left: 2px solid var(--cb);
+  margin-bottom: 2rem;
+}
+.experiences__label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.875rem;
+}
+.experiences__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-tag {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--cm);
+  background: var(--cr);
+  border: 0.5px solid rgba(200,180,154,0.5);
+  padding: 5px 12px;
+}
+
+/* AndThen note */
+.note {
+  border-top: 0.5px solid rgba(44,26,10,0.08);
+  padding-top: 1.75rem;
+}
+.note__label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.note__text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--cd);
+  line-height: 1.8;
+}
+
+/* ── LOCATION ────────────────────────────────────────── */
+.location {
+  background: var(--cp);
+  padding: 4.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.loc__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 1.125rem;
+}
+.loc__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw, 1.875rem);
+  font-weight: 400;
+  color: var(--cd);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.loc__oneliner {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--cm);
+  line-height: 1.9;
+  margin-bottom: 1.75rem;
+}
+.loc__rule { width: 1.5rem; height: 0.5px; background: var(--cs); margin-bottom: 1.75rem; }
+.loc__airport {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--cl);
+  padding: 1.125rem 1.5rem;
+}
+.loc__airport-icon {
+  font-size: 1.125rem;
+  color: var(--cb);
+  flex-shrink: 0;
+}
+.loc__airport-text {}
+.loc__airport-label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cs);
+  display: block;
+  margin-bottom: 3px;
+}
+.loc__airport-value {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--cd);
+}
+/* Map placeholder */
+.map {
+  background: var(--cl);
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* DEVELOPER: Replace .map div with Google Maps iframe:
+<iframe src="https://www.google.com/maps/embed?pb=..."
+  width="100%" height="340" style="border:0;"
+  allowfullscreen="" loading="lazy">
+</iframe> */
+.map__pin {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--cb);
+  box-shadow: 0 0 0 5px rgba(160,120,72,0.18);
+}
+.map__label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: rgba(44,26,10,0.3);
+  text-align: center;
+  line-height: 2;
+  margin-top: 1.5rem;
+}
+
+/* ── ITINERARIES ─────────────────────────────────────── */
+.itins {
+  background: var(--cr);
+  padding: 4.5rem 2.5rem;
+}
+.itins__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid rgba(44,26,10,0.08);
+}
+.itins__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.itins__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 400;
+  color: var(--cd);
+}
+.text-link {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--cb);
+  border-bottom: 0.5px solid rgba(160,120,72,0.35);
+  padding-bottom: 0.125rem;
+  display: inline-block;
+  transition: opacity var(--transition);
+}
+.text-link:hover { opacity: 0.7; }
+.itin-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 100px 110px 56px;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 0.5px solid rgba(44,26,10,0.06);
+  color: inherit;
+  transition: background var(--transition), padding-left var(--transition);
+  cursor: pointer;
+}
+.itin-row:hover { background: rgba(44,26,10,0.025); padding-left: 0.5rem; }
+.ir__img {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ir__img-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.1rem;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+}
+.iri--gt  { background: #5C3010; }
+.iri--raj { background: #3A1808; }
+.ir__name { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 400; color: var(--cd); display: block; }
+.ir__dest { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cb); margin-top: 3px; display: block; }
+.ir__nights { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: var(--cm); }
+.ir__price  { font-family: var(--font-body); font-size: 0.8125rem; color: var(--cd); }
+.ir__link   { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cs); text-align: right; transition: color var(--transition); }
+.itin-row:hover .ir__link { color: var(--cb); }
+
+/* ── CTA BAND ────────────────────────────────────────── */
+.cta-band {
+  background: var(--cd);
+  padding: 4.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+.cta-band__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.cta-band__sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.8;
+}
+.cta-btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 200px; }
+.btn-p {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: var(--cb);
+  color: var(--cr);
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-p:hover { background: #8A6038; }
+.btn-s {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(255,255,255,0.38);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-s:hover { color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.25); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+.footer { background: var(--ci); padding: 4rem 2.5rem 2.5rem; }
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.04);
+}
+.f-wordmark { font-family: var(--font-body); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+.f-sub { font-family: var(--font-display); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+.f-desc { font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+.f-contact { margin-top: 1.25rem; }
+.f-contact a { display: block; font-family: var(--font-body); font-size: 0.6875rem; color: var(--cb); text-decoration: none; margin-bottom: 3px; }
+.f-col-h { font-family: var(--font-body); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.25rem; }
+.f-col a { display: block; font-family: var(--font-body); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); text-decoration: none; margin-bottom: 0.625rem; transition: color var(--transition); }
+.f-col a:hover { color: var(--cb); }
+.f-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+.f-copy { font-family: var(--font-body); font-size: 0.5625rem; color: rgba(255,255,255,0.1); letter-spacing: 0.08rem; }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .description { grid-template-columns: 1fr; gap: 3rem; }
+  .location { grid-template-columns: 1fr; gap: 3rem; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: row; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+  .itin-row { grid-template-columns: 100px 1fr 80px; }
+  .itin-row .ir__price,
+  .itin-row .ir__link { display: none; }
+}
+@media (max-width: 768px) {
+  .nav__breadcrumb { display: none; }
+  .nav__hamburger  { display: flex; }
+  .hero            { height: 380px; }
+  .identity        { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .identity__right { flex-direction: row; flex-wrap: wrap; }
+  .map             { height: 260px; }
+  .footer__top     { grid-template-columns: 1fr; }
+  .cta-btns        { flex-direction: column; width: 100%; }
+  .itin-row        { grid-template-columns: 80px 1fr; }
+  .itin-row .ir__nights { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav__logo" aria-label="AndThen Travels — Home">
+    <span class="nav__logo-wordmark">ANDTHEN</span>
+    <span class="nav__logo-sub">travels</span>
+  </a>
+  <nav class="nav__breadcrumb" aria-label="Breadcrumb">
+    <a href="/places-to-stay/">Places to stay</a>
+    <span class="nav__breadcrumb-sep" aria-hidden="true">›</span>
+    <a href="/places-to-stay/india/">India</a>
+    <span class="nav__breadcrumb-sep" aria-hidden="true">›</span>
+    <span aria-current="page">Taj Lake Palace</span>
+  </nav>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+18000000000" style="font-family:var(--font-body);font-size:0.6875rem;color:var(--cb);">+1 800 000 0000</a>
+    <a href="/contact/?hotel=taj-lake-palace"><button class="nav__cta">Enquire</button></a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- HERO BANNER
+     DEVELOPER: background-image: url('hotel-hero.jpg');
+     background-size:cover; background-position:center;
+     Source from hotel press kit. Min 1800×700px -->
+<section class="hero" aria-label="Taj Lake Palace">
+  <div class="hero__image" role="img" aria-label="Taj Lake Palace, Udaipur">
+    <span class="hero__placeholder">Hotel hero photography</span>
+  </div>
+</section>
+
+
+<!-- HOTEL IDENTITY STRIP -->
+<div class="identity">
+  <div class="identity__left">
+    <span class="identity__category">Palace Hotel · Rajasthan, India</span>
+    <h1 class="identity__name">Taj Lake Palace</h1>
+  </div>
+  <div class="identity__right">
+    <span class="identity__badge">AndThen recommended</span>
+    <a href="https://www.tajhotels.com/en-in/taj/taj-lake-palace-udaipur/"
+       target="_blank" rel="noopener noreferrer"
+       class="identity__website"
+       aria-label="Official hotel website (opens in new tab)">
+      Hotel website
+      <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+<!-- DESCRIPTION -->
+<section class="description" aria-label="About the hotel">
+
+  <div>
+    <span class="desc__eyebrow">About the hotel</span>
+    <h2 class="desc__heading">A palace that floats on water</h2>
+    <div class="desc__rule"></div>
+    <p class="desc__body">Built in 1746 as a pleasure palace for Maharana Jagat Singh II, the Taj Lake Palace occupies its own island in the middle of Lake Pichola. White marble courtyards, intricate jali screens, hand-painted alcoves and gardens blooming with lotus flowers conspire to make reality feel slightly unreal. Access is by boat only — the city falls away the moment you step off the jetty.</p>
+    <p class="desc__body">The hotel has 83 rooms and suites, three dining venues including Jharokha — one of the finest restaurants in Rajasthan — and a spa set in a courtyard garden. Sunsets from the Bhairo bar over the lake are, quite simply, extraordinary.</p>
+  </div>
+
+  <div>
+    <div class="experiences">
+      <span class="experiences__label">Destination experiences</span>
+      <div class="experiences__tags">
+        <span class="exp-tag">Sunset lake cruise</span>
+        <span class="exp-tag">City Palace visit</span>
+        <span class="exp-tag">Old city walk</span>
+        <span class="exp-tag">Jharokha dining</span>
+        <span class="exp-tag">Jiva Spa</span>
+        <span class="exp-tag">Vintage car museum</span>
+      </div>
+    </div>
+
+    <div class="note" role="note">
+      <span class="note__label">AndThen insider note</span>
+      <p class="note__text">"Always request a lake-facing room. Arrive by the sunset boat — the approach in fading light is the kind of thing you remember for the rest of your life."</p>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- LOCATION
+     DEVELOPER: Replace .map div with Google Maps iframe -->
+<section class="location" aria-label="Location">
+
+  <div>
+    <span class="loc__eyebrow">Location</span>
+    <h2 class="loc__heading">Lake Pichola, Udaipur</h2>
+    <p class="loc__oneliner">A white marble island palace floating on Lake Pichola in the heart of Udaipur, accessible only by hotel boat from the city jetty.</p>
+    <div class="loc__rule"></div>
+    <div class="loc__airport">
+      <svg class="loc__airport-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+      </svg>
+      <div class="loc__airport-text">
+        <span class="loc__airport-label">Nearest airport</span>
+        <span class="loc__airport-value">Udaipur (UDR) · Maharana Pratap Airport · 22 km · 25 min</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="map" role="img" aria-label="Map — Taj Lake Palace, Lake Pichola, Udaipur">
+      <!-- DEVELOPER: Replace with:
+      <iframe src="https://www.google.com/maps/embed?pb=..."
+        width="100%" height="340" style="border:0;"
+        allowfullscreen="" loading="lazy">
+      </iframe> -->
+      <div>
+        <div class="map__pin" aria-hidden="true"></div>
+        <p class="map__label">Google Maps<br>Taj Lake Palace · Udaipur</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ITINERARIES FEATURING THIS HOTEL
+     DEVELOPER: Pull dynamically from WordPress -->
+<section class="itins" aria-label="Itineraries featuring this hotel">
+  <div class="itins__header">
+    <div>
+      <span class="itins__eyebrow">Stay here on</span>
+      <h2 class="itins__heading">Itineraries featuring this hotel</h2>
+    </div>
+    <a href="/experiences/" class="text-link">All itineraries</a>
+  </div>
+
+  <a href="/tours/golden-triangle/" class="itin-row">
+    <div class="ir__img iri--gt">
+      <!-- <img src="golden-triangle.jpg" alt="Golden Triangle tour"> -->
+      <span class="ir__img-placeholder">GT</span>
+    </div>
+    <div>
+      <span class="ir__name">Golden Triangle with Udaipur</span>
+      <span class="ir__dest">North India · Delhi, Agra, Jaipur, Udaipur</span>
+    </div>
+    <span class="ir__nights">12 nights</span>
+    <span class="ir__price">From $4,500</span>
+    <span class="ir__link">View →</span>
+  </a>
+
+  <a href="/tours/royal-rajasthan/" class="itin-row">
+    <div class="ir__img iri--raj">
+      <!-- <img src="royal-rajasthan.jpg" alt="Royal Rajasthan tour"> -->
+      <span class="ir__img-placeholder">RR</span>
+    </div>
+    <div>
+      <span class="ir__name">Royal Rajasthan</span>
+      <span class="ir__dest">Rajasthan · Jaipur, Jodhpur, Udaipur</span>
+    </div>
+    <span class="ir__nights">10 nights</span>
+    <span class="ir__price">From $3,800</span>
+    <span class="ir__link">View →</span>
+  </a>
+
+</section>
+
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div>
+    <h2 class="cta-band__heading">Stay at the Taj Lake Palace on your India journey</h2>
+    <p class="cta-band__sub">Tell us when you're travelling and we'll build a private India itinerary with this hotel at its heart.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="/contact/?hotel=taj-lake-palace"><button class="btn-p">Enquire about this hotel</button></a>
+    <a href="/places-to-stay/india/"><button class="btn-s">View all India hotels</button></a>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__top">
+    <div>
+      <a href="/"><span class="f-wordmark">ANDTHEN</span><span class="f-sub">travels</span></a>
+      <p class="f-desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka for discerning US travelers.</p>
+      <div class="f-contact">
+        <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+        <a href="tel:+18000000000">+1 800 000 0000</a>
+      </div>
+    </div>
+    <div class="f-col"><span class="f-col-h">Destinations</span><a href="/india/">India</a><a href="/bhutan/">Bhutan</a><a href="/nepal/">Nepal</a><a href="/sri-lanka/">Sri Lanka</a></div>
+    <div class="f-col"><span class="f-col-h">Places to stay</span><a href="/places-to-stay/india/">India hotels</a><a href="/places-to-stay/bhutan/">Bhutan lodges</a><a href="/places-to-stay/nepal/">Nepal hotels</a><a href="/places-to-stay/sri-lanka/">Sri Lanka hotels</a></div>
+    <div class="f-col"><span class="f-col-h">Company</span><a href="/about/">About us</a><a href="/journal/">Journal</a><a href="/contact/">Contact</a><a href="/privacy-policy/">Privacy policy</a></div>
+  </div>
+  <div class="f-bottom">
+    <p class="f-copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+  </div>
+</footer>
+
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!expanded));
+    });
+  }
+</script>
+
+</body>
+</html>

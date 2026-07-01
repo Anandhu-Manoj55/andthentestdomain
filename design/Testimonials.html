@@ -150,16 +150,18 @@ a { text-decoration: none; color: inherit; }
 .tc__stars { display: flex; gap: 2px; margin-bottom: 1.25rem; }
 .tc__star { color: var(--cb); font-size: 0.625rem; }
 
-/* Featured card — spans 2 columns, slightly different treatment */
+/* ── FEATURED CARD ────────────────────────────────── */
+/* Desktop: spans 2 cols, side-by-side dark layout */
 .tc--featured {
   grid-column: span 2;
   background: var(--cd);
-  flex-direction: row; gap: 3rem;
+  flex-direction: row;
+  gap: 3rem;
   padding: 3rem;
 }
 .tc--featured:hover { background: var(--ci); }
 .tc--featured .tc__quote-mark { color: rgba(200,180,154,0.08); font-size: 5rem; }
-.tc--featured .tc__text { font-size: 1.25rem; color: var(--cr); line-height: 1.6; }
+.tc--featured .tc__text { font-size: 1.125rem; color: var(--cr); line-height: 1.65; }
 .tc--featured .tc__name { color: rgba(200,180,154,0.7); }
 .tc--featured .tc__origin { color: rgba(200,180,154,0.35); }
 .tc--featured .tc__trip { color: rgba(200,180,154,0.3); border-top-color: rgba(255,255,255,0.06); }
@@ -168,8 +170,9 @@ a { text-decoration: none; color: inherit; }
 .tc--featured .tc__star { color: var(--cb); }
 .tc--featured .tc__type { color: rgba(200,180,154,0.4); border-color: rgba(200,180,154,0.1); }
 .tc--featured .tc__dest { background: var(--cb); }
-.tc--featured-left { flex: 1; display: flex; flex-direction: column; }
-.tc--featured-right { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+/* Two inner halves side-by-side on desktop */
+.tc--featured-left { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.tc--featured-right { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 
 /* ── CTA BAND ─────────────────────────────────────── */
 .cta-band {
@@ -201,22 +204,79 @@ a { text-decoration: none; color: inherit; }
 .footer__copy { font-family: var(--fb); font-size: 0.5625rem; color: rgba(255,255,255,0.1); }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
+
+/* Tablet: 2-column grid, featured card stacks vertically */
 @media (max-width: 1100px) {
   .tgrid { grid-template-columns: repeat(2, 1fr); }
-  .tc--featured { grid-column: span 2; flex-direction: column; gap: 0; }
+  .tc--featured {
+    grid-column: span 2;
+    flex-direction: column;
+    gap: 0;
+  }
+  /* Re-order: show the quote + text before left column on tablet */
+  .tc--featured-left { order: 1; }
+  .tc--featured-right { order: 2; }
 }
+
+/* Mobile: single column, all cards uniform */
 @media (max-width: 768px) {
   .nav__links { display: none; }
   .nav__ham { display: flex; }
-  .tgrid { grid-template-columns: 1fr; }
-  .tc--featured { grid-column: span 1; }
-  .page-header { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Page header: stack vertically */
+  .page-header {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem 2rem;
+    gap: 0.75rem;
+  }
   .page-header__count { text-align: left; }
-  .cta-band { grid-template-columns: 1fr; }
-  .cta-btns { flex-direction: row; }
-  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .page-header__count-num { font-size: 3rem; }
+
+  /* Filter bar: let it scroll horizontally */
+  .filter-bar { padding: 0 1.25rem; }
+
+  /* Grid: single column, featured card same width as others */
+  .tgrid { grid-template-columns: 1fr; padding: 0; gap: 1px; }
+
+  /* Featured card: match regular cards on mobile */
+  .tc--featured {
+    grid-column: span 1;
+    flex-direction: column;
+    gap: 0;
+    padding: 2.25rem 1.25rem 2rem;
+  }
+  .tc--featured .tc__text { font-size: 1.0625rem; }
+  /* Left column (flags) stacks above right column (content) */
+  .tc--featured-left {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  /* Right column becomes the full card body */
+  .tc--featured-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Regular cards: tighter padding */
+  .tc { padding: 2rem 1.25rem 1.75rem; }
+
+  /* CTA band stack */
+  .cta-band { grid-template-columns: 1fr; padding: 2.5rem 1.25rem; }
+  .cta-btns { flex-direction: column; width: 100%; }
+  .btn-dark, .btn-ghost { width: 100%; text-align: center; }
+
+  /* Footer */
+  .footer { padding: 3rem 1.25rem 2rem; }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
 }
+
 @media (max-width: 480px) {
+  .page-header { padding: 2rem 1rem 1.5rem; }
+  .tgrid { gap: 0.5px; }
+  .tc { padding: 1.75rem 1rem 1.5rem; }
+  .tc--featured { padding: 1.75rem 1rem 1.5rem; }
   .footer__grid { grid-template-columns: 1fr; }
   .cta-btns { flex-direction: column; }
 }
@@ -287,9 +347,9 @@ a { text-decoration: none; color: inherit; }
         <span class="tc__dest">Bhutan</span>
         <span class="tc__type">Leisure · Private journey</span>
       </div>
-      <span class="tc__quote-mark">"</span>
     </div>
     <div class="tc--featured-right">
+      <span class="tc__quote-mark">&ldquo;</span>
       <p class="tc__text">We had been to Southeast Asia four or five times and kept saying we wanted to do something different. My husband suggested Bhutan and I honestly didn't know much about it. What I didn't expect was how quiet it would be. Not quiet like boring, quiet like... nothing competing for your attention. No billboards. No honking. Just the mountains and the monasteries and this strange feeling that time had been slowed down on purpose. The Tiger's Nest hike nearly killed me but I'd do it again without hesitating. AndThen arranged everything so smoothly I kept waiting for something to go wrong. Nothing did.</p>
       <p class="tc__trip">Paro · Thimphu · Punakha · Phobjikha Valley · 12 days · October 2024</p>
       <div class="tc__stars">
@@ -761,6 +821,13 @@ a { text-decoration: none; color: inherit; }
 
 <script>
 (function () {
+  // Hamburger toggle
+  var ham = document.querySelector('.nav__ham');
+  if (ham) ham.addEventListener('click', function () {
+    this.setAttribute('aria-expanded', String(this.getAttribute('aria-expanded') !== 'true'));
+  });
+
+  // Filter logic
   var btns  = document.querySelectorAll('.f-btn');
   var cards = document.querySelectorAll('.tc');
 
