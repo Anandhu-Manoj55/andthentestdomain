@@ -208,6 +208,7 @@ export const destinations: Destination[] = [
         description:
           "Living history in Kathmandu, Bhaktapur and Patan with ancient Newari woodwork.",
         tags: ["Durbar Square", "Temples", "Heritage"],
+        image: "/Assets/destinations/subpages/nepal/Kathmandu Valley.jpg",
         accentClass: "rci--north",
       },
       {
@@ -215,6 +216,7 @@ export const destinations: Destination[] = [
         description:
           "Gateway to Annapurna hikes, peaceful lakes, and incredible sunset lookouts.",
         tags: ["Phewa Lake", "Annapurna Views", "Treks"],
+        image: "/Assets/destinations/subpages/nepal/Pokhara.jpg",
         accentClass: "rci--south",
       },
       {
@@ -222,6 +224,7 @@ export const destinations: Destination[] = [
         description:
           "Subtropical lowlands hosting safaris for tigers, rhinos, and elephant marshes.",
         tags: ["Jeep Safaris", "Rhinos", "Wildlife"],
+        image: "/Assets/destinations/subpages/nepal/Chitwan National Park.jpg",
         accentClass: "rci--central",
       },
       {
@@ -229,6 +232,7 @@ export const destinations: Destination[] = [
         description:
           "Lumbini birthplace of Buddha and the quiet, historic hillside town of Bandipur.",
         tags: ["Buddhism", "Hill Towns", "Heritage"],
+        image: "/Assets/destinations/subpages/nepal/Lumbini and Bandipur.jpg",
         accentClass: "rci--northeast",
       },
     ],
@@ -240,6 +244,7 @@ export const destinations: Destination[] = [
           "Unparalleled views of Mount Everest and high peaks from a scenic flight.",
         isFeatured: true,
         imageClass: "pci--taj",
+        image: "/Assets/destinations/subpages/nepal/Mount Everest flight.jpg",
       },
       {
         name: "Bhaktapur Durbar Square",
@@ -247,6 +252,8 @@ export const destinations: Destination[] = [
         description:
           "Living medieval architecture, palace carvings, and local Newari pottery.",
         imageClass: "pci--varanasi",
+        image:
+          "/Assets/destinations/subpages/nepal/Bhaktapur Durbar Square.jpg",
       },
       {
         name: "Chitwan Safaris",
@@ -254,6 +261,7 @@ export const destinations: Destination[] = [
         description:
           "Tracking the endangered one-horned rhinoceros and Bengal tigers.",
         imageClass: "pci--kerala",
+        image: "/Assets/destinations/subpages/nepal/Chitwan Safari.jpg",
       },
       {
         name: "Pokhara & Annapurna",
@@ -261,6 +269,7 @@ export const destinations: Destination[] = [
         description:
           "Reflections of high mountain peaks in the calm water of Phewa Lake.",
         imageClass: "pci--ranthambore",
+        image: "/Assets/destinations/subpages/nepal/Annapurna.jpg",
       },
     ],
     recommendedHotels: [
