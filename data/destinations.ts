@@ -352,6 +352,7 @@ export const destinations: Destination[] = [
         description:
           "Gateway to the country, home to iconic cliffside temples, historical museums, and scenic hikes.",
         tags: ["Tigers Nest", "Hiking", "History"],
+        image: "/Assets/destinations/subpages/bhutan/Paro.jpg",
         accentClass: "rci--north",
       },
       {
@@ -359,6 +360,7 @@ export const destinations: Destination[] = [
         description:
           "The capital city, blending traditional arts & architecture with emerging modern culture.",
         tags: ["Dzongs", "Artisan Crafts", "Monarchy"],
+        image: "/Assets/destinations/subpages/bhutan/Thimphu.jpg",
         accentClass: "rci--south",
       },
       {
@@ -366,6 +368,7 @@ export const destinations: Destination[] = [
         description:
           "The warm winter capital, famous for Punakha Dzong at the confluence of two rivers.",
         tags: ["Dzongs", "Rivers", "Villas"],
+        image: "/Assets/destinations/subpages/bhutan/Punakha.jpg",
         accentClass: "rci--central",
       },
       {
@@ -373,6 +376,7 @@ export const destinations: Destination[] = [
         description:
           "Pristine glacial valley, winter habitat of the rare black-necked cranes.",
         tags: ["Nature", "Wildlife", "Remote"],
+        image: "/Assets/destinations/subpages/bhutan/Phobjikha Valley.jpg",
         accentClass: "rci--northeast",
       },
     ],
@@ -383,6 +387,7 @@ export const destinations: Destination[] = [
         description:
           "Taktsang Monastery, clinging dramatically to a cliff 3,000 feet above the valley floor.",
         isFeatured: true,
+        image: "/Assets/destinations/subpages/bhutan/Tigers Nest.jpg",
         imageClass: "pci--taj", // reuses styling tone
       },
       {
@@ -390,6 +395,7 @@ export const destinations: Destination[] = [
         region: "Punakha Valley",
         description:
           "Majestic fortress at the confluence of the Pho Chhu and Mo Chhu rivers.",
+        image: "/Assets/destinations/subpages/bhutan/Punakha Dzong.jpg",
         imageClass: "pci--varanasi",
       },
       {
@@ -397,6 +403,7 @@ export const destinations: Destination[] = [
         region: "Thimphu",
         description:
           "A gigantic 169-foot bronze Buddha statue overlooking the valley.",
+        image: "/Assets/destinations/subpages/bhutan/Buddha Dordenma.jpg",
         imageClass: "pci--kerala",
       },
       {
@@ -404,6 +411,7 @@ export const destinations: Destination[] = [
         region: "Wangdue Phodrang",
         description:
           "Beautiful wetlands and home to black-necked cranes during winter months.",
+        image: "/Assets/destinations/subpages/bhutan/Phobjikha Valley.jpg",
         imageClass: "pci--ranthambore",
       },
     ],
@@ -490,6 +498,7 @@ export const destinations: Destination[] = [
         description:
           "Sigiriya Rock Fortress, ruins of Polonnaruwa, and cave temples of Dambulla.",
         tags: ["Sigiriya", "Ruins", "UNESCO"],
+        image: "/Assets/destinations/subpages/srilankha/Cultural Triangle.jpg",
         accentClass: "rci--north",
       },
       {
@@ -497,6 +506,7 @@ export const destinations: Destination[] = [
         description:
           "Tea plantations of Nuwara Eliya and Hatton, misty hills, and train journeys.",
         tags: ["Tea Trails", "Scenic Train", "Hiking"],
+        image: "/Assets/destinations/subpages/srilankha/Hill country.jpg",
         accentClass: "rci--south",
       },
       {
@@ -504,6 +514,7 @@ export const destinations: Destination[] = [
         description:
           "Galle Fort heritage walk, whale watching in Mirissa, and sandy shores.",
         tags: ["Beaches", "Galle Fort", "Whales"],
+        image: "/Assets/destinations/subpages/srilankha/Southern Coast.jpg",
         accentClass: "rci--central",
       },
       {
@@ -511,6 +522,7 @@ export const destinations: Destination[] = [
         description:
           "Scrub forests on the ocean edge, home to the highest density of leopards.",
         tags: ["Leopards", "Safaris", "Wild Coast"],
+        image: "/Assets/destinations/subpages/srilankha/Yala.jpg",
         accentClass: "rci--northeast",
       },
     ],
@@ -521,6 +533,7 @@ export const destinations: Destination[] = [
         description:
           "Climbing the historic 600-foot fortress rock at golden hour.",
         isFeatured: true,
+        image: "/Assets/destinations/subpages/srilankha/Sigiriya Lion Rock.jpg",
         imageClass: "pci--taj",
       },
       {
@@ -528,6 +541,7 @@ export const destinations: Destination[] = [
         region: "Southern Coast",
         description:
           "17th-century colonial fortress streets, architecture, and ocean views.",
+        image: "/Assets/destinations/subpages/srilankha/Galle Fort.jpg",
         imageClass: "pci--varanasi",
       },
       {
@@ -535,6 +549,7 @@ export const destinations: Destination[] = [
         region: "Hill Country",
         description:
           "The scenic train ride climbing through tea estates to Hatton.",
+        image: "/Assets/destinations/subpages/srilankha/Tea Trails Train.jpg",
         imageClass: "pci--kerala",
       },
       {
@@ -542,6 +557,7 @@ export const destinations: Destination[] = [
         region: "Southern Coast",
         description:
           "Tracking leopards, elephants, and sloth bears with expert naturalists.",
+        image: "/Assets/destinations/subpages/srilankha/Yala safaris.jpg",
         imageClass: "pci--ranthambore",
       },
     ],

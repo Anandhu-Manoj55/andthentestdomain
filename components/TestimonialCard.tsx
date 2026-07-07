@@ -11,6 +11,7 @@ export default function TestimonialCard({ testi }: { testi: any }) {
             <div className="tc__flags">
               <span className="tc__dest">{testi.dest}</span>
               <span className="tc__type">{testi.type}</span>
+              
             </div>
             <span className="tc__quote-mark">"</span>
           </div>
