@@ -71,7 +71,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
   const end = routeStops.at(-1) ?? tour.destination;
   const heroImage = tour.images?.hero ?? tour.image ?? "/Assets/home/India.jpg";
   const heroSrc = encodeURI(heroImage);
-  const galleryImages = tour.images?.gallery ?? [heroImage];
+  const findDest = (name: string) => tour.destinations.find(d => d.name === name);
   const title = tour.title ?? tour.name ?? "Untitled itinerary";
   const contactHref = `/contact/?trip=${encodeURIComponent(tour.id)}`;
   const relatedTours = tours
@@ -190,7 +190,10 @@ export default async function ItinerarySlugPage({ params }: Props) {
               role="list"
               aria-label="Journey stops in order"
             >
-              {routeStops.map((stop, index) => (
+              {routeStops.map((stop, index) => {
+                const dest = findDest(stop);
+                const imageSrc = dest ? dest.image : heroImage;
+                return (
                 <div
                   className={styles.journeyStop}
                   role="listitem"
@@ -200,9 +203,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
                     className={`${styles.stopImage} ${styles[`tone${index % 6}`]}`}
                   >
                     <Image
-                      src={encodeURI(
-                        galleryImages[index % galleryImages.length],
-                      )}
+                      src={imageSrc}
                       alt={`${stop} — ${title}`}
                       fill
                       className={styles.stopImageImage}
@@ -214,7 +215,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
                     <span className={styles.stopOrder}>Stop {index + 1}</span>
                   </div>
                 </div>
-              ))}
+              )})}
             </div>
           </section>
 
@@ -225,19 +226,17 @@ export default async function ItinerarySlugPage({ params }: Props) {
             <h2 className={styles.sectionHeading}>Where you’ll go</h2>
             <div className={styles.rule} />
             <div className={styles.destinationCards}>
-              {routeStops.map((stop, index) => (
+              {tour.destinations.map((dest, index) => (
                 <article
                   className={styles.destinationCard}
-                  key={`${stop}-${index}-card`}
+                  key={`${dest.name}-${index}-card`}
                 >
                   <div
                     className={`${styles.destinationVisual} ${styles[`tone${index % 6}`]}`}
                   >
                     <Image
-                      src={encodeURI(
-                        galleryImages[index % galleryImages.length],
-                      )}
-                      alt={`${stop} — ${title}`}
+                      src={dest.image}
+                      alt={`${dest.name} — ${title}`}
                       fill
                       className={styles.destinationImage}
                     />
@@ -250,13 +249,11 @@ export default async function ItinerarySlugPage({ params }: Props) {
                   </div>
                   <div className={styles.destinationBody}>
                     <span className={styles.destinationMeta}>
-                      {tour.region ?? tour.destination}
+                      {dest.region ?? tour.region ?? tour.destination}
                     </span>
-                    <h3 className={styles.destinationName}>{stop}</h3>
+                    <h3 className={styles.destinationName}>{dest.name}</h3>
                     <p className={styles.destinationText}>
-                      A considered stop on your {title} route, arranged
-                      privately and paced around the experiences that matter
-                      most to you.
+                      {dest.description ?? `A considered stop on your ${title} route, arranged privately and paced around the experiences that matter most to you.`}
                     </p>
                   </div>
                 </article>

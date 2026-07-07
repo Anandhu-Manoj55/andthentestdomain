@@ -1,3 +1,10 @@
+export interface Destination {
+  name: string;
+  region?: string;
+  description?: string;
+  image: string;
+}
+
 export interface Tour {
   id: string;
   slug: string;
@@ -21,8 +28,8 @@ export interface Tour {
   images: {
     card: string;
     hero: string;
-    gallery: string[];
   };
+  destinations: Destination[];
   image?: string;
   highlights: string[];
   isFeatured?: boolean;

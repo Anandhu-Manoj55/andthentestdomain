@@ -106,7 +106,33 @@ export const tours: Tour[] = [
     departure: "Any date",
     duration: { nights: 15, days: 16 },
     route: ["Delhi", "Agra", "Jaipur", "Jodhpur", "Udaipur", "Mumbai"],
-    images: itineraryImages.landOfKings,
+    "images": {"card": "/Assets/iternities/Land of Kings /Banner inmage - Land of Kings.jpg", "hero": "/Assets/iternities/Land of Kings /Banner inmage - Land of Kings.jpg"},
+    "destinations": [
+  {
+    "name": "Delhi",
+    "image": "/Assets/iternities/Land of Kings /The Leela Palace, New Delhi.jpg"
+  },
+  {
+    "name": "Agra",
+    "image": "/Assets/iternities/Land of Kings /Agra.jpg"
+  },
+  {
+    "name": "Jaipur",
+    "image": "/Assets/iternities/Land of Kings /Jaipur.jpg"
+  },
+  {
+    "name": "Jodhpur",
+    "image": "/Assets/iternities/Land of Kings /RAAS Jodhpur.jpg"
+  },
+  {
+    "name": "Udaipur",
+    "image": "/Assets/iternities/Land of Kings /Udaipur.jpg"
+  },
+  {
+    "name": "Mumbai",
+    "image": "/Assets/iternities/Land of Kings /The Taj Mahal Palace, Mumbai.jpg"
+  }
+],
     highlights: [
       "Taj Mahal at sunrise — private guided access before crowds arrive",
       "Amber Fort jeep ride and elephant sanctuary visit, Jaipur",
@@ -131,7 +157,21 @@ export const tours: Tour[] = [
     departure: "Any date",
     duration: { nights: 11, days: 12 },
     route: ["Delhi", "Agra", "Varanasi", "Delhi"],
-    images: itineraryImages.timelessTreasures,
+    "images": {"card": "/Assets/iternities/Timeless Treasures /Banner Image - Timeless Treasures.jpg", "hero": "/Assets/iternities/Timeless Treasures /Banner Image - Timeless Treasures.jpg"},
+    "destinations": [
+  {
+    "name": "Delhi",
+    "image": "/Assets/iternities/Timeless Treasures /The Imperial,, Delhi.jpg"
+  },
+  {
+    "name": "Agra",
+    "image": "/Assets/iternities/Timeless Treasures /Agra.jpg"
+  },
+  {
+    "name": "Varanasi",
+    "image": "/Assets/iternities/Timeless Treasures /Taj Nadesar Palace, Varanasi.jpg"
+  }
+],
     highlights: [
       "Taj Mahal at sunrise — private access before crowds",
       "Fatehpur Sikri — the abandoned Mughal capital",
@@ -161,7 +201,37 @@ export const tours: Tour[] = [
       "Delhi",
       "Agra",
     ],
-    images: itineraryImages.wildEncounters,
+    "images": {"card": "/Assets/iternities/Wild Encounters/Banner Image - Wild encounters.jpeg", "hero": "/Assets/iternities/Wild Encounters/Banner Image - Wild encounters.jpeg"},
+    "destinations": [
+  {
+    "name": "Mumbai",
+    "image": "/Assets/iternities/Wild Encounters/Taj Mahal Palace, Mumbai.jpg"
+  },
+  {
+    "name": "Bandhavgarh",
+    "image": "/Assets/iternities/Wild Encounters/Bandhavgarh.webp"
+  },
+  {
+    "name": "Kanha",
+    "image": "/Assets/iternities/Wild Encounters/Kanha-National-Park.webp"
+  },
+  {
+    "name": "Pench",
+    "image": "/Assets/iternities/Wild Encounters/pench-national-park.webp"
+  },
+  {
+    "name": "Tadoba",
+    "image": "/Assets/iternities/Wild Encounters/Waghoba Eco Lodge, Tadoba.webp"
+  },
+  {
+    "name": "Delhi",
+    "image": "/Assets/iternities/Wild Encounters/Trident, Delhi.jpg"
+  },
+  {
+    "name": "Agra",
+    "image": "/Assets/iternities/Wild Encounters/Trident, Agra.jpg"
+  }
+],
     highlights: [
       "Bandhavgarh — India's highest tiger density reserve",
       "Kanha — the inspiration for Rudyard Kipling's Jungle Book",
@@ -184,7 +254,29 @@ export const tours: Tour[] = [
     departure: "Any date",
     duration: { nights: 12, days: 13 },
     route: ["Cochin", "Munnar", "Thekkady", "Kumarakom", "Kovalam"],
-    images: itineraryImages.godsOwnCountry,
+    "images": {"card": "/Assets/iternities/God_s own country /banner image - God_s own country.png", "hero": "/Assets/iternities/God_s own country /banner image - God_s own country.png"},
+    "destinations": [
+  {
+    "name": "Cochin",
+    "image": "/Assets/iternities/God_s own country /Brunton Boatyard, Cochin.jpg"
+  },
+  {
+    "name": "Munnar",
+    "image": "/Assets/iternities/God_s own country /Munnar.webp"
+  },
+  {
+    "name": "Thekkady",
+    "image": "/Assets/iternities/God_s own country /Thekkady.jpg"
+  },
+  {
+    "name": "Kumarakom",
+    "image": "/Assets/iternities/God_s own country /Kumarakom lake resort.jpg"
+  },
+  {
+    "name": "Kovalam",
+    "image": "/Assets/iternities/God_s own country /Kovalam.jpg"
+  }
+],
     highlights: [
       "Fort Cochin — colonial spice trading history walk",
       "Munnar tea estates — sunrise over a carpet of green",
@@ -206,7 +298,25 @@ export const tours: Tour[] = [
     departure: "Any date",
     duration: { nights: 11, days: 12 },
     route: ["Bengaluru", "Mysore", "Coorg", "Bekal"],
-    images: itineraryImages.teteATete,
+    "images": {"card": "/Assets/iternities/Tete a Tete with Gods /Banner Image - Tete a Tete with Gods.jpg", "hero": "/Assets/iternities/Tete a Tete with Gods /Banner Image - Tete a Tete with Gods.jpg"},
+    "destinations": [
+  {
+    "name": "Bengaluru",
+    "image": "/Assets/iternities/Tete a Tete with Gods /Bengaluru.jpg"
+  },
+  {
+    "name": "Mysore",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Coorg",
+    "image": "/Assets/iternities/Tete a Tete with Gods /Coorg.jpg"
+  },
+  {
+    "name": "Bekal",
+    "image": "/Assets/iternities/Tete a Tete with Gods /Taj, Bekal.jpg"
+  }
+],
     highlights: [
       "Mysore Palace illumination — Wednesday and Sunday evenings",
       "Coorg coffee plantation walk and home-style lunch",
@@ -228,7 +338,25 @@ export const tours: Tour[] = [
     departure: "Any date",
     duration: { nights: 12, days: 13 },
     route: ["Bengaluru", "Hampi", "Mysore", "Coorg", "Bengaluru"],
-    images: itineraryImages.awakeningEmpire,
+    "images": {"card": "/Assets/iternities/Awakening of an Empire /Grand Mercure, Mysuru.jpg", "hero": "/Assets/iternities/Awakening of an Empire /Grand Mercure, Mysuru.jpg"},
+    "destinations": [
+  {
+    "name": "Bengaluru",
+    "image": "/Assets/iternities/Awakening of an Empire /Bengaluru.jpg"
+  },
+  {
+    "name": "Hampi",
+    "image": "/Assets/iternities/Awakening of an Empire /Hampi.jpg"
+  },
+  {
+    "name": "Mysore",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Coorg",
+    "image": "/Assets/iternities/Awakening of an Empire /Coorg.jpg"
+  }
+],
     highlights: [
       "Hampi — UNESCO boulder-strewn ruins of Vijayanagara empire",
       "Vittala Temple and the musical stone chariot at sunset",
@@ -257,7 +385,33 @@ export const tours: Tour[] = [
       "Thekkady",
       "Marari",
     ],
-    images: itineraryImages.templeTrail,
+    "images": {"card": "/Assets/iternities/Temple Trail /Banner Image - Temple Trail.jpg", "hero": "/Assets/iternities/Temple Trail /Banner Image - Temple Trail.jpg"},
+    "destinations": [
+  {
+    "name": "Mahabalipuram",
+    "image": "/Assets/iternities/Temple Trail /Mahabalipuram.jpg"
+  },
+  {
+    "name": "Pondicherry",
+    "image": "/Assets/iternities/Temple Trail /Palais De Mahe, Pondicherry.jpg"
+  },
+  {
+    "name": "Kumbakonam",
+    "image": "/Assets/iternities/Temple Trail /Mantra Koodam, Kumbakonam.jpg"
+  },
+  {
+    "name": "Madurai",
+    "image": "/Assets/iternities/Temple Trail /Heritage, Madurai.jpg"
+  },
+  {
+    "name": "Thekkady",
+    "image": "/Assets/iternities/Temple Trail /Thekkady.jpg"
+  },
+  {
+    "name": "Marari",
+    "image": "/Assets/iternities/Temple Trail /Marari.jpg"
+  }
+],
     highlights: [
       "Mahabalipuram — shore temples and bas-relief rock carvings",
       "Pondicherry — French Quarter and Sri Aurobindo Ashram",
@@ -279,7 +433,25 @@ export const tours: Tour[] = [
     departure: "Any date",
     duration: { nights: 12, days: 13 },
     route: ["Goa", "Gokarna", "Mangalore", "Bekal"],
-    images: itineraryImages.byTheBeach,
+    "images": {"card": "/Assets/iternities/By the Beach /Banner image - By the Beach.webp", "hero": "/Assets/iternities/By the Beach /Banner image - By the Beach.webp"},
+    "destinations": [
+  {
+    "name": "Goa",
+    "image": "/Assets/iternities/By the Beach /Goa.jpg"
+  },
+  {
+    "name": "Gokarna",
+    "image": "/Assets/iternities/By the Beach /Gokarna.jpg"
+  },
+  {
+    "name": "Mangalore",
+    "image": "/Assets/iternities/By the Beach /Mangalore.jpg"
+  },
+  {
+    "name": "Bekal",
+    "image": "/Assets/iternities/By the Beach /Taj Bekal.jpg"
+  }
+],
     highlights: [
       "Old Goa — UNESCO Baroque churches and Portuguese heritage",
       "Gokarna — unspoiled beaches and the sacred Mahabaleshwar temple",
@@ -301,7 +473,21 @@ export const tours: Tour[] = [
     departure: "Any date",
     duration: { nights: 12, days: 13 },
     route: ["Mumbai", "Bhubaneswar", "Chennai"],
-    images: itineraryImages.sunHeritage,
+    "images": {"card": "/Assets/iternities/Sun, Heritage and Splendor /Banner Image - Sun, Heritage and Splendor.jpg", "hero": "/Assets/iternities/Sun, Heritage and Splendor /Banner Image - Sun, Heritage and Splendor.jpg"},
+    "destinations": [
+  {
+    "name": "Mumbai",
+    "image": "/Assets/iternities/Sun, Heritage and Splendor /The Oberoi, Mumbai.jpg"
+  },
+  {
+    "name": "Bhubaneswar",
+    "image": "/Assets/iternities/Sun, Heritage and Splendor /Bhubaneswar.jpg"
+  },
+  {
+    "name": "Chennai",
+    "image": "/Assets/iternities/Sun, Heritage and Splendor /Taj Fisherman_s cove, Chennai.jpg"
+  }
+],
     highlights: [
       "Mumbai — Dharavi, Dhobi Ghat, and Gateway of India",
       "Konark Sun Temple — UNESCO wheel-carved masterpiece",
@@ -331,7 +517,33 @@ export const tours: Tour[] = [
       "Tang Valley",
       "Paro",
     ],
-    images: itineraryImages.fallback,
+    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "destinations": [
+  {
+    "name": "Paro",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Thimphu",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Punakha",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Phobjikha",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Bumthang",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Tang Valley",
+    "image": "/Assets/home/India.jpg"
+  }
+],
     highlights: [
       "Paro Dzong & National Museum — gateway fortress-monastery",
       "Thimphu — Buddha Dordenma & 13 Arts school",
@@ -365,7 +577,41 @@ export const tours: Tour[] = [
       "Lumbini",
       "Nagarkot",
     ],
-    images: itineraryImages.fallback,
+    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "destinations": [
+  {
+    "name": "Kathmandu",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Bhaktapur",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Patan",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Chitwan",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Bandipur",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Pokhara",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Lumbini",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Nagarkot",
+    "image": "/Assets/home/India.jpg"
+  }
+],
     highlights: [
       "Himalayan mountain flight — views of Everest and high peaks",
       "Kathmandu — Pashupatinath, Boudhanath, Bhaktapur Durbar",
@@ -400,7 +646,45 @@ export const tours: Tour[] = [
       "Galle",
       "Colombo",
     ],
-    images: itineraryImages.fallback,
+    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "destinations": [
+  {
+    "name": "Negombo",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Sigiriya",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Polonnaruwa",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Kandy",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Hatton",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Yala",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Weligama",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Galle",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Colombo",
+    "image": "/Assets/home/India.jpg"
+  }
+],
     highlights: [
       "Sigiriya Rock Fortress — UNESCO World Heritage at golden hour",
       "Polonnaruwa — medieval ruined capital by bicycle",
@@ -435,7 +719,41 @@ export const tours: Tour[] = [
       "Delhi",
       "Agra",
     ],
-    images: itineraryImages.fallback,
+    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "destinations": [
+  {
+    "name": "Paro",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Thimphu",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Punakha",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Phobjikha",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Bumthang",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Tang Valley",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Delhi",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Agra",
+    "image": "/Assets/home/India.jpg"
+  }
+],
     highlights: [
       "Tiger's Nest hike — Taktsang Monastery, Paro",
       "Punakha Dzong — fortress at the confluence of two rivers",
@@ -466,7 +784,41 @@ export const tours: Tour[] = [
       "Delhi",
       "Agra",
     ],
-    images: itineraryImages.fallback,
+    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "destinations": [
+  {
+    "name": "Kathmandu",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Chitwan",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Bandipur",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Pokhara",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Lumbini",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Nagarkot",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Delhi",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Agra",
+    "image": "/Assets/home/India.jpg"
+  }
+],
     highlights: [
       "Everest mountain flight — highest peaks on earth",
       "Chitwan wildlife safaris — one-horned rhinos & tigers",
@@ -488,7 +840,29 @@ export const tours: Tour[] = [
     departure: "Families",
     duration: { nights: 10, days: 11 },
     route: ["Kathmandu", "Chitwan", "Paro", "Thimphu", "Punakha", "Paro"],
-    images: itineraryImages.fallback,
+    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "destinations": [
+  {
+    "name": "Kathmandu",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Chitwan",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Paro",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Thimphu",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Punakha",
+    "image": "/Assets/home/India.jpg"
+  }
+],
     highlights: [
       "Himalayan mountain flight — Everest views for all ages",
       "Chitwan — family-friendly jungle jeep safari",
@@ -496,5 +870,208 @@ export const tours: Tour[] = [
       "Punakha Dzong — the most beautiful fortress in Bhutan",
       "Tiger's Nest hike — paced gently for families with children",
     ],
+  },
+  {
+    "id": "ayurvedic-reset",
+    "slug": "/itineraries/ayurvedic-reset/",
+    "title": "Ayurvedic Reset",
+    "destination": "India",
+    "region": "South India \u00b7 Kerala",
+    "type": "Wellness",
+    "summary": "Immerse in an authentic Ayurvedic healing experience along the Kerala coast.",
+    "price": "From \u20ac3,700 pp",
+    "departure": "Any date",
+    "duration": {
+      "nights": 10,
+      "days": 11
+    },
+    "route": [
+      "Cochin",
+      "Nattika"
+    ],
+    "images": {"card": "/Assets/iternities/Ayurvedic Reset/Banner image - Ayurvedic reset.jpg", "hero": "/Assets/iternities/Ayurvedic Reset/Banner image - Ayurvedic reset.jpg"},
+    "destinations": [
+  {
+    "name": "Cochin",
+    "image": "/Assets/home/India.jpg"
+  },
+  {
+    "name": "Nattika",
+    "image": "/Assets/iternities/Ayurvedic Reset/Nattika Beach Resort 1.jpg"
+  }
+],
+    "highlights": [
+      "Fort Kochi Harbor",
+      "Mattancherry Dutch Palace",
+      "Jewish Synagogue",
+      "Sunset cruise",
+      "Ayurveda program",
+      "Yoga",
+      "Beach"
+    ]
+  },
+  {
+    "id": "balance-bliss",
+    "slug": "/itineraries/balance-bliss/",
+    "title": "Balance & Bliss",
+    "destination": "India",
+    "region": "South India \u00b7 Kerala",
+    "type": "Wellness",
+    "summary": "Achieve harmony and well-being with a comprehensive wellness retreat at Palakkad.",
+    "price": "From \u20ac9,750 pp",
+    "departure": "Any date",
+    "duration": {
+      "nights": 17,
+      "days": 18
+    },
+    "route": [
+      "Cochin",
+      "Palakkad"
+    ],
+    "images": {"card": "/Assets/iternities/Balance & Bliss /Banner image - Balance & Bliss.jpg", "hero": "/Assets/iternities/Balance & Bliss /Banner image - Balance & Bliss.jpg"},
+    "destinations": [
+  {
+    "name": "Cochin",
+    "image": "/Assets/iternities/Balance & Bliss /Taj Mabar, Cochin.jpg"
+  },
+  {
+    "name": "Palakkad",
+    "image": "/Assets/iternities/Balance & Bliss /Kalari Kovilakom, Palakkad.jpg"
+  }
+],
+    "highlights": [
+      "Fort Kochi Harbor",
+      "Mattancherry Dutch Palace",
+      "Jewish Synagogue",
+      "Sunset cruise",
+      "Ayurveda program",
+      "Cultural programs",
+      "Yoga"
+    ]
+  },
+  {
+    "id": "path-to-wellness",
+    "slug": "/itineraries/path-to-wellness/",
+    "title": "Path to Wellness",
+    "destination": "India",
+    "region": "South India \u00b7 Goa & Karnataka",
+    "type": "Wellness",
+    "summary": "A peaceful sanctuary in Gokarna designed for a transformational healing experience.",
+    "price": "From \u20ac7,800 pp",
+    "departure": "Any date",
+    "duration": {
+      "nights": 17,
+      "days": 18
+    },
+    "route": [
+      "Goa",
+      "Gokarna"
+    ],
+    "images": {"card": "/Assets/iternities/Path to wellness/Banner image - Path to wellness 1.jpg", "hero": "/Assets/iternities/Path to wellness/Banner image - Path to wellness 1.jpg"},
+    "destinations": [
+  {
+    "name": "Goa",
+    "image": "/Assets/iternities/Path to wellness/Taj Exotica Resort, Goa.jpg"
+  },
+  {
+    "name": "Gokarna",
+    "image": "/Assets/iternities/Path to wellness/Gokarna.jpg"
+  }
+],
+    "highlights": [
+      "Ayurveda program",
+      "Meditation",
+      "Yoga",
+      "Nature Trails & Bird Watching",
+      "Art Studio"
+    ]
+  },
+  {
+    "id": "rejuvenate-restore",
+    "slug": "/itineraries/rejuvenate-restore/",
+    "title": "Rejuvenate & Restore",
+    "destination": "India",
+    "region": "South India \u00b7 Kerala",
+    "type": "Wellness",
+    "summary": "Naturopathy and holistic wellness across the tranquil backwaters and hills of Kerala.",
+    "price": "From \u20ac4,500 pp",
+    "departure": "Any date",
+    "duration": {
+      "nights": 12,
+      "days": 13
+    },
+    "route": [
+      "Cochin",
+      "Panchalimedu",
+      "Kumarakom"
+    ],
+    "images": {"card": "/Assets/iternities/Rejuvenate & Restore /Banner image - Rejuvenate & Restore.jpg", "hero": "/Assets/iternities/Rejuvenate & Restore /Banner image - Rejuvenate & Restore.jpg"},
+    "destinations": [
+  {
+    "name": "Cochin",
+    "image": "/Assets/iternities/Rejuvenate & Restore /Cochin.jpg"
+  },
+  {
+    "name": "Panchalimedu",
+    "image": "/Assets/iternities/Rejuvenate & Restore /Prakriti Shakti, Panchalimedu.jpg"
+  },
+  {
+    "name": "Kumarakom",
+    "image": "/Assets/iternities/Rejuvenate & Restore /Kumarakom lake resort.jpg"
+  }
+],
+    "highlights": [
+      "Fort Kochi Harbor",
+      "Sunset cruise",
+      "Yoga",
+      "Naturopathy",
+      "Meditation",
+      "Houseboat Cruise",
+      "Village Life"
+    ]
+  },
+  {
+    "id": "strength-serenity",
+    "slug": "/itineraries/strength-serenity/",
+    "title": "Strength & Serenity",
+    "destination": "India",
+    "region": "South India \u00b7 Kerala",
+    "type": "Wellness",
+    "summary": "Experience the ancient martial art of Kalaripayattu and the calming backwaters.",
+    "price": "From \u20ac3,750 pp",
+    "departure": "Any date",
+    "duration": {
+      "nights": 12,
+      "days": 13
+    },
+    "route": [
+      "Cochin",
+      "Kumarakom",
+      "Trivandrum"
+    ],
+    "images": {"card": "/Assets/iternities/Strength & Serenity /Banner image - Strength & Serenity.jpg", "hero": "/Assets/iternities/Strength & Serenity /Banner image - Strength & Serenity.jpg"},
+    "destinations": [
+  {
+    "name": "Cochin",
+    "image": "/Assets/iternities/Strength & Serenity /Brunton Boatyard, Cochin.jpg"
+  },
+  {
+    "name": "Kumarakom",
+    "image": "/Assets/iternities/Strength & Serenity /Kumarakom lake resort.jpg"
+  },
+  {
+    "name": "Trivandrum",
+    "image": "/Assets/iternities/Strength & Serenity /The Leela Kovalam, Trivandrum.jpg"
+  }
+],
+    "highlights": [
+      "Fort Kochi Harbor",
+      "Houseboat Cruise",
+      "Village Life",
+      "Local Culture",
+      "Daily Kalari practice",
+      "Curated walks",
+      "Beaches"
+    ]
   },
 ];
