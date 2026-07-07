@@ -41,18 +41,6 @@ const stayPrinciples = [
   },
 ];
 
-function getHeroImage(destination: string, region?: string, type?: string) {
-  const context = `${destination} ${region ?? ""} ${type ?? ""}`.toLowerCase();
-
-  if (context.includes("wildlife") || context.includes("tiger")) return "/Assets/home/Wildlife.webp";
-  if (context.includes("bhutan")) return "/Assets/home/Bhutan.jpg";
-  if (context.includes("nepal")) return "/Assets/home/Nepal.jpg";
-  if (context.includes("sri lanka")) return "/Assets/home/Sri Lanka.jpg";
-  if (context.includes("wellness")) return "/Assets/home/Wellness.jpg";
-  if (context.includes("spiritual")) return "/Assets/home/Spiritual.jpg";
-  return "/Assets/home/India.jpg";
-}
-
 export async function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.id }));
 }
@@ -64,10 +52,10 @@ export async function generateMetadata({ params }: Props) {
   if (!tour) return {};
 
   return {
-    title: `${tour.name} — Itinerary | AndThen Travels`,
+    title: `${tour.title} — Itinerary | AndThen Travels`,
     description:
-      tour.description
-      ?? `A private, tailor-made ${tour.nights} journey to ${tour.destination} with AndThen Travels.`,
+      tour.summary ??
+      `A private, tailor-made ${tour.duration.nights} night journey to ${tour.destination} with AndThen Travels.`,
   };
 }
 
@@ -77,22 +65,21 @@ export default async function ItinerarySlugPage({ params }: Props) {
 
   if (!tour) notFound();
 
-  const route = tour.route ?? tour.destination;
-  const routeStops = route.split("→").map((stop) => stop.trim()).filter(Boolean);
-  const nightCount = Number.parseInt(tour.nights, 10);
-  const duration = Number.isNaN(nightCount)
-    ? tour.nights
-    : `${nightCount} nights / ${nightCount + 1} days`;
+  const routeStops = tour.route ?? [tour.destination];
+  const duration = `${tour.duration.nights} nights / ${tour.duration.days} days`;
   const start = routeStops[0] ?? tour.destination;
   const end = routeStops.at(-1) ?? tour.destination;
-  const heroImage = tour.image ?? getHeroImage(tour.destination, tour.region, tour.typeBadge);
+  const heroImage = tour.images?.hero ?? tour.image ?? "/Assets/home/India.jpg";
+  const heroSrc = encodeURI(heroImage);
+  const galleryImages = tour.images?.gallery ?? [heroImage];
+  const title = tour.title ?? tour.name ?? "Untitled itinerary";
   const contactHref = `/contact/?trip=${encodeURIComponent(tour.id)}`;
   const relatedTours = tours
     .filter((item) => item.id !== tour.id)
     .sort((a, b) => {
       const score = (item: typeof a) =>
-        Number(item.destination === tour.destination) * 2
-        + Number(item.typeBadge === tour.typeBadge);
+        Number(item.destination === tour.destination) * 2 +
+        Number(item.type === tour.type);
 
       return score(b) - score(a);
     })
@@ -100,11 +87,11 @@ export default async function ItinerarySlugPage({ params }: Props) {
 
   return (
     <div className={styles.page}>
-      <section className={styles.hero} aria-label={`${tour.name} itinerary`}>
+      <section className={styles.hero} aria-label={`${title} itinerary`}>
         <Image
           className={styles.heroImage}
           src={heroImage}
-          alt={`${tour.name} — ${tour.region ?? tour.destination}`}
+          alt={`${title} — ${tour.region ?? tour.destination}`}
           fill
           priority
           sizes="100vw"
@@ -112,14 +99,19 @@ export default async function ItinerarySlugPage({ params }: Props) {
         <div className={styles.heroShade} />
         <div className={styles.heroContent}>
           <span className={styles.heroTag}>
-            {tour.destination} · {tour.typeBadge ?? "Private journey"}
+            {tour.destination} ·{" "}
+            {tour.type ?? tour.typeBadge ?? "Private journey"}
           </span>
-          <h1 className={styles.heroTitle}>{tour.name}</h1>
+          <h1 className={styles.heroTitle}>{title}</h1>
           <div className={styles.heroPills} aria-label="Trip highlights">
             <span className={styles.heroPill}>{duration}</span>
-            <span className={styles.heroPill}>{routeStops.length} destinations</span>
+            <span className={styles.heroPill}>
+              {routeStops.length} destinations
+            </span>
             <span className={styles.heroPill}>Private journey</span>
-            <span className={styles.heroPill}>{start} to {end}</span>
+            <span className={styles.heroPill}>
+              {start} to {end}
+            </span>
           </div>
           <div className={styles.heroPrice}>
             <span className={styles.heroPriceLabel}>Starting from</span>
@@ -129,7 +121,9 @@ export default async function ItinerarySlugPage({ params }: Props) {
       </section>
 
       <nav className={styles.jumpNav} aria-label="Page sections">
-        <a className={styles.active} href="#overview">Overview</a>
+        <a className={styles.active} href="#overview">
+          Overview
+        </a>
         <a href="#journey">The journey</a>
         <a href="#destinations">Destinations</a>
         <a href="#accommodation">Accommodation</a>
@@ -144,15 +138,21 @@ export default async function ItinerarySlugPage({ params }: Props) {
             </div>
             <div className={styles.overviewItem}>
               <span className={styles.overviewLabel}>Destinations</span>
-              <span className={styles.overviewValue}>{routeStops.length} route stops</span>
+              <span className={styles.overviewValue}>
+                {routeStops.length} route stops
+              </span>
             </div>
             <div className={styles.overviewItem}>
               <span className={styles.overviewLabel}>Journey style</span>
-              <span className={styles.overviewValue}>{tour.typeBadge ?? "Private"}</span>
+              <span className={styles.overviewValue}>
+                {tour.type ?? tour.typeBadge ?? "Private"}
+              </span>
             </div>
             <div className={styles.overviewItem}>
               <span className={styles.overviewLabel}>Departs</span>
-              <span className={styles.overviewValue}>{tour.season ?? "Any date"}</span>
+              <span className={styles.overviewValue}>
+                {tour.departure ?? tour.season ?? "Any date"}
+              </span>
             </div>
           </div>
 
@@ -161,10 +161,11 @@ export default async function ItinerarySlugPage({ params }: Props) {
             A private journey through {tour.region ?? tour.destination}
           </h2>
           <div className={styles.rule} />
-          <p className={styles.leadText}>{tour.description}</p>
+          <p className={styles.leadText}>{tour.summary ?? tour.description}</p>
           <p className={styles.bodyText}>
-            This itinerary is a considered starting point, not a fixed group tour. We tailor the pace,
-            stays and experiences around your interests while our team handles every detail on the ground.
+            This itinerary is a considered starting point, not a fixed group
+            tour. We tailor the pace, stays and experiences around your
+            interests while our team handles every detail on the ground.
           </p>
 
           {tour.highlights && tour.highlights.length > 0 && (
@@ -184,10 +185,28 @@ export default async function ItinerarySlugPage({ params }: Props) {
             <span className={styles.eyebrow}>The journey at a glance</span>
             <h2 className={styles.sectionHeading}>One seamless route</h2>
             <div className={styles.rule} />
-            <div className={styles.journeyTrack} role="list" aria-label="Journey stops in order">
+            <div
+              className={styles.journeyTrack}
+              role="list"
+              aria-label="Journey stops in order"
+            >
               {routeStops.map((stop, index) => (
-                <div className={styles.journeyStop} role="listitem" key={`${stop}-${index}`}>
-                  <div className={`${styles.stopImage} ${styles[`tone${index % 6}`]}`}>
+                <div
+                  className={styles.journeyStop}
+                  role="listitem"
+                  key={`${stop}-${index}`}
+                >
+                  <div
+                    className={`${styles.stopImage} ${styles[`tone${index % 6}`]}`}
+                  >
+                    <Image
+                      src={encodeURI(
+                        galleryImages[index % galleryImages.length],
+                      )}
+                      alt={`${stop} — ${title}`}
+                      fill
+                      className={styles.stopImageImage}
+                    />
                     <span>{String(index + 1).padStart(2, "0")}</span>
                   </div>
                   <div className={styles.stopInfo}>
@@ -207,17 +226,37 @@ export default async function ItinerarySlugPage({ params }: Props) {
             <div className={styles.rule} />
             <div className={styles.destinationCards}>
               {routeStops.map((stop, index) => (
-                <article className={styles.destinationCard} key={`${stop}-${index}-card`}>
-                  <div className={`${styles.destinationVisual} ${styles[`tone${index % 6}`]}`}>
-                    <span className={styles.destinationBadge}>Stop {String(index + 1).padStart(2, "0")}</span>
-                    <span className={styles.destinationIndex}>{String(index + 1).padStart(2, "0")}</span>
+                <article
+                  className={styles.destinationCard}
+                  key={`${stop}-${index}-card`}
+                >
+                  <div
+                    className={`${styles.destinationVisual} ${styles[`tone${index % 6}`]}`}
+                  >
+                    <Image
+                      src={encodeURI(
+                        galleryImages[index % galleryImages.length],
+                      )}
+                      alt={`${stop} — ${title}`}
+                      fill
+                      className={styles.destinationImage}
+                    />
+                    <span className={styles.destinationBadge}>
+                      Stop {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className={styles.destinationIndex}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
                   <div className={styles.destinationBody}>
-                    <span className={styles.destinationMeta}>{tour.region ?? tour.destination}</span>
+                    <span className={styles.destinationMeta}>
+                      {tour.region ?? tour.destination}
+                    </span>
                     <h3 className={styles.destinationName}>{stop}</h3>
                     <p className={styles.destinationText}>
-                      A considered stop on your {tour.name} route, arranged privately and paced around
-                      the experiences that matter most to you.
+                      A considered stop on your {title} route, arranged
+                      privately and paced around the experiences that matter
+                      most to you.
                     </p>
                   </div>
                 </article>
@@ -232,13 +271,16 @@ export default async function ItinerarySlugPage({ params }: Props) {
             <h2 className={styles.sectionHeading}>Where you’ll stay</h2>
             <div className={styles.rule} />
             <p className={styles.bodyText}>
-              Final properties are selected around availability, preferred style and budget. Your
-              specialist will share a complete hotel proposal before anything is confirmed.
+              Final properties are selected around availability, preferred style
+              and budget. Your specialist will share a complete hotel proposal
+              before anything is confirmed.
             </p>
             <div className={styles.stayGrid}>
               {stayPrinciples.map((item, index) => (
                 <article className={styles.stayCard} key={item.title}>
-                  <div className={`${styles.stayVisual} ${styles[`tone${index + 2}`]}`}>
+                  <div
+                    className={`${styles.stayVisual} ${styles[`tone${index + 2}`]}`}
+                  >
                     <span>{String(index + 1).padStart(2, "0")}</span>
                   </div>
                   <div className={styles.stayBody}>
@@ -250,8 +292,13 @@ export default async function ItinerarySlugPage({ params }: Props) {
               ))}
             </div>
             <div className={styles.accommodationFooter}>
-              <p>All properties are subject to availability and confirmed as part of your final proposal.</p>
-              <Link href="/places-to-stay/" className={styles.textLink}>Explore places to stay</Link>
+              <p>
+                All properties are subject to availability and confirmed as part
+                of your final proposal.
+              </p>
+              <Link href="/places-to-stay/" className={styles.textLink}>
+                Explore places to stay
+              </Link>
             </div>
           </section>
         </div>
@@ -263,40 +310,69 @@ export default async function ItinerarySlugPage({ params }: Props) {
               <span className={styles.priceValue}>{tour.price}</span>
               <span className={styles.priceNote}>per person · guide price</span>
             </div>
-            <Link href={contactHref} className={styles.primaryButton}>Enquire about this trip</Link>
+            <Link href={contactHref} className={styles.primaryButton}>
+              Enquire about this trip
+            </Link>
             <p className={styles.priceDisclaimer}>
-              International flights are excluded. Contact us for solo, family or group pricing.
+              International flights are excluded. Contact us for solo, family or
+              group pricing.
             </p>
           </div>
 
           <div className={styles.sidebarCard}>
             <span className={styles.sidebarTitle}>Trip at a glance</span>
             <ul className={styles.infoList}>
-              <li><span>Duration</span><strong>{duration}</strong></li>
-              <li><span>Starts in</span><strong>{start}</strong></li>
-              <li><span>Ends in</span><strong>{end}</strong></li>
-              <li><span>Journey type</span><strong>Private</strong></li>
-              <li><span>Departures</span><strong>{tour.season ?? "Any date"}</strong></li>
+              <li>
+                <span>Duration</span>
+                <strong>{duration}</strong>
+              </li>
+              <li>
+                <span>Starts in</span>
+                <strong>{start}</strong>
+              </li>
+              <li>
+                <span>Ends in</span>
+                <strong>{end}</strong>
+              </li>
+              <li>
+                <span>Journey type</span>
+                <strong>Private</strong>
+              </li>
+              <li>
+                <span>Departures</span>
+                <strong>{tour.departure ?? tour.season ?? "Any date"}</strong>
+              </li>
             </ul>
           </div>
 
           <div className={styles.sidebarCard}>
             <span className={styles.sidebarTitle}>What’s included</span>
             <ul className={styles.checklist}>
-              {includedItems.map((item) => <li className={styles.includedItem} key={item}>{item}</li>)}
+              {includedItems.map((item) => (
+                <li className={styles.includedItem} key={item}>
+                  {item}
+                </li>
+              ))}
             </ul>
             <hr className={styles.sidebarDivider} />
             <ul className={styles.checklist}>
-              {excludedItems.map((item) => <li className={styles.excludedItem} key={item}>{item}</li>)}
+              {excludedItems.map((item) => (
+                <li className={styles.excludedItem} key={item}>
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className={`${styles.sidebarCard} ${styles.sidebarCardLinen}`}>
             <span className={styles.sidebarTitle}>Customise this trip</span>
             <p className={styles.customiseNote}>
-              Add destinations, change hotels or slow the pace—we build the final journey around you.
+              Add destinations, change hotels or slow the pace—we build the
+              final journey around you.
             </p>
-            <Link href="/contact/" className={styles.textLink}>Talk to a specialist</Link>
+            <Link href="/contact/" className={styles.textLink}>
+              Talk to a specialist
+            </Link>
           </div>
         </aside>
       </div>
@@ -307,14 +383,21 @@ export default async function ItinerarySlugPage({ params }: Props) {
             <span className={styles.eyebrow}>You may also like</span>
             <h2 className={styles.relatedHeading}>More journeys to consider</h2>
           </div>
-          <Link href="/itineraries/" className={styles.textLink}>All itineraries</Link>
+          <Link href="/itineraries/" className={styles.textLink}>
+            All itineraries
+          </Link>
         </div>
         <div className={styles.relatedGrid}>
           {relatedTours.map((item) => (
             <Link className={styles.relatedCard} href={item.slug} key={item.id}>
-              <span className={styles.relatedDestination}>{item.region ?? item.destination}</span>
-              <h3 className={styles.relatedTitle}>{item.name}</h3>
-              <p className={styles.relatedMeta}>{item.nights} · {item.route}</p>
+              <span className={styles.relatedDestination}>
+                {item.region ?? item.destination}
+              </span>
+              <h3 className={styles.relatedTitle}>{item.title ?? item.name}</h3>
+              <p className={styles.relatedMeta}>
+                {item.nights ?? `${item.duration.nights} nights`} ·{" "}
+                {item.route.join(" → ")}
+              </p>
               <span className={styles.relatedLink}>View itinerary →</span>
             </Link>
           ))}
@@ -323,14 +406,21 @@ export default async function ItinerarySlugPage({ params }: Props) {
 
       <section className={styles.ctaBanner} aria-label="Plan this journey">
         <div>
-          <h2 className={styles.ctaHeading}>Ready to explore {tour.destination}?</h2>
+          <h2 className={styles.ctaHeading}>
+            Ready to explore {tour.destination}?
+          </h2>
           <p className={styles.ctaText}>
-            Speak to a specialist and we’ll shape this journey around your dates, interests and pace.
+            Speak to a specialist and we’ll shape this journey around your
+            dates, interests and pace.
           </p>
         </div>
         <div className={styles.ctaButtons}>
-          <Link href={contactHref} className={styles.ctaPrimary}>Enquire about this trip</Link>
-          <Link href="/contact/#prize" className={styles.ctaSecondary}>Reveal my travel gift</Link>
+          <Link href={contactHref} className={styles.ctaPrimary}>
+            Enquire about this trip
+          </Link>
+          <Link href="/contact/#prize" className={styles.ctaSecondary}>
+            Reveal my travel gift
+          </Link>
         </div>
       </section>
     </div>

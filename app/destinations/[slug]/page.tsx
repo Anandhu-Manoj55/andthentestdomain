@@ -53,14 +53,20 @@ export default function DestinationSlugPage() {
       <main style={{ padding: "8rem 2.5rem", textAlign: "center" }}>
         <p className="eyebrow">404</p>
         <h1 className="section-heading">Destination not found</h1>
-        <Link href="/destinations/" className="text-link" style={{ marginTop: "2rem", display: "inline-block" }}>
+        <Link
+          href="/destinations/"
+          className="text-link"
+          style={{ marginTop: "2rem", display: "inline-block" }}
+        >
           ← Back to destinations
         </Link>
       </main>
     );
   }
 
-  const destHotels = hotels.filter((h) => destination.recommendedHotels?.includes(h.id));
+  const destHotels = hotels.filter((h) =>
+    destination.recommendedHotels?.includes(h.id),
+  );
   const destTours = tours.filter((t) => destination.tours?.includes(t.id));
 
   /* Split places for the asymmetric grid */
@@ -71,8 +77,15 @@ export default function DestinationSlugPage() {
   return (
     <main>
       {/* ── HERO ───────────────────────────────────────────── */}
-      <section className={styles.hero} aria-label={`${destination.name} destination hero`}>
-        <div className={styles.heroImage} role="img" aria-label={destination.name}>
+      <section
+        className={styles.hero}
+        aria-label={`${destination.name} destination hero`}
+      >
+        <div
+          className={styles.heroImage}
+          role="img"
+          aria-label={destination.name}
+        >
           <div
             className={styles.heroImageBg}
             style={{
@@ -98,7 +111,10 @@ export default function DestinationSlugPage() {
           </div>
 
           {destination.stats && destination.stats.length > 0 && (
-            <div className={styles.heroStats} aria-label={`${destination.name} at a glance`}>
+            <div
+              className={styles.heroStats}
+              aria-label={`${destination.name} at a glance`}
+            >
               {destination.stats.map((s) => (
                 <div key={s.label} className={styles.heroStat}>
                   <span className={styles.heroStatValue}>{s.value}</span>
@@ -133,7 +149,9 @@ export default function DestinationSlugPage() {
         className={styles.about}
         id="about"
         aria-label={`About ${destination.name}`}
-        ref={(el) => { sectionRefs.current["about"] = el; }}
+        ref={(el) => {
+          sectionRefs.current["about"] = el;
+        }}
       >
         <div className={styles.aboutText}>
           <span className="eyebrow">About {destination.name}</span>
@@ -160,7 +178,10 @@ export default function DestinationSlugPage() {
           )}
 
           {destination.facts && destination.facts.length > 0 && (
-            <div className={styles.aboutFacts} aria-label={`${destination.name} facts`}>
+            <div
+              className={styles.aboutFacts}
+              aria-label={`${destination.name} facts`}
+            >
               {destination.facts.map((f) => (
                 <div key={f.label} className={styles.fact}>
                   <span className={styles.factValue}>{f.value}</span>
@@ -178,7 +199,9 @@ export default function DestinationSlugPage() {
           className={styles.regions}
           id="regions"
           aria-label={`${destination.name} regions`}
-          ref={(el) => { sectionRefs.current["regions"] = el; }}
+          ref={(el) => {
+            sectionRefs.current["regions"] = el;
+          }}
         >
           <div className={styles.regionsHeader}>
             <div>
@@ -192,9 +215,9 @@ export default function DestinationSlugPage() {
               </h2>
             </div>
             <p className={styles.regionsIntro}>
-              {destination.name}&apos;s regions are each a world unto themselves —
-              distinct landscapes and cultural rhythms. We design journeys that go
-              deep into one, or weave several together.
+              {destination.name}&apos;s regions are each a world unto themselves
+              — distinct landscapes and cultural rhythms. We design journeys
+              that go deep into one, or weave several together.
             </p>
           </div>
 
@@ -244,7 +267,9 @@ export default function DestinationSlugPage() {
           className={styles.places}
           id="places"
           aria-label={`Popular places in ${destination.name}`}
-          ref={(el) => { sectionRefs.current["places"] = el; }}
+          ref={(el) => {
+            sectionRefs.current["places"] = el;
+          }}
         >
           <div className={styles.placesHeader}>
             <div>
@@ -267,12 +292,16 @@ export default function DestinationSlugPage() {
                   {featuredPlace.image && (
                     <div
                       className={styles.pcImageBg}
-                      style={{ backgroundImage: `url('${featuredPlace.image}')` }}
+                      style={{
+                        backgroundImage: `url('${featuredPlace.image}')`,
+                      }}
                     />
                   )}
                 </div>
                 <div className={styles.pcBody}>
-                  <span className={styles.pcRegion}>{featuredPlace.region}</span>
+                  <span className={styles.pcRegion}>
+                    {featuredPlace.region}
+                  </span>
                   <h3 className={styles.pcName}>{featuredPlace.name}</h3>
                   <p className={styles.pcDesc}>{featuredPlace.description}</p>
                 </div>
@@ -292,7 +321,10 @@ export default function DestinationSlugPage() {
                         />
                       )}
                     </div>
-                    <div className={styles.pcBody} style={{ padding: "1.25rem" }}>
+                    <div
+                      className={styles.pcBody}
+                      style={{ padding: "1.25rem" }}
+                    >
                       <span className={styles.pcRegion}>{place.region}</span>
                       <h3 className={styles.pcName}>{place.name}</h3>
                       <p className={styles.pcDesc}>{place.description}</p>
@@ -334,7 +366,9 @@ export default function DestinationSlugPage() {
           className={styles.hotels}
           id="hotels"
           aria-label={`Recommended hotels in ${destination.name}`}
-          ref={(el) => { sectionRefs.current["hotels"] = el; }}
+          ref={(el) => {
+            sectionRefs.current["hotels"] = el;
+          }}
         >
           <div className={styles.hotelsHeader}>
             <div>
@@ -343,7 +377,10 @@ export default function DestinationSlugPage() {
                 Recommended hotels in {destination.name}
               </h2>
             </div>
-            <Link href="/places-to-stay/" className="text-link text-link--muted">
+            <Link
+              href="/places-to-stay/"
+              className="text-link text-link--muted"
+            >
               View all hotels
             </Link>
           </div>
@@ -352,18 +389,28 @@ export default function DestinationSlugPage() {
             {destHotels.slice(0, 6).map((hotel) => (
               <article key={hotel.id} className={styles.hotelCard}>
                 <Link href={`/places-to-stay/${hotel.id}/`}>
-                  <div className={styles.hcImage} role="img" aria-label={hotel.name}>
+                  <div
+                    className={styles.hcImage}
+                    role="img"
+                    aria-label={hotel.name}
+                  >
                     <div
                       className={styles.hcImageBg}
                       style={{
-                        backgroundImage: hotel.image ? `url('${hotel.image}')` : undefined,
+                        backgroundImage: hotel.image
+                          ? `url('${hotel.image}')`
+                          : undefined,
                       }}
                     />
                   </div>
                   <div className={styles.hcBody}>
-                    <span className={styles.hcRegion}>{hotel.location.split(",")[0]}</span>
+                    <span className={styles.hcRegion}>
+                      {hotel.location.split(",")[0]}
+                    </span>
                     <h3 className={styles.hcName}>{hotel.name}</h3>
-                    <p className={styles.hcLocation}>{hotel.location} · {hotel.why?.slice(0, 80)}…</p>
+                    <p className={styles.hcLocation}>
+                      {hotel.location} · {hotel.why?.slice(0, 80)}…
+                    </p>
                     <span className={styles.hcLink}>View hotel →</span>
                   </div>
                 </Link>
@@ -379,7 +426,9 @@ export default function DestinationSlugPage() {
           className={styles.bestTime}
           id="best-time"
           aria-label={`Best time to visit ${destination.name}`}
-          ref={(el) => { sectionRefs.current["best-time"] = el; }}
+          ref={(el) => {
+            sectionRefs.current["best-time"] = el;
+          }}
         >
           <div className={styles.bestTimeInner}>
             <div>
@@ -403,8 +452,8 @@ export default function DestinationSlugPage() {
                       m.type === "peak"
                         ? styles.monthCellPeak
                         : m.type === "good"
-                        ? styles.monthCellGood
-                        : ""
+                          ? styles.monthCellGood
+                          : ""
                     }`}
                   >
                     <span className={styles.monthLabel}>{m.month}</span>
@@ -414,17 +463,26 @@ export default function DestinationSlugPage() {
 
               <div className={styles.legend} aria-label="Calendar legend">
                 <div className={styles.legendItem}>
-                  <span className={styles.legendSwatch} style={{ background: "var(--cb)" }} />
+                  <span
+                    className={styles.legendSwatch}
+                    style={{ background: "var(--cb)" }}
+                  />
                   Peak season
                 </div>
                 <div className={styles.legendItem}>
-                  <span className={styles.legendSwatch} style={{ background: "var(--cs)" }} />
+                  <span
+                    className={styles.legendSwatch}
+                    style={{ background: "var(--cs)" }}
+                  />
                   Good season
                 </div>
                 <div className={styles.legendItem}>
                   <span
                     className={styles.legendSwatch}
-                    style={{ background: "var(--cr)", border: "0.5px solid var(--cs)" }}
+                    style={{
+                      background: "var(--cr)",
+                      border: "0.5px solid var(--cs)",
+                    }}
                   />
                   Not recommended
                 </div>
@@ -453,7 +511,9 @@ export default function DestinationSlugPage() {
           className={styles.itineraries}
           id="itineraries"
           aria-label={`${destination.name} itineraries`}
-          ref={(el) => { sectionRefs.current["itineraries"] = el; }}
+          ref={(el) => {
+            sectionRefs.current["itineraries"] = el;
+          }}
         >
           <div className={styles.itinsHeader}>
             <div>
@@ -483,8 +543,12 @@ export default function DestinationSlugPage() {
                 )}
               </div>
               <div>
-                <span className={styles.irName}>{tour.name}</span>
-                <span className={styles.irDest}>{tour.route}</span>
+                <span className={styles.irName}>{tour.title ?? tour.name}</span>
+                <span className={styles.irDest}>
+                  {Array.isArray(tour.route)
+                    ? tour.route.join(" → ")
+                    : tour.route}
+                </span>
               </div>
               <span className={styles.irNights}>{tour.nights}</span>
               <span className={styles.irPrice}>{tour.price}</span>
@@ -495,15 +559,18 @@ export default function DestinationSlugPage() {
       )}
 
       {/* ── CTA BAND ──────────────────────────────────────────── */}
-      <div className={styles.ctaBand} aria-label={`Plan your ${destination.name} trip`}>
+      <div
+        className={styles.ctaBand}
+        aria-label={`Plan your ${destination.name} trip`}
+      >
         <div>
           <h2 className={styles.ctaBandHeading}>
             Ready to explore {destination.name}?
           </h2>
           <p className={styles.ctaBandSub}>
-            Tell us what moves you — wildlife, culture, wellness, history or all of
-            the above — and we&apos;ll design your private {destination.name} journey
-            around it.
+            Tell us what moves you — wildlife, culture, wellness, history or all
+            of the above — and we&apos;ll design your private {destination.name}{" "}
+            journey around it.
           </p>
         </div>
         <div className={styles.ctaBtns}>

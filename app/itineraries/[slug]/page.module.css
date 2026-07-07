@@ -209,7 +209,48 @@
   border-left: 2px solid var(--bronze);
 }
 
-.highlightLabel,
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.galleryItem {
+  position: relative;
+  min-height: 220px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.galleryImage,
+.stopImageImage {
+  object-fit: cover;
+}
+
+.stopImageImage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.stopImage {
+  position: relative;
+  height: 100px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.stopImage > span,
+.stayVisual > span {
+  color: var(--bronze);
+  font-size: 0.5rem;
+  letter-spacing: 0.28rem;
+  text-transform: uppercase;
+}
+
 .sidebarTitle {
   display: block;
   margin-bottom: 1.1rem;
@@ -272,10 +313,19 @@
 }
 
 .stopImage {
+  position: relative;
   height: 100px;
   padding: 0.75rem;
   display: flex;
   align-items: flex-end;
+  overflow: hidden;
+}
+
+.stopImageImage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  object-fit: cover;
 }
 
 .stopImage > span,
@@ -336,12 +386,21 @@
   padding: 0.875rem;
   display: flex;
   align-items: flex-end;
+  overflow: hidden;
+}
+
+.destinationImage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  object-fit: cover;
 }
 
 .destinationBadge {
   position: absolute;
   top: 0.875rem;
   left: 0.875rem;
+  z-index: 2;
   padding: 3px 8px;
   color: rgba(255, 255, 255, 0.75);
   background: rgba(44, 26, 10, 0.52);
