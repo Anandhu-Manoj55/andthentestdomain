@@ -996,7 +996,7 @@ export const hotels: Hotel[] = [
   location: "Bekal, Kasaragod, Kerala",
   category: "india",
 
-  image: "/Assets/hotels/Taj-Beka.jpg",
+  image: "/Assets/hotels/Taj-Bekal.jpg",
   alt: "Taj Bekal Resort & Spa, Bekal, Kerala",
 
   accentClass: "hi--india-coast",
@@ -1097,7 +1097,7 @@ export const hotels: Hotel[] = [
   location: "Benaulim, South Goa",
   category: "india",
 
-  image: "/Assets/hotels/Taj-Exotica-Resort-Goa.jpg",
+  image: "/Assets/hotels/Taj-Exotice-Resort-Goa.jpg",
   alt: "Taj Exotica Resort & Spa, Goa",
 
   accentClass: "hi--india-coast",
