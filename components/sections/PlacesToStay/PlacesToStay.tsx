@@ -58,7 +58,11 @@ export const PlacesToStay = () => {
         </div>
 
         {hotels.slice(0, 3).map((hotel) => (
-          <div key={hotel.id} className={styles.stayCard}>
+          <Link
+            key={hotel.id}
+            href={`/places-to-stay/${hotel.id}/`}
+            className={styles.stayCard}
+          >
             <div className={styles.imageContainer}>
               <Image
                 src={hotel.image}
@@ -66,6 +70,7 @@ export const PlacesToStay = () => {
                 fill
                 sizes="(max-width: 1024px) 50vw, (max-width: 768px) 100vw, 25vw"
                 style={{ objectFit: "cover" }}
+                className={styles.cardImage}
               />
             </div>
             <div className={styles.meta}>
@@ -73,7 +78,7 @@ export const PlacesToStay = () => {
               <span className={styles.name}>{hotel.name}</span>
               <span className={styles.location}>{hotel.location}</span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

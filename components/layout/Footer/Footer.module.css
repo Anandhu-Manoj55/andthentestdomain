@@ -1,3 +1,4 @@
+
 .footer {
   background: var(--ci);
   padding: 4.5rem 2.5rem 2.5rem;
@@ -16,7 +17,7 @@
   font-size: 0.875rem;
   font-weight: 200;
   letter-spacing: 0.5rem;
-  color: var(--cr);
+  color: var(--cb);
   display: block;
 }
 
@@ -25,7 +26,7 @@
   font-style: italic;
   font-size: 0.625rem;
   letter-spacing: 0.18rem;
-  color: rgba(200, 180, 154, 0.28);
+  color:  var(--cb);
   margin-top: 3px;
   display: block;
 }
@@ -34,7 +35,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  color: rgba(200, 180, 154, 0.22);
+  color: var(--cb);
   line-height: 2;
   margin-top: 1.5rem;
   max-width: 250px;
@@ -63,7 +64,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: rgba(200, 180, 154, 0.18);
+  color: var(--cb);
   display: block;
   margin-bottom: 1.5rem;
 }
@@ -73,14 +74,14 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  color: rgba(200, 180, 154, 0.28);
+  color: var(--cb);
   text-decoration: none;
   margin-bottom: 0.625rem;
   transition: color var(--transition);
 }
 
 .col a:hover {
-  color: var(--cb);
+  color: var(--w);
 }
 
 .bottom {
@@ -95,7 +96,7 @@
 .copy {
   font-family: var(--font-body), sans-serif;
   font-size: 0.5625rem;
-  color: rgba(200, 180, 154, 0.14);
+  color:var(--w);
   letter-spacing: 0.08rem;
 }
 
@@ -106,7 +107,7 @@
 
 .socialIcon {
   font-size: 0.9375rem;
-  color: rgba(200, 180, 154, 0.14);
+  color:var(--w);
   transition: color var(--transition);
   cursor: pointer;
 }

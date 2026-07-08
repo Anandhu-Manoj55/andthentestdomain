@@ -11,5 +11,6 @@ export interface Hotel {
   isFeatured?: boolean;
   isRecommended?: boolean;
   categoryTag?: string;
+  mapEmbedUrl?: string;
 }
 

@@ -107,6 +107,7 @@
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
+    overflow-x: hidden;
   }
 
   .left {

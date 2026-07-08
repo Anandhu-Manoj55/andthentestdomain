@@ -7,7 +7,8 @@
   --cd: #1E1A16;   /* dark charcoal — hero, footer bg, dark sections */
   --ci: #2A2420;   /* ink — deeper dark */
   --cm: #7A6A58;   /* mid-brown — body text */
-  --cw: #FAF7F3;   /* warm white — nav bg */
+  --cw: #FAF7F3; 
+  --w:#ffffff;  /* warm white — nav bg */
 
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Jost", sans-serif;

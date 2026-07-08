@@ -79,6 +79,15 @@
   background: var(--cr);
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+}
+
+.cardImage {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stayCard:hover .cardImage {
+  transform: scale(1.04);
 }
 
 .imageContainer {
