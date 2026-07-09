@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tours } from "@/data/tours";
+import { hotels } from "@/data/hotels";
 import styles from "./page.module.css";
 
 interface Props {
@@ -23,23 +24,7 @@ const excludedItems = [
   "Visa fees",
 ];
 
-const stayPrinciples = [
-  {
-    label: "The collection",
-    title: "Handpicked stays",
-    text: "Characterful hotels, heritage properties and intimate retreats selected to suit the rhythm of your route.",
-  },
-  {
-    label: "Our standard",
-    title: "Personally vetted",
-    text: "Every recommendation is assessed for service, setting and the quality of the experience—not simply its star rating.",
-  },
-  {
-    label: "Your journey",
-    title: "Entirely flexible",
-    text: "Prefer a different room style, hotel category or slower pace? Every stay can be adjusted before the journey is confirmed.",
-  },
-];
+
 
 export async function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.id }));
@@ -72,6 +57,15 @@ export default async function ItinerarySlugPage({ params }: Props) {
   const heroImage = tour.images?.hero ?? tour.image ?? "/Assets/home/India.jpg";
   const heroSrc = encodeURI(heroImage);
   const findDest = (name: string) => tour.destinations.find(d => d.name === name);
+
+  // Match hotels whose location includes any route stop city name
+  const recommendedHotels = hotels
+    .filter((hotel) =>
+      routeStops.some((stop) =>
+        hotel.location.toLowerCase().includes(stop.toLowerCase())
+      )
+    )
+    .slice(0, 6);
   const title = tour.title ?? tour.name ?? "Untitled itinerary";
   const contactHref = `/contact/?trip=${encodeURIComponent(tour.id)}`;
   const relatedTours = tours
@@ -192,7 +186,8 @@ export default async function ItinerarySlugPage({ params }: Props) {
             >
               {routeStops.map((stop, index) => {
                 const dest = findDest(stop);
-                const imageSrc = dest ? dest.image : heroImage;
+                const rawSrc = dest ? dest.image : heroImage;
+                const imageSrc = encodeURI(rawSrc);
                 return (
                 <div
                   className={styles.journeyStop}
@@ -235,7 +230,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
                     className={`${styles.destinationVisual} ${styles[`tone${index % 6}`]}`}
                   >
                     <Image
-                      src={dest.image}
+                      src={encodeURI(dest.image)}
                       alt={`${dest.name} — ${title}`}
                       fill
                       className={styles.destinationImage}
@@ -261,33 +256,64 @@ export default async function ItinerarySlugPage({ params }: Props) {
             </div>
           </section>
 
+
           <hr className={styles.separator} />
 
           <section id="accommodation">
             <span className={styles.eyebrow}>Suggested accommodation</span>
-            <h2 className={styles.sectionHeading}>Where you’ll stay</h2>
+            <h2 className={styles.sectionHeading}>Where you'll stay</h2>
             <div className={styles.rule} />
             <p className={styles.bodyText}>
               Final properties are selected around availability, preferred style
               and budget. Your specialist will share a complete hotel proposal
               before anything is confirmed.
             </p>
-            <div className={styles.stayGrid}>
-              {stayPrinciples.map((item, index) => (
-                <article className={styles.stayCard} key={item.title}>
-                  <div
-                    className={`${styles.stayVisual} ${styles[`tone${index + 2}`]}`}
+            {recommendedHotels.length > 0 ? (
+              <div className={styles.stayGrid}>
+                {recommendedHotels.map((hotel, index) => (
+                  <Link
+                    href={`/places-to-stay/${hotel.id}/`}
+                    className={styles.stayCard}
+                    key={hotel.id}
                   >
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                  </div>
-                  <div className={styles.stayBody}>
-                    <span className={styles.stayLabel}>{item.label}</span>
-                    <h3 className={styles.stayTitle}>{item.title}</h3>
-                    <p className={styles.stayText}>{item.text}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+                    <div className={`${styles.stayVisual} ${styles.stayVisualImage}`}>
+                      <Image
+                        src={encodeURI(hotel.image)}
+                        alt={hotel.alt}
+                        fill
+                        className={styles.stayImageFill}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <span className={styles.stayImageBadge}>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <div className={styles.stayBody}>
+                      <span className={styles.stayLabel}>{hotel.location}</span>
+                      <h3 className={styles.stayTitle}>{hotel.name}</h3>
+                      <p className={styles.stayText}>
+                        {hotel.why
+                          ? hotel.why.slice(0, 110) + "…"
+                          : `A handpicked stay in ${hotel.location}, selected for its setting, service and sense of place.`}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className={styles.stayGrid}>
+                {["Handpicked stays", "Personally vetted", "Entirely flexible"].map((title, index) => (
+                  <article className={styles.stayCard} key={title}>
+                    <div className={`${styles.stayVisual} ${styles[`tone${index + 2}`]}`}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                    </div>
+                    <div className={styles.stayBody}>
+                      <h3 className={styles.stayTitle}>{title}</h3>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
             <div className={styles.accommodationFooter}>
               <p>
                 All properties are subject to availability and confirmed as part

@@ -462,6 +462,41 @@
 .stayTitle { font-size: 1.08rem; }
 .stayText { font-size: 0.6875rem; }
 
+/* Hotel image card overrides */
+.stayCard { text-decoration: none; color: inherit; transition: box-shadow 0.2s; }
+.stayCard:hover { box-shadow: 0 4px 24px rgba(44, 26, 10, 0.12); }
+
+.stayVisualImage {
+  position: relative;
+  height: 180px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.stayImageFill { object-fit: cover; transition: transform 0.4s ease; }
+.stayCard:hover .stayImageFill { transform: scale(1.04); }
+
+.stayImageBadge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.875rem;
+  z-index: 2;
+  padding: 0.2rem 0.5rem;
+  background: rgba(44, 26, 10, 0.72);
+  color: rgba(255,255,255,0.82);
+  font-size: 0.55rem;
+  letter-spacing: 0.18rem;
+}
+
+.stayLabel {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--bronze);
+  font-size: 0.5rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+}
+
 .accommodationFooter {
   padding: 1.1rem 1.5rem;
   display: flex;
