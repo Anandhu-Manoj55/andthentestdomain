@@ -58,7 +58,9 @@ export default function PlacesToStayPage() {
       return tag.includes("palace") || tag.includes("heritage");
     }
     if (filter === "wildlife") {
-      return tag.includes("wild") || tag.includes("nature") || tag.includes("safari");
+      return (
+        tag.includes("wild") || tag.includes("nature") || tag.includes("safari")
+      );
     }
     if (filter === "wellness") {
       return tag.includes("well") || tag.includes("ayur");
@@ -67,7 +69,9 @@ export default function PlacesToStayPage() {
       return tag.includes("boutique");
     }
     if (filter === "beach") {
-      return tag.includes("beach") || tag.includes("coast") || tag.includes("sea");
+      return (
+        tag.includes("beach") || tag.includes("coast") || tag.includes("sea")
+      );
     }
     return false;
   };
@@ -89,17 +93,31 @@ export default function PlacesToStayPage() {
     return hotelsInDest.filter((h) => matchesCategory(h, activeFilter));
   };
 
-  const totalVisibleCount = hotels.filter((h) => matchesCategory(h, activeFilter)).length;
+  const totalVisibleCount = hotels.filter((h) =>
+    matchesCategory(h, activeFilter),
+  ).length;
 
   return (
     <div className={styles.staysPage}>
       {/* ── HERO ─────────────────────────────────────────── */}
       <header className={styles.hero}>
-        <div className={styles.heroBg}></div>
+        <div
+          className={styles.heroBg}
+          style={{
+            backgroundImage:
+              'linear-gradient(135deg, rgba(24,36,33,0.7) 0%, rgba(15,24,24,0.75) 50%, rgba(8,13,14,0.82) 100%), url("/Assets/banners/Banner image 2.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
         <div className={styles.heroContent}>
           <span className={styles.heroKicker}>AndThen — Recommended stays</span>
           <h1 className={styles.heroTitle}>
-            Places we<br />trust you to<br /><em>sleep well.</em>
+            Places we
+            <br />
+            trust you to
+            <br />
+            <em>sleep well.</em>
           </h1>
           <p className={styles.heroDesc}>
             Every property here has been visited, vetted or used by our team. No
@@ -114,19 +132,29 @@ export default function PlacesToStayPage() {
       <div className={styles.editorialNote}>
         <div className={styles.enRule}></div>
         <p className={styles.enText}>
-          <strong>How we choose.</strong> These are properties we have personally
-          experienced or rigorously vetted through our network. We categorise them
-          by what they do best — <strong>Palace &amp; Heritage, Luxury Lodge,
-          Wellness, Wildlife, Boutique</strong> and <strong>Beach &amp; Coast</strong> —
-          so you can find the right match for your journey, not just the most famous name.
+          <strong>How we choose.</strong> These are properties we have
+          personally experienced or rigorously vetted through our network. We
+          categorise them by what they do best —{" "}
+          <strong>
+            Palace &amp; Heritage, Luxury Lodge, Wellness, Wildlife, Boutique
+          </strong>{" "}
+          and <strong>Beach &amp; Coast</strong> — so you can find the right
+          match for your journey, not just the most famous name.
         </p>
       </div>
 
       {/* ── FILTER BAR ──────────────────────────────────── */}
-      <nav className={styles.filterBar} role="toolbar" aria-label="Filter by destination">
+      <nav
+        className={styles.filterBar}
+        role="toolbar"
+        aria-label="Filter by destination"
+      >
         <span className={styles.fLabel}>Filter</span>
         {filterButtons.map((btn, index) => (
-          <div key={btn.id} style={{ display: "flex", height: "100%", alignItems: "center" }}>
+          <div
+            key={btn.id}
+            style={{ display: "flex", height: "100%", alignItems: "center" }}
+          >
             {index > 1 && <div className={styles.fSep}></div>}
             {btn.id === "palace" && <div className={styles.fSep}></div>}
             <button
@@ -159,7 +187,9 @@ export default function PlacesToStayPage() {
                   />
                 </div>
                 <div className={styles.destHeadRight}>
-                  <span className={styles.destHeadCount}>{visibleHotels.length}</span>
+                  <span className={styles.destHeadCount}>
+                    {visibleHotels.length}
+                  </span>
                   <span className={styles.destHeadCountLabel}>Properties</span>
                 </div>
               </div>
@@ -167,11 +197,21 @@ export default function PlacesToStayPage() {
               <div className={styles.hotelGrid}>
                 {visibleHotels.map((hotel) => {
                   const isFeatured = hotel.isFeatured;
-                  const cardClass = `${styles.hc} ${isFeatured ? styles.hcFeatured : ""}`.trim();
-                  
+                  const cardClass =
+                    `${styles.hc} ${isFeatured ? styles.hcFeatured : ""}`.trim();
+
                   // Mapping fallback classes
                   const fallbackClass = hotel.accentClass
-                    ? styles[hotel.accentClass.replace("hi--", "hi").replace("-", " ").split(" ").map((w, i) => i === 0 ? w : w[0].toUpperCase() + w.slice(1)).join("")]
+                    ? styles[
+                        hotel.accentClass
+                          .replace("hi--", "hi")
+                          .replace("-", " ")
+                          .split(" ")
+                          .map((w, i) =>
+                            i === 0 ? w : w[0].toUpperCase() + w.slice(1),
+                          )
+                          .join("")
+                      ]
                     : styles.hiIndiaPalace;
 
                   return (
@@ -183,22 +223,40 @@ export default function PlacesToStayPage() {
                               src={hotel.image}
                               alt={hotel.alt}
                               fill
-                              sizes={isFeatured ? "100vw" : "(max-width: 1024px) 50vw, 33vw"}
+                              sizes={
+                                isFeatured
+                                  ? "100vw"
+                                  : "(max-width: 1024px) 50vw, 33vw"
+                              }
                               style={{ objectFit: "cover" }}
                             />
                           ) : (
-                            <div className={`${styles.hcImgPh} ${fallbackClass || ""}`} />
+                            <div
+                              className={`${styles.hcImgPh} ${fallbackClass || ""}`}
+                            />
                           )}
-                          {hotel.categoryTag && <span className={styles.hcType}>{hotel.categoryTag}</span>}
-                          {hotel.isRecommended && <span className={styles.hcPick}>AndThen Pick</span>}
+                          {hotel.categoryTag && (
+                            <span className={styles.hcType}>
+                              {hotel.categoryTag}
+                            </span>
+                          )}
+                          {hotel.isRecommended && (
+                            <span className={styles.hcPick}>AndThen Pick</span>
+                          )}
                         </div>
                       </Link>
                       <div className={styles.hcBody}>
-                        <span className={styles.hcLocation}>{hotel.location}</span>
+                        <span className={styles.hcLocation}>
+                          {hotel.location}
+                        </span>
                         <h3 className={styles.hcName}>
-                          <Link href={`/places-to-stay/${hotel.id}/`}>{hotel.name}</Link>
+                          <Link href={`/places-to-stay/${hotel.id}/`}>
+                            {hotel.name}
+                          </Link>
                         </h3>
-                        {hotel.why && <p className={styles.hcWhy}>{hotel.why}</p>}
+                        {hotel.why && (
+                          <p className={styles.hcWhy}>{hotel.why}</p>
+                        )}
                         {hotel.tags && hotel.tags.length > 0 && (
                           <div className={styles.hcTags}>
                             {hotel.tags.map((tag) => (
@@ -209,8 +267,12 @@ export default function PlacesToStayPage() {
                           </div>
                         )}
                         <div className={styles.hcFoot}>
-                          <Link href={`/places-to-stay/${hotel.id}/`} className={styles.hcLink}>
-                            <span className={styles.hcLinkLine}></span>View property
+                          <Link
+                            href={`/places-to-stay/${hotel.id}/`}
+                            className={styles.hcLink}
+                          >
+                            <span className={styles.hcLinkLine}></span>View
+                            property
                           </Link>
                         </div>
                       </div>
@@ -228,7 +290,13 @@ export default function PlacesToStayPage() {
         <div className={styles.noResults}>
           <p>
             No properties match that filter.{" "}
-            <a href="#" onClick={(e) => { e.preventDefault(); setActiveFilter("all"); }}>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveFilter("all");
+              }}
+            >
               Show all properties
             </a>{" "}
             or <Link href="/contact/">speak to a specialist</Link>.
@@ -239,12 +307,14 @@ export default function PlacesToStayPage() {
       {/* ── ENQUIRY STRIP ───────────────────────────────── */}
       <div className={styles.enquiryStrip}>
         <div>
-          <h2 className={styles.esTitle}>Not sure which property is right for your journey?</h2>
+          <h2 className={styles.esTitle}>
+            Not sure which property is right for your journey?
+          </h2>
           <p className={styles.esSub}>
-            Tell us where you're going, when and for how long — we'll match you to
-            the right combination of hotels for your itinerary, often at rates you
-            won't find online, and always with the personal service that comes from
-            knowing these properties directly.
+            Tell us where you're going, when and for how long — we'll match you
+            to the right combination of hotels for your itinerary, often at
+            rates you won't find online, and always with the personal service
+            that comes from knowing these properties directly.
           </p>
         </div>
         <div className={styles.esBtns}>

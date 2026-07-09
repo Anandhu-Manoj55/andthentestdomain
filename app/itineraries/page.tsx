@@ -138,6 +138,12 @@ export default function ItinerariesPage() {
           className={styles.heroImage}
           role="img"
           aria-label="Private journeys across India, Bhutan, Nepal and Sri Lanka"
+          style={{
+            backgroundImage:
+              'linear-gradient(135deg, rgba(19,33,44,0.65) 0%, rgba(14,24,34,0.75) 55%, rgba(7,13,20,0.82) 100%), url("/Assets/banners/Banner image 3.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         />
         <div className={styles.heroContent}>
           <div className={styles.heroLeft}>
