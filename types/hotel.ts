@@ -10,8 +10,17 @@ export interface Airport {
   distance: string;
 }
 
+export interface TransitPoint {
+  name: string;
+  location?: string;
+  code?: string;
+  distance?: string;
+}
+
 export interface HowToReach {
-  airports: Airport[];
+  airports?: Airport[];
+  rail?: TransitPoint[];
+  road?: string;
 }
 
 export interface Hotel {
