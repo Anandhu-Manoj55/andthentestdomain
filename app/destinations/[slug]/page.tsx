@@ -535,10 +535,12 @@ export default function DestinationSlugPage() {
               aria-label={`${tour.name} — ${tour.nights}`}
             >
               <div className={styles.irImage}>
-                {tour.image && (
+                {(tour.images?.hero || tour.image) && (
                   <div
                     className={styles.irImageBg}
-                    style={{ backgroundImage: `url('${tour.image}')` }}
+                    style={{
+                      backgroundImage: `url('${tour.images?.hero || tour.image}')`,
+                    }}
                   />
                 )}
               </div>
