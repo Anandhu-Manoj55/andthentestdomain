@@ -1,96 +1,5 @@
 import type { Tour } from "@/types/tour";
 
-const itineraryImages = {
-  landOfKings: {
-    card: "/Assets/iternities/Land of Kings /Banner inmage - Land of Kings.jpg",
-    hero: "/Assets/iternities/Land of Kings /Banner inmage - Land of Kings.jpg",
-    gallery: [ "/Assets/iternities/Land of Kings /Delhi.jpg",
-      "/Assets/iternities/Land of Kings /Agra.jpg",
-     
-      "/Assets/iternities/Land of Kings /jaipur.jpg",
-      "/Assets/iternities/Land of Kings /jodhpur.jpg",
-      "/Assets/iternities/Land of Kings /Udaipur.jpg",
-      "/Assets/iternities/Land of Kings /Mumbai.jpg",
-    ],
-  },
-  timelessTreasures: {
-    card: "/Assets/iternities/Timeless Treasures /Banner Image - Timeless Treasures.jpg",
-    hero: "/Assets/iternities/Timeless Treasures /Banner Image - Timeless Treasures.jpg",
-    gallery: [
-      "/Assets/iternities/Timeless Treasures /Agra.jpg",
-      "/Assets/iternities/Timeless Treasures /Varanasi.jpg",
-      "/Assets/iternities/Timeless Treasures /Delhi.jpg",
-    ],
-  },
-  wildEncounters: {
-    card: "/Assets/iternities/Wild Encounters/Banner Image - Wild encounters.jpeg",
-    hero: "/Assets/iternities/Wild Encounters/Banner Image - Wild encounters.jpeg",
-    gallery: [
-      "/Assets/iternities/Wild Encounters/Bandhavgarh.webp",
-      "/Assets/iternities/Wild Encounters/Kanha-National-Park.webp",
-      "/Assets/iternities/Wild Encounters/Tadoba national park.webp",
-    ],
-  },
-  godsOwnCountry: {
-    card: "/Assets/iternities/God_s own country /banner image - God_s own country.png",
-    hero: "/Assets/iternities/God_s own country /banner image - God_s own country.png",
-    gallery: [
-      "/Assets/iternities/God_s own country /Cochin.jpg",
-      "/Assets/iternities/God_s own country /Kumarakom.jpg",
-      "/Assets/iternities/God_s own country /Kovalam.jpg",
-    ],
-  },
-  teteATete: {
-    card: "/Assets/iternities/Tete a Tete with Gods /Banner Image - Tete a Tete with Gods.jpg",
-    hero: "/Assets/iternities/Tete a Tete with Gods /Banner Image - Tete a Tete with Gods.jpg",
-    gallery: [
-      "/Assets/iternities/Tete a Tete with Gods /Bengaluru.jpg",
-      "/Assets/iternities/Tete a Tete with Gods /Mysuru.jpg",
-      "/Assets/iternities/Tete a Tete with Gods /Bekal.jpg",
-    ],
-  },
-  awakeningEmpire: {
-    card: "/Assets/iternities/Awakening of an Empire /Bannaer Image - Awakening of an Empire.jpg",
-    hero: "/Assets/iternities/Awakening of an Empire /Bannaer Image - Awakening of an Empire.jpg",
-    gallery: [
-      "/Assets/iternities/Awakening of an Empire /Hampi.jpg",
-      "/Assets/iternities/Awakening of an Empire /Mysuru.jpg",
-      "/Assets/iternities/Awakening of an Empire /Coorg.jpg",
-    ],
-  },
-  templeTrail: {
-    card: "/Assets/iternities/Temple Trail /Banner Image - Temple Trail.jpg",
-    hero: "/Assets/iternities/Temple Trail /Banner Image - Temple Trail.jpg",
-    gallery: [
-      "/Assets/iternities/Temple Trail /Mahabalipuram.jpg",
-      "/Assets/iternities/Temple Trail /Madurai.jpg",
-      "/Assets/iternities/Temple Trail /Thekkady.jpg",
-    ],
-  },
-  byTheBeach: {
-    card: "/Assets/iternities/By the Beach /Banner image - By the Beach.webp",
-    hero: "/Assets/iternities/By the Beach /Banner image - By the Beach.webp",
-    gallery: [
-      "/Assets/iternities/By the Beach /Goa.jpg",
-      "/Assets/iternities/By the Beach /Gokarna.jpg",
-      "/Assets/iternities/By the Beach /Bekal.webp",
-    ],
-  },
-  sunHeritage: {
-    card: "/Assets/iternities/Sun, Heritage and Splendor /Banner Image - Sun, Heritage and Splendor.jpg",
-    hero: "/Assets/iternities/Sun, Heritage and Splendor /Banner Image - Sun, Heritage and Splendor.jpg",
-    gallery: [
-      "/Assets/iternities/Sun, Heritage and Splendor /Mumbai.jpg",
-      "/Assets/iternities/Sun, Heritage and Splendor /Bhubaneswar.jpg",
-      "/Assets/iternities/Sun, Heritage and Splendor /Chennai.jpg",
-    ],
-  },
-  fallback: {
-    card: "/Assets/home/India.jpg",
-    hero: "/Assets/home/India.jpg",
-    gallery: ["/Assets/home/India.jpg"],
-  },
-};
 
 export const tours: Tour[] = [
   {
@@ -517,31 +426,31 @@ export const tours: Tour[] = [
       "Tang Valley",
       "Paro",
     ],
-    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "images": {"card": "/Assets/iternities/Bhutan/Bhutan Banner Image.jpg", "hero": "/Assets/iternities/Bhutan/Bhutan Banner Image.jpg"},
     "destinations": [
   {
     "name": "Paro",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Bhutan/Paro Bhutan.jpg"
   },
   {
     "name": "Thimphu",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Bhutan/Thimphu Bhutan.jpg"
   },
   {
     "name": "Punakha",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Bhutan/Punakha Bhutan.jpg"
   },
   {
     "name": "Phobjikha",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Bhutan/Phobjikha Bhutan.jpg"
   },
   {
     "name": "Bumthang",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Bhutan/Bumthang Bhutan.avif"
   },
   {
     "name": "Tang Valley",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Bhutan/Tang-Valley.jpg"
   }
 ],
     highlights: [
@@ -577,39 +486,39 @@ export const tours: Tour[] = [
       "Lumbini",
       "Nagarkot",
     ],
-    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "images": {"card": "/Assets/iternities/Nepal/Nepal Banner Image.jpg", "hero": "/Assets/iternities/Nepal/Nepal Banner Image.jpg"},
     "destinations": [
   {
     "name": "Kathmandu",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/Kathmandu Nepal.jpg"
   },
   {
     "name": "Bhaktapur",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/Bhaktapur Nepal.jpg"
   },
   {
     "name": "Patan",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/Patan Nepal.jpg"
   },
   {
     "name": "Chitwan",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/chitwan-nepal.jpg"
   },
   {
     "name": "Bandipur",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/Bandipur Nepal.jpg"
   },
   {
     "name": "Pokhara",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/Pokhara Nepal.jpg"
   },
   {
     "name": "Lumbini",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/Lumbini Nepal.jpg"
   },
   {
     "name": "Nagarkot",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Nepal/Nagarkot Nepal.jpg"
   }
 ],
     highlights: [
@@ -646,43 +555,43 @@ export const tours: Tour[] = [
       "Galle",
       "Colombo",
     ],
-    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "images": {"card": "/Assets/iternities/Siri Lanka/Sri Lanka Banner Image.jpg", "hero": "/Assets/iternities/Siri Lanka/Sri Lanka Banner Image.jpg"},
     "destinations": [
   {
     "name": "Negombo",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Negombo SriLanka.jpg"
   },
   {
     "name": "Sigiriya",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Sigriya Sri Lanka.jpg"
   },
   {
     "name": "Polonnaruwa",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Polonnaruwa SriLanka.jpg"
   },
   {
     "name": "Kandy",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Kandy SriLanka.jpg"
   },
   {
     "name": "Hatton",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Hatton Sri Lanka.jpg"
   },
   {
     "name": "Yala",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Yala SriLanka.jpg"
   },
   {
     "name": "Weligama",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Weligama SriLanka.jpg"
   },
   {
     "name": "Galle",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Galle SriLanka.jpg"
   },
   {
     "name": "Colombo",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Siri Lanka/Colombo SriLanka.jpg"
   }
 ],
     highlights: [
@@ -719,39 +628,39 @@ export const tours: Tour[] = [
       "Delhi",
       "Agra",
     ],
-    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "images": {"card": "/Assets/iternities/Multi country/Bhutan & India/Bhutan & India Banner Image.jpg", "hero": "/Assets/iternities/Multi country/Bhutan & India/Bhutan & India Banner Image.jpg"},
     "destinations": [
   {
     "name": "Paro",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Paro.jpg"
   },
   {
     "name": "Thimphu",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Thimphu Bhutan.jpg"
   },
   {
     "name": "Punakha",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Punakha Bhutan.jpg"
   },
   {
     "name": "Phobjikha",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Phobjikha Bhutan.jpg"
   },
   {
     "name": "Bumthang",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Bumthang Bhutan.avif"
   },
   {
     "name": "Tang Valley",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Tang-Valley.jpg"
   },
   {
     "name": "Delhi",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Delhi .jpg"
   },
   {
     "name": "Agra",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Bhutan & India/Agra.jpg"
   }
 ],
     highlights: [
@@ -784,39 +693,39 @@ export const tours: Tour[] = [
       "Delhi",
       "Agra",
     ],
-    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "images": {"card": "/Assets/iternities/Multi country/Nepal & India/Nepal & India Banner Image.jpg", "hero": "/Assets/iternities/Multi country/Nepal & India/Nepal & India Banner Image.jpg"},
     "destinations": [
   {
     "name": "Kathmandu",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/Kathmandu Nepal.jpg"
   },
   {
     "name": "Chitwan",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/chitwan-nepal.jpg"
   },
   {
     "name": "Bandipur",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/Bandipur Nepal.jpg"
   },
   {
     "name": "Pokhara",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/Pokhara Nepal.jpg"
   },
   {
     "name": "Lumbini",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/Lumbini Nepal.jpg"
   },
   {
     "name": "Nagarkot",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/Nagarkot Nepal.jpg"
   },
   {
     "name": "Delhi",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/Delhi.jpg"
   },
   {
     "name": "Agra",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & India/Agra.jpg"
   }
 ],
     highlights: [
@@ -840,27 +749,27 @@ export const tours: Tour[] = [
     departure: "Families",
     duration: { nights: 10, days: 11 },
     route: ["Kathmandu", "Chitwan", "Paro", "Thimphu", "Punakha", "Paro"],
-    "images": {"card": "/Assets/home/India.jpg", "hero": "/Assets/home/India.jpg"},
+    "images": {"card": "/Assets/iternities/Multi country/Nepal & Bhutan/Bhutan & Nepal Banner Image.jpg", "hero": "/Assets/iternities/Multi country/Nepal & Bhutan/Bhutan & Nepal Banner Image.jpg"},
     "destinations": [
   {
     "name": "Kathmandu",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & Bhutan/Kathmandu Nepal.jpg"
   },
   {
     "name": "Chitwan",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & Bhutan/chitwan-nepal.jpg"
   },
   {
     "name": "Paro",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & Bhutan/Paro.jpg"
   },
   {
     "name": "Thimphu",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & Bhutan/Thimphu Bhutan.jpg"
   },
   {
     "name": "Punakha",
-    "image": "/Assets/home/India.jpg"
+    "image": "/Assets/iternities/Multi country/Nepal & Bhutan/Punakha Bhutan.jpg"
   }
 ],
     highlights: [
