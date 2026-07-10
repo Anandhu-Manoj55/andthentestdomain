@@ -50,6 +50,7 @@ export const Hero = () => {
             playsInline
             preload="auto"
             className={styles.backgroundVideo}
+            poster="/Assets/home/poster.png"
           >
             <source src="/Assets/home/banner-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.

@@ -165,7 +165,7 @@ function BlogSection({ title, count, location, blogs }: { title: string, count: 
       </div>
       <div className="card-grid">
         {blogs.map((blog, index) => (
-          <article key={blog.slug} className={`card ${index === 0 ? 'card--featured' : ''}`}>
+          <article key={blog.slug} className={"card"}>
             <Link href={`/blogs/${blog.slug}`}>
               <div className="card__img-wrap">
                 <img src={blog.coverImage} alt={blog.coverImageAlt} className="card__img-ph" />

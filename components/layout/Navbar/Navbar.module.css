@@ -89,6 +89,7 @@
   border: none;
   flex-direction: column;
   gap: 5px;
+  
   padding: 4px;
   cursor: pointer;
 }
@@ -109,6 +110,7 @@
   .phoneLink,
   .desktopCta {
     display: none;
+
   }
 
   .links {
