@@ -18,10 +18,10 @@ readTime: "9"
 destination: "India"
 category: "Wellness"
 
-coverImage: "/Assets/blogs/ayurveda-retreats-india/cover.jpeg"
+coverImage: "/Assets/blogs/beginner-guide-ayurveda-retreats-india/Banner Image.webp"
 coverImageAlt: "Traditional Ayurveda therapy at a wellness retreat in Kerala"
 
-inlineImage: "/Assets/blogs/ayurveda-retreats-india/blog.avif"
+inlineImage: "/Assets/blogs/beginner-guide-ayurveda-retreats-india/Last page image - Ayurveda.webp"
 inlineImageAlt: "Ayurvedic oil massage treatment in Kerala"
 
 highlight: "India offers the world's most authentic Ayurveda retreats, combining ancient healing traditions with immersive wellness experiences in destinations like Kerala, Rishikesh, and Goa."

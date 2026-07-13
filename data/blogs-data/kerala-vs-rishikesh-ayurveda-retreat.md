@@ -18,11 +18,11 @@ readTime: "9"
 destination: "India"
 category: "Wellness"
 
-coverImage: "/Assets/blogs/ayurveda-retreats-india/cover.jpeg"
-coverImageAlt: "Traditional Ayurveda therapy at a wellness retreat in Kerala"
+coverImage: "/Assets/blogs/kerala-vs-rishikesh-ayurveda-retreat/Blog 3.webp"
+coverImageAlt: "Kerala vs Rishikesh Ayurveda comparison"
 
-inlineImage: "/Assets/blogs/ayurveda-retreats-india/blog.avif"
-inlineImageAlt: "Ayurvedic oil massage treatment in Kerala"
+inlineImage: "/Assets/blogs/kerala-vs-rishikesh-ayurveda-retreat/rishikesh Yoga.jpg"
+inlineImageAlt: "Yoga and meditation session in Rishikesh"
 
 highlight: "Kerala and Rishikesh are India's two most popular wellness destinations, each offering a unique approach to Ayurveda, yoga, healing, and holistic travel."
 
@@ -61,7 +61,7 @@ Travelers visiting Kerala for Ayurveda usually focus on:
 
 The overall experience in Kerala tends to feel restorative, luxurious, and deeply relaxing.
 
-![Ayurvedic oil massage treatment in Kerala](/Assets/blogs/ayurveda-retreats-india/blog.avif)
+![Ayurvedic oil massage treatment in Kerala](/Assets/blogs/kerala-vs-rishikesh-ayurveda-retreat/Blog%203%20.jpg)
 
 ## What Makes Rishikesh Different?
 
@@ -72,6 +72,8 @@ While Ayurveda is available in Rishikesh, the destination is more strongly assoc
 The atmosphere in Rishikesh feels more energetic and introspective compared to Kerala's slower and more indulgent pace. Ashrams, yoga schools, spiritual ceremonies, meditation centers, and Himalayan surroundings shape much of the experience.
 
 For many visitors, Rishikesh is less about luxury wellness and more about personal growth and self-discovery.
+
+![Spiritual Ganges and mountain view in Rishikesh](/Assets/blogs/kerala-vs-rishikesh-ayurveda-retreat/Rishikesh%20.jpg)
 
 ## Which Destination Is Better for Ayurveda Treatments?
 
