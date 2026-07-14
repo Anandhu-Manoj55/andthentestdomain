@@ -26,7 +26,9 @@ export const Footer = () => {
             <a href="mailto:travel@andthentravels.com">
               travel@andthentravels.com
             </a>
-            <a href="tel:+18000000000">+1 800 000 0000</a>
+            <a href="tel:+918129271155" >
+          +91 8129271155
+        </a>
           </div>
         </div>
 

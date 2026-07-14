@@ -96,8 +96,8 @@ export const Navbar = () => {
       </div>
 
       <div className={styles.rightActions}>
-        <a href="tel:+18000000000" className={styles.phoneLink}>
-          +1 800 000 0000
+        <a href="tel:+918129271155" className={styles.phoneLink}>
+          +91 8129271155
         </a>
         <Button
           href="/contact/"
