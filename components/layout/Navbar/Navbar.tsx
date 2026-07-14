@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Navbar.module.css";
 import Button from "@/components/common/Button/Button";
 
@@ -62,7 +63,14 @@ export const Navbar = () => {
         className={styles.logo}
         aria-label="AndThen Travels — Home"
       >
-        <span className={styles.logoWordmark}>ANDTHEN</span>
+        <Image
+          src="/Assets/logo/logo.png"
+          alt="ANDTHEN"
+          width={120}
+          height={23}
+          priority
+          className={styles.logoImage}
+        />
         <span className={styles.logoSub}>travels</span>
       </Link>
 

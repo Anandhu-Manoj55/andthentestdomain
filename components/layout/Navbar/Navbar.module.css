@@ -24,6 +24,13 @@
   gap: 2px;
 }
 
+.logoImage {
+  display: block;
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+}
+
 .logoWordmark {
   font-family: var(--font-body), sans-serif;
   font-size: 0.875rem;

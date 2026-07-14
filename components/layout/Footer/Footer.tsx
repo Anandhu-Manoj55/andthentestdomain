@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 
 export const Footer = () => {
@@ -6,8 +7,15 @@ export const Footer = () => {
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.top}>
         <div>
-          <Link href="/" aria-label="AndThen Travels — Home">
-            <span className={styles.logoWordmark}>ANDTHEN</span>
+          <Link href="/" aria-label="AndThen Travels — Home" className={styles.logo}>
+            <Image
+              src="/Assets/logo/logo.png"
+              alt="ANDTHEN"
+              width={120}
+              height={23}
+              priority
+              className={styles.logoImage}
+            />
             <span className={styles.logoSub}>travels</span>
           </Link>
           <p className={styles.desc}>
