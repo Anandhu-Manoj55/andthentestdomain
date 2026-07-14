@@ -527,38 +527,49 @@ export default function DestinationSlugPage() {
             </Link>
           </div>
 
-          {destTours.map((tour) => (
-            <Link
-              key={tour.id}
-              href={tour.slug}
-              className={styles.itinRow}
-              aria-label={`${tour.name} — ${tour.nights}`}
-            >
-              <div className={styles.irImage}>
-                {(tour.images?.hero || tour.image) && (
-                  <div
-                    className={styles.irImageBg}
-                    style={{
-                      backgroundImage: `url('${tour.images?.hero || tour.image}')`,
-                    }}
-                  />
-                )}
-              </div>
-              <div>
-                <span className={styles.irName}>{tour.title ?? tour.name}</span>
-                <span className={styles.irDest}>
-                  {Array.isArray(tour.route)
-                    ? tour.route.join(" → ")
-                    : tour.route}
-                </span>
-              </div>
-              <span className={styles.irNights}>{tour.nights}</span>
-              <span className={styles.irPrice}>{tour.price}</span>
-              <span className={styles.irLink}>View →</span>
-            </Link>
-          ))}
+          <div className={styles.itinsGrid}>
+            {destTours.map((tour) => (
+              <Link
+                key={tour.id}
+                href={tour.slug}
+                className={styles.itinCard}
+                aria-label={`${tour.name} — ${tour.nights}`}
+              >
+                <div className={styles.itinCardImage}>
+                  {(tour.images?.hero || tour.image) && (
+                    <div
+                      className={styles.itinCardImageBg}
+                      style={{
+                        backgroundImage: `url('${tour.images?.hero || tour.image}')`,
+                      }}
+                    />
+                  )}
+                  <div className={styles.itinCardImageOverlay} />
+                  <span className={styles.itinCardNights}>{tour.nights}</span>
+                </div>
+                <div className={styles.itinCardBody}>
+                  <div>
+                    <span className={styles.itinCardRoute}>
+                      {Array.isArray(tour.route)
+                        ? tour.route.join(" → ")
+                        : tour.route}
+                    </span>
+                    <h3 className={styles.itinCardName}>{tour.title ?? tour.name}</h3>
+                  </div>
+                  <div className={styles.itinCardFooter}>
+                    <span className={styles.itinCardPrice}>{tour.price}</span>
+                    <span className={styles.itinCardCta}>
+                      View itinerary
+                      <span className={styles.itinCardCtaLine} aria-hidden="true" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
       )}
+
 
       {/* ── CTA BAND ──────────────────────────────────────────── */}
       <div

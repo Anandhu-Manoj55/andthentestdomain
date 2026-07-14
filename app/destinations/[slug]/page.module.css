@@ -815,86 +815,151 @@
   border-bottom: 0.5px solid rgba(200, 180, 154, 0.3);
 }
 
-.itinRow {
+/* ITINERARY GRID */
+.itinsGrid {
   display: grid;
-  grid-template-columns: 160px 1fr 110px 120px 64px;
-  gap: 2rem;
-  align-items: center;
-  padding: 1.375rem 0;
-  border-bottom: 0.5px solid rgba(200, 180, 154, 0.22);
-  cursor: pointer;
-  transition: background var(--transition), padding-left var(--transition);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.itinCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--cr);
   text-decoration: none;
   color: inherit;
+  border: 0.5px solid rgba(200, 180, 154, 0.15);
+  transition: box-shadow var(--transition), transform var(--transition);
+  overflow: hidden;
 }
 
-.itinRow:hover {
-  background: rgba(200, 180, 154, 0.12);
-  padding-left: 0.75rem;
+.itinCard:hover {
+  box-shadow: 0 12px 40px rgba(28, 25, 24, 0.14);
+  transform: translateY(-3px);
 }
 
-.irImage {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.itinCardImage {
+  height: 260px;
   position: relative;
   overflow: hidden;
   background-color: var(--ci);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+  flex-shrink: 0;
 }
 
-.irImageBg {
+.itinCardImageBg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
+  transition: transform 0.55s ease;
 }
 
-.irName {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 1.125rem;
-  font-weight: 400;
-  color: var(--cd);
-  display: block;
+.itinCard:hover .itinCardImageBg {
+  transform: scale(1.04);
 }
 
-.irDest {
+.itinCardImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 14, 8, 0.55) 0%,
+    transparent 55%
+  );
+}
+
+.itinCardNights {
+  position: relative;
+  z-index: 2;
   font-family: var(--font-body), sans-serif;
   font-size: 0.5rem;
-  letter-spacing: 0.18rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(20, 14, 8, 0.42);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  padding: 4px 10px;
+  backdrop-filter: blur(4px);
+}
+
+.itinCardBody {
+  padding: 1.625rem 1.75rem 1.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.itinCardRoute {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: var(--cb);
-  margin-top: 3px;
   display: block;
+  margin-bottom: 0.5rem;
 }
 
-.irNights {
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: var(--cm);
+.itinCardName {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cd);
+  line-height: 1.3;
+  margin: 0;
 }
 
-.irPrice {
+.itinCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 0.5px solid rgba(200, 180, 154, 0.22);
+  margin-top: auto;
+}
+
+.itinCardPrice {
   font-family: var(--font-body), sans-serif;
   font-size: 0.8125rem;
   color: var(--cd);
 }
 
-.irLink {
+.itinCardCta {
   font-family: var(--font-body), sans-serif;
   font-size: 0.5rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.22rem;
   text-transform: uppercase;
   color: var(--cs);
-  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: color var(--transition);
 }
 
-.itinRow:hover .irLink {
+.itinCard:hover .itinCardCta {
   color: var(--cb);
 }
+
+.itinCardCtaLine {
+  display: block;
+  width: 18px;
+  height: 0.5px;
+  background: currentColor;
+  flex-shrink: 0;
+  transition: width var(--transition);
+}
+
+.itinCard:hover .itinCardCtaLine {
+  width: 28px;
+}
+
+
 
 /* CTA BAND */
 .ctaBand {
@@ -1010,13 +1075,8 @@
     gap: 3rem;
   }
 
-  .itinRow {
-    grid-template-columns: 120px 1fr 90px;
-  }
-
-  .itinRow .irPrice,
-  .itinRow .irLink {
-    display: none;
+  .itinsGrid {
+    grid-template-columns: 1fr;
   }
 
   .ctaBand {
@@ -1060,12 +1120,8 @@
     grid-template-columns: 1fr;
   }
 
-  .itinRow {
-    grid-template-columns: 90px 1fr;
-  }
-
-  .itinRow .irNights {
-    display: none;
+  .itinCardImage {
+    height: 200px;
   }
 
   .aboutFacts {
