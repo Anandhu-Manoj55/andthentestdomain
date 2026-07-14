@@ -109,7 +109,7 @@ export default function DestinationSlugPage() {
               ))}
             </div>
           </div>
-
+{/* 
           {destination.stats && destination.stats.length > 0 && (
             <div
               className={styles.heroStats}
@@ -122,7 +122,7 @@ export default function DestinationSlugPage() {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
         </div>
 
         <div className={styles.heroScroll} aria-hidden="true">
@@ -205,7 +205,7 @@ export default function DestinationSlugPage() {
         >
           <div className={styles.regionsHeader}>
             <div>
-              <span className="eyebrow" style={{ color: "var(--cb)" }}>
+              <span className="eyebrow" style={{ color: "#fff" }}>
                 Explore by region
               </span>
               <h2 className="section-heading section-heading--light">
