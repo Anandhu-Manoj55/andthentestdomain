@@ -61,7 +61,7 @@
 .bodyText {
   font-family: var(--font-body), sans-serif;
   font-size: 0.8125rem;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--cm);
   line-height: 2.1;
   margin-bottom: 1rem;
