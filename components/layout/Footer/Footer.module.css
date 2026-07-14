@@ -17,7 +17,7 @@
   font-size: 0.875rem;
   font-weight: 200;
   letter-spacing: 0.5rem;
-  color: var(--cb);
+  color: #fff;
   display: block;
 }
 
@@ -26,7 +26,7 @@
   font-style: italic;
   font-size: 0.625rem;
   letter-spacing: 0.18rem;
-  color:  var(--cb);
+  color: #fff;
   margin-top: 3px;
   display: block;
 }
@@ -35,7 +35,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  color: var(--cb);
+  color: #fff;
   line-height: 2;
   margin-top: 1.5rem;
   max-width: 250px;
@@ -49,7 +49,7 @@
   display: block;
   font-family: var(--font-body), sans-serif;
   font-size: 0.6875rem;
-  color: var(--cb);
+  color:#fff;
   text-decoration: none;
   margin-bottom: 3px;
   transition: opacity var(--transition);
@@ -64,7 +64,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: #fff;
   display: block;
   margin-bottom: 1.5rem;
 }
@@ -74,7 +74,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  color: var(--cb);
+  color: #fff;
   text-decoration: none;
   margin-bottom: 0.625rem;
   transition: color var(--transition);

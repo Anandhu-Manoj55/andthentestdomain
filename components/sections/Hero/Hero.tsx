@@ -53,14 +53,14 @@ export const Hero = () => {
             poster="/Assets/home/poster.png"
           >
             <source src="/Assets/home/banner-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+           
           </video>
           <div className={styles.overlay}></div>
 
         </div>
-        <p className={styles.caption}>
+        {/* <p className={styles.caption}>
           Private journeys · Tailor-made · Departs daily
-        </p>
+        </p> */}
       </div>
     </section>
   );
