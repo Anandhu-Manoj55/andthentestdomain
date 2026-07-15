@@ -24,7 +24,7 @@ const SIGNATURES: SignatureCard[] = [
     expert: "Led by Chef Bobby Geetha",
     desc: "An intimate culinary journey through India's most storied food cultures — spice markets, home kitchens, heritage recipes and private cooking sessions with one of the UK's most celebrated Indian chefs.",
     dates: "Next departure · Oct 2026",
-    price: "$6,800 per person",
+    price: "Price on request",
     badge: "Fixed departures",
     badgeFixed: true,
     image: "/Assets/signature exp/Plated South.jpg",
@@ -37,7 +37,7 @@ const SIGNATURES: SignatureCard[] = [
     expert: "Led by Methil Devika",
     desc: "A transformative wellness journey through India with one of its most celebrated classical dancers and wellness practitioners — exploring movement, breath, Ayurveda and the deep traditions of Indian well-being.",
     dates: "Next departure · Nov 2026",
-    price: "$5,900 per person",
+    price: "Price on request",
     badge: "Fixed departures",
     badgeFixed: true,
      image: "/Assets/signature exp/Art of Feeling Well.png",
@@ -50,7 +50,7 @@ const SIGNATURES: SignatureCard[] = [
     expert: "Curated by AndThen",
     desc: "India's most scenic and storied golf courses, played privately. From the colonial heritage courses of Kolkata and Delhi to the hill station greens of Ooty and Coorg — a golfing journey unlike any other.",
     dates: "Private · Departs on request",
-    price: "$7,200 per person",
+    price: "Price on request",
     badge: "Private group",
     badgeFixed: false,
     image: "/Assets/signature exp/Fairways and Wonders.png",
@@ -110,8 +110,8 @@ export const SignatureExperiences = () => {
 
                 <div className={styles.meta}>
                   <div>
-                    <span className={styles.dates}>{sig.dates}</span>
-                    <span className={styles.priceLabel}>From</span>
+                    {/* <span className={styles.dates}>{sig.dates}</span> */}
+                    {/* <span className={styles.priceLabel}>From</span> */}
                     <span className={styles.price}>{sig.price}</span>
                   </div>
                   <Link href={`/experiences/${sig.id}`} className={styles.link}>

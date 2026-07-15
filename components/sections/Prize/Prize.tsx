@@ -1,27 +1,33 @@
 import styles from "./Prize.module.css";
 import Button from "@/components/common/Button/Button";
+import { FiMail, FiCheck } from "react-icons/fi";
+import { LuGift } from "react-icons/lu";
 
-interface GiftItem {
-  icon: string;
-  label: string;
+export interface GiftItem {
+  icon: React.ReactNode;
+  step: string;
+  title: string;
+  description: string;
 }
 
-const GIFTS: GiftItem[] = [
+export const GIFTS: GiftItem[] = [
   {
-    icon: "☽",
-    label: "1 night · Kerala heritage stay",
+    icon: <FiMail />,
+    step: "Step 1",
+    title: "Enquire",
+    description: "Tell us where you'd like to go",
   },
   {
-    icon: "⌂",
-    label: "Taj hotel accommodation voucher",
+    icon: <FiCheck />,
+    step: "Step 2",
+    title: "Confirm",
+    description: "Your itinerary and trip are finalized",
   },
   {
-    icon: "⬡",
-    label: "Fujifilm camera, shipped to you",
-  },
-  {
-    icon: "◈",
-    label: "$200 AndThen travel credit",
+    icon: <LuGift />,
+    step: "Step 3",
+    title: "Choose your gift",
+    description: "Pick from options matched to your destination",
   },
 ];
 
@@ -29,11 +35,14 @@ export const Prize = () => {
   return (
     <section className={styles.prize} aria-label="Guaranteed travel gift">
       <div>
-        <span className="eyebrow" style={{color:"#fff",fontWeight:"bold",fontSize:"large"}}>
-          A gift for every journey
+        <span
+          className="eyebrow"
+          style={{ color: "#fff", fontWeight: "bold", fontSize: "large" }}
+        >
+          A gift, chosen for your journey
         </span>
         <h2 className={styles.heading}>
-          Every enquiry wins a guaranteed travel gift
+          Every enquiry comes with a gift, made for your trip
         </h2>
         <p className={styles.bodyText}>
           Submit your travel interest and scratch to reveal your guaranteed gift
@@ -41,7 +50,7 @@ export const Prize = () => {
           saying thank you.
         </p>
         <Button href="/contact/" variant="prizeBtn">
-          Reveal my gift
+          enquire now
         </Button>
       </div>
 
@@ -51,7 +60,9 @@ export const Prize = () => {
             <span className={styles.itemIcon} aria-hidden="true">
               {gift.icon}
             </span>
-            <span className={styles.itemLabel}>{gift.label}</span>
+            <p className={styles.itemStep}>{gift.step}</p>
+            <h3 className={styles.itemTitle}>{gift.title}</h3>
+            <p className={styles.itemDescription}>{gift.description}</p>
           </div>
         ))}
       </div>

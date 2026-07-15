@@ -196,7 +196,7 @@
 .price {
   font-family: var(--font-body), sans-serif;
   font-size: 0.9375rem;
-  color: var(--cs);
+  color:#000;
 }
 
 .priceLabel {
@@ -204,7 +204,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  color: var(--cm);
+  color: #000;
   display: block;
   margin-bottom: 2px;
 }
@@ -215,11 +215,11 @@
   letter-spacing: 0.18rem;
   text-transform: uppercase;
   color: var(--cs);
-  transition: color var(--transition);
+  transition: color #000;
 }
 
 .sigCard:hover .link {
-  color: var(--cb);
+  color: #000;
 }
 
 .sigNote {

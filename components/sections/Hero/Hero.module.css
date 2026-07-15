@@ -43,7 +43,7 @@
 }
 
 .stat {
-  border-left: 0.5px solid rgba(200, 180, 154, 0.15);
+  border-left: 0.5px solid #fff;
   padding-left: 1rem;
 }
 
@@ -61,7 +61,7 @@
   font-size: 0.5625rem;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-  color: rgba(200, 180, 154, 0.35);
+  color: #fff;
   margin-top: 3px;
   display: block;
 }

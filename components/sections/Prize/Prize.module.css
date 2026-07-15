@@ -4,19 +4,20 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 4rem 2.5rem;
+  padding: 5rem 2.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 4rem;
   align-items: center;
   color: #fff;
+  overflow: hidden;
 }
 
 .prize::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(16, 16, 16, 0.55);
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0.7) 0%, rgba(16, 16, 16, 0.55) 100%);
   pointer-events: none;
 }
 
@@ -53,35 +54,65 @@
 
 .itemsGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(244, 237, 227, 0.1);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .prizeItem {
-  background: rgba(0, 0, 0, 0.32);
-  padding: 1.75rem;
-  transition: background var(--transition), transform var(--transition);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .prizeItem:hover {
-  background: rgba(0, 0, 0, 0.45);
-  transform: translateY(-0.1rem);
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.15rem);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
 }
 
 .itemIcon {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
-  display: block;
-  margin-bottom: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.4rem;
 }
 
-.itemLabel {
+.itemStep {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.itemTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.2rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.7;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.itemDescription {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
