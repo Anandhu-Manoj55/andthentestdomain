@@ -11,8 +11,8 @@ export const About = () => {
       </div> */}
 
       <div className={styles.imageArea}>
-      <Image src="/Assets/home/About section.jpg" alt="Syam, Founder of AndThen Travels" fill style={{ objectFit: "cover" }} />
-        
+        <Image src="/Assets/home/About section.jpg" alt="Syam, Founder of AndThen Travels" fill style={{ objectFit: "cover" }} />
+
       </div>
 
       <div className={styles.content}>
@@ -22,23 +22,20 @@ export const About = () => {
         </h2>
         <Divider />
         <p className={styles.bodyText}>
-          AndThen is a boutique Destination Management Company. We design
-          private journeys across India, Bhutan, Nepal and Sri Lanka for
-          discerning US travelers who want to experience a place — not just
-          visit it.
+          AndThen is a boutique Destination Management Company crafting private journeys 
+          across India, Bhutan, Nepal and Sri Lanka - for travelers who want to experience a place, not just visit it. Every journey is shaped around you: your pace, your interests, your sense of what makes a place worth remembering.
         </p>
         <p className={styles.bodyText}>
           No groups. No fixed departures. No compromises. Just you, your
           destination, and a team that knows every corner of it.
         </p>
         <blockquote className={styles.quote}>
-          &ldquo;The best journeys happen when someone who truly knows a place
-          puts it in your hands.&rdquo;
+          &ldquo;The best journeys happen when someone who truly knows a place puts it in your hands.&rdquo;
         </blockquote>
         <div>
-          <Link href="/about/" className="text-link">
+          {/* <Link href="/about/" className="text-link">
             Our story
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

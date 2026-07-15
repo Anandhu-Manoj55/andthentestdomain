@@ -34,7 +34,7 @@ export const Tours = () => {
           style={{ objectFit: "cover" }}
           priority={false}
         />
-        <span className={styles.imageLabel}>Tiger&apos;s Nest, Bhutan</span>
+        {/* <span className={styles.imageLabel}>Tiger&apos;s Nest, Bhutan</span> */}
       </div>
     </section>
   );

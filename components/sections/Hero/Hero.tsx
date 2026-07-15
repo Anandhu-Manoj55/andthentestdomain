@@ -6,7 +6,7 @@ export const Hero = () => {
     <section className={styles.hero} aria-label="Hero">
       <div className={styles.left}>
         <span className={styles.destTag}>
-          India · Bhutan · Nepal · Sri Lanka
+          India · Nepal · Bhutan  · Sri Lanka
         </span>
 
         <h1 className={styles.heading}>

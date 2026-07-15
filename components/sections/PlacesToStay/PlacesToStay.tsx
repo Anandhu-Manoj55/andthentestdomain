@@ -39,21 +39,9 @@ export const PlacesToStay = () => {
               yours to keep.
             </p>
           </div>
-          <Button href="/hotel-booklet.pdf" variant="solidLight" download>
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              aria-hidden="true"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Download booklet
+          <Button  href="places-to-stay"  variant="solidLight"  >
+            
+            View all recommended properties
           </Button>
         </div>
 
@@ -83,9 +71,9 @@ export const PlacesToStay = () => {
       </div>
 
       <div style={{ marginTop: "2rem" }}>
-        <Link href="/places-to-stay/" className="text-link">
+        {/* <Link href="/places-to-stay/" className="text-link">
           View all recommended properties
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

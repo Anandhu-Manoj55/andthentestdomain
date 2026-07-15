@@ -1,4 +1,3 @@
-
 .footer {
   background: var(--ci);
   padding: 4.5rem 2.5rem 2.5rem;
@@ -15,7 +14,7 @@
 .logo {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   line-height: 1;
   gap: 3px;
   text-decoration: none;
@@ -23,7 +22,7 @@
 
 .logoImage {
   display: block;
-  height: 16px;
+  height: 25px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -41,11 +40,13 @@
 .logoSub {
   font-family: var(--font-display), Georgia, serif;
   font-style: italic;
-  font-size: 0.625rem;
-  letter-spacing: 0.18rem;
+  font-size: 0.825rem;
+  letter-spacing: 0.1rem;
+
   color: #fff;
   margin-top: 3px;
   display: block;
+  text-align: center;
 }
 
 .desc {
@@ -66,7 +67,7 @@
   display: block;
   font-family: var(--font-body), sans-serif;
   font-size: 0.6875rem;
-  color:#fff;
+  color: #fff;
   text-decoration: none;
   margin-bottom: 3px;
   transition: opacity var(--transition);
@@ -113,7 +114,7 @@
 .copy {
   font-family: var(--font-body), sans-serif;
   font-size: 0.5625rem;
-  color:var(--w);
+  color: var(--w);
   letter-spacing: 0.08rem;
 }
 
@@ -124,7 +125,7 @@
 
 .socialIcon {
   font-size: 0.9375rem;
-  color:var(--w);
+  color: var(--w);
   transition: color var(--transition);
   cursor: pointer;
 }
