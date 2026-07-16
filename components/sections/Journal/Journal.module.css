@@ -83,7 +83,7 @@
 
 /* Podcast */
 .podcast {
-  background: var(--cp);
+  background: url("/Assets//home//Home-blog-cover.jpg") center/cover no-repeat;;
   padding: 2.5rem;
 }
 

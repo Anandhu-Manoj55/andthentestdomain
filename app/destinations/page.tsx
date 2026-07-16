@@ -467,7 +467,7 @@ export default function DestinationsPage() {
               is possible.
             </p>
             <div style={{ marginTop: "2rem" }}>
-              <Link href="/contact/" className="text-link">
+              <Link href="/contact/" className="text-link text-link--muted">
                 Talk to a specialist
               </Link>
             </div>

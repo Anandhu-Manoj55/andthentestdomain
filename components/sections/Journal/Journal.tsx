@@ -117,100 +117,10 @@ export const Journal = () => {
 
         {/* Podcast Column */}
         <div className={styles.podcast}>
-          <p className={styles.sectionLabel}>The AndThen podcast</p>
 
-          <div className={styles.podFeatured}>
-            <div className={styles.podLabel}>
-              <span className={styles.podDot} />
-              Latest episode
-            </div>
-            <p className={styles.podTitle}>
-              Varanasi at dawn — why India&apos;s most sacred city changed
-              everything
-            </p>
-            <p className={styles.podDesc}>
-              A conversation on travel, spirituality and what it means to truly
-              arrive somewhere. With Syam and a long-time AndThen traveler.
-            </p>
 
-            <div className={styles.podPlayer}>
-              <button
-                className={playBtnClass}
-                onClick={togglePlay}
-                aria-label={
-                  isPlaying
-                    ? "Pause episode: Varanasi at dawn"
-                    : "Play episode: Varanasi at dawn"
-                }
-              >
-                {isPlaying ? (
-                  // Pause Icon
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="6" y="4" width="4" height="16" />
-                    <rect x="14" y="4" width="4" height="16" />
-                  </svg>
-                ) : (
-                  // Play Icon
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                )}
-              </button>
-
-              <div className={waveContainerClass} aria-hidden="true">
-                {/* Played Portion */}
-                {PLAYED_BARS.map((h, i) => (
-                  <div
-                    key={`played-${i}`}
-                    className={`${styles.waveformBar} ${styles.waveformBarPlayed}`}
-                    style={{ height: `${h}px` }}
-                  />
-                ))}
-                {/* Unplayed Portion */}
-                {UNPLAYED_BARS.map((h, i) => (
-                  <div
-                    key={`unplayed-${i}`}
-                    className={styles.waveformBar}
-                    style={{ height: `${h}px` }}
-                  />
-                ))}
-              </div>
-              <span className={styles.time}>34 min</span>
-            </div>
-          </div>
-
-          <div className={styles.podList}>
-            {PODCAST_EPISODES.map((ep) => (
-              <div key={ep.number} className={styles.podItem}>
-                <span className={styles.podNum}>{ep.number}</span>
-                <div className={styles.podInfo}>
-                  <span className={styles.podListTitle}>{ep.title}</span>
-                  <span className={styles.podMeta}>{ep.meta}</span>
-                </div>
-                <span className={styles.playIcon} aria-hidden="true">
-                  ▶
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.podLinks}>
-            <Link href="/journal/podcast/">All episodes</Link>
-            <a
-              href="https://open.spotify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Spotify
-            </a>
-            <a
-              href="https://podcasts.apple.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apple Podcasts
-            </a>
-          </div>
+          
+  
         </div>
       </div>
     </section>
