@@ -27,7 +27,7 @@
 .intro {
   font-family: var(--font-body), sans-serif;
   font-size: 0.75rem;
-  color: var(--cm);
+  color:#000;
   line-height: 1.9;
   margin-bottom: 1rem;
 }
@@ -131,7 +131,7 @@
   font-size: 0.5625rem;
   letter-spacing: 0.22rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: #000;
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -148,7 +148,7 @@
 .expert {
   font-family: var(--font-body), sans-serif;
   font-size: 0.6875rem;
-  color: var(--cm);
+  color:#000;
   margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
@@ -214,12 +214,12 @@
   font-size: 0.5625rem;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-  color: var(--cs);
+  color: #000;;
   transition: color #000;
 }
 
 .sigCard:hover .link {
-  color: #000;
+ scale: calc(110%);
 }
 
 .sigNote {

@@ -59,7 +59,7 @@
   font-size: 0.5625rem;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-  color: var(--cm);
+  color: #000;
   border: 0.5px solid var(--cs);
   padding: 0.375rem 0.875rem;
   transition: background var(--transition), color var(--transition);

@@ -35,8 +35,9 @@ export const Footer = () => {
         <div className={styles.col}>
           <span className={styles.colHeading}>Destinations</span>
           <Link href="/india/">India</Link>
-          <Link href="/bhutan/">Bhutan</Link>
           <Link href="/nepal/">Nepal</Link>
+          <Link href="/bhutan/">Bhutan</Link>
+          
           <Link href="/sri-lanka/">Sri Lanka</Link>
         </div>
 

@@ -51,7 +51,7 @@
 
 .desc {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.80rem;
   font-weight: 300;
   color: #fff;
   line-height: 2;
@@ -66,7 +66,7 @@
 .contact a {
   display: block;
   font-family: var(--font-body), sans-serif;
-  font-size: 0.6875rem;
+  font-size: 0.8875rem;
   color: #fff;
   text-decoration: none;
   margin-bottom: 3px;
@@ -79,7 +79,7 @@
 
 .colHeading {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
   color: #fff;
@@ -90,7 +90,7 @@
 .col a {
   display: block;
   font-family: var(--font-body), sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 300;
   color: #fff;
   text-decoration: none;
@@ -113,7 +113,7 @@
 
 .copy {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.5625rem;
+  font-size: 0.6625rem;
   color: var(--w);
   letter-spacing: 0.08rem;
 }
