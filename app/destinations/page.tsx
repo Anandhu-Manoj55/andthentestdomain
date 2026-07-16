@@ -4,7 +4,8 @@ import { destinations } from "@/data/destinations";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Indian Subcontinent Tours — India, Bhutan, Nepal & Sri Lanka | AndThen Travels",
+  title:
+    "Indian Subcontinent Tours — India, Bhutan, Nepal & Sri Lanka | AndThen Travels",
   description:
     "Private tailor-made journeys across the Indian Subcontinent — India, Bhutan, Nepal and Sri Lanka. Explore four extraordinary destinations with one specialist team. AndThen Travels.",
 };
@@ -153,7 +154,11 @@ export default function DestinationsPage() {
     <main>
       {/* ── HERO ───────────────────────────────────────────── */}
       <section className={styles.hero} aria-label="The Indian Subcontinent">
-        <div className={styles.heroImage} role="img" aria-label="The Indian Subcontinent">
+        <div
+          className={styles.heroImage}
+          role="img"
+          aria-label="The Indian Subcontinent"
+        >
           <div
             className={styles.heroImageBg}
             style={{
@@ -169,7 +174,10 @@ export default function DestinationsPage() {
             Four countries. One specialist team. Private journeys across India,
             Bhutan, Nepal and Sri Lanka — designed entirely around you.
           </p>
-          <nav className={styles.heroDestLinks} aria-label="Jump to destination">
+          <nav
+            className={styles.heroDestLinks}
+            aria-label="Jump to destination"
+          >
             {destinations.map((d) => (
               <Link
                 key={d.id}
@@ -184,31 +192,66 @@ export default function DestinationsPage() {
       </section>
 
       {/* ── INTRODUCTION ─────────────────────────────────────── */}
-      <section className={styles.intro} aria-label="About the Indian Subcontinent">
+      <section
+        className={styles.intro}
+        aria-label="About the Indian Subcontinent"
+      >
         <div>
           <span className="eyebrow">The region</span>
-          <h2 className="section-heading">
+          <h2 className={styles.sectionheading}>
             The most extraordinary region on earth, traveled privately
           </h2>
           <div className="rule" />
           <p className="body-text">
             The Indian Subcontinent is not a single destination — it is a
-            collection of worlds. India alone contains more cultural, geographical
-            and culinary variety than most continents. Add Bhutan's intact
-            Himalayan kingdom, Nepal's mountain trails and ancient valley cities,
-            and Sri Lanka's ancient ruins, hill country and two distinct
+            collection of worlds. India alone contains more cultural,
+            geographical and culinary variety than most continents. Add Bhutan's
+            intact Himalayan kingdom, Nepal's mountain trails and ancient valley
+            cities, and Sri Lanka's ancient ruins, hill country and two distinct
             coastlines, and the scope becomes almost impossible to summarise.
           </p>
           <p className="body-text">
-            AndThen works exclusively in this region. We know it in depth, not in
-            breadth — every guide, every hotel, every route we recommend has been
-            assessed firsthand. That knowledge is what we bring to designing your
-            journey.
+            AndThen works exclusively in this region. We know it in depth, not
+            in breadth — every guide, every hotel, every route we recommend has
+            been assessed firsthand. That knowledge is what we bring to
+            designing your journey.
           </p>
+          <div>
+            <p className={styles.introPull}>
+              "The subcontinent rewards the traveler who goes slowly — who gives
+              a place the time to reveal itself rather than demanding it perform
+              on a schedule."
+            </p>
+            <p className="body-text">
+              Private travel suits the Indian Subcontinent particularly well.
+              The region's depth is not accessible on a group tour timetable. A
+              morning at Varanasi's ghats, an afternoon tracking tigers in
+              Bandhavgarh, a week in Bhutan's hill country without another
+              foreign visitor in sight — these things require flexibility, a
+              trusted local network, and a guide who is there for you alone.
+            </p>
+            <p className="body-text">
+              AndThen designs journeys that are built around what you want to do
+              — not around what is convenient to operate. Every itinerary on
+              this site is a starting point. Nothing is fixed until you say so.
+            </p>
+            <div className={styles.introNote}>
+              <span className={styles.introNoteLabel}>
+                A note on combining countries
+              </span>
+              <p className={styles.introNoteText}>
+                Many of our best journeys cross borders — India and Nepal,
+                Bhutan and India, Sri Lanka with a detour to South India. We
+                handle all permit logistics and cross-border arrangements as
+                part of your itinerary. Tell us where you want to go and we will
+                make the routing work.
+              </p>
+            </div>
+          </div>
           <div className="rule" />
-          <Link href="/about/" className="text-link">
+          {/* <Link href="/about/" className="text-link">
             About how we work
-          </Link>
+          </Link> */}
           <div className={styles.introStatRow}>
             {[
               { value: "4", label: "Countries covered" },
@@ -224,7 +267,7 @@ export default function DestinationsPage() {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <p className={styles.introPull}>
             "The subcontinent rewards the traveler who goes slowly — who gives a
             place the time to reveal itself rather than demanding it perform on a
@@ -255,15 +298,18 @@ export default function DestinationsPage() {
               work.
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* ── FOUR DESTINATION CARDS ────────────────────────────── */}
-      <section className={styles.destinations} aria-label="Our four destinations">
+      <section
+        className={styles.destinations}
+        aria-label="Our four destinations"
+      >
         <div className={styles.destinationsHeader}>
           <div>
             <span className="eyebrow">Our destinations</span>
-            <h2 className="section-heading" style={{ marginBottom: 0 }}>
+            <h2 className={styles.sectionheading} style={{ marginBottom: 0 }}>
               Four countries. Where would you like to go?
             </h2>
           </div>
@@ -292,7 +338,9 @@ export default function DestinationsPage() {
                   <div className={styles.dcImageTitle}>
                     <span className={styles.dcImageNumber}>{dest.number}</span>
                     <span className={styles.dcImageName}>{dest.name}</span>
-                    <span className={styles.dcImageRegion}>{data.regionLine}</span>
+                    <span className={styles.dcImageRegion}>
+                      {data.regionLine}
+                    </span>
                   </div>
                 </div>
               </Link>
@@ -315,7 +363,9 @@ export default function DestinationsPage() {
                 </div>
 
                 <div>
-                  <span className={styles.dcHighlightsLabel}>What draws people</span>
+                  <span className={styles.dcHighlightsLabel}>
+                    What draws people
+                  </span>
                   <ul className={styles.dcHighlights}>
                     {data.highlights.map((h) => (
                       <li key={h} className={styles.dcHighlight}>
@@ -326,7 +376,10 @@ export default function DestinationsPage() {
                 </div>
 
                 <div className={styles.dcCtaCol}>
-                  <Link href={`/destinations/${dest.id}/`} className={styles.dcCta}>
+                  <Link
+                    href={`/destinations/${dest.id}/`}
+                    className={styles.dcCta}
+                  >
                     Explore {dest.name}
                   </Link>
                   <Link
@@ -343,17 +396,23 @@ export default function DestinationsPage() {
       </section>
 
       {/* ── EXPERIENCES STRIP ─────────────────────────────────── */}
-      <section className={styles.experiences} aria-label="Experiences across the subcontinent">
+      <section
+        className={styles.experiences}
+        aria-label="Experiences across the subcontinent"
+      >
         <div className={styles.experiencesHeader}>
           <div>
-            <span className="eyebrow" style={{ color: "var(--cb)" }}>
+            <span className="eyebrow" style={{color:"#fff"}}>
               Across all four destinations
             </span>
-            <h2 className="section-heading section-heading--light">
+            <h2 style={{ color: "white" ,fontFamily:"var(--font-display)"}}>
               What brings people to the subcontinent
             </h2>
           </div>
-          <Link href="/signature-experiences/" className="text-link text-link--light">
+          <Link
+            href="/signature-experiences/"
+            className="text-link text-link--light"
+          >
             All experiences
           </Link>
         </div>
@@ -387,21 +446,25 @@ export default function DestinationsPage() {
       </section>
 
       {/* ── HOW TO CHOOSE ─────────────────────────────────────── */}
-      <section className={styles.howTo} aria-label="How to choose your destination">
+      <section
+        className={styles.howTo}
+        aria-label="How to choose your destination"
+      >
         <div className={styles.howToInner}>
           <div className={styles.howToLeft}>
             <span className="eyebrow">Planning your journey</span>
-            <h2 className="section-heading">Not sure where to go?</h2>
+            <h2 className={styles.sectionheading}>Not sure where to go?</h2>
             <div className="rule" />
             <p className="body-text">
               The four countries in our collection are very different from each
               other. This quick guide gives you a sense of who each one suits
-              best. When in doubt, call us — this is exactly what we are here for.
+              best. When in doubt, call us — this is exactly what we are here
+              for.
             </p>
             <p className="body-text">
               Many of our most memorable journeys combine two countries in a
-              single trip. Tell us how long you have, and we will tell you what is
-              possible.
+              single trip. Tell us how long you have, and we will tell you what
+              is possible.
             </p>
             <div style={{ marginTop: "2rem" }}>
               <Link href="/contact/" className="text-link">

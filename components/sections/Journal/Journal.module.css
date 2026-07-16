@@ -67,7 +67,7 @@
 
 .articleTitle {
   font-family: var(--font-display), Georgia, serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: var(--cd);
   line-height: 1.45;

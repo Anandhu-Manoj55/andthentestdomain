@@ -33,14 +33,13 @@ export const PlacesToStay = () => {
             <h3 className={styles.featureHeading}>
               A curated guide to the finest stays across South Asia
             </h3>
-            <p className={styles.featureBody}>
+            {/* <p className={styles.featureBody}>
               From intimate tented camps in Rajasthan to iconic lake palaces in
               Udaipur and mountain lodges in Bhutan — our handpicked collection,
               yours to keep.
-            </p>
+            </p> */}
           </div>
-          <Button  href="places-to-stay"  variant="solidLight"  >
-            
+          <Button href="places-to-stay" variant="solidLight">
             View all recommended properties
           </Button>
         </div>

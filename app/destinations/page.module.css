@@ -1,6 +1,14 @@
 /* ── DESTINATIONS HUB — page.module.css ─────────────────────────── */
 
 /* HERO */
+.sectionheading{
+  font-family:var(--font-display);
+  font-size: 45px;
+}
+
+@media (max-width:768px) {
+.sectionheading{font-size:32px;}  
+}
 .hero {
   position: relative;
   min-height: 620px;
@@ -20,7 +28,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(42,36,32,0.93) 0%, rgba(42,36,32,0.48) 40%, rgba(42,36,32,0.08) 100%);
+  background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.30) 40%, rgba(0, 0, 0, 0.08) 100%);
 }
 .heroImageBg {
   position: absolute;
@@ -40,7 +48,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.35rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: #FFF;
   display: block;
   margin-bottom: 1.25rem;
 }
@@ -49,7 +57,7 @@
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 400;
   font-style: italic;
-  color: var(--cr);
+  color: #fff;
   line-height: 1;
   margin-bottom: 1.5rem;
   max-width: 700px;
@@ -59,7 +67,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(200, 180, 154, 0.5);
+  color: #fff;
   line-height: 1.9;
   max-width: 520px;
   margin-bottom: 3rem;
@@ -67,7 +75,7 @@
 .heroDestLinks {
   display: flex;
   gap: 0;
-  background: rgba(42, 36, 32, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   border: 0.5px solid rgba(200, 180, 154, 0.1);
   width: fit-content;
 }
@@ -76,7 +84,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: rgba(200, 180, 154, 0.45);
+  color: rgb(255, 255, 255);
   padding: 0.875rem 1.5rem;
   border-right: 0.5px solid rgba(200, 180, 154, 0.1);
   transition: all var(--transition);
@@ -86,8 +94,8 @@
 }
 .heroDestLink:last-child { border-right: none; }
 .heroDestLink:hover {
-  color: var(--cr);
-  background: rgba(160, 120, 72, 0.15);
+  color: #000;
+  background: #fff;
 }
 
 /* INTRODUCTION */
@@ -95,7 +103,7 @@
   background: var(--cr);
   padding: 6rem 2.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 6rem;
   align-items: start;
 }
@@ -397,7 +405,7 @@
   font-family: var(--font-display), Georgia, serif;
   font-size: 2.25rem;
   font-weight: 300;
-  color: rgba(200, 180, 154, 0.12);
+  color: #fff;
   display: block;
   line-height: 1;
   margin-bottom: 1.25rem;
@@ -415,7 +423,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.6875rem;
   font-weight: 300;
-  color: rgba(200, 180, 154, 0.38);
+  color: #fff;
   line-height: 1.85;
   flex: 1;
   margin-bottom: 1.5rem;
@@ -431,12 +439,12 @@
   font-size: 0.5rem;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
-  color: rgba(200, 180, 154, 0.3);
-  border: 0.5px solid rgba(200, 180, 154, 0.1);
+  color:#fff;
+  border: 0.5px solid rgba(220, 211, 199, 0.1);
   padding: 3px 8px;
   transition: all var(--transition);
 }
-.expCard:hover .expCardCountry {
+.expCard:hover {
   color: rgba(200, 180, 154, 0.55);
   border-color: rgba(200, 180, 154, 0.22);
 }
@@ -445,7 +453,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: rgba(200, 180, 154, 0.2);
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -458,7 +466,7 @@
   background: currentColor;
   flex-shrink: 0;
 }
-.expCard:hover .expCardLink { color: var(--cb); }
+/* .expCard:hover .expCardLink { color: var(--cb); } */
 
 /* HOW TO CHOOSE */
 .howTo {
@@ -492,7 +500,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color:#000;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -509,7 +517,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  color: var(--cm);
+  color: #000;
   padding: 0.375rem 0;
   border-bottom: 0.5px solid rgba(30, 26, 22, 0.06);
   display: flex;
@@ -529,7 +537,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  color: var(--cs);
+  color: #000;
   border-bottom: 0.5px solid rgba(200, 180, 154, 0.3);
   padding-bottom: 2px;
   display: inline-block;
@@ -559,7 +567,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.3);
+  color:#fff;
   line-height: 1.8;
   max-width: 520px;
 }
@@ -585,8 +593,8 @@
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   background: transparent;
-  color: rgba(255, 255, 255, 0.38);
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 0.5px solid #fff;
   padding: 1.125rem 1.5rem;
   cursor: pointer;
   transition: all var(--transition);

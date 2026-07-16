@@ -94,6 +94,13 @@ button {
   transition: color var(--transition), border-color var(--transition);
 }
 
+@media (max-width:768px) {
+  .text-link{
+    font-size: .6rem;
+  }
+  
+}
+
 .text-link:hover {
   color: var(--cb);
   border-color: var(--cb);

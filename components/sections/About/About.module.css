@@ -62,7 +62,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 1rem;
   font-weight: 370;
-  color: var(--cm);
+  color: #000;
   line-height: 2.1;
   margin-bottom: 1rem;
 }
