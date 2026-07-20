@@ -71,7 +71,7 @@
   font-family: var(--font-display), Georgia, serif;
   font-size: 1rem;
   font-style: italic;
-  color: var(--cd);
+  color: #000;
   line-height: 1.7;
   border-left: 0.5px solid var(--cs);
   padding-left: 1.25rem;

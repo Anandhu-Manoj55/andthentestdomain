@@ -188,7 +188,7 @@
   font-size: 0.5625rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  color: var(--cm);
+  color: #000;
   display: block;
   margin-bottom: 4px;
 }

@@ -128,7 +128,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.6875rem;
   font-weight: 300;
-  color: var(--cm);
+  color: #000;
 }
 
 @media (max-width: 1024px) {
