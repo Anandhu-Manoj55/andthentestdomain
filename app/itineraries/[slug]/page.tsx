@@ -118,7 +118,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
         <a className={styles.active} href="#overview">
           Overview
         </a>
-        <a href="#journey">The journey</a>
+        {/* <a href="#journey">The journey</a> */}
         <a href="#destinations">Destinations</a>
         <a href="#accommodation">Accommodation</a>
       </nav>
@@ -393,7 +393,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
               Add destinations, change hotels or slow the pace—we build the
               final journey around you.
             </p>
-            <Link href="/contact/" className={styles.textLink}>
+            <Link href="/contact/" className={styles.textLinkk}>
               Talk to a specialist
             </Link>
           </div>
@@ -403,10 +403,10 @@ export default async function ItinerarySlugPage({ params }: Props) {
       <section className={styles.related} aria-label="Related itineraries">
         <div className={styles.relatedHeader}>
           <div>
-            <span className={styles.eyebrow}>You may also like</span>
+            <span className={styles.eyebroww}>You may also like</span>
             <h2 className={styles.relatedHeading}>More journeys to consider</h2>
           </div>
-          <Link href="/itineraries/" className={styles.textLink}>
+          <Link href="/itineraries/" className={styles.textLinkk}>
             All itineraries
           </Link>
         </div>

@@ -39,7 +39,16 @@
 .eyebrow {
   display: block;
   margin-bottom: 1rem;
-  color: var(--bronze);
+  color:#fff;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+.eyebroww {
+  display: block;
+  margin-bottom: 1rem;
+  color:#000;
   font-family: var(--font-body), sans-serif;
   font-size: 0.5625rem;
   letter-spacing: 0.3rem;
@@ -106,13 +115,20 @@
   align-items: center;
   gap: 2.5rem;
   overflow-x: auto;
-  background: var(--paper);
+  background: var(--bronze);
   border-bottom: 0.5px solid rgba(200, 180, 154, 0.3);
 }
 
 .jumpNav a,
 .textLink {
-  color: var(--muted);
+  color:#fff;
+  font-size: 0.5625rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.textLinkk {
+  color:#000;
   font-size: 0.5625rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
@@ -120,7 +136,7 @@
 }
 
 .jumpNav a { padding-bottom: 2px; }
-.jumpNav a:hover, .jumpNav .active { color: var(--dark); }
+.jumpNav a:hover, .jumpNav .active { color:#fff; }
 .jumpNav .active { border-bottom: 0.5px solid var(--bronze); }
 
 .pageLayout {
@@ -155,7 +171,7 @@
 .stayLabel {
   display: block;
   margin-bottom: 0.375rem;
-  color: var(--bronze);
+  color:#000;
   font-size: 0.5rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
@@ -189,7 +205,7 @@
 .bodyText {
   max-width: 800px;
   margin: 0 0 1rem;
-  color: var(--muted);
+  color:#000;
   font-size: 0.8125rem;
   font-weight: 300;
   line-height: 2.1;
@@ -272,7 +288,7 @@
 .highlightList li {
   position: relative;
   padding-left: 0.9rem;
-  color: var(--muted);
+  color:#000;
   font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.7;
@@ -430,7 +446,7 @@
 .destinationText,
 .stayText {
   margin: 0;
-  color: var(--muted);
+  color: #000;
   font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.9;
@@ -491,7 +507,7 @@
 .stayLabel {
   display: block;
   margin-bottom: 0.35rem;
-  color: var(--bronze);
+  color: #000;
   font-size: 0.5rem;
   letter-spacing: 0.22rem;
   text-transform: uppercase;
@@ -508,7 +524,7 @@
 
 .accommodationFooter p {
   margin: 0;
-  color: var(--muted);
+  color:#000;
   font-size: 0.6875rem;
   font-weight: 300;
   line-height: 1.7;
@@ -591,6 +607,7 @@
 .infoList li {
   padding: 0.65rem 0;
   display: flex;
+  white-space: nowrap;
   justify-content: space-between;
   gap: 1rem;
   border-bottom: 0.5px solid rgba(200, 180, 154, 0.2);
@@ -669,7 +686,7 @@
 .relatedDestination,
 .relatedLink {
   display: block;
-  color: var(--bronze);
+  color: #000;
   font-size: 0.55rem;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
@@ -684,7 +701,7 @@
   line-height: 1.6;
 }
 
-.relatedLink { color: var(--sand); }
+.relatedLinkk { color: #000; }
 
 .ctaBanner {
   padding: 4rem 2.5rem;
@@ -706,7 +723,7 @@
 
 .ctaText {
   margin: 0;
-  color: rgba(200, 180, 154, 0.5);
+  color: #fff;
   font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.8;
@@ -732,7 +749,7 @@
 
 .ctaPrimary { background: var(--bronze); }
 .ctaPrimary:hover { background: #8a6038; }
-.ctaSecondary { color: rgba(255, 255, 255, 0.5); border: 0.5px solid rgba(255, 255, 255, 0.16); }
+.ctaSecondary { color: #fff; border: 0.5px solid #fff; }
 .ctaSecondary:hover { color: #fff; border-color: rgba(255, 255, 255, 0.35); }
 
 @media (max-width: 1024px) {
