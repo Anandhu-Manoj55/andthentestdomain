@@ -175,7 +175,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
 
           <hr className={styles.separator} />
 
-          <section id="journey">
+          {/* <section id="journey">
             <span className={styles.eyebrow}>The journey at a glance</span>
             <h2 className={styles.sectionHeading}>One seamless route</h2>
             <div className={styles.rule} />
@@ -212,9 +212,9 @@ export default async function ItinerarySlugPage({ params }: Props) {
                 </div>
               )})}
             </div>
-          </section>
-
-          <hr className={styles.separator} />
+          </section> */}
+{/* 
+          <hr className={styles.separator} /> */}
 
           <section id="destinations">
             <span className={styles.eyebrow}>Destinations</span>

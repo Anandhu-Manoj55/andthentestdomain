@@ -594,12 +594,12 @@
   justify-content: space-between;
   gap: 1rem;
   border-bottom: 0.5px solid rgba(200, 180, 154, 0.2);
-  color: var(--muted);
+  color:#000;
   font-size: 0.6875rem;
 }
 
 .infoList li:last-child { border: 0; }
-.infoList strong { max-width: 55%; color: var(--dark); font-weight: 500; text-align: right; }
+.infoList strong { max-width: 55%; color:#000; font-weight: 500; text-align: right; }
 
 .includedItem,
 .excludedItem {
