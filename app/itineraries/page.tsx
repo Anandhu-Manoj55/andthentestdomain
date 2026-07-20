@@ -9,8 +9,9 @@ import styles from "./page.module.css";
 
 const DEST_TABS = [
   { id: "India", label: "India" },
+   { id: "Nepal", label: "Nepal" },
   { id: "Bhutan", label: "Bhutan" },
-  { id: "Nepal", label: "Nepal" },
+ 
   { id: "Sri Lanka", label: "Sri Lanka" },
   { id: "multi", label: "Multi-country" },
 ] as const;
@@ -140,7 +141,7 @@ export default function ItinerariesPage() {
           aria-label="Private journeys across India, Bhutan, Nepal and Sri Lanka"
           style={{
             backgroundImage:
-              'linear-gradient(135deg, rgba(19,33,44,0.65) 0%, rgba(14,24,34,0.75) 55%, rgba(7,13,20,0.82) 100%), url("/Assets/banners/Banner image 3.jpg")',
+              'url("/Assets/banners/Banner image 3.jpg")',
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -205,7 +206,7 @@ export default function ItinerariesPage() {
           </div>
           <div>
             <p className={styles.destHeaderIntro}>{meta.intro}</p>
-            <div className={styles.destHeaderMeta}>
+            {/* <div className={styles.destHeaderMeta}>
               {meta.stats.map((s) => (
                 <div key={s.label} className={styles.destHeaderStat}>
                   <span
@@ -216,7 +217,7 @@ export default function ItinerariesPage() {
                   <span className={styles.destHeaderStatLabel}>{s.label}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
