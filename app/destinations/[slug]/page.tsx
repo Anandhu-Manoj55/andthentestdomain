@@ -208,7 +208,7 @@ export default function DestinationSlugPage() {
               <span className="eyebrow" style={{ color: "#fff" }}>
                 Explore by region
               </span>
-              <h2 className="section-heading section-heading--light">
+              <h2 className="" style={{color:"#fff",fontFamily:"var(--font-display)"}}>
                 {destination.regions.length > 1
                   ? `${destination.regions.length} distinct ${destination.name === "India" ? "Indias" : "regions"}`
                   : `${destination.name} regions`}

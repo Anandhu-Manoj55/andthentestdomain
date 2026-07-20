@@ -99,7 +99,8 @@
 
 .itemTitle {
   font-family: var(--font-display), Georgia, serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  white-space: nowrap;
   font-weight: 400;
   color: #fff;
   line-height: 1.2;

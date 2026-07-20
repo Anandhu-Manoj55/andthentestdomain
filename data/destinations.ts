@@ -48,7 +48,7 @@ export const destinations: Destination[] = [
         accentClass: "rci--south",
       },
       {
-        title: "Central India",
+        title: "Central and West India",
         description:
           "Five of central India's finest tiger reserves — Bandhavgarh, Kanha, Pench, and Tadoba across tiger country.",
         tags: ["Safaris", "Wildlife", "Lodges"],

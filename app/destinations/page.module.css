@@ -108,14 +108,16 @@
   align-items: start;
 }
 .introStatRow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  display: flex;
+ justify-content: center;
+ align-items: center;
   gap: 1px;
   background: rgba(200, 180, 154, 0.2);
   margin-top: 3rem;
 }
 .introStat {
-  background: var(--cr);
+  
   padding: 1.5rem 1.25rem;
 }
 .introStatValue {
@@ -164,7 +166,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: 0.8125rem;
   font-weight: 300;
-  color: var(--cm);
+  color:#000;
   line-height: 2;
 }
 
@@ -329,6 +331,7 @@
   flex-shrink: 0;
 }
 .dcCtaCol {
+  
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -345,7 +348,8 @@
   border: none;
   padding: 0.875rem 1.375rem;
   cursor: pointer;
-  transition: background var(--transition);
+  background-color: #8A6038;
+  /* transition: background var(--transition); */
   white-space: nowrap;
   display: block;
   margin-bottom: 0.75rem;
@@ -626,6 +630,6 @@
   .dcImage { height: 300px; }
   .dcBody { grid-template-columns: 1fr; gap: 1.5rem; }
   .expGrid { grid-template-columns: 1fr; }
-  .introStatRow { grid-template-columns: 1fr 1fr; }
+  .introStatRow { flex-direction: column;}
   .ctaBtns { flex-direction: column; width: 100%; }
 }

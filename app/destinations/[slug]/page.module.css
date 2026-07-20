@@ -1002,19 +1002,19 @@
   font-size: 0.5625rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  background: var(--cd);
-  color: var(--cr);
+  background: #fff;
+  color: var(--ci);
   border: none;
   padding: 1rem 1.5rem;
-  transition: background var(--transition);
+ 
   cursor: pointer;
   display: block;
   text-align: center;
 }
 
-.btnPrimary:hover {
+/* .btnPrimary:hover {
   background: var(--ci);
-}
+} */
 
 .btnSecondary {
   font-family: var(--font-body), sans-serif;
@@ -1022,8 +1022,8 @@
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   background: transparent;
-  color: rgba(255, 255, 255, 0.55);
-  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: 0.5px solid #fff;
   padding: 1rem 1.5rem;
   transition: border-color var(--transition), color var(--transition);
   cursor: pointer;

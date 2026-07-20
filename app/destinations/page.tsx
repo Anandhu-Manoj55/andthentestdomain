@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title:
-    "Indian Subcontinent Tours — India, Bhutan, Nepal & Sri Lanka | AndThen Travels",
+    "Indian Subcontinent Tours   India, Bhutan, Nepal & Sri Lanka | AndThen Travels",
   description:
     "Private tailor-made journeys across the Indian Subcontinent — India, Bhutan, Nepal and Sri Lanka. Explore four extraordinary destinations with one specialist team. AndThen Travels.",
 };
@@ -140,9 +140,9 @@ const destCardData: Record<
       { label: "Visa required", value: "ETA available online" },
     ],
     highlights: [
-      "Sigiriya — 5th-century rock fortress",
+      "Sigiriya   5th-century rock fortress",
       "Galle Fort and the south coast",
-      "Yala — highest wild leopard density in Asia",
+      "Yala   highest wild leopard density in Asia",
       "The Kandy to Ella train through tea country",
       "Blue whale watching off Mirissa (Dec–Apr)",
     ],
@@ -172,7 +172,7 @@ export default function DestinationsPage() {
           <h1 className={styles.heroTitle}>The Indian Subcontinent</h1>
           <p className={styles.heroSub}>
             Four countries. One specialist team. Private journeys across India,
-            Bhutan, Nepal and Sri Lanka — designed entirely around you.
+            Bhutan, Nepal and Sri Lanka  designed entirely around you.
           </p>
           <nav
             className={styles.heroDestLinks}
@@ -203,7 +203,7 @@ export default function DestinationsPage() {
           </h2>
           <div className="rule" />
           <p className="body-text">
-            The Indian Subcontinent is not a single destination — it is a
+            The Indian Subcontinent is not a single destination  it is a
             collection of worlds. India alone contains more cultural,
             geographical and culinary variety than most continents. Add Bhutan's
             intact Himalayan kingdom, Nepal's mountain trails and ancient valley
@@ -212,13 +212,14 @@ export default function DestinationsPage() {
           </p>
           <p className="body-text">
             AndThen works exclusively in this region. We know it in depth, not
-            in breadth — every guide, every hotel, every route we recommend has
+            in breadth  every guide, every hotel, every route we recommend has
             been assessed firsthand. That knowledge is what we bring to
             designing your journey.
           </p>
+          <br />
           <div>
             <p className={styles.introPull}>
-              "The subcontinent rewards the traveler who goes slowly — who gives
+              "The subcontinent rewards the traveler who goes slowly   who gives
               a place the time to reveal itself rather than demanding it perform
               on a schedule."
             </p>
@@ -227,12 +228,12 @@ export default function DestinationsPage() {
               The region's depth is not accessible on a group tour timetable. A
               morning at Varanasi's ghats, an afternoon tracking tigers in
               Bandhavgarh, a week in Bhutan's hill country without another
-              foreign visitor in sight — these things require flexibility, a
+              foreign visitor in sight   these things require flexibility, a
               trusted local network, and a guide who is there for you alone.
             </p>
             <p className="body-text">
               AndThen designs journeys that are built around what you want to do
-              — not around what is convenient to operate. Every itinerary on
+                not around what is convenient to operate. Every itinerary on
               this site is a starting point. Nothing is fixed until you say so.
             </p>
             <div className={styles.introNote}>
@@ -240,7 +241,7 @@ export default function DestinationsPage() {
                 A note on combining countries
               </span>
               <p className={styles.introNoteText}>
-                Many of our best journeys cross borders — India and Nepal,
+                Many of our best journeys cross borders   India and Nepal,
                 Bhutan and India, Sri Lanka with a detour to South India. We
                 handle all permit logistics and cross-border arrangements as
                 part of your itinerary. Tell us where you want to go and we will
@@ -255,7 +256,7 @@ export default function DestinationsPage() {
           <div className={styles.introStatRow}>
             {[
               { value: "4", label: "Countries covered" },
-              { value: "15+", label: "Curated itineraries" },
+              
               { value: "100%", label: "Private, tailor-made" },
               { value: "Daily", label: "Departure dates" },
             ].map((s) => (
@@ -269,7 +270,7 @@ export default function DestinationsPage() {
 
         {/* <div>
           <p className={styles.introPull}>
-            "The subcontinent rewards the traveler who goes slowly — who gives a
+            "The subcontinent rewards the traveler who goes slowly   who gives a
             place the time to reveal itself rather than demanding it perform on a
             schedule."
           </p>
@@ -278,11 +279,11 @@ export default function DestinationsPage() {
             region's depth is not accessible on a group tour timetable. A morning
             at Varanasi's ghats, an afternoon tracking tigers in Bandhavgarh, a
             week in Bhutan's hill country without another foreign visitor in sight
-            — these things require flexibility, a trusted local network, and a
+              these things require flexibility, a trusted local network, and a
             guide who is there for you alone.
           </p>
           <p className="body-text">
-            AndThen designs journeys that are built around what you want to do —
+            AndThen designs journeys that are built around what you want to do  
             not around what is convenient to operate. Every itinerary on this site
             is a starting point. Nothing is fixed until you say so.
           </p>
@@ -291,7 +292,7 @@ export default function DestinationsPage() {
               A note on combining countries
             </span>
             <p className={styles.introNoteText}>
-              Many of our best journeys cross borders — India and Nepal, Bhutan
+              Many of our best journeys cross borders   India and Nepal, Bhutan
               and India, Sri Lanka with a detour to South India. We handle all
               permit logistics and cross-border arrangements as part of your
               itinerary. Tell us where you want to go and we will make the routing
@@ -336,11 +337,11 @@ export default function DestinationsPage() {
                     }}
                   />
                   <div className={styles.dcImageTitle}>
-                    <span className={styles.dcImageNumber}>{dest.number}</span>
+                    {/* <span className={styles.dcImageNumber}>{dest.number}</span> */}
                     <span className={styles.dcImageName}>{dest.name}</span>
-                    <span className={styles.dcImageRegion}>
+                    {/* <span className={styles.dcImageRegion}>
                       {data.regionLine}
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </Link>
@@ -436,10 +437,10 @@ export default function DestinationsPage() {
                   </span>
                 ))}
               </div>
-              <span className={styles.expCardLink}>
+              {/* <span className={styles.expCardLink}>
                 <span className={styles.expCardLinkLine} aria-hidden="true" />
                 {exp.label}
-              </span>
+              </span> */}
             </Link>
           ))}
         </div>
@@ -458,7 +459,7 @@ export default function DestinationsPage() {
             <p className="body-text">
               The four countries in our collection are very different from each
               other. This quick guide gives you a sense of who each one suits
-              best. When in doubt, call us — this is exactly what we are here
+              best. When in doubt, call us   this is exactly what we are here
               for.
             </p>
             <p className="body-text">
@@ -485,7 +486,7 @@ export default function DestinationsPage() {
                     "Private tiger safaris in world-class national parks",
                     "A first South Asia journey that covers the most ground",
                     "Royal palaces, Mughal forts and sacred river cities",
-                    "Kerala — the most complete wellness destination in the region",
+                    "Kerala   the most complete wellness destination in the region",
                   ],
                 },
                 {
@@ -494,9 +495,9 @@ export default function DestinationsPage() {
                   title: "Go to Bhutan if you want…",
                   items: [
                     "A country that genuinely feels untouched by mass tourism",
-                    "Buddhist culture at its most intact — monasteries, dzongs, festivals",
+                    "Buddhist culture at its most intact   monasteries, dzongs, festivals",
                     "Himalayan scenery without the crowds of Nepal's popular trails",
-                    "A short, high-quality journey — 7–10 days is ideal",
+                    "A short, high-quality journey   7–10 days is ideal",
                     "Something most of your friends have not done",
                   ],
                 },
@@ -506,9 +507,9 @@ export default function DestinationsPage() {
                   title: "Go to Nepal if you want…",
                   items: [
                     "The world's greatest high-altitude trekking",
-                    "Ancient cities — Kathmandu valley's three medieval kingdoms",
-                    "Wildlife — one-horned rhinos and tigers in Chitwan",
-                    "Mountain views without trekking — Pokhara and Nagarkot",
+                    "Ancient cities   Kathmandu valley's three medieval kingdoms",
+                    "Wildlife   one-horned rhinos and tigers in Chitwan",
+                    "Mountain views without trekking   Pokhara and Nagarkot",
                     "Incredible value relative to other Himalayan destinations",
                   ],
                 },
@@ -519,9 +520,9 @@ export default function DestinationsPage() {
                   items: [
                     "The most manageable first South Asian destination",
                     "Ancient history and beaches in a single two-week circuit",
-                    "Leopard safaris — the highest wild leopard density in Asia",
+                    "Leopard safaris   the highest wild leopard density in Asia",
                     "Ayurveda retreats on one of Asia's finest coastlines",
-                    "Blue whale watching — among the best in the world",
+                    "Blue whale watching   among the best in the world",
                   ],
                 },
               ].map((card) => (
@@ -555,7 +556,7 @@ export default function DestinationsPage() {
           <p className={styles.ctaBandSub}>
             Tell us roughly when you want to travel, how long you have, and what
             kind of experience interests you. We will come back to you with a
-            starting point — no obligation, no fee for the consultation.
+            starting point   no obligation, no fee for the consultation.
           </p>
         </div>
         <div className={styles.ctaBtns}>
