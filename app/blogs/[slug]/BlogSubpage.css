@@ -13,8 +13,8 @@
   --cd: #2C1A0A;
   --ci: #3A2010;
   --cm: #6B4C2A;
-  --fd: 'Cormorant Garamond', Georgia, serif;
-  --fb: 'DM Sans', Arial, sans-serif;
+  --fd: 'Cirka', sans-serif;
+  --fb: 'neue-haas-unica', sans-serif;
   --tr: 0.25s ease;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

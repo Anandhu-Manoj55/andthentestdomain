@@ -10,8 +10,10 @@
   --cw: #FAF7F3; 
   --w:#ffffff;  /* warm white — nav bg */
 
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Jost", sans-serif;
+  --font-display: "Cirka", sans-serif;
+  --font-body: "neue-haas-unica", sans-serif;
+  --fd: "Cirka", sans-serif;
+  --fb: "neue-haas-unica", sans-serif;
 
   --space-xs:  0.5rem;
   --space-sm:  1rem;

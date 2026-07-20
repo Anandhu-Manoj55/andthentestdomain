@@ -2,8 +2,9 @@ import styles from "./Marquee.module.css";
 
 const MARQUEE_ITEMS = [
   "India",
-  "Bhutan",
+  
   "Nepal",
+  "Bhutan",
   "Sri Lanka",
   "Wellness & Ayurveda",
   "Wildlife Safaris",
