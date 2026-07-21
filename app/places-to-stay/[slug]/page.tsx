@@ -42,9 +42,11 @@ export default function HotelDetailPage() {
             <Image
               src={hotel.image}
               alt={hotel.alt}
+              quality={100}
+              sizes="100vw"
               fill
               priority
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover" ,objectPosition:"center"}}
             />
           ) : (
             <span className={styles.heroPlaceholder}>Hotel hero photography</span>
@@ -91,8 +93,11 @@ export default function HotelDetailPage() {
           <span className={styles.descEyebrow}>About the hotel</span>
           <h2 className={styles.descHeading}>{hotel.name}</h2>
           <div className={styles.descRule} />
+          {hotel.intro && hotel.intro.split('\n\n')?.map((para, i) => (
+            <p key={`intro-${i}`} className={styles.descBody}>{para}</p>
+          ))}
           {hotel.why?.split('\n\n')?.map((para, i) => (
-            <p key={i} className={styles.descBody}>{para}</p>
+            <p key={`why-${i}`} className={styles.descBody}>{para}</p>
           ))}
         </div>
         <div>

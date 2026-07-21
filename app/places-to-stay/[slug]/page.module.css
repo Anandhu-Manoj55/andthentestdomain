@@ -23,7 +23,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(44,26,10,0.75) 0%, rgba(44,26,10,0.15) 50%, transparent 100%);
+  /* background: linear-gradient(to top, rgba(44,26,10,0.75) 0%, rgba(44,26,10,0.15) 50%, transparent 100%); */
 }
 .heroPlaceholder {
   font-family: var(--fb, 'DM Sans', sans-serif);
@@ -50,7 +50,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: var(--cb, #A07848);
+  color: #fff;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -83,8 +83,8 @@
   font-size: 0.5625rem;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  border: 0.5px solid rgba(255,255,255,0.15);
+  color: #fff;
+  border: 0.5px solid #fff;
   padding: 8px 16px;
   display: flex;
   align-items: center;
@@ -112,7 +112,7 @@
   font-size: 0.5625rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: var(--cb, #A07848);
+  color: #000;
   display: block;
   margin-bottom: 1.125rem;
 }
@@ -132,9 +132,9 @@
 }
 .descBody {
   font-family: var(--fb, 'DM Sans', sans-serif);
-  font-size: 0.8125rem;
-  font-weight: 300;
-  color: var(--cm, #6B4C2A);
+  font-size: 0.9125rem;
+  font-weight: 370;
+  color: #000000;
   line-height: 2.2;
   margin-bottom: 1rem;
 }
@@ -151,7 +151,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: var(--cb, #A07848);
+  color:#000;
   display: block;
   margin-bottom: 0.875rem;
 }
@@ -180,7 +180,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: var(--cb, #A07848);
+  color:#000;
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -206,7 +206,7 @@
   font-size: 0.5625rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: var(--cb, #A07848);
+  color:#000;
   display: block;
   margin-bottom: 1.125rem;
 }
@@ -222,7 +222,7 @@
   font-family: var(--fb, 'DM Sans', sans-serif);
   font-size: 0.8125rem;
   font-weight: 300;
-  color: var(--cm, #6B4C2A);
+  color:#000;
   line-height: 1.9;
   margin-bottom: 1.75rem;
 }
@@ -405,7 +405,7 @@
   font-family: var(--fb, 'DM Sans', sans-serif);
   font-size: 0.75rem;
   font-weight: 300;
-  color: rgba(255,255,255,0.3);
+  color:#fff;
   line-height: 1.8;
 }
 .ctaBtns {
@@ -437,8 +437,8 @@
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   background: transparent;
-  color: rgba(255,255,255,0.38);
-  border: 0.5px solid rgba(255,255,255,0.1);
+  color: #fff;
+  border: 0.5px solid #fff;
   padding: 1rem 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
