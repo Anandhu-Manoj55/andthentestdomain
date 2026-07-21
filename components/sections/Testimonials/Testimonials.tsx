@@ -7,7 +7,7 @@ export const Testimonials = () => {
     <section className={styles.testimonials} aria-label="Traveller testimonials">
       <div className={styles.header}>
         <div>
-          <span className="eyebrow">Traveller stories</span>
+          <span className="eyebrow" style={{color:"#fff"}}>Traveller stories</span>
           <h2 className={styles.heading}>In their words</h2>
            <Link href="/testimonials/" className={styles.readmore}>
           Read more

@@ -119,14 +119,12 @@
   .phoneLink{
     display: none;
   }
-  .desktopCta {
+  .phoneLink{
     display: none;
-    width: 150px;
-    height: 35px;
-    text-align: center;
-
   }
-
+  .desktopCta{
+  display: none !important;
+  }
   .links {
     display: none;
   }

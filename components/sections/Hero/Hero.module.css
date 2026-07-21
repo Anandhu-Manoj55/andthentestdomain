@@ -107,24 +107,65 @@
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
-    overflow-x: hidden;
+    min-height: auto;
   }
 
   .left {
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1.25rem;
+    gap: 2rem;
+  }
+
+  .destTag {
+    font-size: 0.5625rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.4;
   }
 
   .right {
-    min-height: 260px;
+    min-height: 320px;
     padding: 1.5rem;
   }
 
   .stats {
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
+    gap: 1rem;
+    margin-bottom: 0;
+    flex-wrap: flex;
+  }
+
+  .stat {
+    padding-left: 0.75rem;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.5rem;
+    letter-spacing: 0.12rem;
   }
 
   .heading {
-    margin: 2.5rem 0;
+    margin: 0;
+    font-size: clamp(2rem, 7vw, 2.75rem);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .left {
+    padding: 2rem 1rem;
+  }
+
+  .right {
+    min-height: 250px;
+  }
+
+  .stats {
+    gap: 0.75rem;
+  }
+
+  .stat {
+    padding-left: 0.5rem;
   }
 }
