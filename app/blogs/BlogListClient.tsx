@@ -164,7 +164,7 @@ function BlogSection({ title, count, location, blogs }: { title: string, count: 
         <span className="section-head__count">{count} articles {location ? `· ${location}` : ''}</span>
       </div>
       <div className="card-grid">
-        {blogs.map((blog, index) => (
+        {blogs.slice(1).map((blog, index) => (
           <article key={blog.slug} className={"card"}>
             <Link href={`/blogs/${blog.slug}`}>
               <div className="card__img-wrap">

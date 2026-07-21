@@ -59,10 +59,10 @@ img { display: block; width: 100%; object-fit: cover; }
   max-width: 100%;
   width: 100%;
 }
-.hero__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1rem; }
+.hero__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color:#fff; display: block; margin-bottom: 1rem; }
 .hero__title { font-family: var(--fd); font-size: clamp(2.25rem, 4.5vw, 3.75rem); font-weight: 400; color: var(--cr); line-height: 1.05; margin-bottom: 1rem; }
 .hero__title em { font-style: italic; color: var(--cb); }
-.hero__desc { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(200,180,154,0.6); line-height: 1.9; max-width: 480px; }
+.hero__desc { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color:#fff; line-height: 1.9; max-width: 480px; }
 
 /* FILTER BAR */
 .filter-bar {
@@ -74,7 +74,7 @@ img { display: block; width: 100%; object-fit: cover; }
   position: sticky; top: 68px; z-index: 90;
 }
 .filter-bar::-webkit-scrollbar { display: none; }
-.f-label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.25rem; text-transform: uppercase; color: var(--cs); flex-shrink: 0; margin-right: 1.5rem; }
+.f-label { font-family: var(--fb); font-size: 0.5375rem; letter-spacing: 0.25rem; text-transform: uppercase; color:#000; flex-shrink: 0; margin-right: 1.5rem; }
 .f-btn {
   font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase;
   color: var(--cm); background: transparent; border: none; cursor: pointer;
@@ -124,7 +124,7 @@ img { display: block; width: 100%; object-fit: cover; }
 }
 .latest__kicker {
   font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.28rem;
-  text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1.25rem;
+  text-transform: uppercase; color:#fff; display: block; margin-bottom: 1.25rem;
 }
 .latest__title {
   font-family: var(--fd); font-size: clamp(1.5rem, 2.25vw, 2.125rem);
@@ -132,16 +132,16 @@ img { display: block; width: 100%; object-fit: cover; }
 }
 .latest__excerpt {
   font-family: var(--fb); font-size: 0.8125rem; font-weight: 300;
-  color: rgba(200,180,154,0.5); line-height: 2; margin-bottom: 2.25rem;
+  color: #fff; line-height: 2; margin-bottom: 2.25rem;
 }
 .latest__foot {
   display: flex; align-items: center; justify-content: space-between;
-  padding-top: 1.5rem; border-top: 0.5px solid rgba(255,255,255,0.07);
+  padding-top: 1.5rem; border-top: 0.5px solid #fff;
 }
-.latest__meta { font-family: var(--fb); font-size: 0.5rem; color: rgba(200,180,154,0.35); font-weight: 300; }
+.latest__meta { font-family: var(--fb); font-size: 0.5rem; color:#fff; font-weight: 300; }
 .latest__read {
   font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.25rem;
-  text-transform: uppercase; color: var(--cr);
+  text-transform: uppercase; color:#fff;
   display: flex; align-items: center; gap: 10px; transition: color var(--tr);
 }
 .latest__read:hover { color: var(--cb); }
@@ -169,7 +169,7 @@ img { display: block; width: 100%; object-fit: cover; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(44,26,10,0.08);
+  background: #fff;
 }
 
 /* article card */
@@ -229,17 +229,17 @@ img { display: block; width: 100%; object-fit: cover; }
 .card__cat-tag {
   position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2;
   font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.1rem;
-  text-transform: uppercase; background: rgba(44,26,10,0.55); color: rgba(200,180,154,0.75);
+  text-transform: uppercase; background: rgba(44,26,10,0.55); color: #fff;
   padding: 3px 8px;
 }
 
 .card__body { padding: 1.125rem 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
 .card__title { font-family: var(--fd); font-size: 1rem; font-weight: 400; color: var(--cd); line-height: 1.3; margin-bottom: 0.5rem; flex: 1; word-wrap: break-word; word-break: break-word; }
 .card__foot { display: flex; align-items: center; justify-content: space-between; margin-top: 0.875rem; }
-.card__meta { font-family: var(--fb); font-size: 0.5rem; color: var(--cs); font-weight: 300; }
-.card__arrow { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cs); display: flex; align-items: center; gap: 5px; transition: color var(--tr); }
+.card__meta { font-family: var(--fb); font-size: 0.5rem; color:#000; font-weight: 300; }
+.card__arrow { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.18rem; text-transform: uppercase; color:#000; display: flex; align-items: center; gap: 5px; transition: color var(--tr); }
 .card__arrow-line { width: 10px; height: 0.5px; background: currentColor; }
-.card:hover .card__arrow { color: var(--cb); }
+.card:hover .card__arrow { color:#000; }
 
 /* FEATURED card — spans 2 cols */
 .card--featured {
@@ -274,10 +274,10 @@ img { display: block; width: 100%; object-fit: cover; }
   flex-wrap: wrap;
 }
 .nl-strip__left {}
-.nl-strip__label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 0.5rem; }
+.nl-strip__label { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.3rem; text-transform: uppercase; color:#fff; display: block; margin-bottom: 0.5rem; }
 .nl-strip__title { font-family: var(--fd); font-size: clamp(1.375rem, 2vw, 1.875rem); font-weight: 400; font-style: italic; color: var(--cr); line-height: 1.2; }
 .nl-strip__form { display: flex; min-width: 360px; }
-.nl-strip__input { flex: 1; font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.12); border-right: none; color: var(--cr); padding: 0.875rem 1.125rem; outline: none; transition: border-color var(--tr); }
+.nl-strip__input { flex: 1; font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.12); border-right: none; color:#fff; padding: 0.875rem 1.125rem; outline: none; transition: border-color var(--tr); }
 .nl-strip__input::placeholder { color: rgba(200,180,154,0.3); }
 .nl-strip__input:focus { border-color: var(--cb); }
 .nl-strip__btn { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.22rem; text-transform: uppercase; background: var(--cb); color: var(--cr); border: none; padding: 0 1.375rem; cursor: pointer; white-space: nowrap; transition: background var(--tr); }
