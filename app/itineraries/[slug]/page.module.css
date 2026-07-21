@@ -270,7 +270,7 @@
 .sidebarTitle {
   display: block;
   margin-bottom: 1.1rem;
-  color: var(--bronze);
+  color:#000;
   font-size: 0.5rem;
   letter-spacing: 0.28rem;
   text-transform: uppercase;
@@ -553,7 +553,7 @@
   text-align: center;
 }
 
-.priceLabel { display: block; color: var(--muted); }
+.priceLabel { display: block; color: #000; }
 
 .priceValue {
   display: block;
@@ -567,7 +567,7 @@
 .priceNote {
   display: block;
   margin-top: 0.35rem;
-  color: var(--muted);
+  color: #000;
   font-size: 0.625rem;
 }
 
@@ -590,7 +590,7 @@
 .priceDisclaimer,
 .customiseNote {
   margin: 1.1rem 0 0;
-  color: var(--muted);
+  color:#000;
   font-size: 0.625rem;
   font-weight: 300;
   line-height: 1.75;
@@ -622,8 +622,8 @@
 .excludedItem {
   position: relative;
   padding: 0.5rem 0 0.5rem 1.1rem;
-  border-bottom: 0.5px solid rgba(200, 180, 154, 0.15);
-  color: var(--muted);
+  border-bottom: 0.5px solid #000;
+  color:#000;
   font-size: 0.6875rem;
   line-height: 1.5;
 }
@@ -635,7 +635,7 @@
 }
 
 .includedItem::before { content: "✓"; color: var(--bronze); }
-.excludedItem { opacity: 0.55; }
+.excludedItem { opacity: 0.95; }
 .excludedItem::before { content: "×"; color: var(--sand); }
 
 .sidebarDivider {
@@ -696,7 +696,7 @@
 
 .relatedMeta {
   margin: 0 0 1rem;
-  color: var(--muted);
+  color: #000;
   font-size: 0.625rem;
   line-height: 1.6;
 }
