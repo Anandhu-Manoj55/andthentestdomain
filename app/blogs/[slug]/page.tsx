@@ -165,12 +165,12 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* Author byline */}
-          <div className="author-box">
+          {/* <div className="author-box">
             <div className="author-box__avatar"><span className="author-box__initials">{frontmatter.author[0]}</span></div>
             <div>
               <p className="author-box__name">{frontmatter.author}</p>
             </div>
-          </div>
+          </div> */}
 
           {/* ══════════════════════════════════════════════
                5. ENQUIRY PROMPT
@@ -194,7 +194,7 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
           <div className="sb__block">
             <div className="sb__enquiry">
               <p className="sb__enquiry-title">Plan a journey to {frontmatter.destination}</p>
-              <p className="sb__enquiry-text">Free consultation, no obligation. We respond within 24 hours.</p>
+              <p className="sb__enquiry-text">Free consultation, no obligation. We respond quick.</p>
               <Link href={contactHref} className="sb__enquiry-btn">Enquire now</Link>
             </div>
           </div>
