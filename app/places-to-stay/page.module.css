@@ -40,7 +40,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.35rem;
   text-transform: uppercase;
-  color: var(--cb, #A07848);
+  color:#fff;
   display: block;
   margin-bottom: 1rem;
 }
@@ -60,7 +60,7 @@
   font-family: var(--fb, 'DM Sans', sans-serif);
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(200,180,154,0.6);
+  color: #fff;
   line-height: 1.9;
   max-width: 460px;
 }
@@ -77,14 +77,14 @@
 .enRule {
   width: 1.5rem;
   height: 0.5px;
-  background: var(--cb, #A07848);
+  background: #fff;
   flex-shrink: 0;
 }
 .enText {
   font-family: var(--fb, 'DM Sans', sans-serif);
   font-size: 0.6875rem;
   font-weight: 300;
-  color: rgba(200,180,154,0.45);
+  color:#fff;
   line-height: 1.85;
   max-width: 680px;
 }
@@ -116,7 +116,7 @@
   font-size: 0.4375rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: var(--cs, #C8B49A);
+  color: #000;
   flex-shrink: 0;
   margin-right: 1.5rem;
 }
@@ -175,7 +175,7 @@
   font-size: 0.4375rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: var(--cb, #A07848);
+  color:#000;
   display: block;
   margin-bottom: 0.375rem;
 }
@@ -261,7 +261,7 @@
   left: 0.875rem;
   z-index: 2;
   font-family: var(--fb, 'DM Sans', sans-serif);
-  font-size: 0.4375rem;
+  font-size: 0.5rem;
   letter-spacing: 0.12rem;
   text-transform: uppercase;
   background: var(--cb, #A07848);
@@ -294,7 +294,7 @@
   font-size: 0.4375rem;
   letter-spacing: 0.22rem;
   text-transform: uppercase;
-  color: var(--cs, #C8B49A);
+  color:#000;
   display: block;
   margin-bottom: 0.25rem;
 }
@@ -323,7 +323,7 @@
 }
 .hcTag {
   font-family: var(--fb, 'DM Sans', sans-serif);
-  font-size: 0.4375rem;
+  font-size: 0.5375rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   color: #000;
@@ -338,10 +338,10 @@
 }
 .hcLink {
   font-family: var(--fb, 'DM Sans', sans-serif);
-  font-size: 0.4375rem;
+  font-size: 0.6375rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  color: var(--cs, #C8B49A);
+  color:#000;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -425,7 +425,7 @@
   font-family: var(--fb, 'DM Sans', sans-serif);
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(200,180,154,0.4);
+  color:#fff;
   line-height: 1.8;
   max-width: 520px;
 }
@@ -457,16 +457,16 @@
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   background: transparent;
-  color: rgba(200,180,154,0.4);
-  border: 0.5px solid rgba(200,180,154,0.15);
+  color:#fff;
+  border: 0.5px solid rgba(200,180,154);
   padding: 1rem 1.5rem;
   cursor: pointer;
   text-align: center;
   transition: all 0.25s ease;
 }
 .btnGhost:hover {
-  color: rgba(200,180,154,0.8);
-  border-color: rgba(200,180,154,0.35);
+  color:#fff;
+  border-color: #fff;
 }
 
 /* No Results */
