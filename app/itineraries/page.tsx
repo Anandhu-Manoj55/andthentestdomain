@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { tours } from "@/data/tours";
 import { destinations } from "@/data/destinations";
 import styles from "./page.module.css";
@@ -13,6 +13,7 @@ const DEST_TABS = [
   { id: "Bhutan", label: "Bhutan" },
  
   { id: "Sri Lanka", label: "Sri Lanka" },
+  { id: "wellness", label: "Wellness" },
   { id: "multi", label: "Multi-country" },
 ] as const;
 
@@ -103,6 +104,25 @@ const DEST_META: Record<
       { value: "Any", label: "Departure date" },
     ],
   },
+  wellness: {
+    title: (
+      <>
+        Wellness —{" "}
+        <em>
+          holistic journeys,
+          <br />
+          rejuvenation & reset
+        </em>
+      </>
+    ),
+    intro:
+      "Restore balance, find stillness and nurture your well-being with our hand-picked wellness journeys. Featuring authentic Ayurvedic treatments, private yoga instruction, naturopathy programs, and peaceful coastal sanctuaries.",
+    stats: [
+      { value: "5", label: "Journeys" },
+      { value: "10–17", label: "Nights typical" },
+      { value: "Any", label: "Departure date" },
+    ],
+  },
   multi: {
     title: (
       <>
@@ -127,7 +147,19 @@ const DEST_META: Record<
 export default function ItinerariesPage() {
   const [activeTab, setActiveTab] = useState<DestId>("India");
 
-  const filteredTours = tours.filter((t) => t.destination === activeTab);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get("tab") as DestId;
+      if (tab && DEST_TABS.some(t => t.id === tab)) {
+        setActiveTab(tab);
+      }
+    }
+  }, []);
+
+  const filteredTours = activeTab === "wellness"
+    ? tours.filter((t) => t.type === "Wellness" || t.type?.includes("Wellness"))
+    : tours.filter((t) => t.destination === activeTab);
   const meta = DEST_META[activeTab];
   const isMulti = activeTab === "multi";
 

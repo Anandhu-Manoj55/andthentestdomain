@@ -30,7 +30,7 @@ export const Wellness = () => {
           ))}
         </div>
         <div>
-          <Link href="/wellness/" className="text-link">
+          <Link href="/itineraries?tab=wellness" className="text-link">
             Explore wellness journeys
           </Link>
         </div>

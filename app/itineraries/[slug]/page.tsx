@@ -58,13 +58,39 @@ export default async function ItinerarySlugPage({ params }: Props) {
   const heroSrc = encodeURI(heroImage);
   const findDest = (name: string) => tour.destinations.find(d => d.name === name);
 
-  // Match hotels whose location includes any route stop city name
+  // Match hotels whose location/name matches any route stop city name or whose name matches the tour destination images
   const recommendedHotels = hotels
-    .filter((hotel) =>
-      routeStops.some((stop) =>
-        hotel.location.toLowerCase().includes(stop.toLowerCase())
-      )
-    )
+    .filter((hotel) => {
+      // 1. Match by route stops (with sub-city / spelling synonyms)
+      const matchesRouteStop = routeStops.some((stop) => {
+        const loc = hotel.location.toLowerCase();
+        const name = hotel.name.toLowerCase();
+        const s = stop.toLowerCase();
+        
+        if (loc.includes(s) || name.includes(s)) return true;
+        if (s === "cochin" && (loc.includes("kochi") || name.includes("kochi"))) return true;
+        if (s === "trivandrum" && (loc.includes("kovalam") || name.includes("kovalam") || loc.includes("thiruvananthapuram"))) return true;
+        
+        return false;
+      });
+
+      // 2. Match by destination image filenames (e.g., /Brunton Boatyard, Cochin.jpg)
+      const matchesDestImage = tour.destinations.some((dest) => {
+        const imgPath = dest.image.toLowerCase();
+        const hotelName = hotel.name.toLowerCase().replace(/[^a-z0-9]/g, "");
+        const hotelId = hotel.id.toLowerCase().replace(/[^a-z0-9]/g, "");
+        
+        // Clean up special characters from the image path for matching
+        const cleanPath = imgPath.replace(/[^a-z0-9]/g, "");
+        
+        // Also check if the hotel name matches parts of the filename
+        const cleanHotelNamePart = hotel.name.split(',')[0].toLowerCase().trim().replace(/[^a-z0-9]/g, "");
+        
+        return cleanPath.includes(cleanHotelNamePart) || cleanPath.includes(hotelId) || cleanPath.includes(hotelName);
+      });
+
+      return matchesRouteStop || matchesDestImage;
+    })
     .slice(0, 6);
   const title = tour.title ?? tour.name ?? "Untitled itinerary";
   const contactHref = `/contact/?trip=${encodeURIComponent(tour.id)}`;
