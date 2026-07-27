@@ -21,8 +21,6 @@ category: "Wellness"
 coverImage: "/Assets/blogs/what-is-panchakarma-india-guide/Panchakarma.webp"
 coverImageAlt: "Panchakarma Ayurvedic detox treatment"
 
-inlineImage: "/Assets/blogs/what-is-panchakarma-india-guide/Panchkarma -.jpg"
-inlineImageAlt: "Ayurvedic massage therapy"
 
 highlight: "Panchakarma is an ancient Ayurvedic detoxification process that restores physical, mental, and emotional balance through personalized healing therapies rooted in India's centuries-old wellness traditions."
 
@@ -61,7 +59,7 @@ Many travelers also find that Panchakarma retreats in India offer a level of aut
 
 For many visitors, the journey becomes more than a detox program. It becomes a complete lifestyle reset.
 
-![Ayurvedic oil massage treatment in Kerala](/Assets/blogs/what-is-panchakarma-india-guide/Panchakarma.webp)
+<!-- ![Ayurvedic oil massage treatment in Kerala](/Assets/blogs/what-is-panchakarma-india-guide/Panchakarma.webp) -->
 
 ## How Panchakarma Works
 

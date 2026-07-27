@@ -116,7 +116,7 @@ export default async function ItinerarySlugPage({ params }: Props) {
           priority
           sizes="100vw"
         />
-        <div className={styles.heroShade} />
+        {/* <div className={styles.heroShade} /> */}
         <div className={styles.heroContent}>
           <span className={styles.heroTag}>
             {tour.destination} ·{" "}

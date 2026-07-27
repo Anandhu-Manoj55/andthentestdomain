@@ -171,12 +171,12 @@ img { display: block; width: 100%; object-fit: cover; }
    ══════════════════════════════════════════════════ */
 .article-layout {
   display: grid;
-  grid-template-columns:.4fr  1fr 300px;
+  grid-template-columns:.1fr  1.5fr 400px;
   gap: 0;
   align-items: start;
 }
 
-.content-col { padding: 3rem 4rem 2rem 2.5rem; max-width: 760px;  }
+.content-col { padding: 3rem 4rem 2rem 2.5rem; max-width: 100%;  }
 
 /* ══════════════════════════════════════════════════
    2. HIGHLIGHTED SECTION
@@ -201,8 +201,8 @@ img { display: block; width: 100%; object-fit: cover; }
 /* ══════════════════════════════════════════════════
    3. ARTICLE CONTENT (CMS rich text renders into this)
    ══════════════════════════════════════════════════ */
-.article-body { font-family: var(--fb); font-size: 0.9375rem; font-weight: 300; color: #000000; line-height: 2.1;  }
-.article-body p { margin-bottom: 1.5rem; }
+.article-body { font-family: var(--fb); font-size: 1rem; font-weight: 370; color: #000000; line-height:1.7;  }
+.article-body p { margin-bottom: 1.2rem; }
 .article-body p:first-of-type::first-letter {
   font-family: var(--fd); font-size: 3.5rem; font-weight: 400; color: var(--cb);
   float: left; line-height: 0.8; padding-right: 0.5rem; padding-top: 0.5rem;
