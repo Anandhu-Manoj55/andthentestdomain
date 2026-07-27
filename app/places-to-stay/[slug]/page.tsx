@@ -87,20 +87,22 @@ export default function HotelDetailPage() {
         </div>
       </div>
 
-      {/* ── DESCRIPTION ─────────────────────────────────────── */}
-      <section className={styles.description} aria-label="About the hotel">
-        <div>
-          <span className={styles.descEyebrow}>About the hotel</span>
-          <h2 className={styles.descHeading}>{hotel.name}</h2>
-          <div className={styles.descRule} />
-          {hotel.intro && hotel.intro.split('\n\n')?.map((para, i) => (
-            <p key={`intro-${i}`} className={styles.descBody}>{para}</p>
-          ))}
-          {hotel.why?.split('\n\n')?.map((para, i) => (
-            <p key={`why-${i}`} className={styles.descBody}>{para}</p>
-          ))}
-        </div>
-        <div>
+      {/* ── MAIN CONTENT CONTAINER (2-COL ON DESKTOP) ────────── */}
+      <div className={styles.mainContainer}>
+        {/* ── DESCRIPTION ─────────────────────────────────────── */}
+        <section className={styles.description} aria-label="About the hotel">
+          <div className={styles.descContent}>
+            <span className={styles.descEyebrow}>About the hotel</span>
+            <h2 className={styles.descHeading}>{hotel.name}</h2>
+            <div className={styles.descRule} />
+            {hotel.intro && hotel.intro.split('\n\n')?.map((para, i) => (
+              <p key={`intro-${i}`} className={styles.descBody}>{para}</p>
+            ))}
+            {hotel.why?.split('\n\n')?.map((para, i) => (
+              <p key={`why-${i}`} className={styles.descBody}>{para}</p>
+            ))}
+          </div>
+
           {hotel.tags && hotel.tags.length > 0 && (
             <div className={styles.experiences}>
               <span className={styles.experiencesLabel}>Destination experiences</span>
@@ -113,53 +115,75 @@ export default function HotelDetailPage() {
               </div>
             </div>
           )}
+        </section>
 
-          <div className={styles.note} role="note">
-            <span className={styles.noteLabel}>AndThen insider note</span>
-            <p className={styles.noteText}>
-              "Speak to our travel specialists to discover how we weave this property into a seamless journey, including the best room allocations and exclusive experiences."
+        {/* ── LOCATION ────────────────────────────────────────── */}
+        <section className={styles.location} aria-label="Location">
+          <div className={styles.locInfo}>
+            <span className={styles.locEyebrow}>Location</span>
+            <h2 className={styles.locHeading}>{hotel.location}</h2>
+            <p className={styles.locOneliner}>
+              Experience the essence of {hotelCity} from this exceptional property, hand-picked by our specialists.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── LOCATION ────────────────────────────────────────── */}
-      <section className={styles.location} aria-label="Location">
-        <div>
-          <span className={styles.locEyebrow}>Location</span>
-          <h2 className={styles.locHeading}>{hotel.location}</h2>
-          <p className={styles.locOneliner}>
-            Experience the essence of {hotelCity} from this exceptional property, hand-picked by our specialists.
-          </p>
-          <div className={styles.locRule} />
-          {/* <div className={styles.locAirport}>
-            <svg className={styles.locAirportIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-              <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-            </svg>
-            <div className={styles.locAirportText}>
-              <span className={styles.locAirportLabel}>Nearest airport</span>
-              <span className={styles.locAirportValue}>Contact us for detailed travel logistics</span>
+            <div className={styles.locRule} />
+            
+            <div className={styles.airportsContainer}>
+              <h3 className={styles.airportsHeading}>How to Reach</h3>
+              {hotel.howToReach?.airports && hotel.howToReach.airports.length > 0 ? (
+                <div className={styles.airportsList}>
+                  {hotel.howToReach.airports.map((airport, index) => (
+                    <div key={index} className={styles.locAirport}>
+                      <svg className={styles.locAirportIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                        <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                      </svg>
+                      <div className={styles.locAirportText}>
+                        <span className={styles.locAirportLabel}>
+                          Airport &bull; {airport.code}
+                        </span>
+                        <span className={styles.locAirportValue}>
+                          {airport.name}{airport.location ? `, ${airport.location}` : ""}
+                        </span>
+                        {airport.distance && (
+                          <span className={styles.locAirportDistance}>
+                            {airport.distance}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className={styles.locAirport}>
+                  <svg className={styles.locAirportIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                    <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                  </svg>
+                  <div className={styles.locAirportText}>
+                    <span className={styles.locAirportLabel}>Nearest airport</span>
+                    <span className={styles.locAirportValue}>Contact us for detailed travel logistics</span>
+                  </div>
+                </div>
+              )}
             </div>
-          </div> */}
-        </div>
-
-        <div style={{backgroundColor:""}}>
-          <div className={styles.map} role="img" aria-label={`Map — ${hotel.name}, ${hotel.location}`}>
-            <iframe
-              title={`Map of ${hotel.name}, ${hotel.location}`}
-              src={hotel.mapEmbedUrl || `https://maps.google.com/maps?q=${encodeURIComponent(hotel.name + ' ' + hotel.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
-              width="100%"
-              height="340"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-            />
           </div>
-        </div>
-      </section>
+
+          <div className={styles.mapWrapper}>
+            <div className={styles.map} role="img" aria-label={`Map — ${hotel.name}, ${hotel.location}`}>
+              <iframe
+                title={`Map of ${hotel.name}, ${hotel.location}`}
+                src={hotel.mapEmbedUrl || `https://maps.google.com/maps?q=${encodeURIComponent(hotel.name + ' ' + hotel.location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "380px" }}
+                allowFullScreen={false}
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* ── ITINERARIES ─────────────────────────────────────── */}
-      {relatedTours.length > 0 && (
+      {/* {relatedTours.length > 0 && (
         <section className={styles.itins} aria-label="Itineraries featuring this hotel">
           <div className={styles.itinsHeader}>
             <div>
@@ -188,7 +212,7 @@ export default function HotelDetailPage() {
             </Link>
           ))}
         </section>
-      )}
+      )} */}
 
       {/* ── CTA BAND ────────────────────────────────────────── */}
       <div className={styles.ctaBand}>
@@ -197,7 +221,7 @@ export default function HotelDetailPage() {
           <p className={styles.ctaBandSub}>Tell us when you're travelling and we'll build a private itinerary with this hotel at its heart.</p>
         </div>
         <div className={styles.ctaBtns}>
-          <Link href={`/contact/?hotel=${hotel.id}`} className={styles.btnP}>Enquire about this hotel</Link>
+          <Link href={`/contact/?hotel=${hotel.id}`} className={styles.btnP}>Enquire Now</Link>
           <Link href={`/places-to-stay/${hotel.category}/`} className={styles.btnS}>View all {hotel.category.charAt(0).toUpperCase() + hotel.category.slice(1)} hotels</Link>
         </div>
       </div>
