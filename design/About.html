@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | AndThen Travels</title>
+
+<meta name="description" content="AndThen Travels is a boutique DMC planning private journeys across India, Bhutan, Nepal and Sri Lanka. Some people sell journeys here. We plan them.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+ --cr: #FFFFFF;
+
+ --cp: #F5EFE8;
+
+ --cs: #C8B49A;
+
+ --cb: #A07848;
+
+ --cd: #2C1A0A;
+
+ --ci: #3A2010;
+
+ --cm: #6B4C2A;
+
+ --fd: 'Cormorant Garamond', Georgia, serif;
+
+ --fb: 'DM Sans', Arial, sans-serif;
+
+ --tr: 0.25s ease;
+
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body { font-family: var(--fb); background: var(--cr); color: var(--cd); -webkit-font-smoothing: antialiased; }
+
+a { text-decoration: none; color: inherit; }
+
+img { display: block; width: 100%; object-fit: cover; }
+
+ 
+
+/* ── NAV ──────────────────────────────────────────── */
+
+.nav {
+
+ position: sticky; top: 0; z-index: 100;
+
+ background: var(--cr); height: 68px;
+
+ display: flex; align-items: center; justify-content: space-between;
+
+ padding: 0 2.5rem;
+
+ border-bottom: 0.5px solid rgba(200,180,154,0.35);
+
+}
+
+.nav__logo-word { font-family: var(--fb); font-size: 0.875rem; font-weight: 300; letter-spacing: 0.55rem; color: var(--cd); display: block; }
+
+.nav__logo-sub  { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.2rem; color: var(--cb); display: block; }
+
+.nav__links { display: flex; gap: 2.25rem; }
+
+.nav__links a { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.15rem; text-transform: uppercase; color: var(--cm); transition: color var(--tr); }
+
+.nav__links a:hover, .nav__links a.active { color: var(--cd); }
+
+.nav__cta { font-family: var(--fb); font-size: 0.625rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cd); background: transparent; border: 0.5px solid var(--cd); padding: 0.625rem 1.375rem; cursor: pointer; transition: background var(--tr), color var(--tr); }
+
+.nav__cta:hover { background: var(--cd); color: var(--cr); }
+
+.nav__ham { display: none; background: transparent; border: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+
+.nav__ham span { display: block; width: 22px; height: 0.5px; background: var(--cd); }
+
+ 
+
+/* ── HERO BANNER ──────────────────────────────────── */
+
+/* DEVELOPER: add background-image:url('images/about/about-hero.jpg') to .hero__bg
+
+  Recommend: wide landscape — people, landscape or culture shot, 1800x900px min */
+
+.hero {
+
+ position: relative; height: 540px; overflow: hidden;
+
+}
+
+.hero__bg {
+
+ position: absolute; inset: 0;
+
+ background: linear-gradient(150deg, #1A0E06 0%, #2C1A0A 50%, #3A2010 100%);
+
+}
+
+.hero__bg::after {
+
+ content: ''; position: absolute; inset: 0;
+
+ background: linear-gradient(to top, rgba(44,26,10,0.88) 0%, rgba(44,26,10,0.4) 55%, rgba(44,26,10,0.1) 100%);
+
+}
+
+.hero__content {
+
+ position: relative; z-index: 2; height: 100%;
+
+ display: flex; flex-direction: column; justify-content: flex-end;
+
+ padding: 0 2.5rem 3.5rem; max-width: 680px;
+
+}
+
+.hero__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1rem; }
+
+.hero__title { font-family: var(--fd); font-size: clamp(2.5rem, 5vw, 4.25rem); font-weight: 400; color: var(--cr); line-height: 1.05; margin-bottom: 1.125rem; }
+
+.hero__title em { font-style: italic; color: var(--cb); }
+
+.hero__desc { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(200,180,154,0.55); line-height: 1.9; max-width: 480px; }
+
+ 
+
+/* ── OPENING — full bleed dark section ───────────── */
+
+.opening {
+
+ background: var(--cd);
+
+ padding: 5rem 2.5rem;
+
+ display: grid;
+
+ grid-template-columns: 1fr 360px;
+
+ gap: 1px;
+
+ background-color: rgba(44,26,10,0.07);
+
+}
+
+.opening__text-col {
+
+ background: var(--cd);
+
+ padding: 4rem 4rem 4rem 0;
+
+ display: flex; flex-direction: column; justify-content: center;
+
+}
+
+.opening__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1.25rem; }
+
+.opening__title { font-family: var(--fd); font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 400; color: var(--cr); line-height: 1.05; margin-bottom: 2rem; }
+
+.opening__title em { font-style: italic; color: var(--cb); }
+
+.opening__intro { font-family: var(--fb); font-size: 0.9375rem; font-weight: 300; color: rgba(200,180,154,0.55); line-height: 2.1; }
+
+ 
+
+/* ── FOUNDER IMAGE col ────────────────────────────── */
+
+/* DEVELOPER: replace .founder-img-ph with <img src="images/about/founder.jpg" alt="Syam Kurup, AndThen Travels"> */
+
+.opening__image-col { background: var(--ci); position: relative; min-height: 340px; overflow: hidden; }
+
+.founder-img-ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: linear-gradient(160deg, #3A2010 0%, #1A0E06 100%); }
+
+.opening__image-col::after {
+
+ content: ''; position: absolute; inset: 0;
+
+ background: linear-gradient(to top, rgba(44,26,10,0.7) 0%, transparent 60%);
+
+}
+
+.opening__founder-tag {
+
+ position: absolute; bottom: 1.75rem; left: 1.75rem; z-index: 2;
+
+}
+
+.opening__founder-name { font-family: var(--fd); font-size: 1.125rem; font-weight: 400; color: var(--cr); display: block; }
+
+.opening__founder-role { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.18rem; text-transform: uppercase; color: var(--cb); display: block; margin-top: 3px; }
+
+ 
+
+/* ── SUBCONTINENT SECTION ─────────────────────────── */
+
+.subcontinent { padding: 6rem 2.5rem; background: var(--cr); }
+
+.subcontinent__inner { max-width: 820px; margin: 0 auto; }
+
+.subcontinent__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1.25rem; }
+
+.subcontinent__title { font-family: var(--fd); font-size: clamp(1.875rem, 3vw, 2.75rem); font-weight: 400; color: var(--cd); line-height: 1.1; margin-bottom: 3rem; }
+
+.subcontinent__title em { font-style: italic; }
+
+.subcontinent__rule { width: 2rem; height: 0.5px; background: var(--cs); margin-bottom: 3rem; }
+
+ 
+
+.subcontinent__body { font-family: var(--fb); font-size: 0.9375rem; font-weight: 300; color: var(--cm); line-height: 2.15; }
+
+.subcontinent__body p { margin-bottom: 1.75rem; }
+
+.subcontinent__body p:last-child { margin-bottom: 0; }
+
+.subcontinent__body strong { color: var(--cd); font-weight: 400; }
+
+ 
+
+/* pull quote within subcontinent section */
+
+.pull-quote {
+
+ border-left: 2px solid var(--cb);
+
+ padding: 0.25rem 0 0.25rem 2rem;
+
+ margin: 2.75rem 0;
+
+}
+
+.pull-quote__text { font-family: var(--fd); font-size: 1.375rem; font-weight: 400; font-style: italic; color: var(--cd); line-height: 1.5; }
+
+ 
+
+/* ── FOUNDER LETTER ───────────────────────────────── */
+
+/* Full-width cream panel: the personal voice moment */
+
+.founder-letter {
+
+ background: var(--cp);
+
+ padding: 0;
+
+ border-top: 0.5px solid rgba(200,180,154,0.25);
+
+ border-bottom: 0.5px solid rgba(200,180,154,0.25);
+
+ display: grid;
+
+ grid-template-columns: 380px 1fr;
+
+}
+
+/* DEVELOPER: replace .fl__img-ph with <img src="images/about/founder-kerala.jpg" alt="Syam Kurup, Kerala backwaters"> */
+
+.fl__image { position: relative; overflow: hidden; background: var(--ci); }
+
+.fl__img-ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: linear-gradient(150deg, #082028 0%, #2C1808 100%); }
+
+.fl__body { padding: 4.5rem 5rem 4.5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+
+.fl__open { font-family: var(--fd); font-size: 4rem; font-weight: 300; color: rgba(200,180,154,0.18); line-height: 1; display: block; margin-bottom: 0.5rem; }
+
+.fl__text { font-family: var(--fd); font-size: 1.125rem; font-weight: 400; color: var(--cd); line-height: 1.75; margin-bottom: 2.5rem; }
+
+.fl__text p { margin-bottom: 1.25rem; }
+
+.fl__text p:last-child { margin-bottom: 0; }
+
+.fl__sig { border-top: 0.5px solid rgba(200,180,154,0.3); padding-top: 1.75rem; display: flex; align-items: center; gap: 1.5rem; }
+
+.fl__sig-text {}
+
+.fl__sig-name { font-family: var(--fd); font-size: 1.25rem; font-weight: 400; font-style: italic; color: var(--cd); display: block; }
+
+.fl__sig-role { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cs); display: block; margin-top: 4px; }
+
+ 
+
+/* ── WHY TRAVEL WITH US — numbered pillars ────────── */
+
+.why {
+
+ background: var(--cr);
+
+ padding: 6rem 2.5rem;
+
+ border-top: 0.5px solid rgba(200,180,154,0.2);
+
+}
+
+.why__head { max-width: 820px; margin: 0 auto 4rem; }
+
+.why__kicker { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--cb); display: block; margin-bottom: 1.25rem; }
+
+.why__title { font-family: var(--fd); font-size: clamp(1.875rem, 3vw, 2.75rem); font-weight: 400; color: var(--cd); line-height: 1.1; }
+
+.why__title em { font-style: italic; }
+
+ 
+
+.why__grid {
+
+ display: grid;
+
+ grid-template-columns: repeat(3, 1fr);
+
+ gap: 1px;
+
+ background: rgba(200,180,154,0.15);
+
+}
+
+.why__item {
+
+ background: var(--cr);
+
+ padding: 2.5rem 2.25rem 2.75rem;
+
+ display: flex; flex-direction: column;
+
+ transition: background var(--tr);
+
+}
+
+.why__item:hover { background: var(--cp); }
+
+.why__num {
+
+ font-family: var(--fd); font-size: 3rem; font-weight: 300;
+
+ color: rgba(200,180,154,0.22); line-height: 1; display: block; margin-bottom: 1.5rem;
+
+}
+
+.why__heading { font-family: var(--fb); font-size: 0.75rem; font-weight: 500; color: var(--cd); letter-spacing: 0.03rem; margin-bottom: 0.875rem; }
+
+.why__text { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: var(--cm); line-height: 1.9; flex: 1; }
+
+ 
+
+/* second row — slightly different treatment */
+
+.why__grid--row2 { margin-top: 1px; }
+
+ 
+
+/* ── DESTINATIONS BAND ────────────────────────────── */
+
+.dest-band {
+
+ background: var(--cd);
+
+ display: grid;
+
+ grid-template-columns: repeat(4, 1fr);
+
+ gap: 1px;
+
+ background-color: rgba(255,255,255,0.03);
+
+}
+
+.dest-band__item {
+
+ background: var(--cd);
+
+ padding: 2.5rem 2rem;
+
+ border-right: 0.5px solid rgba(255,255,255,0.04);
+
+ transition: background var(--tr);
+
+}
+
+.dest-band__item:hover { background: var(--ci); }
+
+.dest-band__item:last-child { border-right: none; }
+
+.dest-band__name { font-family: var(--fd); font-size: 1.5rem; font-weight: 400; font-style: italic; color: var(--cr); display: block; margin-bottom: 0.75rem; }
+
+.dest-band__desc { font-family: var(--fb); font-size: 0.6875rem; font-weight: 300; color: rgba(200,180,154,0.35); line-height: 1.8; margin-bottom: 1.25rem; }
+
+.dest-band__link { font-family: var(--fb); font-size: 0.4375rem; letter-spacing: 0.2rem; text-transform: uppercase; color: var(--cb); display: flex; align-items: center; gap: 7px; transition: opacity var(--tr); }
+
+.dest-band__link:hover { opacity: 0.65; }
+
+.dest-band__link-line { width: 10px; height: 0.5px; background: currentColor; }
+
+ 
+
+/* ── FINAL CTA ────────────────────────────────────── */
+
+.final-cta {
+
+ background: var(--cb);
+
+ padding: 5rem 2.5rem;
+
+ display: grid; grid-template-columns: 1fr auto;
+
+ align-items: center; gap: 3rem;
+
+}
+
+.fc__title { font-family: var(--fd); font-size: clamp(1.75rem, 3vw, 2.625rem); font-weight: 400; color: var(--cr); line-height: 1.1; margin-bottom: 0.5rem; }
+
+.fc__title em { font-style: italic; }
+
+.fc__sub { font-family: var(--fb); font-size: 0.8125rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.85; max-width: 500px; }
+
+.fc__btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 210px; }
+
+.btn-dark { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: var(--cd); color: var(--cr); border: none; padding: 1rem 1.5rem; cursor: pointer; transition: background var(--tr); }
+
+.btn-dark:hover { background: var(--ci); }
+
+.btn-ghost { font-family: var(--fb); font-size: 0.5625rem; letter-spacing: 0.25rem; text-transform: uppercase; background: transparent; color: rgba(255,255,255,0.45); border: 0.5px solid rgba(255,255,255,0.15); padding: 1rem 1.5rem; cursor: pointer; transition: all var(--tr); }
+
+.btn-ghost:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.35); }
+
+ 
+
+/* ── FOOTER ───────────────────────────────────────── */
+
+.footer { background: var(--ci); padding: 4.5rem 2.5rem 2.5rem; }
+
+.footer__grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+
+.footer__word { font-family: var(--fb); font-size: 0.875rem; font-weight: 200; letter-spacing: 0.5rem; color: var(--cr); display: block; }
+
+.footer__sub-word { font-family: var(--fd); font-style: italic; font-size: 0.625rem; letter-spacing: 0.18rem; color: rgba(200,180,154,0.28); margin-top: 3px; display: block; }
+
+.footer__desc { font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 2; margin-top: 1.5rem; max-width: 250px; }
+
+.footer__contact a { display: block; font-family: var(--fb); font-size: 0.6875rem; color: var(--cb); margin-top: 0.75rem; }
+
+.footer__col-h { font-family: var(--fb); font-size: 0.5rem; letter-spacing: 0.3rem; text-transform: uppercase; color: rgba(255,255,255,0.15); display: block; margin-bottom: 1.5rem; }
+
+.footer__col a { display: block; font-family: var(--fb); font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.25); margin-bottom: 0.625rem; transition: color var(--tr); }
+
+.footer__col a:hover { color: var(--cb); }
+
+.footer__btm { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+
+.footer__copy { font-family: var(--fb); font-size: 0.5625rem; color: rgba(255,255,255,0.1); }
+
+ 
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+
+@media (max-width: 1100px) {
+
+ .why__grid { grid-template-columns: repeat(2, 1fr); }
+
+ .dest-band { grid-template-columns: repeat(2, 1fr); }
+
+ .founder-letter { grid-template-columns: 300px 1fr; }
+
+ .fl__body { padding: 3.5rem 3rem 3.5rem 3rem; }
+
+}
+
+@media (max-width: 900px) {
+
+ .hero { height: 400px; }
+
+ .opening__text-col { padding: 3rem 0; }
+
+ .opening__image-col { min-height: 280px; }
+
+ .founder-letter { grid-template-columns: 1fr; }
+
+ .fl__image { min-height: 320px; }
+
+ .final-cta { grid-template-columns: 1fr; }
+
+ .fc__btns { flex-direction: row; }
+
+ .footer__grid { grid-template-columns: 1fr 1fr; }
+
+}
+
+@media (max-width: 640px) {
+
+ .nav__links { display: none; }
+
+ .nav__ham { display: flex; }
+
+ .hero { height: 340px; }
+
+ .why__grid { grid-template-columns: 1fr; }
+
+ .dest-band { grid-template-columns: 1fr; }
+
+ .fl__body { padding: 2.5rem 1.5rem; }
+
+ .fc__btns { flex-direction: column; }
+
+ .footer__grid { grid-template-columns: 1fr; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+ 
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+
+<nav class="nav" role="navigation">
+
+ <a href="/" aria-label="AndThen Travels">
+
+   <span class="nav__logo-word">ANDTHEN</span>
+
+   <span class="nav__logo-sub">travels</span>
+
+ </a>
+
+ <div class="nav__links">
+
+   <a href="/destinations/">Destinations</a>
+
+   <a href="/experiences/">Experiences</a>
+
+   <a href="/places-to-stay/">Places to stay</a>
+
+   <a href="/wellness/">Wellness</a>
+
+   <a href="/journal/">Journal</a>
+
+   <a href="/about/" class="active">About</a>
+
+ </div>
+
+ <div style="display:flex;align-items:center;gap:1.5rem;">
+
+   <a href="tel:+918129271155" style="font-family:var(--fb);font-size:0.6875rem;color:var(--cb);">+91 8129 271 155</a>
+
+   <a href="/contact/"><button class="nav__cta">Plan my journey</button></a>
+
+   <button class="nav__ham" aria-label="Menu"><span></span><span></span><span></span></button>
+
+ </div>
+
+</nav>
+
+ 
+
+ 
+
+<!-- ══ HERO BANNER ════════════════════════════════════ -->
+
+<!-- DEVELOPER: add style="background-image:url('images/about/about-hero.jpg');background-size:cover;background-position:center;" to .hero__bg -->
+
+<header class="hero">
+
+ <div class="hero__bg"></div>
+
+ <div class="hero__content">
+
+   <span class="hero__kicker">About AndThen Travels</span>
+
+   <h1 class="hero__title">Some people sell<br>journeys here.<br><em>We plan them.</em></h1>
+
+   <p class="hero__desc">A boutique DMC run from Trivandrum and Bengaluru, arranging private journeys across India, Bhutan, Nepal and Sri Lanka for travellers who want to go somewhere real.</p>
+
+ </div>
+
+</header>
+
+ 
+
+<!-- ══ OPENING ═══════════════════════════════════════ -->
+
+<section class="opening">
+
+ <div class="opening__text-col">
+
+   <span class="opening__kicker">AndThen Travels — who we are</span>
+
+   <h1 class="opening__title">Some people sell<br>journeys here.<br><em>We plan them.</em></h1>
+
+   <p class="opening__intro">AndThen Travels is a boutique destination management company built by people who live and work on the Indian subcontinent. We plan private journeys across India, Bhutan, Nepal and Sri Lanka for travellers who want to go beyond what a standard itinerary can offer, and who understand that the difference between a good trip and an exceptional one usually comes down to who is arranging it.</p>
+
+ </div>
+
+ <div class="opening__image-col">
+
+   <!-- DEVELOPER: <img class="founder-img-ph" src="images/about/founder.jpg" alt="Syam Kurup, co-founder AndThen Travels"> -->
+
+   <div class="founder-img-ph"></div>
+
+   <div class="opening__founder-tag">
+
+     <span class="opening__founder-name">Syam Kurup</span>
+
+     <span class="opening__founder-role">Co-founder, AndThen Travels · Trivandrum &amp; Bengaluru</span>
+
+   </div>
+
+ </div>
+
+</section>
+
+ 
+
+ 
+
+<!-- ══ THE SUBCONTINENT ═══════════════════════════════ -->
+
+<section class="subcontinent">
+
+ <div class="subcontinent__inner">
+
+   <span class="subcontinent__kicker">On the subcontinent</span>
+
+   <h2 class="subcontinent__title">Four countries.<br><em>One of the most complex,<br>rewarding regions on earth.</em></h2>
+
+   <div class="subcontinent__rule"></div>
+
+   <div class="subcontinent__body">
+
+     <p>The Indian subcontinent covers roughly 4.5 million square kilometres and contains more distinct languages, cuisines, climates, architectural traditions, religious practices and landscape types than most continents. India alone has 28 states, each with a cultural identity as differentiated as a separate country. Kerala and Rajasthan share a passport but almost nothing else. The Himalayas, the Thar Desert, the Western Ghats and the backwaters of the south are not variations on a theme. They are entirely different worlds within a few hours of each other.</p>
+
+     <p>Bhutan is the only country on earth that measures its national progress by Gross National Happiness rather than GDP. It limits the number of visitors deliberately. The monasteries you walk past in the Paro Valley have been standing since the 8th century. The silence there is of a particular quality that is hard to explain to anyone who hasn't stood in it.</p>
+
+     <p>Nepal contains eight of the world's ten highest mountains and one of its most living, layered cities in Kathmandu, where medieval streets lead into temple squares that have functioned continuously for over a thousand years. Sri Lanka fits ancient kingdoms, highland tea country, leopard-dense jungle, colonial port towns and some of the world's finest reef diving into an island the size of Ireland.</p>
+
+ 
+
+     <div class="pull-quote">
+
+       <p class="pull-quote__text">Most people who come here for the first time say the same thing when they leave: it was bigger than I expected. Not in size, but in what it contained.</p>
+
+     </div>
+
+ 
+
+     <p>This region rewards people who travel with curiosity and patience, and who trust the people arranging their journey to take them somewhere real. The standard itinerary, the Golden Triangle in five days, the Bhutan circuit with three nights in Paro, the Sri Lanka rush from Colombo to Galle in a week, these are starting points at best. The subcontinent opens up properly when you slow down, go deeper into fewer places, and let someone who knows it well lead the way.</p>
+
+     <p>That is what we do.</p>
+
+   </div>
+
+ </div>
+
+</section>
+
+ 
+
+ 
+
+<!-- ══ FOUNDER LETTER ══════════════════════════════════ -->
+
+<div class="founder-letter">
+
+ <!-- DEVELOPER: <img class="fl__img-ph" src="images/about/founder-india.jpg" alt="Syam Kurup, India"> -->
+
+ <div class="fl__image">
+
+   <div class="fl__img-ph"></div>
+
+ </div>
+
+ <div class="fl__body">
+
+   <span class="fl__open">"</span>
+
+   <div class="fl__text">
+
+     <p>I grew up in Kerala and spent years working across the subcontinent in marketing and brand strategy. I have been to the places on every itinerary we build, many of them many times. I know which hotel in Udaipur has the better view and which one has the better service. I know which Bhutan guide will change how you see a monastery and which one will tell you its construction date and move on.</p>
+
+     <p>What started as a conversation about what inbound travel to India could look like if it was done differently became AndThen. The idea was simple: build a travel company for people who don't want to be tourists, led by people who actually know this part of the world.</p>
+
+     <p>We are based in Trivandrum and Bengaluru. Our network covers the entire subcontinent. When you travel with us, you are not talking to a booking system or a global operator with a regional office. You are talking to people for whom this is home, and who want you to understand why we love it.</p>
+
+   </div>
+
+   <div class="fl__sig">
+
+     <div>
+
+       <span class="fl__sig-name">Syam Kurup</span>
+
+       <span class="fl__sig-role">Co-founder · AndThen Travels</span>
+
+     </div>
+
+   </div>
+
+ </div>
+
+</div>
+
+ 
+
+ 
+
+<!-- ══ WHY TRAVEL WITH US ══════════════════════════════ -->
+
+<section class="why" aria-labelledby="why-title">
+
+ <div class="why__head">
+
+   <span class="why__kicker">Why travel with AndThen</span>
+
+   <h2 class="why__title" id="why-title">Six reasons the difference<br><em>is worth knowing about</em></h2>
+
+ </div>
+
+ 
+
+ <div class="why__grid">
+
+   <div class="why__item">
+
+     <span class="why__num">01</span>
+
+     <p class="why__heading">We are based here</p>
+
+     <p class="why__text">Our team lives and works in India. We are not a Western travel company with regional partners. When something changes, a road closes, a hotel has a problem, a festival dates shift, we know before you do, because we are already here. That proximity matters more than it might seem when you are 14,000 kilometres from home.</p>
+
+   </div>
+
+   <div class="why__item">
+
+     <span class="why__num">02</span>
+
+     <p class="why__heading">Every journey is private</p>
+
+     <p class="why__text">We do not run group departures. Every itinerary we build is for one party: your family, your group, your pace, your interests. You are never sharing a coach with strangers or kept to a schedule that was designed for someone else. The itinerary we build for you does not exist for anyone else.</p>
+
+   </div>
+
+   <div class="why__item">
+
+     <span class="why__num">03</span>
+
+     <p class="why__heading">We go to the places ourselves</p>
+
+     <p class="why__text">We recommend hotels we have visited, guides we have worked with, restaurants we have eaten in. When we say a particular lodge at Ranthambore is worth the premium, it is because someone from our team has stayed there. We do not send you somewhere on the basis of a brochure or a third-party review.</p>
+
+   </div>
+
+ </div>
+
+ 
+
+ <div class="why__grid why__grid--row2">
+
+   <div class="why__item">
+
+     <span class="why__num">04</span>
+
+     <p class="why__heading">No set menus</p>
+
+     <p class="why__text">We do not have a catalogue of fixed itineraries. We have a deep knowledge of four destinations and we build your trip from that knowledge, starting from what interests you. If you want three weeks in South India with no Golden Triangle, we build that. If you want Bhutan in November during a specific festival, we build that. The starting point is always your journey, not ours.</p>
+
+   </div>
+
+   <div class="why__item">
+
+     <span class="why__num">05</span>
+
+     <p class="why__heading">Access that takes years to build</p>
+
+     <p class="why__text">Some of what we can arrange is not publicly available. Tee times at the Delhi Golf Club, early-morning access at sites that normally open later, one-on-one sessions with specialists like Dr. Methil Devika or Chef Bobby Geetha, reservations at properties that do not list openly, these things take relationships built over years. We have them.</p>
+
+   </div>
+
+   <div class="why__item">
+
+     <span class="why__num">06</span>
+
+     <p class="why__heading">We stay in touch throughout</p>
+
+     <p class="why__text">Once you are travelling with us, you have a direct contact number for a member of our team, not a call centre. If anything needs adjusting on the ground, if you want to extend a stay or change a plan, you call us and it happens. We consider your journey finished when you are home, not when you have departed.</p>
+
+   </div>
+
+ </div>
+
+</section>
+
+ 
+
+ 
+
+<!-- ══ DESTINATIONS BAND ══════════════════════════════ -->
+
+<div class="dest-band" role="navigation" aria-label="Our destinations">
+
+ <div class="dest-band__item">
+
+   <span class="dest-band__name">India</span>
+
+   <p class="dest-band__desc">From the Himalayan north to the backwaters of Kerala. Palace hotels, wildlife reserves, Ayurveda retreats, ancient temples and the kind of food that changes how you think about Indian cooking.</p>
+
+   <a href="/india/" class="dest-band__link"><span class="dest-band__link-line"></span>Explore India</a>
+
+ </div>
+
+ <div class="dest-band__item">
+
+   <span class="dest-band__name">Bhutan</span>
+
+   <p class="dest-band__desc">The world's only carbon-negative country. A place that limits visitors deliberately and feels, as a result, like somewhere that has been kept. Tiger's Nest. The Phobjikha Valley. The particular silence of the dzongs.</p>
+
+   <a href="/bhutan/" class="dest-band__link"><span class="dest-band__link-line"></span>Explore Bhutan</a>
+
+ </div>
+
+ <div class="dest-band__item">
+
+   <span class="dest-band__name">Nepal</span>
+
+   <p class="dest-band__desc">Kathmandu's living heritage, Chitwan's rhinos and tigers, the Himalayan range at dawn from a mountain flight, and Pokhara's lake-city calm. More variety than most countries ten times its size.</p>
+
+   <a href="/nepal/" class="dest-band__link"><span class="dest-band__link-line"></span>Explore Nepal</a>
+
+ </div>
+
+ <div class="dest-band__item">
+
+   <span class="dest-band__name">Sri Lanka</span>
+
+   <p class="dest-band__desc">Ancient rock fortresses, tea estates at 4,000 feet, the highest leopard density in the world, Dutch colonial Galle and beaches the south coast keeps to itself. All on one island.</p>
+
+   <a href="/sri-lanka/" class="dest-band__link"><span class="dest-band__link-line"></span>Explore Sri Lanka</a>
+
+ </div>
+
+</div>
+
+ 
+
+ 
+
+<!-- ══ FINAL CTA ══════════════════════════════════════ -->
+
+<div class="final-cta">
+
+ <div>
+
+   <h2 class="fc__title">Ready to start<br><em>the conversation?</em></h2>
+
+   <p class="fc__sub">Tell us where you want to go, who's travelling and when. One of our specialists will come back to you within 24 hours with an initial outline. No obligation, no sales pitch.</p>
+
+ </div>
+
+ <div class="fc__btns">
+
+   <a href="/contact/"><button class="btn-dark">Plan my journey</button></a>
+
+   <a href="/itineraries/"><button class="btn-ghost">Browse itineraries</button></a>
+
+ </div>
+
+</div>
+
+ 
+
+ 
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+
+<footer class="footer">
+
+ <div class="footer__grid">
+
+   <div>
+
+     <a href="/"><span class="footer__word">ANDTHEN</span><span class="footer__sub-word">travels</span></a>
+
+     <p class="footer__desc">A boutique DMC crafting private, tailor-made journeys across India, Bhutan, Nepal and Sri Lanka.</p>
+
+     <div class="footer__contact">
+
+       <a href="mailto:travel@andthentravels.com">travel@andthentravels.com</a>
+
+       <a href="tel:+918129271155">+91 8129 271 155</a>
+
+     </div>
+
+   </div>
+
+   <div class="footer__col">
+
+     <span class="footer__col-h">Experiences</span>
+
+     <a href="/signature-experiences/art-of-feeling-well/">Art of Feeling Well</a>
+
+     <a href="/signature-experiences/plated-south/">Plated South</a>
+
+     <a href="/signature-experiences/fairways-wonders/">Fairways &amp; Wonders</a>
+
+     <a href="/itineraries/">Private itineraries</a>
+
+   </div>
+
+   <div class="footer__col">
+
+     <span class="footer__col-h">Destinations</span>
+
+     <a href="/india/">India</a>
+
+     <a href="/bhutan/">Bhutan</a>
+
+     <a href="/nepal/">Nepal</a>
+
+     <a href="/sri-lanka/">Sri Lanka</a>
+
+   </div>
+
+   <div class="footer__col">
+
+     <span class="footer__col-h">Company</span>
+
+     <a href="/about/">About us</a>
+
+     <a href="/places-to-stay/">Places to stay</a>
+
+     <a href="/journal/">Journal</a>
+
+     <a href="/contact/">Contact</a>
+
+   </div>
+
+ </div>
+
+ <div class="footer__btm">
+
+   <p class="footer__copy">© 2026 AndThen Travels · Kawaakari Lifestyle Pvt Ltd · All rights reserved</p>
+
+ </div>
+
+</footer>
+
+ 
+
+<script>
+
+(function(){
+
+ var ham = document.querySelector('.nav__ham');
+
+ if (ham) ham.addEventListener('click', function(){
+
+   this.setAttribute('aria-expanded', String(this.getAttribute('aria-expanded') !== 'true'));
+
+ });
+
+})();
+
+</script>
+
+ 
+
+</body>
+
+</html>
+
+
+ 

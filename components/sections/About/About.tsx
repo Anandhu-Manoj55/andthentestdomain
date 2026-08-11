@@ -33,9 +33,9 @@ export const About = () => {
           &ldquo;The best journeys happen when someone who truly knows a place puts it in your hands.&rdquo;
         </blockquote>
         <div>
-          {/* <Link href="/about/" className="text-link">
+          <Link href="/about/" className="text-link">
             Our story
-          </Link> */}
+          </Link>
         </div>
       </div>
     </section>

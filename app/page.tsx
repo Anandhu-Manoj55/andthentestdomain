@@ -25,7 +25,7 @@ export default function Home() {
       <Wellness />
       <Journal />
       <Prize />
-      <SignatureExperiences />
+      {/* <SignatureExperiences /> */}
       <Testimonials />
       <FAQ />
     </>
