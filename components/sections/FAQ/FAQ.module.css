@@ -39,31 +39,52 @@
 
 .question {
   font-family: var(--font-display), Georgia, serif;
-  font-size: 1rem;
+  font-size: clamp(0.65rem, 2vw, 1rem);
   font-weight: 400;
   color: var(--cd);
   line-height: 1.4;
 }
 
 .icon {
-  color: var(--cs);
-  font-size: 0.75rem;
-  transition: transform var(--transition);
+  position: relative;
+  width: 14px;
+  height: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lineHorizontal {
+  position: absolute;
+  width: 14px;
+  height: 1.5px;
+  background-color: var(--cd);
+}
+
+.lineVertical {
+  position: absolute;
+  width: 1.5px;
+  height: 14px;
+  background-color: var(--cd);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
 }
 
 .iconOpen {
-  transform: rotate(180deg);
+  transform: rotate(90deg);
+}
+
+.iconOpen .lineVertical {
+  transform: rotate(90deg);
+  opacity: 0;
 }
 
 .answer {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 300;
+  font-size: clamp(0.65rem, 1.5vw, 1rem);
+  font-weight: 370;
   color: #000;
-  line-height: 2.1;
+  line-height: 1.9;
   padding-bottom: 1.75rem;
   display: none;
 }

@@ -35,7 +35,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.35rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: var(--cr);
   display: block;
   margin-bottom: 1rem;
 }
@@ -51,14 +51,14 @@
 
 .hero__title em {
   font-style: italic;
-  color: var(--cb);
+  color: var(--cr);
 }
 
 .hero__desc {
   font-family: var(--fb);
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(200,180,154,0.55);
+  color: var(--cr);
   line-height: 1.9;
   max-width: 480px;
 }
@@ -176,7 +176,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.35rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: var(--cd);
   display: block;
   margin-bottom: 1.25rem;
 }
@@ -205,7 +205,7 @@
   font-family: var(--fb);
   font-size: 0.9375rem;
   font-weight: 300;
-  color: var(--cm);
+  color: var(--cd);
   line-height: 2.15;
 }
 
@@ -339,7 +339,7 @@
   font-size: 0.5rem;
   letter-spacing: 0.35rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: var(--cd);
   display: block;
   margin-bottom: 1.25rem;
 }
@@ -445,7 +445,7 @@
   font-family: var(--fb);
   font-size: 0.6875rem;
   font-weight: 300;
-  color: rgba(200,180,154,0.35);
+  color: var(--cr);
   line-height: 1.8;
   margin-bottom: 1.25rem;
 }
@@ -455,7 +455,7 @@
   font-size: 0.4375rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: var(--cr);
   display: flex;
   align-items: center;
   gap: 7px;

@@ -9,7 +9,7 @@ const PlacesToStay = dynamic(() => import("@/components/sections/PlacesToStay/Pl
 const Wellness = dynamic(() => import("@/components/sections/Wellness/Wellness"));
 const Journal = dynamic(() => import("@/components/sections/Journal/Journal"));
 const Prize = dynamic(() => import("@/components/sections/Prize/Prize"));
-const SignatureExperiences = dynamic(() => import("@/components/sections/SignatureExperiences/SignatureExperiences"));
+// const SignatureExperiences = dynamic(() => import("@/components/sections/SignatureExperiences/SignatureExperiences"));
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials/Testimonials"));
 const FAQ = dynamic(() => import("@/components/sections/FAQ/FAQ"));
 

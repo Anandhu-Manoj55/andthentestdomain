@@ -25,7 +25,7 @@ export const AboutPage = () => {
             Some people sell<br />journeys here.<br /><em>We plan them.</em>
           </h1>
           <p className={styles.hero__desc}>
-            A boutique DMC run from Trivandrum and Bengaluru, arranging private
+            A  travel firm, arranging private
             journeys across India, Bhutan, Nepal and Sri Lanka for travellers who want
             to go somewhere real.
           </p>
@@ -33,7 +33,7 @@ export const AboutPage = () => {
       </header>
 
       {/* ══ OPENING ═══════════════════════════════════════ */}
-      <section className={styles.opening}>
+      {/* <section className={styles.opening}>
         <div className={styles["opening__text-col"]}>
           <span className={styles.opening__kicker}>AndThen Travels — who we are</span>
           <h1 className={styles.opening__title}>
@@ -63,7 +63,7 @@ export const AboutPage = () => {
             </span>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══ THE SUBCONTINENT ═══════════════════════════════ */}
       <section className={styles.subcontinent}>
@@ -121,7 +121,7 @@ export const AboutPage = () => {
       </section>
 
       {/* ══ FOUNDER LETTER ══════════════════════════════════ */}
-      <div className={styles["founder-letter"]}>
+      {/* <div className={styles["founder-letter"]}>
         <div className={styles.fl__image}>
           <Image
             className={styles["fl__img-ph"]}
@@ -164,7 +164,7 @@ export const AboutPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ══ WHY TRAVEL WITH US ══════════════════════════════ */}
       <section className={styles.why} aria-labelledby="why-title">

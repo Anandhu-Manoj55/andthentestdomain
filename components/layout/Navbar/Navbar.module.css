@@ -62,7 +62,7 @@
 .links a {
   font-family: var(--font-body), sans-serif;
   font-size: 0.625rem;
-  font-weight: 400;
+  font-weight: 480;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
   color: var(--cm);
@@ -83,7 +83,7 @@
 .phoneLink {
   font-family: var(--font-body), sans-serif;
   font-size: 0.6875rem;
-  color: var(--cb);
+  color: var(--cd);
   letter-spacing: 0.08rem;
   transition: opacity var(--transition);
 }

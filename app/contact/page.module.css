@@ -22,16 +22,18 @@
 }
 
 .formColKicker {
+  font-family: var(--fb);
   font-size: 0.6rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: var(--cb);
+  color: var(--cd);
   display: block;
   margin-bottom: 1rem;
 }
 
 .formColTitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--fd);
+  font-style: italic;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.1;
   color: var(--cd);
@@ -44,6 +46,7 @@
 }
 
 .formColSub {
+  font-family: var(--fb);
   max-width: 600px;
   font-size: 0.9rem;
   line-height: 1.9;
@@ -77,16 +80,18 @@
 }
 
 .formLabel {
+  font-family: var(--fb);
   font-size: 0.55rem;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-  color: var(--cs);
+  color: var(--cd);
   padding: 1rem 1rem 0;
 }
 
 .formInput,
 .formTextarea,
 .formSelect {
+  font-family: var(--fb);
   border: none;
   outline: none;
   background: transparent;
@@ -114,11 +119,12 @@
 
 .formChecksLabel,
 .formExpLabel {
+  font-family: var(--fb);
   display: block;
   font-size: 0.55rem;
   letter-spacing: 0.18rem;
   text-transform: uppercase;
-  color: var(--cs);
+  color: var(--cd);
   margin-bottom: 1rem;
 }
 
@@ -131,6 +137,7 @@
 
 .formCheckLabel,
 .formExpPill {
+  font-family: var(--fb);
   border: 1px solid rgba(200, 180, 154, 0.3);
   background: white;
   color: var(--cm);
@@ -162,6 +169,7 @@
 }
 
 .formNote {
+  font-family: var(--fb);
   max-width: 400px;
   color: var(--cm);
   font-size: 0.8rem;
@@ -169,6 +177,7 @@
 }
 
 .formSubmit {
+  font-family: var(--fb);
   background: var(--cd);
   color: white;
   border: none;
@@ -188,12 +197,13 @@
 }
 
 .formSuccessTitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--fd);
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .formSuccessText {
+  font-family: var(--fb);
   line-height: 1.8;
 }
 
@@ -217,11 +227,12 @@
 .sbKicker,
 .sbNextLabel,
 .sbDestsLabel {
+  font-family: var(--fb);
   display: block;
   font-size: 0.55rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: rgba(200,180,154,0.5);
+  color:#fff;
   margin-bottom: 1rem;
 }
 
@@ -232,8 +243,9 @@
 }
 
 .sbOfficeName {
+  font-family: var(--fb);
   display: block;
-  color: var(--cb);
+  color:#fff;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
@@ -241,6 +253,7 @@
 }
 
 .sbOfficeLine {
+  font-family: var(--fb);
   color: rgba(255,255,255,0.7);
   font-size: 0.85rem;
   margin-bottom: 0.4rem;
@@ -251,14 +264,15 @@
 }
 
 .sbPromiseTitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--fd);
   font-size: 1.4rem;
-  color: rgba(200,180,154,0.9);
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 .sbPromiseText,
 .sbStepText {
+  font-family: var(--fb);
   line-height: 1.8;
   color: rgba(255,255,255,0.65);
 }
@@ -275,11 +289,13 @@
 }
 
 .sbStepNum {
+  font-family: var(--fd);
   font-size: 1.2rem;
-  color: rgba(200,180,154,0.4);
+  color: #fff;
 }
 
 .sbStepTitle {
+  font-family: var(--fb);
   color: white;
   margin-bottom: 0.4rem;
 }
@@ -291,6 +307,7 @@
 }
 
 .sbDestTag {
+  font-family: var(--fb);
   border: 1px solid rgba(255,255,255,0.15);
   padding: 0.4rem 0.8rem;
   font-size: 0.7rem;

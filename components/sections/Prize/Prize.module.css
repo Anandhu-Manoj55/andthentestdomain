@@ -1,3 +1,8 @@
+.blankSpace{
+  width: 100%;
+  min-height: 150px;
+  background-color:var(--cr);
+}
 .prize {
   position: relative;
   background: url(/Assets/home/gift_section.jpg);

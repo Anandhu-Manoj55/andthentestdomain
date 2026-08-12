@@ -34,7 +34,8 @@ export const FAQ = () => {
                   className={`${styles.icon} ${isOpen ? styles.iconOpen : ""}`.trim()}
                   aria-hidden="true"
                 >
-                  ▾
+                  <span className={styles.lineHorizontal}></span>
+                  <span className={styles.lineVertical}></span>
                 </span>
               </button>
               <p

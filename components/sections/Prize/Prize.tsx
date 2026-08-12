@@ -33,6 +33,8 @@ export const GIFTS: GiftItem[] = [
 
 export const Prize = () => {
   return (
+    <>
+    
     <section className={styles.prize} aria-label="Guaranteed travel gift">
       <div>
         <span
@@ -67,6 +69,10 @@ export const Prize = () => {
         ))}
       </div>
     </section>
+    <div className={styles.blankSpace}>
+
+    </div>
+    </>
   );
 };
 export default Prize;
