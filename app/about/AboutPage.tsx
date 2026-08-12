@@ -12,11 +12,11 @@ export const AboutPage = () => {
       <header className={styles.hero}>
         <div className={styles.hero__bg}>
           <Image
-            src="/Assets/destinations/main/banner.jpg"
+            src="/Assets/About/Banner.jpg"
             alt="About AndThen Travels Background"
             fill
             priority
-            style={{ objectFit: "cover", zIndex: -1 }}
+            style={{ objectFit: "cover", zIndex:1 }}
           />
         </div>
         <div className={styles.hero__content}>
@@ -72,6 +72,15 @@ export const AboutPage = () => {
           <h2 className={styles.subcontinent__title}>
             Four countries.<br /><em>One of the most complex,<br />rewarding regions on earth.</em>
           </h2>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/Assets/About/profile.png"
+              alt="Syam Kurup - Profile Picture"
+              width={160}
+              height={160}
+              className={styles.profileImage}
+            />
+          </div>
           <div className={styles.subcontinent__rule}></div>
           <div className={styles.subcontinent__body}>
             <p>
