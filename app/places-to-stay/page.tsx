@@ -186,12 +186,12 @@ export default function PlacesToStayPage() {
                     dangerouslySetInnerHTML={{ __html: dest.subtitle }}
                   />
                 </div>
-                <div className={styles.destHeadRight}>
+                {/* <div className={styles.destHeadRight}>
                   <span className={styles.destHeadCount}>
                     {visibleHotels.length}
                   </span>
                   <span className={styles.destHeadCountLabel}>Properties</span>
-                </div>
+                </div> */}
               </div>
 
               <div className={styles.hotelGrid}>

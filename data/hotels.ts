@@ -4251,6 +4251,7 @@ export const hotels: Hotel[] = [
 
     categoryTag: "City Luxury",
   },
+  //52
   {
   id: "waghoba-eco-lodge-tadoba-national-park",
   name: "Waghoba Eco Lodge, Tadoba National Park",
@@ -4348,4 +4349,3954 @@ export const hotels: Hotel[] = [
 
   categoryTag: "Wildlife"
 },
+//53
+{
+  id: "zhiwa-ling-heritage-bhutan",
+  name: "Zhiwa Ling Heritage",
+  location: "Paro Valley, Bhutan",
+  category: "bhutan",
+
+  image: "/Assets/hotels/53.png",
+  alt: "Zhiwa Ling Heritage, Paro Valley, Bhutan",
+
+  accentClass: "hi--bhutan-heritage",
+
+  intro:
+    "Celebrating Bhutan's rich cultural heritage and timeless architectural traditions, Zhiwa Ling Heritage is an award-winning luxury retreat that offers an authentic Bhutanese experience in the heart of the Paro Valley. Crafted by local artisans using traditional techniques and natural materials, the property seamlessly combines centuries-old craftsmanship with refined contemporary comforts. Every corner reflects the kingdom's deep-rooted spirituality, warm hospitality and commitment to preserving its unique cultural identity, making it one of Bhutan's most distinctive luxury stays.\n\nThe beautifully appointed rooms and suites showcase hand-carved woodwork, traditional murals, handcrafted furnishings and modern amenities that create an atmosphere of understated elegance. Guests can savour authentic Bhutanese cuisine alongside international favourites, rejuvenate with holistic spa therapies, meditate in the property's private temple or simply unwind while enjoying panoramic views of the surrounding mountains and valleys. The personalised service ensures an enriching and memorable stay.\n\nPerfectly located near Bhutan's most iconic cultural and natural attractions, Zhiwa Ling Heritage provides an exceptional base for discovering the kingdom's monasteries, fortresses and pristine Himalayan landscapes. Whether embarking on scenic hikes, attending vibrant festivals or exploring ancient spiritual sites, guests are immersed in the authentic spirit of Bhutan.",
+
+  why:
+    "Zhiwa Ling Heritage offers an extraordinary blend of Bhutanese tradition and refined luxury. Its authentic architecture, exceptional hospitality and immersive cultural experiences create a truly unforgettable Himalayan retreat.",
+
+  highlights: [
+    "Award-winning luxury retreat celebrating Bhutan's rich cultural heritage",
+    "Traditional Bhutanese architecture crafted by local artisans using traditional techniques and natural materials",
+    "Rooms and suites featuring hand-carved woodwork, traditional murals and handcrafted furnishings",
+    "Authentic Bhutanese cuisine alongside international favourites",
+    "Holistic spa therapies, meditation sessions and a private temple",
+    "Panoramic views of the surrounding mountains and valleys",
+    "Exceptional base for exploring Bhutan's monasteries, fortresses and Himalayan landscapes",
+    "Personalised service and immersive cultural experiences",
+  ],
+
+  exploreDestination: [
+    {
+      name: "Paro Taktsang",
+      description:
+        "Widely known as the Tiger's Nest Monastery, this iconic cliffside monastery is Bhutan's most revered landmark. The rewarding hike offers breathtaking views and an unforgettable spiritual experience.",
+    },
+    {
+      name: "Rinpung Dzong",
+      description:
+        "One of Bhutan's finest fortress-monasteries, Rinpung Dzong is admired for its magnificent architecture, intricate wood carvings and colourful Buddhist murals that reflect the country's rich spiritual heritage.",
+    },
+    {
+      name: "National Museum of Bhutan",
+      description:
+        "Housed in a historic watchtower overlooking Paro Valley, the museum presents fascinating collections of Bhutanese art, textiles, traditional weapons and religious artefacts.",
+    },
+    {
+      name: "Traditional Bhutanese Village Walks",
+      description:
+        "Experience the charm of rural Bhutan through guided walks that offer opportunities to meet local families, visit traditional farmhouses and gain insight into the country's unique customs, architecture and way of life.",
+    },
+    {
+      name: "Wellness & Spiritual Experiences",
+      description:
+        "Reconnect with mind and body through meditation sessions, traditional hot stone baths, spa treatments and visits to nearby monasteries that embody Bhutan's enduring Buddhist traditions.",
+    },
+  ],
+
+  howToReach: {
+    airports: [
+      {
+        name: "Paro International Airport",
+        location: "Bhutan",
+        code: "PBH",
+        distance: "Nearest airport",
+      },
+    ],
+  },
+
+  idealFor: [
+    "Couples",
+    "Honeymooners",
+    "Luxury Travellers",
+    "Cultural Explorers",
+    "Wellness Seekers",
+    "Nature Lovers",
+    "Himalayan Holidays",
+    "Slow Travel Experiences",
+  ],
+
+  website: "https://www.zhiwalingheritage.com/",
+
+  map: "https://www.google.com/maps/place/Zhiwaling+Heritage+Hotel/@27.4648172,89.3494876,17z/data=!4m9!3m8!1s0x39e19de85a6c39b7:0x546a1f3ae162796b!5m2!4m1!1i2!8m2!3d27.4648125!4d89.3520625!16s%2Fg%2F1tf194y9?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+  tags: [
+    "Bhutanese Heritage",
+    "Luxury Retreat",
+    "Cultural Experiences",
+    "Himalayan Retreat",
+    "Wellness",
+    "Traditional Architecture",
+  ],
+
+  isFeatured: false,
+  isRecommended: true,
+
+  categoryTag: "Heritage",
+},
+
+  {
+    id: "bari-kothi-west-bengal",
+    name: "Bari Kothi, West Bengal",
+    location: "Murshidabad, West Bengal",
+    category: "india",
+
+    image: "/Assets/hotels/Baro Kothi, West Bengal.jpg",
+    alt: "Bari Kothi, West Bengal, Murshidabad, West Bengal",
+
+    accentClass: "hi--india-heritage",
+
+    intro:
+      "Framed by the tranquil waters of the Ganges in the historic town of Murshidabad, Bari Kothi is a beautifully restored heritage mansion that offers guests an authentic glimpse into Bengal's aristocratic past. Once the residence of a prominent zamindar family, the mansion has been lovingly preserved to retain its original grandeur while incorporating modern comforts. Intricately carved balconies, elegant courtyards, antique furnishings and timeless architecture create an atmosphere where history, culture and hospitality blend seamlessly.\n\nThe heritage rooms and suites are thoughtfully designed with period-inspired décor, vintage furniture and contemporary amenities, allowing guests to experience the charm of a bygone era without compromising on comfort. The property's tranquil gardens, traditional Bengali cuisine and personalised service add to its warm and inviting ambience. Cultural performances, heritage walks and curated local experiences further immerse visitors in the rich traditions of Bengal.\n\nBari Kothi is an ideal base for discovering Murshidabad, once the capital of Bengal during the Nawabi era. The region is home to magnificent palaces, historic mosques, ancient temples and bustling silk-weaving communities that reflect its glorious past. Whether you're a history enthusiast, cultural explorer or simply seeking a peaceful heritage getaway, Bari Kothi offers a memorable and enriching experience.",
+
+    why: "Bari Kothi beautifully preserves the elegance of Bengal's zamindari heritage. Its historic architecture, personalised hospitality and immersive cultural experiences make it one of eastern India's most distinctive heritage stays.",
+
+    exploreDestination: [
+      {
+        name: "Hazarduari Palace",
+        description:
+          "One of India's grandest palaces, Hazarduari Palace is renowned for its magnificent Italian-inspired architecture and its legendary \"thousand doors.\" The palace museum houses royal artefacts, paintings, weapons and memorabilia from the Nawabi era.",
+      },
+      {
+        name: "Katra Mosque",
+        description:
+          "Built in the early 18th century by Nawab Murshid Quli Khan, Katra Mosque is an architectural masterpiece known for its impressive domes, towering minarets and historical significance.",
+      },
+      {
+        name: "Nizamat Imambara",
+        description:
+          "One of the largest Imambaras in India, this magnificent religious monument is an important centre of Islamic heritage and is admired for its elegant architecture and peaceful surroundings.",
+      },
+      {
+        name: "Kathgola Palace",
+        description:
+          "Surrounded by beautiful gardens, Kathgola Palace is an elegant mansion built by wealthy Jain merchants. Its impressive architecture, antique collections and serene setting make it a popular heritage attraction.",
+      },
+      {
+        name: "Silk Weaving Villages",
+        description:
+          "Murshidabad has long been celebrated for its exquisite silk weaving tradition. Visiting local artisan workshops offers an opportunity to witness skilled craftsmen producing the region's famous Murshidabad silk using techniques passed down through generations.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Netaji Subhash Chandra Bose International Airport, Kolkata",
+          code: "CCU",
+          distance: "220 kms. / 5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Heritage Travellers",
+      "Couples",
+      "Cultural Explorers",
+      "History Enthusiasts",
+      "Families",
+      "Photography Enthusiasts",
+      "Weekend Getaways",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://barikothi.com/",
+
+    map: "https://www.google.com/maps/place/Bari+Kothi+Heritage+Hotel/@24.2415723,88.2509741,17z/data=!4m10!3m9!1s0x39fbd15a86f29557:0x5bb344a97fac4775!5m3!1s2026-09-01!4m1!1i2!8m2!3d24.2415674!4d88.253549!16s%2Fg%2F11f3tw8nm8?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "conrad-bengaluru",
+    name: "Conrad Bengaluru",
+    location: "Bengaluru, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Conrad Bengaluru.webp",
+    alt: "Conrad Bengaluru, Bengaluru, Karnataka",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Overlooking the serene waters of Ulsoor Lake in the heart of Bengaluru, Conrad Bengaluru is a sophisticated luxury hotel that combines contemporary elegance with world-class hospitality. As one of the city's premier five-star destinations, the hotel offers an exceptional stay for business and leisure travellers alike, with beautifully appointed accommodations, award-winning dining experiences and impeccable service. Its prime location provides convenient access to Bengaluru's business districts, upscale shopping, vibrant nightlife and cultural attractions, making it an ideal base for exploring India's technology capital.\n\nThe hotel's spacious rooms and suites feature floor-to-ceiling windows that frame spectacular views of Ulsoor Lake or the city skyline. Elegant interiors, modern amenities and personalised service create a refined yet welcoming atmosphere, while guests can enjoy a selection of exceptional restaurants serving global cuisines, relax by the infinity pool, rejuvenate at the luxury spa or unwind in the executive lounge. Every aspect of the hotel has been designed to deliver comfort, sophistication and memorable experiences.\n\nBeyond the hotel, Bengaluru offers a unique blend of lush gardens, historic landmarks, thriving cafés, art galleries and cosmopolitan energy. Whether exploring the city's heritage, enjoying its renowned culinary scene or using it as a gateway to Southern India's many attractions, Conrad Bengaluru provides the perfect balance of luxury, convenience and warm hospitality.",
+
+    why: "Conrad Bengaluru combines contemporary luxury with one of the city's finest locations overlooking Ulsoor Lake. Its spacious rooms, exceptional dining and seamless hospitality make it an excellent choice for both business travellers and those looking to experience Bengaluru in style.",
+
+    exploreDestination: [
+      {
+        name: "Ulsoor Lake",
+        description:
+          "Located just steps from the hotel, Ulsoor Lake is one of Bengaluru's oldest and most picturesque lakes. Visitors can enjoy peaceful morning walks, boating and scenic views surrounded by lush greenery.",
+      },
+      {
+        name: "Cubbon Park",
+        description:
+          "Spread across more than 300 acres, Cubbon Park is Bengaluru's green oasis. Beautiful tree-lined avenues, historic buildings and landscaped gardens make it a favourite destination for walkers, joggers and families.",
+      },
+      {
+        name: "Bangalore Palace",
+        description:
+          "Inspired by England's Windsor Castle, Bangalore Palace is known for its Tudor-style architecture, elegant interiors and royal history. It offers visitors a fascinating glimpse into the city's princely past.",
+      },
+      {
+        name: "Lalbagh Botanical Garden",
+        description:
+          "One of India's finest botanical gardens, Lalbagh is famous for its centuries-old trees, vibrant flower displays and the iconic Glass House. It is an ideal destination for nature lovers and photography enthusiasts.",
+      },
+      {
+        name: "Commercial Street",
+        description:
+          "One of Bengaluru's most popular shopping districts, Commercial Street is packed with boutiques, fashion stores, cafés and local eateries, making it perfect for shopping and experiencing the city's vibrant atmosphere.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Kempegowda International Airport, Bengaluru",
+          code: "BLR",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Business Travellers",
+      "Luxury Travellers",
+      "Couples",
+      "Families",
+      "Weekend Getaways",
+      "City Breaks",
+      "Food & Lifestyle Enthusiasts",
+      "Corporate Events"
+    ],
+
+    website: "https://www.hilton.com/en/hotels/blrkrci-conrad-bengaluru/",
+
+    map: "https://www.google.com/maps/place/Conrad+Bengaluru/@12.9752925,77.6179109,17z/data=!3m1!4b1!4m9!3m8!1s0x3bae169b41c32eeb:0xd7be5acf89a61a1d!5m2!4m1!1i2!8m2!3d12.9752873!4d77.6204858!16s%2Fg%2F11g734q9b8?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "dhensa-resort-bhutan",
+    name: "Dhensa Resort, Bhutan",
+    location: "Punakha, Bhutan",
+    category: "bhutan",
+
+    image: "/Assets/hotels/Dhensa Bhutan.jpg",
+    alt: "Dhensa Resort, Bhutan, Punakha, Bhutan",
+
+    accentClass: "hi--bhutan-heritage",
+
+    intro:
+      "Framed by the pristine forests and serene valleys of western Bhutan, Dhensa Resort is a contemporary luxury retreat that offers a harmonious blend of minimalist design, Bhutanese tradition and breathtaking Himalayan scenery. Located in the tranquil Punakha Valley, the resort has been thoughtfully designed to complement its natural surroundings, creating an atmosphere of peace, privacy and understated elegance. Every aspect of the experience encourages guests to slow down, reconnect with nature and immerse themselves in Bhutan's unique culture.\n\nThe spacious suites feature warm timber interiors, handcrafted Bhutanese details and floor-to-ceiling windows that showcase spectacular mountain and forest views. Guests can savour seasonal Bhutanese and international cuisine prepared with fresh local ingredients, rejuvenate with holistic spa therapies, enjoy yoga and meditation sessions or simply unwind amidst the tranquil surroundings. Personalised hospitality and carefully curated experiences ensure every stay is both restorative and memorable.\n\nIdeally positioned for exploring the cultural treasures of the Punakha Valley, Dhensa Resort offers easy access to ancient monasteries, historic fortresses and scenic hiking trails. Whether discovering Bhutan's spiritual heritage, attending colourful festivals or embracing the quiet beauty of the Himalayas, the resort provides an unforgettable gateway to the Land of the Thunder Dragon.",
+
+    why: "Dhensa Resort combines contemporary luxury with Bhutan's timeless sense of tranquillity. Its peaceful forest setting, elegant accommodation and immersive cultural experiences make it one of the country's finest boutique retreats.",
+
+    exploreDestination: [
+      {
+        name: "Punakha Dzong",
+        description:
+          "One of Bhutan's most magnificent fortress-monasteries, Punakha Dzong stands at the confluence of the Pho Chhu and Mo Chhu rivers. Renowned for its exquisite Bhutanese architecture and historical significance, it is among the country's most iconic landmarks.",
+      },
+      {
+        name: "Chimi Lhakhang",
+        description:
+          "Popularly known as the Fertility Temple, this revered monastery is reached via a picturesque walk through rice fields and traditional villages, offering visitors a fascinating insight into Bhutanese culture and spirituality.",
+      },
+      {
+        name: "Khamsum Yulley Namgyal Chorten",
+        description:
+          "Set atop a scenic hillside, this beautifully crafted chorten rewards visitors with panoramic views of the Punakha Valley after a leisurely hike through lush countryside.",
+      },
+      {
+        name: "Village Walks & Cultural Encounters",
+        description:
+          "Discover the charm of rural Bhutan through guided walks that pass traditional farmhouses, terraced fields and welcoming local communities, offering an authentic glimpse into Bhutanese daily life.",
+      },
+      {
+        name: "Wellness & Nature Experiences",
+        description:
+          "Enjoy forest walks, meditation sessions, yoga and holistic spa treatments while embracing the peaceful surroundings that make Punakha one of Bhutan's most serene destinations.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Paro International Airport, Bhutan",
+          code: "PBH",
+          distance: "110 kms. / 3 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Luxury Travellers",
+      "Wellness Seekers",
+      "Cultural Explorers",
+      "Nature Lovers",
+      "Himalayan Holidays",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://dhensa.com/",
+
+    map: "https://www.google.com/maps/place/Dhensa+Boutique+Resort/@27.5351918,89.8613315,17z/data=!4m9!3m8!1s0x39e1dd033789df79:0x34afc00fe108b16c!5m2!4m1!1i2!8m2!3d27.5351871!4d89.8639064!16s%2Fg%2F11cnxzb8vn?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "dolkhar-leh",
+    name: "Dolkhar, Leh",
+    location: "Leh, Ladakh",
+    category: "india",
+
+    image: "/Assets/hotels/Dolkhar, Leh.jpeg",
+    alt: "Dolkhar, Leh, Leh, Ladakh",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Inspired by the timeless landscapes and cultural heritage of Ladakh, Dolkhar is a distinctive boutique luxury retreat in Leh that offers an immersive Himalayan experience. Designed using sustainable principles and traditional Ladakhi architecture, the property seamlessly blends natural materials, contemporary comforts and breathtaking mountain views. Surrounded by dramatic peaks, ancient monasteries and pristine valleys, Dolkhar provides a peaceful sanctuary where guests can embrace the tranquillity and spirit of the Himalayas.\n\nThe elegantly designed suites and villas feature handcrafted interiors, locally inspired décor and modern amenities, complemented by private outdoor spaces that showcase panoramic views of the surrounding mountains. Guests can savour thoughtfully curated cuisine prepared with fresh regional ingredients, rejuvenate with holistic wellness therapies, practise yoga, or simply relax amidst beautifully landscaped gardens. Warm Ladakhi hospitality and personalised service ensure an intimate and memorable stay.\n\nIdeally located close to the historic town of Leh, Dolkhar serves as an excellent base for exploring Ladakh's spectacular monasteries, high-altitude lakes and scenic mountain passes. Whether embarking on adventurous road journeys, discovering centuries-old Buddhist heritage or simply soaking in the serenity of the mountains, the retreat promises an unforgettable escape into one of India's most extraordinary destinations.",
+
+    why: "Dolkhar beautifully combines sustainable luxury with authentic Ladakhi culture. Its peaceful setting, elegant accommodation and immersive local experiences make it one of Leh's finest boutique retreats.",
+
+    exploreDestination: [
+      {
+        name: "Leh Palace",
+        description:
+          "Overlooking the old town of Leh, the 17th-century Leh Palace is one of Ladakh's most iconic landmarks. Visitors can explore its historic rooms while enjoying sweeping views of the town and surrounding Himalayan ranges.",
+      },
+      {
+        name: "Shanti Stupa",
+        description:
+          "Perched on a hilltop above Leh, Shanti Stupa is a magnificent white-domed Buddhist monument offering panoramic sunrise and sunset views. It is one of the most peaceful and photogenic locations in Ladakh.",
+      },
+      {
+        name: "Thiksey Monastery",
+        description:
+          "Often compared to the Potala Palace in Lhasa, Thiksey Monastery is renowned for its striking architecture, colourful prayer halls and the impressive 15-metre statue of Maitreya Buddha.",
+      },
+      {
+        name: "Nubra Valley",
+        description:
+          "Accessible via the legendary Khardung La Pass, Nubra Valley is famous for its sand dunes, double-humped Bactrian camels, picturesque villages and dramatic mountain scenery, making it one of Ladakh's most unforgettable excursions.",
+      },
+      {
+        name: "Pangong Lake",
+        description:
+          "Stretching across India and Tibet, Pangong Lake is celebrated for its crystal-clear waters that change shades of blue throughout the day. Surrounded by towering mountains, it is among Ladakh's most spectacular natural attractions.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Kushok Bakula Rimpochee Airport, Leh",
+          code: "",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Adventure Seekers",
+      "Wellness Retreats",
+      "Cultural Explorers",
+      "Himalayan Holidays"
+    ],
+
+    website: "https://dolkharladakh.com/",
+
+    map: "https://www.google.com/maps/place/Dolkhar+Resort/@34.1641201,77.5696363,17z/data=!3m1!4b1!4m9!3m8!1s0x38fdeb37ec6a5e4d:0xcc3ef4b65a227d4e!5m2!4m1!1i2!8m2!3d34.1641157!4d77.5722112!16s%2Fg%2F11q95l3xft?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "four-seasons-hotel-bengaluru-at-embassy-one",
+    name: "Four Seasons Hotel Bengaluru at Embassy ONE",
+    location: "Bengaluru, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Four Seasons, Bengaluru.jpg",
+    alt: "Four Seasons Hotel Bengaluru at Embassy ONE, Bengaluru, Karnataka",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Located in the prestigious Embassy ONE development, Four Seasons Hotel Bengaluru at Embassy ONE redefines urban luxury with its contemporary elegance, world-class hospitality and serene atmosphere. Rising above Bengaluru's dynamic business district, the hotel offers a sophisticated retreat where modern design, lush landscaped gardens and personalised service come together to create an exceptional stay. Whether visiting for business or leisure, guests enjoy the signature Four Seasons experience while remaining conveniently connected to the city's corporate hubs, cultural landmarks and vibrant lifestyle destinations.\n\nThe hotel's spacious rooms and suites feature floor-to-ceiling windows with sweeping views of Bengaluru's skyline and verdant surroundings. Interiors are thoughtfully designed with refined furnishings, contemporary décor and state-of-the-art amenities, creating a warm and inviting ambience. Guests can savour globally inspired cuisine across its award-winning restaurants, unwind beside the stunning outdoor pool, rejuvenate at the luxurious spa or enjoy handcrafted cocktails at the elegant lounge. Every aspect of the hotel reflects Four Seasons' renowned commitment to intuitive service and exceptional attention to detail.\n\nBeyond the hotel, Bengaluru offers a unique blend of heritage, innovation and cosmopolitan charm. Beautiful parks, historic palaces, bustling shopping districts, craft breweries and a thriving culinary scene make India's Garden City an exciting destination to explore. Whether discovering the city's cultural treasures or attending important business engagements, Four Seasons Hotel Bengaluru provides a luxurious base from which to experience the very best of the city.",
+
+    why: "Four Seasons Hotel Bengaluru effortlessly combines sophisticated luxury with personalised hospitality. Its elegant design, outstanding dining experiences and peaceful setting within the city make it an ideal choice for discerning travellers seeking comfort, convenience and world-class service.",
+
+    exploreDestination: [
+      {
+        name: "Bangalore Palace",
+        description:
+          "Inspired by England's Windsor Castle, Bangalore Palace is one of the city's most iconic landmarks. Its magnificent Tudor-style architecture, royal interiors and beautifully maintained gardens provide fascinating insight into Bengaluru's royal heritage.",
+      },
+      {
+        name: "Cubbon Park",
+        description:
+          "Spread across nearly 300 acres in the heart of the city, Cubbon Park is Bengaluru's green oasis. Lined with towering trees, flowering gardens and historic buildings, it offers a peaceful escape for leisurely walks, cycling and photography.",
+      },
+      {
+        name: "Lalbagh Botanical Garden",
+        description:
+          "Renowned for its centuries-old trees, vibrant flower displays and the iconic Glass House, Lalbagh Botanical Garden is one of India's finest botanical gardens. It is particularly spectacular during its annual flower shows.",
+      },
+      {
+        name: "ISKCON Temple Bangalore",
+        description:
+          "One of the largest ISKCON temples in the world, this impressive spiritual and architectural landmark combines traditional temple design with modern facilities. Visitors are welcomed by peaceful surroundings, devotional music and panoramic city views.",
+      },
+      {
+        name: "UB City",
+        description:
+          "Bengaluru's premier luxury lifestyle destination, UB City features designer boutiques, fine dining restaurants, rooftop lounges and art galleries. It is the perfect place to experience the city's cosmopolitan character.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Kempegowda International Airport, Bengaluru",
+          code: "BLR",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Business Travellers",
+      "Couples",
+      "Families",
+      "Corporate Executives",
+      "Weekend Getaways",
+      "Food & Lifestyle Enthusiasts",
+      "Premium City Breaks"
+    ],
+
+    website: "https://www.fourseasons.com/bengaluru/",
+
+    map: "https://www.google.com/maps/place/Four+Seasons+Hotel+Bengaluru+at+Embassy+ONE/@13.0196128,77.5828163,17z/data=!3m1!4b1!4m9!3m8!1s0x3bae16773125c81f:0xc672addd71b0266a!5m2!4m1!1i2!8m2!3d13.0196076!4d77.5853912!16s%2Fg%2F1tkqyq6c?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "gangtey-pinewood-resort-bhutan",
+    name: "Gangtey Pinewood Resort, Bhutan",
+    location: "Gangtey Valley, Bhutan",
+    category: "bhutan",
+
+    image: "/Assets/hotels/Gangtey Pinewood resort Bhutan.jpg",
+    alt: "Gangtey Pinewood Resort, Bhutan, Gangtey Valley, Bhutan",
+
+    accentClass: "hi--bhutan-heritage",
+
+    intro:
+      "Showcasing the untouched beauty of Bhutan's picturesque Phobjikha Valley, Gangtey Pinewood Resort is a charming mountain retreat that offers an authentic Himalayan experience amidst pristine pine forests and sweeping valley views. Built in traditional Bhutanese style with handcrafted timber architecture and warm interiors, the resort blends local heritage with contemporary comforts, creating a peaceful haven for travellers seeking tranquillity, culture and nature. Its idyllic location makes it an ideal base for discovering one of Bhutan's most enchanting regions.\n\nThe spacious rooms and suites feature elegant Bhutanese décor, handcrafted furnishings and large windows that frame breathtaking views of the surrounding mountains and the famous Phobjikha Valley. Guests can enjoy authentic Bhutanese cuisine, cosy evenings beside the fireplace, rejuvenating wellness therapies and leisurely walks through the surrounding forests. Thoughtful hospitality and a relaxed atmosphere ensure a memorable stay throughout the seasons.\n\nSituated close to Gangtey Monastery and the renowned Black-Necked Crane Conservation Area, the resort offers exceptional opportunities to experience Bhutan's rich cultural heritage and extraordinary biodiversity. Whether exploring scenic hiking trails, visiting ancient monasteries or witnessing the annual migration of the endangered black-necked cranes, every experience celebrates the natural beauty of the Kingdom of Bhutan.",
+
+    why: "Gangtey Pinewood Resort offers an authentic Bhutanese mountain escape with spectacular valley views, traditional architecture and warm hospitality. Its location in the serene Phobjikha Valley makes it an ideal destination for nature lovers, birdwatchers and cultural explorers.",
+
+    exploreDestination: [
+      {
+        name: "Gangtey Monastery",
+        description:
+          "Dating back to the 17th century, Gangtey Monastery is one of Bhutan's most important Nyingma monasteries. It overlooks the breathtaking Phobjikha Valley and is a centre of Buddhist learning and annual religious festivals.",
+      },
+      {
+        name: "Phobjikha Valley",
+        description:
+          "One of Bhutan's most beautiful glacial valleys, Phobjikha is renowned for its sweeping landscapes, peaceful walking trails and as the winter home of the endangered black-necked crane.",
+      },
+      {
+        name: "Black-Necked Crane Information Centre",
+        description:
+          "This conservation centre provides fascinating insights into the annual migration and protection of the black-necked cranes, one of Bhutan's most treasured bird species.",
+      },
+      {
+        name: "Nature Walks & Cultural Trails",
+        description:
+          "Explore scenic forest paths, traditional villages and ancient prayer flags while experiencing the tranquil beauty of Gangtey and learning about the customs and daily life of the local community.",
+      },
+      {
+        name: "Birdwatching & Himalayan Landscapes",
+        description:
+          "The Phobjikha Valley is a paradise for birdwatchers and photographers, offering opportunities to observe black-necked cranes, Himalayan birdlife and spectacular mountain scenery throughout the year.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Paro International Airport, Bhutan",
+          code: "PBH",
+          distance: "170 kms. / 4.5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Nature Lovers",
+      "Birdwatchers",
+      "Couples",
+      "Honeymooners",
+      "Cultural Explorers",
+      "Luxury Travellers",
+      "Photography Enthusiasts",
+      "Himalayan Escapes"
+    ],
+
+    website: "https://hhlbhutan.bt/hotels-lodges/gangtey-pinewood-resort/",
+
+    map: "https://www.google.com/maps/place/Gangtey+Pinewood+Resort/@27.4548156,90.1731137,17z/data=!4m10!1m2!2m1!1sgangtey+pinewood+resort+bhutan!3m6!1s0x375f457691eb642b:0x606ec96681056fa8!8m2!3d27.4548125!4d90.1756875!15sCh5nYW5ndGV5IHBpbmV3b29kIHJlc29ydCBiaHV0YW6SAQpsb2dfY2FiaW5z4AEA!16s%2Fg%2F11m6m579bk?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "hyatt-centric-mg-road-bengaluru",
+    name: "Hyatt Centric MG Road Bengaluru",
+    location: "Bengaluru, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Hyatt Centric, Bengaluru.webp",
+    alt: "Hyatt Centric MG Road Bengaluru, Bengaluru, Karnataka",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Located in the heart of Bengaluru's vibrant central business district, Hyatt Centric MG Road Bengaluru is a stylish lifestyle hotel that places guests at the centre of the city's dynamic culture, shopping and culinary scene. Overlooking the tranquil Ulsoor Lake and just steps away from the iconic MG Road, the hotel combines contemporary design with warm hospitality, making it an excellent choice for both business and leisure travellers. Its prime location offers effortless access to Bengaluru's commercial hubs, upscale boutiques, entertainment districts and cultural landmarks.\n\nThe hotel's spacious rooms and suites are thoughtfully designed with modern interiors, comfortable furnishings and floor-to-ceiling windows that offer views of the city skyline or Ulsoor Lake. Guests can savour innovative global cuisine and locally inspired flavours at the hotel's signature restaurants, relax by the rooftop swimming pool, enjoy handcrafted cocktails with panoramic city views or rejuvenate at the wellness centre. The vibrant atmosphere, personalised service and modern amenities create a refreshing urban retreat in one of Bengaluru's most sought-after neighbourhoods.\n\nWhether you're attending corporate meetings, exploring Bengaluru's thriving café culture or discovering its rich heritage, Hyatt Centric MG Road offers the perfect base for experiencing India's Garden City. Its blend of comfort, convenience and contemporary luxury ensures every stay is both productive and memorable.",
+
+    why: "Hyatt Centric MG Road perfectly captures Bengaluru's cosmopolitan spirit. Its central location, stylish interiors and easy access to the city's finest shopping, dining and cultural attractions make it an ideal choice for travellers who want to experience the city at its best.",
+
+    exploreDestination: [
+      {
+        name: "MG Road",
+        description:
+          "The city's most iconic boulevard, MG Road is lined with premium shopping outlets, cafés, restaurants and entertainment venues. It remains one of Bengaluru's favourite destinations for shopping, dining and evening strolls.",
+      },
+      {
+        name: "Ulsoor Lake",
+        description:
+          "One of Bengaluru's oldest and most picturesque lakes, Ulsoor Lake offers peaceful walking paths, boating opportunities and scenic views, providing a welcome escape from the city's fast-paced lifestyle.",
+      },
+      {
+        name: "Cubbon Park",
+        description:
+          "Spread across nearly 300 acres, Cubbon Park is Bengaluru's green heart. Beautiful tree-lined avenues, heritage buildings and expansive lawns make it perfect for morning walks, picnics and outdoor recreation.",
+      },
+      {
+        name: "Bangalore Palace",
+        description:
+          "Inspired by Windsor Castle, Bangalore Palace showcases magnificent Tudor-style architecture, royal interiors and beautifully landscaped gardens, offering visitors a glimpse into the city's regal history.",
+      },
+      {
+        name: "Commercial Street",
+        description:
+          "A shopper's paradise, Commercial Street is famous for its lively atmosphere, fashion boutiques, handicrafts, jewellery stores and local eateries. It is one of Bengaluru's most popular destinations for retail therapy.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Kempegowda International Airport, Bengaluru",
+          code: "BLR",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Business Travellers",
+      "Couples",
+      "Families",
+      "Luxury City Breaks",
+      "Corporate Executives",
+      "Shopping Holidays",
+      "Food & Lifestyle Enthusiasts",
+      "Weekend Getaways"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/Hyatt+Centric+MG+Road+Bangalore/@12.9734602,77.6192261,17z/data=!3m1!4b1!4m9!3m8!1s0x3bae169c86699da9:0x9647208b9140fe77!5m2!4m1!1i2!8m2!3d12.973455!4d77.621801!16s%2Fg%2F12hnrfdxy?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "hyatt-regency-kathmandu-nepal",
+    name: "Hyatt Regency Kathmandu, Nepal",
+    location: "Kathmandu, Nepal",
+    category: "nepal",
+
+    image: "/Assets/hotels/Hyatt Regency Kathmandu.webp",
+    alt: "Hyatt Regency Kathmandu, Nepal, Kathmandu, Nepal",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Reflecting the rich cultural heritage of the Kathmandu Valley, Hyatt Regency Kathmandu is an elegant five-star retreat that combines contemporary luxury with traditional Newari architecture. Set amidst beautifully landscaped gardens near one of Nepal's most revered spiritual landmarks, the hotel offers a peaceful sanctuary while remaining conveniently close to the city's vibrant cultural attractions. Its refined ambience, exceptional hospitality and panoramic Himalayan backdrop make it an ideal destination for both leisure and business travellers.\n\nThe spacious rooms and suites feature sophisticated interiors, handcrafted Nepalese design elements and modern amenities that ensure a comfortable and memorable stay. Guests can indulge in authentic Nepalese and international cuisine, unwind by the outdoor swimming pool, rejuvenate at the luxurious spa, or enjoy wellness and fitness facilities designed for complete relaxation. Thoughtful service and world-class hospitality create an experience that is both enriching and effortless.\n\nIdeally located for exploring Kathmandu's UNESCO World Heritage Sites, bustling bazaars and centuries-old temples, Hyatt Regency Kathmandu serves as the perfect gateway to Nepal's fascinating culture, spirituality and Himalayan adventures.",
+
+    why: "Hyatt Regency Kathmandu combines timeless Nepalese architecture with modern luxury, offering exceptional hospitality, tranquil surroundings and convenient access to the capital's most iconic cultural landmarks.",
+
+    exploreDestination: [
+      {
+        name: "Boudhanath",
+        description:
+          "One of the world's largest Buddhist stupas and a UNESCO World Heritage Site, Boudhanath is the spiritual heart of Tibetan Buddhism in Nepal. Visitors can witness monks in prayer, colourful prayer flags and vibrant local cafés surrounding the stupa.",
+      },
+      {
+        name: "Pashupatinath Temple",
+        description:
+          "Situated along the sacred Bagmati River, this revered Hindu temple complex is one of the most important pilgrimage sites dedicated to Lord Shiva and offers a profound insight into Nepal's religious traditions.",
+      },
+      {
+        name: "Kathmandu Durbar Square",
+        description:
+          "A UNESCO World Heritage Site, Kathmandu Durbar Square showcases magnificent palaces, intricately carved temples and historic courtyards that reflect Nepal's royal legacy and architectural brilliance.",
+      },
+      {
+        name: "Swayambhunath",
+        description:
+          "Perched atop a hill overlooking the city, the iconic Monkey Temple offers sweeping views of the Kathmandu Valley and is one of Nepal's oldest and most sacred Buddhist monuments.",
+      },
+      {
+        name: "Heritage Walks & Local Experiences",
+        description:
+          "Explore Kathmandu's lively markets, artisan workshops and traditional Newari neighbourhoods while discovering the city's rich history, vibrant cuisine and enduring cultural traditions.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Tribhuvan International Airport, Nepal",
+          code: "KTM",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Couples",
+      "Families",
+      "Cultural Explorers",
+      "Business Travellers",
+      "Wellness Seekers",
+      "Heritage Holidays",
+      "Nepal City Escapes"
+    ],
+
+    website: "https://www.hyatt.com/hyatt-regency/en-US/kathm-hyatt-regency-kathmandu",
+
+    map: "https://www.google.com/maps/place/Hyatt+Regency+Kathmandu/@27.7220867,85.3543531,17z/data=!4m9!3m8!1s0x39eb1bd88a7dce63:0x2f767a36da816bb5!5m2!4m1!1i2!8m2!3d27.722082!4d85.356928!16s%2Fm%2F010vtzqr?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "islas-ridge-kodaikanal",
+    name: "Isla's Ridge, Kodaikanal",
+    location: "Kodaikanal, Tamil Nadu",
+    category: "india",
+
+    image: "/Assets/hotels/Isla's Ridge, Kodaikanal.jpg",
+    alt: "Isla's Ridge, Kodaikanal, Kodaikanal, Tamil Nadu",
+
+    accentClass: "hi--india-hills",
+
+    intro:
+      "Surrounded by the mist-covered hills and lush forests of Kodaikanal, Isla's Ridge is an intimate boutique retreat that offers a perfect blend of contemporary comfort and the timeless charm of the Western Ghats. Perched amidst breathtaking mountain landscapes, the property provides a peaceful escape where cool climates, scenic vistas and personalised hospitality create an unforgettable highland experience. Whether seeking a romantic getaway or a relaxing nature retreat, Isla's Ridge offers an idyllic sanctuary away from the bustle of everyday life.\n\nThe elegantly designed rooms and suites feature warm interiors, modern amenities and expansive windows that frame panoramic views of the surrounding valleys and forests. Guests can savour fresh regional cuisine prepared with locally sourced ingredients, enjoy leisurely evenings around a bonfire, explore beautifully landscaped gardens or simply relax while soaking in the crisp mountain air. The property's serene ambience and attentive service ensure a rejuvenating stay throughout the year.\n\nIdeally positioned for exploring Kodaikanal's iconic viewpoints, tranquil lakes, waterfalls and walking trails, Isla's Ridge serves as an excellent base for discovering one of South India's most beloved hill stations. Whether enjoying scenic hikes, boating on the lake or experiencing the region's rich natural beauty, guests are treated to an authentic mountain retreat.",
+
+    why: "Isla's Ridge offers spectacular views, peaceful surroundings and personalised boutique hospitality. Its elegant accommodation and easy access to Kodaikanal's scenic attractions make it an ideal destination for a relaxing mountain holiday.",
+
+    exploreDestination: [
+      {
+        name: "Kodaikanal Lake",
+        description:
+          "The heart of the hill station, Kodaikanal Lake is perfect for boating, cycling and leisurely walks along its scenic promenade. Surrounded by towering trees and colourful gardens, it is one of the town's most popular attractions.",
+      },
+      {
+        name: "Coaker's Walk",
+        description:
+          "This picturesque cliffside pathway offers breathtaking panoramic views of the valleys and plains below. Early mornings often reveal a magical sea of clouds, making it a favourite spot for photography.",
+      },
+      {
+        name: "Pillar Rocks",
+        description:
+          "Rising dramatically above the valley, these towering granite formations are among Kodaikanal's most iconic landmarks. The viewpoint provides spectacular vistas of the surrounding mountains and forests.",
+      },
+      {
+        name: "Bryant Park",
+        description:
+          "Located near Kodaikanal Lake, Bryant Park is renowned for its beautifully maintained gardens, vibrant flower displays and diverse collection of ornamental plants, making it a delightful place for a leisurely stroll.",
+      },
+      {
+        name: "Silver Cascade Falls",
+        description:
+          "One of the region's best-known waterfalls, Silver Cascade tumbles gracefully down rocky cliffs amidst lush greenery. It is a popular stop for visitors travelling into the hill station.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Madurai Airport",
+          code: "IXM",
+          distance: "90 kms / 2.5 hrs. approx. by road.",
+        },
+        {
+          name: "Coimbatore International Airport",
+          code: "CJB",
+          distance: "170 kms. / 5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Mountain Holidays",
+      "Families",
+      "Boutique Luxury Travellers",
+      "Wellness Retreats",
+      "Weekend Getaways"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/Isla's+Ridge+CGH/@10.2824162,77.7431745,17z/data=!3m1!4b1!4m9!3m8!1s0x3b075b0022c3c3cd:0xe7b6c9498d3a9440!5m2!4m1!1i2!8m2!3d10.2824109!4d77.7457494!16s%2Fg%2F11vpzfz8p5?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Hill Stations",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Hill Stations",
+  },
+
+  {
+    id: "jetwing-beach-sri-lanka",
+    name: "Jetwing Beach, Sri Lanka",
+    location: "Negombo, Sri Lanka",
+    category: "srilanka",
+
+    image: "/Assets/hotels/Jetwing Beach Resort, Sri Lanka.jpg",
+    alt: "Jetwing Beach, Sri Lanka, Negombo, Sri Lanka",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Embracing the golden shores of Sri Lanka's western coastline, Jetwing Beach is an iconic luxury beachfront resort where tropical elegance, contemporary design and warm Sri Lankan hospitality come together effortlessly. Designed by the legendary architect Geoffrey Bawa, the resort reflects a harmonious blend of open spaces, natural materials and breathtaking ocean views, creating a relaxing sanctuary for travellers seeking an authentic island escape. Whether it's a leisurely beach holiday or a romantic retreat, Jetwing Beach offers an unforgettable stay by the Indian Ocean.\n\nThe spacious rooms and suites feature stylish interiors, modern amenities and private balconies that overlook the sea or beautifully landscaped gardens. Guests can savour an exceptional selection of Sri Lankan and international cuisine, unwind beside the expansive swimming pools, rejuvenate with holistic spa treatments or simply relax on the pristine beach while enjoying spectacular sunsets. The attentive service and inviting atmosphere ensure every stay is both comfortable and memorable.\n\nConveniently located near Negombo and within easy reach of Sri Lanka's international airport, Jetwing Beach serves as an excellent gateway to the island's coastal attractions, vibrant fishing communities and rich cultural heritage. From lagoon cruises and water sports to historic landmarks and local markets, guests can experience the very best of Sri Lanka's west coast.",
+
+    why: "Jetwing Beach offers a refined beachfront experience with timeless architecture, exceptional hospitality and stunning views of the Indian Ocean. Its convenient location and tranquil ambience make it one of Sri Lanka's most sought-after coastal retreats.",
+
+    exploreDestination: [
+      {
+        name: "Negombo Beach",
+        description:
+          "A beautiful stretch of golden sand, Negombo Beach is perfect for leisurely walks, sunset views, water sports and enjoying the relaxed coastal atmosphere.",
+      },
+      {
+        name: "Negombo Lagoon",
+        description:
+          "Renowned for its rich biodiversity, Negombo Lagoon offers scenic boat cruises through mangroves, excellent birdwatching opportunities and insights into the region's traditional fishing culture.",
+      },
+      {
+        name: "Dutch Fort",
+        description:
+          "Built during the Dutch colonial era, this historic landmark offers visitors a glimpse into Sri Lanka's colonial past and the town's maritime heritage.",
+      },
+      {
+        name: "St. Mary's Church",
+        description:
+          "One of Sri Lanka's most impressive Catholic churches, St. Mary's Church is admired for its striking architecture, colourful ceiling frescoes and historical significance.",
+      },
+      {
+        name: "Local Fish Market Experience",
+        description:
+          "Visit Negombo's bustling fish market to witness the daily catch being brought ashore and experience the vibrant atmosphere of one of Sri Lanka's largest traditional fishing communities.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Bandaranaike International Airport, Sri Lanka",
+          code: "CMB",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Beach Holidays",
+      "Couples",
+      "Honeymooners",
+      "Families",
+      "Luxury Travellers",
+      "Wellness Seekers",
+      "Romantic Getaways",
+      "Sri Lanka Coastal Escapes"
+    ],
+
+    website: "https://www.jetwinghotels.com/jetwingbeach/",
+
+    map: "https://www.google.com/maps/place/Jetwing+Beach/@7.2439848,79.8064862,13z/data=!4m9!3m8!1s0x3ae2ee93b81bfe0f:0xed44bdcb739b0509!5m2!4m1!1i2!8m2!3d7.2439795!4d79.8418914!16s%2Fg%2F1tk66386?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D-",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "kaav-safari-lodge-kabini",
+    name: "KAAV Safari Lodge, Kabini",
+    location: "Kabini, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Kaav, Kabini.jpg",
+    alt: "KAAV Safari Lodge, Kabini, Kabini, Karnataka",
+
+    accentClass: "hi--india-wildlife",
+
+    intro:
+      "Drawing inspiration from the rich biodiversity of Kabini's wilderness, KAAV Safari Lodge is an intimate luxury retreat designed for travellers seeking meaningful wildlife experiences in one of South India's most celebrated safari destinations. Blending contemporary comfort with eco-conscious design, the lodge offers a peaceful sanctuary where nature takes centre stage. Expansive forests, serene backwaters and abundant wildlife create an unforgettable setting for adventure, relaxation and discovery.\n\nThe spacious cottages and suites are thoughtfully designed with elegant interiors, natural materials and modern amenities, ensuring a comfortable stay while maintaining a close connection with the surrounding landscape. Guests can savour locally inspired cuisine prepared with fresh seasonal ingredients, relax after exciting game drives, enjoy birdwatching around the property or unwind beneath star-filled skies. Personalised hospitality and expertly curated experiences make every stay immersive and memorable.\n\nPerfectly located near the famed Kabini Wildlife Sanctuary, the lodge serves as an excellent base for exploring the forests of Nagarhole National Park and the Kabini backwaters. Whether tracking elusive big cats, photographing elephants or enjoying peaceful boat safaris, KAAV Safari Lodge promises an exceptional wildlife escape.",
+
+    why: "KAAV Safari Lodge combines stylish accommodation, personalised hospitality and exceptional access to Kabini's rich wildlife. Its intimate atmosphere and immersive safari experiences make it an ideal retreat for nature lovers and wildlife enthusiasts.",
+
+    exploreDestination: [
+      {
+        name: "Kabini Wildlife Sanctuary",
+        description:
+          "Part of the renowned Nagarhole Tiger Reserve, Kabini is famous for its thriving populations of elephants, leopards, Bengal tigers, dholes, gaur and over 300 species of birds. Guided jeep and boat safaris provide remarkable wildlife viewing opportunities.",
+      },
+      {
+        name: "Kabini River",
+        description:
+          "The picturesque Kabini River is the lifeline of the region and offers scenic boat safaris where visitors can observe elephants, crocodiles, otters and an abundance of birdlife along its tranquil banks.",
+      },
+      {
+        name: "Nagarhole National Park",
+        description:
+          "A UNESCO-recognised part of the Nilgiri Biosphere Reserve, Nagarhole National Park is celebrated for its dense forests, rich biodiversity and exciting safari experiences throughout the year.",
+      },
+      {
+        name: "Nature Walks & Birdwatching",
+        description:
+          "Explore the forests surrounding the lodge with experienced naturalists while discovering native flora, butterflies and numerous resident and migratory bird species that inhabit the Kabini landscape.",
+      },
+      {
+        name: "Tribal & Village Experiences",
+        description:
+          "Visit nearby villages to learn about the traditions, culture and sustainable lifestyles of local communities that have coexisted with Kabini's forests for generations.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Mysore Airport",
+          code: "",
+          distance: "80 kms. / 2 hrs approx. by road.",
+        },
+        {
+          name: "Kempegowda International Airport, Bengaluru",
+          code: "BLR",
+          distance: "250 kms. / 4.5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Wildlife Enthusiasts",
+      "Luxury Safari Holidays",
+      "Couples",
+      "Families",
+      "Nature Lovers",
+      "Birdwatchers",
+      "Wildlife Photographers",
+      "Adventure Travellers"
+    ],
+
+    website: "https://kaav.com/",
+
+    map: "https://www.google.com/maps/place/KAAV+Safari+Lodge,+Kabini/@11.9581508,76.2494294,17z/data=!3m1!4b1!4m9!3m8!1s0x3ba5efcad1afcced:0x51608722b62bdd50!5m2!4m1!1i2!8m2!3d11.9581508!4d76.2494294!16s%2Fg%2F1tg_vj7h?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Wildlife",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Wildlife",
+  },
+
+  {
+    id: "kahanda-kanda-sri-lanka",
+    name: "Kahanda Kanda, Sri Lanka",
+    location: "Galle, Sri Lanka",
+    category: "srilanka",
+
+    image: "/Assets/hotels/Kahanda Kanda, Sri Lanka.jpg",
+    alt: "Kahanda Kanda, Sri Lanka, Galle, Sri Lanka",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Inspired by the lush tea country and timeless charm of southern Sri Lanka, Kahanda Kanda is an exclusive boutique retreat that offers refined luxury amidst rolling plantations and tropical forests. Located just a short drive from the historic coastal city of Galle, the property blends contemporary elegance with Sri Lankan heritage, creating an intimate sanctuary for travellers seeking privacy, tranquillity and personalised hospitality. With beautifully landscaped gardens and panoramic countryside views, every stay is designed to inspire relaxation and rejuvenation.\n\nThe individually designed villas feature sophisticated interiors, private plunge pools, spacious outdoor living areas and carefully curated artwork that reflects the island's rich cultural heritage. Guests can indulge in exceptional farm-to-table cuisine prepared with fresh local ingredients, unwind with wellness treatments, practise yoga in peaceful surroundings or simply relax while taking in the beauty of the surrounding tea estates. The attentive service and intimate atmosphere ensure an unforgettable boutique experience.\n\nPerfectly positioned for exploring Sri Lanka's southern coast, Kahanda Kanda provides easy access to UNESCO-listed heritage sites, golden beaches, wildlife reserves and vibrant local culture. Whether discovering colonial architecture, enjoying coastal adventures or escaping into nature, the retreat offers the perfect balance of luxury and authentic Sri Lankan experiences.",
+
+    why: "Kahanda Kanda offers an effortlessly elegant boutique experience with beautifully designed villas, personalised service and a serene setting amidst Sri Lanka's tea country. Its intimate atmosphere makes it one of the island's most exclusive luxury hideaways.",
+
+    exploreDestination: [
+      {
+        name: "Galle Fort",
+        description:
+          "A UNESCO World Heritage Site, Galle Fort is a beautifully preserved colonial fortress featuring cobbled streets, charming cafés, boutique shops, museums and historic buildings overlooking the Indian Ocean.",
+      },
+      {
+        name: "Unawatuna Beach",
+        description:
+          "One of Sri Lanka's most popular beaches, Unawatuna is known for its golden sands, turquoise waters and lively beachfront restaurants. It is ideal for swimming, snorkelling and sunset walks.",
+      },
+      {
+        name: "Koggala Lake",
+        description:
+          "Surrounded by mangroves and small islands, Koggala Lake offers scenic boat cruises where visitors can experience Sri Lanka's rich birdlife, cinnamon plantations and peaceful rural landscapes.",
+      },
+      {
+        name: "Martin Wickramasinghe Folk Museum",
+        description:
+          "Dedicated to one of Sri Lanka's most celebrated authors, the museum showcases traditional village life, local craftsmanship and the island's rich cultural heritage.",
+      },
+      {
+        name: "Tea Estate & Village Experiences",
+        description:
+          "Discover the traditions of Sri Lanka's tea-growing regions through guided plantation visits, countryside walks and interactions with local communities, offering an authentic insight into rural life and tea cultivation.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Bandaranaike International Airport, Sri Lanka",
+          code: "",
+          distance: "160 kms. / 2.5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Boutique Luxury Travellers",
+      "Wellness Seekers",
+      "Nature Lovers",
+      "Slow Travel Enthusiasts",
+      "Cultural Explorers",
+      "Romantic Sri Lanka Getaways"
+    ],
+
+    website: "https://www.kkcollection.com/kahanda-kanda/",
+
+    map: "https://www.google.com/maps/place/Kahanda+Kanda+Galle/@6.019906,80.3380853,17z/data=!4m9!3m8!1s0x3ae16c5b279e2c85:0xc0a3aac561115a94!5m2!4m1!1i2!8m2!3d6.0199007!4d80.3406602!16s%2Fg%2F1tgvc14j?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "kahani-paradise-gokarna",
+    name: "Kahani Paradise, Gokarna",
+    location: "Gokarna, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Kahani Paradise, Gokarna.avif",
+    alt: "Kahani Paradise, Gokarna, Gokarna, Karnataka",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Perched on a secluded cliff overlooking the Arabian Sea, Kahani Paradise is an exclusive boutique retreat that offers one of the most tranquil coastal escapes in Gokarna. Surrounded by lush tropical forests and breathtaking ocean views, the property is designed for travellers seeking privacy, serenity and an intimate connection with nature. Far from the crowds, Kahani Paradise blends contemporary luxury with the laid-back charm of Karnataka's picturesque coastline, creating an idyllic setting for relaxation and rejuvenation.\n\nThe resort features elegantly designed villas and suites that harmonise with the natural landscape, offering spacious interiors, handcrafted furnishings and panoramic views of the sea or surrounding greenery. Guests can savour fresh coastal cuisine prepared with locally sourced ingredients, unwind by the infinity pool, enjoy yoga and wellness experiences or simply relax while listening to the soothing sound of the waves. The personalised hospitality and peaceful ambience make every stay truly memorable.\n\nBeyond the resort lies Gokarna, a destination known for its pristine beaches, sacred temples and unspoilt natural beauty. Whether exploring hidden coves, embarking on scenic coastal hikes, enjoying spectacular sunsets or discovering the town's rich spiritual heritage, Kahani Paradise serves as an exceptional base for experiencing one of India's most charming seaside destinations.",
+
+    why: "Kahani Paradise offers an intimate luxury experience with spectacular cliff-top views of the Arabian Sea. Its secluded setting, personalised hospitality and peaceful atmosphere make it an ideal retreat for travellers looking to escape into nature.",
+
+    exploreDestination: [
+      {
+        name: "Om Beach",
+        description:
+          "Named after its distinctive shape resembling the sacred 'Om' symbol, Om Beach is one of Gokarna's most famous beaches. It is ideal for swimming, kayaking, café hopping and watching unforgettable sunsets over the Arabian Sea.",
+      },
+      {
+        name: "Kudle Beach",
+        description:
+          "Surrounded by green hills, Kudle Beach is known for its relaxed atmosphere, golden sands and beachfront cafés. It is a favourite destination for yoga enthusiasts, backpackers and travellers seeking peaceful coastal walks.",
+      },
+      {
+        name: "Mahabaleshwar Temple",
+        description:
+          "Dedicated to Lord Shiva, this ancient temple is one of the most revered pilgrimage sites in South India. Its Dravidian-style architecture and deep spiritual significance attract devotees and visitors throughout the year.",
+      },
+      {
+        name: "Half Moon Beach",
+        description:
+          "Accessible by boat or a scenic coastal trek, Half Moon Beach is a secluded paradise known for its crystal-clear waters, rocky shoreline and peaceful surroundings, making it ideal for nature lovers.",
+      },
+      {
+        name: "Paradise Beach",
+        description:
+          "One of Gokarna's most secluded beaches, Paradise Beach offers pristine sands, turquoise waters and a tranquil atmosphere. It is perfect for those looking to enjoy untouched natural beauty away from the crowds.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Goa International Airport, Dabolim",
+          code: "GOI",
+          distance: "155 kms. / 3.5 hrs. approx. by road.",
+        },
+        {
+          name: "Manohar International Airport, Goa",
+          code: "",
+          distance: "155 kms / 3.5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Boutique Luxury Travellers",
+      "Nature Lovers",
+      "Beach Holidays",
+      "Wellness Retreats",
+      "Romantic Getaways",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://www.kahaniparadise.com/",
+
+    map: "https://www.google.com/maps/place/Khem+Villas/@26.0624847,76.4349794,17z/data=!4m9!3m8!1s0x396e20b6c8210c35:0xa8835d521c0b3e13!5m2!4m1!1i2!8m2!3d26.0624799!4d76.4375543!16s%2Fg%2F11r8fb0g4?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "kara-cochin",
+    name: "Kara, Cochin",
+    location: "Kochi, Kerala",
+    category: "india",
+
+    image: "/Assets/hotels/KaRa, Kochi.webp",
+    alt: "Kara, Cochin, Kochi, Kerala",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Framed by Kochi's picturesque waterfront and historic neighbourhoods, Kara is a contemporary boutique retreat that blends modern elegance with the timeless charm of Kerala's historic port city. Designed for travellers seeking a refined and intimate stay, the hotel combines stylish interiors, warm hospitality and thoughtfully curated experiences, making it an ideal base for exploring the rich cultural heritage and cosmopolitan character of Cochin.\n\nThe tastefully designed rooms and suites feature contemporary décor, premium amenities and comfortable living spaces that cater to both leisure and business travellers. Guests can enjoy an array of culinary delights showcasing authentic Kerala flavours alongside international favourites, relax in inviting common spaces or unwind after a day of sightseeing with attentive, personalised service. The hotel's understated luxury and welcoming ambience create a memorable stay in one of South India's most fascinating destinations.\n\nConveniently located close to Kochi's historic landmarks, bustling shopping districts and scenic waterfront, Kara offers easy access to the city's diverse attractions. Whether discovering centuries-old colonial architecture, cruising through the backwaters or experiencing Kerala's renowned cuisine and culture, guests are perfectly positioned to experience the very best of Cochin.",
+
+    why: "Kara, Cochin combines contemporary comfort with easy access to Kochi's rich history and vibrant cultural scene. Its boutique atmosphere, personalised hospitality and convenient location make it an excellent choice for exploring Kerala's historic port city.",
+
+    exploreDestination: [
+      {
+        name: "Fort Kochi",
+        description:
+          "The historic heart of Kochi is renowned for its colonial architecture, charming streets, art galleries and quaint cafés. Walking through Fort Kochi offers visitors a fascinating journey through the city's Portuguese, Dutch and British heritage.",
+      },
+      {
+        name: "Chinese Fishing Nets",
+        description:
+          "These iconic cantilevered fishing nets have become synonymous with Kochi's waterfront. Watching local fishermen operate them, especially at sunset, is one of the city's most memorable experiences.",
+      },
+      {
+        name: "Mattancherry Palace",
+        description:
+          "Also known as the Dutch Palace, this beautifully preserved landmark houses remarkable Kerala murals, royal artefacts and exhibits showcasing the history of the Cochin royal family.",
+      },
+      {
+        name: "Jew Town",
+        description:
+          "A vibrant heritage precinct famous for its antique stores, spice markets, handicraft boutiques and charming cafés, Jew Town offers a unique blend of history, culture and shopping.",
+      },
+      {
+        name: "Marine Drive",
+        description:
+          "A picturesque promenade overlooking the backwaters, Marine Drive is a favourite spot for evening walks, boat cruises and enjoying panoramic views of Kochi's skyline.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Cochin International Airport",
+          code: "",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Families",
+      "Business Travellers",
+      "Boutique Luxury Seekers",
+      "Heritage Travellers",
+      "Cultural Explorers",
+      "Food Enthusiasts",
+      "Kerala City Breaks"
+    ],
+
+    website: "https://www.atkara.com/",
+
+    map: "https://www.google.com/maps/place/Kara+Hotel+Fort+Kochi/@9.9648856,76.2385192,17z/data=!4m9!3m8!1s0x3b086dd08078ce8f:0xacf53d267f58088e!5m2!4m1!1i2!8m2!3d9.9648803!4d76.2410941!16s%2Fg%2F11wv26yrhk?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "khem-villas-ranthambore",
+    name: "Khem Villas, Ranthambore",
+    location: "Ranthambore, Rajasthan",
+    category: "india",
+
+    image: "/Assets/hotels/Khem Villas, Rajasthan.jpg",
+    alt: "Khem Villas, Ranthambore, Ranthambore, Rajasthan",
+
+    accentClass: "hi--india-wildlife",
+
+    intro:
+      "Bordering the wilderness of Ranthambore National Park, Khem Villas is an intimate eco-luxury retreat that offers an authentic safari experience in one of India's most celebrated tiger landscapes. Surrounded by natural forests, open grasslands and peaceful lakes, the lodge has been thoughtfully designed to blend seamlessly with its environment while providing guests with exceptional comfort. With its strong commitment to conservation, sustainability and personalised hospitality, Khem Villas offers a tranquil escape where wildlife and nature take centre stage.\n\nThe property's charming cottages, luxury tents and private villas are designed using natural materials and feature spacious interiors, elegant décor and private verandas overlooking the surrounding wilderness. Guests can savour delicious regional and international cuisine prepared with fresh local ingredients, unwind beside the swimming pool, enjoy nature walks or simply relax while listening to the sounds of the forest. Every experience is carefully curated to encourage a deeper appreciation of Rajasthan's remarkable biodiversity and rural heritage.\n\nKhem Villas serves as an excellent gateway to Ranthambore National Park, renowned for its thriving population of Bengal tigers, ancient ruins and diverse wildlife. Whether embarking on thrilling jeep safaris, exploring centuries-old forts or enjoying peaceful evenings beneath the stars, guests are treated to an unforgettable wilderness experience that perfectly balances adventure with comfort.",
+
+    why: "Khem Villas offers an intimate safari experience with a strong focus on sustainability, conservation and personalised hospitality. Its peaceful setting and close proximity to Ranthambore National Park make it an exceptional retreat for wildlife enthusiasts and nature lovers alike.",
+
+    exploreDestination: [
+      {
+        name: "Ranthambore National Park",
+        description:
+          "One of India's premier tiger reserves, Ranthambore National Park is famous for its Bengal tigers, leopards, sloth bears, marsh crocodiles and over 300 species of birds. Guided jeep safaris provide unforgettable opportunities to witness wildlife in its natural habitat.",
+      },
+      {
+        name: "Ranthambore Fort",
+        description:
+          "A UNESCO World Heritage Site, Ranthambore Fort stands majestically atop a hill within the national park. Dating back to the 10th century, the fort offers panoramic views of the surrounding forests and houses several ancient temples.",
+      },
+      {
+        name: "Padam Talao",
+        description:
+          "The largest lake within the national park, Padam Talao is a favourite location for spotting wildlife, particularly during the dry season. It is also home to the picturesque Jogi Mahal, one of Ranthambore's iconic landmarks.",
+      },
+      {
+        name: "Village & Nature Walks",
+        description:
+          "Guided walks around the lodge and nearby villages provide guests with insights into Rajasthan's rural traditions, native flora, birdlife and the harmonious relationship between local communities and the surrounding wilderness.",
+      },
+      {
+        name: "Conservation & Wildlife Experiences",
+        description:
+          "Khem Villas offers opportunities to learn about tiger conservation, habitat preservation and sustainable tourism through interactions with experienced naturalists, making every stay both educational and inspiring.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Jaipur International Airport",
+          code: "JAI",
+          distance: "170 kms / 3.5 hrs. approx. by road",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Wildlife Enthusiasts",
+      "Safari Holidays",
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Wildlife Photographers",
+      "Families",
+      "Sustainable Luxury Travellers"
+    ],
+
+    website: "https://www.khemvillas.com/",
+
+    map: "https://www.google.com/maps/place/Khem+Villas/@26.0624847,76.4349794,17z/data=!4m9!3m8!1s0x396e20b6c8210c35:0xa8835d521c0b3e13!5m2!4m1!1i2!8m2!3d26.0624799!4d76.4375543!16s%2Fg%2F11r8fb0g4?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Wildlife",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Wildlife",
+  },
+
+  {
+    id: "kurja-jawai-rajasthan",
+    name: "Kurja Jawai, Rajasthan",
+    location: "Jawai, Rajasthan",
+    category: "india",
+
+    image: "/Assets/hotels/Kurja Jawai, Rajasthan.webp",
+    alt: "Kurja Jawai, Rajasthan, Jawai, Rajasthan",
+
+    accentClass: "hi--india-heritage",
+
+    intro:
+      "Home to one of Rajasthan's most remarkable wildlife landscapes, Kurja Jawai is an intimate boutique retreat that celebrates the extraordinary harmony between nature, wildlife and local culture. Located in the remarkable Jawai landscape—where free-ranging leopards share the terrain with the indigenous Rabari community—the property offers a rare opportunity to experience one of India's most captivating wilderness destinations. Designed with understated elegance and a strong commitment to sustainability, Kurja Jawai provides a peaceful escape where luxury and the natural world exist in perfect balance.\n\nThe thoughtfully designed luxury tents and suites blend contemporary comforts with earthy textures and panoramic views of the surrounding hills. Guests can enjoy freshly prepared regional cuisine, embark on expertly guided wildlife safaris, relax around the campfire beneath star-filled skies or simply take in the serenity of the dramatic landscape. Warm hospitality and personalised experiences ensure every stay is both authentic and unforgettable.\n\nPerfectly positioned for exploring the unique ecosystem of Jawai, the retreat offers unforgettable encounters with wildlife, vibrant local traditions and breathtaking scenery. Whether tracking elusive leopards, discovering ancient temples or experiencing the timeless lifestyle of Rajasthan's pastoral communities, Kurja Jawai promises an enriching wilderness escape unlike any other.",
+
+    why: "Kurja Jawai combines understated luxury with one of Rajasthan's most remarkable wildlife landscapes. Its personalised safari experiences, sustainable philosophy and spectacular natural setting create an unforgettable retreat for nature lovers and adventure seekers.",
+
+    exploreDestination: [
+      {
+        name: "Jawai Leopard Conservation Reserve",
+        description:
+          "One of India's premier destinations for leopard sightings, Jawai is renowned for the peaceful coexistence of wildlife and local communities. Guided safaris offer excellent opportunities to observe leopards, hyenas, crocodiles and a rich diversity of birdlife.",
+      },
+      {
+        name: "Jawai Dam",
+        description:
+          "Surrounded by striking granite hills, Jawai Dam is a haven for migratory birds, marsh crocodiles and breathtaking sunsets. It is also one of the best locations for nature photography in the region.",
+      },
+      {
+        name: "Rabari Cultural Experiences",
+        description:
+          "Meet the semi-nomadic Rabari community and discover their centuries-old traditions, distinctive attire and deep connection with the Jawai landscape through guided village visits and cultural interactions.",
+      },
+      {
+        name: "Granite Hill Excursions",
+        description:
+          "Explore the dramatic granite outcrops that define Jawai's unique terrain. These scenic viewpoints offer sweeping panoramas of the wilderness and are ideal for sunrise and sunset experiences.",
+      },
+      {
+        name: "Birdwatching & Nature Walks",
+        description:
+          "The Jawai region supports an impressive variety of resident and migratory birds. Guided walks introduce guests to the area's rich biodiversity, fascinating geology and native flora.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Maharana Pratap Airport, Udaipur",
+          code: "UDR",
+          distance: "150 kms. / 3 hrs. approx. by road.",
+        },
+        {
+          name: "Jodhpur Airport",
+          code: "JDH",
+          distance: "150 kms. / 3 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Wildlife Enthusiasts",
+      "Luxury Safari Travellers",
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Wildlife Photographers",
+      "Adventure Seekers",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://www.kurjajawai.com/",
+
+    map: "https://www.google.com/maps/place/KURJA+Jawai+%7C+A+Luxury+Jungle+Camp+In+Jawai/@25.1156629,73.2036234,17z/data=!4m9!3m8!1s0x39429a0d00000001:0x9a76b9aeef90c7da!5m2!4m1!1i2!8m2!3d25.1156581!4d73.2061983!16s%2Fg%2F11vk79xjlb?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "mansao-curtorim-goa",
+    name: "Mansao Curtorim, Goa",
+    location: "South Goa",
+    category: "india",
+
+    image: "/Assets/hotels/Mansao Curtorim, Goa.jpg",
+    alt: "Mansao Curtorim, Goa, South Goa",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Tucked away in the charming village of Curtorim in South Goa, Mansao Curtorim is an elegant heritage boutique retreat that offers a refreshing escape from the bustling beach crowds. Set within a beautifully restored Portuguese-era mansion, the property exudes old-world charm with its graceful architecture, antique furnishings and lush tropical surroundings. Blending Goan heritage with modern comforts, Mansao Curtorim invites guests to experience the slower, more authentic side of Goa.\n\nThe thoughtfully designed rooms retain the character of the historic mansion while offering contemporary amenities for a relaxing stay. High ceilings, vintage décor, handcrafted details and serene garden views create an atmosphere of timeless elegance. Guests can savour authentic Goan and international cuisine, unwind by the swimming pool, explore the beautifully landscaped grounds or simply relax amidst the peaceful ambience of this heritage estate. Warm, personalised hospitality ensures that every stay feels intimate and memorable.\n\nIdeally located for discovering South Goa's pristine beaches, colonial churches, spice plantations and scenic countryside, Mansao Curtorim serves as an excellent base for travellers looking to explore Goa beyond its popular coastal hotspots. Whether you're seeking a romantic getaway, a cultural holiday or a tranquil retreat, the property promises an enriching and unforgettable experience.",
+
+    why: "Mansao Curtorim beautifully showcases Goa's Portuguese heritage through its elegant architecture, peaceful surroundings and personalised hospitality. It offers the perfect balance between cultural exploration and relaxed luxury.",
+
+    exploreDestination: [
+      {
+        name: "Colva Beach",
+        description:
+          "One of South Goa's most popular beaches, Colva Beach is known for its long stretch of golden sand, swaying palm trees and vibrant beachside cafés. It is ideal for leisurely walks, water sports and spectacular sunsets.",
+      },
+      {
+        name: "Margao",
+        description:
+          "The cultural and commercial heart of South Goa, Margao is home to colourful Portuguese architecture, bustling local markets, heritage churches and authentic Goan eateries that offer a glimpse into everyday Goan life.",
+      },
+      {
+        name: "Shri Shantadurga Temple",
+        description:
+          "Dedicated to Goddess Shantadurga, this beautiful temple is renowned for its distinctive Indo-Portuguese architecture, peaceful surroundings and spiritual significance.",
+      },
+      {
+        name: "Sahakari Spice Farm",
+        description:
+          "A visit to one of Goa's famous spice plantations offers an opportunity to explore lush tropical gardens, learn about traditional spice cultivation and enjoy authentic Goan cuisine amidst nature.",
+      },
+      {
+        name: "Cabo de Rama Fort",
+        description:
+          "Perched dramatically on a cliff overlooking the Arabian Sea, Cabo de Rama Fort offers breathtaking coastal views and fascinating stories from Goa's Portuguese and pre-colonial history.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Goa International Airport, Dabolim",
+          code: "",
+          distance: "Nearest airport",
+        },
+        {
+          name: "Manohar International Airport, GOA",
+          code: "",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Heritage Travellers",
+      "Couples",
+      "Honeymooners",
+      "Boutique Luxury Seekers",
+      "Families",
+      "Cultural Explorers",
+      "Slow Travel Experiences",
+      "South Goa Holidays"
+    ],
+
+    website: "https://www.cghearth.com/Mansao-Curtorim/",
+
+    map: "https://www.google.com/maps/place/Mansao+Curtorim-+CGH+Earth+SAHA/@15.2965112,74.0363791,17z/data=!4m10!3m9!1s0x3bbfae06564dd061:0xaa2b9a4030201ac3!5m3!1s2026-09-25!4m1!1i2!8m2!3d15.296506!4d74.038954!16s%2Fg%2F11lvk02svx?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "neeleshwar-hermitage-kerala",
+    name: "Neeleshwar Hermitage, Kerala",
+    location: "Neeleshwar, Kerala",
+    category: "india",
+
+    image: "/Assets/hotels/Neeleshwar Heritage.jpg",
+    alt: "Neeleshwar Hermitage, Kerala, Neeleshwar, Kerala",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Overlooking the tranquil Arabian Sea on Kerala's unspoilt northern coastline, Neeleshwar Hermitage is a serene boutique retreat where luxury, wellness and nature exist in perfect harmony. Inspired by the traditional architecture of Kerala and the philosophy of slow living, the resort offers an intimate escape surrounded by swaying coconut palms, pristine beaches and lush tropical gardens. Far removed from the crowds, it is an ideal destination for travellers seeking peace, rejuvenation and an authentic coastal experience.\n\nThe resort features beautifully crafted cottages with spacious interiors, elegant furnishings and private verandas that blend seamlessly with the natural surroundings. Guests can savour fresh coastal cuisine prepared with locally sourced ingredients, indulge in authentic Ayurvedic therapies at the wellness centre, practise yoga overlooking the sea or simply unwind by the infinity pool while enjoying breathtaking ocean views. Thoughtful service and a tranquil ambience ensure a deeply relaxing and memorable stay.\n\nBeyond the resort, the Malabar Coast offers a fascinating blend of natural beauty, cultural heritage and traditional village life. From quiet beaches and scenic backwaters to historic temples and vibrant Theyyam performances, Neeleshwar Hermitage provides the perfect gateway to discover one of Kerala's best-kept secrets.",
+
+    why: "Neeleshwar Hermitage is a peaceful sanctuary that combines barefoot luxury with authentic Kerala hospitality. Its pristine beachfront setting, holistic wellness experiences and intimate atmosphere make it an ideal retreat for relaxation and rejuvenation.",
+
+    exploreDestination: [
+      {
+        name: "Neeleshwar Beach",
+        description:
+          "A quiet stretch of golden sand fringed by coconut palms, Neeleshwar Beach is perfect for peaceful walks, spectacular sunsets and moments of complete relaxation away from busy tourist destinations.",
+      },
+      {
+        name: "Bekal Fort",
+        description:
+          "One of Kerala's largest and best-preserved forts, Bekal Fort overlooks the Arabian Sea and offers stunning coastal views, historic architecture and beautifully landscaped grounds for leisurely exploration.",
+      },
+      {
+        name: "Valiyaparamba Backwaters",
+        description:
+          "Among Kerala's most scenic backwater destinations, Valiyaparamba offers tranquil boat cruises through mangroves, fishing villages and coconut groves, showcasing the region's untouched natural beauty.",
+      },
+      {
+        name: "Theyyam Cultural Experience",
+        description:
+          "Northern Kerala is renowned for Theyyam, an ancient ritual art form featuring vibrant costumes, elaborate face painting and captivating performances. Guests can experience this unique tradition during the season and gain insight into the region's rich cultural heritage.",
+      },
+      {
+        name: "Local Village & Spice Plantation Visits",
+        description:
+          "Explore nearby villages, traditional markets and spice plantations to experience the authentic lifestyle, flavours and craftsmanship of the Malabar region while interacting with local communities.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Kannur International Airport",
+          code: "CNN",
+          distance: "80 kms. / 2.5 hrs. approx. by road.",
+        },
+        {
+          name: "Mangalore International Airport",
+          code: "IXE",
+          distance: "95 kms / 3 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Wellness Seekers",
+      "Beach Holidays",
+      "Nature Lovers",
+      "Luxury Travellers",
+      "Slow Travel Experiences",
+      "Romantic Getaways"
+    ],
+
+    website: "https://www.neeleshwarhermitage.com/",
+
+    map: "https://www.google.com/maps/place/Neeleshwar+Hermitage/@12.2628453,75.0950637,17z/data=!4m9!3m8!1s0x3ba47bae4d41f2d9:0xf03534920163be5e!5m2!4m1!1i2!8m2!3d12.2628401!4d75.0976386!16s%2Fg%2F1hc3mdvhh?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "palacio-aguada-goa",
+    name: "Palacio Aguada, Goa",
+    location: "Goa",
+    category: "india",
+
+    image: "/Assets/hotels/Palacio Aguada, Goa.avif",
+    alt: "Palacio Aguada, Goa, Goa",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Reflecting Goa's rich Portuguese heritage and coastal elegance, Palacio Aguada is a distinctive luxury retreat where history, refined hospitality and spectacular Arabian Sea views come together. Situated close to the iconic Fort Aguada on Goa's northern coastline, the property combines timeless architecture with contemporary comforts, creating an atmosphere of understated sophistication. From its elegant surroundings to its personalised service, Palacio Aguada offers an idyllic escape for travellers seeking both relaxation and cultural discovery.\n\nThe beautifully appointed rooms and suites feature tasteful interiors, modern amenities and private spaces designed for comfort and tranquillity. Guests can savour authentic Goan delicacies alongside international cuisine, relax by the swimming pool, indulge in rejuvenating wellness experiences or simply soak in the coastal ambience. Every detail has been thoughtfully curated to deliver a memorable stay that reflects the warmth and charm of Goa.\n\nWith easy access to the region's celebrated beaches, heritage landmarks and vibrant nightlife, Palacio Aguada serves as an ideal base for exploring North Goa. Whether wandering through historic forts, enjoying water sports, discovering local markets or witnessing breathtaking sunsets over the Arabian Sea, guests are perfectly placed to experience the very best of the destination.",
+
+    why: "Palacio Aguada seamlessly blends heritage-inspired elegance with contemporary luxury. Its enviable location near Fort Aguada, personalised hospitality and proximity to North Goa's finest attractions make it an exceptional coastal retreat.",
+
+    exploreDestination: [
+      {
+        name: "Fort Aguada",
+        description:
+          "Built by the Portuguese in the 17th century, Fort Aguada is one of Goa's most iconic landmarks. Its historic lighthouse, impressive ramparts and panoramic sea views make it a must-visit attraction.",
+      },
+      {
+        name: "Sinquerim Beach",
+        description:
+          "A peaceful stretch of golden sand, Sinquerim Beach is ideal for swimming, sunbathing and water sports. The beach also offers stunning sunset views over the Arabian Sea.",
+      },
+      {
+        name: "Candolim Beach",
+        description:
+          "Known for its lively atmosphere, beachfront cafés and water activities, Candolim Beach is one of North Goa's most popular coastal destinations while retaining a relaxed charm.",
+      },
+      {
+        name: "Reis Magos Fort",
+        description:
+          "Overlooking the Mandovi River, this beautifully restored Portuguese fort showcases Goa's colonial history through engaging exhibits and breathtaking views.",
+      },
+      {
+        name: "Fontainhas",
+        description:
+          "The Latin Quarter of Panaji is famous for its colourful Portuguese homes, art galleries, boutique cafés and charming cobbled streets that capture the essence of old Goa.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Manohar International Airport, Goa",
+          code: "GOX",
+          distance: "Nearest airport",
+        },
+        {
+          name: "Goa International Airport, Dabolim Goa",
+          code: "GOI",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Heritage Travellers",
+      "Beach Holidaymakers",
+      "Luxury Travellers",
+      "Families",
+      "Cultural Explorers",
+      "Goa Getaways"
+    ],
+
+    website: "https://www.palacioaguada.com/",
+
+    map: "https://www.google.com/maps/place/Palacio+Aguada,+Aguada+Fort+Area,+Candolim,+Goa+403515/@15.4932664,73.7758253,17z/data=!3m1!4b1!4m6!3m5!1s0x3bbfc10f0596be63:0x3a0e4960e0effef5!8m2!3d15.4932613!4d73.7806962!16s%2Fg%2F12hk716pw?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "pemako-bhutan",
+    name: "Pemako Bhutan",
+    location: "Punakha, Bhutan",
+    category: "bhutan",
+
+    image: "/Assets/hotels/Pemako Bhutan.jpg",
+    alt: "Pemako Bhutan, Punakha, Bhutan",
+
+    accentClass: "hi--bhutan-heritage",
+
+    intro:
+      "Embodying the spirit of Bhutan's pristine landscapes and profound spiritual heritage, Pemako Bhutan is an exceptional luxury retreat where contemporary elegance meets timeless Bhutanese tradition. Located in the tranquil Paro Valley, the resort is thoughtfully designed to complement its spectacular surroundings, offering sweeping views of forested mountains, fertile valleys and traditional villages. Every aspect of the experience reflects Bhutan's philosophy of mindful living, creating a sanctuary for relaxation, cultural discovery and meaningful connections with nature.\n\nThe beautifully designed suites and villas combine handcrafted Bhutanese details with refined modern comforts, featuring warm timber interiors, spacious living areas and panoramic mountain views. Guests can savour authentic Bhutanese flavours alongside international cuisine, indulge in holistic wellness experiences, participate in guided cultural excursions or simply unwind amidst the peaceful Himalayan setting. Warm, personalised hospitality ensures every stay is both restorative and unforgettable.\n\nIdeally positioned for exploring Bhutan's iconic monasteries, scenic hiking trails and cultural landmarks, Pemako Bhutan offers an inspiring gateway to one of the world's most captivating destinations. Whether seeking spiritual enrichment, outdoor adventure or a luxurious escape into the Himalayas, the resort delivers an authentic Bhutanese experience.",
+
+    why: "Pemako Bhutan combines sophisticated luxury with the warmth of Bhutanese hospitality in an extraordinary Himalayan setting. Its immersive cultural experiences, exceptional wellness offerings and breathtaking natural surroundings make it one of Bhutan's finest luxury retreats.",
+
+    exploreDestination: [
+      {
+        name: "Paro Taktsang",
+        description:
+          "Commonly known as the Tiger's Nest Monastery, this world-famous cliffside monastery is Bhutan's most iconic landmark. The rewarding hike offers spectacular views and a deeply spiritual experience.",
+      },
+      {
+        name: "Rinpung Dzong",
+        description:
+          "One of Bhutan's most impressive fortress-monasteries, Rinpung Dzong is celebrated for its magnificent Bhutanese architecture, intricate wood carvings and vibrant religious festivals.",
+      },
+      {
+        name: "National Museum of Bhutan",
+        description:
+          "Located in a historic watchtower overlooking the valley, the museum houses an impressive collection of Bhutanese art, textiles, religious artefacts and cultural treasures.",
+      },
+      {
+        name: "Traditional Village & Cultural Experiences",
+        description:
+          "Explore picturesque Bhutanese villages, visit traditional farmhouses and interact with local communities to gain a deeper understanding of the country's customs, architecture and way of life.",
+      },
+      {
+        name: "Himalayan Wellness & Nature Walks",
+        description:
+          "Enjoy guided forest walks, meditation sessions, yoga and holistic wellness therapies inspired by Bhutan's ancient healing traditions, all amidst the serenity of the Himalayas.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Paro International Airport, Bhutan",
+          code: "PBH",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Luxury Travellers",
+      "Wellness Seekers",
+      "Cultural Explorers",
+      "Nature Lovers",
+      "Himalayan Holidays",
+      "Slow Travel Experiences"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/Pemako+Thimphu/@27.4760122,89.6326706,17z/data=!3m1!4b1!4m9!3m8!1s0x39e1952f0e257aaf:0x9a6308df9e595f2e!5m2!4m1!1i2!8m2!3d27.4760075!4d89.6375415!16s%2Fg%2F11v9z6q5tv?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "pokhara-panorama-resort-spa-nepal",
+    name: "Pokhara Panorama Resort & Spa, Nepal",
+    location: "Pokhara, Nepal",
+    category: "nepal",
+
+    image: "/Assets/hotels/Pokhara Panorama resort Nepal.webp",
+    alt: "Pokhara Panorama Resort & Spa, Nepal, Pokhara, Nepal",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Blessed with sweeping views of Nepal's lake city and the Annapurna Himalayas, Pokhara Panorama Resort & Spa offers a relaxing retreat where panoramic mountain views, warm Nepalese hospitality and contemporary comforts come together effortlessly. Overlooking the picturesque Pokhara Valley, the resort provides a tranquil setting for travellers seeking both relaxation and adventure. Its peaceful ambience, elegant accommodation and scenic surroundings make it an ideal base for discovering one of Nepal's most captivating destinations.\n\nThe spacious rooms and suites are thoughtfully designed with modern interiors, private balconies and sweeping views of the Annapurna and Machhapuchhre mountain ranges. Guests can enjoy authentic Nepalese and international cuisine, rejuvenate with spa therapies, relax by the swimming pool or simply soak in the breathtaking Himalayan scenery. Personalised service and a welcoming atmosphere ensure a memorable stay for every guest.\n\nConveniently located close to Pokhara's major attractions, the resort offers easy access to serene lakes, cultural landmarks and world-renowned adventure activities. Whether cruising across tranquil waters, exploring mountain trails or experiencing Nepal's vibrant culture, Pokhara Panorama Resort & Spa serves as the perfect gateway to the Himalayas.",
+
+    why: "Pokhara Panorama Resort & Spa combines spectacular Himalayan views, contemporary comfort and genuine Nepalese hospitality. Its peaceful setting and convenient location make it an excellent choice for both leisure travellers and adventure enthusiasts.",
+
+    exploreDestination: [
+      {
+        name: "Phewa Lake",
+        description:
+          "The heart of Pokhara, Phewa Lake is renowned for its crystal-clear waters, colourful boats and magnificent reflections of the Annapurna Range. Visitors can enjoy boating, lakeside cafés and unforgettable sunset views.",
+      },
+      {
+        name: "World Peace Pagoda",
+        description:
+          "Situated on a hilltop overlooking the valley, this striking white stupa offers breathtaking panoramic views of Phewa Lake, Pokhara and the snow-capped Himalayas.",
+      },
+      {
+        name: "Sarangkot",
+        description:
+          "One of Nepal's most famous viewpoints, Sarangkot is celebrated for its spectacular sunrise over the Annapurna and Dhaulagiri ranges. It is also a popular destination for paragliding and scenic hikes.",
+      },
+      {
+        name: "Devi's Fall",
+        description:
+          "A fascinating natural attraction where the Pardi Khola stream disappears into an underground tunnel, Devi's Fall is one of Pokhara's most visited landmarks.",
+      },
+      {
+        name: "Adventure & Cultural Experiences",
+        description:
+          "Pokhara is Nepal's adventure capital, offering paragliding, zip-lining, ultralight flights, mountain biking and trekking. Visitors can also explore local markets, traditional villages and vibrant cafés that showcase the city's relaxed charm.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Pokhara International Airport, Nepal",
+          code: "PHH",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Adventure Seekers",
+      "Luxury Travellers",
+      "Families",
+      "Wellness Retreats",
+      "Himalayan Holidays"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/Pokhara+Panorama+Resort+and+Spa/@28.2262872,83.4036711,10z/data=!4m13!1m2!2m1!1sPokhara+Panorama+Resort+and+Spa+Nepal!3m9!1s0x399594f02e97ef13:0x212639cc77c26f76!5m2!4m1!1i2!8m2!3d28.2262872!4d83.9639738!15sCiVQb2toYXJhIFBhbm9yYW1hIFJlc29ydCBhbmQgU3BhIE5lcGFskgEFaG90ZWzgAQA!16s%2Fg%2F11yrg8vqnc?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "postcard-durrung-tea-estate-assam",
+    name: "Postcard Durrung Tea Estate, Assam",
+    location: "Durrung, Assam",
+    category: "india",
+
+    image: "/Assets/hotels/Pastcard Durrung, Assam.png",
+    alt: "Postcard Durrung Tea Estate, Assam, Durrung, Assam",
+
+    accentClass: "hi--india-hills",
+
+    intro:
+      "Set within a sprawling tea estate at the foothills of the Eastern Himalayas, Postcard Durrung Tea Estate is an intimate luxury retreat that offers an immersive experience amidst Assam's verdant tea country. Surrounded by endless emerald plantations, misty hills and the soothing rhythm of estate life, the property combines heritage charm with contemporary luxury to create a peaceful escape for discerning travellers. With The Postcard Hotel's signature personalised hospitality, every stay is thoughtfully curated to celebrate the region's rich natural and cultural heritage.\n\nThe elegantly appointed rooms and suites feature tasteful interiors, modern comforts and sweeping views of the tea gardens. Guests can enjoy authentic Assamese and regional cuisine prepared with fresh local ingredients, take guided walks through the tea estate, interact with tea planters, savour curated tea-tasting experiences or simply unwind while embracing the serenity of the surrounding landscape. The tranquil atmosphere and attentive service make it an ideal retreat for relaxation and rejuvenation.\n\nPerfectly positioned for exploring Assam's wildlife, tea heritage and vibrant local culture, Postcard Durrung Tea Estate serves as an excellent base for discovering the region's many treasures. From safari adventures and birdwatching excursions to visits to ancient temples and traditional villages, every experience reveals a different facet of this remarkable destination.",
+
+    why: "Postcard Durrung Tea Estate offers an authentic escape into Assam's celebrated tea country. Its tranquil setting, personalised hospitality and immersive tea estate experiences create a truly unique luxury getaway.",
+
+    exploreDestination: [
+      {
+        name: "Durrung Tea Estate",
+        description:
+          "Take guided walks through one of Assam's picturesque tea estates to learn about the fascinating journey of tea—from plucking the leaves to processing and tasting some of the world's finest Assam teas.",
+      },
+      {
+        name: "Kaziranga National Park",
+        description:
+          "A UNESCO World Heritage Site, Kaziranga National Park is world-renowned for its population of the endangered one-horned rhinoceros. The park is also home to elephants, wild buffalo, tigers and an extraordinary variety of birdlife.",
+      },
+      {
+        name: "Nameri National Park",
+        description:
+          "Nestled along the foothills of the Eastern Himalayas, Nameri National Park is a haven for birdwatchers, nature lovers and adventure enthusiasts. Activities include river rafting, jungle walks and wildlife spotting.",
+      },
+      {
+        name: "Tea Tasting & Cultural Experiences",
+        description:
+          "Enjoy curated tea-tasting sessions led by experts while discovering the unique flavours and aromas of Assam tea. Guests can also experience traditional Assamese hospitality, local cuisine and cultural performances.",
+      },
+      {
+        name: "Village & Nature Walks",
+        description:
+          "Explore nearby villages and scenic countryside to experience Assam's rural way of life, interact with local communities and discover the region's rich traditions, handicrafts and agricultural heritage.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Tezpur Airport, Assam",
+          code: "TEZ",
+          distance: "Nearest airport",
+        },
+        {
+          name: "Lokpriya Gopinath Bordoloi International Airport, Guwahati",
+          code: "",
+          distance: "140 kms / 3.5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Tea Estate Holidays",
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Wildlife Enthusiasts",
+      "Luxury Travellers",
+      "Birdwatchers",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://www.postcardresorts.com/hotels/the-postcard-durrung-tea-estate",
+
+    map: "https://www.google.com/maps/place/The+Postcard+in+the+Durrung+Tea+Estate/@26.6879566,92.7201525,13z/data=!4m13!1m2!2m1!1spostcard+durrung+tea+estate!3m9!1s0x3744c11b36275a33:0x472e5be56fac364!5m2!4m1!1i2!8m2!3d26.7229225!4d92.7301474!15sChtwb3N0Y2FyZCBkdXJydW5nIHRlYSBlc3RhdGWSAQVob3RlbOABAA!16s%2Fg%2F11y829qy4g?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Hill Stations",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Hill Stations",
+  },
+
+  {
+    id: "radisson-blu-atria-bengaluru",
+    name: "Radisson Blu Atria Bengaluru",
+    location: "Bengaluru, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Radisson Blu Atria, Bengaluru.webp",
+    alt: "Radisson Blu Atria Bengaluru, Bengaluru, Karnataka",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Situated in the heart of Bengaluru's vibrant business and cultural district, Radisson Blu Atria Bengaluru offers a seamless blend of contemporary comfort, warm hospitality and exceptional convenience. Overlooking lush greenery and located close to the city's prominent commercial centres, the hotel provides an ideal base for both business and leisure travellers. Its central location ensures effortless access to Bengaluru's government offices, corporate headquarters, shopping destinations and iconic attractions while offering a tranquil retreat from the city's energetic pace.\n\nDesigned with modern elegance, the hotel's spacious rooms and suites feature stylish interiors, contemporary furnishings and thoughtful amenities that cater to today's discerning traveller. Guests can savour a variety of culinary experiences, from authentic Indian cuisine to international favourites, unwind at the rooftop swimming pool, rejuvenate at the wellness centre or relax with handcrafted beverages at the hotel's inviting lounge. The attentive service and welcoming atmosphere ensure every stay is both comfortable and memorable.\n\nWhether you're attending business meetings, exploring Bengaluru's thriving culinary scene or discovering its rich heritage, Radisson Blu Atria places you within easy reach of the city's finest experiences. From historic landmarks and botanical gardens to upscale shopping and lively cafés, the hotel offers the perfect combination of accessibility, comfort and modern luxury.",
+
+    why: "Radisson Blu Atria combines an excellent city-centre location with spacious accommodation and warm hospitality. Its proximity to Bengaluru's business districts and cultural attractions makes it equally appealing for corporate travellers, families and those discovering India's Garden City.",
+
+    exploreDestination: [
+      {
+        name: "Cubbon Park",
+        description:
+          "One of Bengaluru's most cherished green spaces, Cubbon Park stretches across nearly 300 acres of beautifully landscaped gardens, heritage buildings and shaded avenues. It is an ideal place for morning walks, cycling or simply escaping the bustle of the city.",
+      },
+      {
+        name: "Visvesvaraya Industrial and Technological Museum",
+        description:
+          "A fascinating destination for visitors of all ages, this interactive museum showcases India's achievements in science, engineering and technology through engaging exhibits and hands-on displays.",
+      },
+      {
+        name: "Bangalore Palace",
+        description:
+          "Inspired by England's Windsor Castle, Bangalore Palace is one of the city's most recognisable landmarks. Its magnificent Tudor-style architecture, royal artefacts and beautifully maintained grounds offer a glimpse into Bengaluru's regal past.",
+      },
+      {
+        name: "Lalbagh Botanical Garden",
+        description:
+          "Established in the 18th century, Lalbagh Botanical Garden is home to rare tropical plants, centuries-old trees and the iconic Glass House. The garden is especially famous for its spectacular annual flower shows.",
+      },
+      {
+        name: "UB City",
+        description:
+          "Bengaluru's premier lifestyle destination, UB City features luxury boutiques, fine dining restaurants, art galleries and elegant cafés. It is the perfect place to enjoy the city's cosmopolitan atmosphere.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Kempegowda International Airport, Bengaluru",
+          code: "",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Business Travellers",
+      "Families",
+      "Couples",
+      "Luxury City Breaks",
+      "Corporate Executives",
+      "Weekend Getaways",
+      "Food & Lifestyle Enthusiasts",
+      "Bengaluru Sightseeing Holidays"
+    ],
+
+    website: "",
+
+    map: "http://google.com/maps/place/Radisson+Blu+Hotel,+Atria+Bengaluru/@12.980235,77.586061,17z/data=!3m1!4b1!4m9!3m8!1s0x3bae166d3d785ec7:0xe216f7625f066e10!5m2!4m1!1i2!8m2!3d12.980235!4d77.586061!16s%2Fg%2F1tls18p_?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "rambha-palace-odisha",
+    name: "Rambha Palace, Odisha",
+    location: "Rambha, Odisha",
+    category: "india",
+
+    image: "/Assets/hotels/Rambha Palace, Odisha.png",
+    alt: "Rambha Palace, Odisha, Rambha, Odisha",
+
+    accentClass: "hi--india-heritage",
+
+    intro:
+      "Gracefully overlooking the tranquil waters of Chilika Lake, Rambha Palace is a magnificent heritage retreat that revives the regal splendour of a bygone era. Originally built as the royal residence of the Maharaja of Khallikote, this meticulously restored palace seamlessly blends historic grandeur with contemporary luxury. Surrounded by manicured gardens, serene lake views and timeless architecture, the palace offers guests an enchanting escape where history, culture and nature come together in perfect harmony.\n\nThe palace features exquisitely restored rooms and suites adorned with period-inspired décor, elegant furnishings and modern comforts that reflect its royal legacy. Every corner showcases intricate craftsmanship, heritage architecture and thoughtfully curated interiors that celebrate Odisha's rich cultural traditions. Guests can indulge in refined culinary experiences featuring regional delicacies and international cuisine, relax amidst peaceful gardens, enjoy leisurely walks along the lakeside or simply soak in the serene ambience that defines this remarkable destination.\n\nRambha Palace also serves as an excellent gateway to the natural wonders of Chilika Lake—the largest brackish water lagoon in Asia—and the cultural treasures of Odisha. Whether embarking on a boat safari to spot the endangered Irrawaddy dolphins, visiting ancient temples or enjoying spectacular lake sunsets, guests are treated to an unforgettable experience where heritage and nature exist in perfect balance.",
+
+    why: "Rambha Palace beautifully combines royal heritage with the tranquillity of Chilika Lake. Its restored palace architecture, personalised hospitality and spectacular lakeside setting make it one of Odisha's most distinctive luxury destinations.",
+
+    exploreDestination: [
+      {
+        name: "Chilika Lake",
+        description:
+          "Asia's largest brackish water lagoon is renowned for its extraordinary biodiversity and breathtaking landscapes. Boat cruises across the lake offer opportunities to witness migratory birds, picturesque islands and the endangered Irrawaddy dolphins in their natural habitat.",
+      },
+      {
+        name: "Kalijai Temple",
+        description:
+          "Situated on a small island within Chilika Lake, Kalijai Temple is one of Odisha's most revered shrines. Accessible by boat, the temple is deeply rooted in local folklore and offers beautiful panoramic views of the surrounding waters.",
+      },
+      {
+        name: "Nalabana Bird Sanctuary",
+        description:
+          "A paradise for birdwatchers, Nalabana Bird Sanctuary welcomes thousands of migratory birds from across Europe, Central Asia and Siberia during the winter months, making it one of India's finest avian habitats.",
+      },
+      {
+        name: "Barkul",
+        description:
+          "Located along the shores of Chilika Lake, Barkul is known for its scenic viewpoints, peaceful surroundings and boating experiences. It provides visitors with excellent opportunities to appreciate the lake's vast natural beauty.",
+      },
+      {
+        name: "Taratarini Temple",
+        description:
+          "One of Odisha's most important Shakti Peethas, Taratarini Temple sits atop Kumari Hills overlooking the Rushikulya River. The temple is renowned for its spiritual significance and breathtaking views of the surrounding countryside.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Biju Patnaik International Airport, Bhubaneswar",
+          code: "BBI",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Heritage Travellers",
+      "Couples",
+      "Honeymooners",
+      "Luxury Travellers",
+      "Nature Lovers",
+      "Birdwatchers",
+      "Families",
+      "Cultural & Wellness Getaways"
+    ],
+
+    website: "https://rambhapalace.com/",
+
+    map: "https://www.google.com/maps/place/Rambha+Palace/@19.5160752,85.0899755,17z/data=!4m9!3m8!1s0x3a18035e048f3415:0x2d4a98c9b3c0c18d!5m2!4m1!1i2!8m2!3d19.5160702!4d85.0925504!16s%2Fg%2F11p9n9v6s8?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "renaissance-bengaluru-race-course-hotel",
+    name: "Renaissance Bengaluru Race Course Hotel",
+    location: "Bengaluru, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Renaissance, Bengaluru.avif",
+    alt: "Renaissance Bengaluru Race Course Hotel, Bengaluru, Karnataka",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Overlooking the lush greenery of the historic Bengaluru Turf Club, Renaissance Bengaluru Race Course Hotel offers a sophisticated urban retreat in one of the city's most prestigious neighbourhoods. Ideally located close to the Central Business District, Vidhana Soudha, Palace Grounds and major corporate hubs, the hotel combines contemporary luxury with exceptional convenience for both business and leisure travellers. Elegant interiors, panoramic city views and Renaissance's signature hospitality create an inviting atmosphere where guests can experience Bengaluru in style.\n\nThe hotel's spacious rooms and suites are thoughtfully designed with modern furnishings, floor-to-ceiling windows and refined décor that reflect the city's vibrant yet relaxed character. Guests can enjoy a variety of dining experiences ranging from local Karnataka flavours to international cuisine, unwind at the rooftop infinity pool overlooking the city skyline, rejuvenate at the luxury spa or stay active in the fully equipped fitness centre. Attentive service and contemporary comforts ensure every stay is seamless and memorable.\n\nWhether attending corporate meetings, exploring Bengaluru's heritage landmarks or enjoying its thriving culinary and shopping scene, Renaissance Bengaluru Race Course Hotel places guests within easy reach of the city's finest attractions. Its central location and world-class facilities make it an ideal destination for business executives, families and luxury travellers alike.",
+
+    why: "Renaissance Bengaluru Race Course Hotel offers spectacular views of the Bengaluru Race Course while providing easy access to the city's commercial and cultural landmarks. Its stylish design, rooftop experiences and warm hospitality make it one of Bengaluru's finest luxury city hotels.",
+
+    exploreDestination: [
+      {
+        name: "Bangalore Palace",
+        description:
+          "One of Bengaluru's most iconic landmarks, Bangalore Palace is renowned for its Tudor-style architecture, elegant royal interiors and beautifully landscaped gardens. It offers visitors a fascinating glimpse into the city's regal history.",
+      },
+      {
+        name: "Cubbon Park",
+        description:
+          "Spread across nearly 300 acres, Cubbon Park is Bengaluru's green oasis. Tree-lined avenues, heritage buildings and expansive lawns make it perfect for leisurely walks, photography and outdoor recreation.",
+      },
+      {
+        name: "Vidhana Soudha",
+        description:
+          "An architectural masterpiece and the seat of Karnataka's legislature, Vidhana Soudha is one of Bengaluru's most recognisable landmarks. Its magnificent granite structure is particularly impressive when illuminated in the evening.",
+      },
+      {
+        name: "Lalbagh Botanical Garden",
+        description:
+          "Established in the 18th century, Lalbagh Botanical Garden is celebrated for its diverse collection of tropical plants, tranquil lakes and the iconic Glass House, which hosts spectacular flower shows throughout the year.",
+      },
+      {
+        name: "UB City",
+        description:
+          "Bengaluru's premier lifestyle destination, UB City offers luxury shopping, fine dining, art galleries and elegant cafés, making it the perfect place to experience the city's cosmopolitan charm.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Kempegowda International Airport, Bengaluru",
+          code: "BLR",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Business Travellers",
+      "Luxury Travellers",
+      "Corporate Executives",
+      "Couples",
+      "Families",
+      "Weekend Getaways",
+      "Food & Lifestyle Enthusiasts",
+      "Bengaluru City Breaks"
+    ],
+
+    website: "https://www.marriott.com/en-us/hotels/blrbh-renaissance-bengaluru-race-course-hotel/overview/",
+
+    map: "https://www.google.com/maps/place/Renaissance+Bengaluru+Race+Course+Hotel/@12.9842441,77.5738792,17z/data=!3m1!4b1!4m9!3m8!1s0x3bae1616c38bb0df:0x9106578b44413795!5m2!4m1!1i2!8m2!3d12.9842389!4d77.5764541!16s%2Fg%2F11hbkp5wzr?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "samode-haveli-jaipur",
+    name: "Samode Haveli, Jaipur",
+    location: "Jaipur, Rajasthan",
+    category: "india",
+
+    image: "/Assets/hotels/Samode-Haveli, Jaipur.jpg",
+    alt: "Samode Haveli, Jaipur, Jaipur, Rajasthan",
+
+    accentClass: "hi--india-heritage",
+
+    intro:
+      "https://www.google.com/maps/place/Samode+Haveli/@26.9331815,75.8345056,17z/data=!3m1!4b1!4m9!3m8!1s0x396db130e278be45:0xba8fcdd7963e88c6!5m2!4m1!1i2!8m2!3d26.9331767!4d75.8370805!16s%2Fg%2F11byxg2jgg?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D – Location Link\n\nTucked away within the historic walled city of Jaipur, Samode Haveli is a beautifully restored heritage mansion that reflects the timeless elegance of Rajasthan's royal past. Over 225 years old, this intimate luxury hotel was once the residence of the rulers of Samode and has been meticulously restored to preserve its architectural grandeur while offering contemporary comforts. Ornate arches, intricately painted frescoes, tranquil courtyards and lush gardens create an enchanting atmosphere where history and hospitality blend seamlessly.\n\nThe hotel's elegantly appointed rooms and suites showcase traditional Rajasthani craftsmanship through hand-painted ceilings, antique furnishings and intricate mirror work, complemented by modern amenities for a comfortable stay. Guests can savour authentic Rajasthani and international cuisine in charming dining spaces, unwind beside the inviting outdoor swimming pool, indulge in rejuvenating spa treatments or simply relax amidst the peaceful gardens. Every experience reflects the personalised hospitality and regal charm that have made Samode Haveli one of Jaipur's most cherished heritage hotels.\n\nIdeally located close to Jaipur's iconic monuments and vibrant bazaars, the hotel provides an excellent base for exploring the Pink City's rich cultural heritage. Whether discovering magnificent forts, shopping for handcrafted textiles and jewellery or experiencing Rajasthan's colourful traditions, Samode Haveli promises an unforgettable stay steeped in history and elegance.",
+
+    why: "Samode Haveli beautifully preserves the grandeur of a traditional Rajput mansion while offering the comforts of a luxury boutique hotel. Its authentic heritage, personalised service and peaceful ambience provide a truly immersive Jaipur experience.",
+
+    exploreDestination: [
+      {
+        name: "City Palace",
+        description:
+          "Located in the heart of the Pink City, the City Palace is a magnificent royal residence featuring elegant courtyards, museums, royal artefacts and beautifully decorated gateways that showcase Jaipur's regal heritage.",
+      },
+      {
+        name: "Hawa Mahal",
+        description:
+          "One of India's most recognisable landmarks, the Palace of Winds is celebrated for its intricate pink sandstone façade with hundreds of latticed windows, designed to allow royal ladies to observe city life in privacy.",
+      },
+      {
+        name: "Amber Fort",
+        description:
+          "A UNESCO World Heritage Site, Amber Fort stands majestically atop a hill overlooking Maota Lake. Its magnificent palaces, mirror-adorned halls and sweeping views make it one of Rajasthan's finest architectural masterpieces.",
+      },
+      {
+        name: "Jantar Mantar",
+        description:
+          "This UNESCO World Heritage Site houses the world's largest collection of stone astronomical instruments. Built by Maharaja Sawai Jai Singh II, it remains one of the most remarkable observatories ever constructed.",
+      },
+      {
+        name: "Johari Bazaar & Bapu Bazaar",
+        description:
+          "Jaipur's bustling markets are renowned for exquisite gemstones, handcrafted jewellery, block-printed textiles, blue pottery, leather goods and traditional Rajasthani handicrafts, offering visitors an authentic shopping experience.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Jaipur International Airport",
+          code: "JAI",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Heritage Travellers",
+      "Couples",
+      "Honeymooners",
+      "Families",
+      "Luxury Travellers",
+      "Cultural Explorers",
+      "Photography Enthusiasts",
+      "Rajasthan Holidays"
+    ],
+
+    website: "",
+
+    map: "https://samode.com/samode-haveli/ - Website",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "sitara-himalaya-himachal-pradesh",
+    name: "Sitara Himalaya, Himachal Pradesh",
+    location: "Himachal Pradesh",
+    category: "india",
+
+    image: "/Assets/hotels/Sitara Himalayas, Himachal Pradesh.jpg",
+    alt: "Sitara Himalaya, Himachal Pradesh, Himachal Pradesh",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Set amidst the majestic Himalayan ranges, Sitara Himalaya is a serene mountain retreat that offers an idyllic escape into the pristine landscapes of Himachal Pradesh. Surrounded by snow-capped peaks, dense pine forests and picturesque valleys, the resort blends contemporary comfort with the timeless charm of the Himalayas. Whether you're seeking a peaceful holiday, an adventure in the mountains or a rejuvenating wellness retreat, Sitara Himalaya provides the perfect setting to reconnect with nature while enjoying warm hospitality and modern luxury.\n\nThe elegantly designed rooms and suites feature spacious interiors, contemporary décor and private balconies that frame breathtaking views of the surrounding mountains. Guests can savour delicious regional and international cuisine, relax in tranquil outdoor spaces, enjoy bonfires under star-filled skies or simply unwind while breathing in the crisp mountain air. Every experience at the resort is thoughtfully curated to celebrate the beauty and tranquillity of the Himalayas.\n\nIts strategic location allows guests to explore charming hill towns, ancient temples, scenic trekking trails and traditional Himalayan villages. Throughout the year, the changing seasons transform the landscape—from lush green summers and colourful autumns to magical snow-covered winters—making Sitara Himalaya an inviting destination in every season.",
+
+    why: "Sitara Himalaya offers spectacular mountain views, peaceful surroundings and genuine Himalayan hospitality. Its blend of contemporary comfort, natural beauty and easy access to outdoor adventures makes it an ideal retreat for travellers looking to experience the charm of Himachal Pradesh.",
+
+    exploreDestination: [
+      {
+        name: "Great Himalayan National Park",
+        description:
+          "A UNESCO World Heritage Site, the Great Himalayan National Park is renowned for its pristine forests, alpine meadows and remarkable biodiversity. Nature enthusiasts can enjoy scenic trekking routes while spotting Himalayan wildlife and rare bird species.",
+      },
+      {
+        name: "Tirthan Valley",
+        description:
+          "Known for its crystal-clear rivers, traditional villages and tranquil landscapes, Tirthan Valley is a paradise for anglers, trekkers and nature lovers. Its peaceful setting offers an authentic Himalayan experience away from the crowds.",
+      },
+      {
+        name: "Jibhi",
+        description:
+          "This charming mountain village is famous for its wooden cottages, waterfalls and scenic walking trails. Jibhi's laid-back atmosphere and natural beauty make it one of Himachal's hidden gems.",
+      },
+      {
+        name: "Jalori Pass",
+        description:
+          "Situated at an elevation of over 3,000 metres, Jalori Pass offers panoramic views of the Himalayan ranges and serves as the starting point for several scenic hikes, including the popular trail to Serolsar Lake.",
+      },
+      {
+        name: "Village Walks & Himalayan Experiences",
+        description:
+          "Discover the rich culture of Himachal through guided village walks, interactions with local communities and visits to traditional temples and apple orchards. These experiences offer a deeper appreciation of the region's heritage, cuisine and way of life.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Bhuntar Airport, Kullu–Manali",
+          code: "KUU",
+          distance: "60kms. Approx. 2hrs. by road.",
+        },
+        {
+          name: "Chandigarh International Airport",
+          code: "",
+          distance: "291 kms. / 6hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Families",
+      "Nature Lovers",
+      "Adventure Seekers",
+      "Wellness Retreats",
+      "Mountain Holidays",
+      "Luxury Getaways"
+    ],
+
+    website: "https://www.sitarahimalaya.com/",
+
+    map: "https://www.google.com/maps/place/Sitara+Himalaya/@32.3116005,77.1768337,17z/data=!4m9!3m8!1s0x390487746f1883b9:0xe3255e719cbf7a81!5m2!4m1!1i2!8m2!3d32.311596!4d77.1794086!16s%2Fg%2F11t_ql9w99?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "sujn-jawai-rajasthan",
+    name: "Suján Jawai, Rajasthan",
+    location: "Jawai, Rajasthan",
+    category: "india",
+
+    image: "/Assets/hotels/Sujan Jawai, Rajasthan.jpg",
+    alt: "Suján Jawai, Rajasthan, Jawai, Rajasthan",
+
+    accentClass: "hi--india-heritage",
+
+    intro:
+      "https://www.google.com/maps/place/SUJ%C3%81N+JAWAI+Camp/@25.0957948,73.1925203,17z/data=!3m1!4b1!4m9!3m8!1s0x3942966deb730521:0x7af35b2c1ac3581b!5m2!4m1!1i2!8m2!3d25.09579!4d73.1950952!16s%2Fg%2F11dzdh5plf?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D – Location Link\n\nSet amidst the dramatic granite landscapes of the Jawai wilderness, Suján Jawai is an exclusive luxury safari camp that redefines wilderness hospitality in Rajasthan. Located in one of India's most remarkable conservation landscapes, where leopards roam freely among ancient rock formations and traditional Rabari villages, the camp offers an extraordinary blend of adventure, luxury and cultural immersion. Designed to harmonise with its natural surroundings, Suján Jawai provides an intimate escape where every experience is inspired by the beauty and spirit of the wild.\n\nThe luxurious tented suites combine elegant safari-inspired interiors with modern comforts, offering spacious accommodation, private verandas and sweeping views of the rugged countryside. Guests can savour gourmet cuisine under the stars, relax with bespoke wellness experiences, enjoy sundowners atop granite hills or embark on expertly guided wildlife safaris led by experienced naturalists. The personalised service and intimate atmosphere ensure that every stay is both exclusive and unforgettable.\n\nBeyond its spectacular wildlife, Jawai is celebrated for its harmonious coexistence between local communities and nature. From tracking elusive leopards and spotting migratory birds to visiting centuries-old temples and interacting with the Rabari pastoralists, Suján Jawai offers a rare opportunity to experience Rajasthan from an entirely different perspective.",
+
+    why: "Suján Jawai offers one of India's most extraordinary luxury wildlife experiences. Its spectacular granite landscapes, exceptional leopard sightings and deeply personalised safari experiences make it a truly unforgettable destination.",
+
+    exploreDestination: [
+      {
+        name: "Jawai Leopard Conservation Reserve",
+        description:
+          "Jawai is internationally renowned for its thriving population of wild leopards living in harmony with local communities. Expert-led safari drives provide exceptional opportunities to observe these magnificent cats in their natural habitat.",
+      },
+      {
+        name: "Jawai Dam",
+        description:
+          "Built across the Jawai River, Jawai Dam is one of western Rajasthan's most picturesque reservoirs. It attracts a rich variety of wildlife and migratory birds, making it a paradise for birdwatchers and photographers.",
+      },
+      {
+        name: "Rabari Village Experiences",
+        description:
+          "Meet the indigenous Rabari community, renowned for their pastoral lifestyle, colourful attire and centuries-old traditions. Guided cultural visits offer fascinating insights into their harmonious relationship with the surrounding wilderness.",
+      },
+      {
+        name: "Granite Hill Sundowners",
+        description:
+          "One of Jawai's signature experiences, sunset excursions atop the region's dramatic granite outcrops offer breathtaking panoramic views while guests enjoy refreshments as the landscape transforms with the golden evening light.",
+      },
+      {
+        name: "Birdwatching & Nature Walks",
+        description:
+          "The Jawai region supports a remarkable diversity of birdlife, including flamingos, cranes, raptors and waterbirds. Guided nature walks reveal the area's unique flora, fauna and fascinating geological formations.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Maharana Pratap Airport, Udaipur",
+          code: "",
+          distance: "160 kms / 3 hrs. approx. by road.",
+        },
+        {
+          name: "Jodhpur Airport",
+          code: "",
+          distance: "170 kms / 3 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Wildlife Enthusiasts",
+      "Luxury Safari Holidays",
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Wildlife Photographers",
+      "Luxury Adventure Travellers",
+      "Exclusive Rajasthan Experiences"
+    ],
+
+    website: "",
+
+    map: "https://thesujanlife.com/sujan-camps/sujan-jawai - website",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "svatma-thanjavur",
+    name: "Svatma, Thanjavur",
+    location: "Thanjavur, Tamil Nadu",
+    category: "india",
+
+    image: "/Assets/hotels/Svatma, Tanjavur.jpg",
+    alt: "Svatma, Thanjavur, Thanjavur, Tamil Nadu",
+
+    accentClass: "hi--india-heritage",
+
+    intro:
+      "Steeped in the rich cultural heritage of Thanjavur, Svatma is an award-winning heritage luxury hotel that beautifully celebrates the rich cultural legacy of Tamil Nadu. Inspired by the region's timeless traditions, the property blends restored heritage architecture with contemporary elegance, creating an atmosphere of serenity, refinement and authentic South Indian hospitality. Every aspect of the hotel reflects the spirit of Thanjavur—from its classical art and music to its exquisite craftsmanship and culinary heritage—making it a truly immersive cultural retreat.\n\nThe hotel's tastefully designed rooms and heritage villas feature elegant interiors, handcrafted furnishings and modern amenities, ensuring a luxurious and comfortable stay. Guests can indulge in authentic Tamil cuisine prepared using traditional recipes, rejuvenate with holistic Ayurvedic therapies, participate in yoga and wellness sessions or experience captivating performances of Carnatic music and Bharatanatyam. Thoughtfully curated experiences and personalised service make every stay both enriching and memorable.\n\nPerfectly positioned for exploring Thanjavur's architectural and artistic treasures, Svatma offers an ideal base for discovering the city's magnificent temples, royal palaces and centuries-old artistic traditions. Whether you're a heritage enthusiast, wellness seeker or cultural explorer, the hotel promises an unforgettable journey into the heart of Tamil Nadu.",
+
+    why: "Svatma offers an immersive heritage experience where luxury, wellness and South Indian culture come together beautifully. Its authentic architecture, curated cultural programmes and warm hospitality make it one of Thanjavur's finest boutique stays.",
+
+    exploreDestination: [
+      {
+        name: "Brihadeeswarar Temple",
+        description:
+          "A UNESCO World Heritage Site and one of India's greatest architectural masterpieces, Brihadeeswarar Temple was built by Raja Raja Chola I over 1,000 years ago. Its towering vimana, intricate sculptures and magnificent granite construction showcase the brilliance of Chola architecture.",
+      },
+      {
+        name: "Thanjavur Maratha Palace",
+        description:
+          "This historic palace complex houses museums, royal halls, art galleries and the famous Saraswathi Mahal Library. It offers fascinating insights into the region's royal history and artistic heritage.",
+      },
+      {
+        name: "Saraswathi Mahal Library",
+        description:
+          "Among Asia's oldest libraries, the Saraswathi Mahal Library preserves an extraordinary collection of ancient palm-leaf manuscripts, rare books and historical documents that reflect centuries of scholarship and culture.",
+      },
+      {
+        name: "Schwartz Church",
+        description:
+          "Built in the 18th century, Schwartz Church is one of the oldest churches in South India. Its elegant colonial architecture and historical significance make it an interesting landmark within the city.",
+      },
+      {
+        name: "Thanjavur Art & Handicrafts",
+        description:
+          "Thanjavur is renowned worldwide for its exquisite Tanjore paintings, handcrafted dolls, bronze sculptures and traditional veena-making. Visitors can explore artisan workshops to witness these centuries-old crafts being created by skilled local craftsmen.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Tiruchirappalli International Airport",
+          code: "TRZ",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Heritage Travellers",
+      "Cultural Explorers",
+      "Couples",
+      "Families",
+      "Wellness Seekers",
+      "Art & Architecture Enthusiasts",
+      "Luxury Travellers",
+      "South India Heritage Holidays"
+    ],
+
+    website: "https://svatma.in/",
+
+    map: "https://www.google.com/maps/place/Svatma/@10.7811088,79.1459502,17z/data=!4m10!3m9!1s0x3baab8842fd5c447:0x99b83d99eb6e35!5m3!1s2026-07-22!4m1!1i2!8m2!3d10.7811035!4d79.1485251!16s%2Fg%2F11c3kqv9p9?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "taj-bentota-resort-spa-sri-lanka",
+    name: "Taj Bentota Resort & Spa, Sri Lanka",
+    location: "Bentota, Sri Lanka",
+    category: "srilanka",
+
+    image: "/Assets/hotels/Taj Bentota Sri Lanka.avif",
+    alt: "Taj Bentota Resort & Spa, Sri Lanka, Bentota, Sri Lanka",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Celebrating the beauty of Sri Lanka's south-west coast, Taj Bentota Resort & Spa is an elegant beachfront retreat where tropical landscapes, world-class hospitality and breathtaking views of the Indian Ocean come together effortlessly. Designed by the renowned architect Geoffrey Bawa, the resort blends contemporary comfort with Sri Lankan influences, creating a relaxing sanctuary for travellers seeking both leisure and luxury. With its lush gardens, golden sands and warm hospitality, every stay promises an unforgettable coastal escape.\n\nThe spacious rooms and suites feature sophisticated interiors, private balconies and panoramic views of the ocean or landscaped gardens. Guests can savour a diverse selection of Sri Lankan and international cuisine, rejuvenate at the award-winning J Wellness Circle Spa, relax by the infinity pool or enjoy direct access to Bentota's pristine beach. From personalised service to thoughtfully curated experiences, the resort offers an ideal balance of relaxation and recreation.\n\nConveniently located along Sri Lanka's picturesque southern coastline, Taj Bentota Resort & Spa provides easy access to cultural landmarks, wildlife experiences and exciting water sports. Whether exploring scenic rivers, discovering historic forts or simply enjoying spectacular sunsets by the sea, guests are perfectly placed to experience the best of Sri Lanka.",
+
+    why: "Taj Bentota Resort & Spa combines timeless luxury with one of Sri Lanka's most beautiful beachfront settings. Its exceptional hospitality, stunning ocean views and easy access to the island's coastal attractions make it a favourite for discerning travellers.",
+
+    exploreDestination: [
+      {
+        name: "Bentota Beach",
+        description:
+          "One of Sri Lanka's finest beaches, Bentota Beach is known for its golden sands, calm waters and excellent opportunities for swimming, sunbathing and a variety of water sports.",
+      },
+      {
+        name: "Madu Ganga",
+        description:
+          "Take a scenic boat safari through the enchanting mangrove forests of Madu Ganga, where visitors can discover small islands, abundant birdlife, cinnamon plantations and a unique wetland ecosystem.",
+      },
+      {
+        name: "Brief Garden",
+        description:
+          "Created by renowned landscape architect Bevis Bawa, Brief Garden is a beautifully designed tropical estate featuring lush gardens, sculptures and artistic landscapes that showcase Sri Lanka's horticultural heritage.",
+      },
+      {
+        name: "Lunuganga Estate",
+        description:
+          "The former country home of Geoffrey Bawa, Lunuganga is one of Sri Lanka's most celebrated garden estates, offering visitors an inspiring blend of architecture, landscape design and natural beauty.",
+      },
+      {
+        name: "Water Sports & River Adventures",
+        description:
+          "Bentota is one of Sri Lanka's leading destinations for water-based activities. Guests can enjoy jet skiing, kayaking, banana boat rides, paddleboarding, windsurfing and leisurely river cruises through the region's scenic waterways.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Bandaranaike International Airport, Colombo Sri Lanka",
+          code: "CMB",
+          distance: "105 kms. / 2 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Beach Holidays",
+      "Couples",
+      "Honeymooners",
+      "Families",
+      "Luxury Travellers",
+      "Wellness Seekers",
+      "Water Sports Enthusiasts",
+      "Sri Lanka Coastal Escapes"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/Taj+Bentota+Resort+%26+Spa,+Sri+Lanka/@6.4166766,79.9945413,17z/data=!4m9!3m8!1s0x3ae22e97c1f54ec9:0xf52f77510bf52515!5m2!4m1!1i2!8m2!3d6.4166713!4d79.9971162!16s%2Fg%2F11g7ywsvtl?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "taj-exotica-resort-spa-andamans",
+    name: "Taj Exotica Resort & Spa, Andamans",
+    location: "Andaman Islands",
+    category: "india",
+
+    image: "/Assets/hotels/Taj Exotica, Andamans.avif",
+    alt: "Taj Exotica Resort & Spa, Andamans, Andaman Islands",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Surrounded by the turquoise waters and pristine white sands of Radhanagar Beach on Havelock Island (Swaraj Dweep), Taj Exotica Resort & Spa, Andamans is an extraordinary luxury retreat where untouched natural beauty meets world-class hospitality. Inspired by the indigenous Jarawa style of architecture and thoughtfully designed to blend with its tropical surroundings, the resort offers an idyllic escape amidst lush rainforests, swaying palms and the crystal-clear waters of the Bay of Bengal. It is the perfect destination for travellers seeking serenity, adventure and barefoot luxury.\n\nThe spacious villas and suites are elegantly designed with contemporary comforts, natural materials and private outdoor spaces that immerse guests in the island's tranquil surroundings. Guests can savour exceptional dining experiences featuring fresh seafood and international cuisine, unwind at the luxurious J Wellness Circle Spa, relax by the infinity pool or simply enjoy direct access to one of Asia's most beautiful beaches. Every stay is elevated by Taj's renowned hospitality and personalised service.\n\nBeyond the resort, the Andaman Islands offer a spectacular blend of vibrant coral reefs, lush tropical forests and unforgettable marine experiences. Whether snorkelling among colourful reefs, scuba diving in crystal-clear waters, kayaking through mangrove creeks or watching spectacular sunsets over the Bay of Bengal, Taj Exotica provides an exceptional gateway to one of India's most breathtaking island destinations.",
+
+    why: "Taj Exotica Resort & Spa, Andamans combines barefoot luxury with one of India's most spectacular beachfront settings. Its stunning villas, exceptional hospitality and direct access to the award-winning Radhanagar Beach create an unforgettable tropical island escape.",
+
+    exploreDestination: [
+      {
+        name: "Radhanagar Beach",
+        description:
+          "Frequently ranked among Asia's finest beaches, Radhanagar Beach is celebrated for its powdery white sand, turquoise waters and spectacular sunsets. It is perfect for swimming, beach walks and simply soaking in the island's natural beauty.",
+      },
+      {
+        name: "Elephant Beach",
+        description:
+          "Famous for its vibrant coral reefs and crystal-clear waters, Elephant Beach is one of the best places in the Andamans for snorkelling, sea walking and a variety of exciting water sports.",
+      },
+      {
+        name: "Kalapathar Beach",
+        description:
+          "A peaceful stretch of coastline lined with dramatic black rocks and swaying coconut palms, Kalapathar Beach offers breathtaking sunrise views and a serene atmosphere away from the crowds.",
+      },
+      {
+        name: "Mangrove Kayaking",
+        description:
+          "Paddle through the island's tranquil mangrove forests accompanied by experienced guides while discovering the unique ecosystem, birdlife and marine biodiversity that make the Andamans so special.",
+      },
+      {
+        name: "Scuba Diving & Snorkelling",
+        description:
+          "The Andaman Islands are among India's premier diving destinations. Explore colourful coral gardens, tropical fish, sea turtles and diverse marine life through professionally guided diving and snorkelling excursions.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Veer Savarkar International Airport, Andaman and Nicobar Islands",
+          code: "",
+          distance: "70 km away, followed by a scenic ferry or seaplane transfer to Swaraj Dweep (Havelock Island).",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Beach Holidays",
+      "Luxury Travellers",
+      "Families",
+      "Scuba Diving Enthusiasts",
+      "Nature Lovers",
+      "Romantic Island Getaways"
+    ],
+
+    website: "https://www.tajhotels.com/en-in/hotels/taj-exotica-andamans",
+
+    map: "https://www.google.com/maps/place/Taj+Exotica+Resort+%26+Spa,+Andamans/@11.9838422,92.9534093,17z/data=!4m9!3m8!1s0x3088d214eadb1bad:0x1daa82ff8dbdd64!5m2!4m1!1i2!8m2!3d11.983837!4d92.9559842!16s%2Fg%2F11dxdjbs5t?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D -",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "taj-west-end-bengaluru",
+    name: "Taj West End, Bengaluru",
+    location: "Bengaluru, Karnataka",
+    category: "india",
+
+    image: "/Assets/hotels/Taj West end, Bengaluru.avif",
+    alt: "Taj West End, Bengaluru, Bengaluru, Karnataka",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Spread across 20 acres of lush tropical gardens in the heart of Bengaluru, Taj West End is an iconic luxury hotel that seamlessly blends colonial charm with contemporary elegance. Established in 1887, it is one of the city's oldest and most distinguished hotels, offering a tranquil oasis amidst the vibrant energy of India's Silicon Valley. Majestic rain trees, beautifully landscaped pathways and heritage-inspired architecture create a timeless atmosphere where history, nature and world-class hospitality come together.\n\nThe hotel's elegantly appointed rooms, suites and luxury villas are thoughtfully designed with refined interiors, modern comforts and views of the verdant gardens. Guests can indulge in award-winning culinary experiences featuring Indian, Asian and international cuisine, rejuvenate at the luxurious J Wellness Circle Spa, relax by the outdoor swimming pool or enjoy peaceful walks through the hotel's expansive botanical grounds. Every stay is enhanced by Taj's legendary hospitality and meticulous attention to detail.\n\nPerfectly located close to Bengaluru's Central Business District, major corporate offices and iconic attractions, Taj West End provides an ideal base for both business and leisure travellers. Whether attending meetings, exploring the city's cultural landmarks or simply seeking a luxurious urban retreat, guests are assured of an unforgettable experience.",
+
+    why: "Taj West End is a rare urban sanctuary where heritage architecture meets lush natural surroundings. Its century-old legacy, expansive gardens and impeccable Taj hospitality make it one of Bengaluru's most iconic luxury hotels.",
+
+    exploreDestination: [
+      {
+        name: "Cubbon Park",
+        description:
+          "One of Bengaluru's most beloved green spaces, Cubbon Park spans nearly 300 acres of landscaped gardens, heritage buildings and shaded avenues. It is an ideal destination for leisurely walks, cycling and outdoor relaxation.",
+      },
+      {
+        name: "Bangalore Palace",
+        description:
+          "Inspired by England's Windsor Castle, Bangalore Palace is celebrated for its magnificent Tudor-style architecture, elegant royal interiors and beautifully maintained gardens, offering visitors a glimpse into the city's regal heritage.",
+      },
+      {
+        name: "Lalbagh Botanical Garden",
+        description:
+          "Home to rare plant species, centuries-old trees and the iconic Glass House, Lalbagh Botanical Garden is one of India's finest botanical gardens and a must-visit attraction for nature lovers.",
+      },
+      {
+        name: "Vidhana Soudha",
+        description:
+          "An architectural masterpiece and the seat of Karnataka's legislature, Vidhana Soudha is one of Bengaluru's most recognisable landmarks, admired for its impressive granite façade and grand design.",
+      },
+      {
+        name: "UB City",
+        description:
+          "Bengaluru's premier lifestyle destination, UB City features luxury boutiques, fine dining restaurants, art galleries and stylish cafés, making it a favourite destination for shopping and entertainment.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Kempegowda International Airport, Bengaluru",
+          code: "BLR",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Business Travellers",
+      "Couples",
+      "Families",
+      "Heritage Enthusiasts",
+      "Corporate Executives",
+      "Staycations",
+      "Food & Lifestyle Enthusiasts"
+    ],
+
+    website: "https://www.tajhotels.com/en-in/hotels/taj-west-end-bengaluru",
+
+    map: "https://www.google.com/maps/place/Taj+West+End,+Bengaluru/@12.9845513,77.5820075,17z/data=!4m9!3m8!1s0x3bae1614ae4e21cb:0x43e3a50b3b1a3d3b!5m2!4m1!1i2!8m2!3d12.9845461!4d77.5845824!16s%2Fg%2F1tfb4_z7?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "dwarikas-hotel-kathmandu",
+    name: "Dwarika's Hotel, Kathmandu",
+    location: "Kathmandu, Nepal",
+    category: "nepal",
+
+    image: "/Assets/hotels/The Dwarika_s, Nepal.webp",
+    alt: "Dwarika's Hotel, Kathmandu, Kathmandu, Nepal",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Located in the heart of Kathmandu, Dwarika's Hotel is one of Nepal's most celebrated heritage hotels, where centuries-old craftsmanship meets refined luxury. Built as a tribute to Nepal's rich architectural legacy, the hotel is renowned for preserving intricately carved wooden masterpieces salvaged from historic buildings across the Kathmandu Valley. Every courtyard, corridor and handcrafted detail reflects the timeless beauty of traditional Newari architecture, creating an atmosphere that is both culturally immersive and exceptionally elegant.\n\nThe beautifully appointed rooms and suites combine authentic Nepalese design with modern comforts, featuring handcrafted woodwork, antique furnishings and luxurious amenities. The hotel's tranquil courtyards, serene swimming pool, holistic spa and award-winning restaurants provide a peaceful sanctuary amidst the vibrant capital. Guests can savour authentic Nepali cuisine alongside international delicacies while enjoying the personalised hospitality that has made Dwarika's one of Asia's most acclaimed luxury hotels.\n\nPerfectly located near many of Kathmandu's UNESCO World Heritage Sites, Dwarika's Hotel offers an exceptional base for exploring Nepal's rich history, spirituality and culture. Whether embarking on a Himalayan adventure, discovering ancient temples or seeking a luxurious cultural retreat, the hotel promises an unforgettable experience rooted in Nepalese tradition.",
+
+    why: "Dwarika's Hotel is much more than a luxury stay—it's a living museum of Nepalese heritage. Its remarkable architecture, commitment to preserving traditional craftsmanship and world-class hospitality make every visit a truly enriching experience.",
+
+    exploreDestination: [
+      {
+        name: "Pashupatinath Temple",
+        description:
+          "Located just minutes from the hotel, this UNESCO World Heritage Site is Nepal's most sacred Hindu temple dedicated to Lord Shiva. The temple's magnificent pagoda architecture and centuries-old rituals offer an unforgettable spiritual experience.",
+      },
+      {
+        name: "Boudhanath Stupa",
+        description:
+          "One of the largest Buddhist stupas in the world, Boudhanath is the spiritual heart of Tibetan Buddhism in Nepal. Surrounded by monasteries, prayer wheels and colourful prayer flags, it provides a peaceful and inspiring atmosphere.",
+      },
+      {
+        name: "Kathmandu Durbar Square",
+        description:
+          "A UNESCO World Heritage Site, Kathmandu Durbar Square showcases magnificent palaces, intricately carved temples and historic courtyards that reflect the artistic brilliance of Nepal's Malla kings.",
+      },
+      {
+        name: "Patan Durbar Square",
+        description:
+          "Famous for its beautifully preserved Newari architecture, artisan workshops and remarkable temples, Patan Durbar Square is one of the finest examples of Nepal's cultural and artistic heritage.",
+      },
+      {
+        name: "Swayambhunath",
+        description:
+          "Perched atop a hill overlooking Kathmandu Valley, Swayambhunath—popularly known as the Monkey Temple—is one of Nepal's oldest and most revered Buddhist shrines, offering spectacular panoramic views of the city.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Tribhuvan International Airport, Kathmandu",
+          code: "KTM",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Heritage Enthusiasts",
+      "Cultural Explorers",
+      "Couples",
+      "Honeymooners",
+      "Families",
+      "Wellness Seekers",
+      "Himalayan Holidaymakers"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/The+Dwarika's/@27.7051676,85.3397496,17z/data=!4m9!3m8!1s0x39eb199d62b49797:0x2138d3ae677c130f!5m2!4m1!1i2!8m2!3d27.7051629!4d85.3423245!16s%2Fm%2F03g__b_?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "the-everest-hotel-kathmandu",
+    name: "The Everest Hotel, Kathmandu",
+    location: "Kathmandu, Nepal",
+    category: "nepal",
+
+    image: "/Assets/hotels/The Everest Hotel, Nepal.jpg",
+    alt: "The Everest Hotel, Kathmandu, Kathmandu, Nepal",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Located in the vibrant capital city of Kathmandu, The Everest Hotel is one of Nepal's most established five-star hotels, offering a harmonious blend of traditional Nepalese hospitality and contemporary comfort. Conveniently situated just a short drive from the city's cultural landmarks, business districts and the international airport, the hotel has long been a preferred choice for leisure travellers, business guests and pilgrims exploring the Himalayan nation. Its elegant ambience, spacious accommodation and warm service provide a welcoming retreat amidst the energy of Kathmandu.\n\nThe hotel features well-appointed rooms and suites with contemporary interiors, comfortable furnishings and views of the Kathmandu Valley or the surrounding cityscape. Guests can enjoy a diverse range of dining experiences featuring authentic Nepalese, Indian, Chinese and international cuisines, relax by the outdoor swimming pool, rejuvenate at the wellness centre or unwind in the beautifully landscaped gardens. Combining modern amenities with genuine Nepalese hospitality, The Everest Hotel offers a comfortable base from which to discover the country's remarkable heritage.\n\nKathmandu is a fascinating city where centuries-old temples, bustling markets and sacred Buddhist stupas coexist with lively cafés and vibrant local culture. Whether exploring UNESCO World Heritage Sites, beginning a Himalayan adventure or embarking on a spiritual journey, The Everest Hotel provides an ideal gateway to the rich history, traditions and natural beauty of Nepal.",
+
+    why: "The Everest Hotel combines an excellent location, warm Nepalese hospitality and comfortable luxury, making it an ideal base for discovering Kathmandu's extraordinary blend of history, spirituality and culture.",
+
+    exploreDestination: [
+      {
+        name: "Pashupatinath Temple",
+        description:
+          "One of the holiest Hindu temples dedicated to Lord Shiva, Pashupatinath is a UNESCO World Heritage Site situated on the banks of the Bagmati River. Its magnificent pagoda-style architecture, sacred rituals and spiritual significance make it one of Nepal's most important pilgrimage destinations.",
+      },
+      {
+        name: "Boudhanath Stupa",
+        description:
+          "Among the largest Buddhist stupas in the world, Boudhanath is the spiritual heart of Tibetan Buddhism in Nepal. Colourful prayer flags, monasteries and prayer wheels surround the magnificent white dome, creating a peaceful atmosphere for visitors.",
+      },
+      {
+        name: "Kathmandu Durbar Square",
+        description:
+          "A UNESCO World Heritage Site, Kathmandu Durbar Square showcases centuries of Nepalese architecture through its royal palaces, intricately carved temples and historic courtyards. It offers fascinating insight into the city's rich cultural and royal heritage.",
+      },
+      {
+        name: "Swayambhunath",
+        description:
+          "Popularly known as the Monkey Temple, Swayambhunath sits atop a hill overlooking Kathmandu Valley. Visitors are rewarded with panoramic city views, ancient shrines and a tranquil spiritual atmosphere.",
+      },
+      {
+        name: "Patan Durbar Square",
+        description:
+          "Located in the neighbouring city of Lalitpur, this UNESCO World Heritage Site is renowned for its beautifully preserved Newari architecture, exquisite temples, artisan workshops and fascinating museums that celebrate Nepal's artistic heritage.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Tribhuvan International Airport, Kathmandu",
+          code: "KTM",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Families",
+      "Heritage Travellers",
+      "Cultural Explorers",
+      "Pilgrimage Tours",
+      "Business Travellers",
+      "Himalayan Holidaymakers",
+      "Nepal Discovery Tours"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/The+Everest+Hotel/@27.6890988,85.3312608,17z/data=!4m9!3m8!1s0x39eb19bde57100db:0x9c61dc37723b191a!5m2!4m1!1i2!8m2!3d27.6890941!4d85.3338357!16s%2Fg%2F11c4mfv34s?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "the-khyber-himalayan-resort-spa-gulmarg",
+    name: "The Khyber Himalayan Resort & Spa, Gulmarg",
+    location: "Gulmarg, Kashmir",
+    category: "india",
+
+    image: "/Assets/hotels/The Khyber, Kashmir.jpg",
+    alt: "The Khyber Himalayan Resort & Spa, Gulmarg, Gulmarg, Kashmir",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Commanding magnificent views of the Pir Panjal range and the pristine landscapes of Gulmarg, The Khyber Himalayan Resort & Spa is one of Kashmir's most luxurious mountain retreats. Set at an elevation of over 8,000 feet, the resort offers breathtaking views of snow-clad peaks, alpine meadows and dense pine forests, creating an idyllic escape in every season. Combining traditional Kashmiri craftsmanship with contemporary luxury, The Khyber provides an unforgettable experience where nature, comfort and warm hospitality come together seamlessly.\n\nThe elegantly appointed rooms, suites and luxury cottages feature handcrafted interiors, rich wood finishes and expansive windows that frame spectacular mountain vistas. Guests can indulge in authentic Kashmiri and international cuisine, rejuvenate at the award-winning spa, relax in the heated indoor pool overlooking the Himalayas or simply unwind amidst the serenity of the surrounding landscape. Whether visiting during the snow-covered winter months or the vibrant summer season, every stay promises exceptional comfort and personalised service.\n\nPerfectly positioned near the famous Gulmarg Gondola and the region's renowned ski slopes, the resort is an ideal base for exploring Kashmir's natural beauty and outdoor adventures. From skiing and snowboarding to scenic hikes, golfing and gondola rides, The Khyber offers year-round experiences in one of India's most spectacular mountain destinations.",
+
+    why: "The Khyber Himalayan Resort & Spa perfectly combines world-class luxury with the breathtaking beauty of Kashmir. Its spectacular location, exceptional hospitality and direct access to Gulmarg's outdoor adventures make it one of India's finest mountain resorts.",
+
+    exploreDestination: [
+      {
+        name: "Gulmarg Gondola",
+        description:
+          "One of the world's highest cable cars, the Gulmarg Gondola takes visitors to breathtaking altitudes, offering panoramic Himalayan views and access to world-renowned skiing and trekking routes.",
+      },
+      {
+        name: "Gulmarg Golf Club",
+        description:
+          "Among the highest golf courses in the world, this spectacular 18-hole course offers an unforgettable golfing experience surrounded by snow-capped mountains and lush alpine meadows.",
+      },
+      {
+        name: "St. Mary's Church",
+        description:
+          "Built during the British era, this charming Victorian-style church is one of Gulmarg's most picturesque landmarks, set amidst towering pine trees and beautiful mountain scenery.",
+      },
+      {
+        name: "Maharani Temple",
+        description:
+          "Dedicated to Lord Shiva, this historic hilltop temple offers sweeping views of Gulmarg and the surrounding valleys while showcasing the region's rich spiritual heritage.",
+      },
+      {
+        name: "Skiing & Alpine Adventures",
+        description:
+          "Gulmarg is India's premier skiing destination, offering world-class slopes for beginners and experienced skiers alike. During the warmer months, visitors can enjoy trekking, mountain biking, horse riding and nature walks through the surrounding alpine landscapes.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Srinagar Airport",
+          code: "SXR",
+          distance: "60 kms. / 1.5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Couples",
+      "Honeymooners",
+      "Ski Enthusiasts",
+      "Adventure Seekers",
+      "Nature Lovers",
+      "Families",
+      "Himalayan Holidays"
+    ],
+
+    website: "https://www.khyberhotels.com/",
+
+    map: "https://www.google.com/maps/place/The+Khyber+Himalayan+Resort+%26+Spa/@34.0432274,74.3823951,17z/data=!4m9!3m8!1s0x38e1afe7d48b3de7:0x59fd37192aabf049!5m2!4m1!1i2!8m2!3d34.043223!4d74.38497!16s%2Fg%2F11c4jb1855?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "the-kingsbury-hotel-colombo-sri-lanka",
+    name: "The Kingsbury Hotel, Colombo, Sri Lanka",
+    location: "Colombo, Sri Lanka",
+    category: "srilanka",
+
+    image: "/Assets/hotels/The Kingsbury hotel, Sri Lanka.jpg",
+    alt: "The Kingsbury Hotel, Colombo, Sri Lanka, Colombo, Sri Lanka",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Capturing the energy of Colombo's vibrant waterfront, The Kingsbury Hotel is an elegant luxury hotel that combines sophisticated city living with breathtaking views of the Indian Ocean and the historic Colombo Harbour. Ideally located in the heart of Sri Lanka's capital, the hotel offers a seamless blend of contemporary comfort, refined hospitality and convenient access to the city's cultural, commercial and culinary attractions. Whether travelling for leisure or business, guests can expect a memorable stay in one of Colombo's most distinguished addresses.\n\nThe beautifully appointed rooms and suites feature stylish interiors, modern amenities and panoramic views of the ocean or city skyline. Guests can savour an exceptional selection of international and Sri Lankan cuisine across the hotel's acclaimed restaurants, relax by the outdoor pool, rejuvenate at the wellness spa or enjoy handcrafted cocktails while overlooking the coastline. Attentive service and thoughtfully curated experiences create an atmosphere of effortless luxury throughout the stay.\n\nPerfectly positioned for discovering Colombo's rich heritage and cosmopolitan charm, The Kingsbury Hotel provides easy access to historic landmarks, bustling shopping districts, lively cafés and the city's picturesque waterfront, making it an ideal gateway to Sri Lanka.",
+
+    why: "The Kingsbury Hotel offers contemporary luxury in one of Colombo's finest waterfront locations. Its elegant accommodation, diverse dining experiences and exceptional hospitality make it an excellent choice for exploring Sri Lanka's dynamic capital.",
+
+    exploreDestination: [
+      {
+        name: "Galle Face Green",
+        description:
+          "One of Colombo's most iconic waterfront promenades, Galle Face Green is perfect for evening strolls, spectacular sunsets, local street food and panoramic views of the Indian Ocean.",
+      },
+      {
+        name: "Gangaramaya Temple",
+        description:
+          "Among Sri Lanka's most important Buddhist temples, Gangaramaya showcases a fascinating blend of Sri Lankan, Thai, Indian and Chinese architectural influences along with an impressive museum.",
+      },
+      {
+        name: "Colombo National Museum",
+        description:
+          "Sri Lanka's largest museum houses an extensive collection of royal artefacts, historical treasures and cultural exhibits that offer valuable insight into the island's rich heritage.",
+      },
+      {
+        name: "Pettah Market",
+        description:
+          "Experience the vibrant atmosphere of Colombo's famous market district, where colourful streets are lined with shops selling spices, textiles, handicrafts, jewellery and local delicacies.",
+      },
+      {
+        name: "Colombo City & Culinary Experiences",
+        description:
+          "Discover Colombo's thriving dining scene, contemporary art galleries, boutique shopping and colonial architecture while experiencing the city's unique blend of history, culture and modern sophistication.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Bandaranaike International Airport, Sri Lanka",
+          code: "CMB",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury City Breaks",
+      "Business Travellers",
+      "Couples",
+      "Families",
+      "Cultural Explorers",
+      "Food Enthusiasts",
+      "Sri Lanka Holidays",
+      "Short Stopovers"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/The+Kingsbury+Colombo/@6.9328582,79.8393657,17z/data=!4m9!3m8!1s0x3ae259259a6157fb:0x8c0cebb288af4419!5m2!4m1!1i2!8m2!3d6.9328529!4d79.8419406!16s%2Fm%2F025x4p6?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "the-kumaon-uttarakhand",
+    name: "The Kumaon, Uttarakhand",
+    location: "Binsar, Uttarakhand",
+    category: "india",
+
+    image: "/Assets/hotels/The Kumaon, Uttarakhand.jpg",
+    alt: "The Kumaon, Uttarakhand, Binsar, Uttarakhand",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "https://www.google.com/maps/place/The+Kumaon/@29.6607043,79.6693701,17z/data=!3m1!4b1!4m9!3m8!1s0x39a0b2490dc15c13:0xc771e7b54ec9240e!5m2!4m1!1i2!8m2!3d29.6606997!4d79.671945!16s%2Fg%2F11g8bwq9pn?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D – Location Link\n\nPerched high above the Kumaon Himalayas, The Kumaon is an exclusive boutique retreat that offers an extraordinary blend of contemporary design, breathtaking mountain scenery and immersive nature experiences. Thoughtfully designed to harmonise with its pristine surroundings, the property features striking minimalist architecture that frames uninterrupted views of the Himalayan peaks. Surrounded by forests, traditional villages and tranquil mountain landscapes, The Kumaon is an ideal sanctuary for travellers seeking serenity, adventure and meaningful connections with nature.\n\nThe elegantly designed suites showcase floor-to-ceiling glass windows, handcrafted interiors and modern comforts that allow the spectacular landscape to take centre stage. Guests can savour locally inspired cuisine prepared with fresh regional ingredients, enjoy guided nature walks, participate in village experiences or simply relax while watching the ever-changing panorama of the Himalayas. Personalised hospitality and intimate surroundings ensure every stay is peaceful, enriching and unforgettable.\n\nPerfectly located for exploring the Kumaon region, the retreat provides access to picturesque mountain trails, wildlife-rich forests, ancient temples and charming Himalayan villages. Whether you're seeking quiet reflection, outdoor adventure or a luxurious mountain escape, The Kumaon offers an authentic experience amidst one of India's most spectacular landscapes.",
+
+    why: "The Kumaon combines award-winning contemporary architecture with panoramic Himalayan views and exceptional personalised hospitality. Its peaceful setting and immersive local experiences make it one of Uttarakhand's finest boutique mountain retreats.",
+
+    exploreDestination: [
+      {
+        name: "Binsar Wildlife Sanctuary",
+        description:
+          "A paradise for nature lovers and birdwatchers, Binsar Wildlife Sanctuary is home to dense oak and rhododendron forests, diverse Himalayan wildlife and scenic walking trails with breathtaking mountain vistas.",
+      },
+      {
+        name: "Zero Point",
+        description:
+          "One of the region's most spectacular viewpoints, Zero Point offers sweeping views of iconic Himalayan peaks including Nanda Devi, Trishul and Panchachuli on clear days.",
+      },
+      {
+        name: "Jageshwar Dham",
+        description:
+          "This remarkable temple complex comprises over 100 ancient stone temples dedicated to Lord Shiva. Nestled within a deodar forest, it is one of Uttarakhand's most significant spiritual and architectural treasures.",
+      },
+      {
+        name: "Village Walks & Cultural Experiences",
+        description:
+          "Explore traditional Kumaoni villages, interact with local communities and discover the region's rich heritage, architecture and cuisine while gaining insights into the mountain way of life.",
+      },
+      {
+        name: "Himalayan Nature Trails",
+        description:
+          "The surrounding landscape offers numerous opportunities for guided hikes through pine and oak forests, scenic ridge walks and birdwatching excursions, allowing guests to experience the untouched beauty of the Kumaon Himalayas.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Pantnagar Airport",
+          code: "PGH",
+          distance: "130 kms. / 4 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Luxury Travellers",
+      "Wellness Retreats",
+      "Photography Enthusiasts",
+      "Adventure Seekers",
+      "Himalayan Escapes"
+    ],
+
+    website: "",
+
+    map: "https://thekumaon.com/ - Website",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "the-leela-hyderabad",
+    name: "The Leela Hyderabad",
+    location: "Hyderabad, Telangana",
+    category: "india",
+
+    image: "/Assets/hotels/The Leela, Hyderabad.webp",
+    alt: "The Leela Hyderabad, Hyderabad, Telangana",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Rising as a symbol of contemporary luxury in the heart of Hyderabad, The Leela Hyderabad blends timeless elegance with the city's rich cultural heritage. Thoughtfully designed to reflect the grandeur of the Nizams while embracing modern sophistication, the hotel offers an exceptional retreat for business and leisure travellers alike. Elegant architecture, refined interiors and impeccable service create an atmosphere of understated luxury, making every stay both memorable and effortless.\n\nThe hotel's spacious rooms and suites feature beautifully crafted interiors, premium amenities and sweeping views of Hyderabad's skyline. Guests can indulge in exceptional culinary experiences across its signature restaurants, rejuvenate at the luxurious spa, unwind by the serene swimming pool or enjoy personalised service that embodies The Leela's renowned hospitality. Every detail has been carefully curated to deliver an experience of comfort, elegance and exclusivity.\n\nIdeally located with easy access to Hyderabad's financial district, historic landmarks and vibrant shopping destinations, The Leela Hyderabad serves as the perfect gateway to explore the City of Pearls. Whether discovering centuries-old monuments, attending business engagements or experiencing the city's celebrated cuisine, guests are assured of a luxurious and enriching stay.",
+
+    why: "The Leela Hyderabad beautifully combines royal-inspired elegance with contemporary luxury. Its exceptional hospitality, sophisticated accommodation and convenient location make it one of Hyderabad's most distinguished luxury destinations.",
+
+    exploreDestination: [
+      {
+        name: "Charminar",
+        description:
+          "The iconic symbol of Hyderabad, Charminar has stood at the heart of the city since 1591. Surrounded by bustling markets and historic streets, this magnificent monument is a must-visit for its architecture, history and vibrant atmosphere.",
+      },
+      {
+        name: "Golconda Fort",
+        description:
+          "One of India's most impressive hill forts, Golconda Fort is renowned for its remarkable acoustics, massive gateways and panoramic views of Hyderabad. The evening sound-and-light show brings its fascinating history to life.",
+      },
+      {
+        name: "Chowmahalla Palace",
+        description:
+          "The former seat of the Nizams of Hyderabad, Chowmahalla Palace showcases magnificent courtyards, elegant halls, royal artefacts and exquisite architecture that reflects the splendour of a bygone era.",
+      },
+      {
+        name: "Salar Jung Museum",
+        description:
+          "One of India's finest museums, the Salar Jung Museum houses an extraordinary collection of sculptures, paintings, manuscripts, textiles and antiques gathered from around the world.",
+      },
+      {
+        name: "Hussain Sagar",
+        description:
+          "This picturesque lake is one of Hyderabad's most popular attractions, featuring a towering Buddha statue at its centre. Visitors can enjoy boat rides, lakeside promenades and beautiful sunset views.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Rajiv Gandhi International Airport, Hyderabad",
+          code: "HYD",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Business Travellers",
+      "Couples",
+      "Families",
+      "Corporate Executives",
+      "Heritage Explorers",
+      "Food Enthusiasts",
+      "Hyderabad City Breaks"
+    ],
+
+    website: "https://www.theleela.com/the-leela-hyderabad",
+
+    map: "https://www.google.com/maps/place/The+Leela+Hyderabad/@17.4272385,78.4361444,17z/data=!4m9!3m8!1s0x3bcb9114d00e36cd:0xdee567eba2d5ed23!5m2!4m1!1i2!8m2!3d17.4272334!4d78.4387193!16s%2Fg%2F11v6wppv4x?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "the-malabar-house-kochi",
+    name: "The Malabar House, Kochi",
+    location: "Fort Kochi, Kerala",
+    category: "india",
+
+    image: "/Assets/hotels/The Malabar House, Kochi.jpg",
+    alt: "The Malabar House, Kochi, Fort Kochi, Kerala",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Located in the heart of Fort Kochi's historic quarter, The Malabar House is a charming boutique heritage hotel that beautifully captures the artistic soul and colonial legacy of Kerala's most iconic port city. Housed within a carefully restored heritage building, the hotel seamlessly blends Dutch, Portuguese and traditional Kerala influences with contemporary comforts. Its elegant architecture, vibrant artwork and intimate ambience create a unique retreat where history, culture and warm hospitality come together.\n\nEach individually designed room and suite reflects the character of the property, featuring handcrafted furnishings, curated artwork and modern amenities that ensure a comfortable stay. The hotel's tranquil courtyard, inviting swimming pool and acclaimed restaurant offer a peaceful escape after a day of exploring Fort Kochi's charming streets. Guests can savour authentic Kerala cuisine prepared with fresh local ingredients while experiencing the personalised service that has made The Malabar House one of Kochi's most celebrated boutique hotels.\n\nPerfectly positioned within walking distance of Fort Kochi's historic landmarks, art galleries and waterfront, the hotel provides an ideal base for discovering the city's fascinating blend of cultures. Whether admiring colonial architecture, watching the famous Chinese Fishing Nets at sunset or immersing yourself in Kochi's thriving art scene, The Malabar House offers an unforgettable heritage experience.",
+
+    why: "The Malabar House combines boutique luxury with authentic heritage charm. Its beautifully restored architecture, curated art collection and prime location in Fort Kochi make it one of Kerala's most distinctive and character-filled stays.",
+
+    exploreDestination: [
+      {
+        name: "Chinese Fishing Nets",
+        description:
+          "The iconic Chinese Fishing Nets have become the enduring symbol of Kochi. Operating for centuries along the waterfront, these traditional cantilevered fishing nets offer one of the city's most photographed sunset views.",
+      },
+      {
+        name: "St. Francis Church",
+        description:
+          "Believed to be the oldest European church in India, St. Francis Church is closely associated with the Portuguese explorer Vasco da Gama and reflects Fort Kochi's rich colonial heritage.",
+      },
+      {
+        name: "Mattancherry Palace",
+        description:
+          "Also known as the Dutch Palace, this historic landmark houses exquisite Kerala murals, royal artefacts and exhibits that showcase the history of the Cochin royal family.",
+      },
+      {
+        name: "Jew Town",
+        description:
+          "One of Kochi's most vibrant heritage precincts, Jew Town is famous for its antique shops, spice warehouses, artisan boutiques and beautifully preserved colonial-era buildings.",
+      },
+      {
+        name: "Paradesi Synagogue",
+        description:
+          "Built in 1568, the Paradesi Synagogue is the oldest active synagogue in the Commonwealth. Its hand-painted Chinese tiles, Belgian chandeliers and centuries-old artefacts make it a remarkable cultural landmark.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Cochin International Airport",
+          code: "COK",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Heritage Travellers",
+      "Couples",
+      "Honeymooners",
+      "Art & Culture Enthusiasts",
+      "Boutique Luxury Seekers",
+      "Families",
+      "Food Lovers",
+      "Kerala Heritage Holidays"
+    ],
+
+    website: "https://www.malabarhouse.com/",
+
+    map: "https://www.google.com/maps/place/The+Malabar+House,+Fort+Kochi/@9.964442,76.2368976,17z/data=!3m1!4b1!4m9!3m8!1s0x3b086d0578ead20b:0xef474d8f1a278ce9!5m2!4m1!1i2!8m2!3d9.9644367!4d76.2394725!16s%2Fg%2F11rnfbsfj6?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "the-mudhouse-marayoor-munnar",
+    name: "The Mudhouse Marayoor, Munnar",
+    location: "Marayoor, Kerala",
+    category: "india",
+
+    image: "/Assets/hotels/The Mud house Marayoor, Munnar.jpg",
+    alt: "The Mudhouse Marayoor, Munnar, Marayoor, Kerala",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Inspired by the timeless beauty of Marayoor's sandalwood forests and rolling hills, The Mudhouse Marayoor is a charming eco-luxury retreat that celebrates the simplicity of nature and Kerala's rich rural heritage. Built using sustainable materials and traditional earthen architecture, the property offers an authentic countryside experience without compromising on modern comfort. Surrounded by expansive farmlands, ancient dolmens and the pristine landscapes of the Western Ghats, it provides a peaceful escape for travellers seeking tranquillity, culture and meaningful experiences.\n\nThe thoughtfully designed cottages feature rustic interiors crafted with natural materials, complemented by modern amenities and private outdoor spaces overlooking the surrounding countryside. Guests can savour wholesome Kerala cuisine prepared with fresh local produce, explore organic farms, enjoy guided nature walks or simply unwind amidst the refreshing mountain air. Warm hospitality and personalised experiences create an atmosphere where guests can reconnect with nature at a relaxed pace.\n\nThe Mudhouse is ideally located for exploring Marayoor's unique attractions, including its famous sandalwood forests, prehistoric monuments, waterfalls and scenic mountain trails. Whether discovering the region's rich biodiversity, interacting with local communities or enjoying the serene beauty of the Western Ghats, every stay promises an unforgettable journey into one of Kerala's most distinctive landscapes.",
+
+    why: "The Mudhouse Marayoor offers an authentic eco-luxury experience where sustainable living, traditional architecture and Kerala's natural beauty come together. Its peaceful setting and immersive local experiences make it a perfect retreat for slow travellers and nature enthusiasts.",
+
+    exploreDestination: [
+      {
+        name: "Marayoor Sandalwood Forest",
+        description:
+          "Marayoor is home to Kerala's only natural sandalwood forests. Guided walks through these protected forests offer visitors an opportunity to learn about the region's unique ecosystem and the significance of sandalwood cultivation.",
+      },
+      {
+        name: "Muniyara Dolmens",
+        description:
+          "Dating back thousands of years, these fascinating prehistoric stone burial chambers provide a glimpse into the region's ancient civilisation and are among Marayoor's most significant archaeological attractions.",
+      },
+      {
+        name: "Chinnar Wildlife Sanctuary",
+        description:
+          "A biodiversity hotspot in the Western Ghats, Chinnar Wildlife Sanctuary is renowned for its rich wildlife, including the endangered grizzled giant squirrel, elephants, spotted deer and numerous bird species.",
+      },
+      {
+        name: "Thoovanam Waterfalls",
+        description:
+          "Reached via a scenic trek through the sanctuary, Thoovanam Waterfalls offers spectacular views and an opportunity to experience the pristine wilderness of the Western Ghats.",
+      },
+      {
+        name: "Sugarcane Farms & Local Village Experiences",
+        description:
+          "Marayoor is famous for its traditional sugarcane cultivation and jaggery production. Visitors can explore local farms, witness age-old farming practices and experience the warm hospitality and culture of the local communities.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Cochin International Airport",
+          code: "",
+          distance: "145 kms / 4 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Nature Lovers",
+      "Eco-Luxury Travellers",
+      "Couples",
+      "Honeymooners",
+      "Wellness Seekers",
+      "Families",
+      "Photography Enthusiasts",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://themudhouse.co.in/",
+
+    map: "https://www.google.com/maps/place/The+Mudhouse+Marayoor/@10.2382273,77.1526359,17z/data=!4m10!3m9!1s0x3b078251fe6e5abd:0x856ada2852febf74!5m3!1s2026-07-19!4m1!1i2!8m2!3d10.238222!4d77.1552108!16s%2Fg%2F11f553d7_g?entry=ttu&g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "the-oberoi-vindhyavilas-wildlife-resort-bandhavgarh",
+    name: "The Oberoi Vindhyavilas Wildlife Resort, Bandhavgarh",
+    location: "Bandhavgarh, Madhya Pradesh",
+    category: "india",
+
+    image: "/Assets/hotels/The Oberoi Vindhyavilas Madhya Pradesh.jpg",
+    alt: "The Oberoi Vindhyavilas Wildlife Resort, Bandhavgarh, Bandhavgarh, Madhya Pradesh",
+
+    accentClass: "hi--india-wildlife",
+
+    intro:
+      "Set on the fringes of the legendary Bandhavgarh National Park, The Oberoi Vindhyavilas Wildlife Resort is an exceptional luxury retreat that brings together the thrill of India's wilderness with the refined elegance of Oberoi hospitality. Surrounded by lush forests and inspired by the natural beauty of the Vindhya mountain range, the resort offers an immersive safari experience where guests can reconnect with nature without compromising on comfort. Every aspect of the property has been thoughtfully designed to complement its surroundings, creating an atmosphere of tranquillity and understated luxury.\n\nThe spacious luxury tents and villas blend contemporary comforts with safari-inspired design, featuring handcrafted furnishings, elegant interiors and private outdoor spaces that overlook the surrounding landscape. Guests can savour gourmet cuisine crafted from fresh regional ingredients, unwind with bespoke wellness experiences, relax by the swimming pool or simply enjoy the sounds of the forest from the privacy of their accommodation. Guided by Oberoi's renowned service philosophy, every stay is personalised to ensure unforgettable wildlife encounters and meaningful moments in nature.\n\nBandhavgarh National Park is regarded as one of India's finest tiger reserves, celebrated for its remarkable density of Bengal tigers and rich biodiversity. Alongside thrilling jeep safaris, guests can discover ancient caves, centuries-old temples and the historic Bandhavgarh Fort, making every visit a unique blend of wildlife, history and culture. Whether seeking adventure, relaxation or an intimate connection with nature, The Oberoi Vindhyavilas promises an extraordinary escape into the heart of Central India.",
+
+    why: "The Oberoi Vindhyavilas combines world-class luxury with one of India's most rewarding wildlife destinations. Elegant safari-style accommodation, impeccable Oberoi hospitality and unforgettable tiger safaris make every stay an extraordinary wilderness experience.",
+
+    exploreDestination: [
+      {
+        name: "Bandhavgarh National Park",
+        description:
+          "Renowned for having one of the highest densities of Bengal tigers in India, Bandhavgarh National Park is also home to leopards, sloth bears, Indian bison, deer and over 250 species of birds. Guided jeep safaris offer exceptional opportunities to experience the park's extraordinary wildlife and diverse landscapes.",
+      },
+      {
+        name: "Bandhavgarh Fort",
+        description:
+          "Perched atop a hill within the national park, the ancient Bandhavgarh Fort is believed to be over 2,000 years old. Visitors can explore its historic ruins, temples and breathtaking viewpoints while learning about the region's fascinating history and mythology.",
+      },
+      {
+        name: "Shesh Shaiya",
+        description:
+          "One of the park's most revered landmarks, Shesh Shaiya features a magnificent reclining statue of Lord Vishnu carved from stone. Surrounded by dense forest, the site holds immense religious and historical significance.",
+      },
+      {
+        name: "Nature Walks & Birdwatching",
+        description:
+          "Accompanied by expert naturalists, guided walks around the resort introduce guests to the rich flora, butterflies and birdlife that thrive around Bandhavgarh. These experiences offer a deeper appreciation of the park's delicate ecosystem beyond traditional game drives.",
+      },
+      {
+        name: "Village & Cultural Experiences",
+        description:
+          "Explore nearby rural villages to gain insight into the traditions, handicrafts and everyday lives of the local communities. These authentic experiences showcase the close relationship between the people of the region and the surrounding forests.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Dumna Airport, Jabalpur",
+          code: "",
+          distance: "170 kms / 4 hrs. by road",
+        },
+        {
+          name: "Khajuraho Airport",
+          code: "",
+          distance: "250 kms / 6 hrs. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Wildlife Enthusiasts",
+      "Luxury Safari Holidays",
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Wildlife Photographers",
+      "Families",
+      "Luxury Adventure Travellers"
+    ],
+
+    website: "https://www.oberoihotels.com/hotels-in-bandhavgarh-vindhyavilas-resort/",
+
+    map: "https://www.google.com/maps/place/The+Oberoi+Vindhyavilas+Wildlife+Resort,+Bandhavgarh/@23.6383211,80.8704269,12z/data=!4m13!1m2!2m1!1sThe+Oberoi+Vindhyavilas!3m9!1s0x3986a36dc8153775:0x8bf7784fc7cc1dc1!5m2!4m1!1i2!8m2!3d23.7455421!4d81.0769889!15sChdUaGUgT2Jlcm9pIFZpbmRoeWF2aWxhc5IBDHJlc29ydF9ob3RlbOABAA!16s%2Fg%2F11y7hxnn71?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D 0-",
+
+    tags: [
+      "Wildlife",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Wildlife",
+  },
+
+  {
+    id: "the-pavilions-himalayas-the-farm-nepal",
+    name: "The Pavilions Himalayas – The Farm, Nepal",
+    location: "Pokhara, Nepal",
+    category: "nepal",
+
+    image: "/Assets/hotels/The Pavilions Himalayas - The Farm Nepal.webp",
+    alt: "The Pavilions Himalayas – The Farm, Nepal, Pokhara, Nepal",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Rooted in the principles of sustainable luxury and community living, The Pavilions Himalayas – The Farm is an extraordinary eco-retreat nestled in the scenic hills outside Pokhara. Spread across an organic working farm, the property offers an immersive escape where breathtaking Himalayan landscapes, farm-to-table living and mindful hospitality come together in perfect harmony. Designed to reconnect guests with nature while supporting local communities, it is an ideal destination for those seeking authenticity, wellness and responsible travel.\n\nThe spacious villas blend contemporary comfort with traditional Nepalese craftsmanship, featuring natural materials, elegant interiors and panoramic views of the surrounding valleys and mountains. Guests can enjoy fresh organic cuisine prepared from produce grown on the farm, participate in yoga and wellness sessions, explore scenic hiking trails or simply unwind amidst the peaceful countryside. Every experience is thoughtfully curated to celebrate sustainability, local culture and the beauty of Nepal's natural environment.\n\nConveniently located near Pokhara, the retreat offers easy access to some of Nepal's most iconic attractions, from serene lakes and mountain viewpoints to traditional villages and adventure experiences. Whether embarking on a Himalayan trek, discovering Nepalese culture or enjoying a restorative escape, The Pavilions Himalayas promises an unforgettable stay.",
+
+    why: "The Pavilions Himalayas – The Farm delivers a unique blend of eco-conscious luxury, organic living and personalised hospitality. Its spectacular Himalayan setting and commitment to sustainability make it one of Nepal's most distinctive boutique retreats.",
+
+    exploreDestination: [
+      {
+        name: "Phewa Lake",
+        description:
+          "The heart of Pokhara, Phewa Lake is renowned for its tranquil waters, colourful wooden boats and magnificent reflections of the Annapurna Range. Visitors can enjoy boating, lakeside cafés and spectacular sunsets.",
+      },
+      {
+        name: "World Peace Pagoda",
+        description:
+          "Situated on a hill overlooking Pokhara, this striking white stupa offers panoramic views of Phewa Lake, the Annapurna Himalayas and the surrounding valleys, making it one of the city's most iconic viewpoints.",
+      },
+      {
+        name: "Sarangkot",
+        description:
+          "Famous for its breathtaking sunrise views over the Annapurna and Dhaulagiri ranges, Sarangkot is also one of Nepal's premier destinations for paragliding and scenic hiking.",
+      },
+      {
+        name: "Organic Farm Experiences",
+        description:
+          "Discover sustainable farming practices through guided tours of the property's working farm, interact with local farmers and enjoy fresh seasonal produce harvested directly from the estate.",
+      },
+      {
+        name: "Himalayan Nature Walks & Village Tours",
+        description:
+          "Explore picturesque villages, terraced fields and forest trails surrounding the retreat while experiencing authentic Nepalese culture, traditional lifestyles and stunning Himalayan scenery.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Pokhara International Airport, Nepal",
+          code: "PHH",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Eco-Luxury Travellers",
+      "Couples",
+      "Honeymooners",
+      "Wellness Retreats",
+      "Nature Lovers",
+      "Sustainable Travel Enthusiasts",
+      "Adventure Seekers",
+      "Himalayan Escapes"
+    ],
+
+    website: "https://www.pavilionshotels.com/destinations/himalayas/thefarm/",
+
+    map: "https://www.google.com/maps/place/The+Pavilions+Himalayas+The+Farm/@28.1808275,83.9291904,17z/data=!4m9!3m8!1s0x3995eab333daff15:0xbe73ad28f9139f07!5m2!4m1!1i2!8m2!3d28.1808228!4d83.9317653!16s%2Fg%2F11b6z4xjm3?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "the-postcard-dewa-bhutan",
+    name: "The Postcard Dewa Bhutan",
+    location: "Thimphu, Bhutan",
+    category: "bhutan",
+
+    image: "/Assets/hotels/The Post Card Dewa, Bhutan.jpg",
+    alt: "The Postcard Dewa Bhutan, Thimphu, Bhutan",
+
+    accentClass: "hi--bhutan-heritage",
+
+    intro:
+      "Inspired by Bhutan's philosophy of Gross National Happiness and the serenity of the Eastern Himalayas, The Postcard Dewa Bhutan is an intimate luxury retreat that offers a deeply immersive experience in the Kingdom's pristine mountain landscapes. Blending contemporary elegance with traditional Bhutanese craftsmanship, the hotel provides a peaceful sanctuary where breathtaking scenery, rich cultural heritage and personalised hospitality come together. Every aspect of the stay is thoughtfully curated to encourage relaxation, mindfulness and meaningful connections with the destination.\n\nThe spacious rooms and suites feature handcrafted timber interiors, locally inspired design elements and expansive windows that frame panoramic views of the surrounding valleys and mountains. Guests can savour authentic Bhutanese cuisine alongside international favourites, enjoy bespoke wellness experiences, explore nearby monasteries or simply unwind amidst the calm and natural beauty of the Himalayas. The personalised service and intimate atmosphere ensure every stay is both enriching and memorable.\n\nIdeally positioned for discovering Bhutan's cultural landmarks, scenic valleys and spiritual traditions, The Postcard Dewa Bhutan serves as an excellent base for exploring one of the world's most captivating destinations. Whether visiting ancient monasteries, hiking through pristine forests or experiencing Bhutan's vibrant festivals, guests are promised an unforgettable Himalayan escape.",
+
+    why: "The Postcard Dewa Bhutan offers an elegant blend of luxury, authenticity and tranquillity. Its personalised experiences, spectacular mountain setting and warm Bhutanese hospitality make it an exceptional retreat for travellers seeking a deeper connection with the destination.",
+
+    exploreDestination: [
+      {
+        name: "Paro Taktsang",
+        description:
+          "Also known as the Tiger's Nest Monastery, this iconic cliffside monastery is Bhutan's most celebrated landmark. The rewarding hike offers spectacular views and an unforgettable spiritual experience.",
+      },
+      {
+        name: "Rinpung Dzong",
+        description:
+          "One of Bhutan's finest examples of traditional architecture, Rinpung Dzong is an impressive fortress-monastery renowned for its intricate woodwork, colourful murals and cultural significance.",
+      },
+      {
+        name: "National Museum of Bhutan",
+        description:
+          "Housed in a historic watchtower, the museum showcases Bhutan's rich heritage through fascinating collections of traditional art, textiles, weapons, religious artefacts and cultural exhibits.",
+      },
+      {
+        name: "Traditional Bhutanese Village Experiences",
+        description:
+          "Discover Bhutan's rural way of life through guided village walks, interactions with local communities and opportunities to experience traditional farming, handicrafts and authentic Bhutanese hospitality.",
+      },
+      {
+        name: "Himalayan Nature Walks & Wellness",
+        description:
+          "Explore peaceful forest trails, enjoy birdwatching excursions or rejuvenate with wellness experiences inspired by Bhutan's holistic philosophy, all while surrounded by spectacular Himalayan scenery.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Paro International Airport, Bhutan",
+          code: "PBH",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Luxury Travellers",
+      "Wellness Seekers",
+      "Cultural Explorers",
+      "Nature Lovers",
+      "Himalayan Holidays",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://www.postcardresorts.com/hotels/the-postcard-dewa",
+
+    map: "https://www.google.com/maps/place/The+Postcard+Dewa,+Thimphu,+Bhutan/@27.3916398,89.5961196,17z/data=!4m9!3m8!1s0x39e19179464ee2ab:0x4192e55a3d307b40!5m2!4m1!1i2!8m2!3d27.3916351!4d89.5986945!16s%2Fg%2F11ff5f1y8w?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "the-sarai-at-toria-khajuraho",
+    name: "The Sarai at Toria, Khajuraho",
+    location: "Khajuraho, Madhya Pradesh",
+    category: "india",
+
+   image: "/Assets/hotels/The Sarai at Toria, Khajuraho.jpg",
+    alt: "The Sarai at Toria, Khajuraho, Khajuraho, Madhya Pradesh",
+
+    accentClass: "hi--india-heritage",
+
+    intro:
+      "Celebrating the timeless heritage of Bundelkhand and the natural beauty of central India, The Sarai at Toria is an intimate boutique retreat located on the outskirts of Khajuraho. Designed as a peaceful countryside sanctuary, the property combines rustic elegance with thoughtful luxury, offering guests an authentic experience inspired by the region's rich history, village life and wildlife. Its charming architecture, lush gardens and personalised hospitality create a welcoming atmosphere where relaxation and exploration go hand in hand.\n\nThe spacious cottages and suites feature handcrafted interiors, locally inspired décor and modern comforts that blend seamlessly with the surrounding landscape. Guests can enjoy freshly prepared regional cuisine made with seasonal ingredients, unwind by the swimming pool, explore nearby villages on guided excursions or simply relax amidst the serene rural setting. Every stay is enhanced by warm hospitality and carefully curated experiences that showcase the cultural richness of Khajuraho and its surroundings.\n\nPerfectly positioned for discovering the UNESCO-listed temples of Khajuraho as well as the forests and wildlife of nearby reserves, The Sarai at Toria offers an ideal base for travellers seeking history, culture and nature in equal measure.",
+
+    why: "The Sarai at Toria offers an authentic boutique experience that beautifully combines heritage, rural charm and personalised hospitality. Its peaceful setting and curated local experiences make it one of the most distinctive stays near Khajuraho.",
+
+    exploreDestination: [
+      {
+        name: "Khajuraho Group of Monuments",
+        description:
+          "A UNESCO World Heritage Site, the Khajuraho temples are celebrated for their extraordinary sandstone architecture, intricate sculptures and remarkable craftsmanship dating back to the Chandela dynasty.",
+      },
+      {
+        name: "Raneh Falls",
+        description:
+          "Located within the Ken River Canyon, Raneh Falls is renowned for its dramatic volcanic rock formations and seasonal waterfalls, offering one of the region's most spectacular natural landscapes.",
+      },
+      {
+        name: "Panna National Park",
+        description:
+          "Just a short drive from Khajuraho, Panna National Park is home to Bengal tigers, leopards, gharials, sloth bears and an impressive variety of birdlife. Jeep safaris and boat rides provide memorable wildlife experiences.",
+      },
+      {
+        name: "Village & Cultural Experiences",
+        description:
+          "Explore nearby Bundelkhand villages to experience traditional lifestyles, local crafts and regional cuisine while interacting with local communities and learning about the area's rich cultural heritage.",
+      },
+      {
+        name: "Ken Gharial Sanctuary",
+        description:
+          "Stretching along the Ken River, this protected sanctuary is home to the endangered gharial, marsh crocodiles and numerous bird species, making it an excellent destination for nature lovers and photographers.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Khajuraho Airport",
+          code: "HJR",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Heritage Travellers",
+      "Couples",
+      "Nature Lovers",
+      "Wildlife Enthusiasts",
+      "Cultural Explorers",
+      "Boutique Luxury Seekers",
+      "Families",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://www.saraiattoria.com/",
+
+    map: "https://www.google.com/maps/place/Sarai+at+Toria/@24.7431078,80.0055676,17z/data=!3m1!4b1!4m9!3m8!1s0x3982fb5883f060c3:0xe84b61dd6286f2d4!5m2!4m1!1i2!8m2!3d24.743103!4d80.0081425!16s%2Fg%2F1tgfv0lh?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
+  {
+    id: "the-soaltee-kathmandu-nepal",
+    name: "The Soaltee Kathmandu, Nepal",
+    location: "Kathmandu, Nepal",
+    category: "nepal",
+
+    image: "/Assets/hotels/The Soal Tee Kathmandu.jpg",
+    alt: "The Soaltee Kathmandu, Nepal, Kathmandu, Nepal",
+
+    accentClass: "hi--india-mountain",
+
+    intro:
+      "Set within beautifully landscaped gardens in the heart of Kathmandu, The Soaltee Kathmandu is a landmark luxury hotel that blends timeless elegance with warm Nepalese hospitality. Renowned for its impeccable service and tranquil surroundings, the hotel offers a peaceful retreat while providing convenient access to the capital's rich cultural heritage. Combining contemporary comforts with classic sophistication, it is an ideal choice for travellers seeking both relaxation and exploration.\n\nThe spacious rooms and suites feature refined interiors, modern amenities and sweeping views of the gardens, cityscape or distant Himalayan foothills. Guests can savour a diverse selection of Nepalese, Asian and international cuisine, relax beside the outdoor swimming pool, rejuvenate at the wellness spa or enjoy leisurely strolls through the hotel's expansive gardens. Thoughtful hospitality and personalised service ensure a memorable stay for every guest.\n\nConveniently located close to Kathmandu's UNESCO World Heritage Sites and vibrant commercial districts, The Soaltee Kathmandu serves as an excellent base for discovering Nepal's fascinating history, spiritual landmarks and colourful local culture.",
+
+    why: "The Soaltee Kathmandu combines classic luxury, lush surroundings and exceptional hospitality in one of the city's most prestigious locations. Its elegant ambience and convenient setting make it an ideal gateway to Nepal's cultural treasures.",
+
+    exploreDestination: [
+      {
+        name: "Swayambhunath",
+        description:
+          "One of Nepal's oldest and most sacred Buddhist monuments, Swayambhunath—also known as the Monkey Temple—offers panoramic views of Kathmandu Valley and a deeply spiritual atmosphere.",
+      },
+      {
+        name: "Kathmandu Durbar Square",
+        description:
+          "A UNESCO World Heritage Site, Kathmandu Durbar Square is home to magnificent palaces, temples and intricately carved courtyards that showcase Nepal's royal history and architectural heritage.",
+      },
+      {
+        name: "Pashupatinath Temple",
+        description:
+          "Among the holiest Hindu temples dedicated to Lord Shiva, Pashupatinath is an iconic pilgrimage destination situated on the sacred Bagmati River.",
+      },
+      {
+        name: "Boudhanath",
+        description:
+          "One of the largest Buddhist stupas in the world, Boudhanath is the spiritual heart of Tibetan Buddhism in Nepal, surrounded by monasteries, cafés and vibrant local markets.",
+      },
+      {
+        name: "Heritage & Local Experiences",
+        description:
+          "Explore Kathmandu's bustling bazaars, artisan workshops and traditional Newari neighbourhoods while discovering the city's rich history, authentic cuisine and vibrant cultural traditions.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Tribhuvan International Airport, Nepal",
+          code: "KTM",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Travellers",
+      "Business Travellers",
+      "Couples",
+      "Families",
+      "Cultural Explorers",
+      "Heritage Holidays",
+      "Wellness Seekers",
+      "Nepal City Escapes"
+    ],
+
+    website: "https://soaltee.com/",
+
+    map: "https://www.google.com/maps/place/The+Soaltee+Kathmandu,+Autograph+Collection/@27.6982068,85.2890067,17z/data=!4m9!3m8!1s0x39eb18609488cdb7:0x44edd8fc9a17af63!5m2!4m1!1i2!8m2!3d27.6982021!4d85.2915816!16s%2Fg%2F1tcv4qxf?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Mountain Retreat",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Mountain Retreat",
+  },
+
+  {
+    id: "vivanta-coimbatore",
+    name: "Vivanta Coimbatore",
+    location: "Coimbatore, Tamil Nadu",
+    category: "india",
+
+    image: "/Assets/hotels/Vivanta Coimbatore.jpg",
+    alt: "Vivanta Coimbatore, Coimbatore, Tamil Nadu",
+
+    accentClass: "hi--india-city",
+
+    intro:
+      "Located in the heart of Coimbatore, one of South India's fastest-growing commercial and industrial hubs, Vivanta Coimbatore offers a contemporary blend of business convenience and warm hospitality. Ideally situated close to the city's business districts, shopping centres and cultural landmarks, the hotel is an excellent choice for both corporate travellers and leisure guests exploring the Kongu region of Tamil Nadu. With its modern design, vibrant ambience and personalised service, Vivanta creates a welcoming retreat where comfort and efficiency go hand in hand.\n\nThe hotel's stylishly designed rooms and suites feature contemporary interiors, modern amenities and thoughtful touches that cater to today's discerning traveller. Guests can enjoy a range of dining experiences featuring authentic South Indian delicacies alongside global cuisine, unwind at the rooftop swimming pool, rejuvenate at the spa or maintain their fitness routine at the well-equipped fitness centre. Whether visiting for a business conference, a family holiday or a gateway to the Nilgiris, Vivanta Coimbatore delivers a seamless hospitality experience.\n\nCoimbatore is often referred to as the \"Manchester of South India\" owing to its thriving textile industry, yet it also serves as the gateway to picturesque hill stations, wildlife sanctuaries and ancient temples. From spiritual landmarks and scenic mountain escapes to coffee plantations and wildlife adventures, the city offers diverse experiences that make it an ideal destination for both short stays and extended holidays.",
+
+    why: "Vivanta Coimbatore combines contemporary comfort with exceptional hospitality in one of South India's most dynamic cities. Its central location, excellent dining options and easy access to the Nilgiris make it an ideal base for both business and leisure travellers.",
+
+    exploreDestination: [
+      {
+        name: "Marudamalai Temple",
+        description:
+          "One of Tamil Nadu's most revered hill temples, Marudamalai is dedicated to Lord Murugan and offers panoramic views of the surrounding countryside. The peaceful setting and impressive Dravidian architecture make it one of Coimbatore's most popular attractions.",
+      },
+      {
+        name: "Isha Yoga Center",
+        description:
+          "Home to the iconic Adiyogi Shiva Statue, the Isha Yoga Center is an internationally recognised spiritual destination. Visitors can experience meditation spaces, yoga programmes and the serene atmosphere at the foothills of the Velliangiri Mountains.",
+      },
+      {
+        name: "Siruvani Waterfalls",
+        description:
+          "Nestled amidst lush forests, Siruvani Waterfalls is renowned for its crystal-clear water, often considered among the sweetest in Asia. The scenic drive and tranquil surroundings make it an ideal excursion for nature lovers.",
+      },
+      {
+        name: "VOC Park and Zoo",
+        description:
+          "A popular attraction for families, VOC Park offers landscaped gardens, a children's play area and a small zoo featuring native wildlife. It is an enjoyable place to relax within the city.",
+      },
+      {
+        name: "Nilgiri Mountains",
+        description:
+          "Coimbatore serves as the gateway to the Nilgiris, with hill stations such as Ooty and Coonoor just a few hours away. Tea estates, scenic viewpoints and heritage rail journeys make this one of South India's most rewarding day trips.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Nearest Airport: Coimbatore International Airport",
+          code: "CJB",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Business Travellers",
+      "Couples",
+      "Families",
+      "Weekend Getaways",
+      "Nature Lovers",
+      "Temple Tours",
+      "Nilgiri Holidays",
+      "Luxury City Breaks"
+    ],
+
+    website: "",
+
+    map: "https://www.google.com/maps/place/Vivanta+Coimbatore/@11.002219,76.973638,17z/data=!3m1!4b1!4m9!3m8!1s0x3ba859a57053c22b:0x59758803dbf21a64!5m2!4m1!1i2!8m2!3d11.002219!4d76.973638!16s%2Fm%2F0sggw1j?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "City Luxury",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "City Luxury",
+  },
+
+  {
+    id: "wild-coast-tented-lodge-relais-chteaux-sri-lanka",
+    name: "Wild Coast Tented Lodge – Relais & Châteaux, Sri Lanka",
+    location: "Yala, Sri Lanka",
+    category: "srilanka",
+
+    image: "/Assets/hotels/Wild Cost Tented Lodge, Sri Lanka.webp",
+    alt: "Wild Coast Tented Lodge – Relais & Châteaux, Sri Lanka, Yala, Sri Lanka",
+
+    accentClass: "hi--india-coast",
+
+    intro:
+      "Inspired by the untamed wilderness of Sri Lanka's southern coastline, Wild Coast Tented Lodge – Relais & Châteaux is an extraordinary luxury safari retreat where the jungle meets the Indian Ocean. Bordering the renowned Yala National Park, the lodge is thoughtfully designed to blend seamlessly into its surroundings, with cocoon-shaped canvas suites, sustainable architecture and breathtaking natural landscapes. Offering an exceptional balance of adventure and indulgence, it provides one of the world's most distinctive wildlife experiences.\n\nThe beautifully appointed tented suites feature handcrafted furnishings, freestanding copper bathtubs, spacious outdoor decks and private plunge pools in selected accommodations. Guests can savour gourmet cuisine inspired by Sri Lankan flavours, relax at the open-air spa, enjoy sundowners overlooking the ocean or embark on expertly guided safari adventures. Every experience is enhanced by personalised Relais & Châteaux hospitality and an unwavering commitment to conservation.\n\nWith direct access to Yala's remarkable wilderness, the lodge is perfectly positioned for unforgettable encounters with Sri Lanka's iconic wildlife. From tracking elusive leopards and observing elephants in their natural habitat to enjoying pristine beaches and spectacular sunsets, Wild Coast Tented Lodge offers an immersive journey into one of South Asia's most extraordinary landscapes.",
+
+    why: "Wild Coast Tented Lodge delivers a truly unique luxury safari experience where sophisticated design, exceptional wildlife encounters and breathtaking coastal scenery come together in perfect harmony.",
+
+    exploreDestination: [
+      {
+        name: "Yala National Park",
+        description:
+          "Sri Lanka's most celebrated national park is renowned for having one of the highest leopard densities in the world. Visitors can also encounter elephants, sloth bears, crocodiles, spotted deer and an incredible diversity of birdlife during expertly guided safari drives.",
+      },
+      {
+        name: "Palatupana Beach",
+        description:
+          "Located adjacent to the lodge, this pristine stretch of coastline offers dramatic ocean views, peaceful beach walks and spectacular sunsets where the wilderness meets the sea.",
+      },
+      {
+        name: "Bundala National Park",
+        description:
+          "A UNESCO Biosphere Reserve, Bundala National Park is famous for its wetlands and abundant birdlife, attracting flamingos, pelicans, painted storks and numerous migratory species.",
+      },
+      {
+        name: "Kataragama Temple",
+        description:
+          "One of Sri Lanka's most important pilgrimage sites, Kataragama is revered by Buddhists, Hindus and Muslims alike, offering visitors a fascinating insight into the island's diverse spiritual traditions.",
+      },
+      {
+        name: "Safari & Conservation Experiences",
+        description:
+          "Join experienced naturalists for morning and evening game drives, guided bush walks and wildlife talks that highlight the region's unique biodiversity and ongoing conservation initiatives.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Mattala Rajapaksa International Airport, Sri Lanka",
+          code: "HRI",
+          distance: "50 kms / 1.5 hrs. approx. by road.",
+        },
+        {
+          name: "Bandaranaike International Airport, Sri Lanka",
+          code: "CMB",
+          distance: "300 kms. / 4.5 hrs. approx. by road.",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Luxury Safari Travellers",
+      "Wildlife Enthusiasts",
+      "Couples",
+      "Honeymooners",
+      "Nature Lovers",
+      "Birdwatchers",
+      "Adventure Seekers",
+      "Exclusive Sri Lanka Holidays"
+    ],
+
+    website: "https://www.relaischateaux.com/us/hotel/wild-coast-tented-lodge/",
+
+    map: "https://www.google.com/maps/place/Wild+Coast+Tented+Lodge+-+Relais+%26+Chateaux/@6.2623148,81.4021272,16z/data=!4m9!3m8!1s0x3ae683f2f3fe8905:0x378853a862f3e0b9!5m2!4m1!1i2!8m2!3d6.2623095!4d81.4068908!16s%2Fg%2F11dfjygr52?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Beach & Coast",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Beach & Coast",
+  },
+
+  {
+    id: "zhiwa-ling-heritage-paro-bhutan",
+    name: "Zhiwa Ling Heritage, Bhutan",
+    location: "Paro Valley, Bhutan",
+    category: "bhutan",
+
+    image: "/Assets/hotels/Zhiwaling Heritage, Bhutan.jpg",
+    alt: "Zhiwa Ling Heritage, Bhutan, Paro Valley, Bhutan",
+
+    accentClass: "hi--bhutan-heritage",
+
+    intro:
+      "Celebrating Bhutan's rich cultural heritage and timeless architectural traditions, Zhiwa Ling Heritage is an award-winning luxury retreat that offers an authentic Bhutanese experience in the heart of the Paro Valley. Crafted by local artisans using traditional techniques and natural materials, the property seamlessly combines centuries-old craftsmanship with refined contemporary comforts. Every corner reflects the kingdom's deep-rooted spirituality, warm hospitality and commitment to preserving its unique cultural identity, making it one of Bhutan's most distinctive luxury stays.\n\nThe beautifully appointed rooms and suites showcase hand-carved woodwork, traditional murals, handcrafted furnishings and modern amenities that create an atmosphere of understated elegance. Guests can savour authentic Bhutanese cuisine alongside international favourites, rejuvenate with holistic spa therapies, meditate in the property's private temple or simply unwind while enjoying panoramic views of the surrounding mountains and valleys. The personalised service ensures an enriching and memorable stay.\n\nPerfectly located near Bhutan's most iconic cultural and natural attractions, Zhiwa Ling Heritage provides an exceptional base for discovering the kingdom's monasteries, fortresses and pristine Himalayan landscapes. Whether embarking on scenic hikes, attending vibrant festivals or exploring ancient spiritual sites, guests are immersed in the authentic spirit of Bhutan.",
+
+    why: "Zhiwa Ling Heritage offers an extraordinary blend of Bhutanese tradition and refined luxury. Its authentic architecture, exceptional hospitality and immersive cultural experiences create a truly unforgettable Himalayan retreat.",
+
+    exploreDestination: [
+      {
+        name: "Paro Taktsang",
+        description:
+          "Widely known as the Tiger's Nest Monastery, this iconic cliffside monastery is Bhutan's most revered landmark. The rewarding hike offers breathtaking views and an unforgettable spiritual experience.",
+      },
+      {
+        name: "Rinpung Dzong",
+        description:
+          "One of Bhutan's finest fortress-monasteries, Rinpung Dzong is admired for its magnificent architecture, intricate wood carvings and colourful Buddhist murals that reflect the country's rich spiritual heritage.",
+      },
+      {
+        name: "National Museum of Bhutan",
+        description:
+          "Housed in a historic watchtower overlooking Paro Valley, the museum presents fascinating collections of Bhutanese art, textiles, traditional weapons and religious artefacts.",
+      },
+      {
+        name: "Traditional Bhutanese Village Walks",
+        description:
+          "Experience the charm of rural Bhutan through guided walks that offer opportunities to meet local families, visit traditional farmhouses and gain insight into the country's unique customs, architecture and way of life.",
+      },
+      {
+        name: "Wellness & Spiritual Experiences",
+        description:
+          "Reconnect with mind and body through meditation sessions, traditional hot stone baths, spa treatments and visits to nearby monasteries that embody Bhutan's enduring Buddhist traditions.",
+      }
+    ],
+
+    howToReach: {
+      airports: [
+        {
+          name: "Paro International Airport, Bhutan",
+          code: "PBH",
+          distance: "Nearest airport",
+        }
+      ],
+    },
+
+    idealFor: [
+      "Couples",
+      "Honeymooners",
+      "Luxury Travellers",
+      "Cultural Explorers",
+      "Wellness Seekers",
+      "Nature Lovers",
+      "Himalayan Holidays",
+      "Slow Travel Experiences"
+    ],
+
+    website: "https://www.zhiwalingheritage.com/",
+
+    map: "https://www.google.com/maps/place/Zhiwaling+Heritage+Hotel/@27.4648172,89.3494876,17z/data=!4m9!3m8!1s0x39e19de85a6c39b7:0x546a1f3ae162796b!5m2!4m1!1i2!8m2!3d27.4648125!4d89.3520625!16s%2Fg%2F1tf194y9?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
+
+    tags: [
+      "Heritage",
+    ],
+
+    isFeatured: false,
+    isRecommended: true,
+
+    categoryTag: "Heritage",
+  },
+
 ];
