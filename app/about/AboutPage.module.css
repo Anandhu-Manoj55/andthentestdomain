@@ -12,11 +12,11 @@
 
 .profileImage {
   border-radius: 10%;
-  margin-top: 20px;
+  margin-top: 0px;
   width: 250px;
   height: 250px;
   object-fit: cover;
-  border: 4px solid var(--cb);
+  border: 0px solid var(--cb);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 

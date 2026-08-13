@@ -81,7 +81,7 @@ export const AboutPage = () => {
               className={styles.profileImage}
             />
           </div>
-          <div className={styles.subcontinent__rule}></div>
+          {/* <div className={styles.subcontinent__rule}></div> */}
           <div className={styles.subcontinent__body}>
             <p>
               The Indian subcontinent covers roughly 4.5 million square kilometres and
