@@ -105,6 +105,33 @@
   background: var(--cp);
 }
 
+.formFieldError {
+  background: #fff8f8;
+  border-left: 2px solid #c0392b;
+}
+
+.errorMsg {
+  font-family: var(--fb);
+  font-size: 0.65rem;
+  color: #c0392b;
+  padding: 0 1rem 0.6rem;
+  display: block;
+  letter-spacing: 0.02rem;
+}
+
+.required {
+  color: #c0392b;
+  margin-left: 2px;
+}
+
+.optionalTag {
+  color: var(--cs);
+  font-size: 0.5rem;
+  letter-spacing: 0.08rem;
+  text-transform: none;
+  font-weight: 400;
+}
+
 .formTextarea {
   resize: vertical;
   min-height: 160px;
@@ -187,8 +214,15 @@
   text-transform: uppercase;
 }
 
-.formSubmit:hover {
+.formSubmit:hover:not(:disabled) {
   background: var(--ci);
+}
+
+.formSubmitLoading,
+.formSubmit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  letter-spacing: 0.08rem;
 }
 
 .formSuccess {

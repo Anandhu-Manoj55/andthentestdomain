@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { toast, Toaster } from "sonner";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 import styles from "./page.module.css";
 
 const destinations = ["India", "Bhutan", "Nepal", "Sri Lanka"];
@@ -22,20 +23,59 @@ const budgets = [
   "$20,000+ pp",
 ];
 
+// ── Validation helpers ────────────────────────────────────────────────────────
+
+function validateEmail(email: string): string | null {
+  if (!email.trim()) return "Email address is required.";
+  // RFC-5322 simplified pattern
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if (!re.test(email.trim())) return "Please enter a valid email address.";
+  return null;
+}
+
+function validatePhone(phone: string): string | null {
+  if (!phone.trim()) return null; // optional field
+  // Try to parse internationally; fall back to a raw digit-count check
+  const parsed = parsePhoneNumberFromString(phone.trim());
+  if (parsed && parsed.isValid()) return null;
+  // Accept if it looks like a number with 7–15 digits after stripping spaces/dashes
+  const digits = phone.replace(/[\s\-().+]/g, "");
+  if (/^\d{7,15}$/.test(digits)) return null;
+  return "Please enter a valid phone number (e.g. +1 212 000 0000).";
+}
+
+type FormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  travelDates: string;
+  groupSize: string;
+  budget: string;
+  message: string;
+};
+
+type FieldErrors = Partial<Record<keyof FormState, string>>;
+
+const EMPTY_FORM: FormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  travelDates: "",
+  groupSize: "",
+  budget: "",
+  message: "",
+};
+
 export default function ContactPage() {
   const [selectedDests, setSelectedDests] = useState<string[]>([]);
   const [selectedExp, setSelectedExp] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    travelDates: "",
-    groupSize: "",
-    budget: "",
-    message: "",
-  });
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState<FormState>(EMPTY_FORM);
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
 
   const toggleDest = (d: string) =>
     setSelectedDests((prev) =>
@@ -47,9 +87,107 @@ export default function ContactPage() {
       prev.includes(e) ? prev.filter((x) => x !== e) : [...prev, e]
     );
 
-  const handleSubmit = (ev: React.FormEvent) => {
+  // Live-validate a single field after it has been touched
+  const validateField = (name: keyof FormState, value: string): string | null => {
+    switch (name) {
+      case "firstName":
+        return value.trim() ? null : "First name is required.";
+      case "lastName":
+        return value.trim() ? null : "Last name is required.";
+      case "email":
+        return validateEmail(value);
+      case "phone":
+        return validatePhone(value);
+      default:
+        return null;
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (touched[name as keyof FormState]) {
+      const err = validateField(name as keyof FormState, value);
+      setErrors((prev) => ({ ...prev, [name]: err ?? undefined }));
+    }
+  };
+
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    const err = validateField(name as keyof FormState, value);
+    setErrors((prev) => ({ ...prev, [name]: err ?? undefined }));
+  };
+
+  // Full validation before submit
+  const validateAll = (): boolean => {
+    const newErrors: FieldErrors = {};
+    const fields: (keyof FormState)[] = ["firstName", "lastName", "email", "phone"];
+    let valid = true;
+    fields.forEach((f) => {
+      const err = validateField(f, form[f]);
+      if (err) {
+        newErrors[f] = err;
+        valid = false;
+      }
+    });
+    setErrors(newErrors);
+    setTouched({ firstName: true, lastName: true, email: true, phone: true });
+    return valid;
+  };
+
+  const handleSubmit = async (ev: React.FormEvent) => {
     ev.preventDefault();
-    setSubmitted(true);
+
+    if (!validateAll()) {
+      toast.warning("Please fix the highlighted fields before submitting.", {
+        description: "Check the form for validation errors.",
+        duration: 4000,
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    const toastId = toast.loading("Sending your enquiry…");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          destinations: selectedDests,
+          experiences: selectedExp,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Submission failed.");
+      }
+
+      toast.success("Enquiry sent — we'll be in touch shortly!", {
+        id: toastId,
+        description: "A specialist will respond within 24 hours.",
+        duration: 6000,
+      });
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong.";
+      toast.error("Failed to send enquiry", {
+        id: toastId,
+        description: message,
+        duration: 6000,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const steps = [
@@ -77,6 +215,18 @@ export default function ContactPage() {
 
   return (
     <main>
+      {/* Sonner toast container */}
+      <Toaster
+        position="top-right"
+        richColors
+        toastOptions={{
+          style: {
+            fontFamily: "var(--fb, sans-serif)",
+            fontSize: "0.875rem",
+          },
+        }}
+      />
+
       <div className={styles.page}>
         {/* ── LEFT — FORM ─────────────────────────────────── */}
         <div className={styles.formCol}>
@@ -111,64 +261,100 @@ export default function ContactPage() {
             >
               {/* Name row */}
               <div className={styles.formRow}>
-                <div className={styles.formField}>
+                <div className={`${styles.formField} ${errors.firstName ? styles.formFieldError : ""}`}>
                   <label className={styles.formLabel} htmlFor="firstName">
-                    First name
+                    First name <span aria-hidden="true" className={styles.required}>*</span>
                   </label>
                   <input
                     id="firstName"
+                    name="firstName"
                     className={styles.formInput}
                     type="text"
                     placeholder="Alexandra"
                     value={form.firstName}
-                    onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                    required
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    aria-required="true"
+                    aria-describedby={errors.firstName ? "firstName-error" : undefined}
+                    aria-invalid={!!errors.firstName}
                   />
+                  {errors.firstName && (
+                    <span id="firstName-error" className={styles.errorMsg} role="alert">
+                      {errors.firstName}
+                    </span>
+                  )}
                 </div>
-                <div className={styles.formField}>
+                <div className={`${styles.formField} ${errors.lastName ? styles.formFieldError : ""}`}>
                   <label className={styles.formLabel} htmlFor="lastName">
-                    Last name
+                    Last name <span aria-hidden="true" className={styles.required}>*</span>
                   </label>
                   <input
                     id="lastName"
+                    name="lastName"
                     className={styles.formInput}
                     type="text"
                     placeholder="Mitchell"
                     value={form.lastName}
-                    onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                    required
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    aria-required="true"
+                    aria-describedby={errors.lastName ? "lastName-error" : undefined}
+                    aria-invalid={!!errors.lastName}
                   />
+                  {errors.lastName && (
+                    <span id="lastName-error" className={styles.errorMsg} role="alert">
+                      {errors.lastName}
+                    </span>
+                  )}
                 </div>
               </div>
 
               {/* Email / Phone row */}
               <div className={styles.formRow}>
-                <div className={styles.formField}>
+                <div className={`${styles.formField} ${errors.email ? styles.formFieldError : ""}`}>
                   <label className={styles.formLabel} htmlFor="email">
-                    Email address
+                    Email address <span aria-hidden="true" className={styles.required}>*</span>
                   </label>
                   <input
                     id="email"
+                    name="email"
                     className={styles.formInput}
                     type="email"
                     placeholder="alex@email.com"
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    required
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    aria-required="true"
+                    aria-describedby={errors.email ? "email-error" : undefined}
+                    aria-invalid={!!errors.email}
                   />
+                  {errors.email && (
+                    <span id="email-error" className={styles.errorMsg} role="alert">
+                      {errors.email}
+                    </span>
+                  )}
                 </div>
-                <div className={styles.formField}>
+                <div className={`${styles.formField} ${errors.phone ? styles.formFieldError : ""}`}>
                   <label className={styles.formLabel} htmlFor="phone">
-                    Phone (optional)
+                    Phone <span className={styles.optionalTag}>(optional)</span>
                   </label>
                   <input
                     id="phone"
+                    name="phone"
                     className={styles.formInput}
                     type="tel"
                     placeholder="+1 212 000 0000"
                     value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
+                    aria-invalid={!!errors.phone}
                   />
+                  {errors.phone && (
+                    <span id="phone-error" className={styles.errorMsg} role="alert">
+                      {errors.phone}
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -220,11 +406,12 @@ export default function ContactPage() {
                   </label>
                   <input
                     id="travelDates"
+                    name="travelDates"
                     className={styles.formInput}
                     type="text"
                     placeholder="e.g. November 2025, 3 weeks"
                     value={form.travelDates}
-                    onChange={(e) => setForm({ ...form, travelDates: e.target.value })}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className={styles.formField}>
@@ -233,11 +420,12 @@ export default function ContactPage() {
                   </label>
                   <input
                     id="groupSize"
+                    name="groupSize"
                     className={styles.formInput}
                     type="text"
                     placeholder="e.g. 2 adults, 1 child"
                     value={form.groupSize}
-                    onChange={(e) => setForm({ ...form, groupSize: e.target.value })}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -250,9 +438,10 @@ export default function ContactPage() {
                   </label>
                   <select
                     id="budget"
+                    name="budget"
                     className={styles.formSelect}
                     value={form.budget}
-                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                    onChange={handleChange}
                   >
                     <option value="">Select a range</option>
                     {budgets.map((b) => (
@@ -272,10 +461,11 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     className={styles.formTextarea}
                     placeholder="Share anything that helps us understand what you're looking for — dream experiences, places you've been, things you want to avoid..."
                     value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -288,10 +478,12 @@ export default function ContactPage() {
                 </p>
                 <button
                   type="submit"
-                  className={styles.formSubmit}
+                  className={`${styles.formSubmit} ${loading ? styles.formSubmitLoading : ""}`}
                   id="contact-submit"
+                  disabled={loading}
+                  aria-busy={loading}
                 >
-                  Send my enquiry
+                  {loading ? "Sending…" : "Send my enquiry"}
                 </button>
               </div>
             </form>
@@ -312,7 +504,7 @@ export default function ContactPage() {
                   </a>
                 </p>
                 <p className={styles.sbOfficeLine}>
-                  <a href="tel:+91 8129271155">+91 8129271155</a>
+                  <a href="tel:+918129271155">+91 8129271155</a>
                 </p>
               </div>
               <div className={styles.sbOffice}>
