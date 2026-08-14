@@ -312,7 +312,7 @@ export default function ContactPage() {
                   </a>
                 </p>
                 <p className={styles.sbOfficeLine}>
-                  <a href="tel:+18000000000">+1 800 000 0000</a>
+                  <a href="tel:+91 8129271155">+91 8129271155</a>
                 </p>
               </div>
               <div className={styles.sbOffice}>

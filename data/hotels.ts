@@ -5085,7 +5085,7 @@ export const hotels: Hotel[] = [
     location: "Kodaikanal, Tamil Nadu",
     category: "india",
 
-    image: "/Assets/hotels/Isla's Ridge, Kodaikanal.jpg",
+    image: "/Assets/hotels/The Isla's ridge.jpg",
     alt: "Isla's Ridge, Kodaikanal, Kodaikanal, Tamil Nadu",
 
     accentClass: "hi--india-hills",
@@ -8063,7 +8063,7 @@ export const hotels: Hotel[] = [
     location: "Coimbatore, Tamil Nadu",
     category: "india",
 
-    image: "/Assets/hotels/Vivanta Coimbatore.jpg",
+    image: "/Assets/hotels/Vivanta, Coimbatore.jpg",
     alt: "Vivanta Coimbatore, Coimbatore, Tamil Nadu",
 
     accentClass: "hi--india-city",
