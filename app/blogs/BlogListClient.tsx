@@ -178,7 +178,7 @@ function BlogSection({ title, count, location, blogs }: { title: string, count: 
                 <Link href={`/blogs/${blog.slug}`}>{blog.title}</Link>
               </h3>
               <div className="card__foot">
-                <span className="card__meta">{blog.readTime} min read · {blog.date}</span>
+                {/* <span className="card__meta">{blog.readTime} min read · {blog.date}</span> */}
                 <Link href={`/blogs/${blog.slug}`} className="card__arrow">
                   <span className="card__arrow-line"></span>Read
                 </Link>
