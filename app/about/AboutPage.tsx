@@ -313,7 +313,7 @@ export const AboutPage = () => {
           </h2>
           <p className={styles.fc__sub}>
             Tell us where you want to go, who's travelling and when. One of our
-            specialists will come back to you within 24 hours with an initial outline.
+            specialists will come back to you with an initial outline.
             No obligation, no sales pitch.
           </p>
         </div>

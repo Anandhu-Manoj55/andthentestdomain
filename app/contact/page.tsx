@@ -174,7 +174,7 @@ export default function ContactPage() {
 
       toast.success("Enquiry sent — we'll be in touch shortly!", {
         id: toastId,
-        description: "A specialist will respond within 24 hours.",
+        description: "A specialist will respond swiftly.",
         duration: 6000,
       });
       setSubmitted(true);
@@ -248,7 +248,7 @@ export default function ContactPage() {
               </h2>
               <p className={styles.formSuccessText}>
                 One of our travel specialists has received your enquiry and will
-                respond within 24 hours with an initial outline for your journey.
+                respond with an initial outline for your journey.
                 We look forward to designing something extraordinary together.
               </p>
             </div>
@@ -473,7 +473,7 @@ export default function ContactPage() {
               {/* Submit */}
               <div className={styles.formSubmitRow}>
                 <p className={styles.formNote}>
-                  We respond within 24 hours. No fees charged for the
+                  We respond shortly. No fees charged for the
                   consultation. Your information is kept strictly confidential.
                 </p>
                 <button
@@ -524,7 +524,7 @@ export default function ContactPage() {
           {/* Response promise */}
           <div className={styles.sbPromise}>
             <h2 className={styles.sbPromiseTitle}>
-              We respond within 24 hours — always.
+              We respond swiftly — always.
             </h2>
             <p className={styles.sbPromiseText}>
               Every enquiry is read by a travel specialist, not a call centre.

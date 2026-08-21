@@ -411,7 +411,7 @@ export default async function ExperienceDetailPage({
             Ready to start<br />your <em>{exp.name}</em> journey?
           </h2>
           <p className={styles.fcSub}>
-            Tell us who&apos;s travelling, how many and when. We&apos;ll come back within 24 hours with an outline and a fee estimate. No obligation — just the right information to help you decide.
+            Tell us who&apos;s travelling, how many and when. We&apos;ll come back  swiftly with an outline and a fee estimate. No obligation — just the right information to help you decide.
           </p>
         </div>
         <div className={styles.fcBtns}>

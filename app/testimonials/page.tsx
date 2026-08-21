@@ -58,7 +58,7 @@ export default function TestimonialsPage() {
       <div className="cta-band">
         <div>
           <p className="cta-band__title">Ready to write your own story?</p>
-          <p className="cta-band__sub">Tell us where you want to go and we'll take it from there. We respond within 24 hours.</p>
+          <p className="cta-band__sub">Tell us where you want to go and we'll take it from there. We respond swiftly.</p>
         </div>
         <div className="cta-btns">
           <Link href="/contact/" className="btn-dark">Plan my journey</Link>

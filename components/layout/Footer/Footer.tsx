@@ -19,8 +19,8 @@ export const Footer = () => {
             <span className={styles.logoSub}>travels</span>
           </Link>
           <p className={styles.desc}>
-            A boutique DMC crafting private, tailor-made journeys across India,
-            Bhutan, Nepal and Sri Lanka for discerning US travelers.
+            A boutique DMC crafting private, tailor-made journeys across India,Nepal,
+            Bhutan and Sri Lanka
           </p>
           <div className={styles.contact}>
             <a href="mailto:travel@andthentravels.com">

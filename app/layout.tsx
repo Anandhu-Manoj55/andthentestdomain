@@ -5,7 +5,7 @@ import { LayoutWrapper } from "@/components/layout";
 export const metadata: Metadata = {
   title: "Private India Tours for US Travelers | AndThen Travels",
   description:
-    "AndThen crafts private, tailor-made tours across India, Bhutan, Nepal & Sri Lanka for discerning US travelers. Bespoke itineraries. Dedicated support. Departs daily.",
+    "AndThen crafts private, tailor-made tours across India, Bhutan, Nepal & Sri Lanka Bespoke itineraries. Dedicated support. Departs daily.",
 };
 
 export default function RootLayout({

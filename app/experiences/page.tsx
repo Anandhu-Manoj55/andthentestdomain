@@ -424,7 +424,7 @@ export default function ExperiencesPage() {
       <div className={styles.finalCta}>
         <div>
           <h2 className={styles.fcTitle}>Begin with<br />a <em>conversation.</em></h2>
-          <p className={styles.fcSub}>Tell us which experience interests you, who&apos;s travelling and when. We&apos;ll come back within 24 hours with an initial outline and a fee estimate. No obligation, no sales pitch — just the right information to help you decide.</p>
+          <p className={styles.fcSub}>Tell us which experience interests you, who&apos;s travelling and when. We&apos;ll come back swiftly with an initial outline and a fee estimate. No obligation, no sales pitch — just the right information to help you decide.</p>
         </div>
         <div className={styles.fcBtns}>
           <Button href="/contact/" variant="solidLight">Start the conversation</Button>

@@ -222,7 +222,7 @@ export default function HotelDetailPage() {
         </div>
         <div className={styles.ctaBtns}>
           <Link href={`/contact/?hotel=${hotel.id}`} className={styles.btnP}>Enquire Now</Link>
-          <Link href={`/places-to-stay/${hotel.category}/`} className={styles.btnS}>View all {hotel.category.charAt(0).toUpperCase() + hotel.category.slice(1)} hotels</Link>
+          <Link href={`/places-to-stay/`} className={styles.btnS}>View all hotels</Link>
         </div>
       </div>
     </div>

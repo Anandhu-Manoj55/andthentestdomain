@@ -181,7 +181,7 @@ export default async function BlogSubpage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="ep__body">
               <p className="ep__title">Thinking about {frontmatter.destination}?</p>
-              <p className="ep__text">Tell us what you’re imagining and one of our specialists will come back to you within 24 hours with an initial outline, built around your dates, interests and pace.</p>
+              <p className="ep__text">Tell us what you’re imagining and one of our specialists will come back to you swiftly with an initial outline, built around your dates, interests and pace.</p>
             </div>
             <Link href={contactHref} className="ep__btn">Start the conversation</Link>
           </div>
